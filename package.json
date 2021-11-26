@@ -2,9 +2,9 @@
   "name": "altivities",
   "version": "1.0.0",
   "description": "Activities & games for teaching as an ALT",
-  "main": "build/index.js",
+  "main": "docs/index.js",
   "scripts": {
-    "build": "tsc && copyfiles --up 1 source/**/*.css source/**/*.html source/**/*.png source/**/*.svg build",
+    "build": "tsc && copyfiles --up 1 source/**/*.css source/**/*.html source/**/*.png source/**/*.svg docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

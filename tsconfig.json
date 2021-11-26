@@ -13,7 +13,7 @@
         "target": "ES2020",
         "moduleResolution": "Node",
         "noImplicitAny": false,
-        "outDir": "build",
+        "outDir": "docs",
         "removeComments": true,
         "rootDir": "source",
         "sourceMap": false,
@@ -24,7 +24,7 @@
         "source/definitions/bot.ts"
     ],
     "exclude": [
-        "build",
+        "docs",
         "node_modules"
     ]
 }
