@@ -1,0 +1,30 @@
+{
+  "name": "altivities",
+  "version": "1.0.0",
+  "description": "Activities & games for teaching as an ALT",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc && copyfiles --up 1 source/**/*.css source/**/*.html source/**/*.png source/**/*.svg build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/earthiverse/altivities.git"
+  },
+  "author": "Kent Rasmussen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/earthiverse/altivities/issues"
+  },
+  "homepage": "https://github.com/earthiverse/altivities#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "phaser": "^3.55.2",
+    "phaser-ui-tools": "^2.0.0-beta"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.8",
+    "copyfiles": "^2.4.1",
+    "typescript": "^4.5.2"
+  }
+}

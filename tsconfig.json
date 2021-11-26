@@ -1,0 +1,30 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "module": "ES2020",
+        "lib": [
+            "ES2020",
+            "DOM",
+            "ScriptHost"
+        ],
+        "alwaysStrict": true,
+        "esModuleInterop": true,
+        "incremental": false,
+        "target": "ES2020",
+        "moduleResolution": "Node",
+        "noImplicitAny": false,
+        "outDir": "build",
+        "removeComments": true,
+        "rootDir": "source",
+        "sourceMap": false,
+        "watch": false
+    },
+    "include": [
+        "source/**/*.ts",
+        "source/definitions/bot.ts"
+    ],
+    "exclude": [
+        "build",
+        "node_modules"
+    ]
+}
