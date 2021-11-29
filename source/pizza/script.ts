@@ -25,6 +25,10 @@ const TOPPINGS: {
         file: "images/sausage.png"
     },
     {
+        name: "bacon",
+        file: "images/bacon.png"
+    },
+    {
         name: "tomato",
         file: "images/tomato.png"
     },
