@@ -4,6 +4,10 @@ const FRUITS = [
         file: "images/ice cream.png"
     },
     {
+        name: "chocolate ice cream",
+        file: "images/ice cream chocolate.png"
+    },
+    {
         name: "apple",
         file: "images/apple.png"
     },
