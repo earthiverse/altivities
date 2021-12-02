@@ -16,6 +16,22 @@ const TOPPINGS = [
         file: "images/pineapple.png"
     },
     {
+        name: "tomato",
+        file: "images/tomato.png"
+    },
+    {
+        name: "onion",
+        file: "images/onion.png"
+    },
+    {
+        name: "broccoli",
+        file: "images/broccoli.png"
+    },
+    {
+        name: "potato",
+        file: "images/potato.png"
+    },
+    {
         name: "sausage",
         file: "images/sausage.png"
     },
@@ -24,12 +40,8 @@ const TOPPINGS = [
         file: "images/bacon.png"
     },
     {
-        name: "tomato",
-        file: "images/tomato.png"
-    },
-    {
-        name: "onion",
-        file: "images/onion.png"
+        name: "shrimp",
+        file: "images/shrimp.png"
     }
 ];
 function randomIntFromInterval(min, max) {
