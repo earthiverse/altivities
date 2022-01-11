@@ -28,11 +28,11 @@ const TOPPINGS: {
     },
     {
         name: "broccoli",
-        file:"images/broccoli.png"
+        file: "images/broccoli.png"
     },
     {
         name: "potato",
-        file:"images/potato.png"
+        file: "images/potato.png"
     },
     {
         name: "sausage",
@@ -49,7 +49,7 @@ const TOPPINGS: {
 ]
 
 function randomIntFromInterval(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 class PizzaGame {
@@ -75,7 +75,7 @@ class PizzaGame {
 
     preload(this: Phaser.Scene) {
         // Load topping images
-        for(const topping of TOPPINGS) {
+        for (const topping of TOPPINGS) {
             this.load.image(topping.name, topping.file)
         }
 
@@ -99,7 +99,7 @@ class PizzaGame {
         const y = this.cameras.main.centerY + 225
         const spacing = 300
         const toppingSprites: Phaser.GameObjects.Sprite[] = []
-        for(let i = 0; i < TOPPINGS.length; i++) {
+        for (let i = 0; i < TOPPINGS.length; i++) {
             const topping = TOPPINGS[i]
             const sprite = this.add.sprite(x, y, topping.name)
             const newRatio = 100 / sprite.height
@@ -124,7 +124,7 @@ class PizzaGame {
         // Setup Draggable Logic
         this.input.on("drag", (pointer, draggingObject: Phaser.GameObjects.Sprite, dragX, dragY) => {
             console.log("dragging!")
-            for(const item of PizzaGame.items) {
+            for (const item of PizzaGame.items) {
                 item.setDepth(0)
             }
             draggingObject.setDepth(1)
@@ -133,12 +133,12 @@ class PizzaGame {
         })
         const wheel = new uiWidgets.Wheel3D(
             this,
-            {x: x, y: y - spacing},
+            { x: x, y: y - spacing },
             toppingSprites,
             0,
             spacing,
             "y",
-            {"x": 0, "y": -90, "z": 0}
+            { "x": 0, "y": -90, "z": 0 }
         )
         wheel.emitter.on("start", (wheel: uiWidgets.Wheel3D) => {
             for (let i = 0; i < TOPPINGS.length; i++) {
@@ -173,7 +173,7 @@ class PizzaGame {
 }
 
 window.onload = () => {
-    new PizzaGame();
+    new PizzaGame()
 }
 
 export {}

@@ -49,7 +49,7 @@ const FRUITS: {
 ]
 
 function randomIntFromInterval(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 class ParfaitGame {
@@ -75,7 +75,7 @@ class ParfaitGame {
 
     preload(this: Phaser.Scene) {
         // Load fruit images
-        for(const fruit of FRUITS) {
+        for (const fruit of FRUITS) {
             this.load.image(fruit.name, fruit.file)
         }
 
@@ -105,7 +105,7 @@ class ParfaitGame {
         const y = this.cameras.main.centerY + 225
         const spacing = 300
         const fruitSprites: Phaser.GameObjects.Sprite[] = []
-        for(let i = 0; i < FRUITS.length; i++) {
+        for (let i = 0; i < FRUITS.length; i++) {
             const fruit = FRUITS[i]
             const sprite = this.add.sprite(x, y, fruit.name)
             const newRatio = 100 / sprite.height
@@ -130,7 +130,7 @@ class ParfaitGame {
         // Setup Draggable Logic
         this.input.on("drag", (pointer, draggingObject: Phaser.GameObjects.Sprite, dragX, dragY) => {
             console.log("dragging!")
-            for(const item of ParfaitGame.items) {
+            for (const item of ParfaitGame.items) {
                 item.setDepth(0)
             }
             draggingObject.setDepth(1)
@@ -139,12 +139,12 @@ class ParfaitGame {
         })
         const wheel = new uiWidgets.Wheel3D(
             this,
-            {x: x, y: y - spacing},
+            { x: x, y: y - spacing },
             fruitSprites,
             0,
             spacing,
             "y",
-            {"x": 0, "y": -90, "z": 0}
+            { "x": 0, "y": -90, "z": 0 }
         )
         wheel.emitter.on("start", (wheel: uiWidgets.Wheel3D) => {
             for (let i = 0; i < FRUITS.length; i++) {
@@ -179,7 +179,7 @@ class ParfaitGame {
 }
 
 window.onload = () => {
-    new ParfaitGame();
+    new ParfaitGame()
 }
 
 export {}

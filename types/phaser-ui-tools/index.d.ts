@@ -9,10 +9,21 @@ declare namespace uiWidgets {
             callbackContext: any
         )
     }
+
+    class TextButton {
+        constructor(
+            scene: Phaser.Scene,
+            x: number,
+            y: number,
+            texture: string,
+            downCallback: () => void,
+        )
+    }
+
     class Wheel3D {
         constructor(
             scene: Phaser.Scene,
-            xy: {x:number, y:number},
+            xy: {x: number, y: number},
             sprites: Phaser.GameObjects.Sprite[],
             firstPlace: number,
             zoom: number,
