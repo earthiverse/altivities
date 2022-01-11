@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const FRUITS = [
     {
         name: "ice cream",
@@ -47,7 +49,7 @@ const FRUITS = [
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-class SimpleGame {
+class ParfaitGame {
     constructor() {
         this.game = new Phaser.Game({
             backgroundColor: 0xFFFFFF,
@@ -91,7 +93,7 @@ class SimpleGame {
             const newRatio = 100 / sprite.height;
             sprite.setDisplaySize(newRatio * sprite.width, newRatio * sprite.height);
             sprite.on("pointerdown", () => {
-                const offsetY = SimpleGame.items.length * 5;
+                const offsetY = ParfaitGame.items.length * 5;
                 const randomX = randomIntFromInterval(-40, 40);
                 const randomSize = randomIntFromInterval(8, 12) / 10;
                 const randomAngle = randomIntFromInterval(-45, 45) * (Math.PI / 180);
@@ -100,14 +102,14 @@ class SimpleGame {
                 newSprite.setRotation(randomAngle);
                 newSprite.setInteractive();
                 newSprite.setActive(true);
-                SimpleGame.items.push(newSprite);
+                ParfaitGame.items.push(newSprite);
                 this.input.setDraggable(newSprite);
             });
             fruitSprites.push(sprite);
         }
         this.input.on("drag", (pointer, draggingObject, dragX, dragY) => {
             console.log("dragging!");
-            for (const item of SimpleGame.items) {
+            for (const item of ParfaitGame.items) {
                 item.setDepth(0);
             }
             draggingObject.setDepth(1);
@@ -132,7 +134,7 @@ class SimpleGame {
         rightButton.setDisplaySize(newRatioRight * rightButton.width, newRatioRight * rightButton.height);
     }
 }
-SimpleGame.items = [];
+ParfaitGame.items = [];
 window.onload = () => {
-    new SimpleGame();
+    new ParfaitGame();
 };

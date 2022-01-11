@@ -1,5 +1,3 @@
-import { uiWidgets } from "./global";
-
 const TOPPINGS: {
     name: string
     file: string
@@ -54,7 +52,7 @@ function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-class SimpleGame {
+class PizzaGame {
     game: Phaser.Game
     static items: Phaser.GameObjects.Sprite[] = []
 
@@ -118,7 +116,7 @@ class SimpleGame {
                 newSprite.setRotation(randomAngle)
                 newSprite.setInteractive()
                 newSprite.setActive(true)
-                SimpleGame.items.push(newSprite)
+                PizzaGame.items.push(newSprite)
                 this.input.setDraggable(newSprite)
             })
             toppingSprites.push(sprite)
@@ -126,7 +124,7 @@ class SimpleGame {
         // Setup Draggable Logic
         this.input.on("drag", (pointer, draggingObject: Phaser.GameObjects.Sprite, dragX, dragY) => {
             console.log("dragging!")
-            for(const item of SimpleGame.items) {
+            for(const item of PizzaGame.items) {
                 item.setDepth(0)
             }
             draggingObject.setDepth(1)
@@ -175,5 +173,7 @@ class SimpleGame {
 }
 
 window.onload = () => {
-    new SimpleGame();
+    new PizzaGame();
 }
+
+export {}

@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const TOPPINGS = [
     {
         name: "corn",
@@ -47,7 +49,7 @@ const TOPPINGS = [
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-class SimpleGame {
+class PizzaGame {
     constructor() {
         this.game = new Phaser.Game({
             backgroundColor: 0xFFFFFF,
@@ -96,14 +98,14 @@ class SimpleGame {
                 newSprite.setRotation(randomAngle);
                 newSprite.setInteractive();
                 newSprite.setActive(true);
-                SimpleGame.items.push(newSprite);
+                PizzaGame.items.push(newSprite);
                 this.input.setDraggable(newSprite);
             });
             toppingSprites.push(sprite);
         }
         this.input.on("drag", (pointer, draggingObject, dragX, dragY) => {
             console.log("dragging!");
-            for (const item of SimpleGame.items) {
+            for (const item of PizzaGame.items) {
                 item.setDepth(0);
             }
             draggingObject.setDepth(1);
@@ -128,7 +130,7 @@ class SimpleGame {
         rightButton.setDisplaySize(newRatioRight * rightButton.width, newRatioRight * rightButton.height);
     }
 }
-SimpleGame.items = [];
+PizzaGame.items = [];
 window.onload = () => {
-    new SimpleGame();
+    new PizzaGame();
 };

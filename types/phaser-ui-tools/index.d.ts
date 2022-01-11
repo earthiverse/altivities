@@ -1,6 +1,3 @@
-import Phaser from "phaser"
-import uiWidgets from "phaser-ui-tools"
-
 declare namespace uiWidgets {
     class Button extends Phaser.GameObjects.Sprite {
         constructor(
@@ -29,4 +26,8 @@ declare namespace uiWidgets {
         moveForward: () => void
         sprites: Phaser.GameObjects.Sprite[]
     }
+}
+
+declare module "phaser-ui-tools" {
+    export = uiWidgets
 }

@@ -1,7 +1,7 @@
 {
     "compileOnSave": true,
     "compilerOptions": {
-        "module": "ES2020",
+        "module": "CommonJS",
         "lib": [
             "ES2020",
             "DOM",
@@ -10,6 +10,7 @@
         "alwaysStrict": true,
         "esModuleInterop": true,
         "incremental": false,
+        "isolatedModules": true,
         "target": "ES2020",
         "moduleResolution": "Node",
         "noImplicitAny": false,
@@ -17,11 +18,19 @@
         "removeComments": true,
         "rootDir": "source",
         "sourceMap": false,
+        "typeRoots": [
+            "node_modules/@types",
+            "types"
+        ],
+        "types": [
+            "node",
+            "phaser",
+            "phaser-ui-tools"
+        ],
         "watch": false
     },
     "include": [
-        "source/**/*.ts",
-        "source/definitions/bot.ts"
+        "source/**/*.ts"
     ],
     "exclude": [
         "docs",
