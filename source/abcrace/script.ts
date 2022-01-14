@@ -8,10 +8,14 @@ type ButtonConfig = {
     y?: number
 }
 
+type PlayData = {
+    mode: "lowercase" | "uppercase" | "random"
+}
+
 // Based on https://phasergames.com/how-to-make-buttons-in-phaser-3/
 class BasicButton extends Phaser.GameObjects.Sprite {
     private config: ButtonConfig
-    private enabled = false
+    private _enabled = false
 
     constructor(config: ButtonConfig) {
         //call the constructor of the parent
@@ -53,25 +57,29 @@ class BasicButton extends Phaser.GameObjects.Sprite {
         this.setOrigin(0, 0)
     }
 
+    get enabled() {
+        return this._enabled
+    }
+
     onDown() {
         this.setFrame(this.config.enabled)
     }
     onOver() {
-        if (this.enabled) this.setFrame(this.config.enabled)
+        if (this._enabled) this.setFrame(this.config.enabled)
         else this.setFrame(this.config.over)
     }
     onOut() {
-        if (this.enabled) this.setFrame(this.config.enabled)
+        if (this._enabled) this.setFrame(this.config.enabled)
         else this.setFrame(this.config.disabled)
     }
 
     public setEnabled() {
-        this.enabled = true
+        this._enabled = true
         this.setFrame(this.config.enabled)
     }
 
     public setDisabled() {
-        this.enabled = false
+        this._enabled = false
         this.setFrame(this.config.disabled)
     }
 }
@@ -87,9 +95,10 @@ class ABCRaceLoadScene extends Phaser.Scene {
     }
 
     preload() {
-        // Load ABC Images
+        // Load Letters and Numbers
         for (const letter of ABCRace.LowercaseLetters) this.load.image(letter, `images/lower/${letter}.svg`)
         for (const letter of ABCRace.UppercaseLetters) this.load.image(letter, `images/upper/${letter}.svg`)
+        for (const number of ["three", "two", "one"]) this.load.image(number, `images/numbers/${number}.svg`)
 
         // Load Logo
         this.load.image("logo", "images/logo.png")
@@ -98,6 +107,7 @@ class ABCRaceLoadScene extends Phaser.Scene {
         this.load.spritesheet("lowercase_buttons", "images/lowercase_buttons.png", { frameHeight: 160, frameWidth: 210 })
         this.load.spritesheet("random_buttons", "images/random_buttons.png", { frameHeight: 160, frameWidth: 210 })
         this.load.spritesheet("uppercase_buttons", "images/uppercase_buttons.png", { frameHeight: 160, frameWidth: 210 })
+        this.load.spritesheet("start_buttons", "images/start_buttons.png", { frameHeight: 210, frameWidth: 610 })
 
         // Load Music
         // Of Far Different Nature - Summer House [v2]
@@ -117,24 +127,24 @@ class ABCRaceMenuScene extends Phaser.Scene {
         this.sound.play("menu_bgm", { loop: true })
 
         const lowercaseButton = new BasicButton({
-            "scene": this,
             "key": "lowercase_buttons",
+            "scene": this,
             "x": 40,
-            "y": 210
+            "y": 205
         })
 
         const uppercaseButton = new BasicButton({
-            "scene": this,
             "key": "uppercase_buttons",
+            "scene": this,
             "x": 295,
-            "y": 210
+            "y": 205
         })
 
         const randomButton = new BasicButton({
-            "scene": this,
             "key": "random_buttons",
+            "scene": this,
             "x": 550,
-            "y": 210
+            "y": 205
         })
 
         lowercaseButton.on("pointerdown", () => {
@@ -153,22 +163,123 @@ class ABCRaceMenuScene extends Phaser.Scene {
             randomButton.setEnabled()
         })
         uppercaseButton.setEnabled()
+
+        const startButton = new BasicButton({
+            "key": "start_buttons",
+            "scene": this,
+            "x": 95,
+            "y": 380
+        })
+        startButton.on("pointerup", () => {
+            let args: PlayData
+
+            if (lowercaseButton.enabled) {
+                args = {
+                    mode: "lowercase"
+                }
+            } else if (uppercaseButton.enabled) {
+                args = {
+                    mode: "uppercase"
+                }
+            } else if (randomButton.enabled) {
+                args = {
+                    mode: "random"
+                }
+            } else {
+                throw new Error("Something went wrong. We don't know what game mode to use.")
+            }
+
+            this.sound.stopByKey("menu_bgm")
+            this.scene.start(ABCRacePlayScene.Key, args)
+        })
     }
 }
 
 class ABCRacePlayScene extends Phaser.Scene {
+
     static Key = "PLAY"
+
+    private countdown: Phaser.Time.TimerEvent
+    private countdownImage: Phaser.GameObjects.Sprite
+    private countdownImageI: number
+    private letters: string[]
+
     constructor() {
         super({ key: ABCRacePlayScene.Key })
+    }
+
+    create() {
+        this.countdown = this.time.delayedCall(3000, this.startGame, [], this)
+    }
+
+    init(data: PlayData) {
+        switch (data.mode) {
+            case "lowercase": {
+                this.letters = ABCRace.LowercaseLetters
+                break
+            }
+            case "random": {
+                const letters = []
+                for (let i = 0; i < 26; i++) {
+                    const random = Math.round(Math.random())
+                    if (random < 0.5) {
+                        letters.push(ABCRace.LowercaseLetters[i])
+                    } else {
+                        letters.push(ABCRace.UppercaseLetters[i])
+                    }
+                }
+                this.letters = letters
+                break
+            }
+            case "uppercase": {
+                this.letters = ABCRace.UppercaseLetters
+                break
+            }
+        }
+    }
+
+    update(time: number, delta: number): void {
+        if (this.countdown) {
+            const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2
+            const screenCenterY = this.cameras.main.worldView.y + this.cameras.main.height / 2
+            const countdownImages = ["three", "two", "one"]
+            const countdownProgress = this.countdown.getProgress()
+            const countdownProgressI = Math.floor(countdownImages.length * countdownProgress)
+            const countdownProgressToNextI = (countdownImages.length * countdownProgress) - countdownProgressI
+
+            if (this.countdownImageI === undefined) {
+                // Started countdown
+                this.countdownImageI = countdownProgressI
+                this.countdownImage = this.add.sprite(screenCenterX, screenCenterY, countdownImages[this.countdownImageI])
+                this.countdownImage.setScale(1 - countdownProgressToNextI)
+                this.countdownImage.setAlpha(1 - countdownProgressToNextI)
+            } else if (countdownProgressI == countdownImages.length) {
+                // Finished countdown
+                this.countdownImage.destroy(true)
+                delete this.countdown
+            } else {
+                // In countdown
+                if (this.countdownImageI !== countdownProgressI) {
+                    this.countdownImage.destroy(true)
+                    this.countdownImageI = countdownProgressI
+                    this.countdownImage = this.add.sprite(screenCenterX, screenCenterY, countdownImages[this.countdownImageI])
+                }
+                this.countdownImage.setScale(1 - countdownProgressToNextI)
+                this.countdownImage.setAlpha(1 - countdownProgressToNextI)
+            }
+        }
+    }
+
+    startGame() {
+        this.countdownImage
     }
 }
 
 class ABCRace {
-    game: Phaser.Game
-    static items: Phaser.GameObjects.Sprite[] = []
-
     static LowercaseLetters = [..."abcdefghijklmnopqrstuvwxyz"]
     static UppercaseLetters = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+
+    game: Phaser.Game
 
     constructor() {
         this.game = new Phaser.Game({
