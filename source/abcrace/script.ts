@@ -12,6 +12,29 @@ type PlayData = {
     mode: "lowercase" | "uppercase" | "random"
 }
 
+function getRandomNumber(min, max) {
+    return Math.random() * (max - min) + min
+}
+
+function shuffle(array) {
+    let currentIndex = array.length, randomIndex
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex)
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]]
+    }
+
+    return array
+}
+
+
 // Based on https://phasergames.com/how-to-make-buttons-in-phaser-3/
 class BasicButton extends Phaser.GameObjects.Sprite {
     private config: ButtonConfig
@@ -113,6 +136,13 @@ class ABCRaceLoadScene extends Phaser.Scene {
         // Of Far Different Nature - Summer House [v2]
         // https://fardifferent.itch.io/loops
         this.load.audio("menu_bgm", "sounds/menu_bgm.ogg")
+
+        // Load Sounds
+        this.load.audio("countdown", "sounds/countdown.ogg")
+        this.load.audio("menu_switch", "sounds/menu_switch.ogg")
+        this.load.audio("ng", "sounds/ng.ogg")
+        this.load.audio("ok", "sounds/ok.ogg")
+        this.load.audio("start", "sounds/start.ogg")
     }
 }
 
@@ -123,7 +153,8 @@ class ABCRaceMenuScene extends Phaser.Scene {
     }
 
     create() {
-        this.add.sprite(0, 0, "logo").setOrigin(0, 0)
+        const logo = this.add.sprite(0, 0, "logo").setOrigin(0, 0)
+
         this.sound.play("menu_bgm", { loop: true })
 
         const lowercaseButton = new BasicButton({
@@ -148,16 +179,19 @@ class ABCRaceMenuScene extends Phaser.Scene {
         })
 
         lowercaseButton.on("pointerdown", () => {
+            this.sound.play("menu_switch")
             lowercaseButton.setEnabled()
             uppercaseButton.setDisabled()
             randomButton.setDisabled()
         })
         uppercaseButton.on("pointerdown", () => {
+            this.sound.play("menu_switch")
             lowercaseButton.setDisabled()
             uppercaseButton.setEnabled()
             randomButton.setDisabled()
         })
         randomButton.on("pointerdown", () => {
+            this.sound.play("menu_switch")
             lowercaseButton.setDisabled()
             uppercaseButton.setDisabled()
             randomButton.setEnabled()
@@ -200,9 +234,16 @@ class ABCRacePlayScene extends Phaser.Scene {
     static Key = "PLAY"
 
     private countdown: Phaser.Time.TimerEvent
+    private countdownCover: Phaser.GameObjects.Rectangle
     private countdownImage: Phaser.GameObjects.Sprite
     private countdownImageI: number
     private letters: string[]
+    private currentLetter
+    private lastCorrect: Phaser.GameObjects.Sprite
+    private sprites: Phaser.GameObjects.Sprite[]
+    private startTime: number
+    private numMistakesConcurrent
+    private numMistakes
 
     constructor() {
         super({ key: ABCRacePlayScene.Key })
@@ -210,9 +251,136 @@ class ABCRacePlayScene extends Phaser.Scene {
 
     create() {
         this.countdown = this.time.delayedCall(3000, this.startGame, [], this)
+
+        // Split the board until we have enough spaces to fit all letters
+        let columns = 1
+        let rows = 1
+        while (columns * rows < 26) {
+            const columnWidth = ABCRace.WIDTH / columns
+            const rowHeight = ABCRace.HEIGHT / rows
+
+            if (columnWidth > rowHeight) columns *= 2
+            else rows *= 2
+        }
+        // Put the letters in boxes
+        const boxes = [...this.letters]
+        // Fill the remaining boxes with nothing
+        while (boxes.length < columns * rows) boxes.push(undefined)
+        shuffle(boxes)
+
+        const timerHeight = 200
+
+        const columnWidth = ABCRace.WIDTH / columns
+        const rowHeight = (ABCRace.HEIGHT - timerHeight) / rows
+        console.log(`${columns} columns with width ${columnWidth}`)
+        console.log(`${rows} rows with height ${rowHeight}`)
+
+        let minScale = 1
+        for (let i = 0; i < columns * rows; i++) {
+            const box = boxes[i]
+            if (!box) continue // Box is empty
+
+            const x = (i % columns * columnWidth) + columnWidth / 2
+            const y = timerHeight + (Math.floor(i / columns) * rowHeight) + rowHeight / 2
+
+            const letterSprite = this.add.sprite(x, y, box)
+            this.sprites.push(letterSprite)
+            const scale = Math.min(rowHeight / letterSprite.height, columnWidth / letterSprite.width) * 0.9
+            if (minScale > scale) minScale = scale
+
+            const rotation = getRandomNumber(-15, 15) * (Math.PI / 180)
+            letterSprite.setRotation(rotation)
+
+            letterSprite.setInteractive()
+            letterSprite.on("pointerdown", () => {
+                const hit = letterSprite.texture.key
+                const target = this.letters[this.currentLetter]
+
+                if (target == hit) {
+                    // They hit the correct letter
+                    letterSprite.removeInteractive()
+
+                    this.tweens.add({
+                        alpha: 0.75,
+                        duration: 250,
+                        ease: Phaser.Math.Easing.Sine.InOut,
+                        targets: [letterSprite]
+                    })
+
+                    const black = Phaser.Display.Color.ValueToColor(0x000000)
+                    const green = Phaser.Display.Color.ValueToColor(0x00FF00)
+
+                    this.tweens.addCounter({
+                        duration: 250,
+                        ease: Phaser.Math.Easing.Sine.InOut,
+                        from: 0,
+                        onUpdate: (tween) => {
+                            const value = tween.getValue()
+                            const newColor = Phaser.Display.Color.Interpolate.ColorWithColor(black, green, 100, value)
+                            const newColorN = Phaser.Display.Color.GetColor(newColor.r, newColor.g, newColor.b)
+
+                            letterSprite.setTintFill(newColorN)
+                            letterSprite.setAlpha(1 - 0.2 * value / 100)
+                        },
+                        to: 100,
+                    })
+                    this.currentLetter += 1
+                    this.sound.play("ok")
+
+                    // Set the last correct one to gray
+                    if (this.lastCorrect) {
+                        const toFade = this.lastCorrect
+                        this.tweens.addCounter({
+                            duration: 250,
+                            ease: Phaser.Math.Easing.Sine.InOut,
+                            from: 0,
+                            onUpdate: (tween) => {
+                                const value = tween.getValue()
+                                // const newColor = Phaser.Display.Color.Interpolate.ColorWithColor(fromColor, toColor, 100, value)
+
+                                // letterSprite.setTint(Phaser.Display.Color.GetColor(newColor.r, newColor.g, newColor.b))
+                                toFade.setAlpha(1 - 0.8 * value / 100)
+                            },
+                            to: 100,
+                        })
+                    }
+                    this.lastCorrect = letterSprite
+
+                    console.log(this.currentLetter)
+                    if (this.currentLetter == 26) {
+                        // TODO: Add a game end screen
+                        this.scene.start(ABCRaceMenuScene.Key)
+                    }
+                    this.numMistakesConcurrent = 0
+                } else {
+                    // They hit the wrong letter
+                    console.log(`Hit ${hit}, but wanted ${target}`)
+                    this.sound.play("ng")
+
+                    this.numMistakes += 1
+                    this.numMistakesConcurrent += 1
+                }
+            })
+            letterSprite.disableInteractive()
+        }
+
+        // Scale the letters
+        for (const sprite of this.sprites) sprite.setScale(minScale)
+
+        // Create a white rectangle to cover the letters that slowly gets revealed as the countdown progresses
+        this.countdownCover = this.add.rectangle(0, 0, ABCRace.WIDTH, ABCRace.HEIGHT, 0xFFFFFF).setOrigin(0, 0)
+        this.countdownCover.setDepth(1)
     }
 
     init(data: PlayData) {
+        // Reset Variables
+        this.lastCorrect = undefined
+        this.sprites = []
+        this.currentLetter = 0
+        this.numMistakes = 0
+        this.numMistakesConcurrent = 0
+
+        // Setup Mode
         switch (data.mode) {
             case "lowercase": {
                 this.letters = ABCRace.LowercaseLetters
@@ -247,22 +415,32 @@ class ABCRacePlayScene extends Phaser.Scene {
             const countdownProgressI = Math.floor(countdownImages.length * countdownProgress)
             const countdownProgressToNextI = (countdownImages.length * countdownProgress) - countdownProgressI
 
+            this.countdownCover.setAlpha(1 - countdownProgress)
+
             if (this.countdownImageI === undefined) {
                 // Started countdown
                 this.countdownImageI = countdownProgressI
                 this.countdownImage = this.add.sprite(screenCenterX, screenCenterY, countdownImages[this.countdownImageI])
+                this.sound.play("countdown")
+                this.countdownImage.setDepth(2)
                 this.countdownImage.setScale(1 - countdownProgressToNextI)
                 this.countdownImage.setAlpha(1 - countdownProgressToNextI)
             } else if (countdownProgressI == countdownImages.length) {
                 // Finished countdown
                 this.countdownImage.destroy(true)
                 delete this.countdown
+                this.sound.play("start")
+                this.startTime = Date.now()
+
+                for (const sprite of this.sprites) sprite.setInteractive()
             } else {
                 // In countdown
                 if (this.countdownImageI !== countdownProgressI) {
                     this.countdownImage.destroy(true)
                     this.countdownImageI = countdownProgressI
                     this.countdownImage = this.add.sprite(screenCenterX, screenCenterY, countdownImages[this.countdownImageI])
+                    this.sound.play("countdown")
+                    this.countdownImage.setDepth(2)
                 }
                 this.countdownImage.setScale(1 - countdownProgressToNextI)
                 this.countdownImage.setAlpha(1 - countdownProgressToNextI)
@@ -278,20 +456,22 @@ class ABCRacePlayScene extends Phaser.Scene {
 class ABCRace {
     static LowercaseLetters = [..."abcdefghijklmnopqrstuvwxyz"]
     static UppercaseLetters = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+    static WIDTH = 800
+    static HEIGHT = 600
 
     game: Phaser.Game
 
     constructor() {
         this.game = new Phaser.Game({
             backgroundColor: 0xFFFFFF,
-            height: 600,
+            height: ABCRace.HEIGHT,
             scale: {
                 autoCenter: Phaser.Scale.CENTER_BOTH,
                 mode: Phaser.Scale.ScaleModes.FIT
             },
             scene: [ABCRaceLoadScene, ABCRaceMenuScene, ABCRacePlayScene],
             type: Phaser.AUTO,
-            width: 800
+            width: ABCRace.WIDTH
         })
     }
 }
