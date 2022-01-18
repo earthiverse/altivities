@@ -4,6 +4,7 @@
         "altivities",
         "copyfiles",
         "spritesheet",
-        "tweens"
+        "tweens",
+        "webfont"
     ]
 }

@@ -12,6 +12,11 @@ type PlayData = {
     mode: "lowercase" | "uppercase" | "random"
 }
 
+type ResultsData = {
+    numMistakes: number
+    timeElapsed: number
+}
+
 function getRandomNumber(min, max) {
     return Math.random() * (max - min) + min
 }
@@ -33,7 +38,6 @@ function shuffle(array) {
 
     return array
 }
-
 
 // Based on https://phasergames.com/how-to-make-buttons-in-phaser-3/
 class BasicButton extends Phaser.GameObjects.Sprite {
@@ -126,6 +130,9 @@ class ABCRaceLoadScene extends Phaser.Scene {
         // Load Logo
         this.load.image("logo", "images/logo.png")
 
+        // Load Images
+        this.load.image("timer", "images/timer.svg")
+
         // Load Buttons
         this.load.spritesheet("lowercase_buttons", "images/lowercase_buttons.png", { frameHeight: 160, frameWidth: 210 })
         this.load.spritesheet("random_buttons", "images/random_buttons.png", { frameHeight: 160, frameWidth: 210 })
@@ -143,6 +150,9 @@ class ABCRaceLoadScene extends Phaser.Scene {
         this.load.audio("ng", "sounds/ng.ogg")
         this.load.audio("ok", "sounds/ok.ogg")
         this.load.audio("start", "sounds/start.ogg")
+
+        // Load Google Fonts
+        this.load.script("webfont", "//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js")
     }
 }
 
@@ -230,7 +240,6 @@ class ABCRaceMenuScene extends Phaser.Scene {
 }
 
 class ABCRacePlayScene extends Phaser.Scene {
-
     static Key = "PLAY"
 
     private countdown: Phaser.Time.TimerEvent
@@ -241,6 +250,7 @@ class ABCRacePlayScene extends Phaser.Scene {
     private currentLetter
     private lastCorrect: Phaser.GameObjects.Sprite
     private sprites: Phaser.GameObjects.Sprite[]
+    private timerText: Phaser.GameObjects.Text
     private startTime: number
     private numMistakesConcurrent
     private numMistakes
@@ -250,7 +260,7 @@ class ABCRacePlayScene extends Phaser.Scene {
     }
 
     create() {
-        this.countdown = this.time.delayedCall(3000, this.startGame, [], this)
+        this.countdown = this.time.delayedCall(3000, undefined, undefined, this)
 
         // Split the board until we have enough spaces to fit all letters
         let columns = 1
@@ -269,11 +279,15 @@ class ABCRacePlayScene extends Phaser.Scene {
         shuffle(boxes)
 
         const timerHeight = 200
+        const timerIcon = this.add.image(100, 100, "timer").setOrigin(0, 0)
+        this.timerText = this.add.text(200, 100, "00:00.00").setOrigin(0, 0)
+        this.timerText.setFontFamily("\"Fontdiner Swanky\"")
+        this.timerText.setFontSize(60)
+        this.timerText.setColor("#000000")
+
 
         const columnWidth = ABCRace.WIDTH / columns
         const rowHeight = (ABCRace.HEIGHT - timerHeight) / rows
-        console.log(`${columns} columns with width ${columnWidth}`)
-        console.log(`${rows} rows with height ${rowHeight}`)
 
         let minScale = 1
         for (let i = 0; i < columns * rows; i++) {
@@ -346,15 +360,16 @@ class ABCRacePlayScene extends Phaser.Scene {
                     }
                     this.lastCorrect = letterSprite
 
-                    console.log(this.currentLetter)
                     if (this.currentLetter == 26) {
                         // TODO: Add a game end screen
-                        this.scene.start(ABCRaceMenuScene.Key)
+                        this.scene.start(ABCRaceResultsScene.Key, {
+                            numMistakes: this.numMistakes,
+                            timeElapsed: Date.now() - this.startTime
+                        })
                     }
                     this.numMistakesConcurrent = 0
                 } else {
                     // They hit the wrong letter
-                    console.log(`Hit ${hit}, but wanted ${target}`)
                     this.sound.play("ng")
 
                     this.numMistakes += 1
@@ -445,11 +460,55 @@ class ABCRacePlayScene extends Phaser.Scene {
                 this.countdownImage.setScale(1 - countdownProgressToNextI)
                 this.countdownImage.setAlpha(1 - countdownProgressToNextI)
             }
+            return
         }
+
+        const timeElapsed = Date.now() - this.startTime + (this.numMistakes * 1000)
+        const secondsElapsed = ((timeElapsed / 1000) % 60).toFixed(2).padStart(5, "0")
+        const minutesElapsed = Math.floor(timeElapsed / 1000 / 60).toString().padStart(2, "0")
+        this.timerText.setText(`${minutesElapsed}:${secondsElapsed}`)
+    }
+}
+
+class ABCRaceResultsScene extends Phaser.Scene {
+    static Key = "RESULTS"
+
+    private numMistakes: number
+    private timeElapsed: number
+
+    constructor() {
+        super({ key: ABCRaceResultsScene.Key })
     }
 
-    startGame() {
-        this.countdownImage
+    create() {
+        const timerHeight = 200
+        const timerIcon = this.add.image(100, 100, "timer").setOrigin(0, 0)
+
+        const secondsElapsed = ((this.timeElapsed / 1000) % 60).toFixed(2).padStart(5, "0")
+        const minutesElapsed = Math.floor(this.timeElapsed / 1000 / 60).toString().padStart(2, "0")
+        const timerText = this.add.text(200, 100, `Time: ${minutesElapsed}:${secondsElapsed}`).setOrigin(0, 0)
+        timerText.setFontFamily("\"Fontdiner Swanky\"")
+        timerText.setFontSize(60)
+        timerText.setColor("#000000")
+
+        const mistakesText = this.add.text(200, 250, `Mistakes: ${this.numMistakes}`).setOrigin(0, 0)
+        mistakesText.setFontFamily("\"Fontdiner Swanky\"")
+        mistakesText.setFontSize(60)
+        mistakesText.setColor("#FF0000")
+
+        const mistakesElapsed = this.timeElapsed + (this.numMistakes * 1000)
+        const secondsElapsedM = ((mistakesElapsed / 1000) % 60).toFixed(2).padStart(5, "0")
+        const minutesElapsedM = Math.floor(mistakesElapsed / 1000 / 60).toString().padStart(2, "0")
+        const timerTextM = this.add.text(200, 400, `Time: ${minutesElapsedM}:${secondsElapsedM}`).setOrigin(0, 0)
+        timerTextM.setFontFamily("\"Fontdiner Swanky\"")
+        timerTextM.setFontSize(60)
+        timerTextM.setColor("#000000")
+    }
+
+    init(data: ResultsData) {
+        // Set Variables
+        this.numMistakes = data.numMistakes
+        this.timeElapsed = data.timeElapsed
     }
 }
 
@@ -469,7 +528,7 @@ class ABCRace {
                 autoCenter: Phaser.Scale.CENTER_BOTH,
                 mode: Phaser.Scale.ScaleModes.FIT
             },
-            scene: [ABCRaceLoadScene, ABCRaceMenuScene, ABCRacePlayScene],
+            scene: [ABCRaceLoadScene, ABCRaceMenuScene, ABCRacePlayScene, ABCRaceResultsScene],
             type: Phaser.AUTO,
             width: ABCRace.WIDTH
         })

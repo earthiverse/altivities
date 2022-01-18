@@ -83,6 +83,7 @@ class ABCRaceLoadScene extends Phaser.Scene {
         for (const number of ["three", "two", "one"])
             this.load.image(number, `images/numbers/${number}.svg`);
         this.load.image("logo", "images/logo.png");
+        this.load.image("timer", "images/timer.svg");
         this.load.spritesheet("lowercase_buttons", "images/lowercase_buttons.png", { frameHeight: 160, frameWidth: 210 });
         this.load.spritesheet("random_buttons", "images/random_buttons.png", { frameHeight: 160, frameWidth: 210 });
         this.load.spritesheet("uppercase_buttons", "images/uppercase_buttons.png", { frameHeight: 160, frameWidth: 210 });
@@ -93,6 +94,7 @@ class ABCRaceLoadScene extends Phaser.Scene {
         this.load.audio("ng", "sounds/ng.ogg");
         this.load.audio("ok", "sounds/ok.ogg");
         this.load.audio("start", "sounds/start.ogg");
+        this.load.script("webfont", "//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js");
     }
 }
 ABCRaceLoadScene.Key = "LOAD";
@@ -177,7 +179,7 @@ class ABCRacePlayScene extends Phaser.Scene {
         super({ key: ABCRacePlayScene.Key });
     }
     create() {
-        this.countdown = this.time.delayedCall(3000, this.startGame, [], this);
+        this.countdown = this.time.delayedCall(3000, undefined, undefined, this);
         let columns = 1;
         let rows = 1;
         while (columns * rows < 26) {
@@ -193,10 +195,13 @@ class ABCRacePlayScene extends Phaser.Scene {
             boxes.push(undefined);
         shuffle(boxes);
         const timerHeight = 200;
+        const timerIcon = this.add.image(100, 100, "timer").setOrigin(0, 0);
+        this.timerText = this.add.text(200, 100, "00:00.00").setOrigin(0, 0);
+        this.timerText.setFontFamily("\"Fontdiner Swanky\"");
+        this.timerText.setFontSize(60);
+        this.timerText.setColor("#000000");
         const columnWidth = ABCRace.WIDTH / columns;
         const rowHeight = (ABCRace.HEIGHT - timerHeight) / rows;
-        console.log(`${columns} columns with width ${columnWidth}`);
-        console.log(`${rows} rows with height ${rowHeight}`);
         let minScale = 1;
         for (let i = 0; i < columns * rows; i++) {
             const box = boxes[i];
@@ -224,7 +229,6 @@ class ABCRacePlayScene extends Phaser.Scene {
                         targets: [letterSprite]
                     });
                     const black = Phaser.Display.Color.ValueToColor(0x000000);
-                    const red = Phaser.Display.Color.ValueToColor(0xFF0000);
                     const green = Phaser.Display.Color.ValueToColor(0x00FF00);
                     this.tweens.addCounter({
                         duration: 250,
@@ -255,14 +259,15 @@ class ABCRacePlayScene extends Phaser.Scene {
                         });
                     }
                     this.lastCorrect = letterSprite;
-                    console.log(this.currentLetter);
                     if (this.currentLetter == 26) {
-                        this.scene.start(ABCRaceMenuScene.Key);
+                        this.scene.start(ABCRaceResultsScene.Key, {
+                            numMistakes: this.numMistakes,
+                            timeElapsed: Date.now() - this.startTime
+                        });
                     }
                     this.numMistakesConcurrent = 0;
                 }
                 else {
-                    console.log(`Hit ${hit}, but wanted ${target}`);
                     this.sound.play("ng");
                     this.numMistakes += 1;
                     this.numMistakesConcurrent += 1;
@@ -342,13 +347,46 @@ class ABCRacePlayScene extends Phaser.Scene {
                 this.countdownImage.setScale(1 - countdownProgressToNextI);
                 this.countdownImage.setAlpha(1 - countdownProgressToNextI);
             }
+            return;
         }
-    }
-    startGame() {
-        this.countdownImage;
+        const timeElapsed = Date.now() - this.startTime + (this.numMistakes * 1000);
+        const secondsElapsed = ((timeElapsed / 1000) % 60).toFixed(2).padStart(5, "0");
+        const minutesElapsed = Math.floor(timeElapsed / 1000 / 60).toString().padStart(2, "0");
+        this.timerText.setText(`${minutesElapsed}:${secondsElapsed}`);
     }
 }
 ABCRacePlayScene.Key = "PLAY";
+class ABCRaceResultsScene extends Phaser.Scene {
+    constructor() {
+        super({ key: ABCRaceResultsScene.Key });
+    }
+    create() {
+        const timerHeight = 200;
+        const timerIcon = this.add.image(100, 100, "timer").setOrigin(0, 0);
+        const secondsElapsed = ((this.timeElapsed / 1000) % 60).toFixed(2).padStart(5, "0");
+        const minutesElapsed = Math.floor(this.timeElapsed / 1000 / 60).toString().padStart(2, "0");
+        const timerText = this.add.text(200, 100, `Time: ${minutesElapsed}:${secondsElapsed}`).setOrigin(0, 0);
+        timerText.setFontFamily("\"Fontdiner Swanky\"");
+        timerText.setFontSize(60);
+        timerText.setColor("#000000");
+        const mistakesText = this.add.text(200, 250, `Mistakes: ${this.numMistakes}`).setOrigin(0, 0);
+        mistakesText.setFontFamily("\"Fontdiner Swanky\"");
+        mistakesText.setFontSize(60);
+        mistakesText.setColor("#FF0000");
+        const mistakesElapsed = this.timeElapsed + (this.numMistakes * 1000);
+        const secondsElapsedM = ((mistakesElapsed / 1000) % 60).toFixed(2).padStart(5, "0");
+        const minutesElapsedM = Math.floor(mistakesElapsed / 1000 / 60).toString().padStart(2, "0");
+        const timerTextM = this.add.text(200, 400, `Time: ${minutesElapsedM}:${secondsElapsedM}`).setOrigin(0, 0);
+        timerTextM.setFontFamily("\"Fontdiner Swanky\"");
+        timerTextM.setFontSize(60);
+        timerTextM.setColor("#000000");
+    }
+    init(data) {
+        this.numMistakes = data.numMistakes;
+        this.timeElapsed = data.timeElapsed;
+    }
+}
+ABCRaceResultsScene.Key = "RESULTS";
 class ABCRace {
     constructor() {
         this.game = new Phaser.Game({
@@ -358,7 +396,7 @@ class ABCRace {
                 autoCenter: Phaser.Scale.CENTER_BOTH,
                 mode: Phaser.Scale.ScaleModes.FIT
             },
-            scene: [ABCRaceLoadScene, ABCRaceMenuScene, ABCRacePlayScene],
+            scene: [ABCRaceLoadScene, ABCRaceMenuScene, ABCRacePlayScene, ABCRaceResultsScene],
             type: Phaser.AUTO,
             width: ABCRace.WIDTH
         });
