@@ -88,6 +88,7 @@ class ABCRaceLoadScene extends Phaser.Scene {
         this.load.spritesheet("random_buttons", "images/random_buttons.png", { frameHeight: 160, frameWidth: 210 });
         this.load.spritesheet("uppercase_buttons", "images/uppercase_buttons.png", { frameHeight: 160, frameWidth: 210 });
         this.load.spritesheet("start_buttons", "images/start_buttons.png", { frameHeight: 210, frameWidth: 610 });
+        this.load.spritesheet("menu_buttons", "images/menu_buttons.png", { frameHeight: 210, frameWidth: 610 });
         this.load.audio("menu_bgm", "sounds/menu_bgm.ogg");
         this.load.audio("countdown", "sounds/countdown.ogg");
         this.load.audio("menu_switch", "sounds/menu_switch.ogg");
@@ -194,10 +195,10 @@ class ABCRacePlayScene extends Phaser.Scene {
         while (boxes.length < columns * rows)
             boxes.push(undefined);
         shuffle(boxes);
-        const timerHeight = 200;
-        const timerIcon = this.add.image(100, 100, "timer").setOrigin(0, 0);
-        this.timerText = this.add.text(200, 100, "00:00.00").setOrigin(0, 0);
-        this.timerText.setFontFamily("\"Fontdiner Swanky\"");
+        const timerHeight = 100;
+        const timer = this.add.sprite(20, 20, "timer").setOrigin(0, 0);
+        this.timerText = this.add.text(80, 20, "00:00.00").setOrigin(0, 0);
+        this.timerText.setFontFamily("Orbitron");
         this.timerText.setFontSize(60);
         this.timerText.setColor("#000000");
         const columnWidth = ABCRace.WIDTH / columns;
@@ -361,25 +362,51 @@ class ABCRaceResultsScene extends Phaser.Scene {
         super({ key: ABCRaceResultsScene.Key });
     }
     create() {
-        const timerHeight = 200;
-        const timerIcon = this.add.image(100, 100, "timer").setOrigin(0, 0);
+        const logo = this.add.sprite(20, 80, "logo").setOrigin(0, 0);
+        logo.setAlpha(0.1);
         const secondsElapsed = ((this.timeElapsed / 1000) % 60).toFixed(2).padStart(5, "0");
         const minutesElapsed = Math.floor(this.timeElapsed / 1000 / 60).toString().padStart(2, "0");
-        const timerText = this.add.text(200, 100, `Time: ${minutesElapsed}:${secondsElapsed}`).setOrigin(0, 0);
-        timerText.setFontFamily("\"Fontdiner Swanky\"");
+        const timerText = this.add.text(20, 50, `Elapsed: ${minutesElapsed}:${secondsElapsed}`).setOrigin(0, 0);
+        timerText.setAlpha(0.5);
+        timerText.setFontFamily("Orbitron");
         timerText.setFontSize(60);
         timerText.setColor("#000000");
-        const mistakesText = this.add.text(200, 250, `Mistakes: ${this.numMistakes}`).setOrigin(0, 0);
-        mistakesText.setFontFamily("\"Fontdiner Swanky\"");
+        const mistakesText = this.add.text(20, 150, `Mistakes: ${this.numMistakes}`).setOrigin(0, 0);
+        mistakesText.setAlpha(0.5);
+        mistakesText.setFontFamily("Orbitron");
         mistakesText.setFontSize(60);
         mistakesText.setColor("#FF0000");
         const mistakesElapsed = this.timeElapsed + (this.numMistakes * 1000);
         const secondsElapsedM = ((mistakesElapsed / 1000) % 60).toFixed(2).padStart(5, "0");
         const minutesElapsedM = Math.floor(mistakesElapsed / 1000 / 60).toString().padStart(2, "0");
-        const timerTextM = this.add.text(200, 400, `Time: ${minutesElapsedM}:${secondsElapsedM}`).setOrigin(0, 0);
-        timerTextM.setFontFamily("\"Fontdiner Swanky\"");
+        const timerTextM = this.add.text(20, 250, `Total: ${minutesElapsedM}:${secondsElapsedM}`).setOrigin(0, 0);
+        timerTextM.setFontFamily("Orbitron");
         timerTextM.setFontSize(60);
         timerTextM.setColor("#000000");
+        const menuButton = new BasicButton({
+            "key": "menu_buttons",
+            "scene": this,
+            "x": 95,
+            "y": 380
+        });
+        menuButton.setAlpha(0);
+        menuButton.setInteractive();
+        menuButton.on("pointerup", () => {
+            this.scene.start(ABCRaceMenuScene.Key);
+        });
+        menuButton.disableInteractive();
+        this.tweens.addCounter({
+            duration: 500,
+            ease: Phaser.Math.Easing.Sine.InOut,
+            from: 0,
+            onUpdate: (tween) => {
+                const value = tween.getValue();
+                menuButton.setAlpha(value / 100);
+                if (value == 100)
+                    menuButton.setInteractive();
+            },
+            to: 100,
+        });
     }
     init(data) {
         this.numMistakes = data.numMistakes;
