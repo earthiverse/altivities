@@ -105,7 +105,7 @@ class ABCRaceMenuScene extends Phaser.Scene {
         super({ key: ABCRaceMenuScene.Key });
     }
     create() {
-        const logo = this.add.sprite(0, 0, "logo").setOrigin(0, 0);
+        this.add.sprite(0, 0, "logo").setOrigin(0, 0);
         this.sound.play("menu_bgm", {
             loop: true,
             volume: 0.5
@@ -223,11 +223,15 @@ class ABCRacePlayScene extends Phaser.Scene {
             const rotation = getRandomNumber(-15, 15) * (Math.PI / 180);
             letterSprite.setRotation(rotation);
             letterSprite.setInteractive();
+            const maxLength = Math.max(letterSprite.width, letterSprite.height);
+            letterSprite.input.hitArea.setTo(-(maxLength - letterSprite.width) / 2, -(maxLength - letterSprite.height) / 2, maxLength, maxLength);
             letterSprite.on("pointerdown", () => {
                 const hit = letterSprite.texture.key;
                 const target = this.letters[this.currentLetter];
                 window.speechSynthesis.cancel();
-                window.speechSynthesis.speak(new SpeechSynthesisUtterance(hit));
+                const utterance = new SpeechSynthesisUtterance(hit);
+                utterance.lang = "en-US";
+                window.speechSynthesis.speak(utterance);
                 if (target == hit) {
                     letterSprite.removeInteractive();
                     this.tweens.add({

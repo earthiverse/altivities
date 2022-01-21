@@ -166,7 +166,7 @@ class ABCRaceMenuScene extends Phaser.Scene {
     }
 
     create() {
-        const logo = this.add.sprite(0, 0, "logo").setOrigin(0, 0)
+        this.add.sprite(0, 0, "logo").setOrigin(0, 0)
 
         this.sound.play("menu_bgm", {
             loop: true,
@@ -313,11 +313,18 @@ class ABCRacePlayScene extends Phaser.Scene {
             letterSprite.setRotation(rotation)
 
             letterSprite.setInteractive()
+
+            // Make the hit area larger to make letters like 'i' and 'l' easier to hit.
+            const maxLength = Math.max(letterSprite.width, letterSprite.height)
+            letterSprite.input.hitArea.setTo(-(maxLength - letterSprite.width) / 2, -(maxLength - letterSprite.height) / 2, maxLength, maxLength)
+
             letterSprite.on("pointerdown", () => {
                 const hit = letterSprite.texture.key
                 const target = this.letters[this.currentLetter]
                 window.speechSynthesis.cancel()
-                window.speechSynthesis.speak(new SpeechSynthesisUtterance(hit))
+                const utterance = new SpeechSynthesisUtterance(hit)
+                utterance.lang = "en-US"
+                window.speechSynthesis.speak(utterance)
 
                 if (target == hit) {
                     // They hit the correct letter
