@@ -76,6 +76,20 @@ class ABCRaceLoadScene extends Phaser.Scene {
         this.scene.start(ABCRaceMenuScene.Key);
     }
     preload() {
+        const loadingText = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 2 - 50, "Loading...");
+        loadingText.setOrigin(0.5, 0.5);
+        loadingText.setColor("#000000");
+        loadingText.setFontFamily("Arial");
+        loadingText.setFontSize(30);
+        this.loadingBack = this.add.graphics();
+        this.loadingBack.fillStyle(0x000000, 1);
+        this.loadingBack.fillRect(240, 270, 320, 50);
+        this.loadingFill = this.add.graphics();
+        this.load.on("progress", (value) => {
+            this.loadingFill.clear();
+            this.loadingFill.fillStyle(0xC4DF9B, 1);
+            this.loadingFill.fillRect(250, 280, 300 * value, 30);
+        });
         for (const letter of ABCRace.LowercaseLetters)
             this.load.image(letter, `images/lower/${letter}.svg`);
         for (const letter of ABCRace.UppercaseLetters)
