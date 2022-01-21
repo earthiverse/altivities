@@ -13,6 +13,7 @@ type PlayData = {
 }
 
 type ResultsData = {
+    mode: string
     numMistakes: number
     timeElapsed: number
 }
@@ -151,6 +152,7 @@ class ABCRaceLoadScene extends Phaser.Scene {
         this.load.audio("ng", "sounds/ng.ogg")
         this.load.audio("ok", "sounds/ok.ogg")
         this.load.audio("start", "sounds/start.ogg")
+        this.load.audio("finish", "sounds/finish.wav")
 
         // Load Google Fonts
         this.load.script("webfont", "//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js")
@@ -166,7 +168,10 @@ class ABCRaceMenuScene extends Phaser.Scene {
     create() {
         const logo = this.add.sprite(0, 0, "logo").setOrigin(0, 0)
 
-        this.sound.play("menu_bgm", { loop: true })
+        this.sound.play("menu_bgm", {
+            loop: true,
+            volume: 0.5
+        })
 
         const lowercaseButton = new BasicButton({
             "key": "lowercase_buttons",
@@ -248,6 +253,7 @@ class ABCRacePlayScene extends Phaser.Scene {
     private countdownImage: Phaser.GameObjects.Sprite
     private countdownImageI: number
     private letters: string[]
+    private mode: string
     private currentLetter
     private lastCorrect: Phaser.GameObjects.Sprite
     private sprites: Phaser.GameObjects.Sprite[]
@@ -280,7 +286,8 @@ class ABCRacePlayScene extends Phaser.Scene {
         shuffle(boxes)
 
         const timerHeight = 100
-        const timer = this.add.sprite(20, 20, "timer").setOrigin(0, 0)
+        const timer = this.add.sprite(20, 25, "timer").setOrigin(0, 0)
+        timer.setScale(60 / timer.height)
         this.timerText = this.add.text(80, 20, "00:00.00").setOrigin(0, 0)
         this.timerText.setFontFamily("Orbitron")
         this.timerText.setFontSize(60)
@@ -309,6 +316,8 @@ class ABCRacePlayScene extends Phaser.Scene {
             letterSprite.on("pointerdown", () => {
                 const hit = letterSprite.texture.key
                 const target = this.letters[this.currentLetter]
+                window.speechSynthesis.cancel()
+                window.speechSynthesis.speak(new SpeechSynthesisUtterance(hit))
 
                 if (target == hit) {
                     // They hit the correct letter
@@ -361,8 +370,11 @@ class ABCRacePlayScene extends Phaser.Scene {
                     this.lastCorrect = letterSprite
 
                     if (this.currentLetter == 26) {
-                        // TODO: Add a game end screen
+                        this.sound.play("finish", {
+                            volume: 0.5
+                        })
                         this.scene.start(ABCRaceResultsScene.Key, {
+                            mode: this.mode,
                             numMistakes: this.numMistakes,
                             timeElapsed: Date.now() - this.startTime
                         })
@@ -396,6 +408,7 @@ class ABCRacePlayScene extends Phaser.Scene {
         this.numMistakesConcurrent = 0
 
         // Setup Mode
+        this.mode = data.mode
         switch (data.mode) {
             case "lowercase": {
                 this.letters = ABCRace.LowercaseLetters
@@ -473,6 +486,7 @@ class ABCRacePlayScene extends Phaser.Scene {
 class ABCRaceResultsScene extends Phaser.Scene {
     static Key = "RESULTS"
 
+    private mode: string
     private numMistakes: number
     private timeElapsed: number
 
@@ -486,26 +500,32 @@ class ABCRaceResultsScene extends Phaser.Scene {
         const logo = this.add.sprite(20, 80, "logo").setOrigin(0, 0)
         logo.setAlpha(0.1)
 
+        const modeText = this.add.text(20, 50, `Mode: ${this.mode}`).setOrigin(0, 0)
+        modeText.setFontFamily("Orbitron")
+        modeText.setFontSize(60)
+        modeText.setColor("#000000")
+
         const secondsElapsed = ((this.timeElapsed / 1000) % 60).toFixed(2).padStart(5, "0")
         const minutesElapsed = Math.floor(this.timeElapsed / 1000 / 60).toString().padStart(2, "0")
-        const timerText = this.add.text(20, 50, `Elapsed: ${minutesElapsed}:${secondsElapsed}`).setOrigin(0, 0)
-        timerText.setAlpha(0.5)
+        const timerText = this.add.text(20, 110, `Elapsed: ${minutesElapsed}:${secondsElapsed}`).setOrigin(0, 0)
         timerText.setFontFamily("Orbitron")
         timerText.setFontSize(60)
-        timerText.setColor("#000000")
+        timerText.setColor("#333333")
 
-        const mistakesText = this.add.text(20, 150, `Mistakes: ${this.numMistakes}`).setOrigin(0, 0)
-        mistakesText.setAlpha(0.5)
+        const mistakesText = this.add.text(20, 170, `Mistakes: ${this.numMistakes}`).setOrigin(0, 0)
         mistakesText.setFontFamily("Orbitron")
         mistakesText.setFontSize(60)
-        mistakesText.setColor("#FF0000")
+        mistakesText.setColor("#F94C56")
 
         const mistakesElapsed = this.timeElapsed + (this.numMistakes * 1000)
         const secondsElapsedM = ((mistakesElapsed / 1000) % 60).toFixed(2).padStart(5, "0")
         const minutesElapsedM = Math.floor(mistakesElapsed / 1000 / 60).toString().padStart(2, "0")
-        const timerTextM = this.add.text(20, 250, `Total: ${minutesElapsedM}:${secondsElapsedM}`).setOrigin(0, 0)
+        const timerTextM = this.add.text(20, 230, `Total: ${minutesElapsedM}:${secondsElapsedM}`).setOrigin(0, 0)
         timerTextM.setFontFamily("Orbitron")
-        timerTextM.setFontSize(60)
+        timerTextM.setFontSize(80)
+        timerTextM.setStyle({
+            fontWeight: "bold"
+        })
         timerTextM.setColor("#000000")
 
         const menuButton = new BasicButton({
@@ -535,6 +555,7 @@ class ABCRaceResultsScene extends Phaser.Scene {
 
     init(data: ResultsData) {
         // Set Variables
+        this.mode = data.mode
         this.numMistakes = data.numMistakes
         this.timeElapsed = data.timeElapsed
     }

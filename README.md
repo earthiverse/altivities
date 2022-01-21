@@ -19,7 +19,6 @@ A simple game where you can build a parfait. Works well for an activity for `Let
 
 View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/pizza).
 
-
 ### ABC Race
 
 <https://earthiverse.github.io/altivities/abcrace/>
