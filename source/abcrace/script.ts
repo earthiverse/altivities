@@ -165,15 +165,15 @@ class ABCRaceLoadScene extends Phaser.Scene {
         // Load Music
         // Of Far Different Nature - Summer House [v2]
         // https://fardifferent.itch.io/loops
-        this.load.audio("menu_bgm", "sounds/menu_bgm.ogg")
+        this.load.audio("menu_bgm", "sounds/menu_bgm.mp3")
 
         // Load Sounds
-        this.load.audio("countdown", "sounds/countdown.ogg")
-        this.load.audio("menu_switch", "sounds/menu_switch.ogg")
-        this.load.audio("ng", "sounds/ng.ogg")
-        this.load.audio("ok", "sounds/ok.ogg")
-        this.load.audio("start", "sounds/start.ogg")
-        this.load.audio("finish", "sounds/finish.wav")
+        this.load.audio("countdown", "sounds/countdown.mp3")
+        this.load.audio("menu_switch", "sounds/menu_switch.mp3")
+        this.load.audio("ng", "sounds/ng.mp3")
+        this.load.audio("ok", "sounds/ok.mp3")
+        this.load.audio("start", "sounds/start.mp3")
+        this.load.audio("finish", "sounds/finish.mp3")
 
         // Load Google Fonts
         this.load.script("webfont", "//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js")
