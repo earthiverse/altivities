@@ -4,7 +4,7 @@
   "description": "Activities & games for teaching as an ALT",
   "main": "docs/index.js",
   "scripts": {
-    "build": "tsc && copyfiles --up 1 source/**/*.css source/**/*.html source/**/*.mp3 source/**/*.png source/**/*.svg docs",
+    "build": "tsc && copyfiles --up 1 source/**/*.css source/**/*.docx source/**/*.html source/**/*.mp3 source/**/*.pdf source/**/*.png source/**/*.svg docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
