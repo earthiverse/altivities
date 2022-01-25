@@ -603,7 +603,8 @@ class ABCRace {
             height: ABCRace.HEIGHT,
             scale: {
                 autoCenter: Phaser.Scale.CENTER_BOTH,
-                mode: Phaser.Scale.ScaleModes.FIT
+                mode: Phaser.Scale.ScaleModes.FIT,
+                parent: "game"
             },
             scene: [ABCRaceLoadScene, ABCRaceMenuScene, ABCRacePlayScene, ABCRaceResultsScene],
             type: Phaser.AUTO,
