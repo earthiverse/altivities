@@ -168,6 +168,7 @@ class ABCRaceLoadScene extends Phaser.Scene {
         this.load.audio("menu_bgm", "sounds/menu_bgm.mp3")
 
         // Load Sounds
+        for (const letter of ABCRace.LowercaseLetters) this.load.audio(`${letter}_f`, `sounds/${letter}_f.mp3`)
         this.load.audio("countdown", "sounds/countdown.mp3")
         this.load.audio("menu_switch", "sounds/menu_switch.mp3")
         this.load.audio("ng", "sounds/ng.mp3")
@@ -342,10 +343,9 @@ class ABCRacePlayScene extends Phaser.Scene {
             letterSprite.on("pointerdown", () => {
                 const hit = letterSprite.texture.key
                 const target = this.letters[this.currentLetter]
-                window.speechSynthesis.cancel()
-                const utterance = new SpeechSynthesisUtterance(hit)
-                utterance.lang = "en-US"
-                window.speechSynthesis.speak(utterance)
+
+                // Play the letter sound
+                this.sound.play(`${hit.toLowerCase()}_f`)
 
                 if (target == hit) {
                     // They hit the correct letter

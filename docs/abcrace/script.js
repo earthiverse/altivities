@@ -104,6 +104,8 @@ class ABCRaceLoadScene extends Phaser.Scene {
         this.load.spritesheet("start_buttons", "images/start_buttons.png", { frameHeight: 210, frameWidth: 610 });
         this.load.spritesheet("menu_buttons", "images/menu_buttons.png", { frameHeight: 210, frameWidth: 610 });
         this.load.audio("menu_bgm", "sounds/menu_bgm.mp3");
+        for (const letter of ABCRace.LowercaseLetters)
+            this.load.audio(`${letter}_f`, `sounds/${letter}_f.mp3`);
         this.load.audio("countdown", "sounds/countdown.mp3");
         this.load.audio("menu_switch", "sounds/menu_switch.mp3");
         this.load.audio("ng", "sounds/ng.mp3");
@@ -242,10 +244,7 @@ class ABCRacePlayScene extends Phaser.Scene {
             letterSprite.on("pointerdown", () => {
                 const hit = letterSprite.texture.key;
                 const target = this.letters[this.currentLetter];
-                window.speechSynthesis.cancel();
-                const utterance = new SpeechSynthesisUtterance(hit);
-                utterance.lang = "en-US";
-                window.speechSynthesis.speak(utterance);
+                this.sound.play(`${hit.toLowerCase()}_f`);
                 if (target == hit) {
                     letterSprite.removeInteractive();
                     this.tweens.add({
