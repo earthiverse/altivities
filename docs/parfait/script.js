@@ -68,7 +68,7 @@ class ParfaitGameLoadScene extends Phaser.Scene {
         this.loadingFill = this.add.graphics();
         this.load.on("progress", (value) => {
             this.loadingFill.clear();
-            this.loadingFill.fillStyle(0x00AEEF, 1);
+            this.loadingFill.fillStyle(ParfaitGameLoadScene.LOAD_BAR_COLOR, 1);
             this.loadingFill.fillRect(250, 280, 300 * value, 30);
         });
         for (const fruit of FRUITS)
@@ -80,6 +80,7 @@ class ParfaitGameLoadScene extends Phaser.Scene {
     }
 }
 ParfaitGameLoadScene.Key = "LOAD";
+ParfaitGameLoadScene.LOAD_BAR_COLOR = 0x00AEEF;
 class ParfaitGamePlayScene extends Phaser.Scene {
     constructor() {
         super({ key: ParfaitGamePlayScene.Key });
@@ -133,7 +134,7 @@ class ParfaitGamePlayScene extends Phaser.Scene {
         const rightButton = new uiWidgets.Button(this, x + spacing + 60, y, "right", () => { wheel.moveForward(); }, null);
         const newRatioRight = 100 / leftButton.height;
         rightButton.setDisplaySize(newRatioRight * rightButton.width, newRatioRight * rightButton.height);
-        this.input.on("drag", (pointer, draggingObject, dragX, dragY) => {
+        this.input.on("drag", (_pointer, draggingObject, dragX, dragY) => {
             console.log("dragging!");
             for (const item of this.items) {
                 item.setDepth(0);

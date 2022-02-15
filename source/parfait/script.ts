@@ -54,6 +54,7 @@ function randomIntFromInterval(min, max) {
 
 class ParfaitGameLoadScene extends Phaser.Scene {
     static Key = "LOAD"
+    static LOAD_BAR_COLOR = 0x00AEEF
 
     private loadingBack: Phaser.GameObjects.Graphics
     private loadingFill: Phaser.GameObjects.Graphics
@@ -80,7 +81,7 @@ class ParfaitGameLoadScene extends Phaser.Scene {
         this.loadingFill = this.add.graphics()
         this.load.on("progress", (value) => {
             this.loadingFill.clear()
-            this.loadingFill.fillStyle(0x00AEEF, 1)
+            this.loadingFill.fillStyle(ParfaitGameLoadScene.LOAD_BAR_COLOR, 1)
             this.loadingFill.fillRect(250, 280, 300 * value, 30)
         })
 
@@ -183,7 +184,7 @@ class ParfaitGamePlayScene extends Phaser.Scene {
         rightButton.setDisplaySize(newRatioRight * rightButton.width, newRatioRight * rightButton.height)
 
         // Setup Draggable Logic
-        this.input.on("drag", (pointer, draggingObject: Phaser.GameObjects.Sprite, dragX, dragY) => {
+        this.input.on("drag", (_pointer, draggingObject: Phaser.GameObjects.Sprite, dragX, dragY) => {
             console.log("dragging!")
             for (const item of this.items) {
                 item.setDepth(0)

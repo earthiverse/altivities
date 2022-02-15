@@ -3,48 +3,48 @@ const TOPPINGS: {
     file: string
 }[] = [
     {
-        name: "corn",
-        file: "images/corn.png"
+        file: "images/corn.png",
+        name: "corn"
     },
     {
-        name: "green pepper",
-        file: "images/green pepper.png"
+        file: "images/green pepper.png",
+        name: "green pepper"
     },
     {
-        name: "mushroom",
-        file: "images/mushroom.png"
+        file: "images/mushroom.png",
+        name: "mushroom"
     },
     {
-        name: "pineapple",
-        file: "images/pineapple.png"
+        file: "images/pineapple.png",
+        name: "pineapple"
     },
     {
-        name: "tomato",
-        file: "images/tomato.png"
+        file: "images/tomato.png",
+        name: "tomato"
     },
     {
-        name: "onion",
-        file: "images/onion.png"
+        file: "images/onion.png",
+        name: "onion"
     },
     {
-        name: "broccoli",
-        file: "images/broccoli.png"
+        file: "images/broccoli.png",
+        name: "broccoli"
     },
     {
-        name: "potato",
-        file: "images/potato.png"
+        file: "images/potato.png",
+        name: "potato"
     },
     {
-        name: "sausage",
-        file: "images/sausage.png"
+        file: "images/sausage.png",
+        name: "sausage"
     },
     {
-        name: "bacon",
-        file: "images/bacon.png"
+        file: "images/bacon.png",
+        name: "bacon"
     },
     {
-        name: "shrimp",
-        file: "images/shrimp.png"
+        file: "images/shrimp.png",
+        name: "shrimp"
     }
 ]
 
@@ -52,33 +52,42 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-class PizzaGame {
-    game: Phaser.Game
-    static items: Phaser.GameObjects.Sprite[] = []
+
+class PizzaGameLoadScene extends Phaser.Scene {
+    static Key = "LOAD"
+    static LOAD_BAR_COLOR = 0xAC7849
+
+    private loadingBack: Phaser.GameObjects.Graphics
+    private loadingFill: Phaser.GameObjects.Graphics
 
     constructor() {
-        this.game = new Phaser.Game({
-            backgroundColor: 0xFFFFFF,
-            height: 600,
-            scale: {
-                autoCenter: Phaser.Scale.CENTER_BOTH,
-                mode: Phaser.Scale.ScaleModes.FIT,
-                parent: "game"
-            },
-            scene: {
-                create: this.create,
-                preload: this.preload
-            },
-            type: Phaser.AUTO,
-            width: 800
-        })
+        super({ key: PizzaGameLoadScene.Key })
     }
 
-    preload(this: Phaser.Scene) {
+    create() {
+        this.scene.start(PizzaGamePlayScene.Key)
+    }
+
+    preload() {
+        const loadingText = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 2 - 50, "Loading...")
+        loadingText.setOrigin(0.5, 0.5)
+        loadingText.setColor("#000000")
+        loadingText.setFontFamily("Arial")
+        loadingText.setFontSize(30)
+
+        this.loadingBack = this.add.graphics()
+        this.loadingBack.fillStyle(0x000000, 1)
+        this.loadingBack.fillRect(240, 270, 320, 50)
+
+        this.loadingFill = this.add.graphics()
+        this.load.on("progress", (value) => {
+            this.loadingFill.clear()
+            this.loadingFill.fillStyle(PizzaGameLoadScene.LOAD_BAR_COLOR, 1)
+            this.loadingFill.fillRect(250, 280, 300 * value, 30)
+        })
+
         // Load topping images
-        for (const topping of TOPPINGS) {
-            this.load.image(topping.name, topping.file)
-        }
+        for (const topping of TOPPINGS) this.load.image(topping.name, topping.file)
 
         // Load pizza
         this.load.image("pizza", "images/pizza.png")
@@ -87,9 +96,18 @@ class PizzaGame {
         this.load.image("left", "images/left.png")
         this.load.image("right", "images/right.png")
     }
+}
 
-    create(this: Phaser.Scene) {
-        // Create Pizza
+class PizzaGamePlayScene extends Phaser.Scene {
+    static Key = "PLAY"
+
+    private items: Phaser.GameObjects.Sprite[] = []
+
+    constructor() {
+        super({ key: PizzaGamePlayScene.Key })
+    }
+
+    create() { // Create Pizza
         const pizza = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY - 65, "pizza")
         pizza.setDepth(-100)
         const newRatioPizza = 400 / pizza.height
@@ -117,21 +135,11 @@ class PizzaGame {
                 newSprite.setRotation(randomAngle)
                 newSprite.setInteractive()
                 newSprite.setActive(true)
-                PizzaGame.items.push(newSprite)
+                this.items.push(newSprite)
                 this.input.setDraggable(newSprite)
             })
             toppingSprites.push(sprite)
         }
-        // Setup Draggable Logic
-        this.input.on("drag", (pointer, draggingObject: Phaser.GameObjects.Sprite, dragX, dragY) => {
-            console.log("dragging!")
-            for (const item of PizzaGame.items) {
-                item.setDepth(0)
-            }
-            draggingObject.setDepth(1)
-            draggingObject.x = dragX
-            draggingObject.y = dragY
-        })
         const wheel = new uiWidgets.Wheel3D(
             this,
             { x: x, y: y - spacing },
@@ -170,6 +178,43 @@ class PizzaGame {
         )
         const newRatioRight = 100 / leftButton.height
         rightButton.setDisplaySize(newRatioRight * rightButton.width, newRatioRight * rightButton.height)
+
+        // Setup Draggable Logic
+        this.input.on("drag", (_pointer, draggingObject: Phaser.GameObjects.Sprite, dragX, dragY) => {
+            for (const item of this.items) {
+                item.setDepth(0)
+            }
+            draggingObject.setDepth(1)
+            draggingObject.x = dragX
+            draggingObject.y = dragY
+        })
+    }
+
+    init() {
+        // Reset Variables
+        this.items = []
+    }
+}
+
+class PizzaGame {
+    static WIDTH = 800
+    static HEIGHT = 600
+
+    game: Phaser.Game
+
+    constructor() {
+        this.game = new Phaser.Game({
+            backgroundColor: 0xFFFFFF,
+            height: PizzaGame.HEIGHT,
+            scale: {
+                autoCenter: Phaser.Scale.CENTER_BOTH,
+                mode: Phaser.Scale.ScaleModes.FIT,
+                parent: "game"
+            },
+            scene: [PizzaGameLoadScene, PizzaGamePlayScene],
+            type: Phaser.AUTO,
+            width: PizzaGame.WIDTH
+        })
     }
 }
 

@@ -2,78 +2,88 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const TOPPINGS = [
     {
-        name: "corn",
-        file: "images/corn.png"
+        file: "images/corn.png",
+        name: "corn"
     },
     {
-        name: "green pepper",
-        file: "images/green pepper.png"
+        file: "images/green pepper.png",
+        name: "green pepper"
     },
     {
-        name: "mushroom",
-        file: "images/mushroom.png"
+        file: "images/mushroom.png",
+        name: "mushroom"
     },
     {
-        name: "pineapple",
-        file: "images/pineapple.png"
+        file: "images/pineapple.png",
+        name: "pineapple"
     },
     {
-        name: "tomato",
-        file: "images/tomato.png"
+        file: "images/tomato.png",
+        name: "tomato"
     },
     {
-        name: "onion",
-        file: "images/onion.png"
+        file: "images/onion.png",
+        name: "onion"
     },
     {
-        name: "broccoli",
-        file: "images/broccoli.png"
+        file: "images/broccoli.png",
+        name: "broccoli"
     },
     {
-        name: "potato",
-        file: "images/potato.png"
+        file: "images/potato.png",
+        name: "potato"
     },
     {
-        name: "sausage",
-        file: "images/sausage.png"
+        file: "images/sausage.png",
+        name: "sausage"
     },
     {
-        name: "bacon",
-        file: "images/bacon.png"
+        file: "images/bacon.png",
+        name: "bacon"
     },
     {
-        name: "shrimp",
-        file: "images/shrimp.png"
+        file: "images/shrimp.png",
+        name: "shrimp"
     }
 ];
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-class PizzaGame {
+class PizzaGameLoadScene extends Phaser.Scene {
     constructor() {
-        this.game = new Phaser.Game({
-            backgroundColor: 0xFFFFFF,
-            height: 600,
-            scale: {
-                autoCenter: Phaser.Scale.CENTER_BOTH,
-                mode: Phaser.Scale.ScaleModes.FIT,
-                parent: "game"
-            },
-            scene: {
-                create: this.create,
-                preload: this.preload
-            },
-            type: Phaser.AUTO,
-            width: 800
-        });
+        super({ key: PizzaGameLoadScene.Key });
+    }
+    create() {
+        this.scene.start(PizzaGamePlayScene.Key);
     }
     preload() {
-        for (const topping of TOPPINGS) {
+        const loadingText = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 2 - 50, "Loading...");
+        loadingText.setOrigin(0.5, 0.5);
+        loadingText.setColor("#000000");
+        loadingText.setFontFamily("Arial");
+        loadingText.setFontSize(30);
+        this.loadingBack = this.add.graphics();
+        this.loadingBack.fillStyle(0x000000, 1);
+        this.loadingBack.fillRect(240, 270, 320, 50);
+        this.loadingFill = this.add.graphics();
+        this.load.on("progress", (value) => {
+            this.loadingFill.clear();
+            this.loadingFill.fillStyle(PizzaGameLoadScene.LOAD_BAR_COLOR, 1);
+            this.loadingFill.fillRect(250, 280, 300 * value, 30);
+        });
+        for (const topping of TOPPINGS)
             this.load.image(topping.name, topping.file);
-        }
         this.load.image("pizza", "images/pizza.png");
         this.load.image("left", "images/left.png");
         this.load.image("right", "images/right.png");
+    }
+}
+PizzaGameLoadScene.Key = "LOAD";
+PizzaGameLoadScene.LOAD_BAR_COLOR = 0xAC7849;
+class PizzaGamePlayScene extends Phaser.Scene {
+    constructor() {
+        super({ key: PizzaGamePlayScene.Key });
+        this.items = [];
     }
     create() {
         const pizza = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY - 65, "pizza");
@@ -99,20 +109,11 @@ class PizzaGame {
                 newSprite.setRotation(randomAngle);
                 newSprite.setInteractive();
                 newSprite.setActive(true);
-                PizzaGame.items.push(newSprite);
+                this.items.push(newSprite);
                 this.input.setDraggable(newSprite);
             });
             toppingSprites.push(sprite);
         }
-        this.input.on("drag", (pointer, draggingObject, dragX, dragY) => {
-            console.log("dragging!");
-            for (const item of PizzaGame.items) {
-                item.setDepth(0);
-            }
-            draggingObject.setDepth(1);
-            draggingObject.x = dragX;
-            draggingObject.y = dragY;
-        });
         const wheel = new uiWidgets.Wheel3D(this, { x: x, y: y - spacing }, toppingSprites, 0, spacing, "y", { "x": 0, "y": -90, "z": 0 });
         wheel.emitter.on("start", (wheel) => {
             for (let i = 0; i < TOPPINGS.length; i++) {
@@ -129,9 +130,38 @@ class PizzaGame {
         const rightButton = new uiWidgets.Button(this, x + spacing + 60, y, "right", () => { wheel.moveForward(); }, null);
         const newRatioRight = 100 / leftButton.height;
         rightButton.setDisplaySize(newRatioRight * rightButton.width, newRatioRight * rightButton.height);
+        this.input.on("drag", (_pointer, draggingObject, dragX, dragY) => {
+            for (const item of this.items) {
+                item.setDepth(0);
+            }
+            draggingObject.setDepth(1);
+            draggingObject.x = dragX;
+            draggingObject.y = dragY;
+        });
+    }
+    init() {
+        this.items = [];
     }
 }
-PizzaGame.items = [];
+PizzaGamePlayScene.Key = "PLAY";
+class PizzaGame {
+    constructor() {
+        this.game = new Phaser.Game({
+            backgroundColor: 0xFFFFFF,
+            height: PizzaGame.HEIGHT,
+            scale: {
+                autoCenter: Phaser.Scale.CENTER_BOTH,
+                mode: Phaser.Scale.ScaleModes.FIT,
+                parent: "game"
+            },
+            scene: [PizzaGameLoadScene, PizzaGamePlayScene],
+            type: Phaser.AUTO,
+            width: PizzaGame.WIDTH
+        });
+    }
+}
+PizzaGame.WIDTH = 800;
+PizzaGame.HEIGHT = 600;
 window.onload = () => {
     new PizzaGame();
 };
