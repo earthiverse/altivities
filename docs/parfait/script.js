@@ -2,79 +2,88 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const FRUITS = [
     {
-        name: "ice cream",
-        file: "images/ice cream.png"
+        file: "images/ice cream.png",
+        name: "ice cream"
     },
     {
-        name: "chocolate ice cream",
-        file: "images/ice cream chocolate.png"
+        file: "images/ice cream chocolate.png",
+        name: "chocolate ice cream"
     },
     {
-        name: "apple",
-        file: "images/apple.png"
+        file: "images/apple.png",
+        name: "apple"
     },
     {
-        name: "banana",
-        file: "images/banana.png"
+        file: "images/banana.png",
+        name: "banana"
     },
     {
-        name: "cherry",
-        file: "images/cherry.png"
+        file: "images/cherry.png",
+        name: "cherry"
     },
     {
-        name: "kiwi fruit",
-        file: "images/kiwi fruit.png"
+        file: "images/kiwi fruit.png",
+        name: "kiwi fruit"
     },
     {
-        name: "melon",
-        file: "images/melon.png"
+        file: "images/melon.png",
+        name: "melon"
     },
     {
-        name: "orange",
-        file: "images/orange.png"
+        file: "images/orange.png",
+        name: "orange"
     },
     {
-        name: "peach",
-        file: "images/peach.png"
+        file: "images/peach.png",
+        name: "peach"
     },
     {
-        name: "pineapple",
-        file: "images/pineapple.png"
+        file: "images/pineapple.png",
+        name: "pineapple"
     },
     {
-        name: "strawberry",
-        file: "images/strawberry.png"
+        file: "images/strawberry.png",
+        name: "strawberry"
     }
 ];
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-class ParfaitGame {
+class ParfaitGameLoadScene extends Phaser.Scene {
     constructor() {
-        this.game = new Phaser.Game({
-            backgroundColor: 0xFFFFFF,
-            height: 600,
-            scale: {
-                autoCenter: Phaser.Scale.CENTER_BOTH,
-                mode: Phaser.Scale.ScaleModes.FIT,
-                parent: "game"
-            },
-            scene: {
-                create: this.create,
-                preload: this.preload
-            },
-            type: Phaser.AUTO,
-            width: 800
-        });
+        super({ key: ParfaitGameLoadScene.Key });
+    }
+    create() {
+        this.scene.start(ParfaitGamePlayScene.Key);
     }
     preload() {
-        for (const fruit of FRUITS) {
+        const loadingText = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 2 - 50, "Loading...");
+        loadingText.setOrigin(0.5, 0.5);
+        loadingText.setColor("#000000");
+        loadingText.setFontFamily("Arial");
+        loadingText.setFontSize(30);
+        this.loadingBack = this.add.graphics();
+        this.loadingBack.fillStyle(0x000000, 1);
+        this.loadingBack.fillRect(240, 270, 320, 50);
+        this.loadingFill = this.add.graphics();
+        this.load.on("progress", (value) => {
+            this.loadingFill.clear();
+            this.loadingFill.fillStyle(0x00AEEF, 1);
+            this.loadingFill.fillRect(250, 280, 300 * value, 30);
+        });
+        for (const fruit of FRUITS)
             this.load.image(fruit.name, fruit.file);
-        }
         this.load.image("glass_back", "images/glass_back.png");
         this.load.image("glass_front", "images/glass_front.png");
         this.load.image("left", "images/left.png");
         this.load.image("right", "images/right.png");
+    }
+}
+ParfaitGameLoadScene.Key = "LOAD";
+class ParfaitGamePlayScene extends Phaser.Scene {
+    constructor() {
+        super({ key: ParfaitGamePlayScene.Key });
+        this.items = [];
     }
     create() {
         const glassBack = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + 50, "glass_back");
@@ -94,7 +103,7 @@ class ParfaitGame {
             const newRatio = 100 / sprite.height;
             sprite.setDisplaySize(newRatio * sprite.width, newRatio * sprite.height);
             sprite.on("pointerdown", () => {
-                const offsetY = ParfaitGame.items.length * 5;
+                const offsetY = this.items.length * 5;
                 const randomX = randomIntFromInterval(-40, 40);
                 const randomSize = randomIntFromInterval(8, 12) / 10;
                 const randomAngle = randomIntFromInterval(-45, 45) * (Math.PI / 180);
@@ -103,20 +112,11 @@ class ParfaitGame {
                 newSprite.setRotation(randomAngle);
                 newSprite.setInteractive();
                 newSprite.setActive(true);
-                ParfaitGame.items.push(newSprite);
+                this.items.push(newSprite);
                 this.input.setDraggable(newSprite);
             });
             fruitSprites.push(sprite);
         }
-        this.input.on("drag", (pointer, draggingObject, dragX, dragY) => {
-            console.log("dragging!");
-            for (const item of ParfaitGame.items) {
-                item.setDepth(0);
-            }
-            draggingObject.setDepth(1);
-            draggingObject.x = dragX;
-            draggingObject.y = dragY;
-        });
         const wheel = new uiWidgets.Wheel3D(this, { x: x, y: y - spacing }, fruitSprites, 0, spacing, "y", { "x": 0, "y": -90, "z": 0 });
         wheel.emitter.on("start", (wheel) => {
             for (let i = 0; i < FRUITS.length; i++) {
@@ -133,9 +133,39 @@ class ParfaitGame {
         const rightButton = new uiWidgets.Button(this, x + spacing + 60, y, "right", () => { wheel.moveForward(); }, null);
         const newRatioRight = 100 / leftButton.height;
         rightButton.setDisplaySize(newRatioRight * rightButton.width, newRatioRight * rightButton.height);
+        this.input.on("drag", (pointer, draggingObject, dragX, dragY) => {
+            console.log("dragging!");
+            for (const item of this.items) {
+                item.setDepth(0);
+            }
+            draggingObject.setDepth(1);
+            draggingObject.x = dragX;
+            draggingObject.y = dragY;
+        });
+    }
+    init() {
+        this.items = [];
     }
 }
-ParfaitGame.items = [];
+ParfaitGamePlayScene.Key = "PLAY";
+class ParfaitGame {
+    constructor() {
+        this.game = new Phaser.Game({
+            backgroundColor: 0xFFFFFF,
+            height: ParfaitGame.HEIGHT,
+            scale: {
+                autoCenter: Phaser.Scale.CENTER_BOTH,
+                mode: Phaser.Scale.ScaleModes.FIT,
+                parent: "game"
+            },
+            scene: [ParfaitGameLoadScene, ParfaitGamePlayScene],
+            type: Phaser.AUTO,
+            width: ParfaitGame.WIDTH
+        });
+    }
+}
+ParfaitGame.WIDTH = 800;
+ParfaitGame.HEIGHT = 600;
 window.onload = () => {
     new ParfaitGame();
 };
