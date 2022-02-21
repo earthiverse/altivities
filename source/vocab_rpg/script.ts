@@ -1,8 +1,16 @@
 /* eslint-disable sort-keys */
 
+type CharacterData = {
+    hp: number
+    attack: number
+    level: number
+    gold: number
+    xp: number
+}
+
 type GameData = {
     background: string
-    monster: string
+    monster: Monster
     wordlist: string
 }
 
@@ -36,7 +44,7 @@ type SpriteData = {
     scale?: number
 }
 
-type CharacterSprite = {
+type Character = {
     /** Name of the character.
      * NOTE: Keep all character names and monster names unique!
      */
@@ -44,12 +52,15 @@ type CharacterSprite = {
     spritesheet: SpriteData
 }
 
-type MonsterSprite = {
+type Monster = {
     /** Name of the monster.
      * NOTE: Keep all character names and monster names unique!
      */
     name: string
     spritesheet: SpriteData
+
+    attack: number
+    hp: number
 }
 
 const backgrounds: BackgroundData[] = [
@@ -59,7 +70,7 @@ const backgrounds: BackgroundData[] = [
     }
 ]
 
-const characters: CharacterSprite[] = [
+const characters: Character[] = [
     {
         name: "character1_1",
         spritesheet: {
@@ -70,16 +81,66 @@ const characters: CharacterSprite[] = [
     },
 ]
 
-const monsters: MonsterSprite[] = [
-    {
+const monsters: {[T in string]: Monster} = {
+    "goo": {
         name: "goo",
         spritesheet: {
             file: "images/monsters/goo.png",
             frameWidth: 15,
             frameHeight: 19,
-        }
+        },
+        attack: 1,
+        hp: 10
     }
-]
+}
+
+// Colors
+const WHITE = new Phaser.Display.Color(255, 255, 255)
+const RED = new Phaser.Display.Color(255, 0, 0)
+
+class CharacterSprite extends Phaser.GameObjects.Sprite implements CharacterData {
+    attack: number
+    gold: number
+    hp: number
+    level: number
+    xp: number
+
+    constructor(scene: Phaser.Scene, x: number, y: number, texture: string) {
+        super(scene, x, y, texture)
+
+        this.load()
+    }
+
+    public load() {
+        const data = localStorage.getItem("character")
+        if (data !== null) {
+            const parsedData = JSON.parse(data)
+            for (const key in parsedData) {
+                this[key] = parsedData[key]
+            }
+        }
+
+        // Create the character data if we don't have any
+        if (this.attack == undefined || this.attack < 1) this.attack = 1
+        if (this.hp == undefined || this.hp < 5) this.hp = 5
+        if (this.level == undefined || this.level < 1) this.level = 1
+        if (this.xp == undefined || this.xp < 1) this.xp = 0
+        if (this.gold == undefined || this.gold < 0) this.gold = 0
+
+        // Save
+        this.save()
+    }
+
+    public save() {
+        localStorage.setItem("character", JSON.stringify({
+            attack: this.attack,
+            gold: this.gold,
+            hp: this.hp,
+            level: this.level,
+            xp: this.level
+        }))
+    }
+}
 
 class LoadGameScene extends Phaser.Scene {
     static Key = "LOAD"
@@ -124,10 +185,10 @@ class LoadGameScene extends Phaser.Scene {
         // Start the game
         const data: GameData = {
             background: "dirt",
-            monster: "goo",
+            monster: monsters["goo"],
             wordlist: "wordlist_js5l2"
         }
-        this.scene.start(TestLayoutScene.Key, data)
+        this.scene.start(FightScene.Key, data)
     }
 
     preload() {
@@ -158,29 +219,36 @@ class LoadGameScene extends Phaser.Scene {
         for (const character of characters) this.load.spritesheet(character.name, character.spritesheet.file, character.spritesheet)
 
         // Load monsters
-        for (const monster of monsters) this.load.spritesheet(monster.name, monster.spritesheet.file, monster.spritesheet)
+        for (const monsterName in monsters) {
+            const monster = monsters[monsterName]
+            this.load.spritesheet(monsterName, monster.spritesheet.file, monster.spritesheet)
+        }
 
         // Load HTML Templates
         this.load.html("answer_input", "answer_input.html")
     }
 }
 
-class TestLayoutScene extends Phaser.Scene {
-    static Key = "PLAY"
+class FightScene extends Phaser.Scene {
+    static Key = "FIGHT"
 
     private background: string
-    private monster: string
+    private monster: Monster
     private word: Word
 
-    private characterObject: Phaser.GameObjects.Sprite
+    private characterHP: number
+    private monsterHP: number
+
+    private characterObject: CharacterSprite
     private monsterObject: Phaser.GameObjects.Sprite
+    private HPObject: Phaser.GameObjects.Graphics
     private wordObject: Phaser.GameObjects.DOMElement
 
     private enterKey: Phaser.Input.Keyboard.Key
     private wordlist: Wordlist
 
     constructor() {
-        super({ key: TestLayoutScene.Key })
+        super({ key: FightScene.Key })
     }
 
     create() {
@@ -191,12 +259,18 @@ class TestLayoutScene extends Phaser.Scene {
         this.add.sprite(x, y, this.background).setScale(4.5)
 
         // Add the monster
-        this.monsterObject = this.add.sprite(Phaser.Math.FloatBetween(x + 50, x + 150), y, this.monster).setScale(6)
+        this.monsterObject = this.add.sprite(x + 100, y + 65, this.monster.name).setScale(6)
+        this.monsterHP = this.monster.hp
         this.monsterObject.play("monster_idle")
 
         // Add the character
-        this.characterObject = this.add.sprite(x - 100, y, "character1_1").setScale(6).setFlipX(true).setDepth(1)
+        this.characterObject = new CharacterSprite(this, x - 100, y, "character1_1").setScale(6).setFlipX(true).setDepth(1)
+        this.add.existing(this.characterObject)
+        this.characterHP = this.characterObject.hp
         this.characterObject.play("character_idle_sword")
+
+        this.HPObject = this.add.graphics().setDepth(2)
+        this.updateHP()
 
         // Get a new word
         this.changeCurrentWordByIndex()
@@ -209,7 +283,35 @@ class TestLayoutScene extends Phaser.Scene {
             if (!input) return
 
             if (input !== this.word.en) {
-                // It wasn't correct
+                // Add attack animation
+                this.add.tween({
+                    duration: 250,
+                    targets: this.monsterObject,
+                    ease: "Cubic",
+                    repeat: 0,
+                    x: "-=100",
+                    yoyo: true
+                })
+                // Add damage animation
+                this.add.tween({
+                    duration: 250,
+                    targets: this.characterObject,
+                    ease: "Cubic",
+                    x: "+=0",
+                    onComplete: () => {
+                        this.characterHP -= this.monster.attack
+                        this.updateHP()
+                    },
+                    onUpdate: (tween) => {
+                        let e = tween.elapsed / (tween.duration / 2)
+                        if (e > 2) e = 0
+                        else if (e > 1) e = 2 - e
+                        const t = Phaser.Display.Color.Interpolate.ColorWithColor(WHITE, RED, 1, e)
+                        this.characterObject.tint = Phaser.Display.Color.GetColor(t.r, t.g, t.b)
+                    },
+                    repeat: 0,
+                    yoyo: true
+                })
                 this.playCharacterAnimation("character_fail")
                 return
             }
@@ -217,7 +319,7 @@ class TestLayoutScene extends Phaser.Scene {
             const checkButton = document.getElementById("check") as HTMLInputElement
             if (checkButton.disabled) return // Currently attacking
 
-            // Add attack animations
+            // Add attack animation
             this.add.tween({
                 duration: 250,
                 targets: this.characterObject,
@@ -226,20 +328,21 @@ class TestLayoutScene extends Phaser.Scene {
                 x: "+=100",
                 yoyo: true
             })
-
             // Add damage animation
-            const white = new Phaser.Display.Color(255, 255, 255)
-            const red = new Phaser.Display.Color(255, 0, 0)
             this.add.tween({
                 duration: 250,
                 targets: this.monsterObject,
                 ease: "Cubic",
                 x: "+=0",
+                onComplete: () => {
+                    this.monsterHP -= this.monster.attack
+                    this.updateHP()
+                },
                 onUpdate: (tween) => {
-                    let e = tween.elapsed / 250
+                    let e = tween.elapsed / (tween.duration / 2)
                     if (e > 2) e = 0
                     else if (e > 1) e = 2 - e
-                    const t = Phaser.Display.Color.Interpolate.ColorWithColor(white, red, 1, e)
+                    const t = Phaser.Display.Color.Interpolate.ColorWithColor(WHITE, RED, 1, e)
                     this.monsterObject.tint = Phaser.Display.Color.GetColor(t.r, t.g, t.b)
                 },
                 repeat: 0,
@@ -305,6 +408,38 @@ class TestLayoutScene extends Phaser.Scene {
 
         this.wordObject = this.add.dom(x, 30, "div", "background-color: rgba(255,255,255,0.7); width: 800px; font-family='UD デジタル 教科書体 NK-B'; font-size: 48px; text-align: center", display)
     }
+
+    private updateHP() {
+        this.HPObject.clear()
+
+        if (this.monsterHP <= 0) {
+            this.scene.start(FightScene.Key)
+            this.characterObject.xp += 1
+            this.characterObject.gold += Phaser.Math.Between(0, 2)
+            this.characterObject.save()
+            return
+        }
+
+        if (this.characterHP <= 0) {
+            this.scene.start(FightScene.Key)
+            this.characterObject.xp = Math.min(0, this.characterObject.xp - 1)
+            this.characterObject.save()
+            return
+        }
+
+        // Character HP
+        this.HPObject.fillStyle(0x000000)
+        this.HPObject.fillRect(this.characterObject.x - 50, this.characterObject.y + 130, 100, 20)
+        this.HPObject.fillStyle(0xFF0000)
+        // this.HPObject.fillRect(this.characterObject.x - 48, this.characterObject.y + 132, 96 * (this.characterHP / this.characterObject.hp), 16)
+        this.HPObject.fillRect(this.characterObject.x - 48, this.characterObject.y + 132, 96 * (this.characterHP / 5), 16)
+
+        // Monster HP
+        this.HPObject.fillStyle(0x000000)
+        this.HPObject.fillRect(this.monsterObject.x - 50, this.monsterObject.y + 65, 100, 20)
+        this.HPObject.fillStyle(0xFF0000)
+        this.HPObject.fillRect(this.monsterObject.x - 48, this.monsterObject.y + 67, 96 * (this.monsterHP / this.monster.hp), 16)
+    }
 }
 
 class VocabRPGGame {
@@ -325,7 +460,7 @@ class VocabRPGGame {
                 parent: "game"
             },
             pixelArt: true,
-            scene: [LoadGameScene, TestLayoutScene],
+            scene: [LoadGameScene, FightScene],
             type: Phaser.AUTO,
             width: VocabRPGGame.WIDTH
         })

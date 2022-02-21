@@ -16,16 +16,55 @@ const characters = [
         }
     },
 ];
-const monsters = [
-    {
+const monsters = {
+    "goo": {
         name: "goo",
         spritesheet: {
             file: "images/monsters/goo.png",
             frameWidth: 15,
             frameHeight: 19,
-        }
+        },
+        attack: 1,
+        hp: 10
     }
-];
+};
+const WHITE = new Phaser.Display.Color(255, 255, 255);
+const RED = new Phaser.Display.Color(255, 0, 0);
+class CharacterSprite extends Phaser.GameObjects.Sprite {
+    constructor(scene, x, y, texture) {
+        super(scene, x, y, texture);
+        this.load();
+    }
+    load() {
+        const data = localStorage.getItem("character");
+        if (data !== null) {
+            const parsedData = JSON.parse(data);
+            for (const key in parsedData) {
+                this[key] = parsedData[key];
+            }
+        }
+        if (this.attack == undefined || this.attack < 1)
+            this.attack = 1;
+        if (this.hp == undefined || this.hp < 5)
+            this.hp = 5;
+        if (this.level == undefined || this.level < 1)
+            this.level = 1;
+        if (this.xp == undefined || this.xp < 1)
+            this.xp = 0;
+        if (this.gold == undefined || this.gold < 0)
+            this.gold = 0;
+        this.save();
+    }
+    save() {
+        localStorage.setItem("character", JSON.stringify({
+            attack: this.attack,
+            gold: this.gold,
+            hp: this.hp,
+            level: this.level,
+            xp: this.level
+        }));
+    }
+}
 class LoadGameScene extends Phaser.Scene {
     constructor() {
         super({ key: LoadGameScene.Key });
@@ -59,10 +98,10 @@ class LoadGameScene extends Phaser.Scene {
         });
         const data = {
             background: "dirt",
-            monster: "goo",
+            monster: monsters["goo"],
             wordlist: "wordlist_js5l2"
         };
-        this.scene.start(TestLayoutScene.Key, data);
+        this.scene.start(FightScene.Key, data);
     }
     preload() {
         const loadingText = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 2 - 50, "Loading...");
@@ -84,25 +123,32 @@ class LoadGameScene extends Phaser.Scene {
             this.load.image(background.name, background.file);
         for (const character of characters)
             this.load.spritesheet(character.name, character.spritesheet.file, character.spritesheet);
-        for (const monster of monsters)
-            this.load.spritesheet(monster.name, monster.spritesheet.file, monster.spritesheet);
+        for (const monsterName in monsters) {
+            const monster = monsters[monsterName];
+            this.load.spritesheet(monsterName, monster.spritesheet.file, monster.spritesheet);
+        }
         this.load.html("answer_input", "answer_input.html");
     }
 }
 LoadGameScene.Key = "LOAD";
 LoadGameScene.LOAD_BAR_COLOR = 0x00AEEF;
-class TestLayoutScene extends Phaser.Scene {
+class FightScene extends Phaser.Scene {
     constructor() {
-        super({ key: TestLayoutScene.Key });
+        super({ key: FightScene.Key });
     }
     create() {
         const x = this.cameras.main.centerX;
         const y = this.cameras.main.centerY;
         this.add.sprite(x, y, this.background).setScale(4.5);
-        this.monsterObject = this.add.sprite(Phaser.Math.FloatBetween(x + 50, x + 150), y, this.monster).setScale(6);
+        this.monsterObject = this.add.sprite(x + 100, y + 65, this.monster.name).setScale(6);
+        this.monsterHP = this.monster.hp;
         this.monsterObject.play("monster_idle");
-        this.characterObject = this.add.sprite(x - 100, y, "character1_1").setScale(6).setFlipX(true).setDepth(1);
+        this.characterObject = new CharacterSprite(this, x - 100, y, "character1_1").setScale(6).setFlipX(true).setDepth(1);
+        this.add.existing(this.characterObject);
+        this.characterHP = this.characterObject.hp;
         this.characterObject.play("character_idle_sword");
+        this.HPObject = this.add.graphics().setDepth(2);
+        this.updateHP();
         this.changeCurrentWordByIndex();
         const answer = this.add.dom(x, VocabRPGGame.HEIGHT - 30).createFromCache("answer_input");
         const checkAnswer = () => {
@@ -111,6 +157,35 @@ class TestLayoutScene extends Phaser.Scene {
             if (!input)
                 return;
             if (input !== this.word.en) {
+                this.add.tween({
+                    duration: 250,
+                    targets: this.monsterObject,
+                    ease: "Cubic",
+                    repeat: 0,
+                    x: "-=100",
+                    yoyo: true
+                });
+                this.add.tween({
+                    duration: 250,
+                    targets: this.characterObject,
+                    ease: "Cubic",
+                    x: "+=0",
+                    onComplete: () => {
+                        this.characterHP -= this.monster.attack;
+                        this.updateHP();
+                    },
+                    onUpdate: (tween) => {
+                        let e = tween.elapsed / (tween.duration / 2);
+                        if (e > 2)
+                            e = 0;
+                        else if (e > 1)
+                            e = 2 - e;
+                        const t = Phaser.Display.Color.Interpolate.ColorWithColor(WHITE, RED, 1, e);
+                        this.characterObject.tint = Phaser.Display.Color.GetColor(t.r, t.g, t.b);
+                    },
+                    repeat: 0,
+                    yoyo: true
+                });
                 this.playCharacterAnimation("character_fail");
                 return;
             }
@@ -125,21 +200,22 @@ class TestLayoutScene extends Phaser.Scene {
                 x: "+=100",
                 yoyo: true
             });
-            const white = new Phaser.Display.Color(255, 255, 255);
-            const red = new Phaser.Display.Color(255, 0, 0);
             this.add.tween({
                 duration: 250,
                 targets: this.monsterObject,
                 ease: "Cubic",
                 x: "+=0",
+                onComplete: () => {
+                    this.monsterHP -= this.monster.attack;
+                    this.updateHP();
+                },
                 onUpdate: (tween) => {
-                    console.log("YES");
-                    let e = tween.elapsed / 250;
+                    let e = tween.elapsed / (tween.duration / 2);
                     if (e > 2)
                         e = 0;
                     else if (e > 1)
                         e = 2 - e;
-                    const t = Phaser.Display.Color.Interpolate.ColorWithColor(white, red, 1, e);
+                    const t = Phaser.Display.Color.Interpolate.ColorWithColor(WHITE, RED, 1, e);
                     this.monsterObject.tint = Phaser.Display.Color.GetColor(t.r, t.g, t.b);
                 },
                 repeat: 0,
@@ -198,8 +274,32 @@ class TestLayoutScene extends Phaser.Scene {
         }
         this.wordObject = this.add.dom(x, 30, "div", "background-color: rgba(255,255,255,0.7); width: 800px; font-family='UD デジタル 教科書体 NK-B'; font-size: 48px; text-align: center", display);
     }
+    updateHP() {
+        this.HPObject.clear();
+        if (this.monsterHP <= 0) {
+            this.scene.start(FightScene.Key);
+            this.characterObject.xp += 1;
+            this.characterObject.gold += Phaser.Math.Between(0, 2);
+            this.characterObject.save();
+            return;
+        }
+        if (this.characterHP <= 0) {
+            this.scene.start(FightScene.Key);
+            this.characterObject.xp = Math.min(0, this.characterObject.xp - 1);
+            this.characterObject.save();
+            return;
+        }
+        this.HPObject.fillStyle(0x000000);
+        this.HPObject.fillRect(this.characterObject.x - 50, this.characterObject.y + 130, 100, 20);
+        this.HPObject.fillStyle(0xFF0000);
+        this.HPObject.fillRect(this.characterObject.x - 48, this.characterObject.y + 132, 96 * (this.characterHP / 5), 16);
+        this.HPObject.fillStyle(0x000000);
+        this.HPObject.fillRect(this.monsterObject.x - 50, this.monsterObject.y + 65, 100, 20);
+        this.HPObject.fillStyle(0xFF0000);
+        this.HPObject.fillRect(this.monsterObject.x - 48, this.monsterObject.y + 67, 96 * (this.monsterHP / this.monster.hp), 16);
+    }
 }
-TestLayoutScene.Key = "PLAY";
+FightScene.Key = "FIGHT";
 class VocabRPGGame {
     constructor() {
         this.game = new Phaser.Game({
@@ -214,7 +314,7 @@ class VocabRPGGame {
                 parent: "game"
             },
             pixelArt: true,
-            scene: [LoadGameScene, TestLayoutScene],
+            scene: [LoadGameScene, FightScene],
             type: Phaser.AUTO,
             width: VocabRPGGame.WIDTH
         });
