@@ -15,7 +15,7 @@ View the documentation [here](https://github.com/earthiverse/altivities/tree/mai
 
 <https://earthiverse.github.io/altivities/pizza/>
 
-A simple game where you can build a parfait. Works well for an activity for `Let's Try 2`'s `Unit 7`.
+A simple game where you can build a pizza. Works well for an activity for `Let's Try 2`'s `Unit 7`.
 
 View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/pizza).
 
