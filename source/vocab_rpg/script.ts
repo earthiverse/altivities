@@ -1,6 +1,8 @@
 /* eslint-disable sort-keys */
 
 type GameData = {
+    background: string
+    monster: string
     wordlist: string
 }
 
@@ -20,6 +22,11 @@ type CharacterAnimationKey =
 
 type MonsterAnimationKey =
     | "monster_idle"
+
+type BackgroundData = {
+    file: string
+    name: string
+}
 
 type SpriteData = {
     /** Filename for the given character sprites */
@@ -44,6 +51,13 @@ type MonsterSprite = {
     name: string
     spritesheet: SpriteData
 }
+
+const backgrounds: BackgroundData[] = [
+    {
+        file: "images/backgrounds/dirt.png",
+        name: "dirt",
+    }
+]
 
 const characters: CharacterSprite[] = [
     {
@@ -84,8 +98,7 @@ class LoadGameScene extends Phaser.Scene {
             key: "character_idle_sword",
             frameRate: 3,
             frames: this.anims.generateFrameNumbers("character1_1", { start: 9, end: 11 }),
-            repeat: -1,
-            yoyo: true
+            repeat: -1
         })
         this.anims.create({
             key: "character_attack_sword",
@@ -110,6 +123,8 @@ class LoadGameScene extends Phaser.Scene {
 
         // Start the game
         const data: GameData = {
+            background: "dirt",
+            monster: "goo",
             wordlist: "wordlist_js5l2"
         }
         this.scene.start(TestLayoutScene.Key, data)
@@ -136,6 +151,9 @@ class LoadGameScene extends Phaser.Scene {
         // Load word list
         this.load.json("wordlist_js5l2", "../wordlists/JuniorSunshine5/lesson2.json")
 
+        // Load backgrounds
+        for (const background of backgrounds) this.load.image(background.name, background.file)
+
         // Load characters
         for (const character of characters) this.load.spritesheet(character.name, character.spritesheet.file, character.spritesheet)
 
@@ -150,12 +168,16 @@ class LoadGameScene extends Phaser.Scene {
 class TestLayoutScene extends Phaser.Scene {
     static Key = "PLAY"
 
-    private character: Phaser.GameObjects.Sprite
+    private background: string
+    private monster: string
+    private word: Word
+
+    private characterObject: Phaser.GameObjects.Sprite
+    private monsterObject: Phaser.GameObjects.Sprite
+    private wordObject: Phaser.GameObjects.DOMElement
+
     private enterKey: Phaser.Input.Keyboard.Key
     private wordlist: Wordlist
-    private currentWord: Word
-    private currentWordObject: Phaser.GameObjects.DOMElement
-    private monsters: Phaser.GameObjects.Sprite[]
 
     constructor() {
         super({ key: TestLayoutScene.Key })
@@ -165,19 +187,28 @@ class TestLayoutScene extends Phaser.Scene {
         const x = this.cameras.main.centerX
         const y = this.cameras.main.centerY
 
-        this.character = this.add.sprite(x - 100, y, "character1_1").setScale(5).setFlipX(true)
-        this.character.play("character_idle_sword")
+        // Add the background
+        this.add.sprite(x, y, this.background).setScale(4.5)
 
-        this.spawnMonster("goo", 5)
+        // Add the monster
+        this.monsterObject = this.add.sprite(Phaser.Math.FloatBetween(x + 50, x + 150), y, this.monster).setScale(6)
+        this.monsterObject.play("monster_idle")
+
+        // Add the character
+        this.characterObject = this.add.sprite(x - 100, y, "character1_1").setScale(6).setFlipX(true).setDepth(1)
+        this.characterObject.play("character_idle_sword")
+
+        // Get a new word
         this.changeCurrentWordByIndex()
 
+        // Setup answer input
         const answer = this.add.dom(x, VocabRPGGame.HEIGHT - 30).createFromCache("answer_input")
         const checkAnswer = () => {
             const answerField = document.getElementById("answerField") as HTMLInputElement
             const input: string = answerField.value
             if (!input) return
 
-            if (input !== this.currentWord.en) {
+            if (input !== this.word.en) {
                 // It wasn't correct
                 this.playCharacterAnimation("character_fail")
                 return
@@ -185,8 +216,37 @@ class TestLayoutScene extends Phaser.Scene {
 
             const checkButton = document.getElementById("check") as HTMLInputElement
             if (checkButton.disabled) return // Currently attacking
+
+            // Add attack animations
+            this.add.tween({
+                duration: 250,
+                targets: this.characterObject,
+                ease: "Cubic",
+                repeat: 0,
+                x: "+=100",
+                yoyo: true
+            })
+
+            // Add damage animation
+            const white = new Phaser.Display.Color(255, 255, 255)
+            const red = new Phaser.Display.Color(255, 0, 0)
+            this.add.tween({
+                duration: 250,
+                targets: this.monsterObject,
+                ease: "Cubic",
+                x: "+=0",
+                onUpdate: (tween) => {
+                    let e = tween.elapsed / 250
+                    if (e > 2) e = 0
+                    else if (e > 1) e = 2 - e
+                    const t = Phaser.Display.Color.Interpolate.ColorWithColor(white, red, 1, e)
+                    this.monsterObject.tint = Phaser.Display.Color.GetColor(t.r, t.g, t.b)
+                },
+                repeat: 0,
+                yoyo: true
+            })
             this.playCharacterAnimation("character_attack_sword")
-            this.character.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
+            this.characterObject.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
                 answerField.value = ""
                 this.changeCurrentWordByIndex()
             })
@@ -194,21 +254,20 @@ class TestLayoutScene extends Phaser.Scene {
 
         answer.addListener("click")
         answer.on("click", (data) => {
-            console.log(`clicked ${Date.now()}`)
             if (data.target.id !== "check") return
             checkAnswer()
         })
 
         this.enterKey.on("down", () => {
-            console.log(`enter pressed ${Date.now()}`)
             checkAnswer()
         }, this)
     }
 
     init(data: GameData) {
         this.wordlist = this.cache.json.get(data.wordlist)
-        this.currentWord = undefined
-        this.monsters = []
+        this.word = undefined
+        this.background = data.background
+        this.monster = data.monster
 
         this.enterKey = this.input.keyboard.addKey("ENTER")
     }
@@ -217,12 +276,12 @@ class TestLayoutScene extends Phaser.Scene {
         const answerField = document.getElementById("answerField") as HTMLInputElement
         const checkButton = document.getElementById("check") as HTMLInputElement
 
-        this.character.play(animation)
+        this.characterObject.play(animation)
         answerField.disabled = true
         checkButton.disabled = true
         this.enterKey.enabled = false
-        this.character.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
-            this.character.play("character_idle_sword")
+        this.characterObject.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
+            this.characterObject.play("character_idle_sword")
             answerField.disabled = false
             checkButton.disabled = false
             answerField.focus()
@@ -234,26 +293,17 @@ class TestLayoutScene extends Phaser.Scene {
     private changeCurrentWordByIndex(next = Phaser.Math.Between(0, this.wordlist.length - 1)) {
         const x = this.cameras.main.centerX
 
-        this.currentWord = this.wordlist[next]
-        if (this.currentWordObject) this.currentWordObject.destroy()
+        this.word = this.wordlist[next]
+        if (this.wordObject) this.wordObject.destroy()
 
         let display: string
-        if (this.currentWord.ja.kanji == this.currentWord.ja.hiragana) {
-            display = this.currentWord.ja.kanji
+        if (this.word.ja.kanji == this.word.ja.hiragana) {
+            display = this.word.ja.kanji
         } else {
-            display = `${this.currentWord.ja.kanji}【${this.currentWord.ja.hiragana}】`
+            display = `${this.word.ja.kanji}【${this.word.ja.hiragana}】`
         }
 
-        this.currentWordObject = this.add.dom(x, 30, "div", "width: 800px; font-family='UD デジタル 教科書体 NK-B'; font-size: 48px; text-align: center", display)
-    }
-
-    private spawnMonster(type = "goo", scale = 5) {
-        const x = this.cameras.main.centerX
-        const y = this.cameras.main.centerY
-
-        const monster = this.add.sprite(Phaser.Math.FloatBetween(x + 50, x + 150), y, type).setScale(scale)
-        monster.play("monster_idle")
-        this.monsters.push(monster)
+        this.wordObject = this.add.dom(x, 30, "div", "background-color: rgba(255,255,255,0.7); width: 800px; font-family='UD デジタル 教科書体 NK-B'; font-size: 48px; text-align: center", display)
     }
 }
 
