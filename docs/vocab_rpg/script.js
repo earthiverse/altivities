@@ -26,18 +26,24 @@ class LoadGameScene extends Phaser.Scene {
     }
     create() {
         this.anims.create({
-            key: "character_idle",
+            key: "character_idle_sword",
             frameRate: 3,
-            frames: this.anims.generateFrameNumbers("character1_1", { start: 0, end: 2 }),
+            frames: this.anims.generateFrameNumbers("character1_1", { start: 9, end: 11 }),
             repeat: -1,
             yoyo: true
         });
         this.anims.create({
-            key: "character_attack",
+            key: "character_attack_sword",
             frameRate: 9,
             frames: this.anims.generateFrameNumbers("character1_1", { start: 3, end: 5 }),
             repeat: 0,
             yoyo: true
+        });
+        this.anims.create({
+            key: "character_fail",
+            frameRate: 9,
+            frames: this.anims.generateFrameNumbers("character1_1", { start: 36, end: 38 }),
+            repeat: 0
         });
         this.anims.create({
             key: "monster_idle",
@@ -83,36 +89,27 @@ class TestLayoutScene extends Phaser.Scene {
     create() {
         const x = this.cameras.main.centerX;
         const y = this.cameras.main.centerY;
-        const character = this.add.sprite(x - 100, y, "character1_1").setScale(5).setFlipX(true);
-        character.play("character_idle");
+        this.character = this.add.sprite(x - 100, y, "character1_1").setScale(5).setFlipX(true);
+        this.character.play("character_idle_sword");
         this.spawnMonster("goo", 5);
         this.changeCurrentWordByIndex();
         const answer = this.add.dom(x, VocabRPGGame.HEIGHT - 30).createFromCache("answer_input");
-        const enter = this.input.keyboard.addKey("ENTER");
         const checkAnswer = () => {
             const answerField = document.getElementById("answerField");
             const input = answerField.value;
             if (!input)
                 return;
             if (input !== this.currentWord.en) {
+                this.playCharacterAnimation("character_fail");
                 return;
             }
             const checkButton = document.getElementById("check");
             if (checkButton.disabled)
                 return;
-            character.play("character_attack");
-            answerField.disabled = true;
-            checkButton.disabled = true;
-            enter.enabled = false;
-            character.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
-                character.play("character_idle");
-                this.changeCurrentWordByIndex();
-                answerField.disabled = false;
-                checkButton.disabled = false;
+            this.playCharacterAnimation("character_attack_sword");
+            this.character.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
                 answerField.value = "";
-                answerField.focus();
-                enter.enabled = true;
-                enter.reset();
+                this.changeCurrentWordByIndex();
             });
         };
         answer.addListener("click");
@@ -122,7 +119,7 @@ class TestLayoutScene extends Phaser.Scene {
                 return;
             checkAnswer();
         });
-        enter.on("down", () => {
+        this.enterKey.on("down", () => {
             console.log(`enter pressed ${Date.now()}`);
             checkAnswer();
         }, this);
@@ -131,6 +128,23 @@ class TestLayoutScene extends Phaser.Scene {
         this.wordlist = this.cache.json.get(data.wordlist);
         this.currentWord = undefined;
         this.monsters = [];
+        this.enterKey = this.input.keyboard.addKey("ENTER");
+    }
+    playCharacterAnimation(animation) {
+        const answerField = document.getElementById("answerField");
+        const checkButton = document.getElementById("check");
+        this.character.play(animation);
+        answerField.disabled = true;
+        checkButton.disabled = true;
+        this.enterKey.enabled = false;
+        this.character.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
+            this.character.play("character_idle_sword");
+            answerField.disabled = false;
+            checkButton.disabled = false;
+            answerField.focus();
+            this.enterKey.enabled = true;
+            this.enterKey.reset();
+        });
     }
     changeCurrentWordByIndex(next = Phaser.Math.Between(0, this.wordlist.length - 1)) {
         const x = this.cameras.main.centerX;
