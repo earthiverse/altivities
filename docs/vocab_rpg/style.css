@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "m5x7";
+    src: url("fonts/m5x7.woff2") format('woff2');
+}
+
+* {
+    font-family: "m5x7";
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    background-color: #EEEEEE;
+}
+
+input {
+    font-size: 48px;
+    padding: 0 10px 0 10px;
+}
+input[type=text] {
+    width: 580px
+}
+input[type=button] {
+    width: 180px;
+}

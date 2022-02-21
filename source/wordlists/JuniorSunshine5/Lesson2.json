@@ -1,0 +1,86 @@
+[
+    {
+        "en": "January",
+        "ja": {
+            "kanji": "一月",
+            "hiragana": "いちがつ"
+        }
+    },
+    {
+        "en": "February",
+        "ja": {
+            "kanji": "ニ月",
+            "hiragana": "にがつ"
+        }
+    },
+    {
+        "en": "March",
+        "ja": {
+            "kanji": "三月",
+            "hiragana": "さんがつ"
+        }
+    },
+    {
+        "en": "April",
+        "ja": {
+            "kanji": "四月",
+            "hiragana": "しがつ"
+        }
+    },
+    {
+        "en": "May",
+        "ja": {
+            "kanji": "五月",
+            "hiragana": "ごがつ"
+        }
+    },
+    {
+        "en": "June",
+        "ja": {
+            "kanji": "六月",
+            "hiragana": "ろくがつ"
+        }
+    },
+    {
+        "en": "July",
+        "ja": {
+            "kanji": "七月",
+            "hiragana": "しちがつ"
+        }
+    },
+    {
+        "en": "August",
+        "ja": {
+            "kanji": "八月",
+            "hiragana": "はちがつ"
+        }
+    },
+    {
+        "en": "September",
+        "ja": {
+            "kanji": "九月",
+            "hiragana": "くがつ"
+        }
+    },
+    {
+        "en": "October",
+        "ja": {
+            "kanji": "十月",
+            "hiragana": "じゅうがつ"
+        }
+    },
+    {
+        "en": "November",
+        "ja": {
+            "kanji": "十一月",
+            "hiragana": "じゅういちがつ"
+        }
+    },
+    {
+        "en": "December",
+        "ja": {
+            "kanji": "十二月",
+            "hiragana": "じゅうにがつ"
+        }
+    }
+]
