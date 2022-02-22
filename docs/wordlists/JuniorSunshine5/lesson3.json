@@ -1,0 +1,202 @@
+[
+    {
+        "en": "Japanese",
+        "ja": [
+            {
+                "hiragana": "こくご",
+                "kanji": "国語"
+            },
+            {
+                "hiragana": "にほんご",
+                "kanji": "日本語"
+            }
+        ]
+    },
+    {
+        "en": "English",
+        "ja": {
+            "hiragana": "えいご",
+            "kanji": "英語"
+        }
+    },
+    {
+        "en": "moral education",
+        "ja": {
+            "hiragana": "どうとく",
+            "kanji": "道徳"
+        }
+    },
+    {
+        "en": "period for integrated study",
+        "ja": {
+            "hiragana": "そうごうてきながくしゅうのじかん",
+            "kanji": "総合的な学習の時間"
+        }
+    },
+    {
+        "en": "class activities",
+        "ja": {
+            "hiragana": "がっきゅうかつどう",
+            "kanji": "学級活動"
+        }
+    },
+    {
+        "en": "special class",
+        "ja": {
+            "hiragana": "とくべつじゅぎょう",
+            "kanji": "特別授業"
+        }
+    },
+    {
+        "en": "calligraphy",
+        "ja": {
+            "hiragana": "しょしゃ",
+            "kanji": "書写"
+        }
+    },
+    {
+        "en": "social studies",
+        "ja": {
+            "hiragana": "しゃかいか",
+            "kanji": "社会科"
+        }
+    },
+    {
+        "en": "math",
+        "ja": {
+            "hiragana": "さんすう",
+            "kanji": "算数"
+        }
+    },
+    {
+        "en": "science",
+        "ja": {
+            "hiragana": "りか",
+            "kanji": "理科"
+        }
+    },
+    {
+        "en": "music",
+        "ja": {
+            "hiragana": "おんがく",
+            "kanji": "音楽"
+        }
+    },
+    {
+        "en": "arts and crafts",
+        "ja": {
+            "hiragana": "ずがこうさく",
+            "kanji": "図画工作"
+        }
+    },
+    {
+        "en": "home economics",
+        "ja": {
+            "hiragana": "かていか",
+            "kanji": "家庭科"
+        }
+    },
+    {
+        "en": "P.E.",
+        "ja": {
+            "hiragana": "たいいく",
+            "kanji": "体育"
+        }
+    },
+    {
+        "en": "doctor",
+        "ja": [
+            {
+                "hiragana": "いし",
+                "kanji": "医師"
+            },
+            {
+                "hiragana": "いしゃ",
+                "kanji": "医者"
+            }
+        ]
+    },
+    {
+        "en": "florist",
+        "ja": {
+            "hiragana": "はなや（ひと）",
+            "kanji": "花屋（人）"
+        }
+    },
+    {
+        "en": "police officer",
+        "ja": {
+            "hiragana": "けいさつかん",
+            "kanji": "警察官"
+        }
+    },
+    {
+        "en": "soccer player",
+        "ja": {
+            "hiragana": "さっかーせんしゅ",
+            "kanji": "サッカー選手"
+        }
+    },
+    {
+        "en": "teacher",
+        "ja": [
+            {
+                "hiragana": "せんせい",
+                "kanji": "先生"
+            },
+            {
+                "hiragana": "きょうし",
+                "kanji": "教師"
+            }
+        ]
+    },
+    {
+        "en": "Sunday",
+        "ja": {
+            "hiragana": "にちようび",
+            "kanji": "日曜日"
+        }
+    },
+    {
+        "en": "Monday",
+        "ja": {
+            "hiragana": "げつようび",
+            "kanji": "月曜日"
+        }
+    },
+    {
+        "en": "Tuesday",
+        "ja": {
+            "hiragana": "かようび",
+            "kanji": "火曜日"
+        }
+    },
+    {
+        "en": "Wednesday",
+        "ja": {
+            "hiragana": "すいようび",
+            "kanji": "水曜日"
+        }
+    },
+    {
+        "en": "Thursday",
+        "ja": {
+            "hiragana": "もくようび",
+            "kanji": "木曜日"
+        }
+    },
+    {
+        "en": "Friday",
+        "ja": {
+            "hiragana": "きんようび",
+            "kanji": "金曜日"
+        }
+    },
+    {
+        "en": "Saturday",
+        "ja": {
+            "hiragana": "どようび",
+            "kanji": "土曜日"
+        }
+    }
+]

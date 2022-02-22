@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/earthiverse/altivities#readme",
   "dependencies": {
+    "csvtojson": "^2.0.10",
     "express": "^4.17.2",
+    "kuroshiro": "^1.2.0",
+    "kuroshiro-analyzer-kuromoji": "^1.1.0",
     "phaser": "^3.55.2",
     "phaser-ui-tools": "^2.0.0-beta"
   },

@@ -1,0 +1,266 @@
+[
+    {
+        "en": [
+            "apple",
+            "apples"
+        ],
+        "ja": {
+            "hiragana": "りんこ",
+            "kanji": "リンコ"
+        }
+    },
+    {
+        "en": [
+            "banana",
+            "bananas"
+        ],
+        "ja": {
+            "hiragana": "ばなな",
+            "kanji": "バナナ"
+        }
+    },
+    {
+        "en": "bread",
+        "ja": {
+            "hiragana": "ぱん",
+            "kanji": "パン"
+        }
+    },
+    {
+        "en": [
+            "chili",
+            "chili pepper",
+            "cayenne",
+            "red pepper"
+        ],
+        "ja": {
+            "hiragana": "とうがらし",
+            "kanji": "トウガラシ"
+        }
+    },
+    {
+        "en": "coffee",
+        "ja": {
+            "hiragana": "こーひー",
+            "kanji": "コーヒー"
+        }
+    },
+    {
+        "en": [
+            "French fries",
+            "french fries"
+        ],
+        "ja": {
+            "hiragana": "ふらいどぽてと",
+            "kanji": "フライドポテト"
+        }
+    },
+    {
+        "en": "fried chicken",
+        "ja": {
+            "hiragana": "ふらいどちきん",
+            "kanji": "フライドチキン"
+        }
+    },
+    {
+        "en": "grilled fish",
+        "ja": {
+            "hiragana": "やきざかな",
+            "kanji": "焼き魚"
+        }
+    },
+    {
+        "en": [
+            "hamburger",
+            "hamburgers"
+        ],
+        "ja": {
+            "hiragana": "はんばーがー",
+            "kanji": "ハンバーガー"
+        }
+    },
+    {
+        "en": "hot",
+        "ja": {
+            "hiragana": "あつい",
+            "kanji": "暑い"
+        }
+    },
+    {
+        "en": [
+            "hot",
+            "spicy"
+        ],
+        "ja": {
+            "hiragana": "からい",
+            "kanji": "辛い"
+        }
+    },
+    {
+        "en": [
+            "hotdog",
+            "hotdogs"
+        ],
+        "ja": {
+            "hiragana": "ほっとどっぐ",
+            "kanji": "ホットドッグ"
+        }
+    },
+    {
+        "en": "Japanese tea",
+        "ja": {
+            "hiragana": "にっぽんちゃ",
+            "kanji": "日本茶"
+        }
+    },
+    {
+        "en": "juice",
+        "ja": {
+            "hiragana": "じゅーす",
+            "kanji": "ジュース"
+        }
+    },
+    {
+        "en": "milk",
+        "ja": {
+            "hiragana": "ぎゅうにゅう",
+            "kanji": "牛乳"
+        }
+    },
+    {
+        "en": [
+            "mineral water",
+            "mineral waters"
+        ],
+        "ja": {
+            "hiragana": "みねらるうぉーたー",
+            "kanji": "ミネラルウォーター"
+        }
+    },
+    {
+        "en": [
+            "pizza",
+            "pizzas"
+        ],
+        "ja": {
+            "hiragana": "びざ",
+            "kanji": "ビザ"
+        }
+    },
+    {
+        "en": "rice",
+        "ja": [
+            {
+                "hiragana": "ごはん",
+                "kanji": "ごはん"
+            },
+            {
+                "hiragana": "こめ",
+                "kanji": "米"
+            }
+        ]
+    },
+    {
+        "en": [
+            "salad",
+            "salads"
+        ],
+        "ja": {
+            "hiragana": "さらだ",
+            "kanji": "サラダ"
+        }
+    },
+    {
+        "en": "salt",
+        "ja": {
+            "hiragana": "しお",
+            "kanji": "塩"
+        }
+    },
+    {
+        "en": "salty",
+        "ja": {
+            "hiragana": "しょっぱい",
+            "kanji": "しょっぱい"
+        }
+    },
+    {
+        "en": [
+            "sandwich",
+            "sandwiches"
+        ],
+        "ja": {
+            "hiragana": "さんどうぃっち",
+            "kanji": "サンドウィッチ"
+        }
+    },
+    {
+        "en": "soda",
+        "ja": {
+            "hiragana": "そーだ",
+            "kanji": "ソーダ"
+        }
+    },
+    {
+        "en": "soup",
+        "ja": {
+            "hiragana": "すーぷ",
+            "kanji": "スープ"
+        }
+    },
+    {
+        "en": "sour",
+        "ja": {
+            "hiragana": "すっぱい",
+            "kanji": "すっぱい"
+        }
+    },
+    {
+        "en": "spaghetti",
+        "ja": {
+            "hiragana": "すぱげってぃ",
+            "kanji": "スパゲッティ"
+        }
+    },
+    {
+        "en": [
+            "steak",
+            "steaks"
+        ],
+        "ja": {
+            "hiragana": "すてーき",
+            "kanji": "ステーキ"
+        }
+    },
+    {
+        "en": "sugar",
+        "ja": {
+            "hiragana": "さとう",
+            "kanji": "砂糖"
+        }
+    },
+    {
+        "en": "sweet",
+        "ja": {
+            "hiragana": "あまい",
+            "kanji": "あまい"
+        }
+    },
+    {
+        "en": [
+            "tea",
+            "black tea"
+        ],
+        "ja": {
+            "hiragana": "こうちゃ",
+            "kanji": "紅茶"
+        }
+    },
+    {
+        "en": "vinegar",
+        "ja": {
+            "hiragana": "す",
+            "kanji": "酢"
+        }
+    }
+]

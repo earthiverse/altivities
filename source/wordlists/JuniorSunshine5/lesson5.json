@@ -1,0 +1,226 @@
+[
+    {
+        "en": "ball",
+        "ja": {
+            "hiragana": "ぼーる",
+            "kanji": "ボール"
+        }
+    },
+    {
+        "en": "bank",
+        "ja": {
+            "hiragana": "ぎんこう",
+            "kanji": "銀行"
+        }
+    },
+    {
+        "en": "bat",
+        "ja": {
+            "hiragana": "ばっと",
+            "kanji": "バット"
+        }
+    },
+    {
+        "en": "bed",
+        "ja": {
+            "hiragana": "べっど",
+            "kanji": "ベッド"
+        }
+    },
+    {
+        "en": "book",
+        "ja": {
+            "hiragana": "ほん",
+            "kanji": "本"
+        }
+    },
+    {
+        "en": "bookstore",
+        "ja": {
+            "hiragana": "ほんや",
+            "kanji": "本屋"
+        }
+    },
+    {
+        "en": "box",
+        "ja": {
+            "hiragana": "はこ",
+            "kanji": "箱"
+        }
+    },
+    {
+        "en": "cap",
+        "ja": {
+            "hiragana": "（ふちのない）ぼうし",
+            "kanji": "（ふちのない）ぼうし"
+        }
+    },
+    {
+        "en": "chair",
+        "ja": {
+            "hiragana": "いす",
+            "kanji": "いす"
+        }
+    },
+    {
+        "en": "convenience store",
+        "ja": {
+            "hiragana": "こんびにえんすすとあ",
+            "kanji": "コンビニエンスストア"
+        }
+    },
+    {
+        "en": "department store",
+        "ja": {
+            "hiragana": "でぱーと",
+            "kanji": "デパート"
+        }
+    },
+    {
+        "en": "desk",
+        "ja": {
+            "hiragana": "つくえ",
+            "kanji": "つくえ"
+        }
+    },
+    {
+        "en": "fire station",
+        "ja": {
+            "hiragana": "しょうぼうしょ",
+            "kanji": "消防署"
+        }
+    },
+    {
+        "en": "flower shop",
+        "ja": {
+            "hiragana": "はなや",
+            "kanji": "花屋"
+        }
+    },
+    {
+        "en": "gas station",
+        "ja": {
+            "hiragana": "がそりんすたんど",
+            "kanji": "ガソリンスタンド"
+        }
+    },
+    {
+        "en": "glove",
+        "ja": {
+            "hiragana": "ぐろーぶ",
+            "kanji": "グローブ"
+        }
+    },
+    {
+        "en": "hospital",
+        "ja": {
+            "hiragana": "びょういん",
+            "kanji": "病院"
+        }
+    },
+    {
+        "en": "library",
+        "ja": {
+            "hiragana": "としょかん",
+            "kanji": "図書館"
+        }
+    },
+    {
+        "en": "park",
+        "ja": {
+            "hiragana": "こうえん",
+            "kanji": "公園"
+        }
+    },
+    {
+        "en": "pen",
+        "ja": {
+            "hiragana": "ぺん",
+            "kanji": "ペン"
+        }
+    },
+    {
+        "en": "pencil",
+        "ja": {
+            "hiragana": "えんびつ",
+            "kanji": "えんびつ"
+        }
+    },
+    {
+        "en": "pet shop",
+        "ja": {
+            "hiragana": "ぺっとしょっぷ",
+            "kanji": "ペットショップ"
+        }
+    },
+    {
+        "en": "police station",
+        "ja": {
+            "hiragana": "けいさつしょ",
+            "kanji": "警察署"
+        }
+    },
+    {
+        "en": "post office",
+        "ja": {
+            "hiragana": "ゆうびんきょく",
+            "kanji": "郵便局"
+        }
+    },
+    {
+        "en": "restaurant",
+        "ja": {
+            "hiragana": "れすとらふん",
+            "kanji": "レストラフン"
+        }
+    },
+    {
+        "en": "ruler",
+        "ja": {
+            "hiragana": "じょうぎ",
+            "kanji": "定規"
+        }
+    },
+    {
+        "en": "school",
+        "ja": {
+            "hiragana": "がっこう",
+            "kanji": "学校"
+        }
+    },
+    {
+        "en": "sports shop",
+        "ja": {
+            "hiragana": "すぽぼーつようひんてん",
+            "kanji": "スポボーツ用品店"
+        }
+    },
+    {
+        "en": "station",
+        "ja": {
+            "hiragana": "えき",
+            "kanji": "駅"
+        }
+    },
+    {
+        "en": "supermarket",
+        "ja": {
+            "hiragana": "すーばー（まーけっと）",
+            "kanji": "スーバー（マーケット）"
+        }
+    },
+    {
+        "en": "table",
+        "ja": {
+            "hiragana": "てーぶる",
+            "kanji": "テーブル"
+        }
+    },
+    {
+        "en": "watch",
+        "ja": {
+            "hiragana": "うでどけい",
+            "kanji": "腕時計"
+        }
+    }
+]

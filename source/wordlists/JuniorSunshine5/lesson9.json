@@ -1,0 +1,277 @@
+[
+    {
+        "en": [
+            "apple",
+            "apples"
+        ],
+        "ja": {
+            "hiragana": "りんご",
+            "kanji": "リンゴ"
+        }
+    },
+    {
+        "en": "big",
+        "ja": {
+            "hiragana": "おおきい",
+            "kanji": "大きい"
+        }
+    },
+    {
+        "en": "small",
+        "ja": {
+            "hiragana": "ちいさい",
+            "kanji": "小さい"
+        }
+    },
+    {
+        "en": [
+            "cherry",
+            "cherries"
+        ],
+        "ja": {
+            "hiragana": "さくらんぼ",
+            "kanji": "サクランボ"
+        }
+    },
+    {
+        "en": "corn",
+        "ja": {
+            "hiragana": "とうもろこし",
+            "kanji": "トウモロコシ"
+        }
+    },
+    {
+        "en": [
+            "crab",
+            "crabs"
+        ],
+        "ja": {
+            "hiragana": "かに",
+            "kanji": "カニ"
+        }
+    },
+    {
+        "en": "fast",
+        "ja": {
+            "hiragana": "はやい",
+            "kanji": "速い"
+        }
+    },
+    {
+        "en": "slow",
+        "ja": {
+            "hiragana": "おそい",
+            "kanji": "遅い"
+        }
+    },
+    {
+        "en": [
+            "grape",
+            "grapes"
+        ],
+        "ja": {
+            "hiragana": "ぶどう",
+            "kanji": "ブドウ"
+        }
+    },
+    {
+        "en": "hard",
+        "ja": {
+            "hiragana": "かたい",
+            "kanji": "固い"
+        }
+    },
+    {
+        "en": "soft",
+        "ja": {
+            "hiragana": "やわらかい",
+            "kanji": "やわらかい"
+        }
+    },
+    {
+        "en": "hot",
+        "ja": {
+            "hiragana": "あつい",
+            "kanji": "暑い"
+        }
+    },
+    {
+        "en": "cold",
+        "ja": {
+            "hiragana": "さむい",
+            "kanji": "寒い"
+        }
+    },
+    {
+        "en": "iyokan",
+        "ja": {
+            "hiragana": "いよかん",
+            "kanji": "いよかん"
+        }
+    },
+    {
+        "en": "Japanese tea",
+        "ja": {
+            "hiragana": "にっぽんちゃ",
+            "kanji": "日本茶"
+        }
+    },
+    {
+        "en": "castella",
+        "ja": {
+            "hiragana": "かすてら",
+            "kanji": "カステラ"
+        }
+    },
+    {
+        "en": [
+            "lemon",
+            "lemons"
+        ],
+        "ja": {
+            "hiragana": "れもん",
+            "kanji": "レモン"
+        }
+    },
+    {
+        "en": "light",
+        "ja": {
+            "hiragana": "かるい",
+            "kanji": "軽い"
+        }
+    },
+    {
+        "en": "heavy",
+        "ja": {
+            "hiragana": "おもい",
+            "kanji": "重い"
+        }
+    },
+    {
+        "en": [
+            "lobster",
+            "lobsters",
+            "spiny lobster",
+            "spiny lobsters",
+            "Japanese spiny lobster",
+            "Japanese spiny lobsters"
+        ],
+        "ja": {
+            "hiragana": "いせえび",
+            "kanji": "イセエビ"
+        }
+    },
+    {
+        "en": "long",
+        "ja": {
+            "hiragana": "ながい",
+            "kanji": "長い"
+        }
+    },
+    {
+        "en": "short",
+        "ja": {
+            "hiragana": "みじかい",
+            "kanji": "短い"
+        }
+    },
+    {
+        "en": [
+            "mango",
+            "mangoes"
+        ],
+        "ja": {
+            "hiragana": "まんごー",
+            "kanji": "マンゴー"
+        }
+    },
+    {
+        "en": "natto",
+        "ja": {
+            "hiragana": "なっとう",
+            "kanji": "なっとう"
+        }
+    },
+    {
+        "en": "new",
+        "ja": {
+            "hiragana": "あたらしい",
+            "kanji": "新しい"
+        }
+    },
+    {
+        "en": "old",
+        "ja": {
+            "hiragana": "ふるい",
+            "kanji": "古い"
+        }
+    },
+    {
+        "en": [
+            "peach",
+            "peaches"
+        ],
+        "ja": {
+            "hiragana": "もも",
+            "kanji": "モモ"
+        }
+    },
+    {
+        "en": [
+            "peanut",
+            "peanuts"
+        ],
+        "ja": {
+            "hiragana": "びーなっつ",
+            "kanji": "ビーナッツ"
+        }
+    },
+    {
+        "en": [
+            "pear",
+            "pears",
+            "Japanese pear"
+        ],
+        "ja": {
+            "hiragana": "なし",
+            "kanji": "ナシ"
+        }
+    },
+    {
+        "en": [
+            "pineapple",
+            "pineapples"
+        ],
+        "ja": {
+            "hiragana": "ぱいなっぷる",
+            "kanji": "パイナップル"
+        }
+    },
+    {
+        "en": "rice",
+        "ja": [
+            {
+                "hiragana": "ごはん",
+                "kanji": "ごはん"
+            },
+            {
+                "hiragana": "こめ",
+                "kanji": "米"
+            }
+        ]
+    },
+    {
+        "en": "sweet potato",
+        "ja": {
+            "hiragana": "さつまいも",
+            "kanji": "サツマイモ"
+        }
+    },
+    {
+        "en": "takoyaki",
+        "ja": {
+            "hiragana": "たこやき",
+            "kanji": "タコ焼き"
+        }
+    }
+]

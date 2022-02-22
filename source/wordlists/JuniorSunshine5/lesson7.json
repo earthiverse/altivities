@@ -1,0 +1,86 @@
+[
+    {
+        "en": "boar",
+        "ja": {
+            "hiragana": "いのしし",
+            "kanji": "猪"
+        }
+    },
+    {
+        "en": "dog",
+        "ja": {
+            "hiragana": "いぬ",
+            "kanji": "犬"
+        }
+    },
+    {
+        "en": "dragon",
+        "ja": {
+            "hiragana": "りゅう",
+            "kanji": "龍"
+        }
+    },
+    {
+        "en": "horse",
+        "ja": {
+            "hiragana": "うま",
+            "kanji": "馬"
+        }
+    },
+    {
+        "en": "monkey",
+        "ja": {
+            "hiragana": "さる",
+            "kanji": "猿"
+        }
+    },
+    {
+        "en": "ox",
+        "ja": {
+            "hiragana": "おすうし",
+            "kanji": "おす牛"
+        }
+    },
+    {
+        "en": "rabbit",
+        "ja": {
+            "hiragana": "うさぎ",
+            "kanji": "兎"
+        }
+    },
+    {
+        "en": "rat",
+        "ja": {
+            "hiragana": "ねずみ",
+            "kanji": "鼠"
+        }
+    },
+    {
+        "en": "rooster",
+        "ja": {
+            "hiragana": "おんどり",
+            "kanji": "雄鶏"
+        }
+    },
+    {
+        "en": "sheep",
+        "ja": {
+            "hiragana": "ひつじ",
+            "kanji": "羊"
+        }
+    },
+    {
+        "en": "snake",
+        "ja": {
+            "hiragana": "へび",
+            "kanji": "蛇"
+        }
+    },
+    {
+        "en": "tiger",
+        "ja": {
+            "hiragana": "とら",
+            "kanji": "虎"
+        }
+    }
+]

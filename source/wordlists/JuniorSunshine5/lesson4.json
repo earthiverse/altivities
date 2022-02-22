@@ -1,0 +1,156 @@
+[
+    {
+        "en": [
+            "fly",
+            "to fly"
+        ],
+        "ja": {
+            "hiragana": "とぶ",
+            "kanji": "飛ぶ"
+        }
+    },
+    {
+        "en": [
+            "jump",
+            "to jump"
+        ],
+        "ja": {
+            "hiragana": "とぶ",
+            "kanji": "跳ぶ"
+        }
+    },
+    {
+        "en": [
+            "jump rope",
+            "to jump rope"
+        ],
+        "ja": {
+            "hiragana": "なわとびをする",
+            "kanji": "なわとびをする"
+        }
+    },
+    {
+        "en": [
+            "play badminton",
+            "to play badminton"
+        ],
+        "ja": {
+            "hiragana": "ばどみんとんをする",
+            "kanji": "バドミントンをする"
+        }
+    },
+    {
+        "en": [
+            "play soccer",
+            "to play soccer"
+        ],
+        "ja": {
+            "hiragana": "さっかーをする",
+            "kanji": "サッカーをする"
+        }
+    },
+    {
+        "en": [
+            "play the piano",
+            "to play the piano",
+            "play piano",
+            "to play piano"
+        ],
+        "ja": {
+            "hiragana": "ぴあのをひく",
+            "kanji": "ピアノをひく"
+        }
+    },
+    {
+        "en": [
+            "play the recorder",
+            "to play the recorder",
+            "play recorder",
+            "to play recorder"
+        ],
+        "ja": {
+            "hiragana": "りこーだーをふく",
+            "kanji": "リコーダーをふく"
+        }
+    },
+    {
+        "en": "rainy",
+        "ja": {
+            "hiragana": "あめの",
+            "kanji": "雨の"
+        }
+    },
+    {
+        "en": "snowy",
+        "ja": {
+            "hiragana": "ゆきの",
+            "kanji": "雪の"
+        }
+    },
+    {
+        "en": "sunny",
+        "ja": {
+            "hiragana": "はれの",
+            "kanji": "晴れの"
+        }
+    },
+    {
+        "en": "windy",
+        "ja": {
+            "hiragana": "かぜのつよい",
+            "kanji": "風の強い"
+        }
+    },
+    {
+        "en": [
+            "read a book",
+            "to read a book",
+            "read books",
+            "to read books"
+        ],
+        "ja": {
+            "hiragana": "ほんをよむ",
+            "kanji": "本を読む"
+        }
+    },
+    {
+        "en": [
+            "run",
+            "to run"
+        ],
+        "ja": {
+            "hiragana": "はしる",
+            "kanji": "走る"
+        }
+    },
+    {
+        "en": [
+            "sing",
+            "to sing"
+        ],
+        "ja": {
+            "hiragana": "うたつ",
+            "kanji": "歌つ"
+        }
+    },
+    {
+        "en": [
+            "swim",
+            "to swim"
+        ],
+        "ja": {
+            "hiragana": "およぐ",
+            "kanji": "泳ぐ"
+        }
+    },
+    {
+        "en": [
+            "walk",
+            "to walk"
+        ],
+        "ja": {
+            "hiragana": "あるく",
+            "kanji": "歩く"
+        }
+    }
+]

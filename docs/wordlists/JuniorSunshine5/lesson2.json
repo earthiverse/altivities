@@ -82,5 +82,43 @@
             "kanji": "十二月",
             "hiragana": "じゅうにがつ"
         }
+    },
+    {
+        "en": "December",
+        "ja": {
+            "kanji": "十二月",
+            "hiragana": "じゅうにがつ"
+        }
+    },
+    {
+        "en": "spring",
+        "ja": {
+            "kanji": "春",
+            "hiragana": "はる"
+        }
+    },
+    {
+        "en": "summer",
+        "ja": {
+            "kanji": "夏",
+            "hiragana": "なつ"
+        }
+    },
+    {
+        "en": "winter",
+        "ja": {
+            "kanji": "冬",
+            "hiragana": "ふゆ"
+        }
+    },
+    {
+        "en": [
+            "fall",
+            "autumn"
+        ],
+        "ja": {
+            "kanji": "秋",
+            "hiragana": "あき"
+        }
     }
 ]
