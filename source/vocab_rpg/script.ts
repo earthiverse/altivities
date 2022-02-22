@@ -1,5 +1,4 @@
 /* eslint-disable sort-keys */
-
 type CharacterData = {
     hp: number
     attack: number
@@ -13,14 +12,22 @@ type GameData = {
     monster: Monster
     wordlist: string
 }
+type Languages =
+    | "en"
+    | "ja"
 
 type Word = {
-    en: string,
+    [T in Exclude<Languages, "ja">]: string | string[]
+} & {
     ja: {
         kanji: string
         hiragana: string
-    }
+    } | {
+        kanji: string
+        hiragana: string
+    }[]
 }
+
 type Wordlist = Word[]
 
 type CharacterAnimationKey =
@@ -94,6 +101,24 @@ const monsters: {[T in string]: Monster} = {
     }
 }
 
+const wordlists: {[T in string]: {
+    description: string
+    file: string
+}} = {
+    "js5_l2": {
+        description: "Junior Sunshine 5 - Lesson 2",
+        file: "../wordlists/JuniorSunshine5/lesson2.json"
+    },
+    "js5_l3": {
+        description: "Junior Sunshine 5 - Lesson 3",
+        file: "../wordlists/JuniorSunshine5/lesson3.json"
+    },
+    "js5_l4": {
+        description: "Junior Sunshine 5 - Lesson 4",
+        file: "../wordlists/JuniorSunshine5/lesson4.json"
+    }
+}
+
 // Colors
 const WHITE = new Phaser.Display.Color(255, 255, 255)
 const RED = new Phaser.Display.Color(255, 0, 0)
@@ -144,7 +169,7 @@ class CharacterSprite extends Phaser.GameObjects.Sprite implements CharacterData
 
 class LoadGameScene extends Phaser.Scene {
     static Key = "LOAD"
-    static LOAD_BAR_COLOR = 0x00AEEF
+    static LOAD_BAR_COLOR = 0x00C050
 
     private loadingBack: Phaser.GameObjects.Graphics
     private loadingFill: Phaser.GameObjects.Graphics
@@ -183,10 +208,11 @@ class LoadGameScene extends Phaser.Scene {
         })
 
         // Start the game
+        const keys = Object.keys(wordlists)
         const data: GameData = {
             background: "dirt",
             monster: monsters["goo"],
-            wordlist: "wordlist_js5l2"
+            wordlist: keys[Phaser.Math.Between(0, keys.length - 1)] // Random wordlist
         }
         this.scene.start(FightScene.Key, data)
     }
@@ -209,8 +235,11 @@ class LoadGameScene extends Phaser.Scene {
             this.loadingFill.fillRect(250, 280, 300 * value, 30)
         })
 
-        // Load word list
-        this.load.json("wordlist_js5l2", "../wordlists/JuniorSunshine5/lesson2.json")
+        // // Load wordlists
+        // for (const wordlistID in wordlists) {
+        //     const wordlist = wordlists[wordlistID]
+        //     this.load.json(wordlistID, wordlist.file)
+        // }
 
         // Load backgrounds
         for (const background of backgrounds) this.load.image(background.name, background.file)
@@ -226,6 +255,7 @@ class LoadGameScene extends Phaser.Scene {
 
         // Load HTML Templates
         this.load.html("answer_input", "answer_input.html")
+        this.load.html("question", "question.html")
     }
 }
 
@@ -245,15 +275,24 @@ class FightScene extends Phaser.Scene {
     private wordObject: Phaser.GameObjects.DOMElement
 
     private enterKey: Phaser.Input.Keyboard.Key
+    private wordlistID: string
     private wordlist: Wordlist
 
     constructor() {
         super({ key: FightScene.Key })
     }
 
+    preload() {
+        // Load the wordlist if we don't have it
+        if (!this.cache.json.has(this.wordlistID)) this.load.json(this.wordlistID, wordlists[this.wordlistID].file)
+    }
+
     create() {
         const x = this.cameras.main.centerX
         const y = this.cameras.main.centerY
+
+        // Set the wordlist
+        this.wordlist = this.cache.json.get(this.wordlistID)
 
         // Add the background
         this.add.sprite(x, y, this.background).setScale(4.5)
@@ -273,16 +312,26 @@ class FightScene extends Phaser.Scene {
         this.updateHP()
 
         // Get a new word
+        this.wordObject = this.add.dom(x, 30).createFromCache("question")
         this.changeCurrentWordByIndex()
 
         // Setup answer input
         const answer = this.add.dom(x, VocabRPGGame.HEIGHT - 30).createFromCache("answer_input")
+        const answerField = document.getElementById("answerField") as HTMLInputElement
         const checkAnswer = () => {
-            const answerField = document.getElementById("answerField") as HTMLInputElement
             const input: string = answerField.value
             if (!input) return
 
-            if (input !== this.word.en) {
+            // Check the answer
+            let correct = false
+            if (Array.isArray(this.word.en)) {
+                // There's multiple correct answers, see if it matches any of them
+                if (this.word.en.includes(input)) correct = true
+            } else if (this.word.en == input) {
+                correct = true
+            }
+
+            if (!correct) {
                 // Add attack animation
                 this.add.tween({
                     duration: 250,
@@ -349,6 +398,8 @@ class FightScene extends Phaser.Scene {
                 yoyo: true
             })
             this.playCharacterAnimation("character_attack_sword")
+
+            // Get a new word when the attack animation finishes
             this.characterObject.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
                 answerField.value = ""
                 this.changeCurrentWordByIndex()
@@ -364,11 +415,14 @@ class FightScene extends Phaser.Scene {
         this.enterKey.on("down", () => {
             checkAnswer()
         }, this)
+
+        // Set focus to the answer field
+        answerField.focus()
     }
 
     init(data: GameData) {
-        this.wordlist = this.cache.json.get(data.wordlist)
         this.word = undefined
+        this.wordlistID = data.wordlist
         this.background = data.background
         this.monster = data.monster
 
@@ -394,19 +448,28 @@ class FightScene extends Phaser.Scene {
     }
 
     private changeCurrentWordByIndex(next = Phaser.Math.Between(0, this.wordlist.length - 1)) {
-        const x = this.cameras.main.centerX
-
         this.word = this.wordlist[next]
-        if (this.wordObject) this.wordObject.destroy()
 
         let display: string
-        if (this.word.ja.kanji == this.word.ja.hiragana) {
+        if (Array.isArray(this.word.ja)) {
+            // Choose a word at random
+            const random = Phaser.Math.Between(0, this.word.ja.length - 1)
+
+            if (this.word.ja[random].kanji == this.word.ja[random].hiragana) {
+                display = this.word.ja[random].kanji
+            } else {
+                display = `${this.word.ja[random].kanji}【${this.word.ja[random].hiragana}】`
+            }
+        } else if (this.word.ja.kanji == this.word.ja.hiragana) {
+            // The kanji and hiragana are the same, just show the kanji
             display = this.word.ja.kanji
         } else {
+            // Show the kanji with hiragana
             display = `${this.word.ja.kanji}【${this.word.ja.hiragana}】`
         }
 
-        this.wordObject = this.add.dom(x, 30, "div", "background-color: rgba(255,255,255,0.7); width: 800px; font-family='UD デジタル 教科書体 NK-B'; font-size: 48px; text-align: center", display)
+        const question = document.getElementById("questionText")
+        question.textContent = display
     }
 
     private updateHP() {

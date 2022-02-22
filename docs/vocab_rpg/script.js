@@ -28,6 +28,20 @@ const monsters = {
         hp: 10
     }
 };
+const wordlists = {
+    "js5_l2": {
+        description: "Junior Sunshine 5 - Lesson 2",
+        file: "../wordlists/JuniorSunshine5/lesson2.json"
+    },
+    "js5_l3": {
+        description: "Junior Sunshine 5 - Lesson 3",
+        file: "../wordlists/JuniorSunshine5/lesson3.json"
+    },
+    "js5_l4": {
+        description: "Junior Sunshine 5 - Lesson 4",
+        file: "../wordlists/JuniorSunshine5/lesson4.json"
+    }
+};
 const WHITE = new Phaser.Display.Color(255, 255, 255);
 const RED = new Phaser.Display.Color(255, 0, 0);
 class CharacterSprite extends Phaser.GameObjects.Sprite {
@@ -96,10 +110,11 @@ class LoadGameScene extends Phaser.Scene {
             repeat: -1,
             yoyo: true
         });
+        const keys = Object.keys(wordlists);
         const data = {
             background: "dirt",
             monster: monsters["goo"],
-            wordlist: "wordlist_js5l2"
+            wordlist: keys[Phaser.Math.Between(0, keys.length - 1)]
         };
         this.scene.start(FightScene.Key, data);
     }
@@ -118,7 +133,6 @@ class LoadGameScene extends Phaser.Scene {
             this.loadingFill.fillStyle(LoadGameScene.LOAD_BAR_COLOR, 1);
             this.loadingFill.fillRect(250, 280, 300 * value, 30);
         });
-        this.load.json("wordlist_js5l2", "../wordlists/JuniorSunshine5/lesson2.json");
         for (const background of backgrounds)
             this.load.image(background.name, background.file);
         for (const character of characters)
@@ -128,17 +142,23 @@ class LoadGameScene extends Phaser.Scene {
             this.load.spritesheet(monsterName, monster.spritesheet.file, monster.spritesheet);
         }
         this.load.html("answer_input", "answer_input.html");
+        this.load.html("question", "question.html");
     }
 }
 LoadGameScene.Key = "LOAD";
-LoadGameScene.LOAD_BAR_COLOR = 0x00AEEF;
+LoadGameScene.LOAD_BAR_COLOR = 0x00C050;
 class FightScene extends Phaser.Scene {
     constructor() {
         super({ key: FightScene.Key });
     }
+    preload() {
+        if (!this.cache.json.has(this.wordlistID))
+            this.load.json(this.wordlistID, wordlists[this.wordlistID].file);
+    }
     create() {
         const x = this.cameras.main.centerX;
         const y = this.cameras.main.centerY;
+        this.wordlist = this.cache.json.get(this.wordlistID);
         this.add.sprite(x, y, this.background).setScale(4.5);
         this.monsterObject = this.add.sprite(x + 100, y + 65, this.monster.name).setScale(6);
         this.monsterHP = this.monster.hp;
@@ -149,14 +169,23 @@ class FightScene extends Phaser.Scene {
         this.characterObject.play("character_idle_sword");
         this.HPObject = this.add.graphics().setDepth(2);
         this.updateHP();
+        this.wordObject = this.add.dom(x, 30).createFromCache("question");
         this.changeCurrentWordByIndex();
         const answer = this.add.dom(x, VocabRPGGame.HEIGHT - 30).createFromCache("answer_input");
+        const answerField = document.getElementById("answerField");
         const checkAnswer = () => {
-            const answerField = document.getElementById("answerField");
             const input = answerField.value;
             if (!input)
                 return;
-            if (input !== this.word.en) {
+            let correct = false;
+            if (Array.isArray(this.word.en)) {
+                if (this.word.en.includes(input))
+                    correct = true;
+            }
+            else if (this.word.en == input) {
+                correct = true;
+            }
+            if (!correct) {
                 this.add.tween({
                     duration: 250,
                     targets: this.monsterObject,
@@ -236,10 +265,11 @@ class FightScene extends Phaser.Scene {
         this.enterKey.on("down", () => {
             checkAnswer();
         }, this);
+        answerField.focus();
     }
     init(data) {
-        this.wordlist = this.cache.json.get(data.wordlist);
         this.word = undefined;
+        this.wordlistID = data.wordlist;
         this.background = data.background;
         this.monster = data.monster;
         this.enterKey = this.input.keyboard.addKey("ENTER");
@@ -261,18 +291,25 @@ class FightScene extends Phaser.Scene {
         });
     }
     changeCurrentWordByIndex(next = Phaser.Math.Between(0, this.wordlist.length - 1)) {
-        const x = this.cameras.main.centerX;
         this.word = this.wordlist[next];
-        if (this.wordObject)
-            this.wordObject.destroy();
         let display;
-        if (this.word.ja.kanji == this.word.ja.hiragana) {
+        if (Array.isArray(this.word.ja)) {
+            const random = Phaser.Math.Between(0, this.word.ja.length - 1);
+            if (this.word.ja[random].kanji == this.word.ja[random].hiragana) {
+                display = this.word.ja[random].kanji;
+            }
+            else {
+                display = `${this.word.ja[random].kanji}【${this.word.ja[random].hiragana}】`;
+            }
+        }
+        else if (this.word.ja.kanji == this.word.ja.hiragana) {
             display = this.word.ja.kanji;
         }
         else {
             display = `${this.word.ja.kanji}【${this.word.ja.hiragana}】`;
         }
-        this.wordObject = this.add.dom(x, 30, "div", "background-color: rgba(255,255,255,0.7); width: 800px; font-family='UD デジタル 教科書体 NK-B'; font-size: 48px; text-align: center", display);
+        const question = document.getElementById("questionText");
+        question.textContent = display;
     }
     updateHP() {
         this.HPObject.clear();
