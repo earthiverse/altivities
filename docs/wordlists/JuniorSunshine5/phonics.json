@@ -1,0 +1,114 @@
+[
+    {
+        "en": "bat",
+        "ja": {
+            "hiragana": "ばっと",
+            "kanji": "バット"
+        }
+    },
+    {
+        "en": "box",
+        "ja": {
+            "hiragana": "はこ",
+            "kanji": "箱"
+        }
+    },
+    {
+        "en": "cap",
+        "ja": {
+            "hiragana": "（ふちのない）ぼうし",
+            "kanji": "（ふちのない）ぼうし"
+        }
+    },
+    {
+        "en": "cat",
+        "ja": {
+            "hiragana": "ねこ",
+            "kanji": "猫"
+        }
+    },
+    {
+        "en": "fox",
+        "ja": {
+            "hiragana": "きつね",
+            "kanji": "狐"
+        }
+    },
+    {
+        "en": "fun",
+        "ja": {
+            "hiragana": "たのしい",
+            "kanji": "楽しい"
+        }
+    },
+    {
+        "en": "hen",
+        "ja": {
+            "hiragana": "めんどり",
+            "kanji": "めんどり"
+        }
+    },
+    {
+        "en": "hop",
+        "ja": {
+            "hiragana": "びょんびょんとぶ",
+            "kanji": "びょんびょんとぶ"
+        }
+    },
+    {
+        "en": "map",
+        "ja": {
+            "hiragana": "ちず",
+            "kanji": "地図"
+        }
+    },
+    {
+        "en": "mat",
+        "ja": {
+            "hiragana": "まっと",
+            "kanji": "マット"
+        }
+    },
+    {
+        "en": "pen",
+        "ja": {
+            "hiragana": "ぺん",
+            "kanji": "ペン"
+        }
+    },
+    {
+        "en": "run",
+        "ja": {
+            "hiragana": "はしる",
+            "kanji": "走る"
+        }
+    },
+    {
+        "en": "sun",
+        "ja": {
+            "hiragana": "たいよう",
+            "kanji": "太陽"
+        }
+    },
+    {
+        "en": "tap",
+        "ja": {
+            "hiragana": "かるくたたく",
+            "kanji": "軽くたたく"
+        }
+    },
+    {
+        "en": "ten",
+        "ja": {
+            "hiragana": "じゅう",
+            "kanji": "十"
+        }
+    },
+    {
+        "en": "top",
+        "ja": {
+            "hiragana": "ちょうじょう",
+            "kanji": "頂上"
+        }
+    }
+]

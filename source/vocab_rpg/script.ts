@@ -68,6 +68,7 @@ type Monster = {
 
     attack: number
     hp: number
+    xp: number
 }
 
 const backgrounds: BackgroundData[] = [
@@ -88,6 +89,12 @@ const characters: Character[] = [
     },
 ]
 
+const icons: SpriteData = {
+    file: "images/icons/16px.png",
+    frameWidth: 16,
+    frameHeight: 16
+}
+
 const monsters: {[T in string]: Monster} = {
     "goo": {
         name: "goo",
@@ -97,7 +104,8 @@ const monsters: {[T in string]: Monster} = {
             frameHeight: 19,
         },
         attack: 1,
-        hp: 10
+        hp: 10,
+        xp: 1
     }
 }
 
@@ -116,6 +124,30 @@ const wordlists: {[T in string]: {
     "js5_l4": {
         description: "Junior Sunshine 5 - Lesson 4",
         file: "../wordlists/JuniorSunshine5/lesson4.json"
+    },
+    "js5_l5": {
+        description: "Junior Sunshine 5 - Lesson 5",
+        file: "../wordlists/JuniorSunshine5/lesson5.json"
+    },
+    "js5_l7": {
+        description: "Junior Sunshine 5 - Lesson 7",
+        file: "../wordlists/JuniorSunshine5/lesson7.json"
+    },
+    "js5_l8": {
+        description: "Junior Sunshine 5 - Lesson 8",
+        file: "../wordlists/JuniorSunshine5/lesson8.json"
+    },
+    "js5_l9": {
+        description: "Junior Sunshine 5 - Lesson 9",
+        file: "../wordlists/JuniorSunshine5/lesson9.json"
+    },
+    "js5_alphabet": {
+        description: "Junior Sunshine 5 - Alphabet",
+        file: "../wordlists/JuniorSunshine5/alphabet.json"
+    },
+    "js5_phonics": {
+        description: "Junior Sunshine 5 - Phonics",
+        file: "../wordlists/JuniorSunshine5/phonics.json"
     }
 }
 
@@ -141,6 +173,7 @@ class CharacterSprite extends Phaser.GameObjects.Sprite implements CharacterData
         if (data !== null) {
             const parsedData = JSON.parse(data)
             for (const key in parsedData) {
+                console.log(`parsed ${key} as ${parsedData[key]}`)
                 this[key] = parsedData[key]
             }
         }
@@ -156,13 +189,30 @@ class CharacterSprite extends Phaser.GameObjects.Sprite implements CharacterData
         this.save()
     }
 
+    /**
+     * Applies xp, and leveling.
+     * @param change if +ve, add xp, if -ve, subtract.
+     * @returns true if we leveled up
+     */
+    public changeXP(change: number): boolean {
+        this.xp = Math.max(0, this.xp + change)
+
+        if (this.xp >= Math.pow(this.level, 2)) {
+            // Level up!
+            this.level += 1
+            this.attack += 1
+            this.xp = 0
+            return true
+        }
+    }
+
     public save() {
         localStorage.setItem("character", JSON.stringify({
             attack: this.attack,
             gold: this.gold,
             hp: this.hp,
             level: this.level,
-            xp: this.level
+            xp: this.xp
         }))
     }
 }
@@ -253,6 +303,9 @@ class LoadGameScene extends Phaser.Scene {
             this.load.spritesheet(monsterName, monster.spritesheet.file, monster.spritesheet)
         }
 
+        // Load icons
+        this.load.spritesheet("icons", icons.file, icons)
+
         // Load HTML Templates
         this.load.html("answer_input", "answer_input.html")
         this.load.html("question", "question.html")
@@ -270,6 +323,7 @@ class FightScene extends Phaser.Scene {
     private monsterHP: number
 
     private characterObject: CharacterSprite
+    private menuObject: Phaser.GameObjects.DOMElement
     private monsterObject: Phaser.GameObjects.Sprite
     private HPObject: Phaser.GameObjects.Graphics
     private wordObject: Phaser.GameObjects.DOMElement
@@ -311,8 +365,16 @@ class FightScene extends Phaser.Scene {
         this.HPObject = this.add.graphics().setDepth(2)
         this.updateHP()
 
+        // Add the menu
+        this.add.rectangle(x, 16, VocabRPGGame.WIDTH, 32, 0xFFFFFF).setAlpha(0.7)
+        const home = this.add.sprite(16, 16, "icons", 2).setScale(2).setInteractive()
+        home.on("pointerdown", () => {
+            console.log("clicked on home")
+            this.leave()
+        })
+
         // Get a new word
-        this.wordObject = this.add.dom(x, 30).createFromCache("question")
+        this.wordObject = this.add.dom(x, 62).createFromCache("question")
         this.changeCurrentWordByIndex()
 
         // Setup answer input
@@ -384,7 +446,7 @@ class FightScene extends Phaser.Scene {
                 ease: "Cubic",
                 x: "+=0",
                 onComplete: () => {
-                    this.monsterHP -= this.monster.attack
+                    this.monsterHP -= this.characterObject.attack
                     this.updateHP()
                 },
                 onUpdate: (tween) => {
@@ -472,21 +534,48 @@ class FightScene extends Phaser.Scene {
         question.textContent = display
     }
 
-    private updateHP() {
-        this.HPObject.clear()
-
+    private leave() {
         if (this.monsterHP <= 0) {
-            this.scene.start(FightScene.Key)
-            this.characterObject.xp += 1
-            this.characterObject.gold += Phaser.Math.Between(0, 2)
+            // We defeated the monster
+            console.log("we defeated the monster")
+            if (this.characterObject.changeXP(this.monster.xp)) {
+                // TODO: level up animation
+            }
+            this.characterObject.gold += Phaser.Math.Between(this.monster.xp - 1, this.monster.xp * 2)
             this.characterObject.save()
+            this.scene.start(FightScene.Key) // DEBUG: Start a new game
             return
         }
 
         if (this.characterHP <= 0) {
-            this.scene.start(FightScene.Key)
-            this.characterObject.xp = Math.min(0, this.characterObject.xp - 1)
+            // We died to the monster
+            console.log("we died to the monster")
+            this.characterObject.changeXP(-1)
             this.characterObject.save()
+            this.scene.start(FightScene.Key) // DEBUG: Start a new game
+            return
+        }
+
+        if (this.monsterHP < this.monster.hp || this.characterHP < this.characterObject.hp) {
+            // We left midway through the battle
+            console.log("we left midway")
+            this.characterObject.gold = Math.max(0, this.characterObject.gold - 1)
+            this.characterObject.save()
+            this.scene.start(FightScene.Key) // DEBUG: Start a new game
+            return
+        }
+
+        // We left without starting the battle
+        console.log("we left without fighting")
+        this.scene.start(FightScene.Key) // DEBUG: Start a new game
+    }
+
+    private updateHP() {
+        this.HPObject.clear()
+
+        if (this.monsterHP <= 0 || this.characterHP <= 0) {
+            // Someone died
+            this.leave()
             return
         }
 
