@@ -1,62 +1,91 @@
 [
     {
-        "en": "boar",
+        "en": [
+            "boar",
+            "boars"
+        ],
         "ja": {
             "hiragana": "いのしし",
             "kanji": "猪"
         }
     },
     {
-        "en": "dog",
+        "en": [
+            "dog",
+            "dogs"
+        ],
         "ja": {
             "hiragana": "いぬ",
             "kanji": "犬"
         }
     },
     {
-        "en": "dragon",
+        "en": [
+            "dragon",
+            "dragons"
+        ],
         "ja": {
             "hiragana": "りゅう",
             "kanji": "龍"
         }
     },
     {
-        "en": "horse",
+        "en": [
+            "horse",
+            "horses"
+        ],
         "ja": {
             "hiragana": "うま",
             "kanji": "馬"
         }
     },
     {
-        "en": "monkey",
+        "en": [
+            "monkey",
+            "monkeys"
+        ],
         "ja": {
             "hiragana": "さる",
             "kanji": "猿"
         }
     },
     {
-        "en": "ox",
+        "en": [
+            "ox",
+            "oxen"
+        ],
         "ja": {
             "hiragana": "おすうし",
             "kanji": "おす牛"
         }
     },
     {
-        "en": "rabbit",
+        "en": [
+            "rabbit",
+            "rabbits"
+        ],
         "ja": {
             "hiragana": "うさぎ",
             "kanji": "兎"
         }
     },
     {
-        "en": "rat",
+        "en": [
+            "rat",
+            "rats",
+            "mouse",
+            "mice"
+        ],
         "ja": {
             "hiragana": "ねずみ",
             "kanji": "鼠"
         }
     },
     {
-        "en": "rooster",
+        "en": [
+            "rooster",
+            "roosters"
+        ],
         "ja": {
             "hiragana": "おんどり",
             "kanji": "雄鶏"
@@ -70,14 +99,20 @@
         }
     },
     {
-        "en": "snake",
+        "en": [
+            "snake",
+            "snakes"
+        ],
         "ja": {
             "hiragana": "へび",
             "kanji": "蛇"
         }
     },
     {
-        "en": "tiger",
+        "en": [
+            "tiger",
+            "tigers"
+        ],
         "ja": {
             "hiragana": "とら",
             "kanji": "虎"
