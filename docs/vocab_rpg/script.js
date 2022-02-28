@@ -6,16 +6,20 @@ const backgrounds = [
         name: "dirt",
     }
 ];
-const characters = [
-    {
-        name: "character1_1",
+const characters = {
+    "boy": {
+        name: "boy",
+        color: 0xA56F36,
+        color_light: 0xB6935D,
+        color_dark: 0x745843,
+        face: "images/faces/boy.png",
         spritesheet: {
-            file: "images/characters/1_1.png",
+            file: "images/characters/boy.png",
             frameHeight: 48,
             frameWidth: 48,
         }
-    },
-];
+    }
+};
 const icons = {
     file: "images/icons/16px.png",
     frameWidth: 16,
@@ -77,32 +81,47 @@ const RED = new Phaser.Display.Color(255, 0, 0);
 class CharacterSprite extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture) {
         super(scene, x, y, texture);
-        this.load();
     }
-    load() {
+    static load(scene, skin = "boy") {
         const data = localStorage.getItem("character");
+        let sprite;
         if (data !== null) {
             const parsedData = JSON.parse(data);
+            if (parsedData.skin && characters[skin])
+                skin = parsedData.skin;
+            sprite = new CharacterSprite(scene, 0, 0, skin);
             for (const key in parsedData) {
                 console.log(`parsed ${key} as ${parsedData[key]}`);
-                this[key] = parsedData[key];
+                sprite[key] = parsedData[key];
             }
         }
-        if (this.attack == undefined || this.attack < 1)
-            this.attack = 1;
-        if (this.hp == undefined || this.hp < 5)
-            this.hp = 5;
-        if (this.level == undefined || this.level < 1)
-            this.level = 1;
-        if (this.xp == undefined || this.xp < 1)
-            this.xp = 0;
-        if (this.gold == undefined || this.gold < 0)
-            this.gold = 0;
-        this.save();
+        if (!sprite)
+            sprite = new CharacterSprite(scene, 0, 0, skin);
+        if (sprite.attack == undefined || sprite.attack < 1)
+            sprite.attack = 1;
+        if (sprite.level == undefined || sprite.level < 1)
+            sprite.level = 1;
+        if (sprite.hp == undefined || sprite.hp < 5 + sprite.level)
+            sprite.hp = 5 + sprite.level;
+        if (sprite.xp == undefined || sprite.xp < 1)
+            sprite.xp = 0;
+        if (sprite.gold == undefined || sprite.gold < 0)
+            sprite.gold = 0;
+        if (skin && characters[skin]) {
+            if (sprite.color == undefined || typeof sprite.color !== "number")
+                sprite.color = characters[skin].color;
+            if (sprite.color_light == undefined || typeof sprite.color_light !== "number")
+                sprite.color_light = characters[skin].color_light;
+            if (sprite.color_dark == undefined || typeof sprite.color_dark !== "number")
+                sprite.color_dark = characters[skin].color_dark;
+        }
+        sprite.save();
+        return sprite;
     }
     changeXP(change) {
         this.xp = Math.max(0, this.xp + change);
         if (this.xp >= Math.pow(this.level, 2)) {
+            this.hp += 1;
             this.level += 1;
             this.attack += 1;
             this.xp = 0;
@@ -127,20 +146,20 @@ class LoadGameScene extends Phaser.Scene {
         this.anims.create({
             key: "character_idle_sword",
             frameRate: 3,
-            frames: this.anims.generateFrameNumbers("character1_1", { start: 9, end: 11 }),
+            frames: this.anims.generateFrameNumbers("boy", { start: 9, end: 11 }),
             repeat: -1
         });
         this.anims.create({
             key: "character_attack_sword",
             frameRate: 9,
-            frames: this.anims.generateFrameNumbers("character1_1", { start: 3, end: 5 }),
+            frames: this.anims.generateFrameNumbers("boy", { start: 3, end: 5 }),
             repeat: 0,
             yoyo: true
         });
         this.anims.create({
             key: "character_fail",
             frameRate: 9,
-            frames: this.anims.generateFrameNumbers("character1_1", { start: 36, end: 38 }),
+            frames: this.anims.generateFrameNumbers("boy", { start: 36, end: 38 }),
             repeat: 0
         });
         this.anims.create({
@@ -150,13 +169,7 @@ class LoadGameScene extends Phaser.Scene {
             repeat: -1,
             yoyo: true
         });
-        const keys = Object.keys(wordlists);
-        const data = {
-            background: "dirt",
-            monster: monsters["goo"],
-            wordlist: keys[Phaser.Math.Between(0, keys.length - 1)]
-        };
-        this.scene.start(FightScene.Key, data);
+        this.scene.start(CharacterScene.Key);
     }
     preload() {
         const loadingText = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 2 - 50, "Loading...");
@@ -175,8 +188,11 @@ class LoadGameScene extends Phaser.Scene {
         });
         for (const background of backgrounds)
             this.load.image(background.name, background.file);
-        for (const character of characters)
+        for (const skin in characters) {
+            const character = characters[skin];
             this.load.spritesheet(character.name, character.spritesheet.file, character.spritesheet);
+            this.load.image(`${character.name}_face`, character.face);
+        }
         for (const monsterName in monsters) {
             const monster = monsters[monsterName];
             this.load.spritesheet(monsterName, monster.spritesheet.file, monster.spritesheet);
@@ -188,6 +204,44 @@ class LoadGameScene extends Phaser.Scene {
 }
 LoadGameScene.Key = "LOAD";
 LoadGameScene.LOAD_BAR_COLOR = 0x00C050;
+class CharacterScene extends Phaser.Scene {
+    constructor() {
+        super({ key: CharacterScene.Key });
+    }
+    create() {
+        const x = this.cameras.main.centerX;
+        const y = this.cameras.main.centerY;
+        this.characterObject = CharacterSprite.load(this);
+        this.add.rectangle(0, 0, 800, 192, this.characterObject.color_light).setOrigin(0, 0);
+        this.add.sprite(0, 0, `${this.characterObject.texture.key}_face`).setOrigin(0, 0).setScale(4);
+        const addStat = (x, y, frame, text) => {
+            this.add.sprite(x, y, "icons", frame).setOrigin(0, 0).setScale(3);
+            const statText = this.add.text(x + 56, y, text).setOrigin(0, 0);
+            statText.setFontFamily("m5x7");
+            statText.setFontSize(48);
+            statText.setColor("#000000");
+        };
+        addStat(208, 0, 3, `HP: ${this.characterObject.hp}`);
+        addStat(208, 48, 0, `Attack: ${this.characterObject.attack}`);
+        addStat(208, 96, 5, `XP: ${this.characterObject.xp} / ${Math.pow(this.characterObject.level, 2)}`);
+        addStat(208, 144, 4, `Gold: ${this.characterObject.gold}`);
+        this.add.rectangle(0, 192, 800, 8, this.characterObject.color_dark).setOrigin(0, 0);
+        const goFight = this.add.text(x, VocabRPGGame.HEIGHT - 100, "Go fight the goos!").setInteractive();
+        goFight.setFontFamily("m5x7");
+        goFight.setFontSize(48);
+        goFight.setColor("#000000");
+        goFight.on("pointerdown", () => {
+            const keys = Object.keys(wordlists);
+            const data = {
+                background: "dirt",
+                monster: monsters["goo"],
+                wordlist: keys[Phaser.Math.Between(0, keys.length - 1)]
+            };
+            this.scene.start(FightScene.Key, data);
+        });
+    }
+}
+CharacterScene.Key = "CHARACTER";
 class FightScene extends Phaser.Scene {
     constructor() {
         super({ key: FightScene.Key });
@@ -204,7 +258,7 @@ class FightScene extends Phaser.Scene {
         this.monsterObject = this.add.sprite(x + 100, y + 65, this.monster.name).setScale(6);
         this.monsterHP = this.monster.hp;
         this.monsterObject.play("monster_idle");
-        this.characterObject = new CharacterSprite(this, x - 100, y, "character1_1").setScale(6).setFlipX(true).setDepth(1);
+        this.characterObject = CharacterSprite.load(this).setX(x - 100).setY(y).setScale(6).setFlipX(true).setDepth(1);
         this.add.existing(this.characterObject);
         this.characterHP = this.characterObject.hp;
         this.characterObject.play("character_idle_sword");
@@ -213,7 +267,6 @@ class FightScene extends Phaser.Scene {
         this.add.rectangle(x, 16, VocabRPGGame.WIDTH, 32, 0xFFFFFF).setAlpha(0.7);
         const home = this.add.sprite(16, 16, "icons", 2).setScale(2).setInteractive();
         home.on("pointerdown", () => {
-            console.log("clicked on home");
             this.leave();
         });
         this.wordObject = this.add.dom(x, 62).createFromCache("question");
@@ -358,43 +411,44 @@ class FightScene extends Phaser.Scene {
         const question = document.getElementById("questionText");
         question.textContent = display;
     }
-    leave() {
+    defeatLogic() {
         if (this.monsterHP <= 0) {
             console.log("we defeated the monster");
             if (this.characterObject.changeXP(this.monster.xp)) {
             }
             this.characterObject.gold += Phaser.Math.Between(this.monster.xp - 1, this.monster.xp * 2);
             this.characterObject.save();
-            this.scene.start(FightScene.Key);
             return;
         }
         if (this.characterHP <= 0) {
             console.log("we died to the monster");
             this.characterObject.changeXP(-1);
             this.characterObject.save();
-            this.scene.start(FightScene.Key);
             return;
         }
         if (this.monsterHP < this.monster.hp || this.characterHP < this.characterObject.hp) {
             console.log("we left midway");
             this.characterObject.gold = Math.max(0, this.characterObject.gold - 1);
             this.characterObject.save();
-            this.scene.start(FightScene.Key);
             return;
         }
         console.log("we left without fighting");
-        this.scene.start(FightScene.Key);
+    }
+    leave() {
+        this.defeatLogic();
+        this.scene.start(CharacterScene.Key);
     }
     updateHP() {
         this.HPObject.clear();
         if (this.monsterHP <= 0 || this.characterHP <= 0) {
-            this.leave();
+            this.defeatLogic();
+            this.scene.start(FightScene.Key);
             return;
         }
         this.HPObject.fillStyle(0x000000);
         this.HPObject.fillRect(this.characterObject.x - 50, this.characterObject.y + 130, 100, 20);
         this.HPObject.fillStyle(0xFF0000);
-        this.HPObject.fillRect(this.characterObject.x - 48, this.characterObject.y + 132, 96 * (this.characterHP / 5), 16);
+        this.HPObject.fillRect(this.characterObject.x - 48, this.characterObject.y + 132, 96 * (this.characterHP / this.characterObject.hp), 16);
         this.HPObject.fillStyle(0x000000);
         this.HPObject.fillRect(this.monsterObject.x - 50, this.monsterObject.y + 65, 100, 20);
         this.HPObject.fillStyle(0xFF0000);
@@ -416,7 +470,7 @@ class VocabRPGGame {
                 parent: "game"
             },
             pixelArt: true,
-            scene: [LoadGameScene, FightScene],
+            scene: [LoadGameScene, CharacterScene, FightScene],
             type: Phaser.AUTO,
             width: VocabRPGGame.WIDTH
         });
