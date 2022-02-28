@@ -382,7 +382,7 @@ class CharacterScene extends Phaser.Scene {
         // Black dividing line
         this.add.rectangle(0, 192, 800, 8, this.characterObject.color_dark).setOrigin(0, 0)
 
-        const goFight = this.add.text(x, VocabRPGGame.HEIGHT - 100, "Go fight the goos!").setInteractive()
+        const goFight = this.add.text(x, VocabRPGGame.HEIGHT - 100, "Go fight the goos!").setInteractive({ cursor: "pointer" })
         goFight.setFontFamily("m5x7")
         goFight.setFontSize(48)
         goFight.setColor("#000000")
@@ -454,7 +454,7 @@ class FightScene extends Phaser.Scene {
 
         // Add the menu
         this.add.rectangle(x, 16, VocabRPGGame.WIDTH, 32, 0xFFFFFF).setAlpha(0.7)
-        const home = this.add.sprite(16, 16, "icons", 2).setScale(2).setInteractive()
+        const home = this.add.sprite(16, 16, "icons", 2).setScale(2).setInteractive({ cursor: "pointer" })
         home.on("pointerdown", () => {
             this.leave()
         })

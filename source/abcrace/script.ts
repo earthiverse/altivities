@@ -76,7 +76,7 @@ class BasicButton extends Phaser.GameObjects.Sprite {
         config.scene.add.existing(this)
 
         //make interactive and set listeners
-        this.setInteractive()
+        this.setInteractive({ cursor: "pointer" })
         this.on("pointerdown", this.onDown, this)
         this.on("pointerover", this.onOver, this)
         this.on("pointerout", this.onOut, this)
@@ -334,7 +334,7 @@ class ABCRacePlayScene extends Phaser.Scene {
             const rotation = getRandomNumber(-15, 15) * (Math.PI / 180)
             letterSprite.setRotation(rotation)
 
-            letterSprite.setInteractive()
+            letterSprite.setInteractive({ cursor: "pointer" })
 
             // Make the hit area larger to make letters like 'i' and 'l' easier to hit.
             const maxLength = Math.max(letterSprite.width, letterSprite.height)
@@ -488,7 +488,7 @@ class ABCRacePlayScene extends Phaser.Scene {
                 this.sound.play("start")
                 this.startTime = Date.now()
 
-                for (const sprite of this.sprites) sprite.setInteractive()
+                for (const sprite of this.sprites) sprite.setInteractive({ cursor: "pointer" })
             } else {
                 // In countdown
                 if (this.countdownImageI !== countdownProgressI) {
@@ -563,7 +563,7 @@ class ABCRaceResultsScene extends Phaser.Scene {
             "y": 380
         })
         menuButton.setAlpha(0)
-        menuButton.setInteractive()
+        menuButton.setInteractive({ cursor: "pointer" })
         menuButton.on("pointerup", () => {
             this.scene.start(ABCRaceMenuScene.Key)
         })
@@ -575,7 +575,7 @@ class ABCRaceResultsScene extends Phaser.Scene {
             onUpdate: (tween) => {
                 const value = tween.getValue()
                 menuButton.setAlpha(value / 100)
-                if (value == 100) menuButton.setInteractive()
+                if (value == 100) menuButton.setInteractive({ cursor: "pointer" })
             },
             to: 100,
         })

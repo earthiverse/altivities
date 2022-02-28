@@ -34,7 +34,7 @@ class BasicButton extends Phaser.GameObjects.Sprite {
         if (config.y)
             this.y = config.y;
         config.scene.add.existing(this);
-        this.setInteractive();
+        this.setInteractive({ cursor: "pointer" });
         this.on("pointerdown", this.onDown, this);
         this.on("pointerover", this.onOver, this);
         this.on("pointerout", this.onOut, this);
@@ -238,7 +238,7 @@ class ABCRacePlayScene extends Phaser.Scene {
                 minScale = scale;
             const rotation = getRandomNumber(-15, 15) * (Math.PI / 180);
             letterSprite.setRotation(rotation);
-            letterSprite.setInteractive();
+            letterSprite.setInteractive({ cursor: "pointer" });
             const maxLength = Math.max(letterSprite.width, letterSprite.height);
             letterSprite.input.hitArea.setTo(-(maxLength - letterSprite.width) / 2, -(maxLength - letterSprite.height) / 2, maxLength, maxLength);
             letterSprite.on("pointerdown", () => {
@@ -364,7 +364,7 @@ class ABCRacePlayScene extends Phaser.Scene {
                 this.sound.play("start");
                 this.startTime = Date.now();
                 for (const sprite of this.sprites)
-                    sprite.setInteractive();
+                    sprite.setInteractive({ cursor: "pointer" });
             }
             else {
                 if (this.countdownImageI !== countdownProgressI) {
@@ -424,7 +424,7 @@ class ABCRaceResultsScene extends Phaser.Scene {
             "y": 380
         });
         menuButton.setAlpha(0);
-        menuButton.setInteractive();
+        menuButton.setInteractive({ cursor: "pointer" });
         menuButton.on("pointerup", () => {
             this.scene.start(ABCRaceMenuScene.Key);
         });
@@ -437,7 +437,7 @@ class ABCRaceResultsScene extends Phaser.Scene {
                 const value = tween.getValue();
                 menuButton.setAlpha(value / 100);
                 if (value == 100)
-                    menuButton.setInteractive();
+                    menuButton.setInteractive({ cursor: "pointer" });
             },
             to: 100,
         });

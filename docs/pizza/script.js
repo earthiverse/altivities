@@ -107,7 +107,7 @@ class PizzaGamePlayScene extends Phaser.Scene {
                 const newSprite = this.add.sprite(this.cameras.main.centerX + randomX, this.cameras.main.centerY + randomY, topping.name);
                 newSprite.setDisplaySize(newRatio * randomSize * sprite.width, newRatio * randomSize * sprite.height);
                 newSprite.setRotation(randomAngle);
-                newSprite.setInteractive();
+                newSprite.setInteractive({ cursor: "pointer" });
                 newSprite.setActive(true);
                 this.items.push(newSprite);
                 this.input.setDraggable(newSprite);
