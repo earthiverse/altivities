@@ -1,167 +1,24 @@
 /* eslint-disable sort-keys */
-type CharacterData = {
-    hp: number
-    attack: number
-    level: number
-    gold: number
-    xp: number
-    color: number
-    color_light: number
-    color_dark: number
-    face: string
-    skin: string
-}
+import { BackgroundKey, BackgroundData } from "./backgrounds"
+import { CharacterAnimationKey, CharacterData, CharacterKey, SpriteData } from "./characters"
+import { MonsterKey, MonsterData } from "./monsters"
+import { Word, Wordlist, WordlistData } from "./wordlists"
+
+declare let backgrounds: { [T in BackgroundKey]: BackgroundData }
+declare let characters: { [ T in CharacterKey]: CharacterData }
+declare let monsters: { [ T in MonsterKey]: MonsterData }
+declare let wordlists: { [T in string]: WordlistData }
 
 type GameData = {
     background: string
-    monster: Monster
+    monster: MonsterKey
     wordlist: string
-}
-type Languages =
-    | "en"
-    | "ja"
-
-type Word = {
-    [T in Exclude<Languages, "ja">]: string | string[]
-} & {
-    ja: {
-        kanji: string
-        hiragana: string
-    } | {
-        kanji: string
-        hiragana: string
-    }[]
-}
-
-type Wordlist = Word[]
-
-type CharacterAnimationKey =
-    | "character_attack_sword"
-    | "character_fail"
-    | "character_idle_sword"
-
-type MonsterAnimationKey =
-    | "monster_idle"
-
-type BackgroundData = {
-    file: string
-    name: string
-}
-
-type SpriteData = {
-    /** Filename for the given character sprites */
-    file: string
-    frameWidth: number
-    frameHeight: number
-    scale?: number
-}
-
-type Character = {
-    /** Name of the character.
-     * NOTE: Keep all character names and monster names unique!
-     */
-    color: number
-    color_light: number
-    color_dark: number
-    name: string
-    face: string
-    spritesheet: SpriteData
-}
-
-type Monster = {
-    /** Name of the monster.
-     * NOTE: Keep all character names and monster names unique!
-     */
-    name: string
-    spritesheet: SpriteData
-
-    attack: number
-    hp: number
-    xp: number
-}
-
-const backgrounds: BackgroundData[] = [
-    {
-        file: "images/backgrounds/dirt.png",
-        name: "dirt",
-    }
-]
-
-const characters: { [T in string]: Character} = {
-    "boy": {
-        name: "boy",
-        color: 0xA56F36,
-        color_light: 0xB6935D,
-        color_dark: 0x745843,
-        face: "images/faces/boy.png",
-        spritesheet: {
-            file: "images/characters/boy.png",
-            frameHeight: 48,
-            frameWidth: 48,
-        }
-    }
 }
 
 const icons: SpriteData = {
     file: "images/icons/16px.png",
     frameWidth: 16,
     frameHeight: 16
-}
-
-const monsters: {[T in string]: Monster} = {
-    "goo": {
-        name: "goo",
-        spritesheet: {
-            file: "images/monsters/goo.png",
-            frameWidth: 15,
-            frameHeight: 19,
-        },
-        attack: 1,
-        hp: 10,
-        xp: 1
-    }
-}
-
-const wordlists: {[T in string]: {
-    description: string
-    file: string
-}} = {
-    "js5_l2": {
-        description: "Junior Sunshine 5 - Lesson 2",
-        file: "../wordlists/JuniorSunshine5/lesson2.json"
-    },
-    "js5_l3": {
-        description: "Junior Sunshine 5 - Lesson 3",
-        file: "../wordlists/JuniorSunshine5/lesson3.json"
-    },
-    "js5_l4": {
-        description: "Junior Sunshine 5 - Lesson 4",
-        file: "../wordlists/JuniorSunshine5/lesson4.json"
-    },
-    "js5_l5": {
-        description: "Junior Sunshine 5 - Lesson 5",
-        file: "../wordlists/JuniorSunshine5/lesson5.json"
-    },
-    "js5_l7": {
-        description: "Junior Sunshine 5 - Lesson 7",
-        file: "../wordlists/JuniorSunshine5/lesson7.json"
-    },
-    "js5_l8": {
-        description: "Junior Sunshine 5 - Lesson 8",
-        file: "../wordlists/JuniorSunshine5/lesson8.json"
-    },
-    "js5_l9": {
-        description: "Junior Sunshine 5 - Lesson 9",
-        file: "../wordlists/JuniorSunshine5/lesson9.json"
-    },
-    "js5_alphabet": {
-        description: "Junior Sunshine 5 - Alphabet",
-        file: "../wordlists/JuniorSunshine5/alphabet.json"
-    },
-    "js5_phonics": {
-        description: "Junior Sunshine 5 - Phonics",
-        file: "../wordlists/JuniorSunshine5/phonics.json"
-    }
 }
 
 // Colors
@@ -265,6 +122,12 @@ class LoadGameScene extends Phaser.Scene {
     create() {
         // Create animations
         this.anims.create({
+            key: "character_idle",
+            frameRate: 3,
+            frames: this.anims.generateFrameNumbers("boy", { start: 0, end: 2 }),
+            repeat: -1
+        })
+        this.anims.create({
             key: "character_idle_sword",
             frameRate: 3,
             frames: this.anims.generateFrameNumbers("boy", { start: 9, end: 11 }),
@@ -321,7 +184,10 @@ class LoadGameScene extends Phaser.Scene {
         })
 
         // Load backgrounds
-        for (const background of backgrounds) this.load.image(background.name, background.file)
+        for (const name in backgrounds) {
+            const background = backgrounds[name]
+            this.load.image(background.name, background.file)
+        }
 
         // Load characters
         for (const skin in characters) {
@@ -359,7 +225,9 @@ class CharacterScene extends Phaser.Scene {
         const y = this.cameras.main.centerY
 
         // Load character data
-        this.characterObject = CharacterSprite.load(this)
+        this.characterObject = CharacterSprite.load(this).setX(x - 100).setY(y).setScale(6).setFlipX(true).setDepth(1)
+        this.add.existing(this.characterObject)
+        this.characterObject.play("character_idle")
 
         // Create face
         this.add.rectangle(0, 0, 800, 192, this.characterObject.color_light).setOrigin(0, 0)
@@ -382,16 +250,18 @@ class CharacterScene extends Phaser.Scene {
         // Black dividing line
         this.add.rectangle(0, 192, 800, 8, this.characterObject.color_dark).setOrigin(0, 0)
 
-        const goFight = this.add.text(x, VocabRPGGame.HEIGHT - 100, "Go fight the goos!").setInteractive({ cursor: "pointer" })
-        goFight.setFontFamily("m5x7")
-        goFight.setFontSize(48)
-        goFight.setColor("#000000")
+        const goFight = this.add.text(x, VocabRPGGame.HEIGHT - 32, "Go fight the goos!")
+            .setOrigin(0.5)
+            .setFontFamily("m5x7")
+            .setFontSize(48)
+            .setColor("#000000")
+            .setInteractive({ cursor: "pointer" })
         goFight.on("pointerdown", () => {
             // Start the game
             const keys = Object.keys(wordlists)
             const data: GameData = {
                 background: "dirt",
-                monster: monsters["goo"],
+                monster: "goo",
                 wordlist: keys[Phaser.Math.Between(0, keys.length - 1)] // Random wordlist
             }
             this.scene.start(FightScene.Key, data)
@@ -403,7 +273,7 @@ class FightScene extends Phaser.Scene {
     static Key = "FIGHT"
 
     private background: string
-    private monster: Monster
+    private monster: MonsterData
     private word: Word
 
     private characterHP: number
@@ -572,7 +442,7 @@ class FightScene extends Phaser.Scene {
         this.word = undefined
         this.wordlistID = data.wordlist
         this.background = data.background
-        this.monster = data.monster
+        this.monster = monsters[data.monster]
 
         this.enterKey = this.input.keyboard.addKey("ENTER")
     }

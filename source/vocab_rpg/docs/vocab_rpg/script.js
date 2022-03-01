@@ -1,9 +1,75 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const characters = {
+    "boy": {
+        name: "boy",
+        color: 0xA56F36,
+        color_light: 0xB6935D,
+        color_dark: 0x745843,
+        face: "images/faces/boy.png",
+        spritesheet: {
+            file: "images/characters/boy.png",
+            frameHeight: 48,
+            frameWidth: 48,
+        }
+    }
+};
 const icons = {
     file: "images/icons/16px.png",
     frameWidth: 16,
     frameHeight: 16
+};
+const monsters = {
+    "goo": {
+        background: "dirt",
+        name: "goo",
+        spritesheet: {
+            file: "images/monsters/goo.png",
+            frameWidth: 15,
+            frameHeight: 19,
+        },
+        attack: 1,
+        hp: 10,
+        xp: 1
+    }
+};
+const wordlists = {
+    "js5_l2": {
+        description: "Junior Sunshine 5 - Lesson 2",
+        file: "../wordlists/JuniorSunshine5/lesson2.json"
+    },
+    "js5_l3": {
+        description: "Junior Sunshine 5 - Lesson 3",
+        file: "../wordlists/JuniorSunshine5/lesson3.json"
+    },
+    "js5_l4": {
+        description: "Junior Sunshine 5 - Lesson 4",
+        file: "../wordlists/JuniorSunshine5/lesson4.json"
+    },
+    "js5_l5": {
+        description: "Junior Sunshine 5 - Lesson 5",
+        file: "../wordlists/JuniorSunshine5/lesson5.json"
+    },
+    "js5_l7": {
+        description: "Junior Sunshine 5 - Lesson 7",
+        file: "../wordlists/JuniorSunshine5/lesson7.json"
+    },
+    "js5_l8": {
+        description: "Junior Sunshine 5 - Lesson 8",
+        file: "../wordlists/JuniorSunshine5/lesson8.json"
+    },
+    "js5_l9": {
+        description: "Junior Sunshine 5 - Lesson 9",
+        file: "../wordlists/JuniorSunshine5/lesson9.json"
+    },
+    "js5_alphabet": {
+        description: "Junior Sunshine 5 - Alphabet",
+        file: "../wordlists/JuniorSunshine5/alphabet.json"
+    },
+    "js5_phonics": {
+        description: "Junior Sunshine 5 - Phonics",
+        file: "../wordlists/JuniorSunshine5/phonics.json"
+    }
 };
 const WHITE = new Phaser.Display.Color(255, 255, 255);
 const RED = new Phaser.Display.Color(255, 0, 0);
@@ -175,7 +241,7 @@ class CharacterScene extends Phaser.Scene {
             const keys = Object.keys(wordlists);
             const data = {
                 background: "dirt",
-                monster: "goo",
+                monster: monsters["goo"],
                 wordlist: keys[Phaser.Math.Between(0, keys.length - 1)]
             };
             this.scene.start(FightScene.Key, data);
@@ -312,7 +378,7 @@ class FightScene extends Phaser.Scene {
         this.word = undefined;
         this.wordlistID = data.wordlist;
         this.background = data.background;
-        this.monster = monsters[data.monster];
+        this.monster = data.monster;
         this.enterKey = this.input.keyboard.addKey("ENTER");
     }
     playCharacterAnimation(animation) {
