@@ -20,7 +20,6 @@ class CharacterSprite extends Phaser.GameObjects.Sprite {
                 skin = parsedData.skin;
             sprite = new CharacterSprite(scene, 0, 0, skin);
             for (const key in parsedData) {
-                console.log(`parsed ${key} as ${parsedData[key]}`);
                 sprite[key] = parsedData[key];
             }
         }
@@ -148,6 +147,7 @@ class CharacterScene extends Phaser.Scene {
     create() {
         const x = this.cameras.main.centerX;
         const y = this.cameras.main.centerY;
+        this.add.sprite(x, y, this.monster.background).setScale(4.5);
         this.characterObject = CharacterSprite.load(this).setX(x - 100).setY(y).setScale(6).setFlipX(true).setDepth(1);
         this.add.existing(this.characterObject);
         this.characterObject.play("character_idle");
@@ -170,16 +170,20 @@ class CharacterScene extends Phaser.Scene {
             .setFontFamily("m5x7")
             .setFontSize(48)
             .setColor("#000000")
+            .setBackgroundColor("#FFFFFF")
             .setInteractive({ cursor: "pointer" });
         goFight.on("pointerdown", () => {
             const keys = Object.keys(wordlists);
             const data = {
                 background: "dirt",
-                monster: "goo",
+                monster: this.monster.name,
                 wordlist: keys[Phaser.Math.Between(0, keys.length - 1)]
             };
             this.scene.start(FightScene.Key, data);
         });
+    }
+    init() {
+        this.monster = monsters["goo"];
     }
 }
 CharacterScene.Key = "CHARACTER";
@@ -191,12 +195,12 @@ class FightScene extends Phaser.Scene {
         if (!this.cache.json.has(this.wordlistID))
             this.load.json(this.wordlistID, wordlists[this.wordlistID].file);
     }
-    create() {
+    async create() {
         const x = this.cameras.main.centerX;
         const y = this.cameras.main.centerY;
         this.wordlist = this.cache.json.get(this.wordlistID);
-        this.add.sprite(x, y, this.background).setScale(4.5);
-        this.monsterObject = this.add.sprite(x + 100, y + 65, this.monster.name).setScale(6);
+        this.add.sprite(x, y, this.monster.background).setScale(4.5);
+        this.monsterObject = this.add.sprite(VocabRPGGame.WIDTH + 100, y + 65, this.monster.name).setScale(6);
         this.monsterHP = this.monster.hp;
         this.monsterObject.play("monster_idle");
         this.characterObject = CharacterSprite.load(this).setX(x - 100).setY(y).setScale(6).setFlipX(true).setDepth(1);
@@ -205,6 +209,16 @@ class FightScene extends Phaser.Scene {
         this.characterObject.play("character_idle_sword");
         this.HPObject = this.add.graphics().setDepth(2);
         this.updateHP();
+        this.add.tween({
+            duration: 1000,
+            targets: this.monsterObject,
+            ease: "Cubic",
+            repeat: 0,
+            x: `-=${this.monsterObject.x - (x + 100)}`,
+            onComplete: () => {
+                this.updateHP();
+            },
+        });
         this.add.rectangle(x, 16, VocabRPGGame.WIDTH, 32, 0xFFFFFF).setAlpha(0.7);
         const home = this.add.sprite(16, 16, "icons", 2).setScale(2).setInteractive({ cursor: "pointer" });
         home.on("pointerdown", () => {
@@ -232,7 +246,7 @@ class FightScene extends Phaser.Scene {
                     targets: this.monsterObject,
                     ease: "Cubic",
                     repeat: 0,
-                    x: "-=100",
+                    x: `-=${this.monsterObject.x - this.characterObject.x - this.monsterObject.displayWidth}`,
                     yoyo: true
                 });
                 this.add.tween({
@@ -267,7 +281,7 @@ class FightScene extends Phaser.Scene {
                 targets: this.characterObject,
                 ease: "Cubic",
                 repeat: 0,
-                x: "+=100",
+                x: `+=${this.monsterObject.x - this.characterObject.x - this.monsterObject.displayWidth}`,
                 yoyo: true
             });
             this.add.tween({
@@ -311,7 +325,6 @@ class FightScene extends Phaser.Scene {
     init(data) {
         this.word = undefined;
         this.wordlistID = data.wordlist;
-        this.background = data.background;
         this.monster = monsters[data.monster];
         this.enterKey = this.input.keyboard.addKey("ENTER");
     }
@@ -352,7 +365,7 @@ class FightScene extends Phaser.Scene {
         const question = document.getElementById("questionText");
         question.textContent = display;
     }
-    defeatLogic() {
+    async defeatLogic() {
         if (this.monsterHP <= 0) {
             console.log("we defeated the monster");
             if (this.characterObject.changeXP(this.monster.xp)) {
@@ -379,10 +392,10 @@ class FightScene extends Phaser.Scene {
         this.defeatLogic();
         this.scene.start(CharacterScene.Key);
     }
-    updateHP() {
+    async updateHP() {
         this.HPObject.clear();
         if (this.monsterHP <= 0 || this.characterHP <= 0) {
-            this.defeatLogic();
+            await this.defeatLogic();
             this.scene.start(FightScene.Key);
             return;
         }

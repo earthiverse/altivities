@@ -11,7 +11,7 @@ export type MonsterData = {
     /** Name of the monster.
      * NOTE: Keep all character names and monster names unique!
      */
-    name: string
+    name: MonsterKey
     spritesheet: SpriteData
     background: BackgroundKey
 

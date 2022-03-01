@@ -18,6 +18,7 @@ type Languages =
     | "ja"
 
 type Word = {
+    image?: string
     [T in Exclude<Languages, "ja">]: string | string[]
 } & {
     ja: {
@@ -40,6 +41,7 @@ If there is only one correct answer, the answer is a simple string.
 
 ```json
 {
+    "image": "https://3.bp.blogspot.com/-aw6xcvCl5ZM/VJF_t0iwQrI/AAAAAAAAp6A/4m4Gu_tGJPg/s6400/month01_january.png",
     "en": "January",
     "ja": {
         "kanji": "一月",

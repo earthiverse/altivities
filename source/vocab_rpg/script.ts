@@ -54,7 +54,6 @@ class CharacterSprite extends Phaser.GameObjects.Sprite implements CharacterData
 
             // Add attributes
             for (const key in parsedData) {
-                console.log(`parsed ${key} as ${parsedData[key]}`)
                 sprite[key] = parsedData[key]
             }
         }
@@ -215,6 +214,7 @@ class CharacterScene extends Phaser.Scene {
     static Key = "CHARACTER"
 
     private characterObject: CharacterSprite
+    private monster: MonsterData
 
     constructor() {
         super({ key: CharacterScene.Key })
@@ -223,6 +223,9 @@ class CharacterScene extends Phaser.Scene {
     create() {
         const x = this.cameras.main.centerX
         const y = this.cameras.main.centerY
+
+        // Add the background
+        this.add.sprite(x, y, this.monster.background).setScale(4.5)
 
         // Load character data
         this.characterObject = CharacterSprite.load(this).setX(x - 100).setY(y).setScale(6).setFlipX(true).setDepth(1)
@@ -255,24 +258,28 @@ class CharacterScene extends Phaser.Scene {
             .setFontFamily("m5x7")
             .setFontSize(48)
             .setColor("#000000")
+            .setBackgroundColor("#FFFFFF")
             .setInteractive({ cursor: "pointer" })
         goFight.on("pointerdown", () => {
             // Start the game
             const keys = Object.keys(wordlists)
             const data: GameData = {
                 background: "dirt",
-                monster: "goo",
+                monster: this.monster.name,
                 wordlist: keys[Phaser.Math.Between(0, keys.length - 1)] // Random wordlist
             }
             this.scene.start(FightScene.Key, data)
         })
+    }
+
+    init() {
+        this.monster = monsters["goo"]
     }
 }
 
 class FightScene extends Phaser.Scene {
     static Key = "FIGHT"
 
-    private background: string
     private monster: MonsterData
     private word: Word
 
@@ -298,7 +305,7 @@ class FightScene extends Phaser.Scene {
         if (!this.cache.json.has(this.wordlistID)) this.load.json(this.wordlistID, wordlists[this.wordlistID].file)
     }
 
-    create() {
+    async create() {
         const x = this.cameras.main.centerX
         const y = this.cameras.main.centerY
 
@@ -306,10 +313,10 @@ class FightScene extends Phaser.Scene {
         this.wordlist = this.cache.json.get(this.wordlistID)
 
         // Add the background
-        this.add.sprite(x, y, this.background).setScale(4.5)
+        this.add.sprite(x, y, this.monster.background).setScale(4.5)
 
         // Add the monster
-        this.monsterObject = this.add.sprite(x + 100, y + 65, this.monster.name).setScale(6)
+        this.monsterObject = this.add.sprite(VocabRPGGame.WIDTH + 100, y + 65, this.monster.name).setScale(6)
         this.monsterHP = this.monster.hp
         this.monsterObject.play("monster_idle")
 
@@ -321,6 +328,18 @@ class FightScene extends Phaser.Scene {
 
         this.HPObject = this.add.graphics().setDepth(2)
         this.updateHP()
+
+        // Animate the monster entrance
+        this.add.tween({
+            duration: 1000,
+            targets: this.monsterObject,
+            ease: "Cubic",
+            repeat: 0,
+            x: `-=${this.monsterObject.x - (x + 100)}`,
+            onComplete: () => {
+                this.updateHP()
+            },
+        })
 
         // Add the menu
         this.add.rectangle(x, 16, VocabRPGGame.WIDTH, 32, 0xFFFFFF).setAlpha(0.7)
@@ -356,7 +375,7 @@ class FightScene extends Phaser.Scene {
                     targets: this.monsterObject,
                     ease: "Cubic",
                     repeat: 0,
-                    x: "-=100",
+                    x: `-=${this.monsterObject.x - this.characterObject.x - this.monsterObject.displayWidth}`,
                     yoyo: true
                 })
                 // Add damage animation
@@ -392,7 +411,7 @@ class FightScene extends Phaser.Scene {
                 targets: this.characterObject,
                 ease: "Cubic",
                 repeat: 0,
-                x: "+=100",
+                x: `+=${this.monsterObject.x - this.characterObject.x - this.monsterObject.displayWidth}`,
                 yoyo: true
             })
             // Add damage animation
@@ -441,7 +460,6 @@ class FightScene extends Phaser.Scene {
     init(data: GameData) {
         this.word = undefined
         this.wordlistID = data.wordlist
-        this.background = data.background
         this.monster = monsters[data.monster]
 
         this.enterKey = this.input.keyboard.addKey("ENTER")
@@ -490,7 +508,7 @@ class FightScene extends Phaser.Scene {
         question.textContent = display
     }
 
-    private defeatLogic() {
+    private async defeatLogic() {
         if (this.monsterHP <= 0) {
             // We defeated the monster
             console.log("we defeated the monster")
@@ -505,6 +523,7 @@ class FightScene extends Phaser.Scene {
         if (this.characterHP <= 0) {
             // We died to the monster
             console.log("we died to the monster")
+            // TODO: monster attack animation
             this.characterObject.changeXP(-1)
             this.characterObject.save()
             return
@@ -513,12 +532,15 @@ class FightScene extends Phaser.Scene {
         if (this.monsterHP < this.monster.hp || this.characterHP < this.characterObject.hp) {
             // We left midway through the battle
             console.log("we left midway")
+            // TODO: monster attack animation
+            // TODO: death animation
             this.characterObject.gold = Math.max(0, this.characterObject.gold - 1)
             this.characterObject.save()
             return
         }
 
         // We left without starting the battle
+        // TODO: escape animation
         console.log("we left without fighting")
     }
 
@@ -527,12 +549,12 @@ class FightScene extends Phaser.Scene {
         this.scene.start(CharacterScene.Key)
     }
 
-    private updateHP() {
+    private async updateHP() {
         this.HPObject.clear()
 
         if (this.monsterHP <= 0 || this.characterHP <= 0) {
             // Someone died, start a new game
-            this.defeatLogic()
+            await this.defeatLogic()
             this.scene.start(FightScene.Key)
             return
         }

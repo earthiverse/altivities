@@ -26,7 +26,7 @@ export type Character = {
     color: number
     color_light: number
     color_dark: number
-    name: string
+    name: CharacterKey
     face: string
     spritesheet: SpriteData
 }
