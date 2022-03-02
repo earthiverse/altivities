@@ -38,3 +38,8 @@ const wordlists = {
         file: "../wordlists/JuniorSunshine5/phonics.json"
     }
 };
+const categories = {
+    "js5": {
+        name: "Junior Sunshine 5"
+    }
+};

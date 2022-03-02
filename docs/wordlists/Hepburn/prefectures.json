@@ -1,0 +1,331 @@
+[
+    {
+        "en": "Aichi",
+        "ja": {
+            "kanji": "愛知",
+            "hiragana": "あいち"
+        }
+    },
+    {
+        "en": "Akita",
+        "ja": {
+            "kanji": "秋田",
+            "hiragana": "あきた"
+        }
+    },
+    {
+        "en": "Aomori",
+        "ja": {
+            "kanji": "青森",
+            "hiragana": "あおもり"
+        }
+    },
+    {
+        "en": "Chiba",
+        "ja": {
+            "kanji": "千葉",
+            "hiragana": "ちば"
+        }
+    },
+    {
+        "en": "Ehime",
+        "ja": {
+            "kanji": "愛媛",
+            "hiragana": "えひめ"
+        }
+    },
+    {
+        "en": "Fukui",
+        "ja": {
+            "kanji": "福井",
+            "hiragana": "ふくい"
+        }
+    },
+    {
+        "en": "Fukuoka",
+        "ja": {
+            "kanji": "福岡",
+            "hiragana": "ふくおか"
+        }
+    },
+    {
+        "en": "Fukushima",
+        "ja": {
+            "kanji": "福島",
+            "hiragana": "ふくしま"
+        }
+    },
+    {
+        "en": "Gifu",
+        "ja": {
+            "kanji": "岐阜",
+            "hiragana": "ぎふ"
+        }
+    },
+    {
+        "en": "Gunma",
+        "ja": {
+            "kanji": "群馬",
+            "hiragana": "ぐんま"
+        }
+    },
+    {
+        "en": "Hiroshima",
+        "ja": {
+            "kanji": "広島",
+            "hiragana": "ひろしま"
+        }
+    },
+    {
+        "en": "Hokkaido",
+        "ja": {
+            "kanji": "北海道",
+            "hiragana": "ほっかいどう"
+        }
+    },
+    {
+        "en": "Hiroshima",
+        "ja": {
+            "kanji": "広島",
+            "hiragana": "ひろしま"
+        }
+    },
+    {
+        "en": "Hyogo",
+        "ja": {
+            "kanji": "兵庫",
+            "hiragana": "ひょうご"
+        }
+    },
+    {
+        "en": "Ibaraki",
+        "ja": {
+            "kanji": "茨城",
+            "hiragana": "いばらき"
+        }
+    },
+    {
+        "en": "Ishikawa",
+        "ja": {
+            "kanji": "石川",
+            "hiragana": "いしかわ"
+        }
+    },
+    {
+        "en": "Iwate",
+        "ja": {
+            "kanji": "岩手",
+            "hiragana": "いわて"
+        }
+    },
+    {
+        "en": "Kagawa",
+        "ja": {
+            "kanji": "香川",
+            "hiragana": "かがわ"
+        }
+    },
+    {
+        "en": "Kagoshima",
+        "ja": {
+            "kanji": "鹿児島",
+            "hiragana": "かごしま"
+        }
+    },
+    {
+        "en": "Kanagawa",
+        "ja": {
+            "kanji": "神奈川",
+            "hiragana": "かながわ"
+        }
+    },
+    {
+        "en": "Kochi",
+        "ja": {
+            "kanji": "高知",
+            "hiragana": "こうち"
+        }
+    },
+    {
+        "en": "Kumamoto",
+        "ja": {
+            "kanji": "熊本",
+            "hiragana": "くまもと"
+        }
+    },
+    {
+        "en": "Kyoto",
+        "ja": {
+            "kanji": "京都",
+            "hiragana": "きょうと"
+        }
+    },
+    {
+        "en": "Mie",
+        "ja": {
+            "kanji": "三重",
+            "hiragana": "みえ"
+        }
+    },
+    {
+        "en": "Miyagi",
+        "ja": {
+            "kanji": "宮城",
+            "hiragana": "みやぎ"
+        }
+    },
+    {
+        "en": "Miyazaki",
+        "ja": {
+            "kanji": "宮崎",
+            "hiragana": "みやざき"
+        }
+    },
+    {
+        "en": "Nagano",
+        "ja": {
+            "kanji": "長野",
+            "hiragana": "ながの"
+        }
+    },
+    {
+        "en": "Nagasaki",
+        "ja": {
+            "kanji": "長崎",
+            "hiragana": "ながさき"
+        }
+    },
+    {
+        "en": "Nara",
+        "ja": {
+            "kanji": "奈良",
+            "hiragana": "なら"
+        }
+    },
+    {
+        "en": "Niigata",
+        "ja": {
+            "kanji": "新潟",
+            "hiragana": "にいがた"
+        }
+    },
+    {
+        "en": "Oita",
+        "ja": {
+            "kanji": "大分",
+            "hiragana": "おおいた"
+        }
+    },
+    {
+        "en": "Okayama",
+        "ja": {
+            "kanji": "岡山",
+            "hiragana": "おかやま"
+        }
+    },
+    {
+        "en": "Okinawa",
+        "ja": {
+            "kanji": "沖縄",
+            "hiragana": "おきなわ"
+        }
+    },
+    {
+        "en": "Osaka",
+        "ja": {
+            "kanji": "大阪",
+            "hiragana": "おおさか"
+        }
+    },
+    {
+        "en": "Saga",
+        "ja": {
+            "kanji": "佐賀",
+            "hiragana": "さが"
+        }
+    },
+    {
+        "en": "Saitama",
+        "ja": {
+            "kanji": "埼玉",
+            "hiragana": "さいたま"
+        }
+    },
+    {
+        "en": "Shiga",
+        "ja": {
+            "kanji": "滋賀",
+            "hiragana": "しが"
+        }
+    },
+    {
+        "en": "Shimane",
+        "ja": {
+            "kanji": "島根",
+            "hiragana": "しまね"
+        }
+    },
+    {
+        "en": "Shizuoka",
+        "ja": {
+            "kanji": "静岡",
+            "hiragana": "しずおか"
+        }
+    },
+    {
+        "en": "Tochigi",
+        "ja": {
+            "kanji": "栃木",
+            "hiragana": "とちぎ"
+        }
+    },
+    {
+        "en": "Tokushima",
+        "ja": {
+            "kanji": "徳島",
+            "hiragana": "とくしま"
+        }
+    },
+    {
+        "en": "Tokyo",
+        "ja": {
+            "kanji": "東京",
+            "hiragana": "とうきょう"
+        }
+    },
+    {
+        "en": "Tottori",
+        "ja": {
+            "kanji": "鳥取",
+            "hiragana": "とっとり"
+        }
+    },
+    {
+        "en": "Toyama",
+        "ja": {
+            "kanji": "富山",
+            "hiragana": "とやま"
+        }
+    },
+    {
+        "en": "Wakayama",
+        "ja": {
+            "kanji": "和歌山",
+            "hiragana": "わかやま"
+        }
+    },
+    {
+        "en": "Yamaguchi",
+        "ja": {
+            "kanji": "山口",
+            "hiragana": "やまぐち"
+        }
+    },
+    {
+        "en": "Yamanashi",
+        "ja": {
+            "kanji": "山梨",
+            "hiragana": "やまなし"
+        }
+    }
+]

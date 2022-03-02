@@ -21,6 +21,10 @@ export type WordlistData = {
     file: string
 }
 
+export type CategoryData = {
+    name: string
+}
+
 // NOTE: We import this file in the index.html, this variable is important.
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const wordlists: {[T in string]: WordlistData} = {
@@ -59,5 +63,13 @@ const wordlists: {[T in string]: WordlistData} = {
     "js5_phonics": {
         description: "Junior Sunshine 5 - Phonics",
         file: "../wordlists/JuniorSunshine5/phonics.json"
+    }
+}
+
+// NOTE: We import this file in the index.html, this variable is important.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const categories: { [T in string]: CategoryData } = {
+    "js5": {
+        name: "Junior Sunshine 5"
     }
 }

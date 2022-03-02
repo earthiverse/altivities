@@ -1,0 +1,149 @@
+[
+    {
+        "en": "sushi",
+        "ja": {
+            "kanji": "寿司",
+            "hiragana": "すし"
+        }
+    },
+    {
+        "en": "tempura",
+        "ja": {
+            "kanji": "天ぷら",
+            "hiragana": "てんぷら"
+        }
+    },
+    {
+        "en": "ramen",
+        "ja": {
+            "kanji": "ラーメン",
+            "hiragana": "らーめん"
+        }
+    },
+    {
+        "en": "karate",
+        "ja": {
+            "kanji": "空手",
+            "hiragana": "からて"
+        }
+    },
+    {
+        "en": "ninja",
+        "ja": {
+            "kanji": "忍者",
+            "hiragana": "にんじゃ"
+        }
+    },
+    {
+        "en": "samurai",
+        "ja": {
+            "kanji": "侍",
+            "hiragana": "さむらい"
+        }
+    },
+    {
+        "en": "anime",
+        "ja": {
+            "kanji": "アニメ",
+            "hiragana": "あにめ"
+        }
+    },
+    {
+        "en": "bonsai",
+        "ja": {
+            "kanji": "盆栽",
+            "hiragana": "ぼんさい"
+        }
+    },
+    {
+        "en": "haiku",
+        "ja": {
+            "kanji": "俳句",
+            "hiragana": "はいく"
+        }
+    },
+    {
+        "en": "karaoke",
+        "ja": {
+            "kanji": "カラオケ",
+            "hiragana": "からおけ"
+        }
+    },
+    {
+        "en": "manga",
+        "ja": {
+            "kanji": "漫画",
+            "hiragana": "まんが"
+        }
+    },
+    {
+        "en": "manga",
+        "ja": {
+            "kanji": "漫画",
+            "hiragana": "まんが"
+        }
+    },
+    {
+        "en": "shamisen",
+        "ja": {
+            "kanji": "三味線",
+            "hiragana": "しゃみせん"
+        }
+    },
+    {
+        "en": "kimono",
+        "ja": {
+            "kanji": "着物",
+            "hiragana": "きもの"
+        }
+    },
+    {
+        "en": "gyoza",
+        "ja": {
+            "kanji": "餃子",
+            "hiragana": "ぎょうざ"
+        }
+    },
+    {
+        "en": "natto",
+        "ja": {
+            "kanji": "納豆",
+            "hiragana": "なっとう"
+        }
+    },
+    {
+        "en": "tofu",
+        "ja": {
+            "kanji": "豆腐",
+            "hiragana": "とうふ"
+        }
+    },
+    {
+        "en": "sumo",
+        "ja": {
+            "kanji": "相撲",
+            "hiragana": "すもう"
+        }
+    },
+    {
+        "en": "judo",
+        "ja": {
+            "kanji": "柔道",
+            "hiragana": "じゅうどう"
+        }
+    },
+    {
+        "en": "kendo",
+        "ja": {
+            "kanji": "剣道",
+            "hiragana": "けんどう"
+        }
+    },
+    {
+        "en": "tsunami",
+        "ja": {
+            "kanji": "津波",
+            "hiragana": "つなみ"
+        }
+    }
+]
