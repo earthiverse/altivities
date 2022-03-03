@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const categories = {
     hep: {
+        art: "images/categories/hepburn.png",
         name: "Hepburn Romaji",
         wordlists: {
             hep_english: {

@@ -80,6 +80,7 @@ input[type=button] {
     height: 350px;
     width: 350px;
     object-fit: contain;
+    margin: 0 25px 0 25px;
 }
 
 #wordlist_select input[type=checkbox] {

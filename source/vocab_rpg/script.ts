@@ -250,6 +250,8 @@ class WordlistScene extends Phaser.Scene {
     }
 
     private populateWordlists(key: CategoryKey) {
+        const category = categories[key]
+
         const div = document.getElementById("category_wordlists")
 
         // Clear the div
@@ -257,8 +259,11 @@ class WordlistScene extends Phaser.Scene {
 
         const selected: string[] = JSON.parse(localStorage.getItem("wordlists") ?? "[]")
 
+        // Change the image
+        const image = document.getElementById("category_art") as HTMLImageElement
+        image.src = category.art
+
         // Populate the div with new values
-        const category = categories[key]
         for (const key in category.wordlists) {
             const wordlist = category.wordlists[key]
             const label = document.createElement("label")

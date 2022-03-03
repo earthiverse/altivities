@@ -105,7 +105,7 @@ class LoadGameScene extends Phaser.Scene {
         });
         if (!localStorage.getItem("wordlists"))
             localStorage.setItem("wordlists", "[]");
-        this.scene.start(CharacterScene.Key);
+        this.scene.start(WordlistScene.Key);
     }
     preload() {
         const loadingText = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 2 - 50, "Loading...");
@@ -174,11 +174,13 @@ class WordlistScene extends Phaser.Scene {
         };
     }
     populateWordlists(key) {
+        const category = categories[key];
         const div = document.getElementById("category_wordlists");
         while (div.firstChild)
             div.removeChild(div.firstChild);
         const selected = JSON.parse(localStorage.getItem("wordlists") ?? "[]");
-        const category = categories[key];
+        const image = document.getElementById("category_art");
+        image.src = category.art;
         for (const key in category.wordlists) {
             const wordlist = category.wordlists[key];
             const label = document.createElement("label");

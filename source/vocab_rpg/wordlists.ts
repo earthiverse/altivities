@@ -36,6 +36,7 @@ export type CategoryData = {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const categories: { [T in CategoryKey]: CategoryData } = {
     hep: {
+        art: "images/categories/hepburn.png",
         name: "Hepburn Romaji",
         wordlists: {
             hep_english: {
