@@ -105,7 +105,7 @@ class LoadGameScene extends Phaser.Scene {
         });
         if (!localStorage.getItem("wordlists"))
             localStorage.setItem("wordlists", "[]");
-        this.scene.start(WordlistScene.Key);
+        this.scene.start(CharacterScene.Key);
     }
     preload() {
         const loadingText = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 2 - 50, "Loading...");
