@@ -46,3 +46,61 @@ input[type=button] {
     font-family: 'UD デジタル 教科書体 NK-B';
     font-size: 48px;
 }
+
+#wordlist_select {
+    background-color: rgba(255,255,255,0.7);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 600px;
+    width: 800px;
+}
+
+#wordlist_select select {
+    display: flex;
+    font-size: 48px;
+    height: 50px;
+    width: 745px;
+    padding: 0 0 0 5px;
+    margin: auto;
+}
+
+#wordlist_select option {
+    font-size: 24px;
+}
+
+#wordlist_select div {
+    height: 350px;
+    width: 375px;
+    overflow-y: auto;
+}
+
+#category_art {
+    height: 350px;
+    width: 350px;
+    object-fit: contain;
+}
+
+#wordlist_select input[type=checkbox] {
+    margin: 5px;
+    width: auto;
+}
+
+#wordlist_select label {
+    display: block;
+    font-size: 24px;
+}
+
+#wordlist_select button {
+    font-size: 48px;
+    height: 50px;
+    width: 300px;
+    margin: 25px;
+}
+#wordlist_reset {
+    background-color: orange;
+}
+#wordlist_apply {
+    background-color: green;
+}

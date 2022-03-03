@@ -103,6 +103,8 @@ class LoadGameScene extends Phaser.Scene {
             repeat: -1,
             yoyo: true
         });
+        if (!localStorage.getItem("wordlists"))
+            localStorage.setItem("wordlists", "[]");
         this.scene.start(CharacterScene.Key);
     }
     preload() {
@@ -136,10 +138,75 @@ class LoadGameScene extends Phaser.Scene {
         this.load.spritesheet("icons", icons.file, icons);
         this.load.html("answer_input", "answer_input.html");
         this.load.html("question", "question.html");
+        this.load.html("wordlist_select", "wordlist_select.html");
     }
 }
 LoadGameScene.Key = "LOAD";
 LoadGameScene.LOAD_BAR_COLOR = 0x00C050;
+class WordlistScene extends Phaser.Scene {
+    constructor() {
+        super({ key: WordlistScene.Key });
+    }
+    create() {
+        const x = this.cameras.main.centerX;
+        const y = this.cameras.main.centerY;
+        this.add.dom(x, y).createFromCache("wordlist_select");
+        const select = document.getElementById("wordlist_category");
+        for (const key in categories) {
+            const category = categories[key];
+            const option = document.createElement("option");
+            option.value = key;
+            option.innerHTML = category.name;
+            select.appendChild(option);
+        }
+        select.onchange = (event) => {
+            this.populateWordlists(event.target.value);
+        };
+        this.populateWordlists(Object.keys(categories)[0]);
+        const reset = document.getElementById("wordlist_reset");
+        reset.onclick = () => {
+            localStorage.setItem("wordlists", "[]");
+            this.populateWordlists(select.value);
+        };
+        const apply = document.getElementById("wordlist_apply");
+        apply.onclick = () => {
+            this.scene.start(CharacterScene.Key);
+        };
+    }
+    populateWordlists(key) {
+        const div = document.getElementById("category_wordlists");
+        while (div.firstChild)
+            div.removeChild(div.firstChild);
+        const selected = JSON.parse(localStorage.getItem("wordlists") ?? "[]");
+        const category = categories[key];
+        for (const key in category.wordlists) {
+            const wordlist = category.wordlists[key];
+            const label = document.createElement("label");
+            const input = document.createElement("input");
+            input.name = key;
+            input.type = "checkbox";
+            if (selected.includes(key))
+                input.checked = true;
+            input.onchange = () => {
+                const old = JSON.parse(localStorage.getItem("wordlists") ?? "[]");
+                const index = old.indexOf(key);
+                if (input.checked) {
+                    if (index == -1)
+                        old.push(key);
+                }
+                else {
+                    if (index !== -1)
+                        old.splice(index, 1);
+                }
+                localStorage.setItem("wordlists", JSON.stringify(old));
+            };
+            label.appendChild(input);
+            label.appendChild(document.createTextNode(wordlist.description));
+            div.appendChild(label);
+        }
+    }
+}
+WordlistScene.Key = "WORDLIST";
 class CharacterScene extends Phaser.Scene {
     constructor() {
         super({ key: CharacterScene.Key });
@@ -164,6 +231,11 @@ class CharacterScene extends Phaser.Scene {
         addStat(208, 48, 0, `Attack: ${this.characterObject.attack}`);
         addStat(208, 96, 5, `XP: ${this.characterObject.xp} / ${Math.pow(this.characterObject.level, 2)}`);
         addStat(208, 144, 4, `Gold: ${this.characterObject.gold}`);
+        const wordlistMenu = this.add.sprite(744, 0, "icons", 7).setOrigin(0, 0).setScale(3)
+            .setInteractive({ cursor: "pointer" });
+        wordlistMenu.on("pointerdown", () => {
+            this.scene.start(WordlistScene.Key);
+        });
         this.add.rectangle(0, 192, 800, 8, this.characterObject.color_dark).setOrigin(0, 0);
         const goFight = this.add.text(x, VocabRPGGame.HEIGHT - 32, "Go fight the goos!")
             .setOrigin(0.5)
@@ -173,11 +245,12 @@ class CharacterScene extends Phaser.Scene {
             .setBackgroundColor("#FFFFFF")
             .setInteractive({ cursor: "pointer" });
         goFight.on("pointerdown", () => {
-            const keys = Object.keys(wordlists);
+            const wordlists = [];
+            for (const category in categories) {
+                wordlists.push(...Object.keys(categories[category].wordlists));
+            }
             const data = {
-                background: "dirt",
-                monster: this.monster.name,
-                wordlist: keys[Phaser.Math.Between(0, keys.length - 1)]
+                monster: this.monster.name
             };
             this.scene.start(FightScene.Key, data);
         });
@@ -192,13 +265,42 @@ class FightScene extends Phaser.Scene {
         super({ key: FightScene.Key });
     }
     preload() {
-        if (!this.cache.json.has(this.wordlistID))
-            this.load.json(this.wordlistID, wordlists[this.wordlistID].file);
+        this.wordlists = JSON.parse(localStorage.getItem("wordlists") ?? "[]");
+        if (this.wordlists.length == 0) {
+            for (const key in categories) {
+                const category = categories[key];
+                for (const key in category.wordlists) {
+                    this.wordlists.push(key);
+                }
+            }
+            this.wordlists = [this.wordlists[Phaser.Math.Between(0, this.wordlists.length - 1)]];
+        }
+        for (const wordlistID of this.wordlists) {
+            if (!this.cache.json.has(wordlistID)) {
+                let file;
+                for (const categoryName in categories) {
+                    const category = categories[categoryName];
+                    for (const key in category.wordlists) {
+                        if (key == wordlistID) {
+                            file = category.wordlists[key].file;
+                            break;
+                        }
+                    }
+                    if (file)
+                        break;
+                }
+                this.load.json(wordlistID, file);
+            }
+        }
     }
     async create() {
         const x = this.cameras.main.centerX;
         const y = this.cameras.main.centerY;
-        this.wordlist = this.cache.json.get(this.wordlistID);
+        this.words = [];
+        for (const wordlist of this.wordlists) {
+            const toAdd = this.cache.json.get(wordlist);
+            this.words.push(...toAdd);
+        }
         this.add.sprite(x, y, this.monster.background).setScale(4.5);
         this.monsterObject = this.add.sprite(VocabRPGGame.WIDTH + 100, y + 65, this.monster.name).setScale(6);
         this.monsterHP = this.monster.hp;
@@ -324,7 +426,6 @@ class FightScene extends Phaser.Scene {
     }
     init(data) {
         this.word = undefined;
-        this.wordlistID = data.wordlist;
         this.monster = monsters[data.monster];
         this.enterKey = this.input.keyboard.addKey("ENTER");
     }
@@ -344,8 +445,8 @@ class FightScene extends Phaser.Scene {
             this.enterKey.reset();
         });
     }
-    changeCurrentWordByIndex(next = Phaser.Math.Between(0, this.wordlist.length - 1)) {
-        this.word = this.wordlist[next];
+    changeCurrentWordByIndex(next = Phaser.Math.Between(0, this.words.length - 1)) {
+        this.word = this.words[next];
         let display;
         if (Array.isArray(this.word.ja)) {
             const random = Phaser.Math.Between(0, this.word.ja.length - 1);
@@ -424,7 +525,7 @@ class VocabRPGGame {
                 parent: "game"
             },
             pixelArt: true,
-            scene: [LoadGameScene, CharacterScene, FightScene],
+            scene: [LoadGameScene, CharacterScene, WordlistScene, FightScene],
             type: Phaser.AUTO,
             width: VocabRPGGame.WIDTH
         });

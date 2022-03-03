@@ -2,17 +2,15 @@
 import { BackgroundKey, BackgroundData } from "./backgrounds"
 import { CharacterAnimationKey, CharacterData, CharacterKey, SpriteData } from "./characters"
 import { MonsterKey, MonsterData } from "./monsters"
-import { Word, Wordlist, WordlistData } from "./wordlists"
+import { CategoryData, CategoryKey, Word, Wordlist } from "./wordlists"
 
 declare let backgrounds: { [T in BackgroundKey]: BackgroundData }
 declare let characters: { [ T in CharacterKey]: CharacterData }
 declare let monsters: { [ T in MonsterKey]: MonsterData }
-declare let wordlists: { [T in string]: WordlistData }
+declare let categories: { [T in CategoryKey]: CategoryData }
 
 type GameData = {
-    background: string
     monster: MonsterKey
-    wordlist: string
 }
 
 const icons: SpriteData = {
@@ -153,14 +151,10 @@ class LoadGameScene extends Phaser.Scene {
             yoyo: true
         })
 
+        // Confirm local storage variables
+        if (!localStorage.getItem("wordlists")) localStorage.setItem("wordlists", "[]")
+
         // Start the game
-        // const keys = Object.keys(wordlists)
-        // const data: GameData = {
-        //     background: "dirt",
-        //     monster: monsters["goo"],
-        //     wordlist: keys[Phaser.Math.Between(0, keys.length - 1)] // Random wordlist
-        // }
-        // this.scene.start(FightScene.Key, data)
         this.scene.start(CharacterScene.Key)
     }
 
@@ -207,6 +201,87 @@ class LoadGameScene extends Phaser.Scene {
         // Load HTML Templates
         this.load.html("answer_input", "answer_input.html")
         this.load.html("question", "question.html")
+        this.load.html("wordlist_select", "wordlist_select.html")
+    }
+}
+
+class WordlistScene extends Phaser.Scene {
+    static Key = "WORDLIST"
+
+    constructor() {
+        super({ key: WordlistScene.Key })
+    }
+
+    create() {
+        const x = this.cameras.main.centerX
+        const y = this.cameras.main.centerY
+
+        this.add.dom(x, y).createFromCache("wordlist_select")
+
+        // Populate categories
+        const select = document.getElementById("wordlist_category") as HTMLSelectElement
+        for (const key in categories) {
+            const category = categories[key]
+            const option = document.createElement("option")
+            option.value = key
+            option.innerHTML = category.name
+            select.appendChild(option)
+        }
+
+        // Populate wordlists
+        select.onchange = (event) => {
+            this.populateWordlists((event.target as HTMLSelectElement).value as CategoryKey)
+        }
+        this.populateWordlists(Object.keys(categories)[0] as CategoryKey)
+
+        const reset = document.getElementById("wordlist_reset") as HTMLButtonElement
+        reset.onclick = () => {
+            // Clear the wordlists
+            localStorage.setItem("wordlists", "[]")
+            // Regenerate the wordlists
+            this.populateWordlists(select.value as CategoryKey)
+        }
+
+        const apply = document.getElementById("wordlist_apply") as HTMLButtonElement
+        apply.onclick = () => {
+            // Go to the character screen on click
+            this.scene.start(CharacterScene.Key)
+        }
+    }
+
+    private populateWordlists(key: CategoryKey) {
+        const div = document.getElementById("category_wordlists")
+
+        // Clear the div
+        while (div.firstChild) div.removeChild(div.firstChild)
+
+        const selected: string[] = JSON.parse(localStorage.getItem("wordlists") ?? "[]")
+
+        // Populate the div with new values
+        const category = categories[key]
+        for (const key in category.wordlists) {
+            const wordlist = category.wordlists[key]
+            const label = document.createElement("label")
+            const input = document.createElement("input")
+            input.name = key
+            input.type = "checkbox"
+            if (selected.includes(key)) input.checked = true
+            input.onchange = () => {
+                const old: string[] = JSON.parse(localStorage.getItem("wordlists") ?? "[]")
+                const index = old.indexOf(key)
+                if (input.checked) {
+                    // Add to our wordlists
+                    if (index == -1) old.push(key)
+                } else {
+                    // Remove from our wordlists
+                    if (index !== -1) old.splice(index, 1)
+                }
+                localStorage.setItem("wordlists", JSON.stringify(old))
+            }
+            label.appendChild(input)
+            label.appendChild(document.createTextNode(wordlist.description))
+            div.appendChild(label)
+        }
     }
 }
 
@@ -250,6 +325,13 @@ class CharacterScene extends Phaser.Scene {
         addStat(208, 96, 5, `XP: ${this.characterObject.xp} / ${Math.pow(this.characterObject.level, 2)}`)
         addStat(208, 144, 4, `Gold: ${this.characterObject.gold}`)
 
+        // Wordlist menu
+        const wordlistMenu = this.add.sprite(744, 0, "icons", 7).setOrigin(0, 0).setScale(3)
+            .setInteractive({ cursor: "pointer" })
+        wordlistMenu.on("pointerdown", () => {
+            this.scene.start(WordlistScene.Key)
+        })
+
         // Black dividing line
         this.add.rectangle(0, 192, 800, 8, this.characterObject.color_dark).setOrigin(0, 0)
 
@@ -262,11 +344,12 @@ class CharacterScene extends Phaser.Scene {
             .setInteractive({ cursor: "pointer" })
         goFight.on("pointerdown", () => {
             // Start the game
-            const keys = Object.keys(wordlists)
+            const wordlists = []
+            for (const category in categories) {
+                wordlists.push(...Object.keys(categories[category].wordlists))
+            }
             const data: GameData = {
-                background: "dirt",
-                monster: this.monster.name,
-                wordlist: keys[Phaser.Math.Between(0, keys.length - 1)] // Random wordlist
+                monster: this.monster.name
             }
             this.scene.start(FightScene.Key, data)
         })
@@ -293,24 +376,58 @@ class FightScene extends Phaser.Scene {
     private wordObject: Phaser.GameObjects.DOMElement
 
     private enterKey: Phaser.Input.Keyboard.Key
-    private wordlistID: string
-    private wordlist: Wordlist
+    private words: Wordlist
+    private wordlists: string[]
 
     constructor() {
         super({ key: FightScene.Key })
     }
 
     preload() {
-        // Load the wordlist if we don't have it
-        if (!this.cache.json.has(this.wordlistID)) this.load.json(this.wordlistID, wordlists[this.wordlistID].file)
+        // Load the wordlists if we haven't yet
+        this.wordlists = JSON.parse(localStorage.getItem("wordlists") ?? "[]")
+
+        // Use a random wordlist if we don't have one set
+        if (this.wordlists.length == 0) {
+            for (const key in categories) {
+                const category = categories[key as CategoryKey]
+                for (const key in category.wordlists) {
+                    this.wordlists.push(key)
+                }
+            }
+            this.wordlists = [this.wordlists[Phaser.Math.Between(0, this.wordlists.length - 1)]]
+        }
+
+        // Load all the selected wordlists
+        for (const wordlistID of this.wordlists) {
+            if (!this.cache.json.has(wordlistID)) {
+                let file: string
+                for (const categoryName in categories) {
+                    const category = categories[categoryName]
+                    for (const key in category.wordlists) {
+                        if (key == wordlistID) {
+                            file = category.wordlists[key].file
+                            break
+                        }
+                    }
+                    if (file) break
+                }
+                this.load.json(wordlistID, file)
+            }
+        }
+
     }
 
     async create() {
         const x = this.cameras.main.centerX
         const y = this.cameras.main.centerY
 
-        // Set the wordlist
-        this.wordlist = this.cache.json.get(this.wordlistID)
+        // Load the words
+        this.words = []
+        for (const wordlist of this.wordlists) {
+            const toAdd = this.cache.json.get(wordlist)
+            this.words.push(...toAdd)
+        }
 
         // Add the background
         this.add.sprite(x, y, this.monster.background).setScale(4.5)
@@ -459,7 +576,6 @@ class FightScene extends Phaser.Scene {
 
     init(data: GameData) {
         this.word = undefined
-        this.wordlistID = data.wordlist
         this.monster = monsters[data.monster]
 
         this.enterKey = this.input.keyboard.addKey("ENTER")
@@ -483,8 +599,8 @@ class FightScene extends Phaser.Scene {
         })
     }
 
-    private changeCurrentWordByIndex(next = Phaser.Math.Between(0, this.wordlist.length - 1)) {
-        this.word = this.wordlist[next]
+    private changeCurrentWordByIndex(next = Phaser.Math.Between(0, this.words.length - 1)) {
+        this.word = this.words[next]
 
         let display: string
         if (Array.isArray(this.word.ja)) {
@@ -591,7 +707,7 @@ class VocabRPGGame {
                 parent: "game"
             },
             pixelArt: true,
-            scene: [LoadGameScene, CharacterScene, FightScene],
+            scene: [LoadGameScene, CharacterScene, WordlistScene, FightScene],
             type: Phaser.AUTO,
             width: VocabRPGGame.WIDTH
         })
