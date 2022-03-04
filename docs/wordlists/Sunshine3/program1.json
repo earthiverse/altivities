@@ -23,7 +23,11 @@
             "musical instrument",
             "a musical instrument",
             "musical instruments",
-            "musical instrument(s)"
+            "musical instrument(s)",
+            "instrument",
+            "instruments",
+            "an instrument",
+            "instrument(s)"
         ],
         "ja": {
             "hiragana": "がっき",
@@ -185,7 +189,10 @@
         }
     },
     {
-        "en": "fantastic",
+        "en": [
+            "fantastic",
+            "wonderful"
+        ],
         "ja": {
             "hiragana": "すばらしい，すてきな",
             "kanji": "すばらしい，すてきな"
@@ -592,7 +599,10 @@
         }
     },
     {
-        "en": "toast",
+        "en": [
+            "toast",
+            "to toast"
+        ],
         "ja": {
             "hiragana": "こんがりとやく，とーすとする",
             "kanji": "こんがりと焼く，トーストする"
@@ -661,7 +671,10 @@
         }
     },
     {
-        "en": "fence",
+        "en": [
+            "fence",
+            "wall"
+        ],
         "ja": {
             "hiragana": "へい",
             "kanji": "塀"
