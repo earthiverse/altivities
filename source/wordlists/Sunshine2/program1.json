@@ -1,0 +1,395 @@
+[
+    {
+        "en": "Joe",
+        "ja": {
+            "hiragana": "じょー（だんしのな）",
+            "kanji": "ジョー（男子の名）"
+        }
+    },
+    {
+        "en": [
+            "plan",
+            "plans"
+        ],
+        "ja": [
+            {
+                "hiragana": "ぷらん",
+                "kanji": "プラン"
+            },
+            {
+                "hiragana": "けいかく",
+                "kanji": "計画"
+            }
+        ]
+    },
+    {
+        "en": [
+            "be going to ~",
+            "be going to"
+        ],
+        "ja": {
+            "hiragana": "～するつもりだ",
+            "kanji": "～するつもりだ"
+        }
+    },
+    {
+        "en": "I'll",
+        "ja": {
+            "hiragana": "I willのしょうりゃく",
+            "kanji": "I willの省略"
+        }
+    },
+    {
+        "en": "will",
+        "ja": {
+            "hiragana": "～でしょう，～しようとおもう",
+            "kanji": "～でしょう，～しようと思う"
+        }
+    },
+    {
+        "en": "it'll",
+        "ja": {
+            "hiragana": "it willのしょうりゃく",
+            "kanji": "it willの省略"
+        }
+    },
+    {
+        "en": "evening",
+        "ja": [
+            {
+                "hiragana": "ゆうがた",
+                "kanji": "夕方"
+            }
+        ]
+    },
+    {
+        "en": [
+            "evening",
+            "night"
+        ],
+        "ja": [
+            {
+                "hiragana": "ばん",
+                "kanji": "晩"
+            }
+        ]
+    },
+    {
+        "en": "in the evening",
+        "ja": [
+            {
+                "hiragana": "ゆうがたに",
+                "kanji": "夕方に"
+            }
+        ]
+    },
+    {
+        "en": [
+            "in the evening",
+            "at night"
+        ],
+        "ja": {
+            "hiragana": "よるに",
+            "kanji": "夜に"
+        }
+    },
+    {
+        "en": "if",
+        "ja": {
+            "hiragana": "もし～ならば",
+            "kanji": "もし～ならば"
+        }
+    },
+    {
+        "en": "free",
+        "ja": [
+            {
+                "hiragana": "じゆうな",
+                "kanji": "自由な"
+            },
+            {
+                "hiragana": "ひまな",
+                "kanji": "ひまな"
+            }
+        ]
+    },
+    {
+        "en": [
+            "come home",
+            "go home"
+        ],
+        "ja": {
+            "hiragana": "いえにかえる",
+            "kanji": "家に帰る"
+        }
+    },
+    {
+        "en": "nothing",
+        "ja": {
+            "hiragana": "なにも～ない",
+            "kanji": "何も～ない"
+        }
+    },
+    {
+        "en": "move",
+        "ja": [
+            {
+                "hiragana": "ひっこす",
+                "kanji": "引っ越す"
+            },
+            {
+                "hiragana": "うごく",
+                "kanji": "動く"
+            }
+        ]
+    },
+    {
+        "en": "farewell",
+        "ja": {
+            "hiragana": "わかれ",
+            "kanji": "別れ"
+        }
+    },
+    {
+        "en": "pleasure",
+        "ja": {
+            "hiragana": "よろこび",
+            "kanji": "喜び"
+        }
+    },
+    {
+        "en": "by the way",
+        "ja": {
+            "hiragana": "ところで",
+            "kanji": "ところで"
+        }
+    },
+    {
+        "en": "What's up?",
+        "ja": {
+            "hiragana": "どうしたの。",
+            "kanji": "どうしたの。"
+        }
+    },
+    {
+        "en": "My pleasure.",
+        "ja": {
+            "hiragana": "よろこんで。",
+            "kanji": "喜んで。"
+        }
+    },
+    {
+        "en": "care",
+        "ja": {
+            "hiragana": "ちゅうい，ようじん",
+            "kanji": "注意，用心"
+        }
+    },
+    {
+        "en": [
+            "local",
+            "hometown"
+        ],
+        "ja": {
+            "hiragana": "じもとの",
+            "kanji": "地元の"
+        }
+    },
+    {
+        "en": [
+            "bit",
+            "a bit",
+            "a little bit"
+        ],
+        "ja": {
+            "hiragana": "すこし",
+            "kanji": "少し"
+        }
+    },
+    {
+        "en": "worried",
+        "ja": {
+            "hiragana": "しんぱいな",
+            "kanji": "心配な"
+        }
+    },
+    {
+        "en": "you'll",
+        "ja": {
+            "hiragana": "you willのしょうりゃく",
+            "kanji": "you willの省略"
+        }
+    },
+    {
+        "en": "soon",
+        "ja": {
+            "hiragana": "すぐに，まもなく",
+            "kanji": "すぐに，まもなく"
+        }
+    },
+    {
+        "en": [
+            "hope",
+            "to hope",
+            "wish",
+            "to wish"
+        ],
+        "ja": {
+            "hiragana": "のぞむ，きぼうする",
+            "kanji": "望む，希望する"
+        }
+    },
+    {
+        "en": "won't",
+        "ja": {
+            "hiragana": "will notのしょうりゃく",
+            "kanji": "will notの省略"
+        }
+    },
+    {
+        "en": [
+            "forget",
+            "to forget"
+        ],
+        "ja": {
+            "hiragana": "わすれる",
+            "kanji": "忘れる"
+        }
+    },
+    {
+        "en": [
+            "email",
+            "e-mail"
+        ],
+        "ja": {
+            "hiragana": "（でんし）めーるをおくる",
+            "kanji": "（電子）メールを送る"
+        }
+    },
+    {
+        "en": [
+            "take care",
+            "to take care"
+        ],
+        "ja": {
+            "hiragana": "きをつける，ちゅういする",
+            "kanji": "気をつける，注意する"
+        }
+    },
+    {
+        "en": [
+            "keep in touch",
+            "to keep in touch"
+        ],
+        "ja": {
+            "hiragana": "れんらくをとりつづける",
+            "kanji": "連絡を取り続ける"
+        }
+    },
+    {
+        "en": "sang",
+        "ja": [
+            {
+                "hiragana": "sing（うたう）のかこけい",
+                "kanji": "sing（歌う）の過去形"
+            },
+            {
+                "hiragana": "うたいました",
+                "kanji": "歌いました"
+            }
+        ]
+    },
+    {
+        "en": "almost",
+        "ja": {
+            "hiragana": "もうすこしで ～するところ",
+            "kanji": "もう少しで ～するところ"
+        }
+    },
+    {
+        "en": [
+            "cry",
+            "to cry"
+        ],
+        "ja": {
+            "hiragana": "なく",
+            "kanji": "泣く"
+        }
+    },
+    {
+        "en": "cried",
+        "ja": [
+            {
+                "hiragana": "なきました",
+                "kanji": "泣きました"
+            },
+            {
+                "hiragana": "ないた",
+                "kanji": "泣いた"
+            }
+        ]
+    },
+    {
+        "en": "overseas",
+        "ja": [
+            {
+                "hiragana": "がいこくに",
+                "kanji": "外国に"
+            },
+            {
+                "hiragana": "かいがいへ",
+                "kanji": "海外へ"
+            }
+        ]
+    },
+    {
+        "en": [
+            "do my best",
+            "to do my best",
+            "do your best",
+            "to do your best",
+            "do one's best",
+            "to do one's best"
+        ],
+        "ja": {
+            "hiragana": "さいぜん［べすと］を つくす",
+            "kanji": "最善［ベスト］を つくす"
+        }
+    },
+    {
+        "en": [
+            "say hello to ~",
+            "to say hello to ~",
+            "say hello to",
+            "to say hello to"
+        ],
+        "ja": {
+            "hiragana": "～によろしくと いう",
+            "kanji": "～によろしくと 言う"
+        }
+    },
+    {
+        "en": "he'll",
+        "ja": {
+            "hiragana": "he willのしょうりゃく",
+            "kanji": "he willの省略"
+        }
+    },
+    {
+        "en": "said",
+        "ja": [
+            {
+                "hiragana": "say（いう）のかこけい 《かこぶんしけいもどうけい》",
+                "kanji": "say（言う）の過去形 《過去分詞形も同形》"
+            },
+            {
+                "hiragana": "いった",
+                "kanji": "言った"
+            },
+            {
+                "hiragana": "いいました",
+                "kanji": "言いました"
+            }
+        ]
+    }
+]

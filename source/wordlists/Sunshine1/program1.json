@@ -1,0 +1,438 @@
+[
+    {
+        "en": "I'm",
+        "ja": {
+            "hiragana": "I amのしょうりゃく",
+            "kanji": "I amの省略"
+        }
+    },
+    {
+        "en": "Ben",
+        "ja": {
+            "hiragana": "べん（だんしのな）",
+            "kanji": "ベン（男子の名）"
+        }
+    },
+    {
+        "en": "oh",
+        "ja": [
+            {
+                "hiragana": "まあ",
+                "kanji": "まあ"
+            },
+            {
+                "hiragana": "おお",
+                "kanji": "おお"
+            },
+            {
+                "hiragana": "ああ",
+                "kanji": "ああ"
+            }
+        ]
+    },
+    {
+        "en": "Bob",
+        "ja": {
+            "hiragana": "ぼぶ（だんしのな）",
+            "kanji": "ボブ（男子の名）"
+        }
+    },
+    {
+        "en": "student",
+        "ja": [
+            {
+                "hiragana": "がくせい",
+                "kanji": "学生"
+            },
+            {
+                "hiragana": "せいと",
+                "kanji": "生徒"
+            }
+        ]
+    },
+    {
+        "en": "shy",
+        "ja": {
+            "hiragana": "はずかしがりの",
+            "kanji": "恥ずかしがりの"
+        }
+    },
+    {
+        "en": "firefighter",
+        "ja": {
+            "hiragana": "しょうぼうし",
+            "kanji": "消防士"
+        }
+    },
+    {
+        "en": "friendly",
+        "ja": {
+            "hiragana": "したしみやすい",
+            "kanji": "親しみやすい"
+        }
+    },
+    {
+        "en": [
+            "the U.S.",
+            "U.S.",
+            "US",
+            "the U.S.A.",
+            "U.S.A.",
+            "USA"
+        ],
+        "ja": {
+            "hiragana": "あめりかがっしゅうこく",
+            "kanji": "アメリカ合衆国"
+        }
+    },
+    {
+        "en": "New Zealand",
+        "ja": {
+            "hiragana": "にゅーじーらんど",
+            "kanji": "ニュージーランド"
+        }
+    },
+    {
+        "en": "Carol",
+        "ja": {
+            "hiragana": "きゃろる（じょしのな）",
+            "kanji": "キャロル（女子の名）"
+        }
+    },
+    {
+        "en": "Sherry",
+        "ja": {
+            "hiragana": "しぇりー（じょしのな）",
+            "kanji": "シェリー（女子の名）"
+        }
+    },
+    {
+        "en": [
+            "Kent",
+            "Kento"
+        ],
+        "ja": {
+            "hiragana": "けんと（だんしのな）",
+            "kanji": "ケント（男子の名）"
+        }
+    },
+    {
+        "en": "aren't",
+        "ja": {
+            "hiragana": "are notのしょうりゃく",
+            "kanji": "are notの省略"
+        }
+    },
+    {
+        "en": "pardon",
+        "ja": {
+            "hiragana": "ゆるす",
+            "kanji": "許す"
+        }
+    },
+    {
+        "en": "Michael Jackson",
+        "ja": {
+            "hiragana": "まいける・じゃくそん（じんめい）",
+            "kanji": "マイケル・ジャクソン（人名）"
+        }
+    },
+    {
+        "en": "John Lennon",
+        "ja": {
+            "hiragana": "じょん・れのん（じんめい）",
+            "kanji": "ジョン・レノン（人名）"
+        }
+    },
+    {
+        "en": [
+            "be from ~",
+            "be from"
+        ],
+        "ja": {
+            "hiragana": "～のしゅっしんである",
+            "kanji": "～の出身である"
+        }
+    },
+    {
+        "en": [
+            "pardon me",
+            "excuse me",
+            "sorry"
+        ],
+        "ja": {
+            "hiragana": "すみません",
+            "kanji": "すみません"
+        }
+    },
+    {
+        "en": "you're",
+        "ja": {
+            "hiragana": "you areのしょうりゃく",
+            "kanji": "you areの省略"
+        }
+    },
+    {
+        "en": "just",
+        "ja": {
+            "hiragana": "ちょうど",
+            "kanji": "ちょうど"
+        }
+    },
+    {
+        "en": "talk",
+        "ja": {
+            "hiragana": "はなす",
+            "kanji": "話す"
+        }
+    },
+    {
+        "en": "Nice to meet you.",
+        "ja": {
+            "hiragana": "おあいできてうれしいです。",
+            "kanji": "お会いできてうれしいです。"
+        }
+    },
+    {
+        "en": [
+            "thanks",
+            "thank you"
+        ],
+        "ja": {
+            "hiragana": "ありがとう",
+            "kanji": "ありがとう"
+        }
+    },
+    {
+        "en": "really",
+        "ja": {
+            "hiragana": "ほんとうに",
+            "kanji": "ほんとうに"
+        }
+    },
+    {
+        "en": [
+            "helpful",
+            "useful",
+            "to be helpful",
+            "to be useful"
+        ],
+        "ja": {
+            "hiragana": "やくにたつ",
+            "kanji": "役に立つ"
+        }
+    },
+    {
+        "en": "problem",
+        "ja": {
+            "hiragana": "もんだい",
+            "kanji": "問題"
+        }
+    },
+    {
+        "en": [
+            "want to ~",
+            "want to"
+        ],
+        "ja": {
+            "hiragana": "～したい",
+            "kanji": "～したい"
+        }
+    },
+    {
+        "en": "No problem.",
+        "ja": [
+            {
+                "hiragana": " もんだいありません。",
+                "kanji": "問題ありません。"
+            },
+            {
+                "hiragana": "どういたしまして。",
+                "kanji": "どういたしまして。"
+            }
+        ]
+    },
+    {
+        "en": "abracadabra",
+        "ja": {
+            "hiragana": "あぶらかだぶら（まほう をかけるときのじゅもん）",
+            "kanji": "アブラカダブラ（魔法 をかけるときの呪文）"
+        }
+    },
+    {
+        "en": "king",
+        "ja": {
+            "hiragana": "おう",
+            "kanji": "王"
+        }
+    },
+    {
+        "en": "prince",
+        "ja": {
+            "hiragana": "おうじ",
+            "kanji": "王子"
+        }
+    },
+    {
+        "en": "princess",
+        "ja": {
+            "hiragana": "おうじょ",
+            "kanji": "王女"
+        }
+    },
+    {
+        "en": "fairy",
+        "ja": {
+            "hiragana": "ようせい",
+            "kanji": "妖精"
+        }
+    },
+    {
+        "en": "of",
+        "ja": {
+            "hiragana": "～の",
+            "kanji": "～の"
+        }
+    },
+    {
+        "en": [
+            "beast",
+            "beasts"
+        ],
+        "ja": {
+            "hiragana": "けもの",
+            "kanji": "けもの"
+        }
+    },
+    {
+        "en": [
+            "a",
+            "an",
+            "one"
+        ],
+        "ja": {
+            "hiragana": "１つの",
+            "kanji": "１つの"
+        }
+    },
+    {
+        "en": "angel",
+        "ja": {
+            "hiragana": "てんし",
+            "kanji": "天使"
+        }
+    },
+    {
+        "en": "superman",
+        "ja": [
+            {
+                "hiragana": "すーぱーまん",
+                "kanji": "スーパーマン"
+            },
+            {
+                "hiragana": "ちょうじん",
+                "kanji": "超人"
+            }
+        ]
+    },
+    {
+        "en": "fan",
+        "ja": [
+            {
+                "hiragana": "ふぁん",
+                "kanji": "ファン"
+            },
+            {
+                "hiragana": "ねつれつなしじしゃ",
+                "kanji": "熱烈な支持者"
+            }
+        ]
+    },
+    {
+        "en": "active",
+        "ja": {
+            "hiragana": "かっぱつな",
+            "kanji": "活発な"
+        }
+    },
+    {
+        "en": "cheerful",
+        "ja": [
+            {
+                "hiragana": "あかるい",
+                "kanji": "明るい"
+            },
+            {
+                "hiragana": "げんきのよい",
+                "kanji": "元気のよい"
+            }
+        ]
+    },
+    {
+        "en": "careful",
+        "ja": {
+            "hiragana": "ちゅういぶかい",
+            "kanji": "注意深い"
+        }
+    },
+    {
+        "en": "honest",
+        "ja": {
+            "hiragana": "しょうじきな",
+            "kanji": "正直な"
+        }
+    },
+    {
+        "en": "polite",
+        "ja": [
+            {
+                "hiragana": "ていねいな",
+                "kanji": "ていねいな"
+            },
+            {
+                "hiragana": "れいぎただしい",
+                "kanji": "礼儀正しい"
+            }
+        ]
+    },
+    {
+        "en": "smart",
+        "ja": [
+            {
+                "hiragana": "かしこい",
+                "kanji": "かしこい"
+            },
+            {
+                "hiragana": "あたまのきれる",
+                "kanji": "頭の切れる"
+            }
+        ]
+    },
+    {
+        "en": "funny",
+        "ja": {
+            "hiragana": "おかしな",
+            "kanji": "おかしな"
+        }
+    },
+    {
+        "en": "serious",
+        "ja": {
+            "hiragana": "まじめな",
+            "kanji": "まじめな"
+        }
+    },
+    {
+        "en": "quiet",
+        "ja": [
+            {
+                "hiragana": "しずかな",
+                "kanji": "静かな"
+            },
+            {
+                "hiragana": "おとなしい",
+                "kanji": "おとなしい"
+            }
+        ]
+    }
+]

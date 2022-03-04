@@ -333,7 +333,7 @@ class FightScene extends Phaser.Scene {
         const answer = this.add.dom(x, VocabRPGGame.HEIGHT - 30).createFromCache("answer_input");
         const answerField = document.getElementById("answerField");
         const checkAnswer = () => {
-            const input = answerField.value;
+            const input = answerField.value.trim();
             if (!input)
                 return;
             let correct = false;

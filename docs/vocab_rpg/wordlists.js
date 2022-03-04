@@ -60,6 +60,41 @@ const categories = {
     js6: {
         art: "images/categories/js6.jpg",
         name: "Junior Sunshine 6",
-        wordlists: {}
+        wordlists: {
+            js5_phonics: {
+                description: "Junior Sunshine 6 - Phonics",
+                file: "../wordlists/JuniorSunshine5/phonics.json"
+            }
+        }
+    },
+    sun1: {
+        art: "images/categories/sunshine1.jpg",
+        name: "Sunshine 1",
+        wordlists: {
+            sun1_p1: {
+                description: "Sunshine 1 - Program 1",
+                file: "../wordlists/Sunshine1/program1.json"
+            }
+        }
+    },
+    sun2: {
+        art: "images/categories/sunshine2.jpg",
+        name: "Sunshine 2",
+        wordlists: {
+            sun2_p1: {
+                description: "Sunshine 2 - Program 1",
+                file: "../wordlists/Sunshine2/program1.json"
+            }
+        }
+    },
+    sun3: {
+        art: "images/categories/sunshine3.jpg",
+        name: "Sunshine 3",
+        wordlists: {
+            sun3_p1: {
+                description: "Sunshine 3 - Program 1",
+                file: "../wordlists/Sunshine3/program1.json"
+            }
+        }
     }
 };

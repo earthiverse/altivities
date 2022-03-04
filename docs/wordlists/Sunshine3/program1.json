@@ -1,0 +1,715 @@
+[
+    {
+        "en": "told",
+        "ja": {
+            "hiragana": "tell（いう）のかこけい《かこぶんしけいもどうけい》",
+            "kanji": "tell（言う）の過去形《過去分詞形も同形》"
+        }
+    },
+    {
+        "en": [
+            "suitcase",
+            "a suitcase",
+            "suitcases",
+            "suitcase(s)"
+        ],
+        "ja": {
+            "hiragana": "すーつけーす",
+            "kanji": "スーツケース"
+        }
+    },
+    {
+        "en": [
+            "musical instrument",
+            "a musical instrument",
+            "musical instruments",
+            "musical instrument(s)"
+        ],
+        "ja": {
+            "hiragana": "がっき",
+            "kanji": "楽器"
+        }
+    },
+    {
+        "en": [
+            "marathon",
+            "a marathon",
+            "marathons",
+            "marathon(s)"
+        ],
+        "ja": {
+            "hiragana": "まらそん",
+            "kanji": "マラソン"
+        }
+    },
+    {
+        "en": [
+            "picnic",
+            "picnics",
+            "picnic(s)"
+        ],
+        "ja": {
+            "hiragana": "ぴくにっく",
+            "kanji": "ピクニック"
+        }
+    },
+    {
+        "en": [
+            "relay",
+            "a relay",
+            "relay race"
+        ],
+        "ja": {
+            "hiragana": "りれー（きょうそう）",
+            "kanji": "リレー（競走）"
+        }
+    },
+    {
+        "en": "chosen",
+        "ja": {
+            "hiragana": "choose（えらぶ）のかこぶんしけい",
+            "kanji": "choose（選ぶ）の過去分詞形"
+        }
+    },
+    {
+        "en": "lent",
+        "ja": {
+            "hiragana": "lend（かす）のかこけい《かこぶんしけいもどうけい》",
+            "kanji": "lend（貸す）の過去形《過去分詞形も同形》"
+        }
+    },
+    {
+        "en": [
+            "stapler",
+            "a stapler",
+            "staplers",
+            "stapler(s)"
+        ],
+        "ja": {
+            "hiragana": "ほっちきす",
+            "kanji": "ホッチキス"
+        }
+    },
+    {
+        "en": [
+            "blossom",
+            "a blossom",
+            "blossoms",
+            "blossom(s)"
+        ],
+        "ja": {
+            "hiragana": "（おもにかじゅの）はな",
+            "kanji": "（おもに果樹の）花"
+        }
+    },
+    {
+        "en": "noon",
+        "ja": {
+            "hiragana": "しょうご",
+            "kanji": "正午"
+        }
+    },
+    {
+        "en": "colorful",
+        "ja": [
+            {
+                "hiragana": "からふるな",
+                "kanji": "カラフルな"
+            },
+            {
+                "hiragana": "しきさいにとんだ",
+                "kanji": "色彩に富んだ"
+            }
+        ]
+    },
+    {
+        "en": [
+            "wait for ~",
+            "wait for",
+            "to wait for ~",
+            "to wait for"
+        ],
+        "ja": {
+            "hiragana": "～をまつ",
+            "kanji": "～を待つ"
+        }
+    },
+    {
+        "en": [
+            "Here is ~.",
+            "Here is ~",
+            "Here is"
+        ],
+        "ja": {
+            "hiragana": "これが～です。［ここに～があります。］",
+            "kanji": "これが～です。［ここに～があります。］"
+        }
+    },
+    {
+        "en": "in this way",
+        "ja": {
+            "hiragana": "このようにして",
+            "kanji": "このようにして"
+        }
+    },
+    {
+        "en": [
+            "home-made",
+            "homemade"
+        ],
+        "ja": {
+            "hiragana": "じかせいの",
+            "kanji": "自家製の"
+        }
+    },
+    {
+        "en": [
+            "available",
+            "be available",
+            "to be available"
+        ],
+        "ja": {
+            "hiragana": "にゅうしゅできる，りようできる",
+            "kanji": "入手できる，利用できる"
+        }
+    },
+    {
+        "en": [
+            "oyster",
+            "oysters",
+            "oyster(s)"
+        ],
+        "ja": {
+            "hiragana": "かき（かい）",
+            "kanji": "カキ（貝）"
+        }
+    },
+    {
+        "en": "fantastic",
+        "ja": {
+            "hiragana": "すばらしい，すてきな",
+            "kanji": "すばらしい，すてきな"
+        }
+    },
+    {
+        "en": [
+            "more than ~",
+            "more than"
+        ],
+        "ja": {
+            "hiragana": "～いじょう",
+            "kanji": "～以上"
+        }
+    },
+    {
+        "en": [
+            "variety",
+            "a variety of"
+        ],
+        "ja": {
+            "hiragana": "さまざまな",
+            "kanji": "さまざまな"
+        }
+    },
+    {
+        "en": "well-balanced",
+        "ja": {
+            "hiragana": "ばらんすのとれた",
+            "kanji": "バランスのとれた"
+        }
+    },
+    {
+        "en": "nutrition",
+        "ja": {
+            "hiragana": "えいよう",
+            "kanji": "栄養"
+        }
+    },
+    {
+        "en": [
+            "develop",
+            "to develop"
+        ],
+        "ja": {
+            "hiragana": "はってんさせる，かいはつする",
+            "kanji": "発展させる，開発する"
+        }
+    },
+    {
+        "en": [
+            "own",
+            "one's own"
+        ],
+        "ja": {
+            "hiragana": "どくじの",
+            "kanji": "独自の"
+        }
+    },
+    {
+        "en": "Mumbai",
+        "ja": {
+            "hiragana": "むんばい（いんどのとし）",
+            "kanji": "ムンバイ（インドの都市）"
+        }
+    },
+    {
+        "en": "delivery",
+        "ja": {
+            "hiragana": "はいたつ",
+            "kanji": "配達"
+        }
+    },
+    {
+        "en": "service",
+        "ja": {
+            "hiragana": "さーびす",
+            "kanji": "サービス"
+        }
+    },
+    {
+        "en": [
+            "deliver",
+            "to deliver"
+        ],
+        "ja": {
+            "hiragana": "はいたつする",
+            "kanji": "配達する"
+        }
+    },
+    {
+        "en": "delivered",
+        "ja": {
+            "hiragana": "はいたつした",
+            "kanji": "配達した"
+        }
+    },
+    {
+        "en": [
+            "workplace",
+            "a workplace",
+            "workplaces",
+            "workplace(s)"
+        ],
+        "ja": {
+            "hiragana": "しょくば",
+            "kanji": "職場"
+        }
+    },
+    {
+        "en": [
+            "different",
+            "to be different",
+            "differ",
+            "to differ"
+        ],
+        "ja": {
+            "hiragana": "ちがった，ことなる",
+            "kanji": "違った，異なる"
+        }
+    },
+    {
+        "en": [
+            "headache",
+            "a headache",
+            "headaches",
+            "headache(s)"
+        ],
+        "ja": {
+            "hiragana": "ずつう",
+            "kanji": "頭痛"
+        }
+    },
+    {
+        "en": [
+            "fever",
+            "fevers",
+            "a fever",
+            "fever(s)"
+        ],
+        "ja": {
+            "hiragana": "こうねつ",
+            "kanji": "高熱"
+        }
+    },
+    {
+        "en": "chilly",
+        "ja": {
+            "hiragana": "さむくてみぶるいするような",
+            "kanji": "寒くて身ぶるいするような"
+        }
+    },
+    {
+        "en": "pain",
+        "ja": {
+            "hiragana": "いたみ",
+            "kanji": "痛み"
+        }
+    },
+    {
+        "en": "medicine",
+        "ja": {
+            "hiragana": "くすり",
+            "kanji": "薬"
+        }
+    },
+    {
+        "en": [
+            "bandage",
+            "bandages",
+            "a bandage",
+            "bandage(s)"
+        ],
+        "ja": {
+            "hiragana": "ほうたい",
+            "kanji": "包帯"
+        }
+    },
+    {
+        "en": [
+            "stomachache",
+            "stomachaches",
+            "a stomachache",
+            "stomachache(s)"
+        ],
+        "ja": {
+            "hiragana": "はらいた，いつう",
+            "kanji": "腹痛，胃痛"
+        }
+    },
+    {
+        "en": [
+            "least",
+            "the least"
+        ],
+        "ja": {
+            "hiragana": "little（すくない）のさいじょうきゅう",
+            "kanji": "little（少ない）の最上級"
+        }
+    },
+    {
+        "en": [
+            "have a fever",
+            "to have a fever"
+        ],
+        "ja": {
+            "hiragana": "ねつがある",
+            "kanji": "熱がある"
+        }
+    },
+    {
+        "en": "right now",
+        "ja": {
+            "hiragana": "いますぐ",
+            "kanji": "今すぐ"
+        }
+    },
+    {
+        "en": "at least",
+        "ja": {
+            "hiragana": "すくなくとも",
+            "kanji": "少なくとも"
+        }
+    },
+    {
+        "en": [
+            "calendar",
+            "calendars",
+            "a calendar",
+            "calendar(s)"
+        ],
+        "ja": {
+            "hiragana": "かれんだー",
+            "kanji": "カレンダー"
+        }
+    },
+    {
+        "en": [
+            "poster",
+            "posters",
+            "a poster",
+            "poster(s)"
+        ],
+        "ja": {
+            "hiragana": "ぽすたー",
+            "kanji": "ポスター"
+        }
+    },
+    {
+        "en": "headphones",
+        "ja": {
+            "hiragana": "（つうれいふくすうがたで）へっどほん",
+            "kanji": "（通例複数形で）ヘッドホン"
+        }
+    },
+    {
+        "en": [
+            "carpet",
+            "carpets",
+            "a carpet",
+            "carpet(s)"
+        ],
+        "ja": {
+            "hiragana": "かーぺっと，じゅうたん",
+            "kanji": "カーペット，じゅうたん"
+        }
+    },
+    {
+        "en": [
+            "curtain",
+            "curtains",
+            "a curtain",
+            "curtain(s)"
+        ],
+        "ja": {
+            "hiragana": "かーてん",
+            "kanji": "カーテン"
+        }
+    },
+    {
+        "en": [
+            "shirt",
+            "shirts",
+            "a shirt",
+            "shirt(s)"
+        ],
+        "ja": {
+            "hiragana": "しゃつ",
+            "kanji": "シャツ"
+        }
+    },
+    {
+        "en": [
+            "vase",
+            "vases",
+            "a vase",
+            "vase(s)"
+        ],
+        "ja": {
+            "hiragana": "かびん",
+            "kanji": "花びん"
+        }
+    },
+    {
+        "en": [
+            "tie",
+            "a tie",
+            "ties",
+            "tie(s)"
+        ],
+        "ja": {
+            "hiragana": "ねくたい",
+            "kanji": "ネクタイ"
+        }
+    },
+    {
+        "en": [
+            "sweater",
+            "a sweater",
+            "sweaters",
+            "sweater(s)"
+        ],
+        "ja": {
+            "hiragana": "せーたー",
+            "kanji": "セーター"
+        }
+    },
+    {
+        "en": [
+            "skirt",
+            "a skirt",
+            "skirts",
+            "skirt(s)"
+        ],
+        "ja": {
+            "hiragana": "すかーと",
+            "kanji": "スカート"
+        }
+    },
+    {
+        "en": [
+            "garden",
+            "a garden",
+            "gardens",
+            "garden(s)"
+        ],
+        "ja": {
+            "hiragana": "はなだん",
+            "kanji": "花だん"
+        }
+    },
+    {
+        "en": [
+            "air conditioner",
+            "air conditioners",
+            "an air conditioner",
+            "air conditioner(s)"
+        ],
+        "ja": {
+            "hiragana": "えあこん",
+            "kanji": "エアコン"
+        }
+    },
+    {
+        "en": [
+            "sofa",
+            "sofas",
+            "a sofa",
+            "sofa(s)"
+        ],
+        "ja": {
+            "hiragana": "そふぁ",
+            "kanji": "ソファ"
+        }
+    },
+    {
+        "en": [
+            "spend",
+            "to spend"
+        ],
+        "ja": {
+            "hiragana": "（じかんを）すごす",
+            "kanji": "（時間を）過ごす"
+        }
+    },
+    {
+        "en": [
+            "brush",
+            "to brush"
+        ],
+        "ja": {
+            "hiragana": "ぶらしをかける",
+            "kanji": "ブラシをかける"
+        }
+    },
+    {
+        "en": [
+            "boil",
+            "to boil"
+        ],
+        "ja": {
+            "hiragana": "（えきたいを）ふっとうさせる，わかす",
+            "kanji": "（液体を）ふっとうさせる，わかす"
+        }
+    },
+    {
+        "en": "toast",
+        "ja": {
+            "hiragana": "こんがりとやく，とーすとする",
+            "kanji": "こんがりと焼く，トーストする"
+        }
+    },
+    {
+        "en": "bread",
+        "ja": {
+            "hiragana": "ぱん",
+            "kanji": "パン"
+        }
+    },
+    {
+        "en": [
+            "dryer",
+            "a dryer",
+            "dryers",
+            "dryer(s)"
+        ],
+        "ja": {
+            "hiragana": "どらいやー",
+            "kanji": "ドライヤー"
+        }
+    },
+    {
+        "en": [
+            "mirror",
+            "a mirror",
+            "mirrors",
+            "mirror(s)"
+        ],
+        "ja": {
+            "hiragana": "かがみ",
+            "kanji": "鏡"
+        }
+    },
+    {
+        "en": [
+            "restroom",
+            "restrooms",
+            "restroom(s)",
+            "a restroom",
+            "washroom",
+            "washrooms",
+            "washroom(s)",
+            "a washroom",
+            "bathroom",
+            "bathrooms",
+            "bathroom(s)",
+            "a bathroom",
+            "toilet"
+        ],
+        "ja": {
+            "hiragana": "といれ",
+            "kanji": "トイレ"
+        }
+    },
+    {
+        "en": [
+            "shutter",
+            "shutters"
+        ],
+        "ja": {
+            "hiragana": "しゃったー",
+            "kanji": "シャッター"
+        }
+    },
+    {
+        "en": "fence",
+        "ja": {
+            "hiragana": "へい",
+            "kanji": "塀"
+        }
+    },
+    {
+        "en": [
+            "journalist",
+            "a journalist",
+            "journalists",
+            "journalist(s)"
+        ],
+        "ja": [
+            {
+                "hiragana": "ほうどうきしゃ",
+                "kanji": "報道記者"
+            },
+            {
+                "hiragana": "じゃーなりすと",
+                "kanji": "ジャーナリスト"
+            }
+        ]
+    },
+    {
+        "en": "writing",
+        "ja": {
+            "hiragana": "ぶんしょ，かかれたもの",
+            "kanji": "文書，書かれたもの"
+        }
+    },
+    {
+        "en": [
+            "publish",
+            "to publish"
+        ],
+        "ja": {
+            "hiragana": "はっこう［しゅっぱん］する",
+            "kanji": "発行［出版］する"
+        }
+    },
+    {
+        "en": [
+            "trust",
+            "to trust"
+        ],
+        "ja": {
+            "hiragana": "しんらいする",
+            "kanji": "信頼する"
+        }
+    }
+]
