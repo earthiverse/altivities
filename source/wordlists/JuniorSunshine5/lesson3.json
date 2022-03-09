@@ -104,7 +104,10 @@
         }
     },
     {
-        "en": "doctor",
+        "en": [
+            "doctor",
+            "doctors"
+        ],
         "ja": [
             {
                 "hiragana": "いし",
@@ -117,38 +120,56 @@
         ]
     },
     {
-        "en": "florist",
+        "en": [
+            "florist",
+            "florists"
+        ],
         "ja": {
             "hiragana": "はなや（ひと）",
             "kanji": "花屋（人）"
         }
     },
     {
-        "en": "police officer",
+        "en": [
+            "police officer",
+            "police officers"
+        ],
         "ja": {
             "hiragana": "けいさつかん",
             "kanji": "警察官"
         }
     },
     {
-        "en": "soccer player",
+        "en": [
+            "soccer player",
+            "soccer players"
+        ],
         "ja": {
             "hiragana": "さっかーせんしゅ",
             "kanji": "サッカー選手"
         }
     },
     {
-        "en": "teacher",
-        "ja": [
-            {
-                "hiragana": "せんせい",
-                "kanji": "先生"
-            },
-            {
-                "hiragana": "きょうし",
-                "kanji": "教師"
-            }
-        ]
+        "en": [
+            "teacher",
+            "teachers"
+        ],
+        "ja": {
+            "hiragana": "きょうし",
+            "kanji": "教師"
+        }
+    },
+    {
+        "en": [
+            "teacher",
+            "teachers",
+            "doctor",
+            "doctors"
+        ],
+        "ja": {
+            "hiragana": "せんせい",
+            "kanji": "先生"
+        }
     },
     {
         "en": "Sunday",

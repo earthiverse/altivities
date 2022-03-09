@@ -1,34 +1,49 @@
 [
     {
-        "en": "bat",
+        "en": [
+            "bat",
+            "bats"
+        ],
         "ja": {
             "hiragana": "ばっと",
             "kanji": "バット"
         }
     },
     {
-        "en": "box",
+        "en": [
+            "box",
+            "boxes"
+        ],
         "ja": {
             "hiragana": "はこ",
             "kanji": "箱"
         }
     },
     {
-        "en": "cap",
+        "en": [
+            "cap",
+            "caps"
+        ],
         "ja": {
             "hiragana": "（ふちのない）ぼうし",
             "kanji": "（ふちのない）ぼうし"
         }
     },
     {
-        "en": "cat",
+        "en": [
+            "cat",
+            "cats"
+        ],
         "ja": {
             "hiragana": "ねこ",
             "kanji": "猫"
         }
     },
     {
-        "en": "fox",
+        "en": [
+            "fox",
+            "foxes"
+        ],
         "ja": {
             "hiragana": "きつね",
             "kanji": "狐"
@@ -42,7 +57,10 @@
         }
     },
     {
-        "en": "hen",
+        "en": [
+            "hen",
+            "hens"
+        ],
         "ja": {
             "hiragana": "めんどり",
             "kanji": "めんどり"
@@ -59,21 +77,30 @@
         }
     },
     {
-        "en": "map",
+        "en": [
+            "map",
+            "maps"
+        ],
         "ja": {
             "hiragana": "ちず",
             "kanji": "地図"
         }
     },
     {
-        "en": "mat",
+        "en": [
+            "mat",
+            "mats"
+        ],
         "ja": {
             "hiragana": "まっと",
             "kanji": "マット"
         }
     },
     {
-        "en": "pen",
+        "en": [
+            "pen",
+            "pens"
+        ],
         "ja": {
             "hiragana": "ぺん",
             "kanji": "ペン"
@@ -90,7 +117,10 @@
         }
     },
     {
-        "en": "sun",
+        "en": [
+            "sun",
+            "suns"
+        ],
         "ja": {
             "hiragana": "たいよう",
             "kanji": "太陽"

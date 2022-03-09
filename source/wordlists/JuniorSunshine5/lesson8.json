@@ -2,6 +2,7 @@
     {
         "en": [
             "apple",
+            "an apple",
             "apples"
         ],
         "ja": {
@@ -12,6 +13,7 @@
     {
         "en": [
             "banana",
+            "a banana",
             "bananas"
         ],
         "ja": {
@@ -30,8 +32,15 @@
         "en": [
             "chili",
             "chili pepper",
+            "a chili pepper",
+            "chili peppers",
             "cayenne",
-            "red pepper"
+            "cayenne pepper",
+            "a cayenne pepper",
+            "cayenne peppers",
+            "red pepper",
+            "a red pepper",
+            "red peppers"
         ],
         "ja": {
             "hiragana": "とうがらし",
@@ -39,7 +48,11 @@
         }
     },
     {
-        "en": "coffee",
+        "en": [
+            "coffee",
+            "a coffee",
+            "coffees"
+        ],
         "ja": {
             "hiragana": "こーひー",
             "kanji": "コーヒー"
@@ -72,6 +85,7 @@
     {
         "en": [
             "hamburger",
+            "a hamburger",
             "hamburgers"
         ],
         "ja": {
@@ -99,6 +113,7 @@
     {
         "en": [
             "hotdog",
+            "a hotdog",
             "hotdogs"
         ],
         "ja": {
@@ -128,10 +143,7 @@
         }
     },
     {
-        "en": [
-            "mineral water",
-            "mineral waters"
-        ],
+        "en": "mineral water",
         "ja": {
             "hiragana": "みねらるうぉーたー",
             "kanji": "ミネラルウォーター"
@@ -140,6 +152,7 @@
     {
         "en": [
             "pizza",
+            "a pizza",
             "pizzas"
         ],
         "ja": {
@@ -163,6 +176,7 @@
     {
         "en": [
             "salad",
+            "a salad",
             "salads"
         ],
         "ja": {
@@ -187,6 +201,7 @@
     {
         "en": [
             "sandwich",
+            "a sandwich",
             "sandwiches"
         ],
         "ja": {
@@ -195,14 +210,22 @@
         }
     },
     {
-        "en": "soda",
+        "en": [
+            "soda",
+            "a soda",
+            "sodas"
+        ],
         "ja": {
             "hiragana": "そーだ",
             "kanji": "ソーダ"
         }
     },
     {
-        "en": "soup",
+        "en": [
+            "soup",
+            "a soup",
+            "soups"
+        ],
         "ja": {
             "hiragana": "すーぷ",
             "kanji": "スープ"
@@ -225,6 +248,7 @@
     {
         "en": [
             "steak",
+            "a steak",
             "steaks"
         ],
         "ja": {
@@ -249,7 +273,9 @@
     {
         "en": [
             "tea",
-            "black tea"
+            "a tea",
+            "black tea",
+            "a black tea"
         ],
         "ja": {
             "hiragana": "こうちゃ",
