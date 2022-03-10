@@ -1,5 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const parameters = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop)
+});
 function onClick(event) {
 }
 function onDragStart(event) {
@@ -38,6 +41,49 @@ function onDrop(event) {
     checkReady();
     return false;
 }
+async function generateMenuOptions(wordlistURL) {
+    const response = await fetch(wordlistURL);
+    const wordlist = await response.json();
+    const select = document.getElementById("select");
+    let num = 0;
+    for (const word of wordlist) {
+        const itemOutside = document.createElement("div");
+        const itemInside = document.createElement("div");
+        itemOutside.id = `option${num}`;
+        itemOutside.draggable = true;
+        itemOutside.addEventListener("dragstart", onDragStart);
+        itemOutside.style.order = num.toString();
+        itemOutside.classList.add("item");
+        itemInside.classList.add("itemInside");
+        if (word.image) {
+            itemInside.style.backgroundImage = `url('${word.image}')`;
+            itemInside.style.backgroundRepeat = "no-repeat";
+            itemInside.style.backgroundPosition = "center";
+            itemInside.style.backgroundSize = "contain";
+        }
+        if (Array.isArray(word.en)) {
+            itemInside.innerText = word.en[0];
+        }
+        else {
+            itemInside.innerText = word.en;
+        }
+        itemOutside.appendChild(itemInside);
+        select.appendChild(itemOutside);
+        num += 1;
+    }
+}
+function ready() {
+    if (!checkReady())
+        return;
+    const words = [];
+    for (let i = 0; i < 9; i++) {
+        const cell = document.getElementById(`cell${i}`);
+        console.log(cell.firstChild.parentNode.textContent);
+        words.push(cell.firstChild.parentNode.textContent);
+    }
+    const wordsFire = words.join("🔥");
+    window.location.href = `play.html?category=${parameters.category}&list=${parameters.list}&words=${wordsFire}`;
+}
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
     while (currentIndex != 0) {
@@ -49,28 +95,21 @@ function shuffle(array) {
     }
     return array;
 }
-function ready() {
-}
 function checkReady() {
     const readyButton = document.getElementById("ready");
-    let isReady = true;
     for (let i = 0; i < 9; i++) {
         const cell = document.getElementById(`cell${i}`);
         if (!cell.firstChild) {
-            isReady = false;
-            break;
+            readyButton.style.cursor = "not-allowed";
+            readyButton.style.backgroundColor = "lightgray";
+            readyButton.removeEventListener("click", ready);
+            return false;
         }
     }
-    if (isReady) {
-        readyButton.style.cursor = "pointer";
-        readyButton.style.backgroundColor = "greenyellow";
-        readyButton.addEventListener("click", ready);
-    }
-    else {
-        readyButton.style.cursor = "not-allowed";
-        readyButton.style.backgroundColor = "lightgray";
-        readyButton.removeEventListener("click", ready);
-    }
+    readyButton.style.cursor = "pointer";
+    readyButton.style.backgroundColor = "greenyellow";
+    readyButton.addEventListener("click", ready);
+    return true;
 }
 function chooseRandom() {
     const select = document.getElementById("select");
@@ -96,4 +135,7 @@ function chooseRandom() {
         cell.appendChild(item);
     }
     checkReady();
+}
+if (parameters.category && parameters.list) {
+    generateMenuOptions(`../wordlists/${parameters.category}/${parameters.list}.json`);
 }

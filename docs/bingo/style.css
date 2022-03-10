@@ -17,7 +17,7 @@ body {
     gap: 5px;
 }
 
-#bingo {
+#bingoSetup {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -27,13 +27,36 @@ body {
     height: calc(100vh - 70px);
     width: min(76vw, 91vh);
 }
-.cell {
+.cellSetup {
     border: 1px solid #000;
     width: min(20vw, 30vh);
     height: min(20vw, 30vh);
 }
+.cellSetup .item .itemInside {
+    border: none;
+    width: min(20vw, 30vh);
+    height: min(20vw, 30vh);
+}
+
+#bingo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    float: left;
+    height: 100vh;
+    width: 100vw;
+}
+.cell {
+    border: 1px solid #000;
+    width: min(30vw, 30vh);
+    height: min(30vw, 30vh);
+}
 .cell .item .itemInside {
     border: none;
+    width: min(30vw, 30vh);
+    height: min(30vw, 30vh);
 }
 
 #select {
@@ -53,14 +76,14 @@ body {
 #select .item .itemInside {
     border: 2px solid gray;
     border-radius: 2vw;
+    width: min(20vw, 30vh);
+    height: min(20vw, 30vh);
 }
 
 .itemInside {
     background-color: #fff;
     display: table-cell;
     font-size: 3vw;
-    width: min(20vw, 30vh);
-    height: min(20vw, 30vh);
     text-align: center;
     vertical-align: bottom;
     color:#000;
