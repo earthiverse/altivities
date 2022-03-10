@@ -18,6 +18,7 @@ body {
 }
 
 #bingoSetup {
+    user-select: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -39,6 +40,7 @@ body {
 }
 
 #bingo {
+    user-select: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -49,6 +51,7 @@ body {
     width: 100vw;
 }
 .cell {
+    position: relative;
     border: 1px solid #000;
     width: min(30vw, 30vh);
     height: min(30vw, 30vh);
@@ -57,6 +60,14 @@ body {
     border: none;
     width: min(30vw, 30vh);
     height: min(30vw, 30vh);
+}
+.cell img {
+    position: absolute;
+    opacity: 50%;
+    top: 0px;
+    left: 0px;
+    max-width: min(30vw, 30vh);
+    max-height: min(30vw, 30vh);
 }
 
 #select {

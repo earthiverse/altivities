@@ -3,8 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const parameters = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop)
 });
-function onClick(event) {
-}
 function onDragStart(event) {
     const item = event.currentTarget;
     const parent = item.parentElement;

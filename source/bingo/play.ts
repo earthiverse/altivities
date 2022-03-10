@@ -4,6 +4,24 @@ const parameters: any = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop: string) => searchParams.get(prop)
 })
 
+function onClick(event: Event) {
+    const target = event.currentTarget as HTMLDivElement
+    console.log(target.id)
+
+    // TODO: Add a circle, or remove a circle
+    if (target.classList.contains("marked")) {
+        // Remove the circle
+        target.lastChild.remove()
+        target.classList.remove("marked")
+    } else {
+        // Add the circle
+        const marked = new Image()
+        marked.src = "images/marked.png"
+        target.appendChild(marked)
+        target.classList.add("marked")
+    }
+}
+
 async function populateBingo(wordlistURL: string, words: string[]) {
     const response = await fetch(wordlistURL)
     const wordlist: Wordlist = await response.json()

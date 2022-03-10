@@ -26,10 +26,6 @@ type dragData = {
     parent: string
 }
 
-function onClick(event) {
-    // https://4.bp.blogspot.com/-CUR5NlGuXkU/UsZuCrI78dI/AAAAAAAAc20/mMqQPb9bBI0/s8192/mark_maru.png
-}
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function onDragStart(event: DragEvent) {
     const item: HTMLDivElement = event.currentTarget as HTMLDivElement

@@ -3,6 +3,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const parameters = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop)
 });
+function onClick(event) {
+    const target = event.currentTarget;
+    console.log(target.id);
+    if (target.classList.contains("marked")) {
+        target.lastChild.remove();
+        target.classList.remove("marked");
+    }
+    else {
+        const marked = new Image();
+        marked.src = "images/marked.png";
+        target.appendChild(marked);
+        target.classList.add("marked");
+    }
+}
 async function populateBingo(wordlistURL, words) {
     const response = await fetch(wordlistURL);
     const wordlist = await response.json();
