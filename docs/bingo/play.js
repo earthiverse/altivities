@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const parameters = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop)
 });
-function onClick(event) {
+function onMouseDown(event) {
     const target = event.currentTarget;
     console.log(target.id);
     if (target.classList.contains("marked")) {

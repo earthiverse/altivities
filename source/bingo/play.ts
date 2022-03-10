@@ -4,7 +4,7 @@ const parameters: any = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop: string) => searchParams.get(prop)
 })
 
-function onClick(event: Event) {
+function onMouseDown(event: Event) {
     const target = event.currentTarget as HTMLDivElement
     console.log(target.id)
 
