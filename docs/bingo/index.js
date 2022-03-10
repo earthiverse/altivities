@@ -27,7 +27,7 @@ function onDrop(event) {
     console.debug(`Previous: ${previous.id}`);
     if (droppedOn == previous)
         return;
-    if (droppedOn.classList.contains("cell")) {
+    if (droppedOn.classList.contains("cellSetup")) {
         if (droppedOn.firstChild) {
             previous.appendChild(droppedOn.firstChild);
         }
@@ -111,7 +111,7 @@ function checkReady() {
 }
 function chooseRandom() {
     const select = document.getElementById("select");
-    const cells = document.getElementsByClassName("cell");
+    const cells = document.getElementsByClassName("cellSetup");
     for (let i = 0; i < cells.length; i++) {
         const cell = cells.item(i);
         if (cell.firstChild)

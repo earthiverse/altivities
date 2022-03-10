@@ -60,7 +60,7 @@ function onDrop(event: DragEvent) {
 
     if (droppedOn == previous) return // No change
 
-    if (droppedOn.classList.contains("cell")) {
+    if (droppedOn.classList.contains("cellSetup")) {
         if (droppedOn.firstChild) {
             // It's being dragged from one cell to another
             previous.appendChild(droppedOn.firstChild)
@@ -170,7 +170,7 @@ function chooseRandom() {
     const select = document.getElementById("select") as HTMLDivElement
 
     // Return all elements to the select
-    const cells = document.getElementsByClassName("cell")
+    const cells = document.getElementsByClassName("cellSetup")
     for (let i = 0; i < cells.length; i++) {
         const cell = cells.item(i)
         if (cell.firstChild) select.appendChild(cell.firstChild)
