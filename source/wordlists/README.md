@@ -18,9 +18,9 @@ type Languages =
     | "ja"
 
 type Word = {
-    image?: string
     [T in Exclude<Languages, "ja">]: string | string[]
 } & {
+    image?: string
     ja: {
         kanji: string
         hiragana: string

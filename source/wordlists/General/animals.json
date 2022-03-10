@@ -1,0 +1,74 @@
+[
+    {
+        "image": "https://1.bp.blogspot.com/-MYEqy3j18MU/X6uqkgMGuTI/AAAAAAABcNM/1BiLtP3p128B52rQoSRjStBQy4AxRcl7ACNcBGAsYHQ/s8192/cat_nekoko.png",
+        "en": "cat",
+        "ja": {
+            "kanji": "猫",
+            "hiragana": "ねこ"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-noejtvMJM8Q/V4SA7f_DLbI/AAAAAAAA8OM/Ajwehtq2jCgO2QvPdxGJz5I290VyUZVLQCLcB/s8192/dog_akitainu.png",
+        "en": "dog",
+        "ja": {
+            "kanji": "犬",
+            "hiragana": "いぬ"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-alu3Ws14N6o/V4R0achmabI/AAAAAAAA8M0/iD5HygmobgEYzPXBxSJZGOq5L6OQtPK7wCLcB/s8192/animal_bear_panda.png",
+        "en": "panda",
+        "ja": {
+            "kanji": "パンダ",
+            "hiragana": "ぱんだ"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-7ONbdin9xfo/VJ6XSbSf6KI/AAAAAAAAqIc/NxaH4RaCDbo/s8192/animal_lion.png",
+        "en": "lion",
+        "ja": {
+            "kanji": "ライオン",
+            "hiragana": "らいおん"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-hbMBb6b3SHU/WqihUhxE5BI/AAAAAAABKyw/LuodP5AUAs4HVYa6leOI-7UXWI-KTIoqgCLcBGAs/s8192/animal_usagi_nihon_nousagi.png",
+        "en": "rabbit",
+        "ja": {
+            "kanji": "兎",
+            "hiragana": "うさぎ"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/--ysNcYpsGXU/V9vB__9_KwI/AAAAAAAA96s/VWdgwqiOfzcahqy5VK_FisOqFHwo2os4gCLcB/s8192/animal_bear_character.png",
+        "en": "bear",
+        "ja": {
+            "kanji": "熊",
+            "hiragana": "くま"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-zURrii33FT4/U6llH_xbQXI/AAAAAAAAhro/pMyFZTFF6HU/s8192/animal_tora.png",
+        "en": "tiger",
+        "ja": {
+            "kanji": "虎",
+            "hiragana": "とら"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-36_reOy-K4s/UnIEA2ONJwI/AAAAAAAAZ8Q/m8lHcJIGUVM/s8192/animal_zou.png",
+        "en": "elephant",
+        "ja": {
+            "kanji": "象",
+            "hiragana": "ぞう"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-2dfqdj4nnTY/VxC3WEivQEI/AAAAAAAA54I/4aGk4Ou1-fQ2GLqbby1yGwJwNEl7akB3QCLcB/s8192/animal_kirin.png",
+        "en": "giraffe",
+        "ja": {
+            "kanji": "キリン",
+            "hiragana": "きりん"
+        }
+    }
+]

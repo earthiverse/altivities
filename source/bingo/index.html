@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Let's play bingo!</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script>
+        var exports = {};
+    </script>
+    <script src="drag.js" defer></script>
+    <script src="load.js" defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bingo">
+        <div id="cell1" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        <div id="cell2" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        <div id="cell3" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        <div id="cell4" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        <div id="cell5" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        <div id="cell6" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        <div id="cell7" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        <div id="cell8" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        <div id="cell9" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+    </div>
+    <div id="select" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+    </div>
+</body>
+
+</html>
