@@ -10,24 +10,11 @@ html, body {
 
 body {
     display: flex;
-    justify-content: center;
-    gap: 5vw;
-}
-
-#left {
-    display: table-cell;
-    width: 77vw;
-    height: 100vh;
-    vertical-align: middle;
-    text-align: center;
-}
-
-#right {
-    display: table-cell;
-    width: 23vw;
-    height: 100vh;
-    vertical-align: middle;
-    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    gap: 5px;
 }
 
 #bingo {
@@ -37,7 +24,7 @@ body {
     align-items: center;
     align-content: center;
     float: left;
-    height: 100vh;
+    height: calc(100vh - 70px);
     width: min(76vw, 91vh);
 }
 .cell {
@@ -45,7 +32,7 @@ body {
     width: min(20vw, 30vh);
     height: min(20vw, 30vh);
 }
-.cell .option {
+.cell .item .itemInside {
     border: none;
 }
 
@@ -59,16 +46,16 @@ body {
     justify-content: center;
     float: right;
     width: 22vw;
-    height: 100vh;
+    height: calc(100vh - 70px);
     overflow-y: auto;
 }
 
-#select .option {
+#select .item .itemInside {
     border: 2px solid gray;
     border-radius: 2vw;
 }
 
-.option {
+.itemInside {
     background-color: #fff;
     display: table-cell;
     font-size: 3vw;
@@ -76,7 +63,6 @@ body {
     height: min(20vw, 30vh);
     text-align: center;
     vertical-align: bottom;
-
     color:#000;
     -webkit-text-fill-color:#000;
 	text-shadow:
@@ -84,4 +70,45 @@ body {
         2px -2px 0 #fff,
         -2px 2px 0 #fff,
         2px 2px 0 #fff;
+}
+
+.button {
+    cursor: pointer;
+    font-size: 30px;
+    width: 20vw;
+    height: 50px;
+}
+
+#ready {
+    cursor: not-allowed;
+    display: table-cell;
+    background-color: lightgray;
+    vertical-align: middle;
+    text-align: center;
+    width: 20vw;
+    height: 50px;
+}
+
+#ready img {
+    max-height: 30px;
+    vertical-align: middle;
+}
+
+#random {
+    display: table-cell;
+    background-color: aqua;
+    vertical-align: middle;
+    text-align: center;
+    width: 20vw;
+    height: 50px;
+}
+
+#random img {
+    max-height: 30px;
+    vertical-align: middle;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
 }

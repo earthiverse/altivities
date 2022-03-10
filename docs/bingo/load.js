@@ -10,25 +10,28 @@ async function generateMenuOptions(wordlistURL) {
     const select = document.getElementById("select");
     let num = 1;
     for (const word of wordlist) {
-        const option = document.createElement("div");
-        option.id = `option${num}`;
-        option.classList.add("option");
-        option.draggable = true;
-        option.addEventListener("dragstart", onDragStart);
-        option.style.order = num.toString();
+        const itemOutside = document.createElement("div");
+        const itemInside = document.createElement("div");
+        itemOutside.id = `option${num}`;
+        itemOutside.draggable = true;
+        itemOutside.addEventListener("dragstart", onDragStart);
+        itemOutside.style.order = num.toString();
+        itemOutside.classList.add("item");
+        itemInside.classList.add("itemInside");
         if (word.image) {
-            option.style.backgroundImage = `url('${word.image}')`;
-            option.style.backgroundRepeat = "no-repeat";
-            option.style.backgroundPosition = "center";
-            option.style.backgroundSize = "contain";
+            itemInside.style.backgroundImage = `url('${word.image}')`;
+            itemInside.style.backgroundRepeat = "no-repeat";
+            itemInside.style.backgroundPosition = "center";
+            itemInside.style.backgroundSize = "contain";
         }
         if (Array.isArray(word.en)) {
-            option.innerText = word.en[0];
+            itemInside.innerText = word.en[0];
         }
         else {
-            option.innerText = word.en;
+            itemInside.innerText = word.en;
         }
-        select.appendChild(option);
+        itemOutside.appendChild(itemInside);
+        select.appendChild(itemOutside);
         num += 1;
     }
 }

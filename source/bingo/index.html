@@ -21,6 +21,7 @@
 
 <body>
     <div id="bingo">
+        <div id="cell0" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
         <div id="cell1" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
         <div id="cell2" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
         <div id="cell3" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
@@ -29,10 +30,15 @@
         <div id="cell6" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
         <div id="cell7" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
         <div id="cell8" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
-        <div id="cell9" class="cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
-    </div>
     </div>
     <div id="select" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+    <div class="break"></div>
+    <div class="button">
+        <div id="ready"><img src="images/ready.svg"> Ready!</div>
+    </div>
+    <div class="button">
+        <div id="random" onclick="chooseRandom()"><img src="images/random.svg"> Random!</div>
+    </div>
 </body>
 
 </html>
