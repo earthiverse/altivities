@@ -2,6 +2,7 @@
     {
         "en": [
             "boar",
+            "a boar",
             "boars"
         ],
         "ja": {
@@ -12,6 +13,7 @@
     {
         "en": [
             "dog",
+            "a dog",
             "dogs"
         ],
         "ja": {
@@ -22,6 +24,7 @@
     {
         "en": [
             "dragon",
+            "a dragon",
             "dragons"
         ],
         "ja": {
@@ -32,6 +35,7 @@
     {
         "en": [
             "horse",
+            "a horse",
             "horses"
         ],
         "ja": {
@@ -42,6 +46,7 @@
     {
         "en": [
             "monkey",
+            "a monkey",
             "monkeys"
         ],
         "ja": {
@@ -52,6 +57,7 @@
     {
         "en": [
             "ox",
+            "an ox",
             "oxen"
         ],
         "ja": {
@@ -62,6 +68,7 @@
     {
         "en": [
             "rabbit",
+            "a rabbit",
             "rabbits"
         ],
         "ja": {
@@ -72,8 +79,10 @@
     {
         "en": [
             "rat",
+            "a rat",
             "rats",
             "mouse",
+            "a mouse",
             "mice"
         ],
         "ja": {
@@ -84,6 +93,7 @@
     {
         "en": [
             "rooster",
+            "a rooster",
             "roosters"
         ],
         "ja": {
@@ -92,7 +102,10 @@
         }
     },
     {
-        "en": "sheep",
+        "en": [
+            "sheep",
+            "a sheep"
+        ],
         "ja": {
             "hiragana": "ひつじ",
             "kanji": "羊"
@@ -101,6 +114,7 @@
     {
         "en": [
             "snake",
+            "a snake",
             "snakes"
         ],
         "ja": {
@@ -111,6 +125,7 @@
     {
         "en": [
             "tiger",
+            "a tiger",
             "tigers"
         ],
         "ja": {

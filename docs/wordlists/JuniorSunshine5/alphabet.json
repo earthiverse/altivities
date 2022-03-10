@@ -161,7 +161,9 @@
     {
         "en": [
             "sea",
-            "ocean"
+            "seas",
+            "ocean",
+            "oceans"
         ],
         "ja": {
             "hiragana": "うみ",
@@ -186,14 +188,20 @@
         }
     },
     {
-        "en": "umbrella",
+        "en": [
+            "umbrella",
+            "umbrellas"
+        ],
         "ja": {
             "hiragana": "かさ",
             "kanji": "傘"
         }
     },
     {
-        "en": "van",
+        "en": [
+            "van",
+            "vans"
+        ],
         "ja": {
             "hiragana": "こがたとらっく",
             "kanji": "小型トラック"

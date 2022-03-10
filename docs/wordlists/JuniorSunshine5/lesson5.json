@@ -1,223 +1,356 @@
 [
     {
-        "en": "ball",
+        "en": [
+            "ball",
+            "a ball",
+            "balls"
+        ],
         "ja": {
             "hiragana": "ぼーる",
             "kanji": "ボール"
         }
     },
     {
-        "en": "bank",
+        "en": [
+            "bank",
+            "a bank",
+            "banks"
+        ],
         "ja": {
             "hiragana": "ぎんこう",
             "kanji": "銀行"
         }
     },
     {
-        "en": "bat",
+        "en": [
+            "bat",
+            "a bat",
+            "bats"
+        ],
         "ja": {
             "hiragana": "ばっと",
             "kanji": "バット"
         }
     },
     {
-        "en": "bed",
+        "en": [
+            "bed",
+            "a bed",
+            "beds"
+        ],
         "ja": {
             "hiragana": "べっど",
             "kanji": "ベッド"
         }
     },
     {
-        "en": "book",
+        "en": [
+            "book",
+            "a book",
+            "books"
+        ],
         "ja": {
             "hiragana": "ほん",
             "kanji": "本"
         }
     },
     {
-        "en": "bookstore",
+        "en": [
+            "bookstore",
+            "a bookstore",
+            "bookstores"
+        ],
         "ja": {
             "hiragana": "ほんや",
             "kanji": "本屋"
         }
     },
     {
-        "en": "box",
+        "en": [
+            "box",
+            "a box",
+            "boxes"
+        ],
         "ja": {
             "hiragana": "はこ",
             "kanji": "箱"
         }
     },
     {
-        "en": "cap",
+        "en": [
+            "cap",
+            "a cap",
+            "caps"
+        ],
         "ja": {
             "hiragana": "（ふちのない）ぼうし",
             "kanji": "（ふちのない）ぼうし"
         }
     },
     {
-        "en": "chair",
+        "en": [
+            "chair",
+            "a chair",
+            "chairs"
+        ],
         "ja": {
             "hiragana": "いす",
             "kanji": "いす"
         }
     },
     {
-        "en": "convenience store",
+        "en": [
+            "convenience store",
+            "a convenience store",
+            "convenience stores"
+        ],
         "ja": {
             "hiragana": "こんびにえんすすとあ",
             "kanji": "コンビニエンスストア"
         }
     },
     {
-        "en": "department store",
+        "en": [
+            "department store",
+            "a department store",
+            "department stores"
+        ],
         "ja": {
             "hiragana": "でぱーと",
             "kanji": "デパート"
         }
     },
     {
-        "en": "desk",
+        "en": [
+            "desk",
+            "a desk",
+            "desks"
+        ],
         "ja": {
             "hiragana": "つくえ",
             "kanji": "つくえ"
         }
     },
     {
-        "en": "fire station",
+        "en": [
+            "fire station",
+            "a fire station",
+            "fire stations"
+        ],
         "ja": {
             "hiragana": "しょうぼうしょ",
             "kanji": "消防署"
         }
     },
     {
-        "en": "flower shop",
+        "en": [
+            "flower shop",
+            "a flower shop",
+            "flower shops"
+        ],
         "ja": {
             "hiragana": "はなや",
             "kanji": "花屋"
         }
     },
     {
-        "en": "gas station",
+        "en": [
+            "gas station",
+            "a gas station",
+            "gas stations",
+            "petrol station",
+            "a petrol station",
+            "petrol stations"
+        ],
         "ja": {
             "hiragana": "がそりんすたんど",
             "kanji": "ガソリンスタンド"
         }
     },
     {
-        "en": "glove",
+        "en": [
+            "glove",
+            "gloves"
+        ],
         "ja": {
             "hiragana": "ぐろーぶ",
             "kanji": "グローブ"
         }
     },
     {
-        "en": "hospital",
+        "en": [
+            "hospital",
+            "a hospital",
+            "hospitals"
+        ],
         "ja": {
             "hiragana": "びょういん",
             "kanji": "病院"
         }
     },
     {
-        "en": "library",
+        "en": [
+            "library",
+            "a library",
+            "libraries"
+        ],
         "ja": {
             "hiragana": "としょかん",
             "kanji": "図書館"
         }
     },
     {
-        "en": "park",
+        "en": [
+            "park",
+            "a park",
+            "parks"
+        ],
         "ja": {
             "hiragana": "こうえん",
             "kanji": "公園"
         }
     },
     {
-        "en": "pen",
+        "en": [
+            "pen",
+            "a pen",
+            "pens"
+        ],
         "ja": {
             "hiragana": "ぺん",
             "kanji": "ペン"
         }
     },
     {
-        "en": "pencil",
+        "en": [
+            "pencil",
+            "a pencil",
+            "pencils"
+        ],
         "ja": {
             "hiragana": "えんびつ",
             "kanji": "えんびつ"
         }
     },
     {
-        "en": "pet shop",
+        "en": [
+            "pet shop",
+            "a pet shop",
+            "pet shops"
+        ],
         "ja": {
             "hiragana": "ぺっとしょっぷ",
             "kanji": "ペットショップ"
         }
     },
     {
-        "en": "police station",
+        "en": [
+            "police station",
+            "a police station",
+            "police stations"
+        ],
         "ja": {
             "hiragana": "けいさつしょ",
             "kanji": "警察署"
         }
     },
     {
-        "en": "post office",
+        "en": [
+            "post office",
+            "a post office",
+            "post offices"
+        ],
         "ja": {
             "hiragana": "ゆうびんきょく",
             "kanji": "郵便局"
         }
     },
     {
-        "en": "restaurant",
+        "en": [
+            "restaurant",
+            "a restaurant",
+            "restaurants"
+        ],
         "ja": {
             "hiragana": "れすとらふん",
             "kanji": "レストラフン"
         }
     },
     {
-        "en": "ruler",
+        "en": [
+            "ruler",
+            "a ruler",
+            "rulers"
+        ],
         "ja": {
             "hiragana": "じょうぎ",
             "kanji": "定規"
         }
     },
     {
-        "en": "school",
+        "en": [
+            "school",
+            "a school",
+            "schools"
+        ],
         "ja": {
             "hiragana": "がっこう",
             "kanji": "学校"
         }
     },
     {
-        "en": "sports shop",
+        "en": [
+            "sports shop",
+            "a sports shop",
+            "sports shops"
+        ],
         "ja": {
             "hiragana": "すぽぼーつようひんてん",
             "kanji": "スポボーツ用品店"
         }
     },
     {
-        "en": "station",
+        "en": [
+            "station",
+            "a station",
+            "stations",
+            "train station",
+            "a train station",
+            "train stations"
+        ],
         "ja": {
             "hiragana": "えき",
             "kanji": "駅"
         }
     },
     {
-        "en": "supermarket",
+        "en": [
+            "supermarket",
+            "a supermarket",
+            "supermarkets"
+        ],
         "ja": {
             "hiragana": "すーばー（まーけっと）",
             "kanji": "スーバー（マーケット）"
         }
     },
     {
-        "en": "table",
+        "en": [
+            "table",
+            "a table",
+            "tables"
+        ],
         "ja": {
             "hiragana": "てーぶる",
             "kanji": "テーブル"
         }
     },
     {
-        "en": "watch",
+        "en": [
+            "watch",
+            "a watch",
+            "watches"
+        ],
         "ja": {
             "hiragana": "うでどけい",
             "kanji": "腕時計"

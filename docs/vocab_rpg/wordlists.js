@@ -61,6 +61,10 @@ const categories = {
         art: "images/categories/js6.jpg",
         name: "Junior Sunshine 6",
         wordlists: {
+            js5_alphabet: {
+                description: "Junior Sunshine 6 - Alphabet",
+                file: "../wordlists/JuniorSunshine5/alphabet.json"
+            },
             js5_phonics: {
                 description: "Junior Sunshine 6 - Phonics",
                 file: "../wordlists/JuniorSunshine5/phonics.json"

@@ -2,6 +2,7 @@
     {
         "en": [
             "apple",
+            "an apple",
             "apples"
         ],
         "ja": {
@@ -26,6 +27,7 @@
     {
         "en": [
             "cherry",
+            "a cherry",
             "cherries"
         ],
         "ja": {
@@ -43,6 +45,7 @@
     {
         "en": [
             "crab",
+            "a crab",
             "crabs"
         ],
         "ja": {
@@ -67,6 +70,7 @@
     {
         "en": [
             "grape",
+            "a grape",
             "grapes"
         ],
         "ja": {
@@ -103,7 +107,10 @@
         }
     },
     {
-        "en": "iyokan",
+        "en": [
+            "iyokan",
+            "an iyokan"
+        ],
         "ja": {
             "hiragana": "いよかん",
             "kanji": "いよかん"
@@ -126,6 +133,7 @@
     {
         "en": [
             "lemon",
+            "a lemon",
             "lemons"
         ],
         "ja": {
@@ -150,10 +158,13 @@
     {
         "en": [
             "lobster",
+            "a lobster",
             "lobsters",
             "spiny lobster",
+            "a spiny lobster",
             "spiny lobsters",
             "Japanese spiny lobster",
+            "a Japanese spiny lobster",
             "Japanese spiny lobsters"
         ],
         "ja": {
@@ -178,6 +189,7 @@
     {
         "en": [
             "mango",
+            "a mango",
             "mangoes"
         ],
         "ja": {
@@ -209,6 +221,7 @@
     {
         "en": [
             "peach",
+            "a peach",
             "peaches"
         ],
         "ja": {
@@ -219,6 +232,7 @@
     {
         "en": [
             "peanut",
+            "a peanut",
             "peanuts"
         ],
         "ja": {
@@ -229,8 +243,17 @@
     {
         "en": [
             "pear",
+            "a pear",
             "pears",
-            "Japanese pear"
+            "Japanese pear",
+            "a Japanese pear",
+            "Japanese pears",
+            "Asian pear",
+            "an Asian pear",
+            "Asian pears",
+            "apple pear",
+            "an apple pear",
+            "apple pears"
         ],
         "ja": {
             "hiragana": "なし",
@@ -240,6 +263,7 @@
     {
         "en": [
             "pineapple",
+            "a pineapple",
             "pineapples"
         ],
         "ja": {
@@ -261,14 +285,21 @@
         ]
     },
     {
-        "en": "sweet potato",
+        "en": [
+            "sweet potato",
+            "a sweet potato",
+            "sweet potatoes"
+        ],
         "ja": {
             "hiragana": "さつまいも",
             "kanji": "サツマイモ"
         }
     },
     {
-        "en": "takoyaki",
+        "en": [
+            "takoyaki",
+            "a takoyaki"
+        ],
         "ja": {
             "hiragana": "たこやき",
             "kanji": "タコ焼き"
