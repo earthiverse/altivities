@@ -1,48 +1,46 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.onDrop = exports.onDragOver = exports.onDragStart = void 0;
+exports.onDrop = exports.onDragOver = exports.onDragStart = exports.onClick = void 0;
+function onClick(event) {
+}
+exports.onClick = onClick;
 function onDragStart(event) {
     const item = event.currentTarget;
     const parent = item.parentElement;
-    item.style.backgroundColor = "yellow";
     const data = {
         "item": item.id,
         "parent": parent.id
     };
     event.dataTransfer.setData("application/json", JSON.stringify(data));
+    return false;
 }
 exports.onDragStart = onDragStart;
 function onDragOver(event) {
     event.preventDefault();
+    return false;
 }
 exports.onDragOver = onDragOver;
 function onDrop(event) {
-    const droppedOn = event.target;
+    const droppedOn = event.currentTarget;
     const data = JSON.parse(event.dataTransfer.getData("application/json"));
     const item = document.getElementById(data.item);
     const previous = document.getElementById(data.parent);
-    if (droppedOn.classList.contains("option")) {
-        console.debug("Returning early");
-        previous.appendChild(item);
+    console.debug(`Dropped On: ${droppedOn.id}`);
+    console.debug(`Item: ${item.id}`);
+    console.debug(`Previous: ${previous.id}`);
+    if (droppedOn == previous)
         return;
-    }
     if (droppedOn.classList.contains("cell")) {
-        while (droppedOn.firstChild) {
-            if (droppedOn.firstChild.classList?.contains("option")) {
-                console.debug("Returning to previous");
-                previous.appendChild(droppedOn.firstChild);
-            }
-            else {
-                console.log("just removing");
-                droppedOn.removeChild(droppedOn.firstChild);
-            }
+        if (droppedOn.firstChild?.classList?.contains("option")) {
+            previous.appendChild(droppedOn.firstChild);
         }
-        console.log("appending to cell");
         droppedOn.appendChild(item);
     }
     else {
-        console.log("returning to list");
         droppedOn.appendChild(item);
     }
+    event.dataTransfer.clearData();
+    event.preventDefault();
+    return false;
 }
 exports.onDrop = onDrop;

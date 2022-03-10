@@ -16,23 +16,18 @@ async function generateMenuOptions(wordlistURL) {
         option.draggable = true;
         option.addEventListener("dragstart", onDragStart);
         option.style.order = num.toString();
-        const image = await new Promise((resolve) => {
-            const preload = new Image();
-            preload.addEventListener("load", () => resolve(preload));
-            preload.addEventListener("error", () => resolve(undefined));
-            preload.src = word.image;
-        });
-        let text;
+        if (word.image) {
+            option.style.backgroundImage = `url('${word.image}')`;
+            option.style.backgroundRepeat = "no-repeat";
+            option.style.backgroundPosition = "center";
+            option.style.backgroundSize = "contain";
+        }
         if (Array.isArray(word.en)) {
-            text = document.createTextNode(word.en[0]);
+            option.innerText = word.en[0];
         }
         else {
-            text = document.createTextNode(word.en);
+            option.innerText = word.en;
         }
-        if (image) {
-            option.appendChild(image);
-        }
-        option.appendChild(text);
         select.appendChild(option);
         num += 1;
     }
