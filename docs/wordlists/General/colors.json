@@ -1,10 +1,93 @@
 [
     {
+        "image": "https://1.bp.blogspot.com/-mR1CX1cOheQ/Ws2vweJCqwI/AAAAAAABLYE/oCtvMNnwesgf-ockL_ub8Uu-neNE30J5wCLcBGAs/s8192/pen_iroenpitsu12_black.png",
+        "en": "black",
+        "ja": {
+            "kanji": "黒",
+            "hiragana": "くろ"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-mjK6pOjeetQ/Ws2vuYAsSKI/AAAAAAABLXw/3qbCsN8URCUpxkoYdQJjkvY_WNmI3aeLQCLcBGAs/s8192/pen_iroenpitsu07_blue.png",
+        "en": "blue",
+        "ja": {
+            "kanji": "青",
+            "hiragana": "あお"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-aseltt77JP4/Ws2vvO1XMII/AAAAAAABLX4/fJoVfxDXdeAk_yBiwn3ugBOVH0lgFIQKACLcBGAs/s8192/pen_iroenpitsu09_brown.png",
+        "en": "brown",
+        "ja": {
+            "kanji": "茶色",
+            "hiragana": "ちゃいろ"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-Z-FwBtMvl0U/Ws2vv61t2XI/AAAAAAABLYA/O3jlLcs5QmwJB0A44PTNqODD2kSV44b-wCLcBGAs/s8192/pen_iroenpitsu11_gray.png",
+        "en": [
+            "gray",
+            "grey"
+        ],
+        "ja": {
+            "kanji": "灰色",
+            "hiragana": "はいいろ"
+        }
+    },
+    {
         "image": "https://1.bp.blogspot.com/-XxR_Qa2MeU8/Ws2vtkopl-I/AAAAAAABLXo/KuXKNQ4yNsEqJrYb_4Dq1u4tGYg_Dq3PwCLcBGAs/s8192/pen_iroenpitsu05_green.png",
         "en": "green",
         "ja": {
             "kanji": "緑",
             "hiragana": "みどり"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-qYoPirnZnmQ/Ws2vsucFmMI/AAAAAAABLXc/PcTwIUwThosy1f2xBDbXWTYEjLinBsUtACLcBGAs/s8192/pen_iroenpitsu02_orange.png",
+        "en": "orange",
+        "ja": {
+            "kanji": "緑",
+            "hiragana": "みどり"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-TZ-ChNu5gXE/Ws2vu5xQjVI/AAAAAAABLX0/i2eN3Cp-N7kL5sjoaPwXGzZjZn69OgAMwCLcBGAs/s8192/pen_iroenpitsu08_purple.png",
+        "en": "purple",
+        "ja": {
+            "kanji": "紫",
+            "hiragana": "むらさき"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-kBg-boVF5CA/Ws2vr9N8IZI/AAAAAAABLXY/YGS17j9CLIQxCB0no5UsHPHE4ssGZC9CACLcBGAs/s8192/pen_iroenpitsu01_red.png",
+        "en": "red",
+        "ja": {
+            "kanji": "赤",
+            "hiragana": "あか"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-bfoTNBmj9_w/Ws2vvvlb3JI/AAAAAAABLX8/V8sSfeIlG_oXJ87GHoUar16QD1SgaJRxQCLcBGAs/s8192/pen_iroenpitsu10_white.png",
+        "en": "white",
+        "ja": {
+            "kanji": "赤",
+            "hiragana": "あか"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-dK2c_gxwJ_g/Ws2vsgaiyoI/AAAAAAABLXg/TjbY0P5dS9YLKMxTKrztGNi4HtRZoqyHQCLcBGAs/s8192/pen_iroenpitsu03_yellow.png",
+        "en": "yellow",
+        "ja": {
+            "kanji": "赤",
+            "hiragana": "あか"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-dK2c_gxwJ_g/Ws2vsgaiyoI/AAAAAAABLXg/TjbY0P5dS9YLKMxTKrztGNi4HtRZoqyHQCLcBGAs/s8192/pen_iroenpitsu03_yellow.png",
+        "en": "yellow",
+        "ja": {
+            "kanji": "赤",
+            "hiragana": "あか"
         }
     }
 ]
