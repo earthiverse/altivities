@@ -1,6 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const categories = {
+    gen: {
+        name: "General",
+        wordlists: {
+            animals: {
+                description: "Animals",
+                file: "../wordlists/General/animals.json"
+            },
+            colors: {
+                description: "Colors",
+                file: "../wordlists/General/colors.json"
+            }
+        }
+    },
     hep: {
         art: "images/categories/hepburn.png",
         name: "Hepburn Romaji",

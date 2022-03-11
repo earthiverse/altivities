@@ -5,6 +5,7 @@ type Languages =
 export type CategoryKey =
     | "js5"
     | "js6"
+    | "gen"
     | "hep"
     | "sun1"
     | "sun2"
@@ -38,6 +39,19 @@ export type CategoryData = {
 // NOTE: We import this file in the index.html, this variable is important.
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const categories: { [T in CategoryKey]: CategoryData } = {
+    gen: {
+        name: "General",
+        wordlists: {
+            animals: {
+                description: "Animals",
+                file: "../wordlists/General/animals.json"
+            },
+            colors: {
+                description: "Colors",
+                file: "../wordlists/General/colors.json"
+            }
+        }
+    },
     hep: {
         art: "images/categories/hepburn.png",
         name: "Hepburn Romaji",
