@@ -69,6 +69,9 @@ async function populateBingo(wordlistURL: string, words: string[]) {
 if (parameters.category && parameters.list && parameters.words) {
     const words = (parameters.words as string).split("🔥")
     populateBingo(`../wordlists/${parameters.category}/${parameters.list}.json`, words)
+} else if (parameters.wordlist && parameters.words) {
+    const words = (parameters.words as string).split("🔥")
+    populateBingo(parameters.wordlist, words)
 }
 
 export {}

@@ -5,74 +5,40 @@
 <head>
     <meta charset="utf-8" />
     <title>Let's play bingo!</title>
-    <style>
-        html,
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        #play_area {
-            display: flex;
-            gap: 1vh 1vw;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            background-color: pink;
-            height: calc(var(--vh, 1vh) * 100);
-            width: 90vw;
-            margin: auto auto;
-        }
-
-        #bingo_area {
-            background-color: aqua;
-            height: min(calc(var(--vh, 1vh) * 93), 70vw);
-            width: min(calc(var(--vh, 1vh) * 93), 70vw);
-        }
-
-        #menu_area {
-            background-color: lightgreen;
-            height: calc(var(--vh, 1vh) * 93);
-            width: 18vw;
-        }
-
-        .break {
-            flex-basis: 100%;
-            height: 0;
-        }
-
-        .button {
-            background-color: gray;
-            height: calc(var(--vh, 1vh) * 5);
-            width: 18vw;
-        }
-    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <link rel="stylesheet" href="test.css" type="text/css" />
     <script>
-        function resize() {
-            clearTimeout(window.resizedFinished);
-            window.resizedFinished = setTimeout(() => {
-                const vh = window.innerHeight * 0.01;
-                document.documentElement.style.setProperty("--vh", `${vh}px`);
-            }, 250);
-        }
-        resize()
-        window.addEventListener("resize", resize);
+        var exports = {};
+        WebFont.load({
+            google: {
+                families: ["Schoolbell"]
+            }
+        });
     </script>
+    <script src="test.js" defer></script>
 </head>
 
 <body>
     <div id="play_area">
-        <div id="bingo_area">bingo</div>
-        <div id="menu_area">menu</div>
+        <div id="bingo_area">
+            <div id="cell0" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell1" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell2" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell3" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell4" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell5" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell6" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell7" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell8" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        </div>
+        <div id="menu_area"></div>
         <div class="break"></div>
-        <div class="button">button a</div>
-        <div class="button">button b</div>
+        <div class="button">
+            <div id="ready"><img src="images/ready.svg"> Ready!</div>
+        </div>
+        <div class="button">
+            <div id="random" onclick="chooseRandom()"><img src="images/random.svg"> Random!</div>
+        </div>
     </div>
 </body>
 
