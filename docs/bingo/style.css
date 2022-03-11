@@ -145,3 +145,15 @@ body {
     flex-basis: 100%;
     height: 0;
 }
+
+/* iPad viewport fixes. */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+    body, html {
+        height: 1024px;
+    }
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {                         
+    body, html {
+        height: 768px;
+    }
+}
