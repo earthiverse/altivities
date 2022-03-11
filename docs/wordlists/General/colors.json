@@ -46,8 +46,8 @@
         "image": "https://3.bp.blogspot.com/-qYoPirnZnmQ/Ws2vsucFmMI/AAAAAAABLXc/PcTwIUwThosy1f2xBDbXWTYEjLinBsUtACLcBGAs/s8192/pen_iroenpitsu02_orange.png",
         "en": "orange",
         "ja": {
-            "kanji": "緑",
-            "hiragana": "みどり"
+            "kanji": "オレンジ",
+            "hiragana": "おれんじ"
         }
     },
     {
@@ -70,16 +70,16 @@
         "image": "https://4.bp.blogspot.com/-bfoTNBmj9_w/Ws2vvvlb3JI/AAAAAAABLX8/V8sSfeIlG_oXJ87GHoUar16QD1SgaJRxQCLcBGAs/s8192/pen_iroenpitsu10_white.png",
         "en": "white",
         "ja": {
-            "kanji": "赤",
-            "hiragana": "あか"
+            "kanji": "城",
+            "hiragana": "しろ"
         }
     },
     {
         "image": "https://2.bp.blogspot.com/-dK2c_gxwJ_g/Ws2vsgaiyoI/AAAAAAABLXg/TjbY0P5dS9YLKMxTKrztGNi4HtRZoqyHQCLcBGAs/s8192/pen_iroenpitsu03_yellow.png",
         "en": "yellow",
         "ja": {
-            "kanji": "赤",
-            "hiragana": "あか"
+            "kanji": "黄色",
+            "hiragana": "きいろ"
         }
     }
 ]
