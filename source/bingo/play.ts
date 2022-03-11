@@ -74,4 +74,17 @@ if (parameters.category && parameters.list && parameters.words) {
     populateBingo(parameters.wordlist, words)
 }
 
+// The following handles resizing the window.
+// It's a hack to fill in the screen on iPads.
+let RESIZE_FINISHED
+function resize() {
+    if (RESIZE_FINISHED) clearTimeout(RESIZE_FINISHED)
+    RESIZE_FINISHED = setTimeout(() => {
+        const vh = window.innerHeight * 0.01
+        document.documentElement.style.setProperty("--vh", `${vh}px`)
+    }, 250)
+}
+resize()
+window.addEventListener("resize", resize)
+
 export {}

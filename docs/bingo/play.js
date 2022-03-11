@@ -65,3 +65,14 @@ else if (parameters.wordlist && parameters.words) {
     const words = parameters.words.split("🔥");
     populateBingo(parameters.wordlist, words);
 }
+let RESIZE_FINISHED;
+function resize() {
+    if (RESIZE_FINISHED)
+        clearTimeout(RESIZE_FINISHED);
+    RESIZE_FINISHED = setTimeout(() => {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+    }, 250);
+}
+resize();
+window.addEventListener("resize", resize);
