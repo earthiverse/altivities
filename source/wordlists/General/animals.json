@@ -70,5 +70,13 @@
             "kanji": "キリン",
             "hiragana": "きりん"
         }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-TufgpS9K1ww/Wq9-V6zkUcI/AAAAAAABK8M/zRH69Un1PlsxT5LdI-CoQBBhPiGlATB1gCLcBGAs/s8192/animal_fox_kitsune.png",
+        "en": "fox",
+        "ja": {
+            "kanji": "狐",
+            "hiragana": "きつね"
+        }
     }
 ]

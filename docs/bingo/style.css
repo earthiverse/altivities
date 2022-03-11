@@ -46,7 +46,7 @@ body {
     align-items: center;
     align-content: center;
     float: left;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100 - 70px);
     width: 100vw;
 }
 .cell {
@@ -79,7 +79,7 @@ body {
     justify-content: center;
     float: right;
     width: 21vw;
-    height: calc(100vh - 70px);
+    height: calc(var(--vh, 1vh) * 100 - 70px);
     overflow-y: auto;
 }
 
@@ -118,6 +118,7 @@ body {
     background-color: lightgray;
     vertical-align: middle;
     text-align: center;
+    min-width: 150px;
     width: 20vw;
     height: 50px;
 }
@@ -132,6 +133,7 @@ body {
     background-color: aqua;
     vertical-align: middle;
     text-align: center;
+    min-width: 175px;
     width: 20vw;
     height: 50px;
 }
