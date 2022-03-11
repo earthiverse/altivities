@@ -20,26 +20,28 @@
 </head>
 
 <body>
-    <div id="bingoSetup">
-        <div id="cell0" class="cellSetup" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
-        <div id="cell1" class="cellSetup" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
-        <div id="cell2" class="cellSetup" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+    <div id="play_area">
+        <div id="bingo_area">
+            <div id="cell0" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell1" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell2" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell3" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell4" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell5" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell6" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell7" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div id="cell8" class="bingo_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        </div>
+        <div id="menu" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
         <div class="break"></div>
-        <div id="cell3" class="cellSetup" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
-        <div id="cell4" class="cellSetup" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
-        <div id="cell5" class="cellSetup" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
-        <div class="break"></div>
-        <div id="cell6" class="cellSetup" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
-        <div id="cell7" class="cellSetup" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
-        <div id="cell8" class="cellSetup" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
-    </div>
-    <div id="select" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
-    <div class="break"></div>
-    <div class="button">
-        <div id="ready"><img src="images/ready.svg"> Ready!</div>
-    </div>
-    <div class="button">
-        <div id="random" onclick="chooseRandom()"><img src="images/random.svg"> Random!</div>
+        <div class="button" id="ready">
+            <img src="images/ready.svg">
+            <div>Ready!</div>
+        </div>
+        <div class="button" id="random" onclick="chooseRandom()">
+            <img src="images/random.svg">
+            <div>Random!</div>
+        </div>
     </div>
 </body>
 

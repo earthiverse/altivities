@@ -1,5 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+let RESIZE_FINISHED;
+function resize() {
+    if (RESIZE_FINISHED)
+        clearTimeout(RESIZE_FINISHED);
+    RESIZE_FINISHED = setTimeout(() => {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+    }, 250);
+}
+resize();
+window.addEventListener("resize", resize);
 const parameters = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop)
 });
@@ -27,7 +38,7 @@ function onDrop(event) {
     console.debug(`Previous: ${previous.id}`);
     if (droppedOn == previous)
         return;
-    if (droppedOn.classList.contains("cellSetup")) {
+    if (droppedOn.classList.contains("bingo_cell")) {
         if (droppedOn.firstChild) {
             previous.appendChild(droppedOn.firstChild);
         }
@@ -42,7 +53,7 @@ function onDrop(event) {
 async function generateMenuOptions(wordlistURL) {
     const response = await fetch(wordlistURL);
     const wordlist = await response.json();
-    const select = document.getElementById("select");
+    const menu = document.getElementById("menu");
     let num = 0;
     for (const word of wordlist) {
         const itemOutside = document.createElement("div");
@@ -52,7 +63,7 @@ async function generateMenuOptions(wordlistURL) {
         itemOutside.addEventListener("dragstart", onDragStart);
         itemOutside.style.order = num.toString();
         itemOutside.classList.add("item");
-        itemInside.classList.add("itemInside");
+        itemInside.classList.add("item_inside");
         if (word.image) {
             itemInside.style.backgroundImage = `url('${word.image}')`;
             itemInside.style.backgroundRepeat = "no-repeat";
@@ -66,7 +77,7 @@ async function generateMenuOptions(wordlistURL) {
             itemInside.innerText = word.en;
         }
         itemOutside.appendChild(itemInside);
-        select.appendChild(itemOutside);
+        menu.appendChild(itemOutside);
         num += 1;
     }
 }
@@ -80,7 +91,7 @@ function ready() {
         words.push(cell.firstChild.parentNode.textContent);
     }
     const wordsFire = words.join("🔥");
-    window.location.href = `play.html?category=${parameters.category}&list=${parameters.list}&words=${wordsFire}`;
+    window.location.href = `play.html?wordlist=${parameters.wordlist}&words=${wordsFire}`;
 }
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -99,23 +110,23 @@ function checkReady() {
         const cell = document.getElementById(`cell${i}`);
         if (!cell.firstChild) {
             readyButton.style.cursor = "not-allowed";
-            readyButton.style.backgroundColor = "lightgray";
+            readyButton.style.backgroundColor = "var(--ready-no-color)";
             readyButton.removeEventListener("click", ready);
             return false;
         }
     }
     readyButton.style.cursor = "pointer";
-    readyButton.style.backgroundColor = "greenyellow";
+    readyButton.style.backgroundColor = "var(--ready-yes-color)";
     readyButton.addEventListener("click", ready);
     return true;
 }
 function chooseRandom() {
-    const select = document.getElementById("select");
-    const cells = document.getElementsByClassName("cellSetup");
+    const menu = document.getElementById("menu");
+    const cells = document.getElementsByClassName("bingo_cell");
     for (let i = 0; i < cells.length; i++) {
         const cell = cells.item(i);
         if (cell.firstChild)
-            select.appendChild(cell.firstChild);
+            menu.appendChild(cell.firstChild);
     }
     const items = document.getElementsByClassName("item");
     const itemsArray = [];
@@ -134,6 +145,6 @@ function chooseRandom() {
     }
     checkReady();
 }
-if (parameters.category && parameters.list) {
-    generateMenuOptions(`../wordlists/${parameters.category}/${parameters.list}.json`);
+if (parameters.wordlist) {
+    generateMenuOptions(parameters.wordlist);
 }

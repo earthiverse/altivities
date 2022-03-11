@@ -37,7 +37,7 @@ async function populateBingo(wordlistURL, words) {
             const itemInside = document.createElement("div");
             itemOutside.id = `option${num}`;
             itemOutside.classList.add("item");
-            itemInside.classList.add("itemInside");
+            itemInside.classList.add("item_inside");
             if (find.image) {
                 itemInside.style.backgroundImage = `url('${find.image}')`;
                 itemInside.style.backgroundRepeat = "no-repeat";

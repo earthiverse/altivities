@@ -1,3 +1,14 @@
+let RESIZE_FINISHED
+function resize() {
+    if (RESIZE_FINISHED) clearTimeout(RESIZE_FINISHED)
+    RESIZE_FINISHED = setTimeout(() => {
+        const vh = window.innerHeight * 0.01
+        document.documentElement.style.setProperty("--vh", `${vh}px`)
+    }, 250)
+}
+resize()
+window.addEventListener("resize", resize)
+
 export type Languages =
     | "en"
     | "ja"
@@ -60,7 +71,7 @@ function onDrop(event: DragEvent) {
 
     if (droppedOn == previous) return // No change
 
-    if (droppedOn.classList.contains("cellSetup")) {
+    if (droppedOn.classList.contains("bingo_cell")) {
         if (droppedOn.firstChild) {
             // It's being dragged from one cell to another
             previous.appendChild(droppedOn.firstChild)
@@ -81,9 +92,9 @@ async function generateMenuOptions(wordlistURL: string) {
     const response = await fetch(wordlistURL)
     const wordlist: Wordlist = await response.json()
 
-    const select = document.getElementById("select") as HTMLDivElement
+    const menu = document.getElementById("menu") as HTMLDivElement
 
-    // Add all items to the select
+    // Add all items to the menu
     let num = 0
     for (const word of wordlist) {
         const itemOutside = document.createElement("div")
@@ -93,7 +104,7 @@ async function generateMenuOptions(wordlistURL: string) {
         itemOutside.addEventListener("dragstart", onDragStart)
         itemOutside.style.order = num.toString()
         itemOutside.classList.add("item")
-        itemInside.classList.add("itemInside")
+        itemInside.classList.add("item_inside")
         if (word.image) {
             itemInside.style.backgroundImage = `url('${word.image}')`
             itemInside.style.backgroundRepeat = "no-repeat"
@@ -108,7 +119,7 @@ async function generateMenuOptions(wordlistURL: string) {
         }
 
         itemOutside.appendChild(itemInside)
-        select.appendChild(itemOutside)
+        menu.appendChild(itemOutside)
         num += 1
     }
 }
@@ -116,7 +127,6 @@ async function generateMenuOptions(wordlistURL: string) {
 function ready() {
     if (!checkReady()) return // We're not actually ready
 
-    // TODO: Remove the menu, lock
     const words: string[] = []
     for (let i = 0; i < 9; i++) {
         const cell = document.getElementById(`cell${i}`)
@@ -125,7 +135,7 @@ function ready() {
     }
 
     const wordsFire = words.join("🔥")
-    window.location.href = `play.html?category=${parameters.category}&list=${parameters.list}&words=${wordsFire}`
+    window.location.href = `play.html?wordlist=${parameters.wordlist}&words=${wordsFire}`
 }
 
 function shuffle(array) {
@@ -153,27 +163,27 @@ function checkReady() {
         const cell = document.getElementById(`cell${i}`)
         if (!cell.firstChild) {
             readyButton.style.cursor = "not-allowed"
-            readyButton.style.backgroundColor = "lightgray"
+            readyButton.style.backgroundColor = "var(--ready-no-color)"
             readyButton.removeEventListener("click", ready)
             return false
         }
     }
 
     readyButton.style.cursor = "pointer"
-    readyButton.style.backgroundColor = "greenyellow"
+    readyButton.style.backgroundColor = "var(--ready-yes-color)"
     readyButton.addEventListener("click", ready)
     return true
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function chooseRandom() {
-    const select = document.getElementById("select") as HTMLDivElement
+    const menu = document.getElementById("menu") as HTMLDivElement
 
-    // Return all elements to the select
-    const cells = document.getElementsByClassName("cellSetup")
+    // Return all elements to the menu
+    const cells = document.getElementsByClassName("bingo_cell")
     for (let i = 0; i < cells.length; i++) {
         const cell = cells.item(i)
-        if (cell.firstChild) select.appendChild(cell.firstChild)
+        if (cell.firstChild) menu.appendChild(cell.firstChild)
     }
 
     // Put the items in an array, shuffle, and fill 9 cells
@@ -194,8 +204,8 @@ function chooseRandom() {
     checkReady()
 }
 
-if (parameters.category && parameters.list) {
-    generateMenuOptions(`../wordlists/${parameters.category}/${parameters.list}.json`)
+if (parameters.wordlist) {
+    generateMenuOptions(parameters.wordlist)
 }
 
 export {}

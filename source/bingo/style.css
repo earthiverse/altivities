@@ -1,102 +1,109 @@
-html, body {
-  height: 100%;
+:root {
+  --bingo-border-size: 5px;
+  --ready-yes-color: lightgreen;
+  --ready-no-color: lightgray;
 }
 
-* {
+html,
+body {
+    user-select: none;
+    display: flex;
     font-family: "Schoolbell";
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
-body {
+#play_area {
     display: flex;
+    gap: 1vh 1vw;
     flex-wrap: wrap;
-    justify-content: space-around;
     align-items: center;
-    align-content: center;
-}
-
-#bingoSetup {
-    user-select: none;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    align-content: center;
-    float: left;
-    height: calc(var(--vh, 1vh) * 100 - 70px);
-    width: min(61vw, 91vh);
-}
-.cellSetup {
-    border: 1px solid #000;
-    width: min(20vw, 30vh);
-    height: min(20vw, 30vh);
-}
-.cellSetup .item .itemInside {
-    border: none;
-    width: min(20vw, 30vh);
-    height: min(20vw, 30vh);
-}
-
-#bingo {
-    user-select: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    float: left;
-    height: calc(var(--vh, 1vh) * 100 - 70px);
+    height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
+    margin: auto auto;
 }
-.cell {
+
+#bingo_area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    height: min(calc(var(--vh, 1vh) * 93), 70vw);
+    width: min(calc(var(--vh, 1vh) * 93), 70vw);
+}
+
+.bingo_cell {
     position: relative;
-    border: 1px solid #000;
-    width: min(30vw, 30vh);
-    height: min(30vw, 30vh);
+    border-color: #000;
+    border-style: solid;
+    box-sizing: border-box;
+    width: 33.3%;
+    height: 33.3%;
 }
-.cell .item .itemInside {
-    border: none;
-    width: min(30vw, 30vh);
-    height: min(30vw, 30vh);
-}
-.cell img {
+
+.bingo_cell img {
     position: absolute;
     opacity: 50%;
     top: 0px;
     left: 0px;
-    max-width: min(30vw, 30vh);
-    max-height: min(30vw, 30vh);
+    width: 100%;
+    height: 100%;
 }
 
-#select {
-    background-color: lightgray;
-    display: flex;
-    gap: 1vw;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: flex-start;
-    justify-content: center;
-    float: right;
-    width: 21vw;
-    height: calc(var(--vh, 1vh) * 100 - 70px);
-    overflow-y: auto;
+.bingo_cell:nth-of-type(1) {
+    border-width: calc(var(--bingo-border-size) * 2) var(--bingo-border-size) var(--bingo-border-size) calc(var(--bingo-border-size) * 2);
 }
 
-#select .item .itemInside {
-    border: 2px solid gray;
-    border-radius: 2vw;
-    width: min(20vw, 30vh);
-    height: min(20vw, 30vh);
+.bingo_cell:nth-of-type(2) {
+    border-width: calc(var(--bingo-border-size) * 2) var(--bingo-border-size) var(--bingo-border-size) var(--bingo-border-size);
 }
 
-.itemInside {
-    background-color: #fff;
-    display: table-cell;
+.bingo_cell:nth-of-type(3) {
+    border-width: calc(var(--bingo-border-size) * 2) calc(var(--bingo-border-size) * 2) var(--bingo-border-size) var(--bingo-border-size);
+}
+
+.bingo_cell:nth-of-type(4) {
+    border-width: var(--bingo-border-size) var(--bingo-border-size) var(--bingo-border-size) calc(var(--bingo-border-size) * 2);
+}
+
+.bingo_cell:nth-of-type(5) {
+    border-width: var(--bingo-border-size) var(--bingo-border-size) var(--bingo-border-size) var(--bingo-border-size);
+}
+
+.bingo_cell:nth-of-type(6) {
+    border-width: var(--bingo-border-size) calc(var(--bingo-border-size) * 2) var(--bingo-border-size) var(--bingo-border-size);
+}
+
+.bingo_cell:nth-of-type(7) {
+    border-width: var(--bingo-border-size) var(--bingo-border-size) calc(var(--bingo-border-size) * 2) calc(var(--bingo-border-size) * 2);
+}
+
+.bingo_cell:nth-of-type(8) {
+    border-width: var(--bingo-border-size) var(--bingo-border-size) calc(var(--bingo-border-size) * 2) var(--bingo-border-size);
+}
+
+.bingo_cell:nth-of-type(9) {
+    border-width: var(--bingo-border-size) calc(var(--bingo-border-size) * 2) calc(var(--bingo-border-size) * 2) var(--bingo-border-size);
+}
+
+.bingo_cell .item {
+    width: 100%;
+    height: 100%;
+}
+
+.item_inside {
+    width: 100%;
+    height: 100%;
     font-size: min(4vh, 4vw);
+    color:#000;
     text-align: center;
     vertical-align: bottom;
-    color:#000;
     -webkit-text-fill-color:#000;
 	text-shadow:
         -2px -2px 0 #fff,  
@@ -105,42 +112,23 @@ body {
         2px 2px 0 #fff;
 }
 
-.button {
-    cursor: pointer;
-    font-size: 30px;
-    width: 20vw;
-    height: 50px;
-}
-
-#ready {
-    cursor: not-allowed;
-    display: table-cell;
+#menu {
+    box-sizing: border-box;
+    display: flex;
+    gap:1vw;
+    padding:1vw;
+    flex-wrap: wrap;
+    justify-content: center;
     background-color: lightgray;
-    vertical-align: middle;
-    text-align: center;
-    min-width: 150px;
-    width: 20vw;
-    height: 50px;
+    height: calc(var(--vh, 1vh) * 93);
+    width: 18vw;
+    overflow-y: auto;
 }
 
-#ready img {
-    max-height: 30px;
-    vertical-align: middle;
-}
-
-#random {
-    display: table-cell;
-    background-color: aqua;
-    vertical-align: middle;
-    text-align: center;
-    min-width: 175px;
-    width: 20vw;
-    height: 50px;
-}
-
-#random img {
-    max-height: 30px;
-    vertical-align: middle;
+#menu .item {
+    background-color: #FFF;
+    height: 16vw;
+    width: 16vw;
 }
 
 .break {
@@ -148,13 +136,25 @@ body {
     height: 0;
 }
 
-@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
-    .ipad-portrait {
-        color: red; 
-    } /* your css rules for ipad portrait */
+.button {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    background-color: var(--ready-no-color);
+    height: calc(var(--vh, 1vh) * 5);
+    min-width: 200px;
+    width: 18vw;
 }
-@media all and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
-    .ipad-landscape { 
-        color: blue;
-    } /* your css rules for ipad landscape */
+
+.button div {
+    font-size: calc(var(--vh, 1vh) * 3.2);
+}
+
+.button img {
+    max-height: calc(var(--vh, 1vh) * 4);
+}
+
+#random {
+    background-color: aqua;
 }
