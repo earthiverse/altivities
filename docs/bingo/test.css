@@ -118,6 +118,7 @@ body {
 .button {
     background-color: var(--ready-no-color);
     height: calc(var(--vh, 1vh) * 5);
+    min-width: 200px;
     width: 18vw;
 }
 
