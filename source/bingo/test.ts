@@ -94,7 +94,7 @@ async function generateMenuOptions(wordlistURL: string) {
 
     const menu = document.getElementById("menu") as HTMLDivElement
 
-    // Add all items to the select
+    // Add all items to the menu
     let num = 0
     for (const word of wordlist) {
         const itemOutside = document.createElement("div")
@@ -177,13 +177,13 @@ function checkReady() {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function chooseRandom() {
-    const select = document.getElementById("menu") as HTMLDivElement
+    const menu = document.getElementById("menu") as HTMLDivElement
 
-    // Return all elements to the select
+    // Return all elements to the menu
     const cells = document.getElementsByClassName("bingo_cell")
     for (let i = 0; i < cells.length; i++) {
         const cell = cells.item(i)
-        if (cell.firstChild) select.appendChild(cell.firstChild)
+        if (cell.firstChild) menu.appendChild(cell.firstChild)
     }
 
     // Put the items in an array, shuffle, and fill 9 cells

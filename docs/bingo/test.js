@@ -121,12 +121,12 @@ function checkReady() {
     return true;
 }
 function chooseRandom() {
-    const select = document.getElementById("menu");
+    const menu = document.getElementById("menu");
     const cells = document.getElementsByClassName("bingo_cell");
     for (let i = 0; i < cells.length; i++) {
         const cell = cells.item(i);
         if (cell.firstChild)
-            select.appendChild(cell.firstChild);
+            menu.appendChild(cell.firstChild);
     }
     const items = document.getElementsByClassName("item");
     const itemsArray = [];

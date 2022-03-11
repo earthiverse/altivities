@@ -129,7 +129,9 @@ body {
 }
 
 .button img {
+    float: left;
     max-height: calc(var(--vh, 1vh) * 4);
+    margin: 0.5vh 0 0.5vh 2vw;
     vertical-align: middle;
 }
 
