@@ -91,7 +91,7 @@ body {
     height: 100%;
 }
 
-#menu_area {
+#menu {
     box-sizing: border-box;
     display: flex;
     gap:1vw;
@@ -104,7 +104,7 @@ body {
     overflow-y: auto;
 }
 
-#menu_area .item {
+#menu .item {
     background-color: #FFF;
     height: 16vw;
     width: 16vw;
@@ -130,7 +130,7 @@ body {
 
 .button img {
     max-height: calc(var(--vh, 1vh) * 4);
-    vertical-align: text-bottom;
+    vertical-align: middle;
 }
 
 #random {

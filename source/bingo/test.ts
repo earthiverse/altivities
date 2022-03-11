@@ -92,7 +92,7 @@ async function generateMenuOptions(wordlistURL: string) {
     const response = await fetch(wordlistURL)
     const wordlist: Wordlist = await response.json()
 
-    const menu = document.getElementById("menu_area") as HTMLDivElement
+    const menu = document.getElementById("menu") as HTMLDivElement
 
     // Add all items to the select
     let num = 0
@@ -127,7 +127,6 @@ async function generateMenuOptions(wordlistURL: string) {
 function ready() {
     if (!checkReady()) return // We're not actually ready
 
-    // TODO: Remove the menu, lock
     const words: string[] = []
     for (let i = 0; i < 9; i++) {
         const cell = document.getElementById(`cell${i}`)
@@ -178,10 +177,10 @@ function checkReady() {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function chooseRandom() {
-    const select = document.getElementById("select") as HTMLDivElement
+    const select = document.getElementById("menu") as HTMLDivElement
 
     // Return all elements to the select
-    const cells = document.getElementsByClassName("cellSetup")
+    const cells = document.getElementsByClassName("bingo_cell")
     for (let i = 0; i < cells.length; i++) {
         const cell = cells.item(i)
         if (cell.firstChild) select.appendChild(cell.firstChild)
