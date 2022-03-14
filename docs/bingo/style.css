@@ -144,8 +144,7 @@ body {
     justify-content: space-evenly;
     background-color: var(--ready-no-color);
     height: calc(var(--vh, 1vh) * 5);
-    min-width: 200px;
-    width: 18vw;
+    width: max(250px, 18vw);
 }
 
 .button div {
@@ -166,6 +165,7 @@ body {
 
 #generate_qr {
     background-color: lightcoral;
+    width: max(150px, 18vw);
 }
 
 #qrcode  {
