@@ -109,6 +109,24 @@ function checkReady() {
     readyButton.addEventListener("click", ready);
     return true;
 }
+function showQR() {
+    const qrHolder = document.getElementById("qrcode");
+    while (qrHolder.firstChild)
+        qrHolder.removeChild(qrHolder.firstChild);
+    const size = Math.min(window.innerWidth, window.innerHeight) * 0.75;
+    const qrcode = new QRCode(qrHolder, {
+        text: window.location.href,
+        width: size,
+        height: size,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctionLevel: QRCode.CorrectLevel.H
+    });
+    qrHolder.style.display = "flex";
+    qrHolder.addEventListener("click", () => {
+        qrHolder.style.display = "none";
+    });
+}
 function chooseRandom() {
     const menu = document.getElementById("menu");
     const cells = document.getElementsByClassName("bingo_cell");

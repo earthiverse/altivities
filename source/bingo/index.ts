@@ -17,6 +17,30 @@ export type Word = {
 
 export type Wordlist = Word[]
 
+// TODO: What do I change this to to make it work without the disable-next-line!?
+// eslint-disable-next-line @typescript-eslint/no-namespace
+declare namespace QRCode {
+    enum CorrectLevel {
+        L, M, Q, H
+    }
+}
+
+interface QRCodeOption {
+    text?: string,
+    width?: number,
+    height?: number,
+    colorDark?: string,
+    colorLight?: string,
+    correctionLevel?: QRCode.CorrectLevel,
+}
+
+declare class QRCode {
+    constructor(el: HTMLElement | string, vOption?: string | QRCodeOption);
+    makeCode(sText: string): void;
+    makeImage(): void;
+    clear(): void;
+}
+
 const parameters: any = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop: string) => searchParams.get(prop)
 })
@@ -162,6 +186,32 @@ function checkReady() {
     readyButton.style.backgroundColor = "var(--ready-yes-color)"
     readyButton.addEventListener("click", ready)
     return true
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function showQR() {
+    const qrHolder = document.getElementById("qrcode") as HTMLDivElement
+
+    // Remove the old QR code
+    while (qrHolder.firstChild) qrHolder.removeChild(qrHolder.firstChild)
+
+    // Generate the QR Code
+    const size = Math.min(window.innerWidth, window.innerHeight) * 0.75
+    const qrcode = new QRCode(qrHolder, {
+        text: window.location.href,
+        width: size,
+        height: size,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctionLevel: QRCode.CorrectLevel.H
+    })
+
+    // Unhide the qrcode
+    qrHolder.style.display = "flex"
+
+    qrHolder.addEventListener("click", () => {
+        qrHolder.style.display = "none"
+    })
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

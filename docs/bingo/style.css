@@ -137,6 +137,7 @@ body {
 }
 
 .button {
+    cursor: pointer;
     display: flex;
     align-items: center;
     align-content: center;
@@ -157,4 +158,25 @@ body {
 
 #random {
     background-color: aqua;
+}
+
+#ready {
+    cursor: not-allowed;
+}
+
+#generate_qr {
+    background-color: lightcoral;
+}
+
+#qrcode  {
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }

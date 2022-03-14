@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <title>Let's play bingo!</title>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script>
         var exports = {};
@@ -34,6 +35,10 @@
         </div>
         <div id="menu" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
         <div class="break"></div>
+        <div class="button" id="generate_qr" onclick="showQR()">
+            <img src="images/qr.svg">
+            <div>Share QR</div>
+        </div>
         <div class="button" id="ready">
             <img src="images/ready.svg">
             <div>Ready!</div>
@@ -43,6 +48,7 @@
             <div>Random!</div>
         </div>
     </div>
+    <div id="qrcode"></div>
 </body>
 
 </html>
