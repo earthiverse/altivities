@@ -1,7 +1,24 @@
 # Altivities
+
 ALT Activities &amp; Games that can be accessed on the internet.
 
 ## Games
+
+### ABC Race
+
+<https://earthiverse.github.io/altivities/abcrace/>
+
+A game where you race to click on the letters A to Z as fast as you can.
+
+View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/abcrace).
+
+### Bingo
+
+<https://earthiverse.github.io/altivities/bingo/?wordlist=../wordlists/General/color.json>
+
+A 3x3 bingo card generator for tablets.
+
+View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/bingo).
 
 ### Parfait
 
@@ -19,13 +36,13 @@ A simple game where you can build a pizza. Works well for an activity for `Let's
 
 View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/pizza).
 
-### ABC Race
+### Vocab RPG
 
-<https://earthiverse.github.io/altivities/abcrace/>
+**NOTE: This game is a work in progress. There is no currently no documentation. The game may change a lot.**
 
-A game where you race to click on the letters A to Z as fast as you can.
+<https://earthiverse.github.io/altivities/vocabrpg/>
 
-View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/abcrace).
+An RPG-like game to practice spelling and vocabulary.
 
 ## Development
 
