@@ -2,6 +2,14 @@
 
 These are wordlists in the `JSON` format that you can use for your own projects however you want.
 
+## Access
+
+You should be able to access the wordlists from [https://altivities.earthiverse.ca/wordlists/](https://altivities.earthiverse.ca/wordlists/) if you provide the same relative path.
+
+**NOTE**: The path is case sensitive.
+
+Example: [https://altivities.earthiverse.ca/wordlists/General/colors.json](https://altivities.earthiverse.ca/wordlists/General/colors.json)
+
 ## Format
 
 The words in the wordlist have [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) tags.
