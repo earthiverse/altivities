@@ -2,7 +2,7 @@
 
 ## About
 
-This is a simple bingo generator that you can use on a tablet (e.g. iPad) to play bingo.
+This is a simple 3x3 bingo card generator that you can use on a tablet (e.g. iPad) to play bingo.
 
 When you load a wordlist, if you click on the `QR` button, you can have the students scan the QR code to make their own bingo sheet.
 
@@ -15,6 +15,7 @@ These wordlists have pictures associated with them, which makes them nice to use
 * [Alphabet](https://altivities.earthiverse.ca/bingo/index.html?wordlist=../wordlists/General/alphabet.json)
 * [Animals](https://altivities.earthiverse.ca/bingo/index.html?wordlist=../wordlists/General/animals.json)
 * [Colors](https://altivities.earthiverse.ca/bingo/index.html?wordlist=../wordlists/General/colors.json)
+* [Numbers (1-20)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/numbers.json)
 * [Prefectures](https://altivities.earthiverse.ca/bingo/index.html?wordlist=../wordlists/Hepburn/prefectures.json)
 * [Sports](https://altivities.earthiverse.ca/bingo/index.html?wordlist=../wordlists/General/sports.json)
 * [Stationery](https://altivities.earthiverse.ca/bingo/index.html?wordlist=../wordlists/General/stationery.json)
