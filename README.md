@@ -14,7 +14,7 @@ View the documentation [here](https://github.com/earthiverse/altivities/tree/mai
 
 ### Bingo
 
-<https://earthiverse.github.io/altivities/bingo/?wordlist=../wordlists/General/color.json>
+<https://earthiverse.github.io/altivities/bingo/?wordlist=../wordlists/General/colors.json>
 
 A 3x3 bingo card generator for tablets.
 
