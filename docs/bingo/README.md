@@ -12,16 +12,17 @@ Students can drag the tiles from the right on to the bingo grid, or click the 'R
 
 These wordlists have pictures associated with them, which makes them nice to use with bingo:
 
-* [Alphabet](https://altivities.earthiverse.ca/bingo/index.html?wordlist=../wordlists/General/alphabet.json)
-* [Animals](https://altivities.earthiverse.ca/bingo/index.html?wordlist=../wordlists/General/animals.json)
-* [Colors](https://altivities.earthiverse.ca/bingo/index.html?wordlist=../wordlists/General/colors.json)
+* [Alphabet](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/alphabet.json)
+* [Animals](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/animals.json)
+* [Colors](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/colors.json)
 * [Numbers (1-20)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/numbers.json)
-* [Prefectures](https://altivities.earthiverse.ca/bingo/index.html?wordlist=../wordlists/Hepburn/prefectures.json)
-* [Sports](https://altivities.earthiverse.ca/bingo/index.html?wordlist=../wordlists/General/sports.json)
-* [Stationery](https://altivities.earthiverse.ca/bingo/index.html?wordlist=../wordlists/General/stationery.json)
+* [Occupations (Junior Sunshine 6 - Lesson 10)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine6/lesson10.json)
+* [Prefectures](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/Hepburn/prefectures.json)
+* [Sports](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/sports.json)
+* [Stationery](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/stationery.json)
 
 ## Custom Wordlists
 
 Please see the [wordlist documentation](../wordlists/) to see how to make your own wordlist.
 
-After uploading your wordlist to the web, change the path to the wordlist in the URL: `https://altivities.earthiverse.ca/bingo/index.html?wordlist=<path-to-url-here>`
+After uploading your wordlist to the web, change the path to the wordlist in the URL: `https://altivities.earthiverse.ca/bingo/?wordlist=<path-to-url-here>`
