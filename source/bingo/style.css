@@ -138,7 +138,7 @@ body {
     background-color: lightgray;
     height: calc(var(--vh, 1vh) * 93);
     width: 25vw;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 #menu .item {
@@ -198,15 +198,58 @@ body {
 }
 
 #to_draw_area {
-    border: 1px solid #000;
+    border-bottom: 1px solid #000;
     display: flex;
+    box-sizing: border-box;
+    gap: 1vh;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-right: 1vh;
     width: 100%;
     height: calc(var(--vh, 1vh) * 15);
+    overflow-x: auto;
+}
+
+#to_draw_area .item {
+    font-size: min(2vh, 2vw);
+    background-color: #FFF;
+    border: 1px solid #000;
+    height: calc(var(--vh, 1vh) * 10);
+    width: calc(var(--vh, 1vh) * 10);
 }
 
 #drawn_area {
-    border: 1px solid #000;
+    border-top: 1px solid #000;
     display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 1vh;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 1vh;
     width: 100%;
     height: calc(var(--vh, 1vh) * 15);
+    overflow-x: auto;
+}
+
+#drawn_area .item {
+    font-size: min(2vh, 2vw);
+    background-color: #FFF;
+    border: 1px solid #000;
+    height: calc(var(--vh, 1vh) * 10);
+    width: calc(var(--vh, 1vh) * 10);
+    filter: grayscale(0.5);
+}
+
+#current_area {
+    height: min(calc(var(--vh, 1vh) * 65), 100vw);
+    width: min(calc(var(--vh, 1vh) * 65), 100vw);
+}
+
+#current_area .item {
+    font-size: min(10vh, 10vw);
+    height: 100%;
+    width: 100%;
 }

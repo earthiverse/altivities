@@ -57,11 +57,7 @@ async function populateBingo(wordlistURL, words) {
         }
     }
 }
-if (parameters.category && parameters.list && parameters.words) {
-    const words = parameters.words.split("🔥");
-    populateBingo(`../wordlists/${parameters.category}/${parameters.list}.json`, words);
-}
-else if (parameters.wordlist && parameters.words) {
+if (parameters.wordlist && parameters.words) {
     const words = parameters.words.split("🔥");
     populateBingo(parameters.wordlist, words);
 }
