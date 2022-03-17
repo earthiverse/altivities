@@ -220,6 +220,14 @@ body {
     width: calc(var(--vh, 1vh) * 10);
 }
 
+#to_draw_area .button {
+    font-size: min(2vh, 2vw);
+    background-color: var(--ready-no-color);
+    border: 1px solid #000;
+    height: calc(var(--vh, 1vh) * 10);
+    width: calc(var(--vh, 1vh) * 10);
+}
+
 #drawn_area {
     border-top: 1px solid #000;
     display: flex;
@@ -240,7 +248,7 @@ body {
     border: 1px solid #000;
     height: calc(var(--vh, 1vh) * 10);
     width: calc(var(--vh, 1vh) * 10);
-    filter: grayscale(0.5);
+    filter: opacity(0.5);
 }
 
 #current_area {
