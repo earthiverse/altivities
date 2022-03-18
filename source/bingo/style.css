@@ -113,10 +113,13 @@ body {
     height: 100%;
 }
 
+.bingo_cell .item .item_inside {
+    font-size: min(calc(var(--vh, 1vh) * 6.2), 4.65vw);
+}
+
 .item_inside {
     width: 100%;
     height: 100%;
-    font-size: min(4vh, 4vw);
     color:#000;
     text-align: center;
     vertical-align: bottom;
@@ -147,6 +150,10 @@ body {
     width: 16vw;
 }
 
+#menu .item .item_inside {
+    font-size: 3.2vw;
+}
+
 .break {
     flex-basis: 100%;
     height: 0;
@@ -155,16 +162,13 @@ body {
 .button {
     cursor: pointer;
     display: flex;
+    font-size: calc(var(--vh, 1vh) * 3.2);
     align-items: center;
     align-content: center;
     justify-content: space-evenly;
     background-color: var(--ready-no-color);
     height: calc(var(--vh, 1vh) * 5);
     width: max(250px, 18vw);
-}
-
-.button div {
-    font-size: calc(var(--vh, 1vh) * 3.2);
 }
 
 .button img {
@@ -184,6 +188,11 @@ body {
     width: max(150px, 18vw);
 }
 
+#teach {
+    background-color: orange;
+    width: max(calc(var(--vh, 1vh) * 10));
+}
+
 #qrcode  {
     background-color: #fff;
     align-items: center;
@@ -198,6 +207,7 @@ body {
 }
 
 #to_draw_area {
+    background-color: lightgray;
     border-bottom: 1px solid #000;
     display: flex;
     box-sizing: border-box;
@@ -205,19 +215,25 @@ body {
     align-items: center;
     flex-direction: row-reverse;
     justify-content: flex-start;
-    flex-wrap: wrap;
-    padding-right: 1vh;
+    flex-wrap: nowrap;
+    padding: 0 1vh 0 1vh;
     width: 100%;
     height: calc(var(--vh, 1vh) * 15);
-    overflow-x: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 #to_draw_area .item {
-    font-size: min(2vh, 2vw);
+    cursor: pointer;
     background-color: #FFF;
     border: 1px solid #000;
     height: calc(var(--vh, 1vh) * 10);
     width: calc(var(--vh, 1vh) * 10);
+    flex-shrink: 0;
+}
+
+#to_draw_area .item .item_inside {
+    font-size: min(calc(var(--vh, 1vh) * 2), 2vw);
 }
 
 #to_draw_area .button {
@@ -226,29 +242,37 @@ body {
     border: 1px solid #000;
     height: calc(var(--vh, 1vh) * 10);
     width: calc(var(--vh, 1vh) * 10);
+    flex-shrink: 0;
 }
 
 #drawn_area {
+    background-color: lightgray;
     border-top: 1px solid #000;
     display: flex;
     box-sizing: border-box;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 1vh;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 1vh;
+    padding: 0 1vh 0 1vh;
     width: 100%;
     height: calc(var(--vh, 1vh) * 15);
-    overflow-x: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 #drawn_area .item {
-    font-size: min(2vh, 2vw);
+    cursor: pointer;
     background-color: #FFF;
     border: 1px solid #000;
     height: calc(var(--vh, 1vh) * 10);
     width: calc(var(--vh, 1vh) * 10);
     filter: opacity(0.5);
+    flex-shrink: 0;
+}
+
+#drawn_area .item .item_inside {
+    font-size: min(calc(var(--vh, 1vh) * 2), 2);
 }
 
 #current_area {
@@ -257,7 +281,12 @@ body {
 }
 
 #current_area .item {
-    font-size: min(10vh, 10vw);
+    border: 1px solid #000;
+    cursor: pointer;
     height: 100%;
     width: 100%;
+}
+
+#current_area .item .item_inside {
+    font-size: min(calc(var(--vh, 1vh) * 13), 13vw);
 }

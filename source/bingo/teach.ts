@@ -1,9 +1,11 @@
 import { Wordlist } from "."
 
 const parameters: any = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop: string) => searchParams.get(prop)
+    get: (searchParams, prop: string) => {
+        const parameter = searchParams.get(prop)
+        if (parameter) return parameter
+    }
 })
-
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex
@@ -22,7 +24,6 @@ function shuffle(array) {
 
     return array
 }
-
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function drawRandom() {
@@ -66,10 +67,35 @@ function checkDraw() {
     }
 }
 
-async function generateMenuOptions(wordlistURL: string) {
-    const response = await fetch(wordlistURL)
-    const wordlist: Wordlist = await response.json()
+async function onMouseDown(event: Event) {
+    const target = event.currentTarget as HTMLDivElement
+    const parent = target.parentElement as HTMLDivElement
 
+    const toDraw = document.getElementById("to_draw_area") as HTMLDivElement
+    const current = document.getElementById("current_area") as HTMLDivElement
+    const drawn = document.getElementById("drawn_area") as HTMLDivElement
+
+    if (parent.id == "drawn_area") {
+        // Move current item back to toDraw area
+        while (current.firstChild) toDraw.appendChild(current.firstChild)
+
+        // TODO: Move clicked item to current area
+        current.appendChild(target)
+    } else if (parent.id == "current_area") {
+        // Move clicked item back to toDraw
+        toDraw.appendChild(target)
+    } else if (parent.id == "to_draw_area") {
+        // Move current to drawn
+        while (current.firstChild) drawn.appendChild(current.firstChild)
+
+        // Move clicked to current
+        current.appendChild(target)
+    }
+
+    checkDraw()
+}
+
+async function generateMenuOptions(wordlist: Wordlist) {
     const menu = document.getElementById("to_draw_area") as HTMLDivElement
 
     // Add all items to the menu
@@ -78,6 +104,7 @@ async function generateMenuOptions(wordlistURL: string) {
         const itemOutside = document.createElement("div")
         const itemInside = document.createElement("div")
         itemOutside.id = `option${num}`
+        itemOutside.addEventListener("mousedown", onMouseDown)
         itemOutside.style.order = num.toString()
         itemOutside.classList.add("item")
         itemInside.classList.add("item_inside")
@@ -102,9 +129,26 @@ async function generateMenuOptions(wordlistURL: string) {
     checkDraw()
 }
 
-if (parameters.wordlist) {
-    generateMenuOptions(parameters.wordlist)
+async function prepare() {
+    if (parameters.wordlist) {
+        const response = await fetch(parameters.wordlist)
+        const wordlist: Wordlist = await response.json()
+        generateMenuOptions(wordlist)
+    }
+
+    if (parameters.wordlists) {
+        // Combine all wordlists
+        const combinedWordlist: Wordlist = []
+        for (const url of parameters.wordlists.split(",")) {
+            const response = await fetch(url)
+            const wordlist: Wordlist = await response.json()
+            combinedWordlist.push(...wordlist)
+        }
+        generateMenuOptions(combinedWordlist)
+    }
+
 }
+prepare()
 
 // The following handles resizing the window.
 // It's a hack to fill in the screen on iPads.

@@ -1,12 +1,14 @@
 import { Wordlist } from "."
 
 const parameters: any = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop: string) => searchParams.get(prop)
+    get: (searchParams, prop: string) => {
+        const parameter = searchParams.get(prop)
+        if (parameter) return parameter
+    }
 })
 
 function onMouseDown(event: Event) {
     const target = event.currentTarget as HTMLDivElement
-    console.log(target.id)
 
     // TODO: Add a circle, or remove a circle
     if (target.classList.contains("marked")) {
@@ -22,10 +24,7 @@ function onMouseDown(event: Event) {
     }
 }
 
-async function populateBingo(wordlistURL: string, words: string[]) {
-    const response = await fetch(wordlistURL)
-    const wordlist: Wordlist = await response.json()
-
+function populateBingo(wordlist: Wordlist, words: string[]) {
     let num = 0
     for (const word of words) {
         let found = false
@@ -61,15 +60,33 @@ async function populateBingo(wordlistURL: string, words: string[]) {
         }
         if (!found) {
             // We have an error to deal with
-            throw `We didn't find the word ${word} in ${wordlistURL}.`
+            throw `We didn't find the word ${word}!`
         }
     }
 }
 
-if (parameters.wordlist && parameters.words) {
-    const words = (parameters.words as string).split("🔥")
-    populateBingo(parameters.wordlist, words)
+async function prepare() {
+    if (parameters.wordlist && parameters.words) {
+        const response = await fetch(parameters.wordlist)
+        const wordlist: Wordlist = await response.json()
+
+        const words = (parameters.words as string).split("🔥")
+        populateBingo(wordlist, words)
+    }
+
+    if (parameters.wordlists && parameters.words) {
+        // Combine all wordlists
+        const combinedWordlist: Wordlist = []
+        for (const url of parameters.wordlists.split(",")) {
+            const response = await fetch(url)
+            const wordlist: Wordlist = await response.json()
+            combinedWordlist.push(...wordlist)
+        }
+        const words = (parameters.words as string).split("🔥")
+        populateBingo(combinedWordlist, words)
+    }
 }
+prepare()
 
 // The following handles resizing the window.
 // It's a hack to fill in the screen on iPads.

@@ -1,7 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const parameters = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => searchParams.get(prop)
+    get: (searchParams, prop) => {
+        const parameter = searchParams.get(prop);
+        if (parameter)
+            return parameter;
+    }
 });
 function onDragStart(event) {
     const item = event.currentTarget;
@@ -39,9 +43,7 @@ function onDrop(event) {
     checkReady();
     return false;
 }
-async function generateMenuOptions(wordlistURL) {
-    const response = await fetch(wordlistURL);
-    const wordlist = await response.json();
+function generateMenuOptions(wordlist) {
     const menu = document.getElementById("menu");
     let num = 0;
     for (const word of wordlist) {
@@ -76,11 +78,17 @@ function ready() {
     const words = [];
     for (let i = 0; i < 9; i++) {
         const cell = document.getElementById(`cell${i}`);
-        console.log(cell.firstChild.parentNode.textContent);
         words.push(cell.firstChild.parentNode.textContent);
     }
-    const wordsFire = words.join("🔥");
-    window.location.href = `play.html?wordlist=${parameters.wordlist}&words=${wordsFire}`;
+    const data = {
+        wordlist: parameters.wordlist,
+        wordlists: parameters.wordlists,
+        words: words.join("🔥")
+    };
+    for (const datum in data)
+        if (data[datum] === undefined)
+            delete data[datum];
+    window.location.href = `play.html?${new URLSearchParams(data)}`;
 }
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -127,6 +135,16 @@ function showQR() {
         qrHolder.style.display = "none";
     });
 }
+function goToTeach() {
+    const data = {
+        wordlist: parameters.wordlist,
+        wordlists: parameters.wordlists
+    };
+    for (const datum in data)
+        if (data[datum] === undefined)
+            delete data[datum];
+    window.location.href = `teach.html?${new URLSearchParams(data)}`;
+}
 function chooseRandom() {
     const menu = document.getElementById("menu");
     const cells = document.getElementsByClassName("bingo_cell");
@@ -152,9 +170,23 @@ function chooseRandom() {
     }
     checkReady();
 }
-if (parameters.wordlist) {
-    generateMenuOptions(parameters.wordlist);
+async function prepare() {
+    if (parameters.wordlist) {
+        const response = await fetch(parameters.wordlist);
+        const wordlist = await response.json();
+        generateMenuOptions(wordlist);
+    }
+    if (parameters.wordlists) {
+        const combinedWordlist = [];
+        for (const url of parameters.wordlists.split(",")) {
+            const response = await fetch(url);
+            const wordlist = await response.json();
+            combinedWordlist.push(...wordlist);
+        }
+        generateMenuOptions(combinedWordlist);
+    }
 }
+prepare();
 let RESIZE_FINISHED;
 function resize() {
     if (RESIZE_FINISHED)

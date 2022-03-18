@@ -1,11 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const parameters = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => searchParams.get(prop)
+    get: (searchParams, prop) => {
+        const parameter = searchParams.get(prop);
+        if (parameter)
+            return parameter;
+    }
 });
 function onMouseDown(event) {
     const target = event.currentTarget;
-    console.log(target.id);
     if (target.classList.contains("marked")) {
         target.lastChild.remove();
         target.classList.remove("marked");
@@ -17,9 +20,7 @@ function onMouseDown(event) {
         target.classList.add("marked");
     }
 }
-async function populateBingo(wordlistURL, words) {
-    const response = await fetch(wordlistURL);
-    const wordlist = await response.json();
+function populateBingo(wordlist, words) {
     let num = 0;
     for (const word of words) {
         let found = false;
@@ -53,14 +54,29 @@ async function populateBingo(wordlistURL, words) {
             break;
         }
         if (!found) {
-            throw `We didn't find the word ${word} in ${wordlistURL}.`;
+            throw `We didn't find the word ${word}!`;
         }
     }
 }
-if (parameters.wordlist && parameters.words) {
-    const words = parameters.words.split("🔥");
-    populateBingo(parameters.wordlist, words);
+async function prepare() {
+    if (parameters.wordlist && parameters.words) {
+        const response = await fetch(parameters.wordlist);
+        const wordlist = await response.json();
+        const words = parameters.words.split("🔥");
+        populateBingo(wordlist, words);
+    }
+    if (parameters.wordlists && parameters.words) {
+        const combinedWordlist = [];
+        for (const url of parameters.wordlists.split(",")) {
+            const response = await fetch(url);
+            const wordlist = await response.json();
+            combinedWordlist.push(...wordlist);
+        }
+        const words = parameters.words.split("🔥");
+        populateBingo(combinedWordlist, words);
+    }
 }
+prepare();
 let RESIZE_FINISHED;
 function resize() {
     if (RESIZE_FINISHED)

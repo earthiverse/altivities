@@ -105,3 +105,6 @@ dist
 
 # Temporary Files
 ~$*
+
+# Windowos Files
+*.ini

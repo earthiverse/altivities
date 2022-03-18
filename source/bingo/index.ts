@@ -42,7 +42,10 @@ declare class QRCode {
 }
 
 const parameters: any = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop: string) => searchParams.get(prop)
+    get: (searchParams, prop: string) => {
+        const parameter = searchParams.get(prop)
+        if (parameter) return parameter
+    }
 })
 
 type dragData = {
@@ -101,10 +104,7 @@ function onDrop(event: DragEvent) {
     return false
 }
 
-async function generateMenuOptions(wordlistURL: string) {
-    const response = await fetch(wordlistURL)
-    const wordlist: Wordlist = await response.json()
-
+function generateMenuOptions(wordlist: Wordlist) {
     const menu = document.getElementById("menu") as HTMLDivElement
 
     // Add all items to the menu
@@ -143,12 +143,16 @@ function ready() {
     const words: string[] = []
     for (let i = 0; i < 9; i++) {
         const cell = document.getElementById(`cell${i}`)
-        console.log(cell.firstChild.parentNode.textContent)
         words.push(cell.firstChild.parentNode.textContent)
     }
 
-    const wordsFire = words.join("🔥")
-    window.location.href = `play.html?wordlist=${parameters.wordlist}&words=${wordsFire}`
+    const data = {
+        wordlist: parameters.wordlist,
+        wordlists: parameters.wordlists,
+        words: words.join("🔥")
+    }
+    for (const datum in data) if (data[datum] === undefined) delete data[datum]
+    window.location.href = `play.html?${new URLSearchParams(data)}`
 }
 
 function shuffle(array) {
@@ -215,6 +219,16 @@ function showQR() {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+function goToTeach() {
+    const data = {
+        wordlist: parameters.wordlist,
+        wordlists: parameters.wordlists
+    }
+    for (const datum in data) if (data[datum] === undefined) delete data[datum]
+    window.location.href = `teach.html?${new URLSearchParams(data)}`
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function chooseRandom() {
     const menu = document.getElementById("menu") as HTMLDivElement
 
@@ -243,9 +257,26 @@ function chooseRandom() {
     checkReady()
 }
 
-if (parameters.wordlist) {
-    generateMenuOptions(parameters.wordlist)
+async function prepare() {
+    if (parameters.wordlist) {
+        // Add the one wordlist to the menu
+        const response = await fetch(parameters.wordlist)
+        const wordlist: Wordlist = await response.json()
+        generateMenuOptions(wordlist)
+    }
+
+    if (parameters.wordlists) {
+        // Combine all wordlists
+        const combinedWordlist: Wordlist = []
+        for (const url of parameters.wordlists.split(",")) {
+            const response = await fetch(url)
+            const wordlist: Wordlist = await response.json()
+            combinedWordlist.push(...wordlist)
+        }
+        generateMenuOptions(combinedWordlist)
+    }
 }
+prepare()
 
 // The following handles resizing the window.
 // It's a hack to fill in the screen on iPads.

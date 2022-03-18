@@ -1,7 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const parameters = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => searchParams.get(prop)
+    get: (searchParams, prop) => {
+        const parameter = searchParams.get(prop);
+        if (parameter)
+            return parameter;
+    }
 });
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -50,15 +54,35 @@ function checkDraw() {
         return false;
     }
 }
-async function generateMenuOptions(wordlistURL) {
-    const response = await fetch(wordlistURL);
-    const wordlist = await response.json();
+async function onMouseDown(event) {
+    const target = event.currentTarget;
+    const parent = target.parentElement;
+    const toDraw = document.getElementById("to_draw_area");
+    const current = document.getElementById("current_area");
+    const drawn = document.getElementById("drawn_area");
+    if (parent.id == "drawn_area") {
+        while (current.firstChild)
+            toDraw.appendChild(current.firstChild);
+        current.appendChild(target);
+    }
+    else if (parent.id == "current_area") {
+        toDraw.appendChild(target);
+    }
+    else if (parent.id == "to_draw_area") {
+        while (current.firstChild)
+            drawn.appendChild(current.firstChild);
+        current.appendChild(target);
+    }
+    checkDraw();
+}
+async function generateMenuOptions(wordlist) {
     const menu = document.getElementById("to_draw_area");
     let num = 0;
     for (const word of wordlist) {
         const itemOutside = document.createElement("div");
         const itemInside = document.createElement("div");
         itemOutside.id = `option${num}`;
+        itemOutside.addEventListener("mousedown", onMouseDown);
         itemOutside.style.order = num.toString();
         itemOutside.classList.add("item");
         itemInside.classList.add("item_inside");
@@ -80,9 +104,23 @@ async function generateMenuOptions(wordlistURL) {
     }
     checkDraw();
 }
-if (parameters.wordlist) {
-    generateMenuOptions(parameters.wordlist);
+async function prepare() {
+    if (parameters.wordlist) {
+        const response = await fetch(parameters.wordlist);
+        const wordlist = await response.json();
+        generateMenuOptions(wordlist);
+    }
+    if (parameters.wordlists) {
+        const combinedWordlist = [];
+        for (const url of parameters.wordlists.split(",")) {
+            const response = await fetch(url);
+            const wordlist = await response.json();
+            combinedWordlist.push(...wordlist);
+        }
+        generateMenuOptions(combinedWordlist);
+    }
 }
+prepare();
 let RESIZE_FINISHED;
 function resize() {
     if (RESIZE_FINISHED)
