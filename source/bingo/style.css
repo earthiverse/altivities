@@ -109,6 +109,7 @@ body {
 }
 
 .bingo_cell .item {
+    line-height: min(calc(var(--vh, 1vh) * 43.4), 32.55vw);
     width: 100%;
     height: 100%;
 }
@@ -117,12 +118,15 @@ body {
     font-size: min(calc(var(--vh, 1vh) * 6.2), 4.65vw);
 }
 
+.item {
+    overflow: hidden;
+}
+
 .item_inside {
     width: 100%;
     height: 100%;
     color:#000;
     text-align: center;
-    vertical-align: bottom;
     -webkit-text-fill-color:#000;
 	text-shadow:
         -2px -2px 0 #fff,  
@@ -146,6 +150,7 @@ body {
 
 #menu .item {
     background-color: #FFF;
+    line-height: calc(26vw);
     height: 16vw;
     width: 16vw;
 }
@@ -227,13 +232,14 @@ body {
     cursor: pointer;
     background-color: #FFF;
     border: 1px solid #000;
+    line-height: calc(var(--vh, 1vh) * 16);
     height: calc(var(--vh, 1vh) * 10);
     width: calc(var(--vh, 1vh) * 10);
     flex-shrink: 0;
 }
 
 #to_draw_area .item .item_inside {
-    font-size: min(calc(var(--vh, 1vh) * 2), 2vw);
+    font-size: calc(var(--vh, 1vh) * 2);
 }
 
 #to_draw_area .button {
@@ -265,6 +271,7 @@ body {
     cursor: pointer;
     background-color: #FFF;
     border: 1px solid #000;
+    line-height: calc(var(--vh, 1vh) * 16);
     height: calc(var(--vh, 1vh) * 10);
     width: calc(var(--vh, 1vh) * 10);
     filter: opacity(0.5);
@@ -272,10 +279,11 @@ body {
 }
 
 #drawn_area .item .item_inside {
-    font-size: min(calc(var(--vh, 1vh) * 2), 2);
+    font-size: calc(var(--vh, 1vh) * 2);
 }
 
 #current_area {
+    line-height: calc(var(--vh, 1vh) * 110);
     height: min(calc(var(--vh, 1vh) * 65), 100vw);
     width: min(calc(var(--vh, 1vh) * 65), 100vw);
 }
@@ -288,5 +296,5 @@ body {
 }
 
 #current_area .item .item_inside {
-    font-size: min(calc(var(--vh, 1vh) * 13), 13vw);
+    font-size: calc(var(--vh, 1vh) * 13);
 }
