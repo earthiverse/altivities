@@ -24,6 +24,7 @@
         ],
         "types": [
             "node",
+            "peerjs",
             "phaser",
             "phaser-ui-tools"
         ],
