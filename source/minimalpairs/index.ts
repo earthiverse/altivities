@@ -1,4 +1,5 @@
 // TODO: What do I change this to to make it work without the disable-next-line!?
+
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace QRCode {
     enum CorrectLevel {
@@ -30,12 +31,29 @@ const parameters: any = new Proxy(new URLSearchParams(window.location.search), {
 })
 
 async function prepare() {
-    const peer = new Peer()
+    const options: Peer.PeerJSOption = {
+        debug: 3,
+        config: {
+            "iceServers": [
+                {
+                    urls: "stun:openrelay.metered.ca:80"
+                },
+                {
+                    urls: "turn:openrelay.metered.ca:80",
+                    username: "openrelayproject",
+                    credential: "openrelayproject"
+                }
+            ]
+        }
+    }
+    const peer = new Peer(options)
     if (parameters.id) {
         // Join
         peer.on("open", (id) => {
             console.debug(`My peer ID is: ${id}`)
-            const conn = peer.connect(id)
+
+            console.debug(`Attempting to connect to Connecting to ${parameters.id}...`)
+            const conn = peer.connect(parameters.id)
             conn.on("open", function() {
                 // Receive messages
                 conn.on("data", (data) => {

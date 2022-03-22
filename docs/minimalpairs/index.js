@@ -8,11 +8,27 @@ const parameters = new Proxy(new URLSearchParams(window.location.search), {
     }
 });
 async function prepare() {
-    const peer = new Peer();
+    const options = {
+        debug: 3,
+        config: {
+            "iceServers": [
+                {
+                    urls: "stun:openrelay.metered.ca:80"
+                },
+                {
+                    urls: "turn:openrelay.metered.ca:80",
+                    username: "openrelayproject",
+                    credential: "openrelayproject"
+                }
+            ]
+        }
+    };
+    const peer = new Peer(options);
     if (parameters.id) {
         peer.on("open", (id) => {
             console.debug(`My peer ID is: ${id}`);
-            const conn = peer.connect(id);
+            console.debug(`Attempting to connect to Connecting to ${parameters.id}...`);
+            const conn = peer.connect(parameters.id);
             conn.on("open", function () {
                 conn.on("data", (data) => {
                     console.debug("Received Data!");
