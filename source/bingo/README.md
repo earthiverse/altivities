@@ -26,3 +26,8 @@ These wordlists have pictures associated with them, which makes them nice to use
 Please see the [wordlist documentation](../wordlists/) to see how to make your own wordlist.
 
 After uploading your wordlist to the web, change the path to the wordlist in the URL: `https://altivities.earthiverse.ca/bingo/?wordlist=<path-to-url-here>`
+
+## Multiple Wordlists
+
+Use the following URL pattern to combine multiple wordlists:
+`https://altivities.earthiverse.ca/bingo/?wordlists=<path-to-url-1-here>,<path-to-url-2-here>,<...>`

@@ -122,7 +122,7 @@ function showQR() {
     while (qrHolder.firstChild)
         qrHolder.removeChild(qrHolder.firstChild);
     const size = Math.min(window.innerWidth, window.innerHeight) * 0.75;
-    const qrcode = new QRCode(qrHolder, {
+    new QRCode(qrHolder, {
         text: window.location.href,
         width: size,
         height: size,
