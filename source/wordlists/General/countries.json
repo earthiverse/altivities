@@ -1,5 +1,13 @@
 [
     {
+        "image": "https://1.bp.blogspot.com/-XdwTIbtRVcM/U2tIXlOKG4I/AAAAAAAAgZw/qle7yN_5Scs/s8192/Argentina.png",
+        "en": "Argentina",
+        "ja": {
+            "hiragana": "あるぜんちん",
+            "kanji": "アルゼンチン"
+        }
+    },
+    {
         "image": "https://1.bp.blogspot.com/-XdwTIbtRVcM/U2tIXlOKG4I/AAAAAAAAgZw/qle7yN_5Scs/s8192/Australia.png",
         "en": "Australia",
         "ja": {
@@ -37,6 +45,14 @@
         "ja": {
             "hiragana": "えじぷと",
             "kanji": "エジプト"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-8qrP-2Piv0I/U2tIHPEASsI/AAAAAAAAgUc/caRp8jb05VI/s8192/Finland.png",
+        "en": "Finland",
+        "ja": {
+            "hiragana": "ふぃんらんど",
+            "kanji": "フィンランド"
         }
     },
     {
@@ -120,6 +136,14 @@
         }
     },
     {
+        "image": "https://2.bp.blogspot.com/-MbBCMYloDFA/U2tHoW9HZ5I/AAAAAAAAgQw/VJiFmGkTuko/s8192/Singapore.png",
+        "en": "Singapore",
+        "ja": {
+            "hiragana": "しんがぽーる",
+            "kanji": "シンガポール"
+        }
+    },
+    {
         "image": "https://3.bp.blogspot.com/-ynESW_C_VDU/U2tHoiysJFI/AAAAAAAAgQs/6zUPyf2Lg4M/s8192/South-Korea.png",
         "en": [
             "South Korea",
@@ -129,6 +153,22 @@
         "ja": {
             "hiragana": "だいかんみんこく",
             "kanji": "大韓民国"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-N9ByEZVEeE8/U4U6WEi05dI/AAAAAAAAg38/vho_XWjmn0c/s8192/Spain.png",
+        "en": "Spain",
+        "ja": {
+            "hiragana": "すぺいん",
+            "kanji": "スペイン"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-3YL1sLgvlg0/U2tIm_uVBeI/AAAAAAAAge4/ALOBKHq9MQ8/s8192/Sweden.png",
+        "en": "Sweden",
+        "ja": {
+            "hiragana": "すうぇーでん",
+            "kanji": "スウェーデン"
         }
     },
     {
@@ -181,6 +221,14 @@
         "ja": {
             "hiragana": "あめりかがっしゅうこく",
             "kanji": "アメリカ合衆国"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-UrPfJlsXgJ4/U2tHrGaIJdI/AAAAAAAAgR0/7PaC9P5-xDU/s8192/Turkey.png",
+        "en": "Turkey",
+        "ja": {
+            "hiragana": "とるこ",
+            "kanji": "トルコ"
         }
     }
 ]
