@@ -1,0 +1,133 @@
+[
+    {
+        "image": "https://1.bp.blogspot.com/-XdwTIbtRVcM/U2tIXlOKG4I/AAAAAAAAgZw/qle7yN_5Scs/s8192/Australia.png",
+        "en": "Australia",
+        "ja": {
+            "hiragana": "おーすとらりあ",
+            "kanji": "オーストラリア"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-Tej1BcRRzXA/U2tJ03Dw4pI/AAAAAAAAggs/JA_urjo5_nc/s8192/Brazil.png",
+        "en": "Brazil",
+        "ja": {
+            "hiragana": "ぶらじる",
+            "kanji": "ブラジル"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-DTdXmcwA83Y/U2tHcYE6LdI/AAAAAAAAgMw/d5FGVyWWM_U/s8192/China.png",
+        "en": "China",
+        "ja": {
+            "hiragana": "ちゅうごく",
+            "kanji": "中国"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-t3VS4edwqm0/U2s6bGt9G_I/AAAAAAAAgF4/LHhZkPETLgc/s8192/Egypt.png",
+        "en": "Egypt",
+        "ja": {
+            "hiragana": "えじぷと",
+            "kanji": "エジプト"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-G-oVDy6V_9U/U2tIHjbzTwI/AAAAAAAAgUk/NKx_-CLe2Rw/s8192/France.png",
+        "en": "France",
+        "ja": {
+            "hiragana": "ふらんす",
+            "kanji": "フランス"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-Ob3erCHO6Fg/U2tIHz9L9vI/AAAAAAAAgUs/muwG-NzFZ7I/s8192/Germany.png",
+        "en": "Germany",
+        "ja": {
+            "hiragana": "どいつ",
+            "kanji": "ドイツ"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-bC2wCxRiD2I/U2tHelOOQPI/AAAAAAAAgN4/hT1nR_t5o7o/s8192/India.png",
+        "en": "India",
+        "ja": {
+            "hiragana": "いんど",
+            "kanji": "インド"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-7e3FRFPZfYg/U2tIKpPTT9I/AAAAAAAAgVo/_Upif5TMDT0/s8192/Italy.png",
+        "en": "Italy",
+        "ja": {
+            "hiragana": "いたりあ",
+            "kanji": "イタリア"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-HcYwPkNFxJY/U2tHgvzDD6I/AAAAAAAAgOc/AVd1W_9E1xo/s8192/Japan.png",
+        "en": "Japan",
+        "ja": {
+            "hiragana": "にっぽん",
+            "kanji": "日本"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-c2ZQS_2CBgA/U2s6eY-TR7I/AAAAAAAAgHg/iIJiWBi9O-U/s8192/Kenya.png",
+        "en": "Kenya",
+        "ja": {
+            "hiragana": "けにあ",
+            "kanji": "ケニア"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-ynESW_C_VDU/U2tHoiysJFI/AAAAAAAAgQs/6zUPyf2Lg4M/s8192/South-Korea.png",
+        "en": [
+            "South Korea",
+            "Republic of Korea"
+        ],
+        "ja": {
+            "hiragana": "だいかんみんこく",
+            "kanji": "大韓民国"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-9xPU1isn6bk/U2tInORkLmI/AAAAAAAAge8/SMGUNdsSzlk/s8192/Switzerland.png",
+        "en": "Switzerland",
+        "ja": {
+            "hiragana": "すいす",
+            "kanji": "スイス"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-cmir50xmDKc/U2tIoZdlayI/AAAAAAAAgfY/2HJDsGA9fsE/s8192/United-Kingdom.png",
+        "en": [
+            "the U.K.",
+            "the UK",
+            "U.K.",
+            "UK",
+            "the United Kingdom",
+            "United Kingdom",
+            "Britain"
+        ],
+        "ja": {
+            "hiragana": "いぎりす",
+            "kanji": "イギリス"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-LzZwHtzb0Ec/U2tInZJR-yI/AAAAAAAAgfU/h3d6BYuqUEs/s8192/United-States-of-America.png",
+        "en": [
+            "the U.S.A.",
+            "the USA",
+            "the United States of America",
+            "U.S.A.",
+            "USA",
+            "U.S.",
+            "US"
+        ],
+        "ja": {
+            "hiragana": "あめりかがっしゅうこく",
+            "kanji": "アメリカ合衆国"
+        }
+    }
+]
