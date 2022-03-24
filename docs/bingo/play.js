@@ -59,22 +59,21 @@ function populateBingo(wordlist, words) {
     }
 }
 async function prepare() {
+    const combinedWordlist = [];
     if (parameters.wordlist && parameters.words) {
         const response = await fetch(parameters.wordlist);
         const wordlist = await response.json();
-        const words = parameters.words.split("🔥");
-        populateBingo(wordlist, words);
+        combinedWordlist.push(...wordlist);
     }
     if (parameters.wordlists && parameters.words) {
-        const combinedWordlist = [];
         for (const url of parameters.wordlists.split(",")) {
             const response = await fetch(url);
             const wordlist = await response.json();
             combinedWordlist.push(...wordlist);
         }
-        const words = parameters.words.split("🔥");
-        populateBingo(combinedWordlist, words);
     }
+    const words = parameters.words.split("🔥");
+    populateBingo(combinedWordlist, words);
 }
 prepare();
 let RESIZE_FINISHED;

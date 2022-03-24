@@ -15,6 +15,9 @@ These wordlists have pictures associated with them, which makes them nice to use
 * [Alphabet](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/alphabet.json)
 * [Animals](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/animals.json)
 * [Colors](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/colors.json)
+* Countries
+  * [Junior Sunshine 6 - Lesson 3](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine6/lesson3.json)
+  * [Junior Sunshine 6 - Lesson 3 + Canada](<https://altivities.earthiverse.ca/bingo/?wordlists=../wordlists/General/countries.json&include=the%20U.S.A.,Brazil,Japan,South> Korea,China,India,the%20U.K.,France,Germany,Italy,Switzerland,Australia,Egypt,Kenya,Canada)
 * [Numbers (1-20)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/numbers.json)
 * [Occupations (Junior Sunshine 6 - Lesson 10)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine6/lesson10.json)
 * [Prefectures](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/Hepburn/prefectures.json)

@@ -66,25 +66,25 @@ function populateBingo(wordlist: Wordlist, words: string[]) {
 }
 
 async function prepare() {
+    const combinedWordlist: Wordlist = []
+
     if (parameters.wordlist && parameters.words) {
         const response = await fetch(parameters.wordlist)
         const wordlist: Wordlist = await response.json()
-
-        const words = (parameters.words as string).split("🔥")
-        populateBingo(wordlist, words)
+        combinedWordlist.push(...wordlist)
     }
 
     if (parameters.wordlists && parameters.words) {
         // Combine all wordlists
-        const combinedWordlist: Wordlist = []
         for (const url of parameters.wordlists.split(",")) {
             const response = await fetch(url)
             const wordlist: Wordlist = await response.json()
             combinedWordlist.push(...wordlist)
         }
-        const words = (parameters.words as string).split("🔥")
-        populateBingo(combinedWordlist, words)
     }
+
+    const words = (parameters.words as string).split("🔥")
+    populateBingo(combinedWordlist, words)
 }
 prepare()
 

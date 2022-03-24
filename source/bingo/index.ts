@@ -207,7 +207,7 @@ function showQR() {
         height: size,
         colorDark: "#000000",
         colorLight: "#ffffff",
-        correctionLevel: QRCode.CorrectLevel.H
+        correctionLevel: QRCode.CorrectLevel.L
     })
 
     // Unhide the qrcode
@@ -221,8 +221,10 @@ function showQR() {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function goToTeach() {
     const data = {
+        ignore: parameters.ignore,
+        include: parameters.include,
         wordlist: parameters.wordlist,
-        wordlists: parameters.wordlists
+        wordlists: parameters.wordlists,
     }
     for (const datum in data) if (data[datum] === undefined) delete data[datum]
     window.location.href = `teach.html?${new URLSearchParams(data)}`
@@ -258,23 +260,61 @@ function chooseRandom() {
 }
 
 async function prepare() {
+    const combinedWordlist: Wordlist = []
+
     if (parameters.wordlist) {
         // Add the one wordlist to the menu
         const response = await fetch(parameters.wordlist)
         const wordlist: Wordlist = await response.json()
-        generateMenuOptions(wordlist)
+        combinedWordlist.push(...wordlist)
     }
 
     if (parameters.wordlists) {
         // Combine all wordlists
-        const combinedWordlist: Wordlist = []
         for (const url of parameters.wordlists.split(",")) {
             const response = await fetch(url)
             const wordlist: Wordlist = await response.json()
             combinedWordlist.push(...wordlist)
         }
-        generateMenuOptions(combinedWordlist)
     }
+
+    if (parameters.ignore) {
+        const toIgnore: string[] = parameters.ignore.split(",")
+        for (let i = 0; i < combinedWordlist.length; i++) {
+            const word = combinedWordlist[i]
+            for (const ignoreWord of toIgnore) {
+                if (word.en == ignoreWord
+                    || (Array.isArray(word.en) && word.en[0] == ignoreWord)) {
+                    // Remove this word from the wordlist
+                    combinedWordlist.splice(i, 1)
+                    i -= 1
+                    break
+                }
+            }
+        }
+    }
+
+    if (parameters.include) {
+        const toInclude: string[] = parameters.include.split(",")
+        for (let i = 0; i < combinedWordlist.length; i++) {
+            const word = combinedWordlist[i]
+            let remove = true
+            for (const includeWord of toInclude) {
+                if (word.en == includeWord
+                    || (Array.isArray(word.en) && word.en[0] == includeWord)) {
+                    // Remove this word from the wordlist
+                    remove = false
+                    break
+                }
+            }
+            if (remove) {
+                combinedWordlist.splice(i, 1)
+                i -= 1
+            }
+        }
+    }
+
+    generateMenuOptions(combinedWordlist)
 }
 prepare()
 

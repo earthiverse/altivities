@@ -128,7 +128,7 @@ function showQR() {
         height: size,
         colorDark: "#000000",
         colorLight: "#ffffff",
-        correctionLevel: QRCode.CorrectLevel.H
+        correctionLevel: QRCode.CorrectLevel.L
     });
     qrHolder.style.display = "flex";
     qrHolder.addEventListener("click", () => {
@@ -137,8 +137,10 @@ function showQR() {
 }
 function goToTeach() {
     const data = {
+        ignore: parameters.ignore,
+        include: parameters.include,
         wordlist: parameters.wordlist,
-        wordlists: parameters.wordlists
+        wordlists: parameters.wordlists,
     };
     for (const datum in data)
         if (data[datum] === undefined)
@@ -171,20 +173,52 @@ function chooseRandom() {
     checkReady();
 }
 async function prepare() {
+    const combinedWordlist = [];
     if (parameters.wordlist) {
         const response = await fetch(parameters.wordlist);
         const wordlist = await response.json();
-        generateMenuOptions(wordlist);
+        combinedWordlist.push(...wordlist);
     }
     if (parameters.wordlists) {
-        const combinedWordlist = [];
         for (const url of parameters.wordlists.split(",")) {
             const response = await fetch(url);
             const wordlist = await response.json();
             combinedWordlist.push(...wordlist);
         }
-        generateMenuOptions(combinedWordlist);
     }
+    if (parameters.ignore) {
+        const toIgnore = parameters.ignore.split(",");
+        for (let i = 0; i < combinedWordlist.length; i++) {
+            const word = combinedWordlist[i];
+            for (const ignoreWord of toIgnore) {
+                if (word.en == ignoreWord
+                    || (Array.isArray(word.en) && word.en[0] == ignoreWord)) {
+                    combinedWordlist.splice(i, 1);
+                    i -= 1;
+                    break;
+                }
+            }
+        }
+    }
+    if (parameters.include) {
+        const toInclude = parameters.include.split(",");
+        for (let i = 0; i < combinedWordlist.length; i++) {
+            const word = combinedWordlist[i];
+            let remove = true;
+            for (const includeWord of toInclude) {
+                if (word.en == includeWord
+                    || (Array.isArray(word.en) && word.en[0] == includeWord)) {
+                    remove = false;
+                    break;
+                }
+            }
+            if (remove) {
+                combinedWordlist.splice(i, 1);
+                i -= 1;
+            }
+        }
+    }
+    generateMenuOptions(combinedWordlist);
 }
 prepare();
 let RESIZE_FINISHED;

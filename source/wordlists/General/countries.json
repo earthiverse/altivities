@@ -16,6 +16,14 @@
         }
     },
     {
+        "image": "https://2.bp.blogspot.com/-IibBfuW2A20/U2tIN9w2XNI/AAAAAAAAgWw/pcpfq3IAAkc/s8192/Canada.png",
+        "en": "Canada",
+        "ja": {
+            "hiragana": "かなだ",
+            "kanji": "カナダ"
+        }
+    },
+    {
         "image": "https://2.bp.blogspot.com/-DTdXmcwA83Y/U2tHcYE6LdI/AAAAAAAAgMw/d5FGVyWWM_U/s8192/China.png",
         "en": "China",
         "ja": {
@@ -80,6 +88,38 @@
         }
     },
     {
+        "image": "https://1.bp.blogspot.com/-Gi1Gb52NYuU/U2tHkGgVxGI/AAAAAAAAgQo/ryHmGW4OriM/s8192/Mongolia.png",
+        "en": "Mongolia",
+        "ja": {
+            "hiragana": "もんごるこく",
+            "kanji": "モンゴル国"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-fBvUynbHV2E/U2s6heU9bHI/AAAAAAAAgH8/nWJouXE9QSQ/s8192/Morocco.png",
+        "en": "Morocco",
+        "ja": {
+            "hiragana": "もろっこ",
+            "kanji": "モロッコ"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-bh7Yrww5DAQ/U2tIbMyF_OI/AAAAAAAAgbI/TalJZWA1Fn0/s8192/New-Zealand.png",
+        "en": "New Zealand",
+        "ja": {
+            "hiragana": "にゅーじーらんど",
+            "kanji": "ニュージーランド"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-hQy6CRAewas/U2tJ3zAkTdI/AAAAAAAAghc/rMrdNnZ9CHw/s8192/Perou.png",
+        "en": "Peru",
+        "ja": {
+            "hiragana": "ぺるー",
+            "kanji": "ペルー"
+        }
+    },
+    {
         "image": "https://3.bp.blogspot.com/-ynESW_C_VDU/U2tHoiysJFI/AAAAAAAAgQs/6zUPyf2Lg4M/s8192/South-Korea.png",
         "en": [
             "South Korea",
@@ -97,6 +137,18 @@
         "ja": {
             "hiragana": "すいす",
             "kanji": "スイス"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-ARck-TV1KHQ/U2tHqbFBcnI/AAAAAAAAgRY/Gc_c5lyNSow/s8192/Thailand.png",
+        "en": [
+            "Thailand",
+            "the Kingdom of Thailand",
+            "Kingdom of Thailand"
+        ],
+        "ja": {
+            "hiragana": "たいおうこく",
+            "kanji": "タイ王国"
         }
     },
     {
