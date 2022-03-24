@@ -15,7 +15,7 @@ These wordlists have pictures associated with them, which makes them nice to use
 * [Alphabet](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/alphabet.json)
 * [Animals](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/animals.json)
 * [Colors](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/colors.json)
-* Countries
+* [Countries](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/countries.json)
   * [Junior Sunshine 6 - Lesson 3](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine6/lesson3.json)
   * [Junior Sunshine 6 - Lesson 3 + Canada](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/countries.json&include=the%20U.S.A.,Brazil,Japan,South%20Korea,China,India,the%20U.K.,France,Germany,Italy,Switzerland,Australia,Egypt,Kenya,Canada)
 * [Numbers (1-20)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/numbers.json)
@@ -34,3 +34,19 @@ After uploading your wordlist to the web, change the path to the wordlist in the
 
 Use the following URL pattern to combine multiple wordlists:
 `https://altivities.earthiverse.ca/bingo/?wordlists=<path-to-url-1-here>,<path-to-url-2-here>,<...>`
+
+## Ignoring (Excluding) Words
+
+You can ignore words from your wordlist(s) by adding `&ignore=<word 1>,<word 2>,<...>` to the URL.
+
+Example: <https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/numbers.json&ignore=one,three,five>
+
+## Filtering (Including) Words
+
+**NOTE**: This is not for including *extra* words. To do that, you need to add an additional wordlist, or modify the wordlist to include more words.
+
+**NOTE**: You need a minimum of nine words to play bingo, so the URL can get quite long.
+
+You can specify the set of words you want to use by adding `&include=<word 1>,<word 2>,<...>` to the URL.
+
+Example: <https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/numbers.json&include=ten,eleven,twelve,thirteen,fourteen,fifteen,sixteen,seventeen,eighteen,nineteen,twenty>
