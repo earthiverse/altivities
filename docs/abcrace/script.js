@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const LOCAL_STORAGE_MODE = "abcrace_mode";
 function getRandomNumber(min, max) {
     return Math.random() * (max - min) + min;
 }
@@ -162,7 +163,18 @@ class ABCRaceMenuScene extends Phaser.Scene {
             uppercaseButton.setDisabled();
             randomButton.setEnabled();
         });
-        uppercaseButton.setEnabled();
+        switch (localStorage.getItem(LOCAL_STORAGE_MODE)) {
+            case "lowercase":
+                lowercaseButton.setEnabled();
+                break;
+            case "uppercase":
+            default:
+                uppercaseButton.setEnabled();
+                break;
+            case "random":
+                randomButton.setEnabled();
+                break;
+        }
         const startButton = new BasicButton({
             "key": "start_buttons",
             "scene": this,
@@ -175,16 +187,19 @@ class ABCRaceMenuScene extends Phaser.Scene {
                 args = {
                     mode: "lowercase"
                 };
+                localStorage.setItem(LOCAL_STORAGE_MODE, "lowercase");
             }
             else if (uppercaseButton.enabled) {
                 args = {
                     mode: "uppercase"
                 };
+                localStorage.setItem(LOCAL_STORAGE_MODE, "uppercase");
             }
             else if (randomButton.enabled) {
                 args = {
                     mode: "random"
                 };
+                localStorage.setItem(LOCAL_STORAGE_MODE, "random");
             }
             else {
                 throw new Error("Something went wrong. We don't know what game mode to use.");
