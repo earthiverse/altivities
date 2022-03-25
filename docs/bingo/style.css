@@ -1,4 +1,5 @@
 :root {
+  --vh: 1vh;
   --bingo-border-size: 5px;
   --ready-yes-color: lightgreen;
   --ready-no-color: lightgray;
