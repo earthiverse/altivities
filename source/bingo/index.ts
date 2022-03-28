@@ -306,6 +306,18 @@ async function prepare() {
                     remove = false
                     break
                 }
+
+                // Check if it's an alternative word
+                if (Array.isArray(word.en)) {
+                    for (let j = 0; j < word.en.length; j++) {
+                        const alternativeWord = word.en[j]
+                        if (alternativeWord !== includeWord) continue
+                        // We found the word as an alternative, set it as the main word
+                        word.en = alternativeWord
+                        remove = false
+                        break
+                    }
+                }
             }
             if (remove) {
                 combinedWordlist.splice(i, 1)

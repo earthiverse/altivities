@@ -23,16 +23,15 @@ function onMouseDown(event) {
 function populateBingo(wordlist, words) {
     let num = 0;
     for (const word of words) {
+        console.debug(`Looking for ${word}...`);
         let found = false;
         for (const find of wordlist) {
-            let thisWord;
+            console.debug(`Looking in ${find.en}...`);
             if (Array.isArray(find.en)) {
-                thisWord = find.en[0];
+                if (!find.en.includes(word))
+                    continue;
             }
-            else {
-                thisWord = find.en;
-            }
-            if (thisWord !== word)
+            else if (find.en !== word)
                 continue;
             const itemOutside = document.createElement("div");
             const itemInside = document.createElement("div");
@@ -45,7 +44,7 @@ function populateBingo(wordlist, words) {
                 itemInside.style.backgroundPosition = "center";
                 itemInside.style.backgroundSize = "contain";
             }
-            itemInside.innerText = thisWord;
+            itemInside.innerText = word;
             itemOutside.appendChild(itemInside);
             const cell = document.getElementById(`cell${num}`);
             cell.appendChild(itemOutside);

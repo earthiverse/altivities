@@ -143,6 +143,16 @@ async function prepare() {
                     remove = false;
                     break;
                 }
+                if (Array.isArray(word.en)) {
+                    for (let j = 0; j < word.en.length; j++) {
+                        const alternativeWord = word.en[j];
+                        if (alternativeWord !== includeWord)
+                            continue;
+                        word.en = alternativeWord;
+                        remove = false;
+                        break;
+                    }
+                }
             }
             if (remove) {
                 combinedWordlist.splice(i, 1);

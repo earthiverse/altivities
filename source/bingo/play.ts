@@ -27,15 +27,14 @@ function onMouseDown(event: Event) {
 function populateBingo(wordlist: Wordlist, words: string[]) {
     let num = 0
     for (const word of words) {
+        console.debug(`Looking for ${word}...`)
         let found = false
         for (const find of wordlist) {
-            let thisWord: string
+            console.debug(`Looking in ${find.en}...`)
             if (Array.isArray(find.en)) {
-                thisWord = find.en[0]
-            } else {
-                thisWord = find.en
+                if (!find.en.includes(word)) continue
             }
-            if (thisWord !== word) continue
+            else if (find.en !== word) continue
 
             // We found the word, add it to the bingo card
             const itemOutside = document.createElement("div")
@@ -50,7 +49,7 @@ function populateBingo(wordlist: Wordlist, words: string[]) {
                 itemInside.style.backgroundSize = "contain"
             }
 
-            itemInside.innerText = thisWord
+            itemInside.innerText = word
             itemOutside.appendChild(itemInside)
             const cell = document.getElementById(`cell${num}`)
             cell.appendChild(itemOutside)
