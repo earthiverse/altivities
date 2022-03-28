@@ -1,0 +1,298 @@
+[
+    {
+        "image": "https://3.bp.blogspot.com/-wrgGfqqTLAk/V-x9LQ8OG8I/AAAAAAAA-J0/X74I-OvrIX8rhzubdSj66TwXe_ZAcOahwCLcB/s8192/animal_koumori.png",
+        "en": [
+            "bat",
+            "bats"
+        ],
+        "ja": [
+            {
+                "kanji": "蝙蝠",
+                "hiragana": "こうもり"
+            }
+        ]
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-6VeO3Yt6S0w/UYoNLSSRlnI/AAAAAAAARoE/Jq5puXSuXSk/s8192/haloween_cat.png",
+        "en": [
+            "black cat",
+            "black cats"
+        ],
+        "ja": [
+            {
+                "kanji": "黒猫",
+                "hiragana": "くろねこ"
+            }
+        ]
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-X3Os3Mw5y78/UYoNLD9w7MI/AAAAAAAARn8/keZ3pGjrsFI/s8192/halloween_sweets.png",
+        "en": [
+            "candy",
+            "candies"
+        ],
+        "ja": [
+            {
+                "kanji": "お菓子",
+                "hiragana": "おかし"
+            },
+            {
+                "kanji": "キャンディー",
+                "hiragana": "きゃんでぃー"
+            }
+        ]
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-XL_6m6BCYDQ/VRUQC0tHrPI/AAAAAAAAsfk/6Jv3N4c2AUI/s8192/hitsugi_youshiki.png",
+        "en": [
+            "coffin",
+            "coffins"
+        ],
+        "ja": [
+            {
+                "kanji": "棺",
+                "hiragana": "かん"
+            },
+            {
+                "kanji": "棺桶",
+                "hiragana": "かんおけ"
+            }
+        ]
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-Gic7OR9ALbc/VC9spcO2tvI/AAAAAAAAnZE/9OW6iwRsZGQ/s8192/halloween_pumpkin_boy.png",
+        "en": [
+            "costume",
+            "costumes"
+        ],
+        "ja": [
+            {
+                "kanji": "仮装",
+                "hiragana": "かそう"
+            },
+            {
+                "kanji": "コスチューム",
+                "hiragana": "こすちゅーむ"
+            }
+        ]
+    },
+    {
+        "image": "https://3.bp.blogspot.com/--2jkDVi1NPU/W7WbPjIJqBI/AAAAAAABPPw/SsFqJjvzyd8g6bDJRe6fvW5Cw5iRuLl9ACLcBGAs/s8192/halloween_chara7_obake.png",
+        "en": [
+            "ghost",
+            "ghosts"
+        ],
+        "ja": {
+            "kanji": "お化け",
+            "hiragana": "おばけ"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-U3aAYTcSda8/W7WbOW2KcmI/AAAAAAABPPk/pu2T90JcZJoy6O_F8rQDXaOKgzpXRCVLQCLcBGAs/s8192/halloween_chara2_shinigami.png",
+        "en": [
+            "Grim Reaper",
+            "the Grim Reaper",
+            "Death",
+            "god of death",
+            "the god of death"
+        ],
+        "ja": {
+            "kanji": "死神",
+            "hiragana": "しにがみ"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-Gr4jaA7G3nc/U8cqxlZ56kI/AAAAAAAAi_k/xIniDKJOHgc/s8192/obakeyashiki.png",
+        "en": [
+            "haunted house",
+            "haunted houses",
+            "haunted attraction",
+            "haunted attractions"
+        ],
+        "ja": {
+            "kanji": "お化け屋敷",
+            "hiragana": "おばけやしき"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-vC754N63MQ8/UYoNJmSnpJI/AAAAAAAARno/p2clhPz6TQM/s8192/halloween_pumpkin1.png",
+        "en": [
+            "jack-o'-lantern",
+            "jack-o'-lanterns",
+            "jack o' lantern",
+            "jack o' lanterns"
+        ],
+        "ja": [
+            {
+                "kanji": "かぼちゃのランタン",
+                "hiragana": "かぼちゃのらんたん"
+            },
+            {
+                "kanji": "ジャック・オー・ランタン",
+                "hiragana": "じゃっく・おー・らんたん"
+            }
+        ]
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-UROZL69N1mg/WxvKNi0s5qI/AAAAAAABMng/GaR_WcX__JQGndM7lj5xul2CEY7YHap3ACLcBGAs/s8192/mahoutsukai_white_man.png",
+        "en": [
+            "magician",
+            "wizard",
+            "sorcerer",
+            "witch",
+            "magicians",
+            "wizards",
+            "sorcerers",
+            "witches"
+        ],
+        "ja": {
+            "kanji": "魔法使い",
+            "hiragana": "まほうつかい"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-zyd_W4E6BjM/VCIkF1J8sII/AAAAAAAAmjg/X7j73gG6UFs/s8192/monster03.png",
+        "en": [
+            "monster",
+            "monsters"
+        ],
+        "ja": [
+            {
+                "kanji": "化け物",
+                "hiragana": "ばけもの"
+            },
+            {
+                "kanji": "モンスター",
+                "hiragana": "もんすたー"
+            }
+        ]
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-Qoi6DM2giok/W7WbOZUsoMI/AAAAAAABPPg/x3q7J48lbMQ_jGr6jOGi1yzEV37MlxJ0gCLcBGAs/s8192/halloween_chara3_miira.png",
+        "en": [
+            "mummy",
+            "mummies"
+        ],
+        "ja": {
+            "kanji": "木乃伊",
+            "hiragana": "みいら"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-vic8sGz8fv0/W6XJc9aEH1I/AAAAAAABPDA/zhl2g1Nq2qMRJGflTeOEim_IFdUffz9PwCLcBGAs/s8192/kaizoku_man.png",
+        "en": [
+            "pirate",
+            "pirates"
+        ],
+        "ja": {
+            "kanji": "海賊",
+            "hiragana": "かいぞく"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-86TIgNeH4K4/UdEeRP74FSI/AAAAAAAAVrc/Gl97z5amRqg/s8192/gaikotsu_character.png",
+        "en": [
+            "skeleton",
+            "skeletons"
+        ],
+        "ja": {
+            "kanji": "骸骨",
+            "hiragana": "がいこつ"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-mdJJHyJx188/U2sruyBIXEI/AAAAAAAAf3U/DLWIgHKJE6U/s8192/kumonosu.png",
+        "en": [
+            "spider web",
+            "spider webs"
+        ],
+        "ja": {
+            "kanji": "クモの巣",
+            "hiragana": "くものす"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-c8p-jU3RoUU/Uyk_LisabfI/AAAAAAAAeNc/A9ba_F0nNx8/s8192/halloween_trickortreat.png",
+        "en": [
+            "trick-or-treat",
+            "trick-or-treating",
+            "trick or treat",
+            "trick or treating"
+        ],
+        "ja": {
+            "kanji": "クモの巣",
+            "hiragana": "くものす"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/--Y6s8oGu94E/W7WbP5yTcAI/AAAAAAABPP0/Nu9mv5I7ZMQ7AAYmdz3Owg-jtiUTE_RkACLcBGAs/s8192/halloween_chara6_majo.png",
+        "en": [
+            "witch",
+            "witches"
+        ],
+        "ja": {
+            "kanji": "魔女",
+            "hiragana": "まじょ"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-5SMxeXhHOog/WM9WQNRno_I/AAAAAAABCqs/CezcrSfs82swZgcF0dbAexy4AJ1FT7vegCLcB/s8192/fantasy_dracula2.png",
+        "en": [
+            "vampire",
+            "vampires",
+            "Dracula"
+        ],
+        "ja": [
+            {
+                "kanji": "吸血鬼",
+                "hiragana": "きゅうけつき"
+            },
+            {
+                "kanji": "ヴァンパイア",
+                "hiragana": "ヴぁんぱぃあ"
+            },
+            {
+                "kanji": "ドラキュラ",
+                "hiragana": "どらきゅら"
+            }
+        ]
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-09DZ043oLyY/W7WbO-LuNuI/AAAAAAABPPo/1hmEGG8j6BI_T09wsJH72psLBQSOSfbwgCLcBGAs/s8192/halloween_chara4_ookamiotoko.png",
+        "en": [
+            "werewolf",
+            "werewolves"
+        ],
+        "ja": [
+            {
+                "kanji": "狼男",
+                "hiragana": "おおかみおとこ"
+            },
+            {
+                "kanji": "人狼",
+                "hiragana": "じんろう"
+            },
+            {
+                "kanji": " ウェアウルフ",
+                "hiragana": "うぇあうるふ"
+            },
+            {
+                "kanji": "狼人間",
+                "hiragana": "おおかみにんげん"
+            }
+        ]
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-2ZmtYNG-BrU/WUdYTI3O9kI/AAAAAAABE6Q/9fTK68SHrrEci1eVLe8GUaMZm4DirDgzwCLcBGAs/s8192/fantasy_zombie_woman.png",
+        "en": [
+            "zombie",
+            "zombies"
+        ],
+        "ja": [
+            {
+                "kanji": "ゾンビ",
+                "hiragana": "ぞんび"
+            }
+        ]
+    }
+]

@@ -1,0 +1,113 @@
+[
+    {
+        "image": "https://1.bp.blogspot.com/-q4hUq1f0R78/URedBuouH1I/AAAAAAAAMW8/ZqjSxzMriqI/s8192/white_day_cookie.png",
+        "en": [
+            "cookies",
+            "cookie"
+        ],
+        "ja": {
+            "kanji": "クッキー",
+            "hiragana": "くっきー"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-q4hUq1f0R78/URedBuouH1I/AAAAAAAAMW8/ZqjSxzMriqI/s8192/white_day_cookie.png",
+        "en": "Cupid",
+        "ja": {
+            "kanji": "キューピット",
+            "hiragana": "きゅーぴっと"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-pYYdmpk4Ntw/UqmP5fnNhoI/AAAAAAAAbn4/7NBHsK1smys/s8192/hanataba.png",
+        "en": [
+            "flowers",
+            "bunch of flowers",
+            "bouquet"
+        ],
+        "ja": {
+            "kanji": "花束",
+            "hiragana": "はなたば"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-rPPXv7oiHPM/UZRBjdP66aI/AAAAAAAASpA/b6N5qi7UxoA/s8192/valentinesday_heart.png",
+        "en": [
+            "heart",
+            "hearts"
+        ],
+        "ja": [
+            {
+                "kanji": "ハート",
+                "hiragana": "はーと"
+            },
+            {
+                "kanji": "心",
+                "hiragana": "こころ"
+            }
+        ]
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-aso_PJTkUSo/VA7mU0ateVI/AAAAAAAAmOY/VIAyLPgTETI/s8192/nage_kiss.png",
+        "en": [
+            "kiss",
+            "kisses"
+        ],
+        "ja": {
+            "kanji": "キス",
+            "hiragana": "きす"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/--8F-ZpVwytE/W1vhhCVE68I/AAAAAAABNwo/WfprKeAcYHcJ-FVAcZ4OQL3ZcpoAm7G6wCLcBGAs/s8192/message_loveletter_boy.png",
+        "en": [
+            "letter",
+            "letters"
+        ],
+        "ja": {
+            "kanji": "手紙",
+            "hiragana": "てがみ"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-VRcuT_YWGi0/UZRBmHNrSmI/AAAAAAAASqQ/wJPQMIYBPZM/s8192/valentinesday_muffler.png",
+        "en": "love",
+        "ja": {
+            "kanji": "愛",
+            "hiragana": "あい"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-h7t2q0UO-s0/VsB9XtZGOgI/AAAAAAAA35M/n4iwoKhrnmg/s8192/valentinesday_heart_box.png",
+        "en": [
+            "present",
+            "presents"
+        ],
+        "ja": {
+            "kanji": "プレゼント",
+            "hiragana": "ぷれぜんと"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-BUV23gGfP_w/VSufNza2AcI/AAAAAAAAs4I/n8GNiQg0mCI/s8192/jewelry_diamond_ring_yubiwa.png",
+        "en": [
+            "ring",
+            "rings"
+        ],
+        "ja": {
+            "kanji": "指輪",
+            "hiragana": "ゆびわ"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-zKnBmmHhbYg/WTtWriOZe3I/AAAAAAABEwU/fuS5RChN214x3Kn76sHYet6l1Ff4dYEaACLcB/s8192/chichinohi_hanataba_red.png",
+        "en": [
+            "roses",
+            "rose"
+        ],
+        "ja": {
+            "kanji": "薔薇",
+            "hiragana": "ばら"
+        }
+    }
+]
