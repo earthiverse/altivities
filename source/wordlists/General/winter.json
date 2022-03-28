@@ -1,0 +1,161 @@
+[
+    {
+        "image": "https://1.bp.blogspot.com/-CIoU1144fmI/UYzXDznJF5I/AAAAAAAAR38/6TnEN0dzbT8/s8192/christmas_bell.png",
+        "en": [
+            "bells",
+            "bell"
+        ],
+        "ja": {
+            "kanji": "ベル",
+            "hiragana": "べる"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-zsoZgEuuKw0/UZYlSmKRIjI/AAAAAAAATMg/EFt9gd3L1ek/s8192/christmas_cake.png",
+        "en": [
+            "cake",
+            "cakes"
+        ],
+        "ja": {
+            "kanji": "ケーキ",
+            "hiragana": "けーき"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-8Lb1oR4mBSw/UZYlT8pj-HI/AAAAAAAATMs/50d-8pF40zo/s8192/christmas_candle.png",
+        "en": [
+            "candle",
+            "candles"
+        ],
+        "ja": {
+            "kanji": "蝋燭",
+            "hiragana": "ろうそく"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-Lm0hkaLIIA8/UZYlUSLMa-I/AAAAAAAATM0/RsE1darAqnU/s8192/christmas_candy.png",
+        "en": [
+            "candy cane",
+            "candy canes"
+        ],
+        "ja": [
+            {
+                "kanji": "杖のキャンディ",
+                "hiragana": "つえのきゃんでぃ"
+            }
+        ]
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-63k3umeTkvA/WzC9lGpB2DI/AAAAAAABM58/wfzOIlngZl4z9X8v9ZKBmCBaIcQIvoHjwCLcBGAs/s8192/fuyu_samui_man.png",
+        "en": "cold",
+        "ja": {
+            "kanji": "寒い",
+            "hiragana": "さむい"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-aCpGGCrM6X0/XBRfBeDza1I/AAAAAAABQ10/DW32-TuaCOAUxZyXxRG_vJDepGd3o5xTQCLcBGAs/s8192/christmas_elf.png",
+        "en": [
+            "elf",
+            "elves"
+        ],
+        "ja": [
+            {
+                "kanji": "妖精（クリスマス）",
+                "hiragana": "ようせい（くりすます）"
+            }
+        ]
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-1pm1dexMg30/Wm1ySCf8CSI/AAAAAAABJ3o/gCL8NKbNrM8alnhnEvoiMfNtB_stqlOrwCLcBGAs/s8192/christmas_santa_boushi_big.png",
+        "en": [
+            "hat",
+            "hats"
+        ],
+        "ja": {
+            "kanji": "帽子",
+            "hiragana": "ぼうし"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-2rCYn8fQzAc/VOsJt9WEZ4I/AAAAAAAArr4/lrqHkm_OS34/s8192/penguin01_king.png",
+        "en": "penguin",
+        "ja": {
+            "kanji": "ペンギン",
+            "hiragana": "ぺんぎん"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-sZ0ugJLWkI0/Ur1GPaI4j_I/AAAAAAAAcaE/t08ufIizPm8/s8192/present_box.png",
+        "en": "present",
+        "ja": {
+            "kanji": "プレゼント",
+            "hiragana": "ぷれぜんと"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-UZclD_kL4tc/UYzXGRHL_SI/AAAAAAAAR4Y/MynACwBAy-c/s8192/christmas_reindeer.png",
+        "en": "reindeer",
+        "ja": {
+            "kanji": "馴鹿",
+            "hiragana": "となかい"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-yfkaPwPetf8/UYzXG0BwqeI/AAAAAAAAR4g/HLod5E00WNQ/s8192/christmas_santa.png",
+        "en": [
+            "Santa",
+            "Santa Claus"
+        ],
+        "ja": [
+            {
+                "kanji": "サンタ",
+                "hiragana": "さんた"
+            },
+            {
+                "kanji": "サンタクロース",
+                "hiragana": "さんたくろーす"
+            }
+        ]
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-mVc25XJUbQo/WR_LYZcr4PI/AAAAAAABEfo/qCVOlky1VfQGbBbhbqC7RgOLZGLbSb_AgCLcB/s8192/winter_sports_snow_sori.png",
+        "en": "sled",
+        "ja": {
+            "kanji": "橇",
+            "hiragana": "そり"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-4sYYANbRtEA/UYzcVGF9uuI/AAAAAAAAR-g/wjjBjKW54MI/s8192/yuki_title.png",
+        "en": "snow",
+        "ja": {
+            "kanji": "雪",
+            "hiragana": "ゆき"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-SD2SLEBhKbs/Wm1y1HxnzXI/AAAAAAABJ7w/2wWMAg_JodMxomuStn9QuVMD3OCuUapfwCLcBGAs/s8192/snowman_yukidaruma_sandan.png",
+        "en": "snowman",
+        "ja": {
+            "kanji": "雪だるま",
+            "hiragana": "ゆきだるま"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-xC3fKIfunTo/VkqPNryifwI/AAAAAAAA0ho/kWbucZsAKwU/s8192/christmastree_decoration.png",
+        "en": "tree",
+        "ja": {
+            "kanji": "木",
+            "hiragana": "き"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-ionQjiY2pYc/UYzXLhhJhxI/AAAAAAAAR5A/MldjYi0D7G4/s8192/christmas_wreath.png",
+        "en": "wreath",
+        "ja": {
+            "kanji": "リース",
+            "hiragana": "りーす"
+        }
+    }
+]
