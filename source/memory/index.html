@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Let's Play Memory!</title>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script>
+        var exports = {};
+    </script>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div id="play">
+        <div id="qr">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div id="information">
+        <div>Please enter a username...</div>
+    </div>
+    <div id="players">
+        <div>
+            <label for="username">Username:</label>
+            <input placeholder="Name" name="username" id="username_input" maxlength="12">
+            <input type="button" id="username_ok" value="OK!" disabled>
+        </div>
+    </div>
+    <div id="extra">
+        <div id="start">
+            Start!
+        </div>
+    </div>
+</body>
+
+</html>

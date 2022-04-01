@@ -1,0 +1,272 @@
+/* Color Palette: https://coolors.co/palette/5aa9e6-7fc8f8-f9f9f9-ffe45e */
+:root {
+    --color-white: #F9F9F9;
+    --color-light-blue: #7FC8F8;
+    --color-dark-blue: #5AA9E6;
+    --color-yellow: #FFE45E;
+    --color-green: #a1ef7a;
+    --color-red: #fc7b7b;
+    --play-padding-x: 2vw;
+    --play-padding-y: 2vh;
+    --card-size: min(18vw, 18vh);
+    --qr-size: min(100vw, 80 * var(--vh));
+    --ripple-size: calc(var(--qr-size) / 2 + 2 * var(--ripple-thickness));
+    --ripple-thickness: calc(var(--qr-size) / 20);
+    --vh: 1vh;
+}
+
+html, body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    user-select: none;
+
+    background-color: var(--color-white);
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: "Rajdhani", sans-serif;
+}
+
+/*******************************************************************************
+*** Play area elements ********************************************************/
+
+#play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1vh 1vw;
+
+    box-sizing: border-box;
+    width: 100vw;
+    height: calc(80 * var(--vh));
+    padding: var(--play-padding-y) var(--play-padding-x);
+}
+
+.card {
+    box-sizing: border-box;
+    width: var(--card-size);
+    height: var(--card-size);
+    perspective: 1000px;
+}
+
+.card-inside {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.25s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inside-draw {
+    transform: rotateY(45deg);
+}
+
+.card-front, .card-back {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* -webkit-backface-visibility: hidden; */
+    backface-visibility: hidden;
+}
+
+.card-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: min(0.5vh, 0.5vw) solid var(--color-dark-blue);
+    background-color: var(--color-light-blue);
+    font-size: calc(var(--card-size) / 2);
+    color: black;
+}
+
+.card-back {
+    border: min(0.5vh, 0.5vw) solid var(--color-yellow);
+    transform: rotateY(180deg);
+    background-position: "center";
+    background-repeat: "no-repeat";
+    background-size: contain;
+}
+
+/* .card {
+    box-sizing: border-box;
+    border: 5px solid #0F0;
+    width: var(--card-size);
+    height: var(--card-size);
+    perspective: 1000px;
+}
+
+.card-inside {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inside {
+    transform: rotateY(90deg);
+}
+
+#play .card .inside .front {
+    position: absolute;
+    background-color: var(--color-yellow);
+    backface-visibility: hidden;
+
+    width: 100%;
+    height: 100%;
+}
+
+#play .card .inside .back {
+    position: absolute;
+
+    background-position: "center";
+    background-repeat: "no-repeat";
+    background-size: contain;
+    backface-visibility: hidden;
+    transform: rotateY(90deg);
+
+    width: 100%;
+    height: 100%;
+}
+
+#play .card .front .material-icons {
+    font-size: calc(var(--card-size) / 2);
+    width: 100%;
+    height: 100%;
+} */
+
+#play .big-icon {
+    font-size: var(--qr-size);
+    font-weight: normal;
+}
+
+#qr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    width: var(--qr-size);
+    height: var(--qr-size);
+}
+
+/** Card flip Effect **********************************************************/
+
+/** Ripple Effect *************************************************************/
+/** TODO: Figure out the calculation to make them center... **/
+.lds-ripple div {
+    position: absolute;
+    border: var(--ripple-thickness) solid var(--color-dark-blue);
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+    0% {
+        top: 40vh;
+        left: 50vw;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: calc((80vh - var(--qr-size)) / 2);
+        left: calc((100vw - var(--qr-size)) / 2);
+        width: calc(var(--qr-size) - 2 * var(--ripple-thickness));
+        height: calc(var(--qr-size) - 2 * var(--ripple-thickness));
+        opacity: 0;
+    }
+}
+
+/*******************************************************************************
+*** Information area elements *************************************************/
+
+#information {
+    display: flex;
+    align-items: center;
+
+    font-size: 5vh;
+
+    box-sizing: border-box;
+    padding: 1vh 1vw;
+    width: 100vw;
+    height: 10vh;
+}
+
+.error {
+    color: var(--color-red);
+    font-weight: 700;
+}
+
+/*******************************************************************************
+*** Player area elements ******************************************************/
+
+#players {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+
+    font-size: 2.5vh;
+    text-align: left;
+
+    box-sizing: border-box;
+    padding: 1vh 1vw;
+    height: calc(10 * var(--vh));
+}
+
+#players input {
+    font-size: 2.5vh;
+}
+
+#players span {
+    background-color: var(--color-light-blue);
+    padding: min(1vh, 1vw);
+    border-radius: min(1vh, 1vw);
+}
+
+#players .my-turn {
+    background-color: var(--color-green) !important;
+}
+
+/*******************************************************************************
+*** Extra area elements *******************************************************/
+
+#extra {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+
+    font-size: 5vh;
+
+    box-sizing: border-box;
+    padding: 1vh 1vw;
+    height: calc(10 * var(--vh));
+}
+
+#start {
+    background-color: var(--color-green);
+    font-weight: 700;
+    cursor: pointer;
+    display: none;
+    padding: min(1vh, 1vw);
+    border-radius: min(1vh, 1vw);
+}
