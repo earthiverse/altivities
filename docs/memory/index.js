@@ -149,22 +149,40 @@ USERNAME_INPUT.addEventListener("keyup", (event) => {
         USERNAME_OK.click();
     }
 });
+function isMyTurn() {
+    if (STATE.mode !== "play")
+        return false;
+    const turnPlayer = STATE.players[STATE.turn];
+    return turnPlayer == USERNAME_INPUT.value;
+}
+function changeTurn() {
+    if (STATE.mode !== "play")
+        return;
+    STATE.turn = (STATE.turn + 1) % STATE.players.length;
+}
 function updateMatch(num1, num2) {
     if (STATE.mode !== "play")
         return;
     const turnPlayer = STATE.players[STATE.turn];
     const word = STATE.cards[num1];
+    showFlip(num1);
+    showFlip(num2);
     INFORMATION.innerHTML = `<span><strong>${turnPlayer}</strong> matched ${word.en}!</span>`;
+    changeTurn();
 }
 function updateNoMatch(num1, num2) {
     if (STATE.mode !== "play")
         return;
     const turnPlayer = STATE.players[STATE.turn];
+    showFlip(num1);
+    showFlip(num2);
     INFORMATION.innerHTML = `<span><strong>${turnPlayer}</strong> didn't match any words...</span>`;
+    changeTurn();
     const flipBack = (num) => {
         const card = PLAY.children.item(num);
         const innerCard = card.firstChild;
-        innerCard.style.transform = "rotateY(360deg)";
+        innerCard.style.transform = "rotateY(0deg)";
+        delete STATE.cards[num].show;
     };
     setTimeout(() => { flipBack(num1); }, MS_BETWEEN_PLAYERS - 750);
     setTimeout(() => { flipBack(num2); }, MS_BETWEEN_PLAYERS - 500);
@@ -191,10 +209,6 @@ function updateFlip(num) {
         const firstNum = STATE.cards.indexOf(first);
         const second = flipped[1];
         const secondNum = STATE.cards.indexOf(second);
-        console.debug("first");
-        console.debug(first);
-        console.debug("second");
-        console.debug(second);
         if (first.en == second.en) {
             first.belongTo = STATE.turn;
             second.belongTo = STATE.turn;
@@ -202,15 +216,12 @@ function updateFlip(num) {
             updateMatch(firstNum, secondNum);
         }
         else {
-            delete first.show;
-            delete second.show;
             sendDataToAllPeers(["NO_MATCH", [firstNum, secondNum]]);
             updateNoMatch(firstNum, secondNum);
         }
         setTimeout(() => {
             if (STATE.mode !== "play")
                 return;
-            STATE.turn = (STATE.turn + 1) % STATE.players.length;
             sendDataToAllPeers(["STATE", STATE]);
             updateGame();
         }, MS_BETWEEN_PLAYERS);
@@ -247,8 +258,7 @@ function updateGame() {
     if (STATE.mode == "play") {
         clearElement(PLAY);
         const turnPlayer = STATE.players[STATE.turn];
-        const myTurn = turnPlayer == USERNAME_INPUT.value;
-        if (myTurn) {
+        if (isMyTurn()) {
             INFORMATION.innerHTML = "<span><strong>It's your turn!</strong></span>";
         }
         else {
@@ -259,19 +269,6 @@ function updateGame() {
             const front = document.createElement("div");
             front.innerHTML = "<span class=\"material-icons\">help</span>";
             front.classList.add("card-front");
-            if (myTurn && card.belongTo == undefined && !card.show) {
-                front.style.cursor = "pointer";
-                front.addEventListener("click", () => {
-                    if (IS_HOST) {
-                        sendDataToAllPeers(["CARD_FLIP", i]);
-                        updateFlip(i);
-                    }
-                    else {
-                        const [host] = PEERS.get("host");
-                        sendData(host, ["CARD_FLIP", i]);
-                    }
-                });
-            }
             const back = document.createElement("div");
             back.classList.add("card-back");
             const inside = document.createElement("div");
@@ -281,6 +278,22 @@ function updateGame() {
             const outside = document.createElement("div");
             outside.appendChild(inside);
             outside.classList.add("card");
+            if (isMyTurn() && card.belongTo == undefined && !card.show) {
+                inside.classList.add("card-inside-draw");
+                const handle = () => {
+                    if (IS_HOST) {
+                        if (!isMyTurn())
+                            return;
+                        updateFlip(i);
+                        front.removeEventListener("click", handle);
+                    }
+                    else {
+                        const [host] = PEERS.get("host");
+                        sendData(host, ["CARD_FLIP", i]);
+                    }
+                };
+                front.addEventListener("click", handle);
+            }
             for (const word of STATE.words) {
                 const en = Array.isArray(word.en) ? word.en[0] : word.en;
                 if (card.en !== en)
@@ -293,9 +306,6 @@ function updateGame() {
                 back.style.transform = "none";
                 inside.style.transition = "none";
             }
-            else {
-                inside.classList.add("card-inside-draw");
-            }
             PLAY.appendChild(outside);
         }
     }
@@ -304,6 +314,7 @@ function showFlip(toFlip) {
     const card = PLAY.children.item(toFlip);
     const innerCard = card.firstChild;
     innerCard.style.transform = "rotateY(180deg)";
+    STATE.cards[toFlip].show = true;
 }
 function showError(text) {
     clearElement(PLAY);
@@ -429,6 +440,17 @@ function hostGame(peer, wordlist, hostID) {
             console.debug("---------------------------------");
             switch (d[0]) {
                 case "CARD_FLIP": {
+                    if (STATE.mode !== "play")
+                        break;
+                    const [, username] = PEERS.get(conn.peer);
+                    const playerNum = STATE.players.indexOf(username);
+                    if (STATE.turn !== playerNum)
+                        break;
+                    const card = STATE.cards[d[1]];
+                    if (card.belongTo !== undefined)
+                        break;
+                    if (card.show)
+                        break;
                     updateFlip(d[1]);
                     break;
                 }

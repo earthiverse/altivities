@@ -262,24 +262,46 @@ USERNAME_INPUT.addEventListener("keyup", (event) => {
     }
 })
 
+function isMyTurn(): boolean {
+    if (STATE.mode !== "play") return false
+    const turnPlayer = STATE.players[STATE.turn]
+    return turnPlayer == USERNAME_INPUT.value
+}
+
+function changeTurn() {
+    if (STATE.mode !== "play") return
+    STATE.turn = (STATE.turn + 1) % STATE.players.length
+}
+
 function updateMatch(num1: number, num2: number) {
     if (STATE.mode !== "play") return // Wrong mode
     const turnPlayer = STATE.players[STATE.turn]
     const word = STATE.cards[num1]
 
+    // Ensure cards are shown
+    showFlip(num1)
+    showFlip(num2)
+
     INFORMATION.innerHTML = `<span><strong>${turnPlayer}</strong> matched ${word.en}!</span>`
+    changeTurn()
 }
 
 function updateNoMatch(num1: number, num2: number) {
     if (STATE.mode !== "play") return // Wrong mode
     const turnPlayer = STATE.players[STATE.turn]
 
+    // Ensure cards are shown
+    showFlip(num1)
+    showFlip(num2)
+
     INFORMATION.innerHTML = `<span><strong>${turnPlayer}</strong> didn't match any words...</span>`
+    changeTurn()
 
     const flipBack = (num) => {
         const card = PLAY.children.item(num) as HTMLDivElement
         const innerCard = card.firstChild as HTMLDivElement
-        innerCard.style.transform = "rotateY(360deg)"
+        innerCard.style.transform = "rotateY(0deg)"
+        delete STATE.cards[num].show
     }
 
     setTimeout(() => { flipBack(num1) }, MS_BETWEEN_PLAYERS - 750)
@@ -309,10 +331,6 @@ function updateFlip(num: number) {
         const firstNum = STATE.cards.indexOf(first)
         const second = flipped[1]
         const secondNum = STATE.cards.indexOf(second)
-        console.debug("first")
-        console.debug(first)
-        console.debug("second")
-        console.debug(second)
         if (first.en == second.en) {
             // Match
             first.belongTo = STATE.turn
@@ -321,8 +339,6 @@ function updateFlip(num: number) {
             updateMatch(firstNum, secondNum)
         } else {
             // No match
-            delete first.show
-            delete second.show
             sendDataToAllPeers(["NO_MATCH", [firstNum, secondNum]])
             updateNoMatch(firstNum, secondNum)
         }
@@ -331,7 +347,6 @@ function updateFlip(num: number) {
 
             // TODO: If all cards are flipped, finish the game.
 
-            STATE.turn = (STATE.turn + 1) % STATE.players.length
             sendDataToAllPeers(["STATE", STATE])
             updateGame()
         }, MS_BETWEEN_PLAYERS)
@@ -374,10 +389,9 @@ function updateGame() {
         clearElement(PLAY)
 
         const turnPlayer = STATE.players[STATE.turn]
-        const myTurn = turnPlayer == USERNAME_INPUT.value
 
         // Update information
-        if (myTurn) {
+        if (isMyTurn()) {
             INFORMATION.innerHTML = "<span><strong>It's your turn!</strong></span>"
         } else {
             INFORMATION.innerHTML = `<span>Waiting for <strong>${turnPlayer}</strong>...</span>`
@@ -390,18 +404,6 @@ function updateGame() {
             const front = document.createElement("div")
             front.innerHTML = "<span class=\"material-icons\">help</span>"
             front.classList.add("card-front")
-            if (myTurn && card.belongTo == undefined && !card.show) {
-                front.style.cursor = "pointer"
-                front.addEventListener("click", () => {
-                    if (IS_HOST) {
-                        sendDataToAllPeers(["CARD_FLIP", i])
-                        updateFlip(i)
-                    } else {
-                        const [host] = PEERS.get("host")
-                        sendData(host, ["CARD_FLIP", i])
-                    }
-                })
-            }
 
             const back = document.createElement("div")
             back.classList.add("card-back")
@@ -415,6 +417,21 @@ function updateGame() {
             outside.appendChild(inside)
             outside.classList.add("card")
 
+            if (isMyTurn() && card.belongTo == undefined && !card.show) {
+                inside.classList.add("card-inside-draw")
+                const handle = () => {
+                    if (IS_HOST) {
+                        if (!isMyTurn()) return
+                        updateFlip(i)
+                        front.removeEventListener("click", handle)
+                    } else {
+                        const [host] = PEERS.get("host")
+                        sendData(host, ["CARD_FLIP", i])
+                    }
+                }
+                front.addEventListener("click", handle)
+            }
+
             for (const word of STATE.words) {
                 const en = Array.isArray(word.en) ? word.en[0] : word.en
                 if (card.en !== en) continue
@@ -426,8 +443,6 @@ function updateGame() {
                 front.style.display = "none"
                 back.style.transform = "none"
                 inside.style.transition = "none"
-            } else {
-                inside.classList.add("card-inside-draw")
             }
 
             PLAY.appendChild(outside)
@@ -439,6 +454,7 @@ function showFlip(toFlip: number) {
     const card = PLAY.children.item(toFlip) as HTMLDivElement
     const innerCard = card.firstChild as HTMLDivElement
     innerCard.style.transform = "rotateY(180deg)"
+    STATE.cards[toFlip].show = true
 }
 
 function showError(text: string) {
@@ -593,6 +609,18 @@ function hostGame(peer: Peer, wordlist: Wordlist, hostID: string) {
             console.debug("---------------------------------")
             switch (d[0]) {
                 case "CARD_FLIP": {
+                    if (STATE.mode !== "play") break
+
+                    // Check if it's their turn
+                    const [, username] = PEERS.get(conn.peer)
+                    const playerNum = STATE.players.indexOf(username)
+                    if (STATE.turn !== playerNum) break
+
+                    // Check if it's already been drawn
+                    const card = STATE.cards[d[1]]
+                    if (card.belongTo !== undefined) break
+                    if (card.show) break
+
                     updateFlip(d[1])
                     break
                 }
