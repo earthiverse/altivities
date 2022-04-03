@@ -95,59 +95,10 @@ html, body {
 .card-back {
     border: min(0.5vh, 0.5vw) solid var(--color-yellow);
     transform: rotateY(180deg);
-    background-position: "center";
-    background-repeat: "no-repeat";
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: contain;
 }
-
-/* .card {
-    box-sizing: border-box;
-    border: 5px solid #0F0;
-    width: var(--card-size);
-    height: var(--card-size);
-    perspective: 1000px;
-}
-
-.card-inside {
-    position: relative;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    transition: transform 2s;
-    transform-style: preserve-3d;
-}
-
-.card:hover .card-inside {
-    transform: rotateY(90deg);
-}
-
-#play .card .inside .front {
-    position: absolute;
-    background-color: var(--color-yellow);
-    backface-visibility: hidden;
-
-    width: 100%;
-    height: 100%;
-}
-
-#play .card .inside .back {
-    position: absolute;
-
-    background-position: "center";
-    background-repeat: "no-repeat";
-    background-size: contain;
-    backface-visibility: hidden;
-    transform: rotateY(90deg);
-
-    width: 100%;
-    height: 100%;
-}
-
-#play .card .front .material-icons {
-    font-size: calc(var(--card-size) / 2);
-    width: 100%;
-    height: 100%;
-} */
 
 #play .big-icon {
     font-size: var(--qr-size);
