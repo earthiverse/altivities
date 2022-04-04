@@ -287,3 +287,11 @@ html, body {
     padding: min(var(--vh), 1vw);
     border-radius: min(var(--vh), 1vw);
 }
+
+#teacher {
+    background-color: var(--color-red);
+    cursor: pointer;
+    display: none;
+    padding: min(var(--vh), 1vw);
+    border-radius: min(var(--vh), 1vw);
+}

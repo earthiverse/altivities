@@ -20,6 +20,14 @@ A 3x3 bingo card generator for tablets.
 
 View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/bingo).
 
+### Memory
+
+<https://earthiverse.github.io/altivities/memory/?wordlist=../wordlists/General/colors.json>
+
+A multiplayer memory game for tablets.
+
+View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/memory).
+
 ### Parfait
 
 <https://earthiverse.github.io/altivities/parfait/>

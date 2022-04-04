@@ -193,6 +193,7 @@ async function prepareWordlist(): Promise<Wordlist> {
 *** Config ********************************************************************/
 const COLOR_WHITE = "#F9F9F9"
 const COLOR_DARK_BLUE = "#5AA9E6"
+const COLOR_RED = "#FC7B7B"
 
 const LOCAL_STORAGE_PEERJS_ID = "memory_peerjs"
 const LOCAL_STORAGE_NAME = "memory_name"
@@ -238,6 +239,7 @@ const PLAY = document.getElementById("play") as HTMLDivElement
 const PLAYERS = document.getElementById("players") as HTMLDivElement
 const QR = document.getElementById("qr") as HTMLDivElement
 const START = document.getElementById("start") as HTMLDivElement
+const TEACHER = document.getElementById("teacher") as HTMLDivElement
 const USERNAME_INPUT = document.getElementById("username_input") as HTMLInputElement
 const USERNAME_OK = document.getElementById("username_ok") as HTMLInputElement
 
@@ -587,6 +589,21 @@ function showError(text: string) {
     clearElement(PLAY)
     PLAY.innerHTML = "<span class=\"big-icon error material-icons\">error</span>"
     INFORMATION.innerHTML = `<span><span class="error">Error:</span> ${text}`
+    PLAYERS.style.display = "none"
+}
+
+function showTeacherQR() {
+    clearElement(QR)
+    const size = Math.min(window.innerWidth, window.innerHeight * 0.8)
+    const connectURL = `${window.location.href}`
+    new QRCode(QR, {
+        colorDark: COLOR_RED,
+        colorLight: COLOR_WHITE,
+        correctionLevel: QRCode.CorrectLevel.H,
+        height: size,
+        text: connectURL,
+        width: size
+    })
 }
 
 function showQR(hostID: string) {
@@ -784,11 +801,25 @@ function hostGame(peer: Peer, hostID: string) {
 }
 
 async function prepare() {
-    const wordlist = await prepareWordlist()
+    try {
+        const wordlist = await prepareWordlist()
 
-    if (IS_HOST && wordlist.length == 0) {
-        showError("No wordlist detected. Please see documentation.")
+        if (IS_HOST && wordlist.length == 0) {
+            showError("No wordlist detected. Please see documentation.")
+            return
+        }
+    } catch (e) {
+        showError("Error loading wordlist. Please see documentation.")
         return
+    }
+
+    if (IS_HOST) {
+        // Show the special teacher QR code
+        TEACHER.style.display = "block"
+        TEACHER.addEventListener("click", () => {
+            console.log("yup, clicked")
+            showTeacherQR()
+        })
     }
 
     const peer = new Peer(localStorage.getItem(LOCAL_STORAGE_PEERJS_ID), PEERJS_CONFIG)
@@ -799,6 +830,7 @@ async function prepare() {
         if (IS_HOST) {
             USERNAME_OK.addEventListener("click", () => {
                 console.debug("HOSTING!")
+                TEACHER.style.display = "none"
                 USERNAME_OK.disabled = true
                 hostGame(peer, id)
             })

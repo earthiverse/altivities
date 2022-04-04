@@ -92,6 +92,7 @@ async function prepareWordlist() {
 }
 const COLOR_WHITE = "#F9F9F9";
 const COLOR_DARK_BLUE = "#5AA9E6";
+const COLOR_RED = "#FC7B7B";
 const LOCAL_STORAGE_PEERJS_ID = "memory_peerjs";
 const LOCAL_STORAGE_NAME = "memory_name";
 const MAX_WORDS = 10;
@@ -131,6 +132,7 @@ const PLAY = document.getElementById("play");
 const PLAYERS = document.getElementById("players");
 const QR = document.getElementById("qr");
 const START = document.getElementById("start");
+const TEACHER = document.getElementById("teacher");
 const USERNAME_INPUT = document.getElementById("username_input");
 const USERNAME_OK = document.getElementById("username_ok");
 const IS_HOST = parameters.id == undefined;
@@ -426,6 +428,20 @@ function showError(text) {
     clearElement(PLAY);
     PLAY.innerHTML = "<span class=\"big-icon error material-icons\">error</span>";
     INFORMATION.innerHTML = `<span><span class="error">Error:</span> ${text}`;
+    PLAYERS.style.display = "none";
+}
+function showTeacherQR() {
+    clearElement(QR);
+    const size = Math.min(window.innerWidth, window.innerHeight * 0.8);
+    const connectURL = `${window.location.href}`;
+    new QRCode(QR, {
+        colorDark: COLOR_RED,
+        colorLight: COLOR_WHITE,
+        correctionLevel: QRCode.CorrectLevel.H,
+        height: size,
+        text: connectURL,
+        width: size
+    });
 }
 function showQR(hostID) {
     clearElement(QR);
@@ -588,10 +604,23 @@ function hostGame(peer, hostID) {
     });
 }
 async function prepare() {
-    const wordlist = await prepareWordlist();
-    if (IS_HOST && wordlist.length == 0) {
-        showError("No wordlist detected. Please see documentation.");
+    try {
+        const wordlist = await prepareWordlist();
+        if (IS_HOST && wordlist.length == 0) {
+            showError("No wordlist detected. Please see documentation.");
+            return;
+        }
+    }
+    catch (e) {
+        showError("Error loading wordlist. Please see documentation.");
         return;
+    }
+    if (IS_HOST) {
+        TEACHER.style.display = "block";
+        TEACHER.addEventListener("click", () => {
+            console.log("yup, clicked");
+            showTeacherQR();
+        });
     }
     const peer = new Peer(localStorage.getItem(LOCAL_STORAGE_PEERJS_ID), PEERJS_CONFIG);
     peer.on("open", (id) => {
@@ -600,6 +629,7 @@ async function prepare() {
         if (IS_HOST) {
             USERNAME_OK.addEventListener("click", () => {
                 console.debug("HOSTING!");
+                TEACHER.style.display = "none";
                 USERNAME_OK.disabled = true;
                 hostGame(peer, id);
             });
