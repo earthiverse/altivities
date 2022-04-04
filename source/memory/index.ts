@@ -775,12 +775,25 @@ function hostGame(peer: Peer, hostID: string) {
                     break
                 }
                 case "NEW_NAME": {
-                    const username = d[1]
-                    STATE.players.push(username)
-                    PEERS.set(conn.peer, [conn, username])
-                    sendDataToAllPeers(["STATE", STATE])
-                    updatePlayers()
-                    updateStart()
+                    if (STATE.mode == "lobby") {
+
+                        const username = d[1]
+                        STATE.players.push(username)
+                        PEERS.set(conn.peer, [conn, username])
+                        sendDataToAllPeers(["STATE", STATE])
+                        updatePlayers()
+                        updateStart()
+                    } else {
+                        if (!PEERS.has(conn.peer)) {
+                            conn.close()
+                            return // They weren't here when the game started
+                        }
+
+                        // They reconnected
+                        const username = d[1]
+                        PEERS.set(conn.peer, [conn, username])
+                        sendDataToAllPeers(["STATE", STATE])
+                    }
                 }
                     break
                 default: {
