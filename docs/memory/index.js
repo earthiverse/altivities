@@ -155,29 +155,38 @@ function isMyTurn() {
     const turnPlayer = STATE.players[STATE.turn];
     return turnPlayer == USERNAME_INPUT.value;
 }
-function changeTurn() {
+function isFinished() {
     if (STATE.mode !== "play")
-        return;
-    STATE.turn = (STATE.turn + 1) % STATE.players.length;
+        return false;
+    for (const card of STATE.cards) {
+        if (card.belongTo == undefined)
+            return false;
+    }
+    return true;
 }
-function updateMatch(num1, num2) {
+function changeTurn(last) {
     if (STATE.mode !== "play")
         return;
-    const turnPlayer = STATE.players[STATE.turn];
+    STATE.turn = (last + 1) % STATE.players.length;
+}
+function updateMatch(player, num1, num2) {
+    if (STATE.mode !== "play")
+        return;
+    const turnPlayer = STATE.players[player];
     const word = STATE.cards[num1];
     showFlip(num1);
     showFlip(num2);
     INFORMATION.innerHTML = `<span><strong>${turnPlayer}</strong> matched ${word.en}!</span>`;
-    changeTurn();
+    changeTurn(player);
 }
-function updateNoMatch(num1, num2) {
+function updateNoMatch(player, num1, num2) {
     if (STATE.mode !== "play")
         return;
-    const turnPlayer = STATE.players[STATE.turn];
+    const turnPlayer = STATE.players[player];
     showFlip(num1);
     showFlip(num2);
     INFORMATION.innerHTML = `<span><strong>${turnPlayer}</strong> didn't match any words...</span>`;
-    changeTurn();
+    changeTurn(player);
     const flipBack = (num) => {
         const card = PLAY.children.item(num);
         const innerCard = card.firstChild;
@@ -212,16 +221,33 @@ function updateFlip(num) {
         if (first.en == second.en) {
             first.belongTo = STATE.turn;
             second.belongTo = STATE.turn;
-            sendDataToAllPeers(["MATCH", [firstNum, secondNum]]);
-            updateMatch(firstNum, secondNum);
+            sendDataToAllPeers(["MATCH", [STATE.turn, firstNum, secondNum]]);
+            updateMatch(STATE.turn, firstNum, secondNum);
         }
         else {
-            sendDataToAllPeers(["NO_MATCH", [firstNum, secondNum]]);
-            updateNoMatch(firstNum, secondNum);
+            sendDataToAllPeers(["NO_MATCH", [STATE.turn, firstNum, secondNum]]);
+            updateNoMatch(STATE.turn, firstNum, secondNum);
         }
         setTimeout(() => {
             if (STATE.mode !== "play")
                 return;
+            if (isFinished()) {
+                STATE.cards.sort((a, b) => {
+                    if (a.belongTo !== b.belongTo)
+                        return a.belongTo - b.belongTo;
+                    if (a.en < b.en)
+                        return -1;
+                    if (a.en > b.en)
+                        return 1;
+                    return 0;
+                });
+                STATE = {
+                    cards: STATE.cards,
+                    mode: "results",
+                    players: STATE.players,
+                    words: STATE.words
+                };
+            }
             sendDataToAllPeers(["STATE", STATE]);
             updateGame();
         }, MS_BETWEEN_PLAYERS);
@@ -255,58 +281,132 @@ function updateStart() {
 }
 function updateGame() {
     updatePlayers();
-    if (STATE.mode == "play") {
-        clearElement(PLAY);
-        const turnPlayer = STATE.players[STATE.turn];
-        if (isMyTurn()) {
-            INFORMATION.innerHTML = "<span><strong>It's your turn!</strong></span>";
+    const createCard = (i) => {
+        const card = STATE.cards[i];
+        const front = document.createElement("div");
+        front.innerHTML = "<span class=\"material-icons\">help</span>";
+        front.classList.add("card-front");
+        const back = document.createElement("div");
+        back.classList.add("card-back");
+        const inside = document.createElement("div");
+        inside.classList.add("card-inside");
+        inside.appendChild(front);
+        inside.appendChild(back);
+        const outside = document.createElement("div");
+        outside.appendChild(inside);
+        outside.classList.add("card");
+        if (isMyTurn() && card.belongTo == undefined && !card.show) {
+            inside.classList.add("card-inside-draw");
+            const handle = () => {
+                if (IS_HOST) {
+                    if (!isMyTurn())
+                        return;
+                    updateFlip(i);
+                    front.removeEventListener("click", handle);
+                }
+                else {
+                    const [host] = PEERS.get("host");
+                    sendData(host, ["CARD_FLIP", i]);
+                }
+            };
+            front.addEventListener("click", handle);
         }
-        else {
-            INFORMATION.innerHTML = `<span>Waiting for <strong>${turnPlayer}</strong>...</span>`;
+        for (const word of STATE.words) {
+            const en = Array.isArray(word.en) ? word.en[0] : word.en;
+            if (card.en !== en)
+                continue;
+            back.style.backgroundImage = `url('${word.image}')`;
+            const wordSpan = document.createElement("span");
+            wordSpan.innerText = en;
+            back.appendChild(wordSpan);
+            break;
         }
-        for (let i = 0; i < STATE.cards.length; i++) {
-            const card = STATE.cards[i];
-            const front = document.createElement("div");
-            front.innerHTML = "<span class=\"material-icons\">help</span>";
-            front.classList.add("card-front");
-            const back = document.createElement("div");
-            back.classList.add("card-back");
-            const inside = document.createElement("div");
-            inside.classList.add("card-inside");
-            inside.appendChild(front);
-            inside.appendChild(back);
-            const outside = document.createElement("div");
-            outside.appendChild(inside);
-            outside.classList.add("card");
-            if (isMyTurn() && card.belongTo == undefined && !card.show) {
-                inside.classList.add("card-inside-draw");
-                const handle = () => {
-                    if (IS_HOST) {
-                        if (!isMyTurn())
-                            return;
-                        updateFlip(i);
-                        front.removeEventListener("click", handle);
+        if (card.belongTo !== undefined || card.show) {
+            front.style.display = "none";
+            back.style.transform = "none";
+            inside.style.transition = "none";
+        }
+        return outside;
+    };
+    switch (STATE.mode) {
+        case "play": {
+            clearElement(PLAY);
+            const turnPlayer = STATE.players[STATE.turn];
+            if (isMyTurn()) {
+                INFORMATION.innerHTML = "<span><strong>It's your turn!</strong></span>";
+            }
+            else {
+                INFORMATION.innerHTML = `<span>Waiting for <strong>${turnPlayer}</strong>...</span>`;
+            }
+            for (let i = 0; i < STATE.cards.length; i++) {
+                const outside = createCard(i);
+                PLAY.appendChild(outside);
+            }
+            break;
+        }
+        case "results": {
+            clearElement(PLAY);
+            const results = document.createElement("div");
+            results.id = "results";
+            PLAY.appendChild(results);
+            const totals = new Map();
+            for (const card of STATE.cards) {
+                totals.set(card.belongTo, (totals.get(card.belongTo) + 1) || 1);
+            }
+            let highestCount = Number.MIN_SAFE_INTEGER;
+            let highestPlayers;
+            for (let i = 0; i < STATE.players.length; i++) {
+                const name = STATE.players[i];
+                const count = totals.get(i) / 2;
+                if (count > highestCount) {
+                    highestCount = count;
+                    highestPlayers = [name];
+                }
+                else if (count == highestCount) {
+                    highestPlayers.push(name);
+                }
+                const playerDiv = document.createElement("div");
+                playerDiv.classList.add("results-player");
+                playerDiv.style.order = count.toString();
+                results.appendChild(playerDiv);
+                const nameDiv = document.createElement("div");
+                nameDiv.classList.add("results-name");
+                playerDiv.appendChild(nameDiv);
+                nameDiv.innerText = `${name}: ${count}`;
+                const cardsDiv = document.createElement("div");
+                cardsDiv.classList.add("results-cards");
+                playerDiv.appendChild(cardsDiv);
+                for (let j = 0; j < STATE.cards.length; j += 2) {
+                    const card = STATE.cards[j];
+                    if (card.belongTo == i) {
+                        const outside = createCard(j);
+                        cardsDiv.appendChild(outside);
                     }
-                    else {
-                        const [host] = PEERS.get("host");
-                        sendData(host, ["CARD_FLIP", i]);
-                    }
-                };
-                front.addEventListener("click", handle);
+                }
             }
-            for (const word of STATE.words) {
-                const en = Array.isArray(word.en) ? word.en[0] : word.en;
-                if (card.en !== en)
-                    continue;
-                back.style.backgroundImage = `url('${word.image}')`;
-                break;
+            if (highestPlayers.length == 1) {
+                INFORMATION.innerHTML = `<span>Congratulations, <strong>${highestPlayers[0]}</strong>!</span>`;
             }
-            if (card.belongTo !== undefined || card.show) {
-                front.style.display = "none";
-                back.style.transform = "none";
-                inside.style.transition = "none";
+            else if (highestPlayers.length == 2) {
+                INFORMATION.innerHTML = `<span>Congratulation, <strong>${highestPlayers[0]}</strong> and <strong>${highestPlayers[1]}</strong>!</span>`;
             }
-            PLAY.appendChild(outside);
+            else {
+                let players = "";
+                for (let i = 0; i < highestPlayers.length - 1; i++) {
+                    players += `<strong>${highestPlayers[i]}</strong>, `;
+                }
+                players += `and <strong>${highestPlayers[highestPlayers.length - 1]}</strong>`;
+                INFORMATION.innerHTML = `<span>Congratulations ${players}!</span>`;
+            }
+            for (const name of highestPlayers) {
+                const index = STATE.players.indexOf(name);
+                console.debug(`Winner index: ${index}`);
+                const winnerSpan = PLAYERS.childNodes.item(index);
+                console.debug("winnerSpan");
+                console.debug(winnerSpan);
+                winnerSpan.classList.add("winner");
+            }
+            break;
         }
     }
 }
@@ -357,20 +457,17 @@ function joinGame(peer, hostID) {
         sendData(conn, ["NEW_NAME", USERNAME_INPUT.value]);
     });
     conn.on("data", (d) => {
-        console.debug("DEBUG: Data Received (JOIN) -----");
-        console.debug(d);
-        console.debug("---------------------------------");
         switch (d[0]) {
             case "CARD_FLIP": {
                 showFlip(d[1]);
                 break;
             }
             case "MATCH": {
-                updateMatch(d[1][0], d[1][1]);
+                updateMatch(d[1][0], d[1][1], d[1][2]);
                 break;
             }
             case "NO_MATCH": {
-                updateNoMatch(d[1][0], d[1][1]);
+                updateNoMatch(d[1][0], d[1][1], d[1][2]);
                 break;
             }
             case "STATE": {
@@ -380,15 +477,12 @@ function joinGame(peer, hostID) {
                         INFORMATION.innerHTML = `<span>Waiting for <strong>${STATE.players[0]} (HOST)</strong> to start...</span>`;
                         break;
                     }
-                    case "play": {
+                    case "play":
+                    case "results": {
                         updateGame();
                         break;
                     }
-                    default: {
-                        break;
-                    }
                 }
-                updatePlayers();
                 break;
             }
             default: {

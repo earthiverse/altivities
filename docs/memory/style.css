@@ -7,8 +7,8 @@
     --color-green: #a1ef7a;
     --color-red: #fc7b7b;
     --play-padding-x: 2vw;
-    --play-padding-y: 2vh;
-    --card-size: min(18vw, 18vh);
+    --play-padding-y: calc(2 * var(--vh));
+    --card-size: min(18vw, 18 * var(--vh));
     --qr-size: min(100vw, 80 * var(--vh));
     --ripple-size: calc(var(--qr-size) / 2 + 2 * var(--ripple-thickness));
     --ripple-thickness: calc(var(--qr-size) / 20);
@@ -77,7 +77,7 @@ html, body {
     position: absolute;
     width: 100%;
     height: 100%;
-    /* -webkit-backface-visibility: hidden; */
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -88,66 +88,40 @@ html, body {
 
     border: min(0.5vh, 0.5vw) solid var(--color-dark-blue);
     background-color: var(--color-light-blue);
-    font-size: calc(var(--card-size) / 2);
     color: black;
 }
 
-.card-back {
-    border: min(0.5vh, 0.5vw) solid var(--color-yellow);
-    transform: rotateY(180deg);
-    background-position: "center";
-    background-repeat: "no-repeat";
-    background-size: contain;
-}
-
-/* .card {
-    box-sizing: border-box;
-    border: 5px solid #0F0;
-    width: var(--card-size);
-    height: var(--card-size);
-    perspective: 1000px;
-}
-
-.card-inside {
-    position: relative;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    transition: transform 2s;
-    transform-style: preserve-3d;
-}
-
-.card:hover .card-inside {
-    transform: rotateY(90deg);
-}
-
-#play .card .inside .front {
-    position: absolute;
-    background-color: var(--color-yellow);
-    backface-visibility: hidden;
-
-    width: 100%;
-    height: 100%;
-}
-
-#play .card .inside .back {
-    position: absolute;
-
-    background-position: "center";
-    background-repeat: "no-repeat";
-    background-size: contain;
-    backface-visibility: hidden;
-    transform: rotateY(90deg);
-
-    width: 100%;
-    height: 100%;
-}
-
-#play .card .front .material-icons {
+.card-front span {
+    color: var(--color-dark-blue);
     font-size: calc(var(--card-size) / 2);
-    width: 100%;
-    height: 100%;
-} */
+}
+
+.card-back {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+
+    border: min(var(--vh) * 0.5, 0.5vw) solid var(--color-yellow);
+    transform: rotateY(180deg);
+    background-color: var(--color-white);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: min(var(--vh) * 2.5, 2.5vw);
+
+    box-sizing: border-box;
+    padding: min(0.5 * var(--vh), 0.5vw);
+    
+    color:#000;
+    text-align: center;
+    -webkit-text-fill-color:#000;
+	text-shadow:
+        -2px -2px 0 #fff,  
+        2px -2px 0 #fff,
+        -2px 2px 0 #fff,
+        2px 2px 0 #fff;
+}
 
 #play .big-icon {
     font-size: var(--qr-size);
@@ -162,6 +136,35 @@ html, body {
     box-sizing: border-box;
     width: var(--qr-size);
     height: var(--qr-size);
+}
+
+#results {
+    display: flex;
+    flex-direction: column-reverse; /** Reversed so we can order by points, and the player with the most points will be at the top **/
+    justify-content: center;
+    align-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.results-player {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.results-name {
+    font-size: calc(5 * var(--vh));
+    font-weight: 700;
+    width: 100%;
+}
+
+.results-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+    width: 100%;
 }
 
 /** Card flip Effect **********************************************************/
@@ -182,7 +185,7 @@ html, body {
 
 @keyframes lds-ripple {
     0% {
-        top: 40vh;
+        top: calc(40 * var(--vh));
         left: 50vw;
         width: 0;
         height: 0;
@@ -190,7 +193,7 @@ html, body {
     }
 
     100% {
-        top: calc((80vh - var(--qr-size)) / 2);
+        top: calc((80 * var(--vh) - var(--qr-size)) / 2);
         left: calc((100vw - var(--qr-size)) / 2);
         width: calc(var(--qr-size) - 2 * var(--ripple-thickness));
         height: calc(var(--qr-size) - 2 * var(--ripple-thickness));
@@ -205,12 +208,12 @@ html, body {
     display: flex;
     align-items: center;
 
-    font-size: 5vh;
+    font-size: calc(5 * var(--vh));
 
     box-sizing: border-box;
-    padding: 1vh 1vw;
+    padding: calc(1 * var(--vh)) 1vw;
     width: 100vw;
-    height: 10vh;
+    height: calc(10 * var(--vh));
 }
 
 .error {
@@ -226,26 +229,30 @@ html, body {
     align-items: center;
     gap: 1vw;
 
-    font-size: 2.5vh;
+    font-size: calc(2.5 * var(--vh));
     text-align: left;
 
     box-sizing: border-box;
-    padding: 1vh 1vw;
+    padding: var(--vh) 1vw;
     height: calc(10 * var(--vh));
 }
 
 #players input {
-    font-size: 2.5vh;
+    font-size: calc(2.5 * var(--vh));
 }
 
 #players span {
     background-color: var(--color-light-blue);
-    padding: min(1vh, 1vw);
-    border-radius: min(1vh, 1vw);
+    padding: min(1 * var(--vh), 1vw);
+    border-radius: min(1 * var(--vh), 1vw);
 }
 
 #players .my-turn {
     background-color: var(--color-green) !important;
+}
+
+#players .winner {
+    background-color: var(--color-yellow) !important;
 }
 
 /*******************************************************************************
@@ -256,10 +263,10 @@ html, body {
     align-items: center;
     gap: 1vw;
 
-    font-size: 5vh;
+    font-size: calc(5 * var(--vh));
 
     box-sizing: border-box;
-    padding: 1vh 1vw;
+    padding: var(--vh) 1vw;
     height: calc(10 * var(--vh));
 }
 
@@ -268,6 +275,6 @@ html, body {
     font-weight: 700;
     cursor: pointer;
     display: none;
-    padding: min(1vh, 1vw);
-    border-radius: min(1vh, 1vw);
+    padding: min(var(--vh), 1vw);
+    border-radius: min(var(--vh), 1vw);
 }

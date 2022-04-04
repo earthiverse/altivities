@@ -1,6 +1,9 @@
 
 /*******************************************************************************
 *** Types *********************************************************************/
+
+import { finished } from "stream"
+
 // Wordlist
 export type Languages =
     | "en"
@@ -68,9 +71,9 @@ export type State = ({
 }
 export type Data =
     | ["CARD_FLIP", number]
-    | ["MATCH", [number, number]]
+    | ["MATCH", [number, number, number]]
     | ["NEW_NAME", string]
-    | ["NO_MATCH", [number, number]]
+    | ["NO_MATCH", [number, number, number]]
     | ["STATE", State]
 
 /*******************************************************************************
@@ -268,14 +271,22 @@ function isMyTurn(): boolean {
     return turnPlayer == USERNAME_INPUT.value
 }
 
-function changeTurn() {
-    if (STATE.mode !== "play") return
-    STATE.turn = (STATE.turn + 1) % STATE.players.length
+function isFinished(): boolean {
+    if (STATE.mode !== "play") return false
+    for (const card of STATE.cards) {
+        if (card.belongTo == undefined) return false
+    }
+    return true
 }
 
-function updateMatch(num1: number, num2: number) {
+function changeTurn(last: number) {
+    if (STATE.mode !== "play") return
+    STATE.turn = (last + 1) % STATE.players.length
+}
+
+function updateMatch(player: number, num1: number, num2: number) {
     if (STATE.mode !== "play") return // Wrong mode
-    const turnPlayer = STATE.players[STATE.turn]
+    const turnPlayer = STATE.players[player]
     const word = STATE.cards[num1]
 
     // Ensure cards are shown
@@ -283,19 +294,19 @@ function updateMatch(num1: number, num2: number) {
     showFlip(num2)
 
     INFORMATION.innerHTML = `<span><strong>${turnPlayer}</strong> matched ${word.en}!</span>`
-    changeTurn()
+    changeTurn(player)
 }
 
-function updateNoMatch(num1: number, num2: number) {
+function updateNoMatch(player: number, num1: number, num2: number) {
     if (STATE.mode !== "play") return // Wrong mode
-    const turnPlayer = STATE.players[STATE.turn]
+    const turnPlayer = STATE.players[player]
 
     // Ensure cards are shown
     showFlip(num1)
     showFlip(num2)
 
     INFORMATION.innerHTML = `<span><strong>${turnPlayer}</strong> didn't match any words...</span>`
-    changeTurn()
+    changeTurn(player)
 
     const flipBack = (num) => {
         const card = PLAY.children.item(num) as HTMLDivElement
@@ -335,17 +346,35 @@ function updateFlip(num: number) {
             // Match
             first.belongTo = STATE.turn
             second.belongTo = STATE.turn
-            sendDataToAllPeers(["MATCH", [firstNum, secondNum]])
-            updateMatch(firstNum, secondNum)
+            sendDataToAllPeers(["MATCH", [STATE.turn, firstNum, secondNum]])
+            updateMatch(STATE.turn, firstNum, secondNum)
         } else {
             // No match
-            sendDataToAllPeers(["NO_MATCH", [firstNum, secondNum]])
-            updateNoMatch(firstNum, secondNum)
+            sendDataToAllPeers(["NO_MATCH", [STATE.turn, firstNum, secondNum]])
+            updateNoMatch(STATE.turn, firstNum, secondNum)
         }
         setTimeout(() => {
             if (STATE.mode !== "play") return
 
             // TODO: If all cards are flipped, finish the game.
+            if (isFinished()) {
+                STATE.cards.sort((a, b) => {
+                    // Sort by owner first
+                    if (a.belongTo !== b.belongTo) return a.belongTo - b.belongTo
+
+                    // Sort alphabetically second
+                    if (a.en < b.en) return -1
+                    if (a.en > b.en) return 1
+                    return 0
+                })
+
+                STATE = {
+                    cards: STATE.cards,
+                    mode: "results",
+                    players: STATE.players,
+                    words: STATE.words
+                }
+            }
 
             sendDataToAllPeers(["STATE", STATE])
             updateGame()
@@ -385,67 +414,156 @@ function updateStart() {
 function updateGame() {
     updatePlayers()
 
-    if (STATE.mode == "play") {
-        clearElement(PLAY)
+    const createCard = (i: number): HTMLDivElement => {
+        const card = STATE.cards[i]
 
-        const turnPlayer = STATE.players[STATE.turn]
+        const front = document.createElement("div")
+        front.innerHTML = "<span class=\"material-icons\">help</span>"
+        front.classList.add("card-front")
 
-        // Update information
-        if (isMyTurn()) {
-            INFORMATION.innerHTML = "<span><strong>It's your turn!</strong></span>"
-        } else {
-            INFORMATION.innerHTML = `<span>Waiting for <strong>${turnPlayer}</strong>...</span>`
+        const back = document.createElement("div")
+        back.classList.add("card-back")
+
+        const inside = document.createElement("div")
+        inside.classList.add("card-inside")
+        inside.appendChild(front)
+        inside.appendChild(back)
+
+        const outside = document.createElement("div")
+        outside.appendChild(inside)
+        outside.classList.add("card")
+
+        if (isMyTurn() && card.belongTo == undefined && !card.show) {
+            inside.classList.add("card-inside-draw")
+            const handle = () => {
+                if (IS_HOST) {
+                    if (!isMyTurn()) return
+                    updateFlip(i)
+                    front.removeEventListener("click", handle)
+                } else {
+                    const [host] = PEERS.get("host")
+                    sendData(host, ["CARD_FLIP", i])
+                }
+            }
+            front.addEventListener("click", handle)
         }
 
-        // Update cards
-        for (let i = 0; i < STATE.cards.length; i++) {
-            const card = STATE.cards[i]
+        for (const word of STATE.words) {
+            const en = Array.isArray(word.en) ? word.en[0] : word.en
+            if (card.en !== en) continue
+            back.style.backgroundImage = `url('${word.image}')`
 
-            const front = document.createElement("div")
-            front.innerHTML = "<span class=\"material-icons\">help</span>"
-            front.classList.add("card-front")
+            const wordSpan = document.createElement("span")
+            wordSpan.innerText = en
+            back.appendChild(wordSpan)
 
-            const back = document.createElement("div")
-            back.classList.add("card-back")
+            break
+        }
 
-            const inside = document.createElement("div")
-            inside.classList.add("card-inside")
-            inside.appendChild(front)
-            inside.appendChild(back)
+        if (card.belongTo !== undefined || card.show) {
+            front.style.display = "none"
+            back.style.transform = "none"
+            inside.style.transition = "none"
+        }
 
-            const outside = document.createElement("div")
-            outside.appendChild(inside)
-            outside.classList.add("card")
+        return outside
+    }
 
-            if (isMyTurn() && card.belongTo == undefined && !card.show) {
-                inside.classList.add("card-inside-draw")
-                const handle = () => {
-                    if (IS_HOST) {
-                        if (!isMyTurn()) return
-                        updateFlip(i)
-                        front.removeEventListener("click", handle)
-                    } else {
-                        const [host] = PEERS.get("host")
-                        sendData(host, ["CARD_FLIP", i])
+    switch (STATE.mode) {
+        case "play": {
+            clearElement(PLAY)
+
+            const turnPlayer = STATE.players[STATE.turn]
+
+            // Update information
+            if (isMyTurn()) {
+                INFORMATION.innerHTML = "<span><strong>It's your turn!</strong></span>"
+            } else {
+                INFORMATION.innerHTML = `<span>Waiting for <strong>${turnPlayer}</strong>...</span>`
+            }
+
+            // Update cards
+            for (let i = 0; i < STATE.cards.length; i++) {
+                const outside = createCard(i)
+                PLAY.appendChild(outside)
+            }
+            break
+        }
+        case "results": {
+            clearElement(PLAY)
+
+            const results = document.createElement("div")
+            results.id = "results"
+            PLAY.appendChild(results)
+
+            // Count the totals
+            const totals = new Map<number, number>()
+            for (const card of STATE.cards) {
+                totals.set(card.belongTo, (totals.get(card.belongTo) + 1) || 1)
+            }
+
+            let highestCount = Number.MIN_SAFE_INTEGER
+            let highestPlayers: string[]
+            for (let i = 0; i < STATE.players.length; i++) {
+                const name = STATE.players[i]
+                const count = totals.get(i) / 2
+
+                if (count > highestCount) {
+                    highestCount = count
+                    highestPlayers = [name]
+                } else if (count == highestCount) {
+                    highestPlayers.push(name)
+                }
+
+                const playerDiv = document.createElement("div")
+                playerDiv.classList.add("results-player")
+                playerDiv.style.order = count.toString()
+                results.appendChild(playerDiv)
+
+                // Add player name and count
+                const nameDiv = document.createElement("div")
+                nameDiv.classList.add("results-name")
+                playerDiv.appendChild(nameDiv)
+                nameDiv.innerText = `${name}: ${count}`
+
+                // Add cards that they own
+                const cardsDiv = document.createElement("div")
+                cardsDiv.classList.add("results-cards")
+                playerDiv.appendChild(cardsDiv)
+                for (let j = 0; j < STATE.cards.length; j += 2) {
+                    const card = STATE.cards[j]
+                    if (card.belongTo == i) {
+                        const outside = createCard(j)
+                        cardsDiv.appendChild(outside)
                     }
                 }
-                front.addEventListener("click", handle)
             }
 
-            for (const word of STATE.words) {
-                const en = Array.isArray(word.en) ? word.en[0] : word.en
-                if (card.en !== en) continue
-                back.style.backgroundImage = `url('${word.image}')`
-                break
+            // Update information for the winner(s)
+            if (highestPlayers.length == 1) {
+                INFORMATION.innerHTML = `<span>Congratulations, <strong>${highestPlayers[0]}</strong>!</span>`
+            } else if (highestPlayers.length == 2) {
+                INFORMATION.innerHTML = `<span>Congratulation, <strong>${highestPlayers[0]}</strong> and <strong>${highestPlayers[1]}</strong>!</span>`
+            } else {
+                let players = ""
+                for (let i = 0; i < highestPlayers.length - 1; i++) {
+                    players += `<strong>${highestPlayers[i]}</strong>, `
+                }
+                players += `and <strong>${highestPlayers[highestPlayers.length - 1]}</strong>`
+                INFORMATION.innerHTML = `<span>Congratulations ${players}!</span>`
             }
 
-            if (card.belongTo !== undefined || card.show) {
-                front.style.display = "none"
-                back.style.transform = "none"
-                inside.style.transition = "none"
+            // Highlight the winner(s)
+            for (const name of highestPlayers) {
+                const index = STATE.players.indexOf(name)
+                console.debug(`Winner index: ${index}`)
+                const winnerSpan = PLAYERS.childNodes.item(index) as HTMLSpanElement
+                console.debug("winnerSpan")
+                console.debug(winnerSpan)
+                winnerSpan.classList.add("winner")
             }
 
-            PLAY.appendChild(outside)
+            break
         }
     }
 }
@@ -512,20 +630,17 @@ function joinGame(peer: Peer, hostID: string) {
 
     // Handle host & data
     conn.on("data", (d: Data) => {
-        console.debug("DEBUG: Data Received (JOIN) -----")
-        console.debug(d)
-        console.debug("---------------------------------")
         switch (d[0]) {
             case "CARD_FLIP": {
                 showFlip(d[1])
                 break
             }
             case "MATCH": {
-                updateMatch(d[1][0], d[1][1])
+                updateMatch(d[1][0], d[1][1], d[1][2])
                 break
             }
             case "NO_MATCH": {
-                updateNoMatch(d[1][0], d[1][1])
+                updateNoMatch(d[1][0], d[1][1], d[1][2])
                 break
             }
             case "STATE": {
@@ -535,15 +650,12 @@ function joinGame(peer: Peer, hostID: string) {
                         INFORMATION.innerHTML = `<span>Waiting for <strong>${STATE.players[0]} (HOST)</strong> to start...</span>`
                         break
                     }
-                    case "play": {
+                    case "play":
+                    case "results": {
                         updateGame()
                         break
                     }
-                    default: {
-                        break
-                    }
                 }
-                updatePlayers()
                 break
             }
             default: {
