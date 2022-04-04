@@ -403,10 +403,7 @@ function updateGame() {
             }
             for (const name of highestPlayers) {
                 const index = STATE.players.indexOf(name);
-                console.debug(`Winner index: ${index}`);
                 const winnerSpan = PLAYERS.childNodes.item(index);
-                console.debug("winnerSpan");
-                console.debug(winnerSpan);
                 winnerSpan.classList.add("winner");
             }
             if (IS_HOST) {
@@ -564,10 +561,6 @@ function hostGame(peer, hostID) {
             }
         });
         conn.on("data", (d) => {
-            console.debug(`peer: ${conn.peer}`);
-            console.debug("DEBUG: Data Received (HOST) -----");
-            console.debug(d);
-            console.debug("---------------------------------");
             switch (d[0]) {
                 case "CARD_FLIP": {
                     if (STATE.mode !== "play")
@@ -618,7 +611,6 @@ async function prepare() {
     if (IS_HOST) {
         TEACHER.style.display = "block";
         TEACHER.addEventListener("click", () => {
-            console.log("yup, clicked");
             showTeacherQR();
         });
     }
@@ -628,7 +620,6 @@ async function prepare() {
         USERNAME_OK.disabled = false;
         if (IS_HOST) {
             USERNAME_OK.addEventListener("click", () => {
-                console.debug("HOSTING!");
                 TEACHER.style.display = "none";
                 USERNAME_OK.disabled = true;
                 hostGame(peer, id);
@@ -636,7 +627,6 @@ async function prepare() {
         }
         else {
             USERNAME_OK.addEventListener("click", () => {
-                console.debug("JOINING!");
                 USERNAME_OK.disabled = true;
                 joinGame(peer, parameters.id);
             });
