@@ -48,7 +48,7 @@ View the documentation [here](https://github.com/earthiverse/altivities/tree/mai
 
 **NOTE: This game is a work in progress. There is no currently no documentation. The game may change a lot.**
 
-<https://earthiverse.github.io/altivities/vocabrpg/>
+<https://earthiverse.github.io/altivities/vocab_rpg/>
 
 An RPG-like game to practice spelling and vocabulary.
 

@@ -8,11 +8,11 @@ Players can tap on the cards to flip them over. If they match, they get one poin
 
 ## Setup
 
-1. Choose a wordlist from below, or customize your URL and load the page. Do not enter a username.
+1. Choose a wordlist from below, or customize your URL and load the page. **Do not enter a username.**
 2. Have each group choose one host (group leader).
 3. Click on the QR button in the bottom right, and get hosts to scan the **red QR code** that displays.
 4. Have the hosts enter their username.
-5. Have the remaining players scan their host's **blue QR code**.
+5. Have the remaining players scan their host's **blue QR code**. **NOTE**: Hosts can click on the QR code to get a sharable link, too.
 
 ## Wordlists
 
