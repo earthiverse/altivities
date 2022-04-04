@@ -377,6 +377,7 @@ class FightScene extends Phaser.Scene {
     private characterObject: CharacterSprite
     private menuObject: Phaser.GameObjects.DOMElement
     private monsterObject: Phaser.GameObjects.Sprite
+    private numMistakes = 0
     private HPObject: Phaser.GameObjects.Graphics
     private wordObject: Phaser.GameObjects.DOMElement
 
@@ -491,6 +492,14 @@ class FightScene extends Phaser.Scene {
             }
 
             if (!correct) {
+                // Increment the number of mistakes
+                this.numMistakes += 1
+
+                // Show hints based on the number of mistakes
+                const answer = Array.isArray(this.word.en) ? this.word.en[0] : this.word.en
+                answerField.placeholder = answer.substring(0, this.numMistakes ** 2)
+                answerField.value = ""
+
                 // Add attack animation
                 this.add.tween({
                     duration: 250,
@@ -561,6 +570,7 @@ class FightScene extends Phaser.Scene {
             // Get a new word when the attack animation finishes
             this.characterObject.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
                 answerField.value = ""
+                answerField.placeholder = "Type your answer here!"
                 this.changeCurrentWordByIndex()
             })
         }
@@ -606,6 +616,7 @@ class FightScene extends Phaser.Scene {
 
     private changeCurrentWordByIndex(next = Phaser.Math.Between(0, this.words.length - 1)) {
         this.word = this.words[next]
+        this.numMistakes = 0
 
         let display: string
         if (Array.isArray(this.word.ja)) {
@@ -644,7 +655,6 @@ class FightScene extends Phaser.Scene {
         if (this.characterHP <= 0) {
             // We died to the monster
             console.log("we died to the monster")
-            // TODO: monster attack animation
             this.characterObject.changeXP(-1)
             this.characterObject.save()
             return
@@ -653,7 +663,6 @@ class FightScene extends Phaser.Scene {
         if (this.monsterHP < this.monster.hp || this.characterHP < this.characterObject.hp) {
             // We left midway through the battle
             console.log("we left midway")
-            // TODO: monster attack animation
             // TODO: death animation
             this.characterObject.gold = Math.max(0, this.characterObject.gold - 1)
             this.characterObject.save()

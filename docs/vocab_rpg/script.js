@@ -265,6 +265,7 @@ CharacterScene.Key = "CHARACTER";
 class FightScene extends Phaser.Scene {
     constructor() {
         super({ key: FightScene.Key });
+        this.numMistakes = 0;
     }
     preload() {
         this.wordlists = JSON.parse(localStorage.getItem("wordlists") ?? "[]");
@@ -345,6 +346,10 @@ class FightScene extends Phaser.Scene {
                 correct = true;
             }
             if (!correct) {
+                this.numMistakes += 1;
+                const answer = Array.isArray(this.word.en) ? this.word.en[0] : this.word.en;
+                answerField.placeholder = answer.substring(0, this.numMistakes ** 2);
+                answerField.value = "";
                 this.add.tween({
                     duration: 250,
                     targets: this.monsterObject,
@@ -412,6 +417,7 @@ class FightScene extends Phaser.Scene {
             this.playCharacterAnimation("character_attack_sword");
             this.characterObject.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
                 answerField.value = "";
+                answerField.placeholder = "Type your answer here!";
                 this.changeCurrentWordByIndex();
             });
         };
@@ -449,6 +455,7 @@ class FightScene extends Phaser.Scene {
     }
     changeCurrentWordByIndex(next = Phaser.Math.Between(0, this.words.length - 1)) {
         this.word = this.words[next];
+        this.numMistakes = 0;
         let display;
         if (Array.isArray(this.word.ja)) {
             const random = Phaser.Math.Between(0, this.word.ja.length - 1);
