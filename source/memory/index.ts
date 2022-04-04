@@ -231,6 +231,7 @@ const PEERJS_CONFIG: Peer.PeerJSOption = {
 
 /*******************************************************************************
 *** DOM Elements **************************************************************/
+const AGAIN = document.getElementById("again") as HTMLDivElement
 const EXTRA = document.getElementById("extra") as HTMLDivElement
 const INFORMATION = document.getElementById("information") as HTMLDivElement
 const PLAY = document.getElementById("play") as HTMLDivElement
@@ -563,6 +564,13 @@ function updateGame() {
                 winnerSpan.classList.add("winner")
             }
 
+            if (IS_HOST) {
+                // Show the play again button in 5 seconds
+                setTimeout(() => {
+                    AGAIN.style.display = "block"
+                }, 5000)
+            }
+
             break
         }
     }
@@ -602,6 +610,7 @@ function showQR(hostID: string) {
 
 function startGame() {
     START.style.display = "none"
+    AGAIN.style.display = "none"
 
     STATE = {
         cards: STATE.cards,
@@ -648,6 +657,7 @@ function joinGame(peer: Peer, hostID: string) {
                 switch (STATE.mode) {
                     case "lobby": {
                         INFORMATION.innerHTML = `<span>Waiting for <strong>${STATE.players[0]} (HOST)</strong> to start...</span>`
+                        updatePlayers()
                         break
                     }
                     case "play":
@@ -667,9 +677,13 @@ function joinGame(peer: Peer, hostID: string) {
     })
 }
 
-function hostGame(peer: Peer, wordlist: Wordlist, hostID: string) {
-    // Add ourselves to the players
-    STATE.players.push(USERNAME_INPUT.value)
+async function resetGame() {
+    const wordlist = await prepareWordlist()
+
+    STATE.words = []
+    STATE.cards = []
+
+    shuffle(wordlist) // Randomize the words to choose
 
     // Choose words
     for (let i = 0; i < MAX_WORDS && i < wordlist.length; i++) {
@@ -685,6 +699,13 @@ function hostGame(peer: Peer, wordlist: Wordlist, hostID: string) {
     }
 
     shuffle(STATE.cards) // Randomize the cards
+}
+
+function hostGame(peer: Peer, hostID: string) {
+    // Add ourselves to the players
+    STATE.players.push(USERNAME_INPUT.value)
+
+    resetGame()
 
     showQR(hostID)
     updatePlayers()
@@ -692,6 +713,13 @@ function hostGame(peer: Peer, wordlist: Wordlist, hostID: string) {
 
     // Make pressing `start` start the game
     START.addEventListener("click", startGame)
+
+    // Make pressing `play again` start a new round
+    AGAIN.addEventListener("click", async () => {
+        STATE.mode = "play"
+        await resetGame()
+        startGame()
+    })
 
     // Handle players & their data
     peer.on("connection", (conn) => {
@@ -772,7 +800,7 @@ async function prepare() {
             USERNAME_OK.addEventListener("click", () => {
                 console.debug("HOSTING!")
                 USERNAME_OK.disabled = true
-                hostGame(peer, wordlist, id)
+                hostGame(peer, id)
             })
         } else {
             USERNAME_OK.addEventListener("click", () => {

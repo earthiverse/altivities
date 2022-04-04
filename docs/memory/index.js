@@ -124,6 +124,7 @@ const PEERJS_CONFIG = {
     port: 443,
     secure: true
 };
+const AGAIN = document.getElementById("again");
 const EXTRA = document.getElementById("extra");
 const INFORMATION = document.getElementById("information");
 const PLAY = document.getElementById("play");
@@ -406,6 +407,11 @@ function updateGame() {
                 console.debug(winnerSpan);
                 winnerSpan.classList.add("winner");
             }
+            if (IS_HOST) {
+                setTimeout(() => {
+                    AGAIN.style.display = "block";
+                }, 5000);
+            }
             break;
         }
     }
@@ -439,6 +445,7 @@ function showQR(hostID) {
 }
 function startGame() {
     START.style.display = "none";
+    AGAIN.style.display = "none";
     STATE = {
         cards: STATE.cards,
         mode: "play",
@@ -475,6 +482,7 @@ function joinGame(peer, hostID) {
                 switch (STATE.mode) {
                     case "lobby": {
                         INFORMATION.innerHTML = `<span>Waiting for <strong>${STATE.players[0]} (HOST)</strong> to start...</span>`;
+                        updatePlayers();
                         break;
                     }
                     case "play":
@@ -493,8 +501,11 @@ function joinGame(peer, hostID) {
         }
     });
 }
-function hostGame(peer, wordlist, hostID) {
-    STATE.players.push(USERNAME_INPUT.value);
+async function resetGame() {
+    const wordlist = await prepareWordlist();
+    STATE.words = [];
+    STATE.cards = [];
+    shuffle(wordlist);
     for (let i = 0; i < MAX_WORDS && i < wordlist.length; i++) {
         const word = wordlist[i];
         const card = {
@@ -505,10 +516,19 @@ function hostGame(peer, wordlist, hostID) {
         STATE.cards.push({ ...card });
     }
     shuffle(STATE.cards);
+}
+function hostGame(peer, hostID) {
+    STATE.players.push(USERNAME_INPUT.value);
+    resetGame();
     showQR(hostID);
     updatePlayers();
     updateStart();
     START.addEventListener("click", startGame);
+    AGAIN.addEventListener("click", async () => {
+        STATE.mode = "play";
+        await resetGame();
+        startGame();
+    });
     peer.on("connection", (conn) => {
         conn.on("open", () => {
             sendData(conn, ["STATE", STATE]);
@@ -581,7 +601,7 @@ async function prepare() {
             USERNAME_OK.addEventListener("click", () => {
                 console.debug("HOSTING!");
                 USERNAME_OK.disabled = true;
-                hostGame(peer, wordlist, id);
+                hostGame(peer, id);
             });
         }
         else {

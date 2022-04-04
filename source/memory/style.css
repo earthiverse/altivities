@@ -112,7 +112,7 @@ html, body {
 
     box-sizing: border-box;
     padding: min(0.5 * var(--vh), 0.5vw);
-    
+
     color:#000;
     text-align: center;
     -webkit-text-fill-color:#000;
@@ -271,6 +271,15 @@ html, body {
 }
 
 #start {
+    background-color: var(--color-green);
+    font-weight: 700;
+    cursor: pointer;
+    display: none;
+    padding: min(var(--vh), 1vw);
+    border-radius: min(var(--vh), 1vw);
+}
+
+#again {
     background-color: var(--color-green);
     font-weight: 700;
     cursor: pointer;
