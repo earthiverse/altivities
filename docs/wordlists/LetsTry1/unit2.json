@@ -1,0 +1,156 @@
+[
+    {
+        "image": "https://3.bp.blogspot.com/-zz_dAx1CpKU/UZM42iiIytI/AAAAAAAASN0/bnGS3trtqGg/s8192/byebye_girl.png",
+        "en": "you",
+        "ja": {
+            "kanji": "貴方",
+            "hiragana": "あなた"
+        }
+    },
+    {
+        "en": "How are you?",
+        "ja": {
+            "kanji": "調子はどうですか。",
+            "hiragana": "ちょうしはどうですか。"
+        }
+    },
+    {
+        "en": [
+            "and",
+            "~ and ~",
+            "A and B"
+        ],
+        "ja": {
+            "kanji": "～と～",
+            "hiragana": "～と～"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-xdAPDPF4fRs/VnE388aR7aI/AAAAAAAA17o/wua-kte1ahI/s8192/pose_genki02_girl.png",
+        "en": "fine",
+        "ja": {
+            "kanji": "元気",
+            "hiragana": "げんき"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-2zJP-Qnsu2Q/V_4cO1Qpi3I/AAAAAAAA-yg/NaQhU7FZ61UCOBN8koLIrJar5fGa78yuACLcB/s8192/jikosyoukai_boy.png",
+        "en": [
+            "I'm",
+            "I'm ~",
+            "I'm ~.",
+            "I am",
+            "I am ~",
+            "I am ~."
+        ],
+        "ja": [
+            {
+                "kanji": "私は〇〇です。",
+                "hiragana": "わたしは〇〇です。"
+            },
+            {
+                "kanji": "僕は〇〇です。",
+                "hiragana": "ぼくは〇〇です。"
+            }
+        ]
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-VdUdcR1nd3U/UxbLvdcXJOI/AAAAAAAAeDo/Gr4zx2j50SI/s8192/happy_man2.png",
+        "en": [
+            "good",
+            "fine"
+        ],
+        "ja": {
+            "kanji": "元気",
+            "hiragana": "げんき"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-vm9kIF6f9vQ/UxbLy25ZRjI/AAAAAAAAeEo/82OweKav0gc/s8192/happy_woman4.png",
+        "en": "great",
+        "ja": {
+            "kanji": "すごく元気",
+            "hiragana": "すごくげんき"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-qzx9BMg9gxQ/UxbLz4cvIzI/AAAAAAAAeE4/QPfCtKS3UuI/s8192/happy_woman6.png",
+        "en": "happy",
+        "ja": {
+            "kanji": "嬉しい",
+            "hiragana": "うれしい"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-ujxmj1sCSxw/XFe1SfS70_I/AAAAAAABRXA/fNMJ3jK7lCwMErO1ITH1ighsnTtHOuXQgCLcBGAs/s8192/kodomosyokudou_hungry_girl.png",
+        "en": "hungry",
+        "ja": {
+            "kanji": "お腹がすいた",
+            "hiragana": "おなかがすいた"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-RHH0ACAffBY/Ugsrg1lSqPI/AAAAAAAAXEQ/00rSAOfVtF4/s8192/akubi_girl.png",
+        "en": "sleepy",
+        "ja": {
+            "kanji": "眠い",
+            "hiragana": "ねむい"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-JvWLzDT99Bo/VZ-O2WKmgII/AAAAAAAAu90/uFNjFQlG7vw/s8192/boy04_cry.png",
+        "en": "sad",
+        "ja": {
+            "kanji": "悲しい",
+            "hiragana": "かなしい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/gestures/good.svg",
+        "en": "Good!",
+        "ja": {
+            "kanji": "いいですね。",
+            "hiragana": "いいですね。"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/gestures/i_dont_know.svg",
+        "en": "I don't know.",
+        "ja": {
+            "kanji": "私は分かりません。",
+            "hiragana": "わたしはわかりません。"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/gestures/me.svg",
+        "en": "Me?",
+        "ja": {
+            "kanji": "私ですか。",
+            "hiragana": "わたしですか。"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/gestures/good_idea.svg",
+        "en": "Good idea!",
+        "ja": {
+            "kanji": "グッドアイデア。",
+            "hiragana": "ぐっどあいであ。"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/gestures/come_here.svg",
+        "en": "Come here.",
+        "ja": {
+            "kanji": "こちに来て。",
+            "hiragana": "こちにきて。"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/gestures/give_me_five.svg",
+        "en": "Give me five.",
+        "ja": {
+            "kanji": "ハイタッチしよう。",
+            "hiragana": "はいたっちしよう。"
+        }
+    }
+]

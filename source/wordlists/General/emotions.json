@@ -1,0 +1,77 @@
+[
+    {
+        "image": "https://3.bp.blogspot.com/-kCfyDP7oIz4/VJF_k9rqIwI/AAAAAAAAp4k/WgsCEUfeTao/s8192/fuyu_samui.png",
+        "en": "cold",
+        "ja": {
+            "kanji": "寒い",
+            "hiragana": "さむい"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-VdUdcR1nd3U/UxbLvdcXJOI/AAAAAAAAeDo/Gr4zx2j50SI/s8192/happy_man2.png",
+        "en": [
+            "good",
+            "fine"
+        ],
+        "ja": {
+            "kanji": "元気",
+            "hiragana": "げんき"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-vm9kIF6f9vQ/UxbLy25ZRjI/AAAAAAAAeEo/82OweKav0gc/s8192/happy_woman4.png",
+        "en": "great",
+        "ja": {
+            "kanji": "すごく元気",
+            "hiragana": "すごくげんき"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-qzx9BMg9gxQ/UxbLz4cvIzI/AAAAAAAAeE4/QPfCtKS3UuI/s8192/happy_woman6.png",
+        "en": "happy",
+        "ja": {
+            "kanji": "嬉しい",
+            "hiragana": "うれしい"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-7I-sYzc_ZRU/WZVg5Z2b4xI/AAAAAAABGFs/OKN9UsMWCqUWUTj3RKKaMlB1Hx24o2B3QCLcBGAs/s8192/sick_atsui_man.png",
+        "en": "hot",
+        "ja": {
+            "kanji": "暑い",
+            "hiragana": "あつい"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-ujxmj1sCSxw/XFe1SfS70_I/AAAAAAABRXA/fNMJ3jK7lCwMErO1ITH1ighsnTtHOuXQgCLcBGAs/s8192/kodomosyokudou_hungry_girl.png",
+        "en": "hungry",
+        "ja": {
+            "kanji": "お腹がすいた",
+            "hiragana": "おなかがすいた"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-JvWLzDT99Bo/VZ-O2WKmgII/AAAAAAAAu90/uFNjFQlG7vw/s8192/boy04_cry.png",
+        "en": "sad",
+        "ja": {
+            "kanji": "悲しい",
+            "hiragana": "かなしい"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-RHH0ACAffBY/Ugsrg1lSqPI/AAAAAAAAXEQ/00rSAOfVtF4/s8192/akubi_girl.png",
+        "en": "sleepy",
+        "ja": {
+            "kanji": "眠い",
+            "hiragana": "ねむい"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-qTQKiRQpFm0/WlGntJepKOI/AAAAAAABJdo/eyO8a8jNjhUAP7I0fmyifKHdQ4lfzf3igCLcBGAs/s8192/drink_nodo_kawaita_woman.png",
+        "en": "thirsty",
+        "ja": {
+            "kanji": "喉が渇いた",
+            "hiragana": "のどがかわいた"
+        }
+    }
+]

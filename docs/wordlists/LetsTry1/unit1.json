@@ -1,0 +1,79 @@
+[
+    {
+        "image": "https://3.bp.blogspot.com/-zz_dAx1CpKU/UZM42iiIytI/AAAAAAAASN0/bnGS3trtqGg/s8192/byebye_girl.png",
+        "en": [
+            "hello",
+            "Hello.",
+            "Hello!",
+            "hi",
+            "Hi."
+        ],
+        "ja": {
+            "kanji": "今日は",
+            "hiragana": "こんにちは"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-q9Jj9Y2fZxM/VRE4WwZd9wI/AAAAAAAAsV4/qOo5C3fkd74/s8192/aisatsu_sayounara.png",
+        "en": [
+            "goodbye",
+            "Goodbye.",
+            "Goodbye!",
+            "see you",
+            "See you."
+        ],
+        "ja": {
+            "kanji": "左様なら",
+            "hiragana": "さようなら"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-EjnO5CcE6ZY/VnE3SX1-r_I/AAAAAAAA10M/CHni2B86O9k/s8192/pose_makasenasai_girl.png",
+        "en": [
+            "I",
+            "me"
+        ],
+        "ja": [
+            {
+                "kanji": "私",
+                "hiragana": "わたし"
+            },
+            {
+                "kanji": "僕",
+                "hiragana": "ぼく"
+            }
+        ]
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-2zJP-Qnsu2Q/V_4cO1Qpi3I/AAAAAAAA-yg/NaQhU7FZ61UCOBN8koLIrJar5fGa78yuACLcB/s8192/jikosyoukai_boy.png",
+        "en": [
+            "I'm",
+            "I'm ~",
+            "I'm ~.",
+            "I am",
+            "I am ~",
+            "I am ~."
+        ],
+        "ja": [
+            {
+                "kanji": "私は〇〇です。",
+                "hiragana": "わたしは〇〇です。"
+            },
+            {
+                "kanji": "僕は〇〇です。",
+                "hiragana": "ぼくは〇〇です。"
+            }
+        ]
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-LgDgDx1sHSI/Uab3yTJ3UbI/AAAAAAAAUU4/6Uk_60BicAI/s8192/friends_man.png",
+        "en": [
+            "friend",
+            "friends"
+        ],
+        "ja": {
+            "kanji": "友達",
+            "hiragana": "ともだち"
+        }
+    }
+]
