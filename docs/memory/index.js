@@ -636,6 +636,7 @@ async function prepare() {
         USERNAME_OK.disabled = false;
         if (IS_HOST) {
             USERNAME_OK.addEventListener("click", () => {
+                localStorage.setItem(LOCAL_STORAGE_NAME, USERNAME_INPUT.value);
                 TEACHER.style.display = "none";
                 USERNAME_OK.disabled = true;
                 hostGame(peer, id);
@@ -643,6 +644,7 @@ async function prepare() {
         }
         else {
             USERNAME_OK.addEventListener("click", () => {
+                localStorage.setItem(LOCAL_STORAGE_NAME, USERNAME_INPUT.value);
                 USERNAME_OK.disabled = true;
                 joinGame(peer, parameters.id);
             });
