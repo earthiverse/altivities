@@ -426,6 +426,7 @@ function showError(text) {
     PLAY.innerHTML = "<span class=\"big-icon error material-icons\">error</span>";
     INFORMATION.innerHTML = `<span><span class="error">Error:</span> ${text}`;
     PLAYERS.style.display = "none";
+    EXTRA.style.display = "none";
 }
 function showTeacherQR() {
     clearElement(QR);
@@ -625,6 +626,10 @@ async function prepare() {
             showTeacherQR();
         });
     }
+    if (window.peerjs.util.browser == "Unsupported") {
+        showError("Unsupported Browser.");
+        return;
+    }
     const peer = new Peer(localStorage.getItem(LOCAL_STORAGE_PEERJS_ID), PEERJS_CONFIG);
     peer.on("open", (id) => {
         localStorage.setItem(LOCAL_STORAGE_PEERJS_ID, id);
@@ -642,6 +647,9 @@ async function prepare() {
                 joinGame(peer, parameters.id);
             });
         }
+    });
+    peer.on("error", () => {
+        showError("Could not connect to PeerJS server.");
     });
 }
 prepare();

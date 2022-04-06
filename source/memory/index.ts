@@ -2,7 +2,12 @@
 /*******************************************************************************
 *** Types *********************************************************************/
 
-import { finished } from "stream"
+// PeerJS Util
+declare global {
+    interface Window {
+        peerjs: { util: Peer.util };
+    }
+}
 
 // Wordlist
 export type Languages =
@@ -587,6 +592,7 @@ function showError(text: string) {
     PLAY.innerHTML = "<span class=\"big-icon error material-icons\">error</span>"
     INFORMATION.innerHTML = `<span><span class="error">Error:</span> ${text}`
     PLAYERS.style.display = "none"
+    EXTRA.style.display = "none"
 }
 
 function showTeacherQR() {
@@ -827,6 +833,11 @@ async function prepare() {
         })
     }
 
+    if (window.peerjs.util.browser == "Unsupported") {
+        showError("Unsupported Browser.")
+        return
+    }
+
     const peer = new Peer(localStorage.getItem(LOCAL_STORAGE_PEERJS_ID), PEERJS_CONFIG)
     peer.on("open", (id) => {
         localStorage.setItem(LOCAL_STORAGE_PEERJS_ID, id)
@@ -844,6 +855,9 @@ async function prepare() {
                 joinGame(peer, parameters.id)
             })
         }
+    })
+    peer.on("error", () => {
+        showError("Could not connect to PeerJS server.")
     })
 }
 prepare()
