@@ -391,7 +391,7 @@ function updateGame() {
                 INFORMATION.innerHTML = `<span>Congratulations, <strong>${highestPlayers[0]}</strong>!</span>`;
             }
             else if (highestPlayers.length == 2) {
-                INFORMATION.innerHTML = `<span>Congratulation, <strong>${highestPlayers[0]}</strong> and <strong>${highestPlayers[1]}</strong>!</span>`;
+                INFORMATION.innerHTML = `<span>Congratulations, <strong>${highestPlayers[0]}</strong> and <strong>${highestPlayers[1]}</strong>!</span>`;
             }
             else {
                 let players = "";
