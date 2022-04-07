@@ -1,0 +1,195 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/1.svg",
+        "en": "one",
+        "ja": {
+            "kanji": "一",
+            "hiragana": "いち"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/2.svg",
+        "en": "two",
+        "ja": {
+            "kanji": "二",
+            "hiragana": "に"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/3.svg",
+        "en": "three",
+        "ja": {
+            "kanji": "三",
+            "hiragana": "さん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/4.svg",
+        "en": "four",
+        "ja": {
+            "kanji": "四",
+            "hiragana": "よん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/5.svg",
+        "en": "five",
+        "ja": {
+            "kanji": "五",
+            "hiragana": "ご"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/6.svg",
+        "en": "six",
+        "ja": {
+            "kanji": "六",
+            "hiragana": "ろく"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/7.svg",
+        "en": "seven",
+        "ja": {
+            "kanji": "七",
+            "hiragana": "なな"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/8.svg",
+        "en": "eight",
+        "ja": {
+            "kanji": "八",
+            "hiragana": "はち"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/9.svg",
+        "en": "nine",
+        "ja": {
+            "kanji": "九",
+            "hiragana": "きゅう"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/10.svg",
+        "en": "ten",
+        "ja": {
+            "kanji": "十",
+            "hiragana": "じゅう"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/11.svg",
+        "en": "eleven",
+        "ja": {
+            "kanji": "十一",
+            "hiragana": "じゅういち"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/12.svg",
+        "en": "twelve",
+        "ja": {
+            "kanji": "十二",
+            "hiragana": "じゅうに"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/13.svg",
+        "en": "thirteen",
+        "ja": {
+            "kanji": "十三",
+            "hiragana": "じゅうさん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/14.svg",
+        "en": "fourteen",
+        "ja": {
+            "kanji": "十四",
+            "hiragana": "じゅうよん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/15.svg",
+        "en": "fifteen",
+        "ja": {
+            "kanji": "十五",
+            "hiragana": "じゅうご"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/16.svg",
+        "en": "sixteen",
+        "ja": {
+            "kanji": "十六",
+            "hiragana": "じゅうろく"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/17.svg",
+        "en": "seventeen",
+        "ja": {
+            "kanji": "十七",
+            "hiragana": "じゅうなな"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/18.svg",
+        "en": "eighteen",
+        "ja": {
+            "kanji": "十八",
+            "hiragana": "じゅうはち"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/19.svg",
+        "en": "nineteen",
+        "ja": {
+            "kanji": "十九",
+            "hiragana": "じゅうきゅう"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/numbers/20.svg",
+        "en": "twenty",
+        "ja": {
+            "kanji": "二十",
+            "hiragana": "にじゅう"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/strawberry.png",
+        "en": [
+            "strawberry",
+            "strawberries"
+        ],
+        "ja": {
+            "kanji": "苺",
+            "hiragana": "いちご"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/apple.png",
+        "en": [
+            "apple",
+            "apples"
+        ],
+        "ja": {
+            "kanji": "林檎",
+            "hiragana": "りんご"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/vegetables/tomato.png",
+        "en": [
+            "tomato",
+            "tomatoes"
+        ],
+        "ja": {
+            "kanji": "トマト",
+            "hiragana": "とまと"
+        }
+    }
+]

@@ -1,0 +1,207 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/colors/red.png",
+        "en": "red",
+        "ja": {
+            "kanji": "赤",
+            "hiragana": "あか"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/colors/yellow.png",
+        "en": "yellow",
+        "ja": {
+            "kanji": "黄色",
+            "hiragana": "きいろ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/colors/blue.png",
+        "en": "blue",
+        "ja": {
+            "kanji": "青",
+            "hiragana": "あお"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/colors/green.png",
+        "en": "green",
+        "ja": {
+            "kanji": "緑",
+            "hiragana": "みどり"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/colors/purple.png",
+        "en": "purple",
+        "ja": {
+            "kanji": "紫",
+            "hiragana": "むらさき"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/colors/orange.png",
+        "en": "orange",
+        "ja": {
+            "kanji": "オレンジ",
+            "hiragana": "おれんじ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/colors/pink.png",
+        "en": "pink",
+        "ja": {
+            "kanji": "ピンク",
+            "hiragana": "ぴんく"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/colors/brown.png",
+        "en": "brown",
+        "ja": {
+            "kanji": "茶色",
+            "hiragana": "ちゃいろ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/colors/white.png",
+        "en": "white",
+        "ja": {
+            "kanji": "城",
+            "hiragana": "しろ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/colors/black.png",
+        "en": "black",
+        "ja": {
+            "kanji": "黒",
+            "hiragana": "くろ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/sports/baseball.png",
+        "en": "baseball",
+        "ja": {
+            "kanji": "野球",
+            "hiragana": "やきゅう"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/sports/dodgeball.png",
+        "en": "dodgeball",
+        "ja": {
+            "kanji": "ドッジボール",
+            "hiragana": "どっじぼーる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/sports/soccer.png",
+        "en": "soccer",
+        "ja": {
+            "kanji": "サッカー",
+            "hiragana": "さっかー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/sports/basketball.png",
+        "en": "basketball",
+        "ja": {
+            "kanji": "バスケットボール",
+            "hiragana": "ばすけっとぼーる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/sports/swimming.png",
+        "en": "swimming",
+        "ja": {
+            "kanji": "水泳",
+            "hiragana": "すいえい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/food/ice_cream.png",
+        "en": [
+            "ice cream",
+            "ice-cream"
+        ],
+        "ja": {
+            "kanji": "アイスクリーム",
+            "hiragana": "あいすくりーむ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/food/pudding.png",
+        "en": "pudding",
+        "ja": {
+            "kanji": "プリン",
+            "hiragana": "ぷりん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/drinks/milk.png",
+        "en": "milk",
+        "ja": {
+            "kanji": "牛乳",
+            "hiragana": "ぎゅうにゅう"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/drinks/orange_juice.png",
+        "en": "orange juice",
+        "ja": [
+            {
+                "kanji": "オレンジジュース",
+                "hiragana": "おれんじじゅーす"
+            },
+            {
+                "kanji": "オレンジ・ジュース",
+                "hiragana": "おれんじ・じゅーす"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/vegetables/onion.png",
+        "en": [
+            "onion",
+            "onions"
+        ],
+        "ja": {
+            "kanji": "玉ねぎ",
+            "hiragana": "たまねぎ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/vegetables/green_pepper.png",
+        "en": [
+            "green pepper",
+            "green peppers"
+        ],
+        "ja": {
+            "kanji": "ピーマン",
+            "hiragana": "ぴーまん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/vegetables/cucumber.png",
+        "en": [
+            "cucumber",
+            "cucumbers"
+        ],
+        "ja": {
+            "kanji": "胡瓜",
+            "hiragana": "きゅうり"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/vegetables/carrot.png",
+        "en": [
+            "carrot",
+            "carrots"
+        ],
+        "ja": {
+            "kanji": "人参",
+            "hiragana": "にんじん"
+        }
+    }
+]
