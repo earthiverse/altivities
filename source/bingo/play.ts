@@ -1,11 +1,7 @@
-import { Wordlist } from "."
+import { Wordlist } from "../wordlists/wordlists"
 
-const parameters: any = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop: string) => {
-        const parameter = searchParams.get(prop)
-        if (parameter) return parameter
-    }
-})
+declare let PARAMETERS: any
+declare let prepareWordlist: () => Promise<Wordlist>
 
 function onMouseDown(event: Event) {
     const target = event.currentTarget as HTMLDivElement
@@ -65,24 +61,8 @@ function populateBingo(wordlist: Wordlist, words: string[]) {
 }
 
 async function prepare() {
-    const combinedWordlist: Wordlist = []
-
-    if (parameters.wordlist && parameters.words) {
-        const response = await fetch(parameters.wordlist)
-        const wordlist: Wordlist = await response.json()
-        combinedWordlist.push(...wordlist)
-    }
-
-    if (parameters.wordlists && parameters.words) {
-        // Combine all wordlists
-        for (const url of parameters.wordlists.split(",")) {
-            const response = await fetch(url)
-            const wordlist: Wordlist = await response.json()
-            combinedWordlist.push(...wordlist)
-        }
-    }
-
-    const words = (parameters.words as string).split("🔥")
+    const combinedWordlist = await prepareWordlist()
+    const words = (PARAMETERS.words as string).split("🔥")
     populateBingo(combinedWordlist, words)
 }
 prepare()

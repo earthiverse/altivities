@@ -32,64 +32,6 @@ async function clearElement(data) {
     while (data.firstChild)
         data.removeChild(data.firstChild);
 }
-async function prepareWordlist() {
-    const combinedWordlist = [];
-    if (parameters.wordlist) {
-        const response = await fetch(parameters.wordlist);
-        const wordlist = await response.json();
-        combinedWordlist.push(...wordlist);
-    }
-    if (parameters.wordlists) {
-        for (const url of parameters.wordlists.split(",")) {
-            const response = await fetch(url);
-            const wordlist = await response.json();
-            combinedWordlist.push(...wordlist);
-        }
-    }
-    if (parameters.ignore) {
-        const toIgnore = parameters.ignore.split(",");
-        for (let i = 0; i < combinedWordlist.length; i++) {
-            const word = combinedWordlist[i];
-            for (const ignoreWord of toIgnore) {
-                if (word.en == ignoreWord
-                    || (Array.isArray(word.en) && word.en[0] == ignoreWord)) {
-                    combinedWordlist.splice(i, 1);
-                    i -= 1;
-                    break;
-                }
-            }
-        }
-    }
-    if (parameters.include) {
-        const toInclude = parameters.include.split(",");
-        for (let i = 0; i < combinedWordlist.length; i++) {
-            const word = combinedWordlist[i];
-            let remove = true;
-            for (const includeWord of toInclude) {
-                if (word.en == includeWord
-                    || (Array.isArray(word.en) && word.en[0] == includeWord)) {
-                    remove = false;
-                    break;
-                }
-                if (Array.isArray(word.en)) {
-                    for (let j = 0; j < word.en.length; j++) {
-                        const alternativeWord = word.en[j];
-                        if (alternativeWord !== includeWord)
-                            continue;
-                        word.en = alternativeWord;
-                        remove = false;
-                        break;
-                    }
-                }
-            }
-            if (remove) {
-                combinedWordlist.splice(i, 1);
-                i -= 1;
-            }
-        }
-    }
-    return combinedWordlist;
-}
 const COLOR_WHITE = "#F9F9F9";
 const COLOR_DARK_BLUE = "#5AA9E6";
 const COLOR_RED = "#FC7B7B";

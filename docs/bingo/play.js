@@ -1,12 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const parameters = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => {
-        const parameter = searchParams.get(prop);
-        if (parameter)
-            return parameter;
-    }
-});
 function onMouseDown(event) {
     const target = event.currentTarget;
     if (target.classList.contains("marked")) {
@@ -58,20 +51,8 @@ function populateBingo(wordlist, words) {
     }
 }
 async function prepare() {
-    const combinedWordlist = [];
-    if (parameters.wordlist && parameters.words) {
-        const response = await fetch(parameters.wordlist);
-        const wordlist = await response.json();
-        combinedWordlist.push(...wordlist);
-    }
-    if (parameters.wordlists && parameters.words) {
-        for (const url of parameters.wordlists.split(",")) {
-            const response = await fetch(url);
-            const wordlist = await response.json();
-            combinedWordlist.push(...wordlist);
-        }
-    }
-    const words = parameters.words.split("🔥");
+    const combinedWordlist = await prepareWordlist();
+    const words = PARAMETERS.words.split("🔥");
     populateBingo(combinedWordlist, words);
 }
 prepare();

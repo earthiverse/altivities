@@ -1,12 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const parameters = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => {
-        const parameter = searchParams.get(prop);
-        if (parameter)
-            return parameter;
-    }
-});
 function onDragStart(event) {
     const item = event.currentTarget;
     const parent = item.parentElement;
@@ -81,8 +74,8 @@ function ready() {
         words.push(cell.firstChild.parentNode.textContent);
     }
     const data = {
-        wordlist: parameters.wordlist,
-        wordlists: parameters.wordlists,
+        wordlist: PARAMETERS.wordlist,
+        wordlists: PARAMETERS.wordlists,
         words: words.join("🔥")
     };
     for (const datum in data)
@@ -137,10 +130,10 @@ function showQR() {
 }
 function goToTeach() {
     const data = {
-        ignore: parameters.ignore,
-        include: parameters.include,
-        wordlist: parameters.wordlist,
-        wordlists: parameters.wordlists,
+        ignore: PARAMETERS.ignore,
+        include: PARAMETERS.include,
+        wordlist: PARAMETERS.wordlist,
+        wordlists: PARAMETERS.wordlists,
     };
     for (const datum in data)
         if (data[datum] === undefined)
@@ -173,62 +166,7 @@ function chooseRandom() {
     checkReady();
 }
 async function prepare() {
-    const combinedWordlist = [];
-    if (parameters.wordlist) {
-        const response = await fetch(parameters.wordlist);
-        const wordlist = await response.json();
-        combinedWordlist.push(...wordlist);
-    }
-    if (parameters.wordlists) {
-        for (const url of parameters.wordlists.split(",")) {
-            const response = await fetch(url);
-            const wordlist = await response.json();
-            combinedWordlist.push(...wordlist);
-        }
-    }
-    if (parameters.ignore) {
-        const toIgnore = parameters.ignore.split(",");
-        for (let i = 0; i < combinedWordlist.length; i++) {
-            const word = combinedWordlist[i];
-            for (const ignoreWord of toIgnore) {
-                if (word.en == ignoreWord
-                    || (Array.isArray(word.en) && word.en[0] == ignoreWord)) {
-                    combinedWordlist.splice(i, 1);
-                    i -= 1;
-                    break;
-                }
-            }
-        }
-    }
-    if (parameters.include) {
-        const toInclude = parameters.include.split(",");
-        for (let i = 0; i < combinedWordlist.length; i++) {
-            const word = combinedWordlist[i];
-            let remove = true;
-            for (const includeWord of toInclude) {
-                if (word.en == includeWord
-                    || (Array.isArray(word.en) && word.en[0] == includeWord)) {
-                    remove = false;
-                    break;
-                }
-                if (Array.isArray(word.en)) {
-                    for (let j = 0; j < word.en.length; j++) {
-                        const alternativeWord = word.en[j];
-                        if (alternativeWord !== includeWord)
-                            continue;
-                        word.en = alternativeWord;
-                        remove = false;
-                        break;
-                    }
-                }
-            }
-            if (remove) {
-                combinedWordlist.splice(i, 1);
-                i -= 1;
-            }
-        }
-    }
-    generateMenuOptions(combinedWordlist);
+    generateMenuOptions(await prepareWordlist());
 }
 prepare();
 let RESIZE_FINISHED;

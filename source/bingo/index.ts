@@ -1,21 +1,7 @@
-export type Languages =
-    | "en"
-    | "ja"
+import { Wordlist } from "../wordlists/wordlists"
 
-export type Word = {
-    [T in Exclude<Languages, "ja">]: string | string[]
-} & {
-    image?: string
-    ja: {
-        kanji: string
-        hiragana: string
-    } | {
-        kanji: string
-        hiragana: string
-    }[]
-}
-
-export type Wordlist = Word[]
+declare let PARAMETERS: any
+declare let prepareWordlist: () => Promise<Wordlist>
 
 // TODO: What do I change this to to make it work without the disable-next-line!?
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -40,13 +26,6 @@ declare class QRCode {
     makeImage(): void;
     clear(): void;
 }
-
-const parameters: any = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop: string) => {
-        const parameter = searchParams.get(prop)
-        if (parameter) return parameter
-    }
-})
 
 type dragData = {
     item: string
@@ -147,8 +126,8 @@ function ready() {
     }
 
     const data = {
-        wordlist: parameters.wordlist,
-        wordlists: parameters.wordlists,
+        wordlist: PARAMETERS.wordlist,
+        wordlists: PARAMETERS.wordlists,
         words: words.join("🔥")
     }
     for (const datum in data) if (data[datum] === undefined) delete data[datum]
@@ -221,10 +200,10 @@ function showQR() {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function goToTeach() {
     const data = {
-        ignore: parameters.ignore,
-        include: parameters.include,
-        wordlist: parameters.wordlist,
-        wordlists: parameters.wordlists,
+        ignore: PARAMETERS.ignore,
+        include: PARAMETERS.include,
+        wordlist: PARAMETERS.wordlist,
+        wordlists: PARAMETERS.wordlists,
     }
     for (const datum in data) if (data[datum] === undefined) delete data[datum]
     window.location.href = `teach.html?${new URLSearchParams(data)}`
@@ -260,73 +239,7 @@ function chooseRandom() {
 }
 
 async function prepare() {
-    const combinedWordlist: Wordlist = []
-
-    if (parameters.wordlist) {
-        // Add the one wordlist to the menu
-        const response = await fetch(parameters.wordlist)
-        const wordlist: Wordlist = await response.json()
-        combinedWordlist.push(...wordlist)
-    }
-
-    if (parameters.wordlists) {
-        // Combine all wordlists
-        for (const url of parameters.wordlists.split(",")) {
-            const response = await fetch(url)
-            const wordlist: Wordlist = await response.json()
-            combinedWordlist.push(...wordlist)
-        }
-    }
-
-    if (parameters.ignore) {
-        const toIgnore: string[] = parameters.ignore.split(",")
-        for (let i = 0; i < combinedWordlist.length; i++) {
-            const word = combinedWordlist[i]
-            for (const ignoreWord of toIgnore) {
-                if (word.en == ignoreWord
-                    || (Array.isArray(word.en) && word.en[0] == ignoreWord)) {
-                    // Remove this word from the wordlist
-                    combinedWordlist.splice(i, 1)
-                    i -= 1
-                    break
-                }
-            }
-        }
-    }
-
-    if (parameters.include) {
-        const toInclude: string[] = parameters.include.split(",")
-        for (let i = 0; i < combinedWordlist.length; i++) {
-            const word = combinedWordlist[i]
-            let remove = true
-            for (const includeWord of toInclude) {
-                if (word.en == includeWord
-                    || (Array.isArray(word.en) && word.en[0] == includeWord)) {
-                    // Remove this word from the wordlist
-                    remove = false
-                    break
-                }
-
-                // Check if it's an alternative word
-                if (Array.isArray(word.en)) {
-                    for (let j = 0; j < word.en.length; j++) {
-                        const alternativeWord = word.en[j]
-                        if (alternativeWord !== includeWord) continue
-                        // We found the word as an alternative, set it as the main word
-                        word.en = alternativeWord
-                        remove = false
-                        break
-                    }
-                }
-            }
-            if (remove) {
-                combinedWordlist.splice(i, 1)
-                i -= 1
-            }
-        }
-    }
-
-    generateMenuOptions(combinedWordlist)
+    generateMenuOptions(await prepareWordlist())
 }
 prepare()
 
