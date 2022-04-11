@@ -1,0 +1,130 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/weather/sunny.png",
+        "en": "sunny",
+        "ja": {
+            "kanji": "晴れの",
+            "hiragana": "はれの"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/weather/cloudy.png",
+        "en": "cloudy",
+        "ja": {
+            "kanji": "曇りの",
+            "hiragana": "くもりの"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/weather/rainy.png",
+        "en": "rainy",
+        "ja": {
+            "kanji": "雨の",
+            "hiragana": "あめの"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/weather/snowy.png",
+        "en": "snowy",
+        "ja": {
+            "kanji": "雪の",
+            "hiragana": "ゆきの"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/weather/hot.png",
+        "en": "hot",
+        "ja": {
+            "kanji": "暑い",
+            "hiragana": "あつい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/weather/cold.png",
+        "en": "cold",
+        "ja": {
+            "kanji": "寒い",
+            "hiragana": "さむい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/clothing/shorts.png",
+        "en": "shorts",
+        "ja": {
+            "kanji": " ショートパンツ",
+            "hiragana": "しょーとぱんつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/clothing/shirt.png",
+        "en": "shirt",
+        "ja": {
+            "kanji": "シャツ",
+            "hiragana": "しゃつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/clothing/pants.png",
+        "en": "pants",
+        "ja": {
+            "kanji": "ズボン",
+            "hiragana": "ずぼん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/clothing/jacket.png",
+        "en": "jacket",
+        "ja": {
+            "kanji": "ジャケット",
+            "hiragana": "じゃけっと"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/clothing/boots.png",
+        "en": "boots",
+        "ja": {
+            "kanji": "ブーツ",
+            "hiragana": "ぶーつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/clothing/cap.png",
+        "en": "cap",
+        "ja": {
+            "kanji": "（ふちのない）ぼうし",
+            "hiragana": "（ふちのない）ぼうし"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/activities/play_tag.png",
+        "en": "play tag",
+        "ja": {
+            "kanji": "鬼ごっこをする",
+            "hiragana": "おにごっこをする"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/activities/play_cards.png",
+        "en": "play cards",
+        "ja": {
+            "kanji": "トランプをする",
+            "hiragana": "とらんぷをする"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/sports/dodgeball.png",
+        "en": "play dodgeball",
+        "ja": {
+            "kanji": "ドッジボールをする",
+            "hiragana": "どっじぼーるをする"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/activities/make_a_snowman.png",
+        "en": "make a snowman",
+        "ja": {
+            "kanji": "雪だるまを作る",
+            "hiragana": "ゆきだるまをつくる"
+        }
+    }
+]

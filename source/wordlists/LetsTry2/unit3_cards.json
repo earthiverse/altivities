@@ -1,0 +1,58 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Monday.png",
+        "en": "Monday",
+        "ja": {
+            "kanji": "月曜日",
+            "hiragana": "げつようび"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Tuesday.png",
+        "en": "Tuesday",
+        "ja": {
+            "kanji": "火曜日",
+            "hiragana": "かようび"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Wednesday.png",
+        "en": "Wednesday",
+        "ja": {
+            "kanji": "水曜日",
+            "hiragana": "すいようび"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Thursday.png",
+        "en": "Thursday",
+        "ja": {
+            "kanji": "木曜日",
+            "hiragana": "もくようび"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Friday.png",
+        "en": "Friday",
+        "ja": {
+            "kanji": "金曜日",
+            "hiragana": "きんようび"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Saturday.png",
+        "en": "Saturday",
+        "ja": {
+            "kanji": "土曜日",
+            "hiragana": "どようび"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Sunday.png",
+        "en": "Sunday",
+        "ja": {
+            "kanji": "日曜日",
+            "hiragana": "にちようび"
+        }
+    }
+]
