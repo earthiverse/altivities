@@ -57,7 +57,10 @@
     },
     {
         "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/clothing/shirt.png",
-        "en": "shirt",
+        "en": [
+            "shirt",
+            "shirts"
+        ],
         "ja": {
             "kanji": "シャツ",
             "hiragana": "しゃつ"
@@ -73,7 +76,10 @@
     },
     {
         "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/clothing/jacket.png",
-        "en": "jacket",
+        "en": [
+            "jacket",
+            "jackets"
+        ],
         "ja": {
             "kanji": "ジャケット",
             "hiragana": "じゃけっと"
@@ -81,7 +87,10 @@
     },
     {
         "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/clothing/boots.png",
-        "en": "boots",
+        "en": [
+            "boots",
+            "boot"
+        ],
         "ja": {
             "kanji": "ブーツ",
             "hiragana": "ぶーつ"
@@ -89,7 +98,10 @@
     },
     {
         "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/clothing/cap.png",
-        "en": "cap",
+        "en": [
+            "cap",
+            "caps"
+        ],
         "ja": {
             "kanji": "（ふちのない）ぼうし",
             "hiragana": "（ふちのない）ぼうし"
@@ -97,7 +109,10 @@
     },
     {
         "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/activities/play_tag.png",
-        "en": "play tag",
+        "en": [
+            "play tag",
+            "to play tag"
+        ],
         "ja": {
             "kanji": "鬼ごっこをする",
             "hiragana": "おにごっこをする"
@@ -105,7 +120,10 @@
     },
     {
         "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/activities/play_cards.png",
-        "en": "play cards",
+        "en": [
+            "play cards",
+            "to play cards"
+        ],
         "ja": {
             "kanji": "トランプをする",
             "hiragana": "とらんぷをする"
@@ -113,7 +131,10 @@
     },
     {
         "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/sports/dodgeball.png",
-        "en": "play dodgeball",
+        "en": [
+            "play dodgeball",
+            "to play dodgeball"
+        ],
         "ja": {
             "kanji": "ドッジボールをする",
             "hiragana": "どっじぼーるをする"
@@ -121,7 +142,10 @@
     },
     {
         "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/activities/make_a_snowman.png",
-        "en": "make a snowman",
+        "en": [
+            "make a snowman",
+            "to make a snowman"
+        ],
         "ja": {
             "kanji": "雪だるまを作る",
             "hiragana": "ゆきだるまをつくる"

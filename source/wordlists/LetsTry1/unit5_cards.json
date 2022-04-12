@@ -1,0 +1,242 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/food/hamburger.png",
+        "en": [
+            "hamburger",
+            "hamburgers",
+            "a hamburger"
+        ],
+        "ja": {
+            "kanji": "ハンバーガー",
+            "hiragana": "はんばーがー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/food/pizza.png",
+        "en": [
+            "pizza",
+            "a pizza"
+        ],
+        "ja": {
+            "kanji": "ピザ",
+            "hiragana": "ぴざ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/food/spaghetti.png",
+        "en": "spaghetti",
+        "ja": {
+            "kanji": "スパゲッティ",
+            "hiragana": "すぱげってぃ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/food/sushi.png",
+        "en": "sushi",
+        "ja": {
+            "kanji": "寿司",
+            "hiragana": "すし"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/food/steak.png",
+        "en": [
+            "steak",
+            "steaks",
+            "a steak"
+        ],
+        "ja": {
+            "kanji": "ステーキ",
+            "hiragana": "すてーき"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/food/salad.png",
+        "en": [
+            "salad",
+            "salads",
+            "a salad"
+        ],
+        "ja": {
+            "kanji": "サラダ",
+            "hiragana": "さらだ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/food/cake.png",
+        "en": [
+            "cake",
+            "cakes",
+            "a cake"
+        ],
+        "ja": {
+            "kanji": "ケーキ",
+            "hiragana": "けーき"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/food/egg.png",
+        "en": [
+            "egg",
+            "eggs",
+            "an egg"
+        ],
+        "ja": {
+            "kanji": "卵",
+            "hiragana": "たまご"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/food/jam.png",
+        "en": "jam",
+        "ja": {
+            "kanji": "ジャム",
+            "hiragana": "じゃむ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/food/noodle.png",
+        "en": [
+            "noodle",
+            "noodles",
+            "a noodle"
+        ],
+        "ja": [
+            {
+                "kanji": "麺",
+                "hiragana": "めん"
+            },
+            {
+                "kanji": "ヌードル",
+                "hiragana": "ぬーどる"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/food/rice_ball.png",
+        "en": [
+            "rice ball",
+            "rice balls",
+            "a rice ball"
+        ],
+        "ja": {
+            "kanji": "お握り",
+            "hiragana": "おにぎり"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/grapes.png",
+        "en": [
+            "grapes",
+            "grape",
+            "a grape"
+        ],
+        "ja": {
+            "kanji": "葡萄",
+            "hiragana": "ぶどう"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/orange.png",
+        "en": [
+            "orange",
+            "an orange",
+            "oranges"
+        ],
+        "ja": {
+            "kanji": "オレンジ",
+            "hiragana": "おれんじ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/pineapple.png",
+        "en": [
+            "pineapple",
+            "pineapples",
+            "a pineapple"
+        ],
+        "ja": {
+            "kanji": "パイナップル",
+            "hiragana": "ぱいなっぷる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/peach.png",
+        "en": [
+            "peach",
+            "peaches",
+            "a peach"
+        ],
+        "ja": {
+            "kanji": "桃",
+            "hiragana": "もも"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/melon.png",
+        "en": [
+            "melon",
+            "melons",
+            "a melon"
+        ],
+        "ja": {
+            "kanji": "メロン",
+            "hiragana": "めろん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/banana.png",
+        "en": [
+            "banana",
+            "bananas",
+            "a banana"
+        ],
+        "ja": {
+            "kanji": "バナナ",
+            "hiragana": "ばなな"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/kiwi_fruit.png",
+        "en": [
+            "kiwi fruit",
+            "kiwi fruits",
+            "a kiwi fruit"
+        ],
+        "ja": {
+            "kanji": "キウイ",
+            "hiragana": "きうい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/lemon.png",
+        "en": [
+            "lemon",
+            "lemons",
+            "a lemon"
+        ],
+        "ja": {
+            "kanji": "レモン",
+            "hiragana": "れもん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/sports/table_tennis.png",
+        "en": [
+            "table tennis",
+            "ping pong"
+        ],
+        "ja": {
+            "kanji": "卓球",
+            "hiragana": "たっきゅう"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/sports/volleyball.png",
+        "en": "volleyball",
+        "ja": {
+            "kanji": "バレーボール",
+            "hiragana": "ばれーぼーる"
+        }
+    }
+]
