@@ -1,0 +1,110 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/stationery/pencil.png",
+        "en": "pencil",
+        "ja": {
+            "kanji": "鉛筆",
+            "hiragana": "えんぴつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/stationery/eraser.png",
+        "en": "eraser",
+        "ja": {
+            "kanji": "消しゴム",
+            "hiragana": "けしごむ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/stationery/pencil_case.png",
+        "en": "pencil case",
+        "ja": {
+            "kanji": "筆箱",
+            "hiragana": "ふでばこ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/stationery/ruler.png",
+        "en": "ruler",
+        "ja": {
+            "kanji": "定規",
+            "hiragana": "じょうぎ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/stationery/glue_stick.png",
+        "en": "glue stick",
+        "ja": {
+            "kanji": "スティック糊",
+            "hiragana": "すてぃっくのり"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/stationery/pen.png",
+        "en": "pen",
+        "ja": {
+            "kanji": "ペン",
+            "hiragana": "ぺん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/stationery/marker.png",
+        "en": "marker",
+        "ja": {
+            "kanji": "マーカー",
+            "hiragana": "まーかー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/stationery/calendar.png",
+        "en": "calendar",
+        "ja": {
+            "kanji": "カレンダー",
+            "hiragana": "かれんだー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/stationery/notebook.png",
+        "en": "notebook",
+        "ja": [
+            {
+                "kanji": "ノート",
+                "hiragana": "のーと"
+            },
+            {
+                "kanji": "ノートブック",
+                "hiragana": "のーとぶっく"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/stationery/stapler.png",
+        "en": "stapler",
+        "ja": {
+            "kanji": "ホチキス",
+            "hiragana": "ほちきす"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/stationery/magnet.png",
+        "en": "magnet",
+        "ja": [
+            {
+                "kanji": "マグネット",
+                "hiragana": "まぐねっと"
+            },
+            {
+                "kanji": "磁石",
+                "hiragana": "じしゃく"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/stationery/pencil_sharpener.png",
+        "en": "pencil sharpener",
+        "ja": {
+            "kanji": "鉛筆削り",
+            "hiragana": "えんぴつけずり"
+        }
+    }
+]

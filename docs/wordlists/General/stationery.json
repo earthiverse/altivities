@@ -26,10 +26,16 @@
     {
         "image": "https://4.bp.blogspot.com/-NCxep9LCViw/XGjyEECip0I/AAAAAAABRd4/h-qHyA0wlUwkYExj67FwkQhn7Co7mQrpgCLcBGAs/s8192/jisyaku_magnet_ferrite.png",
         "en": "magnet",
-        "ja": {
-            "kanji": "磁石",
-            "hiragana": "じしゃく"
-        }
+        "ja": [
+            {
+                "kanji": "磁石",
+                "hiragana": "じしゃく"
+            },
+            {
+                "kanji": "マグネット",
+                "hiragana": "まぐねっと"
+            }
+        ]
     },
     {
         "image": "https://4.bp.blogspot.com/-owpHtbJkt-E/WM9YFB4gkVI/AAAAAAABCvs/XlTeLEh690wpMGpRNrPJ-bkdeBeRcUE0gCLcB/s8192/pen_marker_open6_purple.png",
@@ -42,10 +48,16 @@
     {
         "image": "https://4.bp.blogspot.com/-tPjLiPy-uNY/WwJZluxRBRI/AAAAAAABMGQ/s1cVDWLRlwcWMHvXGTNnDHBM9jXlZViPACLcBGAs/s8192/book_note_empty.png",
         "en": "notebook",
-        "ja": {
-            "kanji": "ノート",
-            "hiragana": "のーと"
-        }
+        "ja": [
+            {
+                "kanji": "ノート",
+                "hiragana": "のーと"
+            },
+            {
+                "kanji": "ノートブック",
+                "hiragana": "のーとぶっく"
+            }
+        ]
     },
     {
         "image": "https://4.bp.blogspot.com/-RwlMqLQKy5w/W9RcJO7QpAI/AAAAAAABPog/51Aezmj8hTA1gaCqvBtpvhKCQXiEQVzYwCLcBGAs/s8192/bunbougu_ballpen.png",
@@ -93,6 +105,22 @@
         "ja": {
             "kanji": "定規",
             "hiragana": "じょうぎ"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-z-Fj7jStrFA/X9w89_xgmhI/AAAAAAABc_8/AuabFNLnpLQsrsnptghJHI2NwRANjsR1gCNcBGAsYHQ/s8192/document_paper_mekure.png",
+        "en": "paper",
+        "ja": {
+            "kanji": "紙",
+            "hiragana": "かみ"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-1okSffy4dYs/UOFJ-F5D3BI/AAAAAAAAKDM/zPTnBzoMr6w/s8192/bunbougu_hasami.png",
+        "en": "scissors",
+        "ja": {
+            "kanji": "鋏",
+            "hiragana": "はさみ"
         }
     }
 ]

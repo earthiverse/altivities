@@ -25,6 +25,7 @@ These wordlists have pictures associated with them, which makes them nice to use
 * [Prefectures](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/Hepburn/prefectures.json)
 * [Sports](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/sports.json)
 * [Stationery](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/stationery.json)
+  * [Let's Try 2 - Unit 5](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry2/unit5_cards.json)
 * [Valentine's Day](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/valentines.json)
 
 ## Custom Wordlists

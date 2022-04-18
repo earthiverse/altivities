@@ -1,0 +1,122 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/wake-up_time.png",
+        "en": "wake-up time",
+        "ja": {
+            "kanji": "起きるの時間",
+            "hiragana": "おきるのじかん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/breakfast_time.png",
+        "en": "breakfast time",
+        "ja": {
+            "kanji": "朝飯の時間",
+            "hiragana": "あさめしのじかん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/study_time.png",
+        "en": "study time",
+        "ja": {
+            "kanji": "勉強の時間",
+            "hiragana": "べんきょうのじかん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/lunch_time.png",
+        "en": "lunch time",
+        "ja": {
+            "kanji": "昼飯の時間",
+            "hiragana": "ひるめしのじかん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/homework_time.png",
+        "en": "homework time",
+        "ja": {
+            "kanji": "宿題の時間",
+            "hiragana": "しゅくだいのじかん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/snack_time.png",
+        "en": "snack time",
+        "ja": {
+            "kanji": "お八つの時間",
+            "hiragana": "おやつのじかん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/bath_time.png",
+        "en": "bath time",
+        "ja": {
+            "kanji": "お風呂の時間",
+            "hiragana": "おふろのじかん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/dinner_time.png",
+        "en": "dinner time",
+        "ja": {
+            "kanji": "夕飯の時間",
+            "hiragana": "ゆうはんのじかん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/bed_time.png",
+        "en": "bed time",
+        "ja": {
+            "kanji": "寝るの時間",
+            "hiragana": "ねるのじかん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/dream_time.png",
+        "en": "dream time",
+        "ja": {
+            "kanji": "夢の時間",
+            "hiragana": "ゆめのじかん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/6_o_clock.svg",
+        "en": "6 o'clock",
+        "ja": {
+            "kanji": "六時",
+            "hiragana": "ろくじ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/12_o_clock.svg",
+        "en": "12 o'clock",
+        "ja": {
+            "kanji": "十二時",
+            "hiragana": "じゅうにじ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/3_o_clock.svg",
+        "en": "3 o'clock",
+        "ja": {
+            "kanji": "三時",
+            "hiragana": "さんじ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/8_o_clock.svg",
+        "en": "8 o'clock",
+        "ja": {
+            "kanji": "八時",
+            "hiragana": "はちじ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/time/10_o_clock.svg",
+        "en": "10 o'clock",
+        "ja": {
+            "kanji": "十時",
+            "hiragana": "じゅうじ"
+        }
+    }
+]
