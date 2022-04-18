@@ -8,17 +8,32 @@ type ButtonConfig = {
     y?: number
 }
 
+type Mode =
+    | "lowercase"
+    | "uppercase"
+    | "random"
+
 type PlayData = {
-    mode: "lowercase" | "uppercase" | "random"
+    mode: Mode
 }
 
 type ResultsData = {
-    mode: string
+    mode: Mode
     numMistakes: number
     timeElapsed: number
 }
 
+type BestTimesData = {
+    [T in Mode]?: number
+}
+
+const BLACK = Phaser.Display.Color.ValueToColor(0x000000)
+const LIGHT_GREEN = Phaser.Display.Color.ValueToColor(0xC4DF9B)
+const DARK_GREEN = Phaser.Display.Color.ValueToColor(0x697753)
+const RED = Phaser.Display.Color.ValueToColor(0xF94C56)
+
 const LOCAL_STORAGE_MODE = "abcrace_mode"
+const LOCAL_STORAGE_TIMES = "abcrace_times"
 
 function getRandomNumber(min, max) {
     return Math.random() * (max - min) + min
@@ -249,6 +264,22 @@ class ABCRaceMenuScene extends Phaser.Scene {
                 break
         }
 
+        // Display best times
+        const timesString = localStorage.getItem(LOCAL_STORAGE_TIMES)
+        let timesObject: BestTimesData = {}
+        if (timesString) timesObject = JSON.parse(timesString) as BestTimesData
+        const addBestText = (x: number, y: number, time: number) => {
+            const secondsElapsed = ((time / 1000) % 60).toFixed(2).padStart(5, "0")
+            const bestText = this.add.text(x, y, `Best: ${secondsElapsed}`)
+            bestText.setFontFamily("Orbitron")
+            bestText.setFontSize(18)
+            bestText.setFontStyle("bold")
+            bestText.setColor("#697753")
+        }
+        if (timesObject.lowercase < 60000) addBestText(85, 185, timesObject.lowercase)
+        if (timesObject.uppercase < 60000) addBestText(340, 185, timesObject.uppercase)
+        if (timesObject.random < 60000) addBestText(595, 185, timesObject.random)
+
         const startButton = new BasicButton({
             "key": "start_buttons",
             "scene": this,
@@ -294,7 +325,7 @@ class ABCRacePlayScene extends Phaser.Scene {
     private mode: string
     private currentLetter
     private lastCorrect: Phaser.GameObjects.Sprite
-    private sprites: Phaser.GameObjects.Sprite[]
+    private letterSprites: Phaser.GameObjects.Sprite[]
     private timerText: Phaser.GameObjects.Text
     private startTime: number
     private numMistakesConcurrent
@@ -343,7 +374,7 @@ class ABCRacePlayScene extends Phaser.Scene {
             const y = timerHeight + (Math.floor(i / columns) * rowHeight) + rowHeight / 2
 
             const letterSprite = this.add.sprite(x, y, box)
-            this.sprites.push(letterSprite)
+            this.letterSprites.push(letterSprite)
             const scale = Math.min(rowHeight / letterSprite.height, columnWidth / letterSprite.width) * 0.9
             if (minScale > scale) minScale = scale
 
@@ -374,16 +405,13 @@ class ABCRacePlayScene extends Phaser.Scene {
                         targets: [letterSprite]
                     })
 
-                    const black = Phaser.Display.Color.ValueToColor(0x000000)
-                    const green = Phaser.Display.Color.ValueToColor(0x00FF00)
-
                     this.tweens.addCounter({
                         duration: 250,
                         ease: Phaser.Math.Easing.Sine.InOut,
                         from: 0,
                         onUpdate: (tween) => {
                             const value = tween.getValue()
-                            const newColor = Phaser.Display.Color.Interpolate.ColorWithColor(black, green, 100, value)
+                            const newColor = Phaser.Display.Color.Interpolate.ColorWithColor(BLACK, DARK_GREEN, 100, value)
                             const newColorN = Phaser.Display.Color.GetColor(newColor.r, newColor.g, newColor.b)
 
                             letterSprite.setTintFill(newColorN)
@@ -426,17 +454,48 @@ class ABCRacePlayScene extends Phaser.Scene {
                     this.numMistakesConcurrent = 0
                 } else {
                     // They hit the wrong letter
-                    this.sound.play("ng")
+                    if (this.numMistakesConcurrent >= 5) {
+                        // They've gotten a lot wrong, they're *probably* just messing around, but show the next one in red anyways
+                        let correctLetterSprite: Phaser.GameObjects.Sprite
+                        for (const sprite of this.letterSprites) {
+                            if (sprite.texture.key == target) {
+                                correctLetterSprite = sprite
+                                break
+                            }
+                        }
 
-                    this.numMistakes += 1
-                    this.numMistakesConcurrent += 1
+                        this.tweens.add({
+                            duration: 250,
+                            ease: Phaser.Math.Easing.Sine.InOut,
+                            targets: [correctLetterSprite]
+                        })
+
+                        this.tweens.addCounter({
+                            duration: 250,
+                            ease: Phaser.Math.Easing.Sine.InOut,
+                            from: 0,
+                            onUpdate: (tween) => {
+                                const value = tween.getValue()
+                                const newColor = Phaser.Display.Color.Interpolate.ColorWithColor(BLACK, RED, 100, value)
+                                const newColorN = Phaser.Display.Color.GetColor(newColor.r, newColor.g, newColor.b)
+
+                                correctLetterSprite.setTintFill(newColorN)
+                            },
+                            to: 100,
+                        })
+                    } else {
+                        this.sound.play("ng")
+
+                        this.numMistakes += 1
+                        this.numMistakesConcurrent += 1
+                    }
                 }
             })
             letterSprite.disableInteractive()
         }
 
         // Scale the letters
-        for (const sprite of this.sprites) sprite.setScale(minScale)
+        for (const sprite of this.letterSprites) sprite.setScale(minScale)
 
         // Create a white rectangle to cover the letters that slowly gets revealed as the countdown progresses
         this.countdownCover = this.add.rectangle(0, 0, ABCRace.WIDTH, ABCRace.HEIGHT, 0xFFFFFF).setOrigin(0, 0)
@@ -446,7 +505,7 @@ class ABCRacePlayScene extends Phaser.Scene {
     init(data: PlayData) {
         // Reset Variables
         this.lastCorrect = undefined
-        this.sprites = []
+        this.letterSprites = []
         this.currentLetter = 0
         this.numMistakes = 0
         this.numMistakesConcurrent = 0
@@ -504,7 +563,7 @@ class ABCRacePlayScene extends Phaser.Scene {
                 this.sound.play("start")
                 this.startTime = Date.now()
 
-                for (const sprite of this.sprites) sprite.setInteractive({ cursor: "pointer" })
+                for (const sprite of this.letterSprites) sprite.setInteractive({ cursor: "pointer" })
             } else {
                 // In countdown
                 if (this.countdownImageI !== countdownProgressI) {
@@ -530,7 +589,7 @@ class ABCRacePlayScene extends Phaser.Scene {
 class ABCRaceResultsScene extends Phaser.Scene {
     static Key = "RESULTS"
 
-    private mode: string
+    private mode: Mode
     private numMistakes: number
     private timeElapsed: number
 
@@ -571,6 +630,21 @@ class ABCRaceResultsScene extends Phaser.Scene {
             fontWeight: "bold"
         })
         timerTextM.setColor("#000000")
+
+        // Update best time
+        const timesString = localStorage.getItem(LOCAL_STORAGE_TIMES)
+        const timesObject: BestTimesData = {}
+        if (timesString) {
+            const oldTimes = JSON.parse(timesString) as BestTimesData
+            timesObject.lowercase = oldTimes.lowercase
+            timesObject.uppercase = oldTimes.uppercase
+            timesObject.random = oldTimes.random
+        }
+        if (mistakesElapsed < (timesObject[this.mode] ?? Number.MAX_VALUE)) {
+            // We have a new best time
+            timesObject[this.mode] = mistakesElapsed
+            localStorage.setItem(LOCAL_STORAGE_TIMES, JSON.stringify(timesObject))
+        }
 
         const menuButton = new BasicButton({
             "key": "menu_buttons",

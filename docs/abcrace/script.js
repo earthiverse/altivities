@@ -1,6 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const BLACK = Phaser.Display.Color.ValueToColor(0x000000);
+const LIGHT_GREEN = Phaser.Display.Color.ValueToColor(0xC4DF9B);
+const DARK_GREEN = Phaser.Display.Color.ValueToColor(0x697753);
+const RED = Phaser.Display.Color.ValueToColor(0xF94C56);
 const LOCAL_STORAGE_MODE = "abcrace_mode";
+const LOCAL_STORAGE_TIMES = "abcrace_times";
 function getRandomNumber(min, max) {
     return Math.random() * (max - min) + min;
 }
@@ -175,6 +180,24 @@ class ABCRaceMenuScene extends Phaser.Scene {
                 randomButton.setEnabled();
                 break;
         }
+        const timesString = localStorage.getItem(LOCAL_STORAGE_TIMES);
+        let timesObject = {};
+        if (timesString)
+            timesObject = JSON.parse(timesString);
+        const addBestText = (x, y, time) => {
+            const secondsElapsed = ((time / 1000) % 60).toFixed(2).padStart(5, "0");
+            const bestText = this.add.text(x, y, `Best: ${secondsElapsed}`);
+            bestText.setFontFamily("Orbitron");
+            bestText.setFontSize(18);
+            bestText.setFontStyle("bold");
+            bestText.setColor("#697753");
+        };
+        if (timesObject.lowercase < 60000)
+            addBestText(85, 185, timesObject.lowercase);
+        if (timesObject.uppercase < 60000)
+            addBestText(340, 185, timesObject.uppercase);
+        if (timesObject.random < 60000)
+            addBestText(595, 185, timesObject.random);
         const startButton = new BasicButton({
             "key": "start_buttons",
             "scene": this,
@@ -247,7 +270,7 @@ class ABCRacePlayScene extends Phaser.Scene {
             const x = (i % columns * columnWidth) + columnWidth / 2;
             const y = timerHeight + (Math.floor(i / columns) * rowHeight) + rowHeight / 2;
             const letterSprite = this.add.sprite(x, y, box);
-            this.sprites.push(letterSprite);
+            this.letterSprites.push(letterSprite);
             const scale = Math.min(rowHeight / letterSprite.height, columnWidth / letterSprite.width) * 0.9;
             if (minScale > scale)
                 minScale = scale;
@@ -268,15 +291,13 @@ class ABCRacePlayScene extends Phaser.Scene {
                         ease: Phaser.Math.Easing.Sine.InOut,
                         targets: [letterSprite]
                     });
-                    const black = Phaser.Display.Color.ValueToColor(0x000000);
-                    const green = Phaser.Display.Color.ValueToColor(0x00FF00);
                     this.tweens.addCounter({
                         duration: 250,
                         ease: Phaser.Math.Easing.Sine.InOut,
                         from: 0,
                         onUpdate: (tween) => {
                             const value = tween.getValue();
-                            const newColor = Phaser.Display.Color.Interpolate.ColorWithColor(black, green, 100, value);
+                            const newColor = Phaser.Display.Color.Interpolate.ColorWithColor(BLACK, DARK_GREEN, 100, value);
                             const newColorN = Phaser.Display.Color.GetColor(newColor.r, newColor.g, newColor.b);
                             letterSprite.setTintFill(newColorN);
                             letterSprite.setAlpha(1 - 0.2 * value / 100);
@@ -312,21 +333,49 @@ class ABCRacePlayScene extends Phaser.Scene {
                     this.numMistakesConcurrent = 0;
                 }
                 else {
-                    this.sound.play("ng");
-                    this.numMistakes += 1;
-                    this.numMistakesConcurrent += 1;
+                    if (this.numMistakesConcurrent >= 5) {
+                        let correctLetterSprite;
+                        for (const sprite of this.letterSprites) {
+                            if (sprite.texture.key == target) {
+                                correctLetterSprite = sprite;
+                                break;
+                            }
+                        }
+                        this.tweens.add({
+                            duration: 250,
+                            ease: Phaser.Math.Easing.Sine.InOut,
+                            targets: [correctLetterSprite]
+                        });
+                        this.tweens.addCounter({
+                            duration: 250,
+                            ease: Phaser.Math.Easing.Sine.InOut,
+                            from: 0,
+                            onUpdate: (tween) => {
+                                const value = tween.getValue();
+                                const newColor = Phaser.Display.Color.Interpolate.ColorWithColor(BLACK, RED, 100, value);
+                                const newColorN = Phaser.Display.Color.GetColor(newColor.r, newColor.g, newColor.b);
+                                correctLetterSprite.setTintFill(newColorN);
+                            },
+                            to: 100,
+                        });
+                    }
+                    else {
+                        this.sound.play("ng");
+                        this.numMistakes += 1;
+                        this.numMistakesConcurrent += 1;
+                    }
                 }
             });
             letterSprite.disableInteractive();
         }
-        for (const sprite of this.sprites)
+        for (const sprite of this.letterSprites)
             sprite.setScale(minScale);
         this.countdownCover = this.add.rectangle(0, 0, ABCRace.WIDTH, ABCRace.HEIGHT, 0xFFFFFF).setOrigin(0, 0);
         this.countdownCover.setDepth(1);
     }
     init(data) {
         this.lastCorrect = undefined;
-        this.sprites = [];
+        this.letterSprites = [];
         this.currentLetter = 0;
         this.numMistakes = 0;
         this.numMistakesConcurrent = 0;
@@ -378,7 +427,7 @@ class ABCRacePlayScene extends Phaser.Scene {
                 delete this.countdown;
                 this.sound.play("start");
                 this.startTime = Date.now();
-                for (const sprite of this.sprites)
+                for (const sprite of this.letterSprites)
                     sprite.setInteractive({ cursor: "pointer" });
             }
             else {
@@ -432,6 +481,18 @@ class ABCRaceResultsScene extends Phaser.Scene {
             fontWeight: "bold"
         });
         timerTextM.setColor("#000000");
+        const timesString = localStorage.getItem(LOCAL_STORAGE_TIMES);
+        const timesObject = {};
+        if (timesString) {
+            const oldTimes = JSON.parse(timesString);
+            timesObject.lowercase = oldTimes.lowercase;
+            timesObject.uppercase = oldTimes.uppercase;
+            timesObject.random = oldTimes.random;
+        }
+        if (mistakesElapsed < (timesObject[this.mode] ?? Number.MAX_VALUE)) {
+            timesObject[this.mode] = mistakesElapsed;
+            localStorage.setItem(LOCAL_STORAGE_TIMES, JSON.stringify(timesObject));
+        }
         const menuButton = new BasicButton({
             "key": "menu_buttons",
             "scene": this,
