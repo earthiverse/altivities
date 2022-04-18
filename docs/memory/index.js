@@ -1,12 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const parameters = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => {
-        const parameter = searchParams.get(prop);
-        if (parameter)
-            return parameter;
-    }
-});
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -77,7 +70,7 @@ const START = document.getElementById("start");
 const TEACHER = document.getElementById("teacher");
 const USERNAME_INPUT = document.getElementById("username_input");
 const USERNAME_OK = document.getElementById("username_ok");
-const IS_HOST = parameters.id == undefined;
+const IS_HOST = PARAMETERS.id == undefined;
 let STATE = {
     cards: [],
     mode: "lobby",
@@ -122,7 +115,8 @@ function updateMatch(player, num1, num2) {
     showFlip(num1);
     showFlip(num2);
     INFORMATION.innerHTML = `<span><strong>${turnPlayer}</strong> matched ${word.en}!</span>`;
-    changeTurn(player);
+    if (!PARAMETERS.go_again)
+        changeTurn(player);
 }
 function updateNoMatch(player, num1, num2) {
     if (STATE.mode !== "play")
@@ -415,7 +409,7 @@ function startGame() {
 function joinGame(peer, hostID) {
     const conn = peer.connect(hostID);
     conn.on("open", () => {
-        showQR(parameters.id);
+        showQR(PARAMETERS.id);
         PEERS.set("host", [conn, "host"]);
         sendData(conn, ["NEW_NAME", USERNAME_INPUT.value]);
     });
@@ -588,7 +582,7 @@ async function prepare() {
             USERNAME_OK.addEventListener("click", () => {
                 localStorage.setItem(LOCAL_STORAGE_NAME, USERNAME_INPUT.value);
                 USERNAME_OK.disabled = true;
-                joinGame(peer, parameters.id);
+                joinGame(peer, PARAMETERS.id);
             });
         }
     });

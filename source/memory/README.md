@@ -33,6 +33,12 @@ These wordlists have pictures associated with them, which makes them nice to use
 * [Stationery](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/stationery.json)
 * [Valentine's Day](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/valentines.json)
 
+## Enable go-again rules
+
+If you want to enable the rule to allow the player to go again when they successfully match two cards, add `&go_again=1` to the end of the URL.
+
+Example: `https://altivities.earthiverse.ca/memory/?wordlist=<path-to-url-here>&go_again=1`
+
 ## Custom Wordlists
 
 Please see the [wordlist documentation](../wordlists/) to see how to make your own wordlist.
@@ -46,7 +52,7 @@ Use the following URL pattern to combine multiple wordlists:
 
 ## Ignoring (Excluding) Words
 
-You can ignore words from your wordlist(s) by adding `&ignore=<word 1>,<word 2>,<...>` to the URL.
+You can ignore words from your wordlist(s) by adding `&ignore=<word 1>,<word 2>,<...>` to the end of the URL.
 
 Example: <https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/numbers.json&ignore=one,three,five>
 
@@ -56,6 +62,6 @@ Example: <https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/Genera
 
 **NOTE**: There is currently a maximum of 10 words, but they will be chosen randomly, so you can specify more than 10 words.
 
-You can specify the set of words you want to use by adding `&include=<word 1>,<word 2>,<...>` to the URL.
+You can specify the set of words you want to use by adding `&include=<word 1>,<word 2>,<...>` to the end of the URL.
 
 Example: <https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/numbers.json&include=ten,eleven,twelve,thirteen,fourteen,fifteen,sixteen,seventeen,eighteen,nineteen,twenty>

@@ -10,6 +10,7 @@ declare global {
     }
 }
 
+declare let PARAMETERS: any
 declare let prepareWordlist: () => Promise<Wordlist>
 
 // QR Code
@@ -66,13 +67,6 @@ export type Data =
 
 /*******************************************************************************
 *** Helpers *******************************************************************/
-const parameters: any = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop: string) => {
-        const parameter = searchParams.get(prop)
-        if (parameter) return parameter
-    }
-})
-
 function randomIntFromInterval(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
@@ -165,7 +159,7 @@ const USERNAME_OK = document.getElementById("username_ok") as HTMLInputElement
 /*******************************************************************************
 *** Game Code *****************************************************************/
 // Variables
-const IS_HOST = parameters.id == undefined
+const IS_HOST = PARAMETERS.id == undefined
 let STATE: State = {
     cards: [],
     mode: "lobby",
@@ -215,7 +209,7 @@ function updateMatch(player: number, num1: number, num2: number) {
     showFlip(num2)
 
     INFORMATION.innerHTML = `<span><strong>${turnPlayer}</strong> matched ${word.en}!</span>`
-    changeTurn(player)
+    if (!PARAMETERS.go_again) changeTurn(player)
 }
 
 function updateNoMatch(player: number, num1: number, num2: number) {
@@ -277,7 +271,6 @@ function updateFlip(num: number) {
         setTimeout(() => {
             if (STATE.mode !== "play") return
 
-            // TODO: If all cards are flipped, finish the game.
             if (isFinished()) {
                 STATE.cards.sort((a, b) => {
                     // Sort by owner first
@@ -561,7 +554,7 @@ function joinGame(peer: Peer, hostID: string) {
     const conn = peer.connect(hostID)
     conn.on("open", () => {
         // Show the QR Code and URL so others can connect by scanning it
-        showQR(parameters.id)
+        showQR(PARAMETERS.id)
 
         // Set the host
         PEERS.set("host", [conn, "host"])
@@ -767,7 +760,7 @@ async function prepare() {
             USERNAME_OK.addEventListener("click", () => {
                 localStorage.setItem(LOCAL_STORAGE_NAME, USERNAME_INPUT.value)
                 USERNAME_OK.disabled = true
-                joinGame(peer, parameters.id)
+                joinGame(peer, PARAMETERS.id)
             })
         }
     })
