@@ -19,6 +19,8 @@ Players can tap on the cards to flip them over. If they match, they get one poin
 These wordlists have pictures associated with them, which makes them nice to use with memory:
 
 * [Alphabet](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/alphabet.json)
+  * [Junior Sunshine 5 (Uppercase)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine5/lesson1_cards.json)
+  * [Let's Try 1 - Lesson 6 (Uppercase)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit6_cards.json)
 * [Animals](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/animals.json)
 * [Christmas (winter)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/winter.json)
 * [Colors](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/colors.json)
@@ -29,6 +31,8 @@ These wordlists have pictures associated with them, which makes them nice to use
 * [Numbers (1-20)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/numbers.json)
 * [Occupations (Junior Sunshine 6 - Lesson 10)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson10.json)
 * [Prefectures](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/Hepburn/prefectures.json)
+* Shapes
+  * [Let's Try 1 - Lesson 7](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit7_cards.json)
 * [Sports](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/sports.json)
 * [Stationery](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/stationery.json)
   * [Let's Try 2 - Unit 5](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit5_cards.json)

@@ -1,3 +1,226 @@
 [
-    
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/purple_circle.svg",
+        "en": "purple circle",
+        "ja": {
+            "kanji": "紫色の丸",
+            "hiragana": "むらさきいろのまる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/red_triangle.svg",
+        "en": "red triangle",
+        "ja": {
+            "kanji": "赤い三角",
+            "hiragana": "あかいさんかく"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/white_square.svg",
+        "en": "white square",
+        "ja": {
+            "kanji": "白い正方形",
+            "hiragana": "しろいせいほうけい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/black_rectangle.svg",
+        "en": "black rectangle",
+        "ja": {
+            "kanji": "黒い長方形",
+            "hiragana": "くろいちょうほうけい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/pink_heart.svg",
+        "en": "pink heart",
+        "ja": {
+            "kanji": "ピンク色のハート",
+            "hiragana": "ぴんくいろのはーと"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/purple_diamond.svg",
+        "en": "purple diamond",
+        "ja": {
+            "kanji": "紫色の菱形",
+            "hiragana": "むらさきひしがた"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/yellow_star.svg",
+        "en": "yellow star",
+        "ja": {
+            "kanji": "黄色い星",
+            "hiragana": "きいろいほし"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/red_circle.svg",
+        "en": "red circle",
+        "ja": {
+            "kanji": "赤い丸",
+            "hiragana": "あかいまる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/black_triangle.svg",
+        "en": "black triangle",
+        "ja": {
+            "kanji": "黒い三角",
+            "hiragana": "くろいさんかく"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/green_square.svg",
+        "en": "green square",
+        "ja": {
+            "kanji": "緑色の正方形",
+            "hiragana": "みどりいろのせいほうけい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/pink_rectangle.svg",
+        "en": "pink rectangle",
+        "ja": {
+            "kanji": "ピンク色の長方形",
+            "hiragana": "ぴんくいろのちょうほうけい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/purple_heart.svg",
+        "en": "purple heart",
+        "ja": {
+            "kanji": "紫色のハート",
+            "hiragana": "むらさきいろのはーと"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/green_diamond.svg",
+        "en": "green diamond",
+        "ja": {
+            "kanji": "緑色の菱形",
+            "hiragana": "みどりいろのひしがた"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/white_star.svg",
+        "en": "white star",
+        "ja": {
+            "kanji": "白い星",
+            "hiragana": "しろいほし"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/blue_circle.svg",
+        "en": "blue circle",
+        "ja": {
+            "kanji": "青い丸",
+            "hiragana": "あおいまる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/pink_triangle.svg",
+        "en": "pink triangle",
+        "ja": {
+            "kanji": "ピンク色の三角",
+            "hiragana": "ぴんくいろのさんかく"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/blue_square.svg",
+        "en": "blue square",
+        "ja": {
+            "kanji": "青い正方形",
+            "hiragana": "あおいせいほうけい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/yellow_rectangle.svg",
+        "en": "yellow rectangle",
+        "ja": {
+            "kanji": "黄色い長方形",
+            "hiragana": "きいろいちょうほうけい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/red_heart.svg",
+        "en": "red heart",
+        "ja": {
+            "kanji": "赤いハート",
+            "hiragana": "あかいはーと"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/blue_diamond.svg",
+        "en": "blue diamond",
+        "ja": {
+            "kanji": "青い菱形",
+            "hiragana": "あおいひしがた"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/red_star.svg",
+        "en": "red star",
+        "ja": {
+            "kanji": "赤い星",
+            "hiragana": "あかいほし"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/pink_circle.svg",
+        "en": "pink circle",
+        "ja": {
+            "kanji": "ピンク色の丸",
+            "hiragana": "ぴんくいろのまる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/purple_triangle.svg",
+        "en": "purple triangle",
+        "ja": {
+            "kanji": "紫色の三角",
+            "hiragana": "むらさきいろのさんかく"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/yellow_square.svg",
+        "en": "yellow square",
+        "ja": {
+            "kanji": "黄色い正方形",
+            "hiragana": "きいろいせいほうけい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/white rectangle.svg",
+        "en": "white rectangle",
+        "ja": {
+            "kanji": "白い長方形",
+            "hiragana": "しろいちょうほうけい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/blue_heart.svg",
+        "en": "blue heart",
+        "ja": {
+            "kanji": "青いハート",
+            "hiragana": "あおいはーと"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/black_diamond.svg",
+        "en": "black diamond",
+        "ja": {
+            "kanji": "黒い菱形",
+            "hiragana": "くろいひしがた"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/shapes/green_star.svg",
+        "en": "green star",
+        "ja": {
+            "kanji": "緑色の星",
+            "hiragana": "みどりいろのほし"
+        }
+    }
 ]

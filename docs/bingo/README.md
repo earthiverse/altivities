@@ -13,6 +13,8 @@ Students can drag the tiles from the right on to the bingo grid, or click the 'R
 These wordlists have pictures associated with them, which makes them nice to use with bingo:
 
 * [Alphabet](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/alphabet.json)
+  * [Junior Sunshine 5 (Uppercase)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/lesson1_cards.json)
+  * [Let's Try 1 - Lesson 6 (Uppercase)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry1/unit6_cards.json)
 * [Animals](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/animals.json)
 * [Christmas (winter)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/winter.json)
 * [Colors](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/colors.json)
@@ -22,6 +24,8 @@ These wordlists have pictures associated with them, which makes them nice to use
 * [Halloween](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/halloween.json)
 * [Numbers (1-20)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/numbers.json)
 * [Occupations (Junior Sunshine 6 - Lesson 10)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine6/lesson10.json)
+* Shapes
+  * [Let's Try 1 - Lesson 7](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry1/unit7_cards.json)
 * [Prefectures](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/Hepburn/prefectures.json)
 * [Sports](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/sports.json)
 * [Stationery](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/stationery.json)
