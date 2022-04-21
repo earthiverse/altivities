@@ -23,10 +23,12 @@
             "types"
         ],
         "types": [
+            "jquery",
             "node",
             "peerjs",
             "phaser",
-            "phaser-ui-tools"
+            "phaser-ui-tools",
+            "survey-jquery"
         ],
         "watch": false
     },
