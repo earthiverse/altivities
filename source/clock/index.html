@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Altivities Wordlist Customizer">
+    <meta property="og:description" content="Customize your wordlist(s) for various Altivities games!">
+    <meta property="og:url" content="https://altivities.earthiverse.ca/wordlists/customizer/" />
+    <meta property="og:image" content="https://altivities.earthiverse.ca/wordlists/customizer/images/screenshot.png" />
+    <title>What time is it?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script>
+        var exports = {};
+    </script>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div id="responses"> </div>
+    <div id="clock">
+        <img src="images/clock_blank.png" id="clock_back">
+        <img src="images/clock_long_hand.png" id="clock_minute">
+        <img src="images/clock_short_hand.png" id="clock_hour">
+    </div>
+    <div id="check">
+        <form action="javascript:checkTime();">
+            <input type="number" placeholder="00" id="input_hour" min="1" max="12" onkeydown="limitClock(this);"
+                onkeyup="limitClock(this);">
+            :
+            <input type="number" placeholder="00" id="input_minute" min="0" max="59" onkeydown="limitClock(this);"
+                onkeyup="limitClock(this);">
+            <input type="submit" value="Check!" id="input_check">
+        </form>
+    </div>
+</body>
+
+</html>
