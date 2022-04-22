@@ -77,7 +77,6 @@ body {
   color: #CCCCCC;
 }
 
-
 #responses {
   z-index: 3;
 }
@@ -97,4 +96,14 @@ body {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 1.25s, opacity 1.25s ease-in-out;
+}
+
+/* Hide number arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
 }
