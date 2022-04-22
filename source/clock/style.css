@@ -57,7 +57,7 @@ body {
 
 #check {
   font-family: Orbitron;
-  font-size: 10vh;
+  font-size: min(10vh, 10vw);
   height: 20vh;
   width: 100vw;
 }
@@ -65,12 +65,16 @@ body {
 #check input {
   border: 1px solid #000;
   font-family: Orbitron;
-  font-size: 10vh;
+  font-size: min(10vh, 10vw);
 }
 
 #input_hour, #input_minute {
   text-align: center;
-  width: 25vh
+  width: min(25vh, 25vw);
+}
+
+#input_check {
+  margin: min(1vw, 1vh)
 }
 
 #input_hour::placeholder, #input_minute::placeholder {

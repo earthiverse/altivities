@@ -116,6 +116,8 @@ function checkTime() {
         // They didn't enter anything in the minute spot
         //   OR: They didn't enter a leading zero
         INPUT_MINUTE.style.backgroundColor = COLOR_ORANGE
+        INPUT_MINUTE.focus()
+        INPUT_MINUTE.select()
         return
     } else {
         INPUT_MINUTE.style.backgroundColor = ""

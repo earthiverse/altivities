@@ -88,6 +88,8 @@ function checkTime() {
     }
     if (isNaN(check_minute) || INPUT_MINUTE.value.length !== 2) {
         INPUT_MINUTE.style.backgroundColor = COLOR_ORANGE;
+        INPUT_MINUTE.focus();
+        INPUT_MINUTE.select();
         return;
     }
     else {
