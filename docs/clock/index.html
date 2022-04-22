@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script>
         var exports = {};
@@ -21,7 +22,24 @@
 </head>
 
 <body>
-    <div id="responses"> </div>
+    <div id="responses"></div>
+    <div id="settings_toggle">
+        <span class="material-icons">
+            settings
+        </span>
+    </div>
+    <div id="settings">
+        <div><input type="radio" id="input_res_60" name="res" value="60"> <label for="huey">:00</label></div>
+        <div><input type="radio" id="input_res_30" name="res" value="30"> <label for="huey">:00, :30</label></div>
+        <div><input type="radio" id="input_res_15" name="res" value="15"> <label for="huey">:00, :15, :30,
+                :45</label></div>
+        <div><input type="radio" id="input_res_10" name="res" value="10"> <label for="huey">:00, :10, :20, :30, :40,
+                :50</label></div>
+        <div><input type="radio" id="input_res_05" name="res" value="5" checked> <label for="huey">:00, :05, :10, :15,
+                :20, :25, :30, :35, :40, :45, :50, :55</label></div>
+        <div></div><input type="button" value="Set!" id="input_set_resolution">
+    </div>
+    </div>
     <div id="clock">
         <img src="images/clock_blank.png" id="clock_back">
         <img src="images/clock_long_hand.png" id="clock_minute">

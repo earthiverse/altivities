@@ -4,8 +4,22 @@ const CLOCK_HOUR = document.getElementById("clock_hour") as HTMLDivElement
 const INPUT_HOUR = document.getElementById("input_hour") as HTMLInputElement
 const INPUT_MINUTE = document.getElementById("input_minute") as HTMLInputElement
 const INPUT_CHECK = document.getElementById("input_check") as HTMLButtonElement
+const INPUT_SET_RESOLUTION = document.getElementById("input_set_resolution") as HTMLButtonElement
 
 const RESPONSES = document.getElementById("responses") as HTMLDivElement
+const SETTINGS = document.getElementById("settings") as HTMLDivElement
+const SETTINGS_TOGGLE = document.getElementById("settings_toggle") as HTMLDivElement
+
+SETTINGS_TOGGLE.addEventListener("click", () => {
+    SETTINGS.style.visibility = "visible"
+    SETTINGS.style.opacity = "1"
+})
+
+INPUT_SET_RESOLUTION.addEventListener("click", () => {
+    SETTINGS.style.visibility = "hidden"
+    SETTINGS.style.opacity = "0"
+    getNewTime()
+})
 
 const COLOR_GREEN = "#00A236"
 const COLOR_ORANGE = "#ED7800"
@@ -77,12 +91,16 @@ function enableInputs() {
 }
 
 function getNewTime() {
-    const minuteResolution = 5
+    const selectedResolution = (document.querySelector("input[name=\"res\"]:checked") as HTMLInputElement).value
+    const minuteResolution = Number.parseInt(selectedResolution)
 
     // Choose new values for time
-    time_hours = getRandomInt(1, 12)
-    time_minutes = getRandomInt(0, (60 - minuteResolution) / minuteResolution) * minuteResolution
-    console.log(`New Time: ${time_hours}:${time_minutes}`)
+    const old_hours = time_hours
+    const old_minutes = time_minutes
+    while (old_hours == time_hours && old_minutes == time_minutes) {
+        time_hours = getRandomInt(1, 12)
+        time_minutes = getRandomInt(0, (60 - minuteResolution) / minuteResolution) * minuteResolution
+    }
 
     // Clear, and lock the inputs
     clearInputs()
