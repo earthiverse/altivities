@@ -1,0 +1,152 @@
+[
+    {
+        "image": "https://1.bp.blogspot.com/-21bS7KXKdek/YVwDGK8irjI/AAAAAAABfco/yjSmntUEhxQDtDeieZIs2HajbMtpDsLkQCNcBGAsYHQ/s708/food_tamago_gohan4.png",
+        "en": "rice",
+        "ja": {
+            "kanji": "ごはん",
+            "hiragana": "ごはん"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-3khx7urzRIw/UgSMGL4tYyI/AAAAAAAAW74/NIeCZIlDGOE/s800/food_onigiri.png",
+        "en": "rice ball",
+        "ja": {
+            "kanji": "おにぎり",
+            "hiragana": "おにぎり"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-LHEZgJ6tpeA/UgSL_9y4KrI/AAAAAAAAW5s/DNRPJ4kSvpI/s800/food_curryruce.png",
+        "en": "curry and rice",
+        "ja": {
+            "kanji": "カレーライス",
+            "hiragana": "かれーらいす"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-RHXo5el1fnw/UUhH_OqS0tI/AAAAAAAAO64/DMTjZX3TdG8/s1600/wasyoku_yakizakana.png",
+        "en": [
+            "grilled fish"
+        ],
+        "ja": {
+            "kanji": "焼き魚",
+            "hiragana": "やきざかな"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-R9i2_P0Jt_s/XTPn7ZzMmKI/AAAAAAABTug/HoUKiKnTDRQmTGnWqxPUHxLR_m3WAyfRACLcBGAs/s800/bread_syokupan_usui.png",
+        "en": "bread",
+        "ja": {
+            "kanji": "パン",
+            "hiragana": "ぱん"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-HzshV4HPiyY/UbVu-3tfGqI/AAAAAAAAUlA/mkU3QQNPZ8U/s800/food_sandwitch.png",
+        "en": "sandwich",
+        "ja": {
+            "kanji": "サンドイッチ",
+            "hiragana": "さんどいっち"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-O3BfRklRuvY/UgSMMQLBDQI/AAAAAAAAW-Q/ierOPDBWb7U/s800/sweets_pancake.png",
+        "en": "pancakes",
+        "ja": {
+            "kanji": "パンケーキ",
+            "hiragana": "ぱんけーき"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-Xx3M4NHN-50/X9lJVUVciOI/AAAAAAABc3w/FLnRJOST7eknkix8ps8PKSwtUgsvdn1DQCNcBGAsYHQ/s501/food_pizza_cut_salami.png",
+        "en": "pizza",
+        "ja": {
+            "kanji": "ピザ",
+            "hiragana": "ぴざ"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-63vQtYUKJBY/UgSMCmG66LI/AAAAAAAAW6w/-VMth7DVjcY/s800/food_hamburger.png",
+        "en": "hamburger",
+        "ja": {
+            "kanji": "ハンバーガー",
+            "hiragana": "はんばーがー"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-mjs3KRWzayY/UgSMCxWO2NI/AAAAAAAAW6o/Ody861WWhYM/s800/food_hotdog.png",
+        "en": "hot dog",
+        "ja": {
+            "kanji": "ホットドッグ",
+            "hiragana": "ほっとどっぐ"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-ioMDbzmYT7I/UgSMBbpopaI/AAAAAAAAW6M/h__92h9Wv5c/s800/food_frenchfry.png",
+        "en": "French fries",
+        "ja": {
+            "kanji": "フライドポテト",
+            "hiragana": "ふらいどぽてと"
+        }
+    }
+     {
+        "image": "https://4.bp.blogspot.com/-siUZ4tDzooM/UgsrknPG5mI/AAAAAAAAXFk/LLLLwlXG4r0/s800/food_fried_chicken.png",
+        "en": "fried chicken",
+        "ja": {
+            "kanji": "フライドチキン",
+            "hiragana": "ふらいどちきん"
+        }
+    }, {
+        "image": "https://1.bp.blogspot.com/-2ZQZEFW-xBI/VXOTn73hJeI/AAAAAAAAuBw/LhhARSxcvhI/s800/food_sausage.png",
+        "en": "sausage",
+        "ja": {
+            "kanji": "ソーセージ",
+            "hiragana": "そーせーじ"
+        }
+    }, {
+        "image": "https://4.bp.blogspot.com/-3eNDhzaxDGY/UgSMIBj2yZI/AAAAAAAAW8o/XzYwXc9ttAY/s800/food_stake.png",
+        "en": "steak",
+        "ja": {
+            "kanji": "ステーキ",
+            "hiragana": "すてーき"
+        }
+    }, {
+        "image": "https://2.bp.blogspot.com/-i9rqYznm5SA/UzKmkT1kEVI/AAAAAAAAelI/HU1M-5v6K18/s800/food_omelet.png",
+        "en": "omelet",
+        "ja": {
+            "kanji": "オムレツ",
+            "hiragana": "おむれつ"
+        }
+    }, {
+        "image": "https://2.bp.blogspot.com/-0SvuIaFLFfA/W_UF-s1Hp1I/AAAAAAABQUU/vEqva7t2Q-oJncfmE1WTA9C79-KhQ6AXwCLcBGAs/s800/food_spaghetti_tarako.png",
+        "en": "spahgetti",
+        "ja": {
+            "kanji": "スパゲッティ",
+            "hiragana": "すぱげってぃ"
+        }
+    }, {
+        "image": "https://3.bp.blogspot.com/-KKPbDbr6lsU/UWgWiV8ztXI/AAAAAAAAQFg/olFw75vshzQ/s1600/sweets_applepie.png",
+        "en": "pie",
+        "ja": {
+            "kanji": "パイ",
+            "hiragana": "ぱい"
+        }
+    }, {
+        "image": "https://3.bp.blogspot.com/-Fa6AIKVnh1c/VVGVbTWRGkI/AAAAAAAAtlY/MlG36yqDSxw/s800/food_vegetable_sald.png",
+        "en": "salad",
+        "ja": {
+            "kanji": "サラダ",
+            "hiragana": "さらだ"
+        }
+    }, {
+        "image": "https://4.bp.blogspot.com/-VtsRr-xjY00/Us_NcICBs8I/AAAAAAAAdJU/NNzOgC7bfWQ/s800/food_omisoshiru.png",
+        "en": "soup",
+        "ja": {
+            "kanji": "スープ",
+            "hiragana": "すーぷ"
+        },
+        {
+            "kanji": "汁",
+            "hiragana": "しる"
+    }
+]
