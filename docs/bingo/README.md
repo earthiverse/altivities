@@ -22,6 +22,8 @@ These wordlists have pictures associated with them, which makes them nice to use
   * [Junior Sunshine 6 - Lesson 3](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine6/lesson3.json)
   * [Junior Sunshine 6 - Lesson 3 + Canada](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/countries.json&include=the%20U.S.A.,Brazil,Japan,South%20Korea,China,India,the%20U.K.,France,Germany,Italy,Switzerland,Australia,Egypt,Kenya,Canada)
 * [Halloween](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/halloween.json)
+* [Months](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/months.json)
+  * [Junior Sunshine 5 - Lesson 3](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/lesson3_cards.json)
 * [Numbers (1-20)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/numbers.json)
 * [Occupations (Junior Sunshine 6 - Lesson 10)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine6/lesson10.json)
 * Shapes
