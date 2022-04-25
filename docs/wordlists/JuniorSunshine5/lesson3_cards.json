@@ -1,0 +1,98 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/months/January.svg",
+        "en": "January",
+        "ja": {
+            "kanji": "一月",
+            "hiragana": "いちがつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/months/February.svg",
+        "en": "February",
+        "ja": {
+            "kanji": "ニ月",
+            "hiragana": "にがつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/months/March.svg",
+        "en": "March",
+        "ja": {
+            "kanji": "三月",
+            "hiragana": "さんがつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/months/April.svg",
+        "en": "April",
+        "ja": {
+            "kanji": "四月",
+            "hiragana": "しがつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/months/May.svg",
+        "en": "May",
+        "ja": {
+            "kanji": "五月",
+            "hiragana": "ごがつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/months/June.svg",
+        "en": "June",
+        "ja": {
+            "kanji": "六月",
+            "hiragana": "ろくがつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/months/July.svg",
+        "en": "July",
+        "ja": {
+            "kanji": "七月",
+            "hiragana": "しちがつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/months/August.svg",
+        "en": "August",
+        "ja": {
+            "kanji": "八月",
+            "hiragana": "はちがつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/months/September.svg",
+        "en": "September",
+        "ja": {
+            "kanji": "九月",
+            "hiragana": "くがつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/months/October.svg",
+        "en": "October",
+        "ja": {
+            "kanji": "十月",
+            "hiragana": "じゅうがつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/months/November.svg",
+        "en": "November",
+        "ja": {
+            "kanji": "十一月",
+            "hiragana": "じゅういちがつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/months/December.svg",
+        "en": "December",
+        "ja": {
+            "kanji": "十二月",
+            "hiragana": "じゅうにがつ"
+        }
+    }
+]
