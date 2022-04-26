@@ -96,10 +96,10 @@ class KanaRaceLoadScene extends Phaser.Scene {
             this.loadingFill.fillStyle(0xC4DF9B, 1);
             this.loadingFill.fillRect(250, 280, 300 * value, 30);
         });
-        for (const letter of KanaRace.HiraganaLetters)
-            this.load.image(letter, `images/hiragana/${letter}.svg`);
-        for (const letter of KanaRace.KatakanaLetters)
-            this.load.image(letter, `images/katakana/${letter}.svg`);
+        for (const char of KanaRace.HiraganaLetters)
+            this.load.image(char, `images/hiragana/${char}.svg`);
+        for (const char of KanaRace.KatakanaLetters)
+            this.load.image(char, `images/katakana/${char}.svg`);
         for (const number of ["three", "two", "one"])
             this.load.image(number, `images/numbers/${number}.svg`);
         this.load.image("logo", "images/logo.png");
