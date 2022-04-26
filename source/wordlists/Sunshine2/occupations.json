@@ -1,0 +1,114 @@
+[
+    {
+        "en": "chef",
+        "ja": {
+            "hiragana": "りょうりちょう",
+            "kanji": "料理長"
+        }
+    },
+    {
+        "en": "pianist",
+        "ja": {
+            "hiragana": "ぴあにすと",
+            "kanji": "ピアニスト"
+        }
+    },
+    {
+        "en": "beautician",
+        "ja": {
+            "hiragana": "びようし",
+            "kanji": "美容師"
+        }
+    },
+    {
+        "en": "hairstylist",
+        "ja": {
+            "hiragana": "びようし",
+            "kanji": "美容師"
+        }
+    },
+    {
+        "en": "barber",
+        "ja": {
+            "hiragana": "りはつし",
+            "kanji": "理髪師"
+        }
+    },
+    {
+        "en": "announcer",
+        "ja": {
+            "hiragana": "あなうんさー",
+            "kanji": "アナウンサー"
+        }
+    },
+    {
+        "en": "newscaster",
+        "ja": {
+            "hiragana": "にゅーすきゃすたー",
+            "kanji": "ニュースキャスター"
+        }
+    },
+    {
+        "en": "cartoonist",
+        "ja": {
+            "hiragana": "まんがか",
+            "kanji": "マンガ家"
+        }
+    },
+    {
+        "en": "painter",
+        "ja": {
+            "hiragana": "がか",
+            "kanji": "画家"
+        }
+    },
+    {
+        "en": "designer",
+        "ja": {
+            "hiragana": "でざいなー",
+            "kanji": "デザイナー"
+        }
+    },
+    {
+        "en": "public official",
+        "ja": {
+            "hiragana": "こうむいん",
+            "kanji": "公務員"
+        }
+    },
+    {
+        "en": "carpenter",
+        "ja": {
+            "hiragana": "だいく",
+            "kanji": "大工"
+        }
+    },
+    {
+        "en": "photographer",
+        "ja": {
+            "hiragana": "しゃしんか",
+            "kanji": "写真家"
+        }
+    },
+    {
+        "en": "reporter",
+        "ja": {
+            "hiragana": "きしゃ",
+            "kanji": "記者"
+        }
+    },
+    {
+        "en": "lawyer",
+        "ja": {
+            "hiragana": "べんごし，ほうりつか",
+            "kanji": "弁護士，法律家"
+        }
+    },
+    {
+        "en": "computer programmer",
+        "ja": {
+            "hiragana": "ぷろぐらまー",
+            "kanji": "プログラマー"
+        }
+    }
+]

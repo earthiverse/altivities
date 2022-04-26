@@ -1,0 +1,88 @@
+[
+    {
+        "en": "Tahiti",
+        "ja": {
+            "hiragana": "たひち（しま）",
+            "kanji": "タヒチ（島）"
+        }
+    },
+    {
+        "en": "cottage",
+        "ja": {
+            "hiragana": "しょうべっそう，しょうろっじ",
+            "kanji": "小別荘，小ロッジ"
+        }
+    },
+    {
+        "en": [
+            "coconut",
+            "coconuts",
+            "coconut(s)"
+        ],
+        "ja": {
+            "hiragana": "ここなっつ",
+            "kanji": "ココナッツ"
+        }
+    },
+    {
+        "en": [
+            "cookie",
+            "cookies",
+            "cookie(s)"
+        ],
+        "ja": {
+            "hiragana": "くっきー",
+            "kanji": "クッキー"
+        }
+    },
+    {
+        "en": "among",
+        "ja": {
+            "hiragana": "～のまで［に］， ～のなかで［に］",
+            "kanji": "～の間で［に］， ～の中で［に］"
+        }
+    },
+    {
+        "en": [
+            "tourist",
+            "tourists",
+            "tourist(s)"
+        ],
+        "ja": {
+            "hiragana": "りょこうしゃ，かんこうきゃく",
+            "kanji": "旅行者，観光客"
+        }
+    },
+    {
+        "en": [
+            "spot",
+            "spots",
+            "spot(s)"
+        ],
+        "ja": {
+            "hiragana": "ばしょ，ちてん",
+            "kanji": "場所，地点"
+        }
+    },
+    {
+        "en": "up close",
+        "ja": {
+            "hiragana": "すぐちかくで［に］",
+            "kanji": "すぐ近くで［に］"
+        }
+    },
+    {
+        "en": "seafood",
+        "ja": {
+            "hiragana": "しーふーど，かいさんぶつ",
+            "kanji": "シーフード，海産物"
+        }
+    },
+    {
+        "en": "sky",
+        "ja": {
+            "hiragana": "そら",
+            "kanji": "空"
+        }
+    }
+]

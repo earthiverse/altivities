@@ -1,0 +1,460 @@
+[
+    {
+        "en": [
+            "eel",
+            "eels",
+            "eel(s)"
+        ],
+        "ja": {
+            "hiragana": "うなぎ",
+            "kanji": "ウナギ"
+        }
+    },
+    {
+        "en": [
+            "decide",
+            "decide(d)"
+        ],
+        "ja": {
+            "hiragana": "けっていする",
+            "kanji": "決定する"
+        }
+    },
+    {
+        "en": "trick",
+        "ja": {
+            "hiragana": "いたずら",
+            "kanji": "いたずら"
+        }
+    },
+    {
+        "en": "one day",
+        "ja": {
+            "hiragana": "あるひ",
+            "kanji": "ある日"
+        }
+    },
+    {
+        "en": [
+            "play a trick on ~",
+            "play a trick on"
+        ],
+        "ja": {
+            "hiragana": "～にいたずらをする",
+            "kanji": "～にいたずらをする"
+        }
+    },
+    {
+        "en": "out",
+        "ja": {
+            "hiragana": "そとへ［に］",
+            "kanji": "外へ［に］"
+        }
+    },
+    {
+        "en": "basket",
+        "ja": {
+            "hiragana": "かご",
+            "kanji": "かご"
+        }
+    },
+    {
+        "en": "teeth",
+        "ja": {
+            "hiragana": "tooth（は）のふくすうけい",
+            "kanji": "tooth（歯）の複数形"
+        }
+    },
+    {
+        "en": "tooth",
+        "ja": {
+            "hiragana": "は",
+            "kanji": "歯"
+        }
+    },
+    {
+        "en": [
+            "shout",
+            "shout(ed)"
+        ],
+        "ja": {
+            "hiragana": "さけぶ",
+            "kanji": "叫ぶ"
+        }
+    },
+    {
+        "en": "sly",
+        "ja": {
+            "hiragana": "ずるい，わるがしこい",
+            "kanji": "ずるい，悪賢い"
+        }
+    },
+    {
+        "en": "ran",
+        "ja": {
+            "hiragana": "run（はしる）のかこけい",
+            "kanji": "run（走る）の過去形"
+        }
+    },
+    {
+        "en": [
+            "out of ~",
+            "out of"
+        ],
+        "ja": {
+            "hiragana": "～のそとへ［に］",
+            "kanji": "～の外へ［に］"
+        }
+    },
+    {
+        "en": "come back",
+        "ja": {
+            "hiragana": "もどる",
+            "kanji": "もどる"
+        }
+    },
+    {
+        "en": "run away",
+        "ja": {
+            "hiragana": "にげる",
+            "kanji": "逃げる"
+        }
+    },
+    {
+        "en": "line",
+        "ja": {
+            "hiragana": "れつ，ぎょうれつ",
+            "kanji": "列，行列"
+        }
+    },
+    {
+        "en": "clothes",
+        "ja": {
+            "hiragana": "いふく，きもの",
+            "kanji": "衣服，着物"
+        }
+    },
+    {
+        "en": "probably",
+        "ja": {
+            "hiragana": "たぶん， じゅっちゅうはっく",
+            "kanji": "たぶん， 十中八九"
+        }
+    },
+    {
+        "en": [
+            "die",
+            "die(d)"
+        ],
+        "ja": {
+            "hiragana": "しぬ",
+            "kanji": "死ぬ"
+        }
+    },
+    {
+        "en": "himself",
+        "ja": {
+            "hiragana": "かれじしんに［を］",
+            "kanji": "彼自身に［を］"
+        }
+    },
+    {
+        "en": "say to himself",
+        "ja": {
+            "hiragana": "こころのなかでかんがえる",
+            "kanji": "心の中で考える"
+        }
+    },
+    {
+        "en": "thought",
+        "ja": {
+            "hiragana": "thinkのかこけい 《かこぶんしけいもどうけい》",
+            "kanji": "thinkの過去形 《過去分詞形も同形》"
+        }
+    },
+    {
+        "en": "sick",
+        "ja": {
+            "hiragana": "びょうきの",
+            "kanji": "病気の"
+        }
+    },
+    {
+        "en": "stole",
+        "ja": {
+            "hiragana": "steal（ぬすむ）のかこけい",
+            "kanji": "steal（盗む）の過去形"
+        }
+    },
+    {
+        "en": "steal",
+        "ja": {
+            "hiragana": "ぬすむ",
+            "kanji": "盗む"
+        }
+    },
+    {
+        "en": "heart",
+        "ja": {
+            "hiragana": "こころ",
+            "kanji": "心"
+        }
+    },
+    {
+        "en": "sank",
+        "ja": {
+            "hiragana": "sink（しずむ）のかこけい",
+            "kanji": "sink（沈む）の過去形"
+        }
+    },
+    {
+        "en": "sink",
+        "ja": {
+            "hiragana": "しずむ，おちこむ",
+            "kanji": "沈む，落ち込む"
+        }
+    },
+    {
+        "en": "I'm sorry.",
+        "ja": {
+            "hiragana": "すみません。",
+            "kanji": "すみません。"
+        }
+    },
+    {
+        "en": "brought",
+        "ja": {
+            "hiragana": "bringのかこけい 《かこぶんしけいもどうけい》",
+            "kanji": "bringの過去形 《過去分詞形も同形》"
+        }
+    },
+    {
+        "en": "left",
+        "ja": {
+            "hiragana": "leaveのかこけい 《かこぶんしけいもどうけい》",
+            "kanji": "leaveの過去形 《過去分詞形も同形》"
+        }
+    },
+    {
+        "en": "neighbor",
+        "ja": {
+            "hiragana": "りんじん",
+            "kanji": "隣人"
+        }
+    },
+    {
+        "en": "strange",
+        "ja": {
+            "hiragana": "きみょうな",
+            "kanji": "奇妙な"
+        }
+    },
+    {
+        "en": [
+            "happen",
+            "happen(ing)"
+        ],
+        "ja": {
+            "hiragana": "おこる",
+            "kanji": "起こる"
+        }
+    },
+    {
+        "en": "door",
+        "ja": {
+            "hiragana": "どあ，とびら",
+            "kanji": "ドア，扉"
+        }
+    },
+    {
+        "en": "someone",
+        "ja": {
+            "hiragana": "だれか",
+            "kanji": "だれか"
+        }
+    },
+    {
+        "en": "one night",
+        "ja": {
+            "hiragana": "あるよる［ばん］",
+            "kanji": "ある夜［晩］"
+        }
+    },
+    {
+        "en": "these days",
+        "ja": {
+            "hiragana": "このごろ，ちかごろ",
+            "kanji": "このごろ，近ごろ"
+        }
+    },
+    {
+        "en": "rifle",
+        "ja": {
+            "hiragana": "じゅう",
+            "kanji": "銃"
+        }
+    },
+    {
+        "en": "this time",
+        "ja": {
+            "hiragana": "こんどは",
+            "kanji": "今度は"
+        }
+    },
+    {
+        "en": "fell",
+        "ja": {
+            "hiragana": "fall（たおれる）のかこけい",
+            "kanji": "fall（倒れる）の過去形"
+        }
+    },
+    {
+        "en": "ground",
+        "ja": {
+            "hiragana": "じめん",
+            "kanji": "地面"
+        }
+    },
+    {
+        "en": [
+            "nod",
+            "nod(ded)"
+        ],
+        "ja": {
+            "hiragana": "うなずく",
+            "kanji": "うなずく"
+        }
+    },
+    {
+        "en": "weakly",
+        "ja": {
+            "hiragana": "よわく，よわよわしく",
+            "kanji": "弱く，弱々しく"
+        }
+    },
+    {
+        "en": "smoke",
+        "ja": {
+            "hiragana": "けむり",
+            "kanji": "煙"
+        }
+    },
+    {
+        "en": "barrel",
+        "ja": {
+            "hiragana": "じゅうしん",
+            "kanji": "銃身"
+        }
+    },
+    {
+        "en": "look around",
+        "ja": {
+            "hiragana": "あたりをみまわす",
+            "kanji": "あたりを見回す"
+        }
+    },
+    {
+        "en": [
+            "drop",
+            "drop(ped)"
+        ],
+        "ja": {
+            "hiragana": "おとす",
+            "kanji": "落とす"
+        }
+    },
+    {
+        "en": [
+            "be sorry for ~",
+            "be sorry for"
+        ],
+        "ja": {
+            "hiragana": "～をすまないとおもう",
+            "kanji": "～をすまないと思う"
+        }
+    },
+    {
+        "en": "fall down",
+        "ja": {
+            "hiragana": "たおれる",
+            "kanji": "倒れる"
+        }
+    },
+    {
+        "en": "cheap",
+        "ja": {
+            "hiragana": "あんかな，やすい",
+            "kanji": "安価な，安い"
+        }
+    },
+    {
+        "en": "dirty",
+        "ja": {
+            "hiragana": "よごれた，きたない",
+            "kanji": "汚れた，汚い"
+        }
+    },
+    {
+        "en": "empty",
+        "ja": {
+            "hiragana": "からの",
+            "kanji": "からの"
+        }
+    },
+    {
+        "en": "heavy",
+        "ja": {
+            "hiragana": "おもい",
+            "kanji": "重い"
+        }
+    },
+    {
+        "en": "narrow",
+        "ja": {
+            "hiragana": "せまい",
+            "kanji": "狭い"
+        }
+    },
+    {
+        "en": "wide",
+        "ja": {
+            "hiragana": "ひろい",
+            "kanji": "広い"
+        }
+    },
+    {
+        "en": "thick",
+        "ja": {
+            "hiragana": "あつい",
+            "kanji": "厚い"
+        }
+    },
+    {
+        "en": "thin",
+        "ja": {
+            "hiragana": "うすい",
+            "kanji": "薄い"
+        }
+    },
+    {
+        "en": "wet",
+        "ja": {
+            "hiragana": "ぬれている",
+            "kanji": "ぬれている"
+        }
+    },
+    {
+        "en": "dry",
+        "ja": {
+            "hiragana": "かんそうした，かわいた",
+            "kanji": "乾燥した，かわいた"
+        }
+    },
+    {
+        "en": "ring",
+        "ja": {
+            "hiragana": "ゆびわ",
+            "kanji": "指輪"
+        }
+    }
+]

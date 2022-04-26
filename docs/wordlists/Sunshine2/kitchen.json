@@ -1,0 +1,121 @@
+[
+    {
+        "en": "blender",
+        "ja": {
+            "hiragana": "みきさー",
+            "kanji": "ミキサー"
+        }
+    },
+    {
+        "en": "faucet",
+        "ja": {
+            "hiragana": "じゃぐち",
+            "kanji": "蛇口"
+        }
+    },
+    {
+        "en": "coffeemaker",
+        "ja": {
+            "hiragana": "こーひーめーかー",
+            "kanji": "コーヒーメーカー"
+        }
+    },
+    {
+        "en": "chopping board",
+        "ja": {
+            "hiragana": "まないた",
+            "kanji": "まな板"
+        }
+    },
+    {
+        "en": "knife",
+        "ja": {
+            "hiragana": "ほうちょう",
+            "kanji": "包丁"
+        }
+    },
+    {
+        "en": "saucepan",
+        "ja": {
+            "hiragana": "しちゅーなべ",
+            "kanji": "シチューなべ"
+        }
+    },
+    {
+        "en": "microwave",
+        "ja": {
+            "hiragana": "でんしれんじ",
+            "kanji": "電子レンジ"
+        }
+    },
+    {
+        "en": "cabinet",
+        "ja": {
+            "hiragana": "しょっきだな",
+            "kanji": "食器だな"
+        }
+    },
+    {
+        "en": "outlet",
+        "ja": {
+            "hiragana": "こんせんと",
+            "kanji": "コンセント"
+        }
+    },
+    {
+        "en": "rice cooker",
+        "ja": {
+            "hiragana": "すいはんき",
+            "kanji": "炊飯器"
+        }
+    },
+    {
+        "en": "frying pan",
+        "ja": {
+            "hiragana": "ふらいぱん",
+            "kanji": "フライパン"
+        }
+    },
+    {
+        "en": "stove",
+        "ja": {
+            "hiragana": "こんろ",
+            "kanji": "こんろ"
+        }
+    },
+    {
+        "en": "ladle",
+        "ja": {
+            "hiragana": "たまじゃくし",
+            "kanji": "玉じゃくし"
+        }
+    },
+    {
+        "en": "toaster",
+        "ja": {
+            "hiragana": "とーすたー",
+            "kanji": "トースター"
+        }
+    },
+    {
+        "en": "rice paddle",
+        "ja": {
+            "hiragana": "しゃもじ",
+            "kanji": "しゃもじ"
+        }
+    },
+    {
+        "en": "refrigerator",
+        "ja": {
+            "hiragana": "れいぞうこ",
+            "kanji": "冷蔵庫"
+        }
+    },
+    {
+        "en": "scale",
+        "ja": {
+            "hiragana": "はかり",
+            "kanji": "はかり"
+        }
+    }
+]

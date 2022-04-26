@@ -2,6 +2,7 @@ import fs from "fs/promises"
 import Kuroshiro from "kuroshiro"
 import KuromojiAnalyzer from "kuroshiro-analyzer-kuromoji"
 import CSV from "csvtojson"
+// import Pluralize from "pluralize"
 
 /**
  * This is a helper file I made to help me convert CSVs in a certain format to
@@ -42,17 +43,35 @@ async function toHiragana(kanjiString: string) {
         .replace("いなていけい", "ひていけい")
         .replace("へんかがた", "へんかけい")
         .replace("ふくすうがた", "ふくすうけい")
+        .replace("かこぶんしがた", "かこぶんしけい")
     return hiragana
+}
+
+async function writeToFile(words: Wordlist, unit: string) {
+    const wordsJSON = JSON.stringify(words, null, 2)
+    // console.log(wordsJSON)
+    return fs.writeFile(`output_${unit}.json`, wordsJSON, "utf-8")
 }
 
 async function run() {
     await kuroshiro.init(new KuromojiAnalyzer())
-    const input = (await fs.readFile("C:\\Users\\Hyprk\\ownCloud\\Work\\Jet Programme\\サンシャイン Sunshine\\Grade 1\\Sunshine 1 wordlist.csv")).toString("utf-8")
+    const input = (await fs.readFile("C:\\Users\\Hyprk\\ownCloud\\Work\\Jet Programme\\サンシャイン Sunshine\\Grade 2\\Sunshine 2 wordlist.csv")).toString("utf-8")
 
-    const words: Wordlist = []
+    let words: Wordlist = []
+    let last = undefined
     for (const csvWord of await CSV({ delimiter: "," }).fromString(input)) {
-        if (csvWord.unit !== "9") continue
+        if (csvWord.unit !== last) {
+            if (last == undefined) {
+                // It's our first word
+                last = csvWord.unit
+            } else {
+                // Write wordlist to file
+                await writeToFile(words, last)
 
+                words = []
+                last = csvWord.unit
+            }
+        }
         const original_en = (csvWord.english as string)
             .trim()
             .replace("’", "'")
@@ -69,6 +88,7 @@ async function run() {
         const original_ja = (csvWord.japanese as string)
             .trim()
             .replace(/\s*＝\s*/, " = ")
+        const original_type = (csvWord.partOfSpeech as string)
 
         const en: string[] = []
         const ja: {
@@ -106,8 +126,18 @@ async function run() {
             const base = original_en.replace(/\(.+?\)$/, "")
             en.push(base, original_en)
         } else {
-            // Normal vocabulary, just add the word
-            en.push(original_en)
+            if (original_type == "名" && !original_ja.includes("の名")) {
+                // It's a noun. Add the original
+                en.push(original_en)
+
+                // NOTE: Disabled. I can't tell the difference between things that aren't countable (e.g.: "smoke" from a fire)
+                // // Add the plural if it's different
+                // const plural = Pluralize(original_en, 2)
+                // if (plural !== original_en) en.push(plural)
+            } else {
+                // Normal vocabulary, just add the word
+                en.push(original_en)
+            }
         }
 
         if (/.+?=.+?/.test(original_ja) && original_en.includes("'")) {
@@ -130,9 +160,8 @@ async function run() {
         }
         words.push(word)
     }
-    const wordsJSON = JSON.stringify(words, null, 2)
-    console.log(wordsJSON)
-    await fs.writeFile("output.json", wordsJSON, "utf-8")
+
+    await writeToFile(words, last)
 }
 
 run()

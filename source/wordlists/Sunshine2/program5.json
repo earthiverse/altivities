@@ -1,0 +1,430 @@
+[
+    {
+        "en": "chess",
+        "ja": {
+            "hiragana": "ちぇす",
+            "kanji": "チェス"
+        }
+    },
+    {
+        "en": "unicycle",
+        "ja": {
+            "hiragana": "いちりんしゃ",
+            "kanji": "一輪車"
+        }
+    },
+    {
+        "en": [
+            "be good at ~",
+            "be good at"
+        ],
+        "ja": {
+            "hiragana": "～がとくいである",
+            "kanji": "～が得意である"
+        }
+    },
+    {
+        "en": [
+            "meter",
+            "meters",
+            "meter(s)"
+        ],
+        "ja": {
+            "hiragana": "めーとる",
+            "kanji": "メートル"
+        }
+    },
+    {
+        "en": "become",
+        "ja": {
+            "hiragana": "～になる",
+            "kanji": "～になる"
+        }
+    },
+    {
+        "en": "get ~ place",
+        "ja": {
+            "hiragana": "（きょうそうなどで） ～いになる",
+            "kanji": "（競争などで） ～位になる"
+        }
+    },
+    {
+        "en": "score",
+        "ja": {
+            "hiragana": "とくてん，せいせき",
+            "kanji": "得点，成績"
+        }
+    },
+    {
+        "en": "story",
+        "ja": {
+            "hiragana": "はなし，ものがたり",
+            "kanji": "話，物語"
+        }
+    },
+    {
+        "en": "lend",
+        "ja": {
+            "hiragana": "かす",
+            "kanji": "貸す"
+        }
+    },
+    {
+        "en": "Give me five.",
+        "ja": {
+            "hiragana": "はいたっちしよう。",
+            "kanji": "ハイタッチしよう。"
+        }
+    },
+    {
+        "en": [
+            "treat",
+            "treat(ed)"
+        ],
+        "ja": {
+            "hiragana": "あつかう",
+            "kanji": "扱う"
+        }
+    },
+    {
+        "en": "kindly",
+        "ja": {
+            "hiragana": "しんせつに",
+            "kanji": "親切に"
+        }
+    },
+    {
+        "en": "goods",
+        "ja": {
+            "hiragana": "しょうひん，しなもの",
+            "kanji": "商品，品物"
+        }
+    },
+    {
+        "en": "shelves",
+        "ja": {
+            "hiragana": "shelfのふくすうけい",
+            "kanji": "shelfの複数形"
+        }
+    },
+    {
+        "en": "shelf",
+        "ja": {
+            "hiragana": "たな",
+            "kanji": "たな"
+        }
+    },
+    {
+        "en": "pack",
+        "ja": {
+            "hiragana": "1つつみ［はこ］",
+            "kanji": "1包み［箱］"
+        }
+    },
+    {
+        "en": "mistake",
+        "ja": {
+            "hiragana": "まちがい，てちがい",
+            "kanji": "間違い，手違い"
+        }
+    },
+    {
+        "en": [
+            "blame",
+            "blame(d)"
+        ],
+        "ja": {
+            "hiragana": "とがめる，せめる",
+            "kanji": "とがめる，責める"
+        }
+    },
+    {
+        "en": "couldn't",
+        "ja": {
+            "hiragana": "could notのしょうりゃく",
+            "kanji": "could notの省略"
+        }
+    },
+    {
+        "en": "Good for you.",
+        "ja": {
+            "hiragana": "よかったですね。",
+            "kanji": "よかったですね。"
+        }
+    },
+    {
+        "en": "by mistake",
+        "ja": {
+            "hiragana": "あやまって，まちがって",
+            "kanji": "誤って，間違って"
+        }
+    },
+    {
+        "en": "remember",
+        "ja": {
+            "hiragana": "おぼえている，おもいだす",
+            "kanji": "覚えている，思い出す"
+        }
+    },
+    {
+        "en": "waiting room",
+        "ja": {
+            "hiragana": "まちあいしつ",
+            "kanji": "待合室"
+        }
+    },
+    {
+        "en": "lonely",
+        "ja": {
+            "hiragana": "さびしい",
+            "kanji": "さびしい"
+        }
+    },
+    {
+        "en": "spoke",
+        "ja": {
+            "hiragana": "speakのかこけい",
+            "kanji": "speakの過去形"
+        }
+    },
+    {
+        "en": "listener",
+        "ja": {
+            "hiragana": "ききて",
+            "kanji": "聞き手"
+        }
+    },
+    {
+        "en": "while",
+        "ja": {
+            "hiragana": "～するまに",
+            "kanji": "～する間に"
+        }
+    },
+    {
+        "en": "action",
+        "ja": {
+            "hiragana": "こうどう",
+            "kanji": "行動"
+        }
+    },
+    {
+        "en": "take action",
+        "ja": {
+            "hiragana": "こうどうをおこす",
+            "kanji": "行動を起こす"
+        }
+    },
+    {
+        "en": "mailman",
+        "ja": {
+            "hiragana": "ゆうびんはいたついん",
+            "kanji": "郵便配達員"
+        }
+    },
+    {
+        "en": "package",
+        "ja": {
+            "hiragana": "つつみ",
+            "kanji": "包み"
+        }
+    },
+    {
+        "en": "sweaty",
+        "ja": {
+            "hiragana": "あせびっしょりの あせをかいた",
+            "kanji": "汗びっしょりの 汗をかいた"
+        }
+    },
+    {
+        "en": "alone",
+        "ja": {
+            "hiragana": "ひとりで",
+            "kanji": "ひとりで"
+        }
+    },
+    {
+        "en": "son",
+        "ja": {
+            "hiragana": "むすこ",
+            "kanji": "息子"
+        }
+    },
+    {
+        "en": "daughter",
+        "ja": {
+            "hiragana": "むすめ",
+            "kanji": "娘"
+        }
+    },
+    {
+        "en": "glad",
+        "ja": {
+            "hiragana": "うれしい",
+            "kanji": "うれしい"
+        }
+    },
+    {
+        "en": "taught",
+        "ja": {
+            "hiragana": "teachのかこけい 《かこぶんしけいもどうけい》",
+            "kanji": "teachの過去形 《過去分詞形も同形》"
+        }
+    },
+    {
+        "en": "importance",
+        "ja": {
+            "hiragana": "じゅうようせい，たいせつさ",
+            "kanji": "重要性，大切さ"
+        }
+    },
+    {
+        "en": [
+            "walk up ~",
+            "walk up"
+        ],
+        "ja": {
+            "hiragana": "あるいて～をのぼる",
+            "kanji": "歩いて～を上る"
+        }
+    },
+    {
+        "en": [
+            "find out ~",
+            "find out"
+        ],
+        "ja": {
+            "hiragana": "～をしる，～にきづく",
+            "kanji": "～を知る，～に気づく"
+        }
+    },
+    {
+        "en": "many times",
+        "ja": {
+            "hiragana": "なんかい",
+            "kanji": "何回"
+        }
+    },
+    {
+        "en": [
+            "be glad to ~",
+            "be glad to"
+        ],
+        "ja": {
+            "hiragana": "～してうれしい",
+            "kanji": "～してうれしい"
+        }
+    },
+    {
+        "en": [
+            "arm",
+            "arms",
+            "arm(s)"
+        ],
+        "ja": {
+            "hiragana": "うで",
+            "kanji": "腕"
+        }
+    },
+    {
+        "en": "chocolate",
+        "ja": {
+            "hiragana": "ちょこれーと",
+            "kanji": "チョコレート"
+        }
+    },
+    {
+        "en": "excited",
+        "ja": {
+            "hiragana": "こうふんした",
+            "kanji": "興奮した"
+        }
+    },
+    {
+        "en": "bored",
+        "ja": {
+            "hiragana": "たいくつした",
+            "kanji": "退屈した"
+        }
+    },
+    {
+        "en": "became",
+        "ja": {
+            "hiragana": "becomeのかこけい",
+            "kanji": "becomeの過去形"
+        }
+    },
+    {
+        "en": "send",
+        "ja": {
+            "hiragana": "おくる",
+            "kanji": "送る"
+        }
+    },
+    {
+        "en": "ready",
+        "ja": {
+            "hiragana": "じゅんび［ようい］ができた",
+            "kanji": "準備［用意］ができた"
+        }
+    },
+    {
+        "en": "order",
+        "ja": {
+            "hiragana": "ちゅうもんする",
+            "kanji": "注文する"
+        }
+    },
+    {
+        "en": "recommend",
+        "ja": {
+            "hiragana": "すすめる",
+            "kanji": "勧める"
+        }
+    },
+    {
+        "en": "the Sunshine Pizza",
+        "ja": {
+            "hiragana": "さんしゃいんぴざ （かくうのぴざのな）",
+            "kanji": "サンシャインピザ （架空のピザの名）"
+        }
+    },
+    {
+        "en": "else",
+        "ja": {
+            "hiragana": "ほかに［の］",
+            "kanji": "ほかに［の］"
+        }
+    },
+    {
+        "en": "we'd",
+        "ja": {
+            "hiragana": "we wouldのしょうりゃく",
+            "kanji": "we wouldの省略"
+        }
+    },
+    {
+        "en": "Good afternoon.",
+        "ja": {
+            "hiragana": "こんにちは。",
+            "kanji": "こんにちは。"
+        }
+    },
+    {
+        "en": [
+            "be ready to ~",
+            "be ready to"
+        ],
+        "ja": {
+            "hiragana": "～するじゅんび［ようい］が できている",
+            "kanji": "～する準備［用意］が できている"
+        }
+    },
+    {
+        "en": "Would you like ~?",
+        "ja": {
+            "hiragana": "～はいかが ですか。",
+            "kanji": "～はいかが ですか。"
+        }
+    }
+]

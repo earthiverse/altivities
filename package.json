@@ -23,7 +23,8 @@
     "kuroshiro": "^1.2.0",
     "kuroshiro-analyzer-kuromoji": "^1.1.0",
     "phaser": "^3.55.2",
-    "phaser-ui-tools": "^2.0.0-beta"
+    "phaser-ui-tools": "^2.0.0-beta",
+    "pluralize": "^8.0.0"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.14",

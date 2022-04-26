@@ -1,0 +1,411 @@
+[
+    {
+        "en": "harmony",
+        "ja": {
+            "hiragana": "はーもにー，ちょうわ",
+            "kanji": "ハーモニー，調和"
+        }
+    },
+    {
+        "en": "yummy",
+        "ja": {
+            "hiragana": "（Yummy．で） おいしい。",
+            "kanji": "（Yummy．で） おいしい。"
+        }
+    },
+    {
+        "en": "seen",
+        "ja": {
+            "hiragana": "seeのかこぶんしけい",
+            "kanji": "seeの過去分詞形"
+        }
+    },
+    {
+        "en": "kitchen",
+        "ja": {
+            "hiragana": "だいどころ，きっちん",
+            "kanji": "台所，キッチン"
+        }
+    },
+    {
+        "en": "sold",
+        "ja": {
+            "hiragana": "sellのかこぶんしけい 《かこけいもどうけい》",
+            "kanji": "sellの過去分詞形 《過去形も同形》"
+        }
+    },
+    {
+        "en": "sell",
+        "ja": {
+            "hiragana": "うる",
+            "kanji": "売る"
+        }
+    },
+    {
+        "en": "stationery",
+        "ja": {
+            "hiragana": "ぶんぼうぐ，じむようひん",
+            "kanji": "文房具，事務用品"
+        }
+    },
+    {
+        "en": "built",
+        "ja": {
+            "hiragana": "buildのかこぶんしけい 《かこけいもどうけい》",
+            "kanji": "buildの過去分詞形 《過去形も同形》"
+        }
+    },
+    {
+        "en": "written",
+        "ja": {
+            "hiragana": "writeのかこぶんしけい",
+            "kanji": "writeの過去分詞形"
+        }
+    },
+    {
+        "en": "sung",
+        "ja": {
+            "hiragana": "singのかこぶんしけい",
+            "kanji": "singの過去分詞形"
+        }
+    },
+    {
+        "en": "paint",
+        "ja": {
+            "hiragana": "（えのぐでえを）えがく",
+            "kanji": "（絵具で絵を）描く"
+        }
+    },
+    {
+        "en": "known",
+        "ja": {
+            "hiragana": "knowのかこぶんしけい",
+            "kanji": "knowの過去分詞形"
+        }
+    },
+    {
+        "en": [
+            "cover",
+            "cover(ed)"
+        ],
+        "ja": {
+            "hiragana": "おおう",
+            "kanji": "おおう"
+        }
+    },
+    {
+        "en": "wood",
+        "ja": {
+            "hiragana": "もくざい",
+            "kanji": "木材"
+        }
+    },
+    {
+        "en": "T-shirt",
+        "ja": {
+            "hiragana": "Tしゃつ",
+            "kanji": "Tシャツ"
+        }
+    },
+    {
+        "en": [
+            "soybean",
+            "soybeans",
+            "soybean(s)"
+        ],
+        "ja": {
+            "hiragana": "だいず",
+            "kanji": "大豆"
+        }
+    },
+    {
+        "en": "flour",
+        "ja": {
+            "hiragana": "こむぎこ",
+            "kanji": "小麦粉"
+        }
+    },
+    {
+        "en": "cotton",
+        "ja": {
+            "hiragana": "めん（わた，めん）",
+            "kanji": "綿（わた，めん）"
+        }
+    },
+    {
+        "en": "commercial",
+        "ja": {
+            "hiragana": "こまーしゃる こうこくほうそう",
+            "kanji": "コマーシャル 広告放送"
+        }
+    },
+    {
+        "en": "Stevie Wonder",
+        "ja": {
+            "hiragana": "すてぃーびー・ わんだー",
+            "kanji": "スティービー・ ワンダー"
+        }
+    },
+    {
+        "en": [
+            "tackle",
+            "tackles",
+            "tackle(s)"
+        ],
+        "ja": {
+            "hiragana": "とりくむ",
+            "kanji": "取り組む"
+        }
+    },
+    {
+        "en": "through",
+        "ja": {
+            "hiragana": "～をとおして",
+            "kanji": "～を通して"
+        }
+    },
+    {
+        "en": "political",
+        "ja": {
+            "hiragana": "せいじの",
+            "kanji": "政治の"
+        }
+    },
+    {
+        "en": [
+            "issue",
+            "issues",
+            "issue(s)"
+        ],
+        "ja": {
+            "hiragana": "（ぎろんされるじゅうだいな） もんだい",
+            "kanji": "（議論される重大な） 問題"
+        }
+    },
+    {
+        "en": [
+            "message",
+            "messages",
+            "message(s)"
+        ],
+        "ja": {
+            "hiragana": "でんごん，つたえたいこと",
+            "kanji": "伝言，伝えたいこと"
+        }
+    },
+    {
+        "en": "all over the world",
+        "ja": {
+            "hiragana": "せかいじゅうで",
+            "kanji": "世界じゅうで"
+        }
+    },
+    {
+        "en": "Happy Birthday",
+        "ja": {
+            "hiragana": "はっぴーばーすでー （うたのたいとる）",
+            "kanji": "ハッピーバースデー （歌のタイトル）"
+        }
+    },
+    {
+        "en": "holiday",
+        "ja": {
+            "hiragana": "きゅうじつ",
+            "kanji": "休日"
+        }
+    },
+    {
+        "en": "Dr.",
+        "ja": {
+            "hiragana": "はかせ，いし（ = doctor）",
+            "kanji": "博士，医師（ = doctor）"
+        }
+    },
+    {
+        "en": "Martin Luther King, Jr.",
+        "ja": {
+            "hiragana": "まーてぃん・るーさー ・きんぐ，じゅにあ",
+            "kanji": "マーティン・ルーサー ・キング，ジュニア"
+        }
+    },
+    {
+        "en": "fought",
+        "ja": {
+            "hiragana": "fightのかこけい 《かこぶんしけいもどうけい》",
+            "kanji": "fightの過去形 《過去分詞形も同形》"
+        }
+    },
+    {
+        "en": "fight",
+        "ja": {
+            "hiragana": "たたかう",
+            "kanji": "たたかう"
+        }
+    },
+    {
+        "en": "civil rights",
+        "ja": {
+            "hiragana": "こうみんけん",
+            "kanji": "公民権"
+        }
+    },
+    {
+        "en": "greatly",
+        "ja": {
+            "hiragana": "おおいに，ひじょうに",
+            "kanji": "大いに，非常に"
+        }
+    },
+    {
+        "en": [
+            "influence",
+            "influence(d)"
+        ],
+        "ja": {
+            "hiragana": "えいきょうをおよぼす かんかする",
+            "kanji": "影響を及ぼす 感化する"
+        }
+    },
+    {
+        "en": [
+            "celebrate",
+            "celebrate(d)"
+        ],
+        "ja": {
+            "hiragana": "いわう，しゅくふくする",
+            "kanji": "祝う，祝福する"
+        }
+    },
+    {
+        "en": "mutual",
+        "ja": {
+            "hiragana": "そうごの",
+            "kanji": "相互の"
+        }
+    },
+    {
+        "en": "respect",
+        "ja": {
+            "hiragana": "そんけい，けいい",
+            "kanji": "尊敬，敬意"
+        }
+    },
+    {
+        "en": [
+            "set up ~",
+            "set up"
+        ],
+        "ja": {
+            "hiragana": "～をそうせつする ～をせつりつする",
+            "kanji": "～を創設する ～を設立する"
+        }
+    },
+    {
+        "en": "award",
+        "ja": {
+            "hiragana": "しょう",
+            "kanji": "賞"
+        }
+    },
+    {
+        "en": "I Just Called to Say I Love You",
+        "ja": {
+            "hiragana": "こころのあい （うたのたいとる）",
+            "kanji": "心の愛 （歌のタイトル）"
+        }
+    },
+    {
+        "en": [
+            "dedicate",
+            "dedicate(d)"
+        ],
+        "ja": {
+            "hiragana": "ささげる",
+            "kanji": "ささげる"
+        }
+    },
+    {
+        "en": "Nelson Mandela",
+        "ja": {
+            "hiragana": "ねるそん・まんでら （じんめい）",
+            "kanji": "ネルソン・マンデラ （人名）"
+        }
+    },
+    {
+        "en": "South Africa",
+        "ja": {
+            "hiragana": "みなみあふりかきょうわこく",
+            "kanji": "南アフリカ共和国"
+        }
+    },
+    {
+        "en": [
+            "lock",
+            "lock(ed)"
+        ],
+        "ja": {
+            "hiragana": "とじこめる",
+            "kanji": "閉じ込める"
+        }
+    },
+    {
+        "en": "jail",
+        "ja": {
+            "hiragana": "けいむしょ",
+            "kanji": "刑務所"
+        }
+    },
+    {
+        "en": "president",
+        "ja": {
+            "hiragana": "だいとうりょう",
+            "kanji": "大統領"
+        }
+    },
+    {
+        "en": [
+            "million",
+            "millions",
+            "million(s)"
+        ],
+        "ja": {
+            "hiragana": "100まん",
+            "kanji": "100万"
+        }
+    },
+    {
+        "en": [
+            "millions of ~",
+            "millions of"
+        ],
+        "ja": {
+            "hiragana": "なんひゃくまんもの～ ひじょうにたくさんの～",
+            "kanji": "何百万もの～ 非常にたくさんの～"
+        }
+    },
+    {
+        "en": "Himeji Castle",
+        "ja": {
+            "hiragana": "ひめじじょう",
+            "kanji": "姫路城"
+        }
+    },
+    {
+        "en": [
+            "castle",
+            "castles",
+            "castle(s)"
+        ],
+        "ja": {
+            "hiragana": "しろ",
+            "kanji": "城"
+        }
+    },
+    {
+        "en": "scientist",
+        "ja": {
+            "hiragana": "かがくしゃ",
+            "kanji": "科学者"
+        }
+    }
+]

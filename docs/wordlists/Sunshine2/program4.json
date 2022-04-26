@@ -1,0 +1,490 @@
+[
+    {
+        "en": "high-tech",
+        "ja": {
+            "hiragana": "はいてくの こうどせんたんぎじゅつの",
+            "kanji": "ハイテクの 高度先端技術の"
+        }
+    },
+    {
+        "en": "than",
+        "ja": {
+            "hiragana": "～よりも",
+            "kanji": "～よりも"
+        }
+    },
+    {
+        "en": "more",
+        "ja": {
+            "hiragana": "もっと （muchのひかくきゅう）",
+            "kanji": "もっと （muchの比較級）"
+        }
+    },
+    {
+        "en": "Mt.",
+        "ja": {
+            "hiragana": "～さん（ = Mount）",
+            "kanji": "～山（ = Mount）"
+        }
+    },
+    {
+        "en": "hate",
+        "ja": {
+            "hiragana": "ひどくきらう",
+            "kanji": "ひどく嫌う"
+        }
+    },
+    {
+        "en": "most",
+        "ja": {
+            "hiragana": "もっとも （muchのさいじょうきゅう）",
+            "kanji": "もっとも （muchの最上級）"
+        }
+    },
+    {
+        "en": "rainbow",
+        "ja": {
+            "hiragana": "にじ",
+            "kanji": "虹"
+        }
+    },
+    {
+        "en": [
+            "because of ~",
+            "because of"
+        ],
+        "ja": {
+            "hiragana": "～のために",
+            "kanji": "～のために"
+        }
+    },
+    {
+        "en": "she'll",
+        "ja": {
+            "hiragana": "she willのしょうりゃく",
+            "kanji": "she willの省略"
+        }
+    },
+    {
+        "en": "as",
+        "ja": {
+            "hiragana": "（as ～ as … のかたちで） …とおなじくらい～",
+            "kanji": "（as ～ as … の形で） …と同じくらい～"
+        }
+    },
+    {
+        "en": [
+            "centimeter",
+            "centimeters",
+            "centimeter(s)"
+        ],
+        "ja": {
+            "hiragana": "せんちめーとる （ながさのたんい）",
+            "kanji": "センチメートル （長さの単位）"
+        }
+    },
+    {
+        "en": "not as ~ as ...",
+        "ja": {
+            "hiragana": "…ほど～ない",
+            "kanji": "…ほど～ない"
+        }
+    },
+    {
+        "en": "lotus",
+        "ja": {
+            "hiragana": "はす",
+            "kanji": "ハス"
+        }
+    },
+    {
+        "en": "leaves",
+        "ja": {
+            "hiragana": "leafのふくすうけい",
+            "kanji": "leafの複数形"
+        }
+    },
+    {
+        "en": "leaf",
+        "ja": {
+            "hiragana": "は",
+            "kanji": "葉"
+        }
+    },
+    {
+        "en": [
+            "raindrop",
+            "raindrops",
+            "raindrop(s)"
+        ],
+        "ja": {
+            "hiragana": "あまだれ， あめつぶ",
+            "kanji": "雨だれ， 雨つぶ"
+        }
+    },
+    {
+        "en": "company",
+        "ja": {
+            "hiragana": "かいしゃ",
+            "kanji": "会社"
+        }
+    },
+    {
+        "en": "effect",
+        "ja": {
+            "hiragana": "こうか",
+            "kanji": "効果"
+        }
+    },
+    {
+        "en": "yogurt",
+        "ja": {
+            "hiragana": "よーぐると",
+            "kanji": "ヨーグルト"
+        }
+    },
+    {
+        "en": [
+            "lid",
+            "lids",
+            "lid(s)"
+        ],
+        "ja": {
+            "hiragana": "ふた",
+            "kanji": "ふた"
+        }
+    },
+    {
+        "en": [
+            "stick to ~",
+            "stick to"
+        ],
+        "ja": {
+            "hiragana": "～にくっつく",
+            "kanji": "～にくっつく"
+        }
+    },
+    {
+        "en": "kingfisher",
+        "ja": {
+            "hiragana": "かわせみ",
+            "kanji": "カワセミ"
+        }
+    },
+    {
+        "en": "gave",
+        "ja": {
+            "hiragana": "giveのかこけい",
+            "kanji": "giveの過去形"
+        }
+    },
+    {
+        "en": "give",
+        "ja": {
+            "hiragana": "あたえる",
+            "kanji": "与える"
+        }
+    },
+    {
+        "en": "loud",
+        "ja": {
+            "hiragana": "（おと・こえが）おおきな",
+            "kanji": "（音・声が）大きな"
+        }
+    },
+    {
+        "en": "noise",
+        "ja": {
+            "hiragana": "そうおん",
+            "kanji": "騒音"
+        }
+    },
+    {
+        "en": [
+            "enter",
+            "enter(ed)"
+        ],
+        "ja": {
+            "hiragana": "はいる",
+            "kanji": "入る"
+        }
+    },
+    {
+        "en": [
+            "tunnel",
+            "tunnels",
+            "tunnel(s)"
+        ],
+        "ja": {
+            "hiragana": "とんねる",
+            "kanji": "トンネル"
+        }
+    },
+    {
+        "en": "solve",
+        "ja": {
+            "hiragana": "かいけつする，とく",
+            "kanji": "解決する，解く"
+        }
+    },
+    {
+        "en": [
+            "dive",
+            "dives",
+            "dive(s)"
+        ],
+        "ja": {
+            "hiragana": "とびこむ",
+            "kanji": "飛び込む"
+        }
+    },
+    {
+        "en": "without",
+        "ja": {
+            "hiragana": "～なしで",
+            "kanji": "～なしで"
+        }
+    },
+    {
+        "en": "splash",
+        "ja": {
+            "hiragana": "みずしぶき",
+            "kanji": "水しぶき"
+        }
+    },
+    {
+        "en": [
+            "model",
+            "model(ed)"
+        ],
+        "ja": {
+            "hiragana": "（てほんにして）つくる",
+            "kanji": "（手本にして）作る"
+        }
+    },
+    {
+        "en": "beak",
+        "ja": {
+            "hiragana": "くちばし",
+            "kanji": "くちばし"
+        }
+    },
+    {
+        "en": [
+            "bee",
+            "bees",
+            "bee(s)"
+        ],
+        "ja": {
+            "hiragana": "はち",
+            "kanji": "ハチ"
+        }
+    },
+    {
+        "en": "penny",
+        "ja": {
+            "hiragana": "あめりかの１せんと こうか",
+            "kanji": "アメリカの１セント 硬貨"
+        }
+    },
+    {
+        "en": "coin",
+        "ja": {
+            "hiragana": "こうか",
+            "kanji": "硬貨"
+        }
+    },
+    {
+        "en": "paper clip",
+        "ja": {
+            "hiragana": "ぺーぱーくりっぷ",
+            "kanji": "ペーパークリップ"
+        }
+    },
+    {
+        "en": "able",
+        "ja": {
+            "hiragana": "～ができる",
+            "kanji": "～ができる"
+        }
+    },
+    {
+        "en": "potential",
+        "ja": {
+            "hiragana": "かのうせい",
+            "kanji": "可能性"
+        }
+    },
+    {
+        "en": "agriculture",
+        "ja": {
+            "hiragana": "のうぎょう",
+            "kanji": "農業"
+        }
+    },
+    {
+        "en": "carry",
+        "ja": {
+            "hiragana": "はこぶ",
+            "kanji": "運ぶ"
+        }
+    },
+    {
+        "en": "pollen",
+        "ja": {
+            "hiragana": "かふん",
+            "kanji": "花粉"
+        }
+    },
+    {
+        "en": "search",
+        "ja": {
+            "hiragana": "そうさく，たんさく",
+            "kanji": "捜索，探索"
+        }
+    },
+    {
+        "en": "rescue",
+        "ja": {
+            "hiragana": "きゅうじょ",
+            "kanji": "救助"
+        }
+    },
+    {
+        "en": [
+            "space",
+            "spaces",
+            "space(s)"
+        ],
+        "ja": {
+            "hiragana": "くうかん",
+            "kanji": "空間"
+        }
+    },
+    {
+        "en": [
+            "plant",
+            "plants",
+            "plant(s)"
+        ],
+        "ja": {
+            "hiragana": "しょくぶつ",
+            "kanji": "植物"
+        }
+    },
+    {
+        "en": [
+            "creature",
+            "creatures",
+            "creature(s)"
+        ],
+        "ja": {
+            "hiragana": "せいぶつ",
+            "kanji": "生物"
+        }
+    },
+    {
+        "en": [
+            "be able to ~",
+            "be able to"
+        ],
+        "ja": {
+            "hiragana": "～することができる",
+            "kanji": "～することができる"
+        }
+    },
+    {
+        "en": "smartphone",
+        "ja": {
+            "hiragana": "す まーとふぉん",
+            "kanji": "ス マートフォン"
+        }
+    },
+    {
+        "en": "boring",
+        "ja": {
+            "hiragana": "たいくつな，つまらない",
+            "kanji": "退屈な，つまらない"
+        }
+    },
+    {
+        "en": [
+            "interview",
+            "interview(ed)"
+        ],
+        "ja": {
+            "hiragana": "いんたびゅーする",
+            "kanji": "インタビューする"
+        }
+    },
+    {
+        "en": "money",
+        "ja": {
+            "hiragana": "きむ，つうか",
+            "kanji": "金，通貨"
+        }
+    },
+    {
+        "en": "health",
+        "ja": {
+            "hiragana": "けんこう",
+            "kanji": "健康"
+        }
+    },
+    {
+        "en": "friendship",
+        "ja": {
+            "hiragana": "しんこう，ゆうじょう",
+            "kanji": "親交，友情"
+        }
+    },
+    {
+        "en": "better",
+        "ja": {
+            "hiragana": "good（よい）のひかくきゅう&&well（よく）のひかくきゅう",
+            "kanji": "good（よい）の比較級&&well（よく）の比較級"
+        }
+    },
+    {
+        "en": "xylophone",
+        "ja": {
+            "hiragana": "しろふぉん，もっきん",
+            "kanji": "シロフォン，木琴"
+        }
+    },
+    {
+        "en": "drums",
+        "ja": {
+            "hiragana": "たいこ，どらむ",
+            "kanji": "たいこ，ドラム"
+        }
+    },
+    {
+        "en": "harp",
+        "ja": {
+            "hiragana": "はーぷ",
+            "kanji": "ハープ"
+        }
+    },
+    {
+        "en": "harmonica",
+        "ja": {
+            "hiragana": "はーもにか",
+            "kanji": "ハーモニカ"
+        }
+    },
+    {
+        "en": "contrabass",
+        "ja": {
+            "hiragana": "こんとらばす",
+            "kanji": "コントラバス"
+        }
+    },
+    {
+        "en": "saxophone",
+        "ja": {
+            "hiragana": "さくそふぉん，さっくす",
+            "kanji": "サクソフォン，サックス"
+        }
+    }
+]

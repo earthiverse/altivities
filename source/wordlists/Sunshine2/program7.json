@@ -1,0 +1,527 @@
+[
+    {
+        "en": "gateway",
+        "ja": {
+            "hiragana": "（いずる）いりくち",
+            "kanji": "（出）入り口"
+        }
+    },
+    {
+        "en": "mystery",
+        "ja": {
+            "hiragana": "すいりもの，なぞ",
+            "kanji": "推理もの，なぞ"
+        }
+    },
+    {
+        "en": "novel",
+        "ja": {
+            "hiragana": "しょうせつ",
+            "kanji": "小説"
+        }
+    },
+    {
+        "en": "I've",
+        "ja": {
+            "hiragana": "I haveのしょうりゃく",
+            "kanji": "I haveの省略"
+        }
+    },
+    {
+        "en": "already",
+        "ja": {
+            "hiragana": "すでに",
+            "kanji": "すでに"
+        }
+    },
+    {
+        "en": "ending",
+        "ja": {
+            "hiragana": "けつまつ",
+            "kanji": "結末"
+        }
+    },
+    {
+        "en": "done",
+        "ja": {
+            "hiragana": "doのかこぶんしけい",
+            "kanji": "doの過去分詞形"
+        }
+    },
+    {
+        "en": "you've",
+        "ja": {
+            "hiragana": "you haveのしょうりゃく",
+            "kanji": "you haveの省略"
+        }
+    },
+    {
+        "en": "eaten",
+        "ja": {
+            "hiragana": "eatのかこぶんしけい",
+            "kanji": "eatの過去分詞形"
+        }
+    },
+    {
+        "en": [
+            "bowl",
+            "bowls",
+            "bowl(s)"
+        ],
+        "ja": {
+            "hiragana": "どんぶり，わん",
+            "kanji": "どんぶり，わん"
+        }
+    },
+    {
+        "en": "Harry Potter",
+        "ja": {
+            "hiragana": "はりー・ぽったー （しょうせつのたいとる）",
+            "kanji": "ハリー・ポッター （小説のタイトル）"
+        }
+    },
+    {
+        "en": "taken",
+        "ja": {
+            "hiragana": "takeのかこぶんしけい",
+            "kanji": "takeの過去分詞形"
+        }
+    },
+    {
+        "en": "yet",
+        "ja": {
+            "hiragana": "（ぎもんぶんで）もう （ひていぶんで）まだ",
+            "kanji": "（疑問文で）もう （否定文で）まだ"
+        }
+    },
+    {
+        "en": "haven't",
+        "ja": {
+            "hiragana": "have notのしょうりゃく",
+            "kanji": "have notの省略"
+        }
+    },
+    {
+        "en": "ever",
+        "ja": {
+            "hiragana": "これまでに",
+            "kanji": "これまでに"
+        }
+    },
+    {
+        "en": "twice",
+        "ja": {
+            "hiragana": "２ど，２かい",
+            "kanji": "２度，２回"
+        }
+    },
+    {
+        "en": "been",
+        "ja": {
+            "hiragana": "beのかこぶんしけい",
+            "kanji": "beの過去分詞形"
+        }
+    },
+    {
+        "en": "UFO",
+        "ja": {
+            "hiragana": "みかくにんひこうぶったい，ゆーふぉー",
+            "kanji": "未確認飛行物体，ユーフォー"
+        }
+    },
+    {
+        "en": "gotten",
+        "ja": {
+            "hiragana": "getのかこぶんしけい",
+            "kanji": "getの過去分詞形"
+        }
+    },
+    {
+        "en": "sportswriter",
+        "ja": {
+            "hiragana": "すぽーつきしゃ",
+            "kanji": "スポーツ記者"
+        }
+    },
+    {
+        "en": "pop",
+        "ja": {
+            "hiragana": "たいしゅうむきの",
+            "kanji": "大衆向きの"
+        }
+    },
+    {
+        "en": [
+            "word",
+            "words",
+            "word(s)"
+        ],
+        "ja": {
+            "hiragana": "ことば",
+            "kanji": "ことば"
+        }
+    },
+    {
+        "en": "Captain Tsubasa",
+        "ja": {
+            "hiragana": "きゃぷてんつばさ （まんがのたいとる）",
+            "kanji": "キャプテン翼 （マンガのタイトル）"
+        }
+    },
+    {
+        "en": "foreign",
+        "ja": {
+            "hiragana": "がいこくの",
+            "kanji": "外国の"
+        }
+    },
+    {
+        "en": "according",
+        "ja": {
+            "hiragana": "（according to ～で） ～によれば",
+            "kanji": "（according to ～で） ～によれば"
+        }
+    },
+    {
+        "en": "professional",
+        "ja": {
+            "hiragana": "ぷろの",
+            "kanji": "プロの"
+        }
+    },
+    {
+        "en": [
+            "wing",
+            "wings",
+            "wing(s)"
+        ],
+        "ja": {
+            "hiragana": "つばさ，わ",
+            "kanji": "翼，羽"
+        }
+    },
+    {
+        "en": "get home",
+        "ja": {
+            "hiragana": "きたくする",
+            "kanji": "帰宅する"
+        }
+    },
+    {
+        "en": [
+            "according to ~",
+            "according to"
+        ],
+        "ja": {
+            "hiragana": "～（のいうところ）に よれば",
+            "kanji": "～（の言うところ）に よれば"
+        }
+    },
+    {
+        "en": [
+            "part",
+            "parts",
+            "part(s)"
+        ],
+        "ja": {
+            "hiragana": "ぶぶん",
+            "kanji": "部分"
+        }
+    },
+    {
+        "en": "attract",
+        "ja": {
+            "hiragana": "ひきつける みりょうする",
+            "kanji": "引きつける 魅了する"
+        }
+    },
+    {
+        "en": "similar",
+        "ja": {
+            "hiragana": "るいじした",
+            "kanji": "類似した"
+        }
+    },
+    {
+        "en": "situation",
+        "ja": {
+            "hiragana": "じょうせい，じょうきょう",
+            "kanji": "情勢，状況"
+        }
+    },
+    {
+        "en": "Europe",
+        "ja": {
+            "hiragana": "よーろっぱ",
+            "kanji": "ヨーロッパ"
+        }
+    },
+    {
+        "en": "heard",
+        "ja": {
+            "hiragana": "hearのかこぶんしけい 《かこけいもどうけい》",
+            "kanji": "hearの過去分詞形 《過去形も同形》"
+        }
+    },
+    {
+        "en": "Monet",
+        "ja": {
+            "hiragana": "もね （ふらんすのがか）",
+            "kanji": "モネ （フランスの画家）"
+        }
+    },
+    {
+        "en": "van Gogh",
+        "ja": {
+            "hiragana": "ふぁん・ごっほ （おらんだのがか）",
+            "kanji": "ファン・ゴッホ （オランダの画家）"
+        }
+    },
+    {
+        "en": "in those days",
+        "ja": {
+            "hiragana": "とうじ，そのころ",
+            "kanji": "当時，そのころ"
+        }
+    },
+    {
+        "en": [
+            "hear of ~",
+            "hear of"
+        ],
+        "ja": {
+            "hiragana": "～のことをみみにする",
+            "kanji": "～のことを耳にする"
+        }
+    },
+    {
+        "en": "day by day",
+        "ja": {
+            "hiragana": "ひび，にちごとに",
+            "kanji": "日々，日ごとに"
+        }
+    },
+    {
+        "en": "between ~ and ...",
+        "ja": {
+            "hiragana": "～と…のまの［に］",
+            "kanji": "～と…の間の［に］"
+        }
+    },
+    {
+        "en": "list",
+        "ja": {
+            "hiragana": "りすと，いちらんひょう",
+            "kanji": "リスト，一覧表"
+        }
+    },
+    {
+        "en": "unusual",
+        "ja": {
+            "hiragana": "ふつうでない めずらしい",
+            "kanji": "ふつうでない めずらしい"
+        }
+    },
+    {
+        "en": "caught",
+        "ja": {
+            "hiragana": "catchのかこぶんしけい 《かこけいもどうけい》",
+            "kanji": "catchの過去分詞形 《過去形も同形》"
+        }
+    },
+    {
+        "en": "Not yet.",
+        "ja": {
+            "hiragana": "まだです。",
+            "kanji": "まだです。"
+        }
+    },
+    {
+        "en": "pancake",
+        "ja": {
+            "hiragana": "ぱんけーき",
+            "kanji": "パンケーキ"
+        }
+    },
+    {
+        "en": "piece",
+        "ja": {
+            "hiragana": "1つ，1まい",
+            "kanji": "1つ，1枚"
+        }
+    },
+    {
+        "en": "sauce",
+        "ja": {
+            "hiragana": "（りょうりの）そーす",
+            "kanji": "（料理の）ソース"
+        }
+    },
+    {
+        "en": "mayonnaise",
+        "ja": {
+            "hiragana": "まよねーず",
+            "kanji": "マヨネーズ"
+        }
+    },
+    {
+        "en": "eco-friendly",
+        "ja": {
+            "hiragana": "かんきょうにはいりょした かんきょうにやさしい",
+            "kanji": "環境に配慮した 環境にやさしい"
+        }
+    },
+    {
+        "en": "plastic",
+        "ja": {
+            "hiragana": "ぷらすちっくの",
+            "kanji": "プラスチックの"
+        }
+    },
+    {
+        "en": "repeatedly",
+        "ja": {
+            "hiragana": "くりかえして",
+            "kanji": "くり返して"
+        }
+    },
+    {
+        "en": "square",
+        "ja": {
+            "hiragana": "せいほうけいの，しかくい",
+            "kanji": "正方形の，四角い"
+        }
+    },
+    {
+        "en": "cloth",
+        "ja": {
+            "hiragana": "ぬの，ぬのぎれ",
+            "kanji": "布，布切れ"
+        }
+    },
+    {
+        "en": "wrap",
+        "ja": {
+            "hiragana": "つつむ",
+            "kanji": "包む"
+        }
+    },
+    {
+        "en": "paper",
+        "ja": {
+            "hiragana": "かみの，しせいの",
+            "kanji": "紙の，紙製の"
+        }
+    },
+    {
+        "en": "breeze",
+        "ja": {
+            "hiragana": "びふう，そよかぜ",
+            "kanji": "微風，そよ風"
+        }
+    },
+    {
+        "en": "beef",
+        "ja": {
+            "hiragana": "ぎゅうにく",
+            "kanji": "牛肉"
+        }
+    },
+    {
+        "en": "sugar",
+        "ja": {
+            "hiragana": "さとう",
+            "kanji": "砂糖"
+        }
+    },
+    {
+        "en": [
+            "a piece of ~",
+            "a piece of"
+        ],
+        "ja": {
+            "hiragana": "1つ［1まい］の～",
+            "kanji": "1つ［1枚］の～"
+        }
+    },
+    {
+        "en": "attention",
+        "ja": {
+            "hiragana": "ちゅうい",
+            "kanji": "注意"
+        }
+    },
+    {
+        "en": [
+            "passenger",
+            "passengers",
+            "passenger(s)"
+        ],
+        "ja": {
+            "hiragana": "じょうきゃく，りょかく",
+            "kanji": "乗客，旅客"
+        }
+    },
+    {
+        "en": "Sunshine Airlines",
+        "ja": {
+            "hiragana": "さんしゃいんこうくう",
+            "kanji": "サンシャイン航空"
+        }
+    },
+    {
+        "en": [
+            "cancel",
+            "cancel(led)"
+        ],
+        "ja": {
+            "hiragana": "とりけす",
+            "kanji": "取り消す"
+        }
+    },
+    {
+        "en": "due",
+        "ja": {
+            "hiragana": "（due to～で） ～のせいで",
+            "kanji": "（due to～で） ～のせいで"
+        }
+    },
+    {
+        "en": "boarding",
+        "ja": {
+            "hiragana": "とうじょう （boarding gateで）とうじょうぐち",
+            "kanji": "搭乗 （boarding gateで）搭乗口"
+        }
+    },
+    {
+        "en": "gate",
+        "ja": {
+            "hiragana": "もん，（とうじょう）くち",
+            "kanji": "門，（搭乗）口"
+        }
+    },
+    {
+        "en": "announcement",
+        "ja": {
+            "hiragana": "（あなうんすでの） しらせ，はっぴょう",
+            "kanji": "（アナウンスでの） 知らせ，発表"
+        }
+    },
+    {
+        "en": "Beijing",
+        "ja": {
+            "hiragana": "ぺきん（ちゅうごくのしゅと）",
+            "kanji": "北京（中国の首都）"
+        }
+    },
+    {
+        "en": [
+            "due to ~",
+            "due to"
+        ],
+        "ja": {
+            "hiragana": "～のせいで",
+            "kanji": "～のせいで"
+        }
+    }
+]

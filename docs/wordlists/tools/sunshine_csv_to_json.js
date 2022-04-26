@@ -15,16 +15,30 @@ async function toHiragana(kanjiString) {
         .replace("1にん", "ひとり")
         .replace("いなていけい", "ひていけい")
         .replace("へんかがた", "へんかけい")
-        .replace("ふくすうがた", "ふくすうけい");
+        .replace("ふくすうがた", "ふくすうけい")
+        .replace("かこぶんしがた", "かこぶんしけい");
     return hiragana;
+}
+async function writeToFile(words, unit) {
+    const wordsJSON = JSON.stringify(words, null, 2);
+    return promises_1.default.writeFile(`output_${unit}.json`, wordsJSON, "utf-8");
 }
 async function run() {
     await kuroshiro.init(new kuroshiro_analyzer_kuromoji_1.default());
-    const input = (await promises_1.default.readFile("C:\\Users\\Hyprk\\ownCloud\\Work\\Jet Programme\\サンシャイン Sunshine\\Grade 1\\Sunshine 1 wordlist.csv")).toString("utf-8");
-    const words = [];
+    const input = (await promises_1.default.readFile("C:\\Users\\Hyprk\\ownCloud\\Work\\Jet Programme\\サンシャイン Sunshine\\Grade 2\\Sunshine 2 wordlist.csv")).toString("utf-8");
+    let words = [];
+    let last = undefined;
     for (const csvWord of await (0, csvtojson_1.default)({ delimiter: "," }).fromString(input)) {
-        if (csvWord.unit !== "9")
-            continue;
+        if (csvWord.unit !== last) {
+            if (last == undefined) {
+                last = csvWord.unit;
+            }
+            else {
+                await writeToFile(words, last);
+                words = [];
+                last = csvWord.unit;
+            }
+        }
         const original_en = csvWord.english
             .trim()
             .replace("’", "'")
@@ -41,6 +55,7 @@ async function run() {
         const original_ja = csvWord.japanese
             .trim()
             .replace(/\s*＝\s*/, " = ");
+        const original_type = csvWord.partOfSpeech;
         const en = [];
         const ja = [];
         if (original_en.endsWith("(s)") || original_en.endsWith("(es)")) {
@@ -73,7 +88,12 @@ async function run() {
             en.push(base, original_en);
         }
         else {
-            en.push(original_en);
+            if (original_type == "名" && !original_ja.includes("の名")) {
+                en.push(original_en);
+            }
+            else {
+                en.push(original_en);
+            }
         }
         if (/.+?=.+?/.test(original_ja) && original_en.includes("'")) {
             const answer = original_ja.replace(/.+?=\s*/, "") + "の省略";
@@ -94,8 +114,6 @@ async function run() {
         };
         words.push(word);
     }
-    const wordsJSON = JSON.stringify(words, null, 2);
-    console.log(wordsJSON);
-    await promises_1.default.writeFile("output.json", wordsJSON, "utf-8");
+    await writeToFile(words, last);
 }
 run();

@@ -1,0 +1,334 @@
+[
+    {
+        "en": [
+            "border",
+            "borders",
+            "border(s)"
+        ],
+        "ja": {
+            "hiragana": "きょうかい，こっきょう",
+            "kanji": "境界，国境"
+        }
+    },
+    {
+        "en": "Iran",
+        "ja": {
+            "hiragana": "いらん",
+            "kanji": "イラン"
+        }
+    },
+    {
+        "en": "Iraq",
+        "ja": {
+            "hiragana": "いらく",
+            "kanji": "イラク"
+        }
+    },
+    {
+        "en": "war",
+        "ja": {
+            "hiragana": "せんそう",
+            "kanji": "戦争"
+        }
+    },
+    {
+        "en": "above",
+        "ja": {
+            "hiragana": "～のうえに［の］ ～のかみがたに",
+            "kanji": "～の上に［の］ ～の上方に"
+        }
+    },
+    {
+        "en": "no-fly zone",
+        "ja": {
+            "hiragana": "ひこうきんしちたい",
+            "kanji": "飛行禁止地帯"
+        }
+    },
+    {
+        "en": "sent",
+        "ja": {
+            "hiragana": "sendのかこけい 《かこぶんしけいもどうけい》",
+            "kanji": "sendの過去形 《過去分詞形も同形》"
+        }
+    },
+    {
+        "en": [
+            "land",
+            "land(ed)"
+        ],
+        "ja": {
+            "hiragana": "ちゃくりくする",
+            "kanji": "着陸する"
+        }
+    },
+    {
+        "en": "at war",
+        "ja": {
+            "hiragana": "せんそうちゅうで",
+            "kanji": "戦争中で"
+        }
+    },
+    {
+        "en": [
+            "shoot down ~",
+            "shoot down"
+        ],
+        "ja": {
+            "hiragana": "～をうちおとす",
+            "kanji": "～を撃ち落す"
+        }
+    },
+    {
+        "en": "one after another",
+        "ja": {
+            "hiragana": "つぎつぎと",
+            "kanji": "次々と"
+        }
+    },
+    {
+        "en": "airport",
+        "ja": {
+            "hiragana": "くうこう",
+            "kanji": "空港"
+        }
+    },
+    {
+        "en": "suddenly",
+        "ja": {
+            "hiragana": "とつぜん，きゅうに",
+            "kanji": "突然，急に"
+        }
+    },
+    {
+        "en": "Turkish",
+        "ja": {
+            "hiragana": "とるこ（ひと）の&&とるこご［ひと］",
+            "kanji": "トルコ（人）の&&トルコ語［人］"
+        }
+    },
+    {
+        "en": "run short",
+        "ja": {
+            "hiragana": "ふそくする",
+            "kanji": "不足する"
+        }
+    },
+    {
+        "en": "goodwill",
+        "ja": {
+            "hiragana": "しんぜん",
+            "kanji": "親善"
+        }
+    },
+    {
+        "en": "mission",
+        "ja": {
+            "hiragana": "にんむ，しめい",
+            "kanji": "任務，使命"
+        }
+    },
+    {
+        "en": "however",
+        "ja": {
+            "hiragana": "しかし",
+            "kanji": "しかし"
+        }
+    },
+    {
+        "en": "Turkey",
+        "ja": {
+            "hiragana": "とるこ",
+            "kanji": "トルコ"
+        }
+    },
+    {
+        "en": "met",
+        "ja": {
+            "hiragana": "meetのかこけい 《かこぶんしけいもどうけい》",
+            "kanji": "meetの過去形 《過去分詞形も同形》"
+        }
+    },
+    {
+        "en": "typhoon",
+        "ja": {
+            "hiragana": "たいふう",
+            "kanji": "台風"
+        }
+    },
+    {
+        "en": "coast",
+        "ja": {
+            "hiragana": "かいがん",
+            "kanji": "海岸"
+        }
+    },
+    {
+        "en": [
+            "on the way (back) to ~",
+            "on the way (back) to"
+        ],
+        "ja": {
+            "hiragana": "～へいく（もどる） とちゅうで",
+            "kanji": "～へ行く（もどる） 途中で"
+        }
+    },
+    {
+        "en": "nearby",
+        "ja": {
+            "hiragana": "ちかくの",
+            "kanji": "近くの"
+        }
+    },
+    {
+        "en": "village",
+        "ja": {
+            "hiragana": "むら",
+            "kanji": "村"
+        }
+    },
+    {
+        "en": [
+            "survivor",
+            "survivors",
+            "survivor(s)"
+        ],
+        "ja": {
+            "hiragana": "せいぞんしゃ",
+            "kanji": "生存者"
+        }
+    },
+    {
+        "en": "understand",
+        "ja": {
+            "hiragana": "わかる，りかいする",
+            "kanji": "わかる，理解する"
+        }
+    },
+    {
+        "en": "bury buried",
+        "ja": {
+            "hiragana": "まいそうする，うめる",
+            "kanji": "埋葬する，埋める"
+        }
+    },
+    {
+        "en": "dead",
+        "ja": {
+            "hiragana": "しんでいる",
+            "kanji": "死んでいる"
+        }
+    },
+    {
+        "en": "respectfully",
+        "ja": {
+            "hiragana": "うやうやしく",
+            "kanji": "うやうやしく"
+        }
+    },
+    {
+        "en": "the dead",
+        "ja": {
+            "hiragana": "ししゃ",
+            "kanji": "死者"
+        }
+    },
+    {
+        "en": "flew",
+        "ja": {
+            "hiragana": "flyのかこけい",
+            "kanji": "flyの過去形"
+        }
+    },
+    {
+        "en": "former",
+        "ja": {
+            "hiragana": "（じかんてきに）いぜんの",
+            "kanji": "（時間的に）以前の"
+        }
+    },
+    {
+        "en": "ambassador",
+        "ja": {
+            "hiragana": "たいし",
+            "kanji": "大使"
+        }
+    },
+    {
+        "en": "between",
+        "ja": {
+            "hiragana": "～のまに",
+            "kanji": "～の間に"
+        }
+    },
+    {
+        "en": [
+            "continue",
+            "continues",
+            "continue(s)"
+        ],
+        "ja": {
+            "hiragana": "つづける",
+            "kanji": "続ける"
+        }
+    },
+    {
+        "en": "earthquake",
+        "ja": {
+            "hiragana": "じしん",
+            "kanji": "地震"
+        }
+    },
+    {
+        "en": "hit",
+        "ja": {
+            "hiragana": "だげきをあたえる 《かこけい，かこぶんしけいもどうけい》",
+            "kanji": "打撃を与える 《過去形，過去分詞形も同形》"
+        }
+    },
+    {
+        "en": "eastern",
+        "ja": {
+            "hiragana": "とうぶの，ひがしの",
+            "kanji": "東部の，東の"
+        }
+    },
+    {
+        "en": "each other",
+        "ja": {
+            "hiragana": "おたがいに［を］",
+            "kanji": "おたがいに［を］"
+        }
+    },
+    {
+        "en": [
+            "return",
+            "return(ed)"
+        ],
+        "ja": {
+            "hiragana": "かえる，もどる",
+            "kanji": "帰る，もどる"
+        }
+    },
+    {
+        "en": "along",
+        "ja": {
+            "hiragana": "～にそって",
+            "kanji": "～に沿って"
+        }
+    },
+    {
+        "en": "behind",
+        "ja": {
+            "hiragana": "（ばしょをあらわして） ～のうしろに",
+            "kanji": "（場所を表して） ～のうしろに"
+        }
+    },
+    {
+        "en": "pond",
+        "ja": {
+            "hiragana": "いけ",
+            "kanji": "池"
+        }
+    }
+]

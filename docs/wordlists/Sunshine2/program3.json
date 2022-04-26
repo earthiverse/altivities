@@ -1,0 +1,323 @@
+[
+    {
+        "en": "taste",
+        "ja": {
+            "hiragana": "ふうみ，あじわい",
+            "kanji": "風味，味わい"
+        }
+    },
+    {
+        "en": "hip-hop",
+        "ja": {
+            "hiragana": "ひっぷほっぷ",
+            "kanji": "ヒップホップ"
+        }
+    },
+    {
+        "en": "racket",
+        "ja": {
+            "hiragana": "らけっと",
+            "kanji": "ラケット"
+        }
+    },
+    {
+        "en": "expensive",
+        "ja": {
+            "hiragana": "こうかな，たかい",
+            "kanji": "高価な，高い"
+        }
+    },
+    {
+        "en": "present",
+        "ja": {
+            "hiragana": "おくりもの，ぷれぜんと",
+            "kanji": "贈り物，プレゼント"
+        }
+    },
+    {
+        "en": [
+            "step",
+            "steps",
+            "step(s)"
+        ],
+        "ja": {
+            "hiragana": "（ふくすうけいで） （だんすの）すてっぷ",
+            "kanji": "（複数形で） （ダンスの）ステップ"
+        }
+    },
+    {
+        "en": "quiz",
+        "ja": {
+            "hiragana": "しょうてすと",
+            "kanji": "小テスト"
+        }
+    },
+    {
+        "en": "character",
+        "ja": {
+            "hiragana": "とうじょうじんぶつ きゃらくたー",
+            "kanji": "登場人物 キャラクター"
+        }
+    },
+    {
+        "en": "the Lions",
+        "ja": {
+            "hiragana": "らいおんず （ちーむのな）",
+            "kanji": "ライオンズ （チームの名）"
+        }
+    },
+    {
+        "en": "New York",
+        "ja": {
+            "hiragana": "にゅー よーく",
+            "kanji": "ニュー ヨーク"
+        }
+    },
+    {
+        "en": "Broadway",
+        "ja": {
+            "hiragana": "ぶろーど うぇい",
+            "kanji": "ブロード ウェイ"
+        }
+    },
+    {
+        "en": "Go for it.",
+        "ja": {
+            "hiragana": "がんばって。",
+            "kanji": "がんばって。"
+        }
+    },
+    {
+        "en": "corn dog",
+        "ja": {
+            "hiragana": "あめりかんどっぐ",
+            "kanji": "アメリカンドッグ"
+        }
+    },
+    {
+        "en": "cotton candy",
+        "ja": {
+            "hiragana": "めんあめ",
+            "kanji": "綿あめ"
+        }
+    },
+    {
+        "en": [
+            "vendor",
+            "vendors",
+            "vendor(s)"
+        ],
+        "ja": {
+            "hiragana": "ものうり",
+            "kanji": "物売り"
+        }
+    },
+    {
+        "en": [
+            "pretzel",
+            "pretzels",
+            "pretzel(s)"
+        ],
+        "ja": {
+            "hiragana": "ぷれっつぇる",
+            "kanji": "プレッツェル"
+        }
+    },
+    {
+        "en": "lobster",
+        "ja": {
+            "hiragana": "ろぶすたー （おおがたのしょくようえび）",
+            "kanji": "ロブスター （大型の食用エビ）"
+        }
+    },
+    {
+        "en": [
+            "noodle",
+            "noodles",
+            "noodle(s)"
+        ],
+        "ja": {
+            "hiragana": "めんるい，ぬーどる",
+            "kanji": "めん類，ヌードル"
+        }
+    },
+    {
+        "en": "instead",
+        "ja": {
+            "hiragana": "そのかわりに",
+            "kanji": "その代わりに"
+        }
+    },
+    {
+        "en": [
+            "bun",
+            "buns",
+            "bun(s)"
+        ],
+        "ja": {
+            "hiragana": "はんばーがーようの こがたぱん",
+            "kanji": "ハンバーガー用の 小型パン"
+        }
+    },
+    {
+        "en": "~, and so on",
+        "ja": {
+            "hiragana": "～など",
+            "kanji": "～など"
+        }
+    },
+    {
+        "en": [
+            "instead of ~",
+            "instead of"
+        ],
+        "ja": {
+            "hiragana": "～のかわりに",
+            "kanji": "～の代わりに"
+        }
+    },
+    {
+        "en": "the Netherlands",
+        "ja": {
+            "hiragana": "おらんだ",
+            "kanji": "オランダ"
+        }
+    },
+    {
+        "en": "Dutch",
+        "ja": {
+            "hiragana": "おらんだ（ひと）の",
+            "kanji": "オランダ（人）の"
+        }
+    },
+    {
+        "en": [
+            "toothpick",
+            "toothpicks",
+            "toothpick(s)"
+        ],
+        "ja": {
+            "hiragana": "つまようじ",
+            "kanji": "つまようじ"
+        }
+    },
+    {
+        "en": "each",
+        "ja": {
+            "hiragana": "それぞれの",
+            "kanji": "それぞれの"
+        }
+    },
+    {
+        "en": [
+            "look like ~",
+            "look like"
+        ],
+        "ja": {
+            "hiragana": "～のようにみえる",
+            "kanji": "～のように見える"
+        }
+    },
+    {
+        "en": "Some ~. Others ....",
+        "ja": {
+            "hiragana": "～もいれば，…もいる。",
+            "kanji": "～もいれば，…もいる。"
+        }
+    },
+    {
+        "en": "around the world",
+        "ja": {
+            "hiragana": "せかいじゅうに［で］",
+            "kanji": "世界中に［で］"
+        }
+    },
+    {
+        "en": "healthy",
+        "ja": {
+            "hiragana": "けんこうによい",
+            "kanji": "健康によい"
+        }
+    },
+    {
+        "en": "voice",
+        "ja": {
+            "hiragana": "こえ",
+            "kanji": "声"
+        }
+    },
+    {
+        "en": "actor",
+        "ja": {
+            "hiragana": "やくしゃ",
+            "kanji": "役者"
+        }
+    },
+    {
+        "en": "soil",
+        "ja": {
+            "hiragana": "どじょう，ど",
+            "kanji": "土壌，土"
+        }
+    },
+    {
+        "en": "farm",
+        "ja": {
+            "hiragana": "のうじょう",
+            "kanji": "農場"
+        }
+    },
+    {
+        "en": [
+            "machine",
+            "machines",
+            "machine(s)"
+        ],
+        "ja": {
+            "hiragana": "きかい",
+            "kanji": "機械"
+        }
+    },
+    {
+        "en": "in the future",
+        "ja": {
+            "hiragana": "しょうらいに［は］",
+            "kanji": "将来に［は］"
+        }
+    },
+    {
+        "en": "come true",
+        "ja": {
+            "hiragana": "じつげんする",
+            "kanji": "実現する"
+        }
+    },
+    {
+        "en": "Big Ben",
+        "ja": {
+            "hiragana": "びっぐべん",
+            "kanji": "ビッグベン"
+        }
+    },
+    {
+        "en": "tall",
+        "ja": {
+            "hiragana": "せのたかい， しんちょう［たかさ］がある",
+            "kanji": "背の高い， 身長［高さ］がある"
+        }
+    },
+    {
+        "en": "tower",
+        "ja": {
+            "hiragana": "とう，たわー",
+            "kanji": "塔，タワー"
+        }
+    },
+    {
+        "en": "the British Museum",
+        "ja": {
+            "hiragana": "だいえいはくぶつかん",
+            "kanji": "大英博物館"
+        }
+    }
+]

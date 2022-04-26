@@ -1,0 +1,760 @@
+[
+    {
+        "en": [
+            "footprint",
+            "footprints",
+            "footprint(s)"
+        ],
+        "ja": {
+            "hiragana": "あしあと",
+            "kanji": "足跡"
+        }
+    },
+    {
+        "en": "worry",
+        "ja": {
+            "hiragana": "しんぱいする",
+            "kanji": "心配する"
+        }
+    },
+    {
+        "en": "easy",
+        "ja": {
+            "hiragana": "たやすい",
+            "kanji": "たやすい"
+        }
+    },
+    {
+        "en": "difficult",
+        "ja": {
+            "hiragana": "むずかしい",
+            "kanji": "難しい"
+        }
+    },
+    {
+        "en": "history",
+        "ja": {
+            "hiragana": "れきし",
+            "kanji": "歴史"
+        }
+    },
+    {
+        "en": "interested",
+        "ja": {
+            "hiragana": "きょうみがある",
+            "kanji": "興味がある"
+        }
+    },
+    {
+        "en": "case",
+        "ja": {
+            "hiragana": "けーす",
+            "kanji": "ケース"
+        }
+    },
+    {
+        "en": "go hiking",
+        "ja": {
+            "hiragana": "はいきんぐにいく",
+            "kanji": "ハイキングに行く"
+        }
+    },
+    {
+        "en": [
+            "be interested in ~",
+            "be interested in"
+        ],
+        "ja": {
+            "hiragana": "～にきょうみが ある",
+            "kanji": "～に興味が ある"
+        }
+    },
+    {
+        "en": "garbage",
+        "ja": {
+            "hiragana": "ごみ，なまごみ",
+            "kanji": "ごみ，生ごみ"
+        }
+    },
+    {
+        "en": "must",
+        "ja": {
+            "hiragana": "～しなけれ ばならない",
+            "kanji": "～しなけれ ばならない"
+        }
+    },
+    {
+        "en": "uh-oh",
+        "ja": {
+            "hiragana": "ああ （こまったときのこえ）",
+            "kanji": "ああ （困ったときの声）"
+        }
+    },
+    {
+        "en": "mustn't",
+        "ja": {
+            "hiragana": "must notのしょうりゃく",
+            "kanji": "must notの省略"
+        }
+    },
+    {
+        "en": [
+            "potato chip",
+            "potato chips",
+            "potato chip(s)"
+        ],
+        "ja": {
+            "hiragana": "ぽてとちっぷ",
+            "kanji": "ポテトチップ"
+        }
+    },
+    {
+        "en": "hallway",
+        "ja": {
+            "hiragana": "ろうか",
+            "kanji": "廊下"
+        }
+    },
+    {
+        "en": [
+            "pick up ~",
+            "pick up"
+        ],
+        "ja": {
+            "hiragana": "～をひろいあげる てにとる",
+            "kanji": "～を拾い上げる 手に取る"
+        }
+    },
+    {
+        "en": "hurry",
+        "ja": {
+            "hiragana": "いそぐ",
+            "kanji": "急ぐ"
+        }
+    },
+    {
+        "en": [
+            "have to ~",
+            "have to"
+        ],
+        "ja": {
+            "hiragana": "～しなければならない",
+            "kanji": "～しなければならない"
+        }
+    },
+    {
+        "en": [
+            "don't have to ~",
+            "don't have to"
+        ],
+        "ja": {
+            "hiragana": "～するひつようがない",
+            "kanji": "～する必要がない"
+        }
+    },
+    {
+        "en": "go to bed",
+        "ja": {
+            "hiragana": "ねる",
+            "kanji": "寝る"
+        }
+    },
+    {
+        "en": "everything",
+        "ja": {
+            "hiragana": "すべてのこと",
+            "kanji": "すべてのこと"
+        }
+    },
+    {
+        "en": "TRUE",
+        "ja": {
+            "hiragana": "ほんとうの",
+            "kanji": "ほんとうの"
+        }
+    },
+    {
+        "en": "Eric",
+        "ja": {
+            "hiragana": "えりっく（だんしのな）",
+            "kanji": "エリック（男子の名）"
+        }
+    },
+    {
+        "en": "guide",
+        "ja": {
+            "hiragana": "あんないする，みちあんないする",
+            "kanji": "案内する，道案内する"
+        }
+    },
+    {
+        "en": [
+            "rule",
+            "rules",
+            "rule(s)"
+        ],
+        "ja": {
+            "hiragana": "きそく，るーる",
+            "kanji": "規則，ルール"
+        }
+    },
+    {
+        "en": "bring",
+        "ja": {
+            "hiragana": "もってくる",
+            "kanji": "持ってくる"
+        }
+    },
+    {
+        "en": "protect",
+        "ja": {
+            "hiragana": "まもる，ほごする",
+            "kanji": "守る，保護する"
+        }
+    },
+    {
+        "en": "trouble",
+        "ja": {
+            "hiragana": "こまりごと，こんなん",
+            "kanji": "困りごと，困難"
+        }
+    },
+    {
+        "en": "Here we go.",
+        "ja": {
+            "hiragana": "さあ，いきますよ。",
+            "kanji": "さあ，行きますよ。"
+        }
+    },
+    {
+        "en": "first of all",
+        "ja": {
+            "hiragana": "なによりもまず",
+            "kanji": "何よりもまず"
+        }
+    },
+    {
+        "en": "believe",
+        "ja": {
+            "hiragana": "おもう，しんじる",
+            "kanji": "思う，信じる"
+        }
+    },
+    {
+        "en": [
+            "beaver",
+            "beavers",
+            "beaver(s)"
+        ],
+        "ja": {
+            "hiragana": "びーばー",
+            "kanji": "ビーバー"
+        }
+    },
+    {
+        "en": "national",
+        "ja": {
+            "hiragana": "くにの",
+            "kanji": "国の"
+        }
+    },
+    {
+        "en": "build",
+        "ja": {
+            "hiragana": "たてる",
+            "kanji": "建てる"
+        }
+    },
+    {
+        "en": [
+            "dam",
+            "dams",
+            "dam(s)"
+        ],
+        "ja": {
+            "hiragana": "だむ",
+            "kanji": "ダム"
+        }
+    },
+    {
+        "en": [
+            "lodge",
+            "lodges",
+            "lodge(s)"
+        ],
+        "ja": {
+            "hiragana": "（びーばーなどの）す",
+            "kanji": "（ビーバーなどの）巣"
+        }
+    },
+    {
+        "en": "exactly",
+        "ja": {
+            "hiragana": "せいかくに まったくそのとおり。",
+            "kanji": "正確に まったくそのとおり。"
+        }
+    },
+    {
+        "en": [
+            "engineer",
+            "engineers",
+            "engineer(s)"
+        ],
+        "ja": {
+            "hiragana": "ぎじゅつしゃ，えんじにあ",
+            "kanji": "技術者，エンジニア"
+        }
+    },
+    {
+        "en": "we'll",
+        "ja": {
+            "hiragana": "we willのしょうりゃく",
+            "kanji": "we willの省略"
+        }
+    },
+    {
+        "en": [
+            "cut down ~",
+            "cut down"
+        ],
+        "ja": {
+            "hiragana": "～をきりたおす",
+            "kanji": "～を切り倒す"
+        }
+    },
+    {
+        "en": "a lot",
+        "ja": {
+            "hiragana": "たくさん",
+            "kanji": "たくさん"
+        }
+    },
+    {
+        "en": "should",
+        "ja": {
+            "hiragana": "～すべきである ～したほうがよい",
+            "kanji": "～すべきである ～したほうがよい"
+        }
+    },
+    {
+        "en": [
+            "pet",
+            "pets",
+            "pet(s)"
+        ],
+        "ja": {
+            "hiragana": "ぺっと",
+            "kanji": "ペット"
+        }
+    },
+    {
+        "en": "sharpen",
+        "ja": {
+            "hiragana": "（つめなどを）とぐ， とがらせる",
+            "kanji": "（つめなどを）とぐ， とがらせる"
+        }
+    },
+    {
+        "en": [
+            "nail",
+            "nails",
+            "nail(s)"
+        ],
+        "ja": {
+            "hiragana": "つめ",
+            "kanji": "つめ"
+        }
+    },
+    {
+        "en": "furniture",
+        "ja": {
+            "hiragana": "かぐ",
+            "kanji": "家具"
+        }
+    },
+    {
+        "en": "ferret",
+        "ja": {
+            "hiragana": "ふぇれっと",
+            "kanji": "フェレット"
+        }
+    },
+    {
+        "en": "goldfish",
+        "ja": {
+            "hiragana": "きんぎょ",
+            "kanji": "金魚"
+        }
+    },
+    {
+        "en": "hamster",
+        "ja": {
+            "hiragana": "はむすたー",
+            "kanji": "ハムスター"
+        }
+    },
+    {
+        "en": "parrot",
+        "ja": {
+            "hiragana": "おうむ",
+            "kanji": "オウム"
+        }
+    },
+    {
+        "en": "squirrel",
+        "ja": {
+            "hiragana": "りす",
+            "kanji": "リス"
+        }
+    },
+    {
+        "en": "turtle",
+        "ja": {
+            "hiragana": "かめ",
+            "kanji": "カメ"
+        }
+    },
+    {
+        "en": "windy",
+        "ja": {
+            "hiragana": "かぜのある，かぜのつよい",
+            "kanji": "風のある，風の強い"
+        }
+    },
+    {
+        "en": "temperature",
+        "ja": {
+            "hiragana": "おんど，きおん",
+            "kanji": "温度，気温"
+        }
+    },
+    {
+        "en": "low",
+        "ja": {
+            "hiragana": "（おんどなどの）さいていち&&ひくい",
+            "kanji": "（温度などの）最低値&&低い"
+        }
+    },
+    {
+        "en": "Montreal",
+        "ja": {
+            "hiragana": "もんとりおーる （かなだのとし）",
+            "kanji": "モントリオール （カナダの都市）"
+        }
+    },
+    {
+        "en": "Winnipeg",
+        "ja": {
+            "hiragana": "うぃにぺ ぐ （かなだのとし）",
+            "kanji": "ウィニペ グ （カナダの都市）"
+        }
+    },
+    {
+        "en": "Vancouver",
+        "ja": {
+            "hiragana": "ばんくーばー （かなだのとし）",
+            "kanji": "バンクーバー （カナダの都市）"
+        }
+    },
+    {
+        "en": "Yellowknife",
+        "ja": {
+            "hiragana": "いえろー ないふ （かなだのとし）",
+            "kanji": "イエロー ナイフ （カナダの都市）"
+        }
+    },
+    {
+        "en": "J.C.Smith",
+        "ja": {
+            "hiragana": "じぇい・しー・すみす （かくうのじんめい）",
+            "kanji": "ジェイ・シー・スミス （架空の人名）"
+        }
+    },
+    {
+        "en": "CBC",
+        "ja": {
+            "hiragana": "しーびーしー （ほうそうきょくめい）",
+            "kanji": "シービーシー （放送局名）"
+        }
+    },
+    {
+        "en": [
+            "degree",
+            "degrees",
+            "degree(s)"
+        ],
+        "ja": {
+            "hiragana": "ど（おんどのたんい）",
+            "kanji": "度（温度の単位）"
+        }
+    },
+    {
+        "en": "coat",
+        "ja": {
+            "hiragana": "こーと，がいとう",
+            "kanji": "コート，外とう"
+        }
+    },
+    {
+        "en": "raincoat",
+        "ja": {
+            "hiragana": "れいんこーと",
+            "kanji": "レインコート"
+        }
+    },
+    {
+        "en": "later",
+        "ja": {
+            "hiragana": "あとで，ごに",
+            "kanji": "あとで，後に"
+        }
+    },
+    {
+        "en": "minus",
+        "ja": {
+            "hiragana": "ひょうてんかの，まいなすの",
+            "kanji": "氷点下の，マイナスの"
+        }
+    },
+    {
+        "en": "Good evening.",
+        "ja": {
+            "hiragana": "こんばんは。",
+            "kanji": "こんばんは。"
+        }
+    },
+    {
+        "en": "Davis",
+        "ja": {
+            "hiragana": "でいびす（せい）",
+            "kanji": "デイビス（姓）"
+        }
+    },
+    {
+        "en": "Sunshine Junior High School",
+        "ja": {
+            "hiragana": "さんしゃいんちゅうがっこう （かくうのちゅうがっこうのな）",
+            "kanji": "サンシャイン中学校 （架空の中学校の名）"
+        }
+    },
+    {
+        "en": "Lisa White",
+        "ja": {
+            "hiragana": "りさ・ほわいと （かくうのじょしのじんめい）",
+            "kanji": "リサ・ホワイト （架空の女子の人名）"
+        }
+    },
+    {
+        "en": "late",
+        "ja": {
+            "hiragana": "おくれた，おそい",
+            "kanji": "遅れた，遅い"
+        }
+    },
+    {
+        "en": "maybe",
+        "ja": {
+            "hiragana": "たぶん，おそらく",
+            "kanji": "たぶん，おそらく"
+        }
+    },
+    {
+        "en": "Matt",
+        "ja": {
+            "hiragana": "まっと（だんしのな）",
+            "kanji": "マット（男子の名）"
+        }
+    },
+    {
+        "en": "may",
+        "ja": {
+            "hiragana": "～してよい",
+            "kanji": "～してよい"
+        }
+    },
+    {
+        "en": "meeting",
+        "ja": {
+            "hiragana": "かいごう，あつまり",
+            "kanji": "会合，集まり"
+        }
+    },
+    {
+        "en": "could",
+        "ja": {
+            "hiragana": "can（～できる）の かこけい",
+            "kanji": "can（～できる）の 過去形"
+        }
+    },
+    {
+        "en": "sketchbook",
+        "ja": {
+            "hiragana": "すけっちぶっく",
+            "kanji": "スケッチブック"
+        }
+    },
+    {
+        "en": "moment",
+        "ja": {
+            "hiragana": "すこしのま，いっしゅん",
+            "kanji": "少しの間，一瞬"
+        }
+    },
+    {
+        "en": "wrong",
+        "ja": {
+            "hiragana": "まちがっている",
+            "kanji": "間違っている"
+        }
+    },
+    {
+        "en": "Who's calling?",
+        "ja": {
+            "hiragana": "（でんわで） どちら さまですか。",
+            "kanji": "（電話で） どちら 様ですか。"
+        }
+    },
+    {
+        "en": "Hold on.",
+        "ja": {
+            "hiragana": "（でんわで） おまちください。",
+            "kanji": "（電話で） お待ちください。"
+        }
+    },
+    {
+        "en": "Good morning.",
+        "ja": {
+            "hiragana": "おはよう。",
+            "kanji": "おはよう。"
+        }
+    },
+    {
+        "en": [
+            "be late for ~",
+            "be late for"
+        ],
+        "ja": {
+            "hiragana": "～におくれる",
+            "kanji": "～に遅れる"
+        }
+    },
+    {
+        "en": "See you.",
+        "ja": {
+            "hiragana": "またね。 ［じゃあね。］",
+            "kanji": "またね。 ［じゃあね。］"
+        }
+    },
+    {
+        "en": "May I ~?",
+        "ja": {
+            "hiragana": "～してもよろしい ですか。",
+            "kanji": "～してもよろしい ですか。"
+        }
+    },
+    {
+        "en": "Could you ~?",
+        "ja": {
+            "hiragana": "～していただけませんか。",
+            "kanji": "～していただけませんか。"
+        }
+    },
+    {
+        "en": "Just a moment.",
+        "ja": {
+            "hiragana": "しょうしょうおまちください。",
+            "kanji": "少々お待ちください。"
+        }
+    },
+    {
+        "en": "onion",
+        "ja": {
+            "hiragana": "たまねぎ",
+            "kanji": "タマネギ"
+        }
+    },
+    {
+        "en": "cabbage",
+        "ja": {
+            "hiragana": "きゃべつ",
+            "kanji": "キャベツ"
+        }
+    },
+    {
+        "en": "carrot",
+        "ja": {
+            "hiragana": "にんじん",
+            "kanji": "ニンジン"
+        }
+    },
+    {
+        "en": "broccoli",
+        "ja": {
+            "hiragana": "ぶろっこりー",
+            "kanji": "ブロッコリー"
+        }
+    },
+    {
+        "en": "pumpkin",
+        "ja": {
+            "hiragana": "かぼちゃ",
+            "kanji": "カボチャ"
+        }
+    },
+    {
+        "en": "mushroom",
+        "ja": {
+            "hiragana": "きのこ",
+            "kanji": "キノコ"
+        }
+    },
+    {
+        "en": "cheese",
+        "ja": {
+            "hiragana": "ちーず",
+            "kanji": "チーズ"
+        }
+    },
+    {
+        "en": "bacon",
+        "ja": {
+            "hiragana": "べーこん",
+            "kanji": "ベーコン"
+        }
+    },
+    {
+        "en": "butter",
+        "ja": {
+            "hiragana": "ばたー",
+            "kanji": "バター"
+        }
+    },
+    {
+        "en": "salt",
+        "ja": {
+            "hiragana": "しお",
+            "kanji": "塩"
+        }
+    },
+    {
+        "en": "pepper",
+        "ja": {
+            "hiragana": "こしょう",
+            "kanji": "コショウ"
+        }
+    },
+    {
+        "en": "soy sauce",
+        "ja": {
+            "hiragana": "しょうゆ",
+            "kanji": "しょうゆ"
+        }
+    },
+    {
+        "en": "original",
+        "ja": {
+            "hiragana": "どくそうてきな",
+            "kanji": "独創的な"
+        }
+    }
+]
