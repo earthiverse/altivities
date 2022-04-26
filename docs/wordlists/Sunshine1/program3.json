@@ -1,0 +1,285 @@
+[
+    {
+        "en": "that's",
+        "ja": {
+            "hiragana": "that isのしょうりゃく",
+            "kanji": "that isの省略"
+        }
+    },
+    {
+        "en": "then",
+        "ja": {
+            "hiragana": "それでは，それなら",
+            "kanji": "それでは，それなら"
+        }
+    },
+    {
+        "en": [
+            "roll",
+            "rolls",
+            "roll(s)"
+        ],
+        "ja": {
+            "hiragana": "まいたもの",
+            "kanji": "巻いたもの"
+        }
+    },
+    {
+        "en": "ski",
+        "ja": {
+            "hiragana": "すきーをする",
+            "kanji": "スキーをする"
+        }
+    },
+    {
+        "en": "Chinese",
+        "ja": {
+            "hiragana": "ちゅうごくご［ひと］",
+            "kanji": "中国語［人］"
+        }
+    },
+    {
+        "en": [
+            "kilometer",
+            "kilometers",
+            "kilometer(s)"
+        ],
+        "ja": {
+            "hiragana": "きろめーとる",
+            "kanji": "キロメートル"
+        }
+    },
+    {
+        "en": "uncle",
+        "ja": {
+            "hiragana": "おじ",
+            "kanji": "おじ"
+        }
+    },
+    {
+        "en": "aunt",
+        "ja": {
+            "hiragana": "おば",
+            "kanji": "おば"
+        }
+    },
+    {
+        "en": "cousin",
+        "ja": {
+            "hiragana": "いとこ",
+            "kanji": "いとこ"
+        }
+    },
+    {
+        "en": "skate",
+        "ja": {
+            "hiragana": "すけーとをする",
+            "kanji": "スケートをする"
+        }
+    },
+    {
+        "en": "guitar",
+        "ja": {
+            "hiragana": "ぎたー",
+            "kanji": "ギター"
+        }
+    },
+    {
+        "en": "any",
+        "ja": {
+            "hiragana": "（ぎもんぶんで） なにか，いくつか",
+            "kanji": "（疑問文で） 何か，いくつか"
+        }
+    },
+    {
+        "en": "talent",
+        "ja": {
+            "hiragana": "さいのうのあるひと， たれんと",
+            "kanji": "才能のある人， タレント"
+        }
+    },
+    {
+        "en": "show",
+        "ja": {
+            "hiragana": "みせもの，ばんぐみ，しょー",
+            "kanji": "見せ物，番組，ショー"
+        }
+    },
+    {
+        "en": "perform",
+        "ja": {
+            "hiragana": "おこなう，えんじる",
+            "kanji": "行う，演じる"
+        }
+    },
+    {
+        "en": "with",
+        "ja": {
+            "hiragana": "～といっしょに",
+            "kanji": "～といっしょに"
+        }
+    },
+    {
+        "en": [
+            "classmate",
+            "classmates",
+            "classmate(s)"
+        ],
+        "ja": {
+            "hiragana": "きゅうゆう，くらすめーと",
+            "kanji": "級友，クラスメート"
+        }
+    },
+    {
+        "en": [
+            "have fun at ~",
+            "have fun at"
+        ],
+        "ja": {
+            "hiragana": "～をたのしむ",
+            "kanji": "～を楽しむ"
+        }
+    },
+    {
+        "en": "have a great time",
+        "ja": {
+            "hiragana": "すばらしいときをすごす",
+            "kanji": "すばらしい時を過ごす"
+        }
+    },
+    {
+        "en": "American",
+        "ja": {
+            "hiragana": "あめりか（ひと）の",
+            "kanji": "アメリカ（人）の"
+        }
+    },
+    {
+        "en": "dancer",
+        "ja": {
+            "hiragana": "だんさー",
+            "kanji": "ダンサー"
+        }
+    },
+    {
+        "en": [
+            "basilisk",
+            "basilisks",
+            "basilisk(s)"
+        ],
+        "ja": {
+            "hiragana": "ばしりすく （どうぶつのな）",
+            "kanji": "バシリスク （動物の名）"
+        }
+    },
+    {
+        "en": "their",
+        "ja": {
+            "hiragana": "かれら［かのじょら，それら］の",
+            "kanji": "彼ら［彼女ら，それら］の"
+        }
+    },
+    {
+        "en": [
+            "octopus",
+            "octopuses",
+            "octopus(es)"
+        ],
+        "ja": {
+            "hiragana": "たこ",
+            "kanji": "タコ"
+        }
+    },
+    {
+        "en": "change",
+        "ja": {
+            "hiragana": "かえる",
+            "kanji": "変える"
+        }
+    },
+    {
+        "en": [
+            "koala",
+            "koalas",
+            "koala(s)"
+        ],
+        "ja": {
+            "hiragana": "こあら",
+            "kanji": "コアラ"
+        }
+    },
+    {
+        "en": "catch",
+        "ja": {
+            "hiragana": "つかまえる",
+            "kanji": "つかまえる"
+        }
+    },
+    {
+        "en": "robot",
+        "ja": {
+            "hiragana": "ろぼっと",
+            "kanji": "ロボット"
+        }
+    },
+    {
+        "en": "keep",
+        "ja": {
+            "hiragana": "まもる",
+            "kanji": "守る"
+        }
+    },
+    {
+        "en": [
+            "secret",
+            "secrets",
+            "secret(s)"
+        ],
+        "ja": {
+            "hiragana": "ひみつ",
+            "kanji": "秘密"
+        }
+    },
+    {
+        "en": "from ~ to ...",
+        "ja": {
+            "hiragana": "～から…へ［まで］",
+            "kanji": "～から…へ［まで］"
+        }
+    },
+    {
+        "en": "cannot",
+        "ja": {
+            "hiragana": "～できない（canの ひていけい）",
+            "kanji": "～できない（canの 否定形）"
+        }
+    },
+    {
+        "en": "J-pop",
+        "ja": {
+            "hiragana": "じぇーぽっぷ",
+            "kanji": "ジェーポップ"
+        }
+    },
+    {
+        "en": "midfielder",
+        "ja": {
+            "hiragana": "（さっかーで）ちゅうばんのせんしゅ",
+            "kanji": "（サッカーで）中盤の選手"
+        }
+    },
+    {
+        "en": "everyone",
+        "ja": {
+            "hiragana": "みなさん，だれも，みな",
+            "kanji": "みなさん，だれも，みな"
+        }
+    },
+    {
+        "en": "love",
+        "ja": {
+            "hiragana": "だいすきである，あいする",
+            "kanji": "大好きである，愛する"
+        }
+    }
+]

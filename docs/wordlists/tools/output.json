@@ -1,0 +1,420 @@
+[
+  {
+    "en": "culture",
+    "ja": {
+      "hiragana": "ぶんか",
+      "kanji": "文化"
+    }
+  },
+  {
+    "en": "bird",
+    "ja": {
+      "hiragana": "とり",
+      "kanji": "鳥"
+    }
+  },
+  {
+    "en": "isn't",
+    "ja": {
+      "hiragana": "is notのしょうりゃく",
+      "kanji": "is notの省略"
+    }
+  },
+  {
+    "en": "drone",
+    "ja": {
+      "hiragana": "どろーん",
+      "kanji": "ドローン"
+    }
+  },
+  {
+    "en": "soap pump",
+    "ja": {
+      "hiragana": "せっけんぽんぷ",
+      "kanji": "せっけんポンプ"
+    }
+  },
+  {
+    "en": "push",
+    "ja": {
+      "hiragana": "おす",
+      "kanji": "押す"
+    }
+  },
+  {
+    "en": "paper knife",
+    "ja": {
+      "hiragana": "ぺーぱーないふ",
+      "kanji": "ペーパーナイフ"
+    }
+  },
+  {
+    "en": "hold",
+    "ja": {
+      "hiragana": "もつ，つかむ",
+      "kanji": "持つ，つかむ"
+    }
+  },
+  {
+    "en": "plug",
+    "ja": {
+      "hiragana": "（こーどの）ぷらぐ， さしこみ",
+      "kanji": "（コードの）プラグ， 差し込み"
+    }
+  },
+  {
+    "en": "finger",
+    "ja": {
+      "hiragana": "（ての）ゆび",
+      "kanji": "（手の）指"
+    }
+  },
+  {
+    "en": "hole",
+    "ja": {
+      "hiragana": "あな",
+      "kanji": "穴"
+    }
+  },
+  {
+    "en": "pull",
+    "ja": {
+      "hiragana": "ひく",
+      "kanji": "引く"
+    }
+  },
+  {
+    "en": "useful",
+    "ja": {
+      "hiragana": "やくにたつ",
+      "kanji": "役に立つ"
+    }
+  },
+  {
+    "en": "correction pen",
+    "ja": {
+      "hiragana": "しゅうせいぺん",
+      "kanji": "修正ペン"
+    }
+  },
+  {
+    "en": "woman",
+    "ja": {
+      "hiragana": "じょせい，おんなのひと",
+      "kanji": "女性，女の人"
+    }
+  },
+  {
+    "en": "android",
+    "ja": {
+      "hiragana": "あんどろいど， じんぞうにんげん",
+      "kanji": "アンドロイド， 人造人間"
+    }
+  },
+  {
+    "en": "real",
+    "ja": {
+      "hiragana": "ほんものの",
+      "kanji": "本物の"
+    }
+  },
+  {
+    "en": "person",
+    "ja": {
+      "hiragana": "ひと，こじん",
+      "kanji": "人，個人"
+    }
+  },
+  {
+    "en": "smile",
+    "ja": {
+      "hiragana": "ほほえむ，わらう",
+      "kanji": "ほほえむ，笑う"
+    }
+  },
+  {
+    "en": "towel",
+    "ja": {
+      "hiragana": "たおる",
+      "kanji": "タオル"
+    }
+  },
+  {
+    "en": "runner",
+    "ja": {
+      "hiragana": "そうしゃ，らんなー",
+      "kanji": "走者，ランナー"
+    }
+  },
+  {
+    "en": "man",
+    "ja": {
+      "hiragana": "だんせい，おとこのひと",
+      "kanji": "男性，男の人"
+    }
+  },
+  {
+    "en": "court",
+    "ja": {
+      "hiragana": "（てにすなどの）こーと",
+      "kanji": "（テニスなどの）コート"
+    }
+  },
+  {
+    "en": "what's",
+    "ja": {
+      "hiragana": "what isのしょうりゃく",
+      "kanji": "what isの省略"
+    }
+  },
+  {
+    "en": "stick",
+    "ja": {
+      "hiragana": "ぼうじょうのもの",
+      "kanji": "棒状の物"
+    }
+  },
+  {
+    "en": "into",
+    "ja": {
+      "hiragana": "～のなかへ［に］",
+      "kanji": "～の中へ［に］"
+    }
+  },
+  {
+    "en": "inkstone",
+    "ja": {
+      "hiragana": "すずり",
+      "kanji": "すずり"
+    }
+  },
+  {
+    "en": "rub",
+    "ja": {
+      "hiragana": "こする",
+      "kanji": "こする"
+    }
+  },
+  {
+    "en": "work",
+    "ja": {
+      "hiragana": "しごと",
+      "kanji": "仕事"
+    }
+  },
+  {
+    "en": "save",
+    "ja": {
+      "hiragana": "（じかんなどを）はぶく",
+      "kanji": "（時間などを）省く"
+    }
+  },
+  {
+    "en": "I see.",
+    "ja": {
+      "hiragana": "なるほど。 ［そうですか。］",
+      "kanji": "なるほど。 ［そうですか。］"
+    }
+  },
+  {
+    "en": [
+      "type",
+      "types",
+      "type(s)"
+    ],
+    "ja": {
+      "hiragana": "かた，るい，たいぷ",
+      "kanji": "型，類，タイプ"
+    }
+  },
+  {
+    "en": [
+      "reading card",
+      "reading cards",
+      "reading card(s)"
+    ],
+    "ja": {
+      "hiragana": "よみふだ",
+      "kanji": "読みふだ"
+    }
+  },
+  {
+    "en": [
+      "grabbing card",
+      "grabbing cards",
+      "grabbing card(s)"
+    ],
+    "ja": {
+      "hiragana": "とりふだ",
+      "kanji": "取りふだ"
+    }
+  },
+  {
+    "en": "poet",
+    "ja": {
+      "hiragana": "かじん，しじん",
+      "kanji": "歌人，詩人"
+    }
+  },
+  {
+    "en": "lion",
+    "ja": {
+      "hiragana": "らいおん",
+      "kanji": "ライオン"
+    }
+  },
+  {
+    "en": "kangaroo",
+    "ja": {
+      "hiragana": "かんがるー",
+      "kanji": "カンガルー"
+    }
+  },
+  {
+    "en": "elephant",
+    "ja": {
+      "hiragana": "ぞう",
+      "kanji": "ゾウ"
+    }
+  },
+  {
+    "en": "got",
+    "ja": {
+      "hiragana": "get （える）のかこけい",
+      "kanji": "get （得る）の過去形"
+    }
+  },
+  {
+    "en": "answer",
+    "ja": {
+      "hiragana": "こたえ",
+      "kanji": "答え"
+    }
+  },
+  {
+    "en": "round",
+    "ja": {
+      "hiragana": "まるい",
+      "kanji": "丸い"
+    }
+  },
+  {
+    "en": "vegetable",
+    "ja": {
+      "hiragana": "やさい",
+      "kanji": "野菜"
+    }
+  },
+  {
+    "en": "gray",
+    "ja": {
+      "hiragana": "はいいろ（の）",
+      "kanji": "灰色（の）"
+    }
+  },
+  {
+    "en": "tail",
+    "ja": {
+      "hiragana": "しっぽ",
+      "kanji": "しっぽ"
+    }
+  },
+  {
+    "en": "forest",
+    "ja": {
+      "hiragana": "もり",
+      "kanji": "森"
+    }
+  },
+  {
+    "en": "I got it!",
+    "ja": {
+      "hiragana": "わかった。",
+      "kanji": "わかった。"
+    }
+  },
+  {
+    "en": "That's right.",
+    "ja": {
+      "hiragana": "そのとおりです。",
+      "kanji": "そのとおりです。"
+    }
+  },
+  {
+    "en": "she's",
+    "ja": {
+      "hiragana": "she isのしょうりゃく",
+      "kanji": "she isの省略"
+    }
+  },
+  {
+    "en": "he's",
+    "ja": {
+      "hiragana": "he isのしょうりゃく",
+      "kanji": "he isの省略"
+    }
+  },
+  {
+    "en": "whose",
+    "ja": {
+      "hiragana": "だれの",
+      "kanji": "だれの"
+    }
+  },
+  {
+    "en": "these",
+    "ja": {
+      "hiragana": "これらは［が］",
+      "kanji": "これらは［が］"
+    }
+  },
+  {
+    "en": "mine",
+    "ja": {
+      "hiragana": "わたしのもの",
+      "kanji": "私のもの"
+    }
+  },
+  {
+    "en": "which",
+    "ja": {
+      "hiragana": "どの，どちらの",
+      "kanji": "どの，どちらの"
+    }
+  },
+  {
+    "en": "yours",
+    "ja": {
+      "hiragana": "あなたのもの",
+      "kanji": "あなたのもの"
+    }
+  },
+  {
+    "en": "both",
+    "ja": {
+      "hiragana": "りょうほう",
+      "kanji": "両方"
+    }
+  },
+  {
+    "en": "light",
+    "ja": {
+      "hiragana": "あかるい",
+      "kanji": "明るい"
+    }
+  },
+  {
+    "en": "other",
+    "ja": {
+      "hiragana": "ほかの",
+      "kanji": "ほかの"
+    }
+  },
+  {
+    "en": "absent",
+    "ja": {
+      "hiragana": "けっせきの",
+      "kanji": "欠席の"
+    }
+  }
+]

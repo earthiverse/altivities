@@ -1,0 +1,140 @@
+[
+    {
+        "en": "Lucky",
+        "ja": {
+            "hiragana": "らっきー（いぬのな）",
+            "kanji": "ラッキー（犬の名）"
+        }
+    },
+    {
+        "en": "her",
+        "ja": {
+            "hiragana": "かのじょの",
+            "kanji": "彼女の"
+        }
+    },
+    {
+        "en": [
+            "concert",
+            "concerts",
+            "concert(s)"
+        ],
+        "ja": {
+            "hiragana": "こんさーと",
+            "kanji": "コンサート"
+        }
+    },
+    {
+        "en": "cheeseburger",
+        "ja": {
+            "hiragana": "ちーずばーがー",
+            "kanji": "チーズバーガー"
+        }
+    },
+    {
+        "en": "pie",
+        "ja": {
+            "hiragana": "ぱい",
+            "kanji": "パイ"
+        }
+    },
+    {
+        "en": "large",
+        "ja": {
+            "hiragana": "おおきい，ひろい",
+            "kanji": "大きい，広い"
+        }
+    },
+    {
+        "en": "ginger ale",
+        "ja": {
+            "hiragana": "じんじゃーえーる （のみもののな）",
+            "kanji": "ジンジャーエール （飲み物の名）"
+        }
+    },
+    {
+        "en": "cola",
+        "ja": {
+            "hiragana": "こーら（のみもののな）",
+            "kanji": "コーラ（飲み物の名）"
+        }
+    },
+    {
+        "en": "medium",
+        "ja": {
+            "hiragana": "ちゅうかん（の）",
+            "kanji": "中間（の）"
+        }
+    },
+    {
+        "en": [
+            "size",
+            "sizes",
+            "size(s)"
+        ],
+        "ja": {
+            "hiragana": "おおきさ，さいず",
+            "kanji": "大きさ，サイズ"
+        }
+    },
+    {
+        "en": "or",
+        "ja": {
+            "hiragana": "または，それとも，～か",
+            "kanji": "または，それとも，～か"
+        }
+    },
+    {
+        "en": "meal",
+        "ja": {
+            "hiragana": "しょくじ",
+            "kanji": "食事"
+        }
+    },
+    {
+        "en": "clerk",
+        "ja": {
+            "hiragana": "てんいん",
+            "kanji": "店員"
+        }
+    },
+    {
+        "en": [
+            "cent",
+            "cents",
+            "cent(s)"
+        ],
+        "ja": {
+            "hiragana": "せんと（ あめりか，かなだなどのかへいたんい）",
+            "kanji": "セント（ アメリカ，カナダなどの貨幣単位）"
+        }
+    },
+    {
+        "en": "Can I ~?",
+        "ja": {
+            "hiragana": "～してもよいですか。",
+            "kanji": "～してもよいですか。"
+        }
+    },
+    {
+        "en": "For here or to go?",
+        "ja": {
+            "hiragana": "こちらでめしあがりま すか，もちかえりますか。",
+            "kanji": "こちらでめしあがりま すか，持ち帰りますか。"
+        }
+    },
+    {
+        "en": "How much ~?",
+        "ja": {
+            "hiragana": "～はいくらですか。",
+            "kanji": "～はいくらですか。"
+        }
+    },
+    {
+        "en": "Here you are.",
+        "ja": {
+            "hiragana": "はい，どうぞ。",
+            "kanji": "はい，どうぞ。"
+        }
+    }
+]

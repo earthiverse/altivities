@@ -1,0 +1,311 @@
+[
+    {
+        "en": "snack",
+        "ja": {
+            "hiragana": "けいしょく，おやつ",
+            "kanji": "軽食，おやつ"
+        }
+    },
+    {
+        "en": "Ann",
+        "ja": {
+            "hiragana": "あん（じょしのな）",
+            "kanji": "アン（女子の名）"
+        }
+    },
+    {
+        "en": "every",
+        "ja": {
+            "hiragana": "まい～，～ごとに",
+            "kanji": "毎～，～ごとに"
+        }
+    },
+    {
+        "en": "bike",
+        "ja": {
+            "hiragana": "じてんしゃ",
+            "kanji": "自転車"
+        }
+    },
+    {
+        "en": "after",
+        "ja": {
+            "hiragana": "～のあとに［で］",
+            "kanji": "～のあとに［で］"
+        }
+    },
+    {
+        "en": "grow",
+        "ja": {
+            "hiragana": "さいばいする，そだてる",
+            "kanji": "栽培する，育てる"
+        }
+    },
+    {
+        "en": "every day",
+        "ja": {
+            "hiragana": "まいにち",
+            "kanji": "毎日"
+        }
+    },
+    {
+        "en": "after school",
+        "ja": {
+            "hiragana": "ほうかご",
+            "kanji": "放課後"
+        }
+    },
+    {
+        "en": "often",
+        "ja": {
+            "hiragana": "しばしば",
+            "kanji": "しばしば"
+        }
+    },
+    {
+        "en": "climb",
+        "ja": {
+            "hiragana": "のぼる",
+            "kanji": "登る"
+        }
+    },
+    {
+        "en": [
+            "weekend",
+            "weekends",
+            "weekend(s)"
+        ],
+        "ja": {
+            "hiragana": "しゅうまつ",
+            "kanji": "週末"
+        }
+    },
+    {
+        "en": "before",
+        "ja": {
+            "hiragana": "（ときをあらわして） ～よりまえに",
+            "kanji": "（時を表して） ～より前に"
+        }
+    },
+    {
+        "en": "dinner",
+        "ja": {
+            "hiragana": "ゆうしょく",
+            "kanji": "夕食"
+        }
+    },
+    {
+        "en": "draw",
+        "ja": {
+            "hiragana": "（えを）えがく",
+            "kanji": "（絵を）描く"
+        }
+    },
+    {
+        "en": [
+            "picture",
+            "pictures",
+            "picture(s)"
+        ],
+        "ja": {
+            "hiragana": "え，しゃしん",
+            "kanji": "絵，写真"
+        }
+    },
+    {
+        "en": "wow",
+        "ja": {
+            "hiragana": "うわー",
+            "kanji": "うわー"
+        }
+    },
+    {
+        "en": "flip",
+        "ja": {
+            "hiragana": "（ほんなどを）ぱらぱら めくること",
+            "kanji": "（本などを）パラパラ めくること"
+        }
+    },
+    {
+        "en": [
+            "look at ~",
+            "look at"
+        ],
+        "ja": {
+            "hiragana": "～（のほう）をみる",
+            "kanji": "～（のほう）を見る"
+        }
+    },
+    {
+        "en": "sure",
+        "ja": {
+            "hiragana": "（Sure.で）いいですよ。 ［はい。］",
+            "kanji": "（Sure.で）いいですよ。 ［はい。］"
+        }
+    },
+    {
+        "en": "during",
+        "ja": {
+            "hiragana": "～のまに",
+            "kanji": "～の間に"
+        }
+    },
+    {
+        "en": "break",
+        "ja": {
+            "hiragana": "きゅうけい",
+            "kanji": "休憩"
+        }
+    },
+    {
+        "en": "tomorrow",
+        "ja": {
+            "hiragana": "あした（は）",
+            "kanji": "明日（は）"
+        }
+    },
+    {
+        "en": "very much",
+        "ja": {
+            "hiragana": "とても，ひじょうに",
+            "kanji": "とても，非常に"
+        }
+    },
+    {
+        "en": "Yes, let's.",
+        "ja": {
+            "hiragana": "そうしましょう。",
+            "kanji": "そうしましょう。"
+        }
+    },
+    {
+        "en": [
+            "video game",
+            "video games",
+            "video game(s)"
+        ],
+        "ja": {
+            "hiragana": "てれびげーむ",
+            "kanji": "テレビゲーム"
+        }
+    },
+    {
+        "en": "night",
+        "ja": {
+            "hiragana": "よる",
+            "kanji": "夜"
+        }
+    },
+    {
+        "en": "How about ~?",
+        "ja": {
+            "hiragana": "～はどうですか。",
+            "kanji": "～はどうですか。"
+        }
+    },
+    {
+        "en": "take a bath",
+        "ja": {
+            "hiragana": "ふろにはいる",
+            "kanji": "ふろに入る"
+        }
+    },
+    {
+        "en": "go shopping",
+        "ja": {
+            "hiragana": "かいものにいく",
+            "kanji": "買い物に行く"
+        }
+    },
+    {
+        "en": "in the morning",
+        "ja": {
+            "hiragana": "ごぜん（なか）に",
+            "kanji": "午前（中）に"
+        }
+    },
+    {
+        "en": "in the afternoon",
+        "ja": {
+            "hiragana": "ごごに",
+            "kanji": "午後に"
+        }
+    },
+    {
+        "en": "at night",
+        "ja": {
+            "hiragana": "よるは［に］",
+            "kanji": "夜は［に］"
+        }
+    },
+    {
+        "en": "today",
+        "ja": {
+            "hiragana": "きょう（は）",
+            "kanji": "今日（は）"
+        }
+    },
+    {
+        "en": "week",
+        "ja": {
+            "hiragana": "しゅう",
+            "kanji": "週"
+        }
+    },
+    {
+        "en": "it's",
+        "ja": {
+            "hiragana": "it isのしょうりゃく",
+            "kanji": "it isの省略"
+        }
+    },
+    {
+        "en": "how's",
+        "ja": {
+            "hiragana": "how isのしょうりゃく",
+            "kanji": "how isの省略"
+        }
+    },
+    {
+        "en": "close",
+        "ja": {
+            "hiragana": "とじる，しめる",
+            "kanji": "閉じる，閉める"
+        }
+    },
+    {
+        "en": "some",
+        "ja": {
+            "hiragana": "いくらかの， いくつかの",
+            "kanji": "いくらかの， いくつかの"
+        }
+    },
+    {
+        "en": "open",
+        "ja": {
+            "hiragana": "あける，ひらく",
+            "kanji": "開ける，開く"
+        }
+    },
+    {
+        "en": "song",
+        "ja": {
+            "hiragana": "うた",
+            "kanji": "歌"
+        }
+    },
+    {
+        "en": "touch",
+        "ja": {
+            "hiragana": "さわる",
+            "kanji": "さわる"
+        }
+    },
+    {
+        "en": "write",
+        "ja": {
+            "hiragana": "かく",
+            "kanji": "書く"
+        }
+    }
+]
