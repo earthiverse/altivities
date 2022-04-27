@@ -20,6 +20,22 @@ A 3x3 bingo card generator for tablets.
 
 View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/bingo).
 
+### Clock
+
+<https://earthiverse.github.io/altivities/clock/>
+
+A clock that gives a random time, and asks you to enter what time it is showing.
+
+View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/clock).
+
+### Kana Race (かな　レース)
+
+<https://earthiverse.github.io/altivities/kanarace/>
+
+A kana version of ABC Race.
+
+View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/kanarace).
+
 ### Memory
 
 <https://earthiverse.github.io/altivities/memory/?wordlist=../wordlists/General/colors.json>
