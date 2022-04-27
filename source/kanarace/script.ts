@@ -9,9 +9,9 @@ type ButtonConfig = {
 }
 
 type Mode =
-    | "katakana"
-    | "hiragana"
-    | "random"
+    | "カタカナ"
+    | "ひらがな"
+    | "ランダム"
 
 type PlayData = {
     mode: Mode
@@ -144,7 +144,7 @@ class KanaRaceLoadScene extends Phaser.Scene {
     }
 
     preload() {
-        const loadingText = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 2 - 50, "Loading...")
+        const loadingText = this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 2 - 50, " ローディング...")
         loadingText.setOrigin(0.5, 0.5)
         loadingText.setColor("#000000")
         loadingText.setFontFamily("Arial")
@@ -173,9 +173,9 @@ class KanaRaceLoadScene extends Phaser.Scene {
         this.load.image("timer", "images/timer.svg")
 
         // Load Buttons
-        this.load.spritesheet("lowercase_buttons", "images/lowercase_buttons.png", { frameHeight: 160, frameWidth: 210 })
+        this.load.spritesheet("katakana_buttons", "images/katakana_buttons.png", { frameHeight: 160, frameWidth: 210 })
         this.load.spritesheet("random_buttons", "images/random_buttons.png", { frameHeight: 160, frameWidth: 210 })
-        this.load.spritesheet("uppercase_buttons", "images/uppercase_buttons.png", { frameHeight: 160, frameWidth: 210 })
+        this.load.spritesheet("hiragana_buttons", "images/hiragana_buttons.png", { frameHeight: 160, frameWidth: 210 })
         this.load.spritesheet("start_buttons", "images/start_buttons.png", { frameHeight: 210, frameWidth: 610 })
         this.load.spritesheet("menu_buttons", "images/menu_buttons.png", { frameHeight: 210, frameWidth: 610 })
 
@@ -185,7 +185,7 @@ class KanaRaceLoadScene extends Phaser.Scene {
         this.load.audio("menu_bgm", "sounds/menu_bgm.mp3")
 
         // Load Sounds
-        for (const letter of KanaRace.HiraganaLetters) this.load.audio(`${letter}_f`, `sounds/${letter}_f.mp3`)
+        for (const letter of KanaRace.HiraganaLetters) this.load.audio(`${letter}`, `sounds/${letter}.mp3`)
         this.load.audio("countdown", "sounds/countdown.mp3")
         this.load.audio("menu_switch", "sounds/menu_switch.mp3")
         this.load.audio("ng", "sounds/ng.mp3")
@@ -213,14 +213,14 @@ class KanaRaceMenuScene extends Phaser.Scene {
         })
 
         const katakanaButton = new BasicButton({
-            "key": "lowercase_buttons",
+            "key": "katakana_buttons",
             "scene": this,
             "x": 40,
             "y": 205
         })
 
         const hiraganaButton = new BasicButton({
-            "key": "uppercase_buttons",
+            "key": "hiragana_buttons",
             "scene": this,
             "x": 295,
             "y": 205
@@ -252,14 +252,14 @@ class KanaRaceMenuScene extends Phaser.Scene {
             randomButton.setEnabled()
         })
         switch (localStorage.getItem(LOCAL_STORAGE_MODE)) {
-            case "lowercase":
+            case "カタカナ":
                 katakanaButton.setEnabled()
                 break
-            case "uppercase":
+            case "ひらがな":
             default:
                 hiraganaButton.setEnabled()
                 break
-            case "random":
+            case "ランダム":
                 randomButton.setEnabled()
                 break
         }
@@ -268,17 +268,24 @@ class KanaRaceMenuScene extends Phaser.Scene {
         const timesString = localStorage.getItem(LOCAL_STORAGE_TIMES)
         let timesObject: BestTimesData = {}
         if (timesString) timesObject = JSON.parse(timesString) as BestTimesData
+        console.log(timesObject)
         const addBestText = (x: number, y: number, time: number) => {
+            const minutesElapsed = Math.floor(time / 1000 / 60).toString().padStart(2, "0")
             const secondsElapsed = ((time / 1000) % 60).toFixed(2).padStart(5, "0")
-            const bestText = this.add.text(x, y, `Best: ${secondsElapsed}`)
+            let bestText: Phaser.GameObjects.Text
+            if (minutesElapsed == "00") {
+                bestText = this.add.text(x, y, `ベスト: ${secondsElapsed}`)
+            } else {
+                bestText = this.add.text(x - 10, y, `ベスト: ${minutesElapsed}:${secondsElapsed}`)
+            }
             bestText.setFontFamily("Orbitron")
             bestText.setFontSize(18)
             bestText.setFontStyle("bold")
             bestText.setColor("#697753")
         }
-        if (timesObject.katakana < 60000) addBestText(85, 185, timesObject.katakana)
-        if (timesObject.hiragana < 60000) addBestText(340, 185, timesObject.hiragana)
-        if (timesObject.random < 60000) addBestText(595, 185, timesObject.random)
+        if (timesObject.カタカナ < 600000) addBestText(80, 185, timesObject.カタカナ)
+        if (timesObject.ひらがな < 600000) addBestText(335, 185, timesObject.ひらがな)
+        if (timesObject.ランダム < 600000) addBestText(590, 185, timesObject.ランダム)
 
         const startButton = new BasicButton({
             "key": "start_buttons",
@@ -291,19 +298,19 @@ class KanaRaceMenuScene extends Phaser.Scene {
 
             if (katakanaButton.enabled) {
                 args = {
-                    mode: "katakana"
+                    mode: "カタカナ"
                 }
-                localStorage.setItem(LOCAL_STORAGE_MODE, "katakana")
+                localStorage.setItem(LOCAL_STORAGE_MODE, "カタカナ")
             } else if (hiraganaButton.enabled) {
                 args = {
-                    mode: "hiragana"
+                    mode: "ひらがな"
                 }
-                localStorage.setItem(LOCAL_STORAGE_MODE, "hiragana")
+                localStorage.setItem(LOCAL_STORAGE_MODE, "ひらがな")
             } else if (randomButton.enabled) {
                 args = {
-                    mode: "random"
+                    mode: "ランダム"
                 }
-                localStorage.setItem(LOCAL_STORAGE_MODE, "random")
+                localStorage.setItem(LOCAL_STORAGE_MODE, "ランダム")
             } else {
                 throw new Error("Something went wrong. We don't know what game mode to use.")
             }
@@ -341,7 +348,7 @@ class KanaRacePlayScene extends Phaser.Scene {
         // Split the board until we have enough spaces to fit all letters
         let columns = 1
         let rows = 1
-        while (columns * rows < 26) {
+        while (columns * rows < this.letters.length) {
             const columnWidth = KanaRace.WIDTH / columns
             const rowHeight = KanaRace.HEIGHT / rows
 
@@ -378,7 +385,7 @@ class KanaRacePlayScene extends Phaser.Scene {
             const scale = Math.min(rowHeight / letterSprite.height, columnWidth / letterSprite.width) * 0.9
             if (minScale > scale) minScale = scale
 
-            const rotation = getRandomNumber(-15, 15) * (Math.PI / 180)
+            const rotation = getRandomNumber(-12, 12) * (Math.PI / 180)
             letterSprite.setRotation(rotation)
 
             letterSprite.setInteractive({ cursor: "pointer" })
@@ -392,7 +399,13 @@ class KanaRacePlayScene extends Phaser.Scene {
                 const target = this.letters[this.currentLetter]
 
                 // Play the letter sound
-                this.sound.play(`${hit.toLowerCase()}_f`)
+                if (KanaRace.HiraganaLetters.includes(hit)) {
+                    this.sound.play(hit)
+                } else if (KanaRace.KatakanaLetters.includes(hit)) {
+                    // Get the corresponding hiragana letter to play the sound file
+                    const index = KanaRace.KatakanaLetters.indexOf(hit)
+                    this.sound.play(KanaRace.HiraganaLetters[index])
+                }
 
                 if (target == hit) {
                     // They hit the correct letter
@@ -441,7 +454,7 @@ class KanaRacePlayScene extends Phaser.Scene {
                     }
                     this.lastCorrect = letterSprite
 
-                    if (this.currentLetter == 26) {
+                    if (this.currentLetter == this.letters.length) {
                         this.sound.play("finish", {
                             volume: 0.5
                         })
@@ -513,17 +526,17 @@ class KanaRacePlayScene extends Phaser.Scene {
         // Setup Mode
         this.mode = data.mode
         switch (data.mode) {
-            case "hiragana": {
+            case "ひらがな": {
                 this.letters = KanaRace.HiraganaLetters
                 break
             }
-            case "katakana": {
+            case "カタカナ": {
                 this.letters = KanaRace.KatakanaLetters
                 break
             }
-            case "random": {
+            case "ランダム": {
                 const letters = []
-                for (let i = 0; i < 26; i++) {
+                for (let i = 0; i < KanaRace.HiraganaLetters.length; i++) {
                     const random = Math.round(Math.random())
                     if (random < 0.5) {
                         letters.push(KanaRace.HiraganaLetters[i])
@@ -603,19 +616,19 @@ class KanaRaceResultsScene extends Phaser.Scene {
         const logo = this.add.sprite(20, 80, "logo").setOrigin(0, 0)
         logo.setAlpha(0.1)
 
-        const modeText = this.add.text(20, 50, `Mode: ${this.mode}`).setOrigin(0, 0)
+        const modeText = this.add.text(20, 50, `モード: ${this.mode}`).setOrigin(0, 0)
         modeText.setFontFamily("Orbitron")
         modeText.setFontSize(60)
         modeText.setColor("#000000")
 
         const secondsElapsed = ((this.timeElapsed / 1000) % 60).toFixed(2).padStart(5, "0")
         const minutesElapsed = Math.floor(this.timeElapsed / 1000 / 60).toString().padStart(2, "0")
-        const timerText = this.add.text(20, 110, `Elapsed: ${minutesElapsed}:${secondsElapsed}`).setOrigin(0, 0)
+        const timerText = this.add.text(20, 110, `時間: ${minutesElapsed}:${secondsElapsed}`).setOrigin(0, 0)
         timerText.setFontFamily("Orbitron")
         timerText.setFontSize(60)
         timerText.setColor("#333333")
 
-        const mistakesText = this.add.text(20, 170, `Mistakes: ${this.numMistakes}`).setOrigin(0, 0)
+        const mistakesText = this.add.text(20, 170, `ミス: ${this.numMistakes}`).setOrigin(0, 0)
         mistakesText.setFontFamily("Orbitron")
         mistakesText.setFontSize(60)
         mistakesText.setColor("#F94C56")
@@ -623,7 +636,7 @@ class KanaRaceResultsScene extends Phaser.Scene {
         const mistakesElapsed = this.timeElapsed + (this.numMistakes * 1000)
         const secondsElapsedM = ((mistakesElapsed / 1000) % 60).toFixed(2).padStart(5, "0")
         const minutesElapsedM = Math.floor(mistakesElapsed / 1000 / 60).toString().padStart(2, "0")
-        const timerTextM = this.add.text(20, 230, `Total: ${minutesElapsedM}:${secondsElapsedM}`).setOrigin(0, 0)
+        const timerTextM = this.add.text(20, 230, `合計: ${minutesElapsedM}:${secondsElapsedM}`).setOrigin(0, 0)
         timerTextM.setFontFamily("Orbitron")
         timerTextM.setFontSize(80)
         timerTextM.setStyle({
@@ -636,9 +649,9 @@ class KanaRaceResultsScene extends Phaser.Scene {
         const timesObject: BestTimesData = {}
         if (timesString) {
             const oldTimes = JSON.parse(timesString) as BestTimesData
-            timesObject.katakana = oldTimes.katakana
-            timesObject.hiragana = oldTimes.hiragana
-            timesObject.random = oldTimes.random
+            timesObject.カタカナ = oldTimes.カタカナ
+            timesObject.ひらがな = oldTimes.ひらがな
+            timesObject.ランダム = oldTimes.ランダム
         }
         if (mistakesElapsed < (timesObject[this.mode] ?? Number.MAX_VALUE)) {
             // We have a new best time

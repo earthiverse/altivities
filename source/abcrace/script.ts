@@ -341,7 +341,7 @@ class ABCRacePlayScene extends Phaser.Scene {
         // Split the board until we have enough spaces to fit all letters
         let columns = 1
         let rows = 1
-        while (columns * rows < 26) {
+        while (columns * rows < this.letters.length) {
             const columnWidth = ABCRace.WIDTH / columns
             const rowHeight = ABCRace.HEIGHT / rows
 
@@ -441,7 +441,7 @@ class ABCRacePlayScene extends Phaser.Scene {
                     }
                     this.lastCorrect = letterSprite
 
-                    if (this.currentLetter == 26) {
+                    if (this.currentLetter == this.letters.length) {
                         this.sound.play("finish", {
                             volume: 0.5
                         })
@@ -519,7 +519,7 @@ class ABCRacePlayScene extends Phaser.Scene {
             }
             case "random": {
                 const letters = []
-                for (let i = 0; i < 26; i++) {
+                for (let i = 0; i < ABCRace.LowercaseLetters.length; i++) {
                     const random = Math.round(Math.random())
                     if (random < 0.5) {
                         letters.push(ABCRace.LowercaseLetters[i])
