@@ -47,32 +47,12 @@ const NAVIGATION = document.getElementById("navigation") as HTMLDivElement
 *** Game Code *****************************************************************/
 const WORDLISTS: Wordlist[] = []
 
-async function prepare() {
-    if (!PARAMETERS.sentence) {
-        // TODO: Visually throw an error on the screen
-        throw Error("No sentence found.")
-    }
-    if (!PARAMETERS.sentence.includes(SUBSTITUTION_CHAR)) {
-        // TODO: Visually throw an error on the screen
-        throw Error("No substitution character found.")
-    }
+function clearSentence() {
+    while (SENTENCE.firstChild) SENTENCE.removeChild(SENTENCE.firstChild)
+}
 
-    let i = 1
-    while (PARAMETERS[`${i}_wordlist`] || PARAMETERS[`${i}_wordlists`]) {
-        const wordlist = await prepareWordlist({
-            ignore: PARAMETERS[`${i}_ignore`],
-            include: PARAMETERS[`${i}_include`],
-            wordlist: PARAMETERS[`${i}_wordlist`],
-            wordlists: PARAMETERS[`${i}_wordlists`]
-        })
-        WORDLISTS.push(wordlist)
-        i += 1
-    }
-    if (WORDLISTS.length == 0) {
-        // If there's only one blank later,
-        const wordlist = await prepareWordlist()
-        WORDLISTS.push(wordlist)
-    }
+function generateSentence() {
+    clearSentence()
 
     const addPart = (part: string) => {
         if (part == "") return // Don't add empty part
@@ -107,13 +87,21 @@ async function prepare() {
         const card_inside = document.createElement("div")
         card_inside.classList.add("card-inside")
         if (!hide) card_inside.textContent = english
+
+        if (word.image) {
+            card.style.backgroundImage = `url('${word.image}')`
+            card.style.backgroundRepeat = "no-repeat"
+            card.style.backgroundPosition = "center"
+            card.style.backgroundSize = "contain"
+        }
+
         card.appendChild(card_inside)
         SENTENCE.appendChild(card)
         textFit(card_inside, { alignHoriz: true, maxFontSize: 32 })
     }
 
     let part = ""
-    i = 1
+    let i = 1
     for (const char of PARAMETERS.sentence) {
         if (char == SUBSTITUTION_CHAR) {
             addPart(part)
@@ -125,6 +113,36 @@ async function prepare() {
         }
     }
     addPart(part)
+}
+
+async function prepare() {
+    if (!PARAMETERS.sentence) {
+        // TODO: Visually throw an error on the screen
+        throw Error("No sentence found.")
+    }
+    if (!PARAMETERS.sentence.includes(SUBSTITUTION_CHAR)) {
+        // TODO: Visually throw an error on the screen
+        throw Error("No substitution character found.")
+    }
+
+    let i = 1
+    while (PARAMETERS[`${i}_wordlist`] || PARAMETERS[`${i}_wordlists`]) {
+        const wordlist = await prepareWordlist({
+            ignore: PARAMETERS[`${i}_ignore`],
+            include: PARAMETERS[`${i}_include`],
+            wordlist: PARAMETERS[`${i}_wordlist`],
+            wordlists: PARAMETERS[`${i}_wordlists`]
+        })
+        WORDLISTS.push(wordlist)
+        i += 1
+    }
+    if (WORDLISTS.length == 0) {
+        // If there's only one blank later,
+        const wordlist = await prepareWordlist()
+        WORDLISTS.push(wordlist)
+    }
+
+    generateSentence()
 }
 prepare()
 

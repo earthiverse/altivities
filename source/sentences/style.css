@@ -52,6 +52,11 @@ body {
     text-align: center;
     width: 100%;
     max-height: calc(var(--card-size) / 3);
+	text-shadow:
+        -2px -2px 0 #fff,  
+        2px -2px 0 #fff,
+        -2px 2px 0 #fff,
+        2px 2px 0 #fff;
 }
 
 .color_one {
