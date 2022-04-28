@@ -1,0 +1,34 @@
+[
+    {
+        "image": "https://2.bp.blogspot.com/-vPc1g_PoDP4/WnFPfgrSq4I/AAAAAAABJ-E/ZFPXGZF-a-kkTXc2iHmD8rGY6GO_DxzIACEwYBhgL/s8192/figure_swim_water.png",
+        "en": "swim",
+        "ja": {
+            "kanji": "泳ぐ",
+            "hiragana": "およぐ"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-7e6nyTCQvXI/UYzcLadekRI/AAAAAAAAR8g/G1IC0nDY4CE/s8192/skate_man.png",
+        "en": "skate",
+        "ja": {
+            "kanji": "スケートする",
+            "hiragana": "すけーとする"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-PqjcmKNv91Y/XNE_lllINnI/AAAAAAABSy0/38rd5DSgwjY7jmeD_z9BIcOMVcQcmq4ZgCLcBGAs/s8192/sports_soccer_woman_black.png",
+        "en": "play soccer",
+        "ja": {
+            "kanji": "サッカーをする",
+            "hiragana": "さっかーをする"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-1pJuskRlR7g/WkdIC7t_pQI/AAAAAAABJYg/TtFGkOBYtOAv3ZOwN7bRrGBxsQwsj2vCgCLcBGAs/s8192/sports_volleyball_man_atack.png",
+        "en": "play volleyball",
+        "ja": {
+            "kanji": "バレーボールをする",
+            "hiragana": "ばれーぼーるをする"
+        }
+    }
+]

@@ -27,27 +27,32 @@ const PARAMETERS: any = new Proxy(new URLSearchParams(window.location.search), {
     }
 })
 
-async function prepareWordlist(): Promise<Wordlist> {
+async function prepareWordlist(options = {
+    ignore: PARAMETERS.ignore as string,
+    include: PARAMETERS.include as string,
+    wordlist: PARAMETERS.wordlist as string,
+    wordlists: PARAMETERS.wordlists as string
+}): Promise<Wordlist> {
     const combinedWordlist: Wordlist = []
 
-    if (PARAMETERS.wordlist) {
+    if (options.wordlist) {
         // Add the one wordlist to the menu
-        const response = await fetch(PARAMETERS.wordlist)
+        const response = await fetch(options.wordlist)
         const wordlist: Wordlist = await response.json()
         combinedWordlist.push(...wordlist)
     }
 
-    if (PARAMETERS.wordlists) {
+    if (options.wordlists) {
         // Combine all wordlists
-        for (const url of PARAMETERS.wordlists.split(",")) {
+        for (const url of options.wordlists.split(",")) {
             const response = await fetch(url)
             const wordlist: Wordlist = await response.json()
             combinedWordlist.push(...wordlist)
         }
     }
 
-    if (PARAMETERS.ignore) {
-        const toIgnore: string[] = PARAMETERS.ignore.split(",")
+    if (options.ignore) {
+        const toIgnore: string[] = options.ignore.split(",")
         for (let i = 0; i < combinedWordlist.length; i++) {
             const word = combinedWordlist[i]
             for (const ignoreWord of toIgnore) {
@@ -62,8 +67,8 @@ async function prepareWordlist(): Promise<Wordlist> {
         }
     }
 
-    if (PARAMETERS.include) {
-        const toInclude: string[] = PARAMETERS.include.split(",")
+    if (options.include) {
+        const toInclude: string[] = options.include.split(",")
         for (let i = 0; i < combinedWordlist.length; i++) {
             const word = combinedWordlist[i]
             let remove = true

@@ -1,0 +1,34 @@
+[
+    {
+        "image": "https://4.bp.blogspot.com/-WxkaCosmH-4/WGCxS6fD3GI/AAAAAAABAp4/P1dfisgHrycYB6IFGixf3DaXRsoKs15RwCLcB/s8192/karaoke_woman.png",
+        "en": "sing",
+        "ja": {
+            "kanji": "歌う",
+            "hiragana": "うたう"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-t3FRnbAsPwY/V6BP6giatRI/AAAAAAAA83o/XaK3L9BpNkUZpVACZRvMTGBprlw7e-raQCLcB/s8192/figure_hashiru.png",
+        "en": "run",
+        "ja": {
+            "kanji": "走る",
+            "hiragana": "はしる"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-V37FS3KcOq4/Wm1yhS-v3AI/AAAAAAABJ5g/PgqdfkH1yMwf1moO23TyM1aB_26_17-YACLcBGAs/s8192/figure_jump.png",
+        "en": "jump",
+        "ja": {
+            "kanji": "跳ぶ",
+            "hiragana": "とぶ"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-OpR-QeL0klc/ViipOvjA5aI/AAAAAAAAzzI/06yvq4hU1RQ/s8192/dance_boy2.png",
+        "en": "dance",
+        "ja": {
+            "kanji": "踊る",
+            "hiragana": "おどる"
+        }
+    }
+]

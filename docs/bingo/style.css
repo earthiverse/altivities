@@ -9,7 +9,7 @@ html,
 body {
     user-select: none;
     display: flex;
-    font-family: "Schoolbell";
+    font-family: Schoolbell, "Comic Sans MS";
     justify-content: center;
     align-items: center;
     text-align: center;

@@ -7,22 +7,27 @@ const PARAMETERS = new Proxy(new URLSearchParams(window.location.search), {
             return parameter;
     }
 });
-async function prepareWordlist() {
+async function prepareWordlist(options = {
+    ignore: PARAMETERS.ignore,
+    include: PARAMETERS.include,
+    wordlist: PARAMETERS.wordlist,
+    wordlists: PARAMETERS.wordlists
+}) {
     const combinedWordlist = [];
-    if (PARAMETERS.wordlist) {
-        const response = await fetch(PARAMETERS.wordlist);
+    if (options.wordlist) {
+        const response = await fetch(options.wordlist);
         const wordlist = await response.json();
         combinedWordlist.push(...wordlist);
     }
-    if (PARAMETERS.wordlists) {
-        for (const url of PARAMETERS.wordlists.split(",")) {
+    if (options.wordlists) {
+        for (const url of options.wordlists.split(",")) {
             const response = await fetch(url);
             const wordlist = await response.json();
             combinedWordlist.push(...wordlist);
         }
     }
-    if (PARAMETERS.ignore) {
-        const toIgnore = PARAMETERS.ignore.split(",");
+    if (options.ignore) {
+        const toIgnore = options.ignore.split(",");
         for (let i = 0; i < combinedWordlist.length; i++) {
             const word = combinedWordlist[i];
             for (const ignoreWord of toIgnore) {
@@ -35,8 +40,8 @@ async function prepareWordlist() {
             }
         }
     }
-    if (PARAMETERS.include) {
-        const toInclude = PARAMETERS.include.split(",");
+    if (options.include) {
+        const toInclude = options.include.split(",");
         for (let i = 0; i < combinedWordlist.length; i++) {
             const word = combinedWordlist[i];
             let remove = true;
