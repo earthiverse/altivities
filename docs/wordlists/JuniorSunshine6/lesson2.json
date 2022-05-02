@@ -1,0 +1,79 @@
+[
+    {
+        "en": "do my homework",
+        "ja": {
+            "hiragana": "しゅくだいをする",
+            "kanji": "宿題をする"
+        }
+    },
+    {
+        "en": "eat breakfast",
+        "ja": {
+            "hiragana": "ちょうしょくをたべる",
+            "kanji": "朝食を食べる"
+        }
+    },
+    {
+        "en": "get up",
+        "ja": {
+            "hiragana": "おきる",
+            "kanji": "起きる"
+        }
+    },
+    {
+        "en": "go home",
+        "ja": {
+            "hiragana": "きたくする",
+            "kanji": "帰宅する"
+        }
+    },
+    {
+        "en": "go to bed",
+        "ja": {
+            "hiragana": "ねる",
+            "kanji": "ねる"
+        }
+    },
+    {
+        "en": "go to school",
+        "ja": {
+            "hiragana": "とうこうする",
+            "kanji": "登校する"
+        }
+    },
+    {
+        "en": "play soccer",
+        "ja": {
+            "hiragana": "さっかーをする",
+            "kanji": "サッカーをする"
+        }
+    },
+    {
+        "en": "take a bath",
+        "ja": {
+            "hiragana": "ふろにはいる",
+            "kanji": "ふろに入る"
+        }
+    },
+    {
+        "en": "walk my dog",
+        "ja": {
+            "hiragana": "いぬのさんぽをする",
+            "kanji": "イヌの散歩をする"
+        }
+    },
+    {
+        "en": "wash the dishes",
+        "ja": {
+            "hiragana": "さらをあらう",
+            "kanji": "皿を洗う"
+        }
+    },
+    {
+        "en": "watch TV",
+        "ja": {
+            "hiragana": "てれびをみる",
+            "kanji": "テレビを見る"
+        }
+    }
+]
