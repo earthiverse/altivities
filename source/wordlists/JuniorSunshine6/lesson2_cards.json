@@ -1,0 +1,66 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/actions/do_my_homework.png",
+        "en": "do my homework",
+        "ja": {
+            "hiragana": "しゅくだいをする",
+            "kanji": "宿題をする"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/actions/eat_breakfast.png",
+        "en": "eat breakfast",
+        "ja": {
+            "hiragana": "ちょうしょくをたべる",
+            "kanji": "朝食を食べる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/actions/get_up.png",
+        "en": "get up",
+        "ja": {
+            "hiragana": "おきる",
+            "kanji": "起きる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/actions/go_home.png",
+        "en": "go home",
+        "ja": {
+            "hiragana": "きたくする",
+            "kanji": "帰宅する"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/actions/go_to_bed.png",
+        "en": "go to bed",
+        "ja": {
+            "hiragana": "ねる",
+            "kanji": "ねる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/actions/go_to_school.png",
+        "en": "go to school",
+        "ja": {
+            "hiragana": "とうこうする",
+            "kanji": "登校する"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/actions/take_a_bath.png",
+        "en": "take a bath",
+        "ja": {
+            "hiragana": "ふろにはいる",
+            "kanji": "ふろに入る"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/actions/watch_tv.png",
+        "en": "watch TV",
+        "ja": {
+            "hiragana": "てれびをみる",
+            "kanji": "テレビを見る"
+        }
+    }
+]
