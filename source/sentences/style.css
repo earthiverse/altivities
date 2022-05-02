@@ -1,5 +1,5 @@
 :root {
-  --nav-height: 100px;
+  --nav-height: 50px;
   --card-size: min(20vw, calc(100vh - var(--nav-height)));
   --vh: 1vh;
 }
@@ -32,8 +32,32 @@ body {
 }
 
 #navigation {
+    display: flex;
+    justify-content: space-around;
     height: var(--nav-height);
     width: 100%;
+}
+
+#navigation div {
+    cursor: pointer;
+    width: 50px;
+}
+
+#navigation div span {
+    font-size: calc(var(--nav-height) - 10px);
+}
+
+#qrcode  {
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
 
 .card {

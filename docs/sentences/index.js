@@ -4,8 +4,10 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 const SUBSTITUTION_CHAR = "•";
+const TEXT_FIT_OPTIONS = { alignHoriz: true, maxFontSize: 32 };
 const SENTENCE = document.getElementById("sentence");
 const NAVIGATION = document.getElementById("navigation");
+const QRCODE = document.getElementById("qrcode");
 const WORDLISTS = [];
 function clearSentence() {
     while (SENTENCE.firstChild)
@@ -53,7 +55,7 @@ function generateSentence() {
         }
         card.appendChild(card_inside);
         SENTENCE.appendChild(card);
-        textFit(card_inside, { alignHoriz: true, maxFontSize: 32 });
+        textFit(card_inside, TEXT_FIT_OPTIONS);
     };
     let part = "";
     let i = 1;
@@ -95,3 +97,40 @@ async function prepare() {
     generateSentence();
 }
 prepare();
+function showQR() {
+    while (QRCODE.firstChild)
+        QRCODE.removeChild(QRCODE.firstChild);
+    const size = Math.min(window.innerWidth, window.innerHeight) * 0.75;
+    new QRCode(QRCODE, {
+        text: window.location.href,
+        width: size,
+        height: size,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctionLevel: QRCode.CorrectLevel.L
+    });
+    QRCODE.style.display = "flex";
+    QRCODE.addEventListener("click", () => {
+        QRCODE.style.display = "none";
+    });
+}
+let RESIZE_FINISHED;
+function resize() {
+    if (RESIZE_FINISHED)
+        clearTimeout(RESIZE_FINISHED);
+    RESIZE_FINISHED = setTimeout(() => {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+        const cards = document.getElementsByClassName("card-inside");
+        for (let i = 0; i < cards.length; i++) {
+            const inside = cards.item(i);
+            textFit(inside, TEXT_FIT_OPTIONS);
+        }
+        if (QRCODE.style.display && QRCODE.style.display !== "none") {
+            console.log(QRCODE.style.display);
+            showQR();
+        }
+    }, 250);
+}
+resize();
+window.addEventListener("resize", resize);

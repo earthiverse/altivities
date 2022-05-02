@@ -3,6 +3,30 @@
 
 import { Wordlist } from "../wordlists/wordlists"
 
+// TODO: What do I change this to to make it work without the disable-next-line!?
+// eslint-disable-next-line @typescript-eslint/no-namespace
+declare namespace QRCode {
+    enum CorrectLevel {
+        L, M, Q, H
+    }
+}
+
+interface QRCodeOption {
+    text?: string,
+    width?: number,
+    height?: number,
+    colorDark?: string,
+    colorLight?: string,
+    correctionLevel?: QRCode.CorrectLevel,
+}
+
+declare class QRCode {
+    constructor(el: HTMLElement | string, vOption?: string | QRCodeOption);
+    makeCode(sText: string): void;
+    makeImage(): void;
+    clear(): void;
+}
+
 declare let PARAMETERS: any
 declare let prepareWordlist: (options?: {
     ignore: string,
@@ -37,11 +61,13 @@ function randomIntFromInterval(min, max) { // min and max included
 /*******************************************************************************
 *** Config ********************************************************************/
 const SUBSTITUTION_CHAR = "•"
+const TEXT_FIT_OPTIONS: textFitOptions = { alignHoriz: true, maxFontSize: 32 }
 
 /*******************************************************************************
 *** DOM Elements **************************************************************/
 const SENTENCE = document.getElementById("sentence") as HTMLDivElement
 const NAVIGATION = document.getElementById("navigation") as HTMLDivElement
+const QRCODE = document.getElementById("qrcode") as HTMLDivElement
 
 /*******************************************************************************
 *** Game Code *****************************************************************/
@@ -97,7 +123,7 @@ function generateSentence() {
 
         card.appendChild(card_inside)
         SENTENCE.appendChild(card)
-        textFit(card_inside, { alignHoriz: true, maxFontSize: 32 })
+        textFit(card_inside, TEXT_FIT_OPTIONS)
     }
 
     let part = ""
@@ -145,5 +171,53 @@ async function prepare() {
     generateSentence()
 }
 prepare()
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function showQR() {
+    // Remove the old QR code
+    while (QRCODE.firstChild) QRCODE.removeChild(QRCODE.firstChild)
+
+    // Generate the QR Code
+    const size = Math.min(window.innerWidth, window.innerHeight) * 0.75
+    new QRCode(QRCODE, {
+        text: window.location.href,
+        width: size,
+        height: size,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctionLevel: QRCode.CorrectLevel.L
+    })
+
+    // Unhide the qrcode
+    QRCODE.style.display = "flex"
+
+    QRCODE.addEventListener("click", () => {
+        QRCODE.style.display = "none"
+    })
+}
+
+// The following handles resizing the window.
+// It's a hack to fill in the screen on iPads.
+let RESIZE_FINISHED
+function resize() {
+    if (RESIZE_FINISHED) clearTimeout(RESIZE_FINISHED)
+    RESIZE_FINISHED = setTimeout(() => {
+        const vh = window.innerHeight * 0.01
+        document.documentElement.style.setProperty("--vh", `${vh}px`)
+
+        const cards = document.getElementsByClassName("card-inside") as HTMLCollectionOf<HTMLDivElement>
+        for (let i = 0; i < cards.length; i++) {
+            const inside = cards.item(i)
+            textFit(inside, TEXT_FIT_OPTIONS)
+        }
+
+        if (QRCODE.style.display && QRCODE.style.display !== "none") {
+            console.log(QRCODE.style.display)
+            showQR()
+        }
+    }, 250)
+}
+resize()
+window.addEventListener("resize", resize)
 
 export { }
