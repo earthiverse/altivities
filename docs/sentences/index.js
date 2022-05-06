@@ -20,6 +20,7 @@ function generateSentence() {
             return;
         const toAdd = document.createElement("div");
         toAdd.textContent = part;
+        toAdd.style.whiteSpace = "nowrap";
         SENTENCE.appendChild(toAdd);
     };
     const addCard = (wordlist_num, hide = false, color) => {
@@ -65,6 +66,10 @@ function generateSentence() {
             addCard(i, PARAMETERS.hide, PARAMETERS[`${i}_color`]);
             part = "";
             i += 1;
+        }
+        else if ([".", "!", "?"].includes(char)) {
+            addPart(part + char);
+            part = "";
         }
         else {
             part = part + char;

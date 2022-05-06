@@ -25,6 +25,7 @@ body {
     align-items: center;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     font-size: 48px;
     gap:0 2vw;
     height: calc((var(--vh) * 100) - var(--nav-height));
