@@ -88,6 +88,12 @@ function generateSentence() {
         SENTENCE.appendChild(toAdd)
     }
 
+    const addBreak = () => {
+        const toAdd = document.createElement("div")
+        toAdd.classList.add("break")
+        SENTENCE.appendChild(toAdd)
+    }
+
     const addCard = (wordlist_num: number, hide = false, color?: string) => {
         const wordlist = WORDLISTS[wordlist_num - 1]
         if (!wordlist) throw `We are missing '${wordlist_num}_wordlist'`
@@ -131,13 +137,18 @@ function generateSentence() {
     let i = 1
     for (const char of (PARAMETERS.sentence as string)) {
         if (char == SUBSTITUTION_CHAR) {
+            // Substitution replacements
             addPart(part)
             addCard(i, PARAMETERS.hide, PARAMETERS[`${i}_color`])
             part = ""
             i += 1
         } else if ([".", "!", "?"].includes(char)) {
+            // Break sentences
             addPart(part + char)
             part = ""
+        } else if (char == "\n") {
+            // New line break
+            addBreak()
         } else {
             part = part + char
         }

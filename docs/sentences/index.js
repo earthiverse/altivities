@@ -23,6 +23,11 @@ function generateSentence() {
         toAdd.style.whiteSpace = "nowrap";
         SENTENCE.appendChild(toAdd);
     };
+    const addBreak = () => {
+        const toAdd = document.createElement("div");
+        toAdd.classList.add("break");
+        SENTENCE.appendChild(toAdd);
+    };
     const addCard = (wordlist_num, hide = false, color) => {
         const wordlist = WORDLISTS[wordlist_num - 1];
         if (!wordlist)
@@ -70,6 +75,9 @@ function generateSentence() {
         else if ([".", "!", "?"].includes(char)) {
             addPart(part + char);
             part = "";
+        }
+        else if (char == "\n") {
+            addBreak();
         }
         else {
             part = part + char;
