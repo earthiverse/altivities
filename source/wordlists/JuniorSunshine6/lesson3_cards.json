@@ -1,0 +1,79 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/places/mt_fuji.png",
+        "en": "Mt. Fuji",
+        "ja": {
+            "hiragana": "ふじさん",
+            "kanji": "富士山"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/places/great_wall.png",
+        "en": [
+            "the Great Wall",
+            "the Great Wall of China",
+            "Great Wall"
+        ],
+        "ja": {
+            "hiragana": "ばんりのちょうじょう",
+            "kanji": "万里の長城"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/places/taj_mahal.png",
+        "en": [
+            "the Taj Mahal",
+            "Taj Mahal"
+        ],
+        "ja": {
+            "hiragana": "たーじ・まはる",
+            "kanji": "タージ・マハル"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/places/grand_canyon.png",
+        "en": [
+            "the Grand Canyon",
+            "Grand Canyon"
+        ],
+        "ja": {
+            "hiragana": "ぐらんど・きゃにおん",
+            "kanji": "グランド・キャニオン"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/food/sushi.png",
+        "en": "sushi",
+        "ja": {
+            "hiragana": "すし",
+            "kanji": "寿司"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/food/gyoza.png",
+        "en": "gyoza",
+        "ja": {
+            "hiragana": "ぎょうざ",
+            "kanji": "餃子"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/food/curry_and_naan.png",
+        "en": "curry and naan",
+        "ja": {
+            "hiragana": "かれーとなん",
+            "kanji": "カレーとナン"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/food/cheeseburger.png",
+        "en": [
+            "cheeseburger",
+            "hamburger"
+        ],
+        "ja": {
+            "hiragana": "ちーずばーがー",
+            "kanji": "チーズバーガー"
+        }
+    }
+]
