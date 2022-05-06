@@ -95,6 +95,7 @@ function onDrop(event: DragEvent) {
         droppedOn.appendChild(item)
     }
 
+    fitTextForAllCards()
     checkReady()
 
     return false
@@ -253,6 +254,7 @@ function chooseRandom() {
         cell.appendChild(item)
     }
 
+    fitTextForAllCards()
     checkReady()
 }
 

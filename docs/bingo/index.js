@@ -33,6 +33,7 @@ function onDrop(event) {
     else {
         droppedOn.appendChild(item);
     }
+    fitTextForAllCards();
     checkReady();
     return false;
 }
@@ -164,6 +165,7 @@ function chooseRandom() {
             break;
         cell.appendChild(item);
     }
+    fitTextForAllCards();
     checkReady();
 }
 async function prepare() {
