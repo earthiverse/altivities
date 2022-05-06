@@ -10,10 +10,11 @@ Students can drag the tiles from the right on to the bingo grid, or click the 'R
 
 ## Wordlists
 
-These wordlists have pictures associated with them, which makes them nice to use with bingo:
+### General
+
+These wordlists have pictures (mostly from [Irasutoya](https://irasutoya.com)!) associated with them, which makes them nice to use with bingo:
 
 * [Alphabet](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/alphabet.json)
-  * [Junior Sunshine (Uppercase)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/alphabet_cards.json)
   * [Let's Try 1 - Lesson 6 (Uppercase)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry1/unit6_cards.json)
 * [Animals](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/animals.json)
 * [Christmas (winter)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/winter.json)
@@ -23,7 +24,6 @@ These wordlists have pictures associated with them, which makes them nice to use
   * [Junior Sunshine 6 - Lesson 3 + Canada](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/countries.json&include=the%20U.S.A.,Brazil,Japan,South%20Korea,China,India,the%20U.K.,France,Germany,Italy,Switzerland,Australia,Egypt,Kenya,Canada)
 * [Halloween](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/halloween.json)
 * [Months](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/months.json)
-  * [Junior Sunshine 5 - Lesson 2](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/lesson2_cards.json)
 * [Numbers (1-20)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/numbers.json)
 * [Occupations (Junior Sunshine 6 - Lesson 10)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine6/lesson10.json)
 * Shapes
@@ -33,6 +33,20 @@ These wordlists have pictures associated with them, which makes them nice to use
 * [Stationery](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/stationery.json)
   * [Let's Try 2 - Unit 5](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry2/unit5_cards.json)
 * [Valentine's Day](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/valentines.json)
+
+### Junior Sunshine 5
+
+These wordlists have pictures that match with the cards available in the back of the textbook.
+
+* [Alphabet (Uppercase)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/alphabet_cards.json)
+* Lesson 2
+  * [Months](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/lesson2_cards.json)
+
+### Junior Sunshine 6
+
+These wordlists have pictures that match with the cards available in the back of the textbook.
+
+* [Alphabet (Uppercase)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/alphabet_cards.json)
 
 ## Custom Wordlists
 
