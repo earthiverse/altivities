@@ -80,12 +80,14 @@ function disableInputs() {
     INPUT_HOUR.disabled = true
     INPUT_MINUTE.disabled = true
     INPUT_CHECK.disabled = true
+    INPUT_CHECK.style.cursor = "default"
 }
 
 function enableInputs() {
     INPUT_HOUR.disabled = false
     INPUT_MINUTE.disabled = false
     INPUT_CHECK.disabled = false
+    INPUT_CHECK.style.cursor = "pointer"
     INPUT_HOUR.focus()
     INPUT_HOUR.select()
 }
