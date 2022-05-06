@@ -47,6 +47,10 @@ These wordlists have pictures that match with the cards available in the back of
 * [Alphabet (Uppercase)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine5/alphabet_cards.json)
 * Lesson 2
   * [Months](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine5/lesson2_cards.json)
+* Lesson 3
+  * [All](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine5/lesson3_cards.json)
+  * [Occupations](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine5/lesson2_cards.json?include=doctor,soccer%20player,police%20officer,florist,teacher)
+  * [Subjects](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine5/lesson2_cards.json&ignore=doctor,soccer%20player,police%20officer,florist,teacher)
 
 ### Junior Sunshine 6 Cards
 

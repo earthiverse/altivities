@@ -1,0 +1,166 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/occupations/doctor.png",
+        "en": "doctor",
+        "ja": [
+            {
+                "hiragana": "いし",
+                "kanji": "医師"
+            },
+            {
+                "hiragana": "いしゃ",
+                "kanji": "医者"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/occupations/soccer_player.png",
+        "en": "soccer player",
+        "ja": {
+            "hiragana": "さっかーせんしゅ",
+            "kanji": "サッカー選手"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/occupations/police_officer.png",
+        "en": "police officer",
+        "ja": {
+            "hiragana": "けいさつかん",
+            "kanji": "警察官"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/occupations/florist.png",
+        "en": "florist",
+        "ja": {
+            "hiragana": "はなや（ひと）",
+            "kanji": "花屋（人）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/occupations/teacher.png",
+        "en": "teacher",
+        "ja": {
+            "hiragana": "せんせい",
+            "kanji": "先生"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/japanese.png",
+        "en": "Japanese",
+        "ja": [
+            {
+                "hiragana": "こくご",
+                "kanji": "国語"
+            },
+            {
+                "hiragana": "にほんご",
+                "kanji": "日本語"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/calligraphy.png",
+        "en": "calligraphy",
+        "ja": {
+            "hiragana": "しょしゃ",
+            "kanji": "書写"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/social_studies.png",
+        "en": "social studies",
+        "ja": {
+            "hiragana": "しゃかいか",
+            "kanji": "社会科"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/math.png",
+        "en": "math",
+        "ja": {
+            "hiragana": "さんすう",
+            "kanji": "算数"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/science.png",
+        "en": "science",
+        "ja": {
+            "hiragana": "りか",
+            "kanji": "理科"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/music.png",
+        "en": "music",
+        "ja": {
+            "hiragana": "おんがく",
+            "kanji": "音楽"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/arts_and_crafts.png",
+        "en": "arts and crafts",
+        "ja": {
+            "hiragana": "ずがこうさく",
+            "kanji": "図画工作"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/home_economics.png",
+        "en": "home economics",
+        "ja": {
+            "hiragana": "かていか",
+            "kanji": "家庭科"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/pe.png",
+        "en": "P.E.",
+        "ja": {
+            "hiragana": "たいいく",
+            "kanji": "体育"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/english.png",
+        "en": "English",
+        "ja": {
+            "hiragana": "えいご",
+            "kanji": "英語"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/moral_education.png",
+        "en": "moral education",
+        "ja": {
+            "hiragana": "どうとく",
+            "kanji": "道徳"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/period_for_integrated_study.svg",
+        "en": "period for integrated study",
+        "ja": {
+            "hiragana": "そうごうてきながくしゅうのじかん",
+            "kanji": "総合的な学習の時間"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/class_activities.svg",
+        "en": "class activities",
+        "ja": {
+            "hiragana": "がっきゅうかつどう",
+            "kanji": "学級活動"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/subjects/special_class.svg",
+        "en": "special class",
+        "ja": {
+            "hiragana": "とくべつじゅぎょう",
+            "kanji": "特別授業"
+        }
+    }
+]
