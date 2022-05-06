@@ -260,28 +260,46 @@
         }
     },
     {
-        "en": "king",
+        "image": "https://2.bp.blogspot.com/-G8F9tpqfDtE/WaOeMx95WWI/AAAAAAABGLE/_lA5wl4d-bwbu7V18yIOqreZEZu3UqsAgCLcBGAs/s8192/royal_king.png",
+        "en": [
+            "king",
+            "a king",
+            "kings"
+        ],
         "ja": {
             "hiragana": "おう",
             "kanji": "王"
         }
     },
     {
-        "en": "prince",
+        "image": "https://3.bp.blogspot.com/-nPLaR7fSUiA/VkxLsQsiIGI/AAAAAAAA0pQ/vlCB8FOlPy4/s8192/hakuba_oujisama.png",
+        "en": [
+            "prince",
+            "a prince"
+        ],
         "ja": {
             "hiragana": "おうじ",
             "kanji": "王子"
         }
     },
     {
-        "en": "princess",
+        "image": "https://1.bp.blogspot.com/-dQHPshzm_tY/WaOePIs3e9I/AAAAAAABGLI/bvasBK5wZPIVPskCglfUp5itLsFfJJRGQCLcBGAs/s8192/royal_princess.png",
+        "en": [
+            "princess",
+            "a princess"
+        ],
         "ja": {
             "hiragana": "おうじょ",
             "kanji": "王女"
         }
     },
     {
-        "en": "fairy",
+        "image": "https://1.bp.blogspot.com/-YTsiH-cZJco/VzRFtPEempI/AAAAAAAA6kI/N8WEIbT2ACghe9aqvzbkIynUoLqc7nA8ACLcB/s8192/fantasy_pixy2.png",
+        "en": [
+            "fairy",
+            "a fairy",
+            "fairies"
+        ],
         "ja": {
             "hiragana": "ようせい",
             "kanji": "妖精"
@@ -295,13 +313,15 @@
         }
     },
     {
+        "image": "https://1.bp.blogspot.com/-d3C9xMkzw2w/X4aVxIB70QI/AAAAAAABb0I/tkcQjQcCIFQhsWP3mYI_wN2zQ4bPrTvDwCNcBGAsYHQ/s8192/youkai_kotobuki.png",
         "en": [
             "beast",
+            "a beast",
             "beasts"
         ],
         "ja": {
             "hiragana": "けもの",
-            "kanji": "けもの"
+            "kanji": "獣"
         }
     },
     {
@@ -316,14 +336,24 @@
         }
     },
     {
-        "en": "angel",
+        "image": "https://1.bp.blogspot.com/-BN1qaX2ae_4/YAOYeEMjz1I/AAAAAAABdOY/DXGIO8n3hW0vHBGk3YCmFv6YbMvDayTUQCNcBGAsYHQ/s8192/character_angel.png",
+        "en": [
+            "angel",
+            "an angel",
+            "angels"
+        ],
         "ja": {
             "hiragana": "てんし",
             "kanji": "天使"
         }
     },
     {
-        "en": "superman",
+        "image": "https://4.bp.blogspot.com/-zFyEFnXWoio/Us_MTfLfMlI/AAAAAAAAdE8/gVe_kS_2WyY/s8192/superman_hero.png",
+        "en": [
+            "superman",
+            "a superman",
+            "supermen"
+        ],
         "ja": [
             {
                 "hiragana": "すーぱーまん",

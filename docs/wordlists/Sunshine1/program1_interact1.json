@@ -1,0 +1,82 @@
+[
+    {
+        "image": "https://2.bp.blogspot.com/-G8F9tpqfDtE/WaOeMx95WWI/AAAAAAABGLE/_lA5wl4d-bwbu7V18yIOqreZEZu3UqsAgCLcBGAs/s8192/royal_king.png",
+        "en": "a king",
+        "ja": {
+            "hiragana": "おう",
+            "kanji": "王"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-C6wvSyOQeM4/Wc8f5KNz5UI/AAAAAAABHI8/obUoje-TcnEOO4KkZgknC06E6-3VFvanQCLcBGAs/s8192/royal_queen_gyokuza.png",
+        "en": "a queen",
+        "ja": {
+            "hiragana": "じょおう",
+            "kanji": "女王"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-nPLaR7fSUiA/VkxLsQsiIGI/AAAAAAAA0pQ/vlCB8FOlPy4/s8192/hakuba_oujisama.png",
+        "en": "a prince",
+        "ja": {
+            "hiragana": "おうじ",
+            "kanji": "王子"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-dQHPshzm_tY/WaOePIs3e9I/AAAAAAABGLI/bvasBK5wZPIVPskCglfUp5itLsFfJJRGQCLcBGAs/s8192/royal_princess.png",
+        "en": "a princess",
+        "ja": {
+            "hiragana": "おうじょ",
+            "kanji": "王女"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-YTsiH-cZJco/VzRFtPEempI/AAAAAAAA6kI/N8WEIbT2ACghe9aqvzbkIynUoLqc7nA8ACLcB/s8192/fantasy_pixy2.png",
+        "en": "a fairy",
+        "ja": {
+            "hiragana": "ようせい",
+            "kanji": "妖精"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-AFpbLLCoBoc/XobS9EbbkLI/AAAAAAABYC8/UesdeSOaj987WQhzpLbd8Z0xvPGeLrlDACNcBGAsYHQ/s8192/animal_chara_lion_king.png",
+        "en": "the king of beasts",
+        "ja": {
+            "hiragana": "ひゃくじゅうのおう",
+            "kanji": "百獣の王"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-BN1qaX2ae_4/YAOYeEMjz1I/AAAAAAABdOY/DXGIO8n3hW0vHBGk3YCmFv6YbMvDayTUQCNcBGAsYHQ/s8192/character_angel.png",
+        "en": "an angel",
+        "ja": {
+            "hiragana": "てんし",
+            "kanji": "天使"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-VTkJz4puE2s/WYAyoxQQA5I/AAAAAAABF3U/G_0HRbWSBIs30_1xPPcrmefajyiaX8wBgCLcBGAs/s8192/tokusatsu_kyodai_hero.png",
+        "en": "a hero",
+        "ja": {
+            "hiragana": "ひーろー",
+            "kanji": "ヒーロー"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-KAvWb4depUE/VSufMtToVYI/AAAAAAAAs4M/L-82GJh_vHg/s8192/hollywood_haiyu_man.png",
+        "en": "a star",
+        "ja": {
+            "hiragana": "めいゆう",
+            "kanji": "名優"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-zFyEFnXWoio/Us_MTfLfMlI/AAAAAAAAdE8/gVe_kS_2WyY/s8192/superman_hero.png",
+        "en": "a superman",
+        "ja": {
+            "hiragana": "すーぱーまん",
+            "kanji": "スーパーマン"
+        }
+    }
+]
