@@ -3,6 +3,23 @@ import { Wordlist } from "../wordlists/wordlists"
 declare let PARAMETERS: any
 declare let prepareWordlist: () => Promise<Wordlist>
 
+interface textFitOptions {
+    alignVert?: boolean;
+    alignHoriz?: boolean;
+    multiLine?: boolean;
+    detectMultiLine?: boolean;
+    minFontSize?: number;
+    maxFontSize?: number;
+    reProcess?: boolean;
+    widthOnly?: boolean;
+    alignVertWithFlexbox?: boolean;
+}
+
+declare let textFit: (
+    els: Element | Element[] | NodeListOf<Element> | HTMLCollection | null,
+    options?: textFitOptions
+) => void
+
 function onMouseDown(event: Event) {
     const target = event.currentTarget as HTMLDivElement
 
@@ -39,16 +56,17 @@ function populateBingo(wordlist: Wordlist, words: string[]) {
             itemOutside.classList.add("item")
             itemInside.classList.add("item_inside")
             if (find.image) {
-                itemInside.style.backgroundImage = `url('${find.image}')`
-                itemInside.style.backgroundRepeat = "no-repeat"
-                itemInside.style.backgroundPosition = "center"
-                itemInside.style.backgroundSize = "contain"
+                itemOutside.style.backgroundImage = `url('${find.image}')`
+                itemOutside.style.backgroundRepeat = "no-repeat"
+                itemOutside.style.backgroundPosition = "center"
+                itemOutside.style.backgroundSize = "contain"
             }
 
             itemInside.innerText = word
             itemOutside.appendChild(itemInside)
             const cell = document.getElementById(`cell${num}`)
             cell.appendChild(itemOutside)
+            textFit(itemInside, { alignHoriz: true })
             found = true
             num += 1
             break
@@ -67,6 +85,14 @@ async function prepare() {
 }
 prepare()
 
+function fitTextForAllCards() {
+    const cards = document.getElementsByClassName("item_inside") as HTMLCollectionOf<HTMLDivElement>
+    for (let i = 0; i < cards.length; i++) {
+        const inside = cards.item(i)
+        textFit(inside, { alignHoriz: true })
+    }
+}
+
 // The following handles resizing the window.
 // It's a hack to fill in the screen on iPads.
 let RESIZE_FINISHED
@@ -75,6 +101,8 @@ function resize() {
     RESIZE_FINISHED = setTimeout(() => {
         const vh = window.innerHeight * 0.01
         document.documentElement.style.setProperty("--vh", `${vh}px`)
+
+        fitTextForAllCards()
     }, 250)
 }
 resize()

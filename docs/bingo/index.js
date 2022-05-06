@@ -49,10 +49,10 @@ function generateMenuOptions(wordlist) {
         itemOutside.classList.add("item");
         itemInside.classList.add("item_inside");
         if (word.image) {
-            itemInside.style.backgroundImage = `url('${word.image}')`;
-            itemInside.style.backgroundRepeat = "no-repeat";
-            itemInside.style.backgroundPosition = "center";
-            itemInside.style.backgroundSize = "contain";
+            itemOutside.style.backgroundImage = `url('${word.image}')`;
+            itemOutside.style.backgroundRepeat = "no-repeat";
+            itemOutside.style.backgroundPosition = "center";
+            itemOutside.style.backgroundSize = "contain";
         }
         if (Array.isArray(word.en)) {
             itemInside.innerText = word.en[0];
@@ -62,6 +62,7 @@ function generateMenuOptions(wordlist) {
         }
         itemOutside.appendChild(itemInside);
         menu.appendChild(itemOutside);
+        textFit(itemInside, { alignHoriz: true });
         num += 1;
     }
 }
@@ -169,6 +170,13 @@ async function prepare() {
     generateMenuOptions(await prepareWordlist());
 }
 prepare();
+function fitTextForAllCards() {
+    const cards = document.getElementsByClassName("item_inside");
+    for (let i = 0; i < cards.length; i++) {
+        const inside = cards.item(i);
+        textFit(inside, { alignHoriz: true });
+    }
+}
 let RESIZE_FINISHED;
 function resize() {
     if (RESIZE_FINISHED)
@@ -176,6 +184,12 @@ function resize() {
     RESIZE_FINISHED = setTimeout(() => {
         const vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty("--vh", `${vh}px`);
+        fitTextForAllCards();
+        const qrHolder = document.getElementById("qrcode");
+        if (qrHolder.style.display && qrHolder.style.display !== "none") {
+            console.log(qrHolder.style.display);
+            showQR();
+        }
     }, 250);
 }
 resize();

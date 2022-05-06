@@ -27,6 +27,23 @@ declare class QRCode {
     clear(): void;
 }
 
+interface textFitOptions {
+    alignVert?: boolean;
+    alignHoriz?: boolean;
+    multiLine?: boolean;
+    detectMultiLine?: boolean;
+    minFontSize?: number;
+    maxFontSize?: number;
+    reProcess?: boolean;
+    widthOnly?: boolean;
+    alignVertWithFlexbox?: boolean;
+}
+
+declare let textFit: (
+    els: Element | Element[] | NodeListOf<Element> | HTMLCollection | null,
+    options?: textFitOptions
+) => void
+
 type dragData = {
     item: string
     parent: string
@@ -98,10 +115,10 @@ function generateMenuOptions(wordlist: Wordlist) {
         itemOutside.classList.add("item")
         itemInside.classList.add("item_inside")
         if (word.image) {
-            itemInside.style.backgroundImage = `url('${word.image}')`
-            itemInside.style.backgroundRepeat = "no-repeat"
-            itemInside.style.backgroundPosition = "center"
-            itemInside.style.backgroundSize = "contain"
+            itemOutside.style.backgroundImage = `url('${word.image}')`
+            itemOutside.style.backgroundRepeat = "no-repeat"
+            itemOutside.style.backgroundPosition = "center"
+            itemOutside.style.backgroundSize = "contain"
         }
 
         if (Array.isArray(word.en)) {
@@ -112,6 +129,7 @@ function generateMenuOptions(wordlist: Wordlist) {
 
         itemOutside.appendChild(itemInside)
         menu.appendChild(itemOutside)
+        textFit(itemInside, { alignHoriz: true })
         num += 1
     }
 }
@@ -243,6 +261,14 @@ async function prepare() {
 }
 prepare()
 
+function fitTextForAllCards() {
+    const cards = document.getElementsByClassName("item_inside") as HTMLCollectionOf<HTMLDivElement>
+    for (let i = 0; i < cards.length; i++) {
+        const inside = cards.item(i)
+        textFit(inside, { alignHoriz: true })
+    }
+}
+
 // The following handles resizing the window.
 // It's a hack to fill in the screen on iPads.
 let RESIZE_FINISHED
@@ -251,6 +277,14 @@ function resize() {
     RESIZE_FINISHED = setTimeout(() => {
         const vh = window.innerHeight * 0.01
         document.documentElement.style.setProperty("--vh", `${vh}px`)
+
+        fitTextForAllCards()
+
+        const qrHolder = document.getElementById("qrcode") as HTMLDivElement
+        if (qrHolder.style.display && qrHolder.style.display !== "none") {
+            console.log(qrHolder.style.display)
+            showQR()
+        }
     }, 250)
 }
 resize()

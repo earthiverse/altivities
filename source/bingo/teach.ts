@@ -3,6 +3,23 @@ import { Wordlist } from "../wordlists/wordlists"
 declare let PARAMETERS: any
 declare let prepareWordlist: () => Promise<Wordlist>
 
+interface textFitOptions {
+    alignVert?: boolean;
+    alignHoriz?: boolean;
+    multiLine?: boolean;
+    detectMultiLine?: boolean;
+    minFontSize?: number;
+    maxFontSize?: number;
+    reProcess?: boolean;
+    widthOnly?: boolean;
+    alignVertWithFlexbox?: boolean;
+}
+
+declare let textFit: (
+    els: Element | Element[] | NodeListOf<Element> | HTMLCollection | null,
+    options?: textFitOptions
+) => void
+
 function shuffle(array) {
     let currentIndex = array.length, randomIndex
 
@@ -73,7 +90,9 @@ async function onMouseDown(event: Event) {
 
     if (parent.id == "drawn_area") {
         // Move current item back to toDraw area
-        while (current.firstChild) toDraw.appendChild(current.firstChild)
+        while (current.firstChild) {
+            toDraw.appendChild(current.firstChild)
+        }
 
         // TODO: Move clicked item to current area
         current.appendChild(target)
@@ -88,6 +107,7 @@ async function onMouseDown(event: Event) {
         current.appendChild(target)
     }
 
+    fitTextForAllCards()
     checkDraw()
 }
 
@@ -105,10 +125,10 @@ async function generateMenuOptions(wordlist: Wordlist) {
         itemOutside.classList.add("item")
         itemInside.classList.add("item_inside")
         if (word.image) {
-            itemInside.style.backgroundImage = `url('${word.image}')`
-            itemInside.style.backgroundRepeat = "no-repeat"
-            itemInside.style.backgroundPosition = "center"
-            itemInside.style.backgroundSize = "contain"
+            itemOutside.style.backgroundImage = `url('${word.image}')`
+            itemOutside.style.backgroundRepeat = "no-repeat"
+            itemOutside.style.backgroundPosition = "center"
+            itemOutside.style.backgroundSize = "contain"
         }
 
         if (Array.isArray(word.en)) {
@@ -119,6 +139,7 @@ async function generateMenuOptions(wordlist: Wordlist) {
 
         itemOutside.appendChild(itemInside)
         menu.appendChild(itemOutside)
+        textFit(itemInside, { alignHoriz: true })
         num += 1
     }
 
@@ -130,6 +151,14 @@ async function prepare() {
 }
 prepare()
 
+function fitTextForAllCards() {
+    const cards = document.getElementsByClassName("item_inside") as HTMLCollectionOf<HTMLDivElement>
+    for (let i = 0; i < cards.length; i++) {
+        const inside = cards.item(i)
+        textFit(inside, { alignHoriz: true })
+    }
+}
+
 // The following handles resizing the window.
 // It's a hack to fill in the screen on iPads.
 let RESIZE_FINISHED
@@ -138,6 +167,8 @@ function resize() {
     RESIZE_FINISHED = setTimeout(() => {
         const vh = window.innerHeight * 0.01
         document.documentElement.style.setProperty("--vh", `${vh}px`)
+
+        fitTextForAllCards()
     }, 250)
 }
 resize()

@@ -54,8 +54,9 @@ async function onMouseDown(event) {
     const current = document.getElementById("current_area");
     const drawn = document.getElementById("drawn_area");
     if (parent.id == "drawn_area") {
-        while (current.firstChild)
+        while (current.firstChild) {
             toDraw.appendChild(current.firstChild);
+        }
         current.appendChild(target);
     }
     else if (parent.id == "current_area") {
@@ -66,6 +67,7 @@ async function onMouseDown(event) {
             drawn.appendChild(current.firstChild);
         current.appendChild(target);
     }
+    fitTextForAllCards();
     checkDraw();
 }
 async function generateMenuOptions(wordlist) {
@@ -80,10 +82,10 @@ async function generateMenuOptions(wordlist) {
         itemOutside.classList.add("item");
         itemInside.classList.add("item_inside");
         if (word.image) {
-            itemInside.style.backgroundImage = `url('${word.image}')`;
-            itemInside.style.backgroundRepeat = "no-repeat";
-            itemInside.style.backgroundPosition = "center";
-            itemInside.style.backgroundSize = "contain";
+            itemOutside.style.backgroundImage = `url('${word.image}')`;
+            itemOutside.style.backgroundRepeat = "no-repeat";
+            itemOutside.style.backgroundPosition = "center";
+            itemOutside.style.backgroundSize = "contain";
         }
         if (Array.isArray(word.en)) {
             itemInside.innerText = word.en[0];
@@ -93,6 +95,7 @@ async function generateMenuOptions(wordlist) {
         }
         itemOutside.appendChild(itemInside);
         menu.appendChild(itemOutside);
+        textFit(itemInside, { alignHoriz: true });
         num += 1;
     }
     checkDraw();
@@ -101,6 +104,13 @@ async function prepare() {
     generateMenuOptions(await prepareWordlist());
 }
 prepare();
+function fitTextForAllCards() {
+    const cards = document.getElementsByClassName("item_inside");
+    for (let i = 0; i < cards.length; i++) {
+        const inside = cards.item(i);
+        textFit(inside, { alignHoriz: true });
+    }
+}
 let RESIZE_FINISHED;
 function resize() {
     if (RESIZE_FINISHED)
@@ -108,6 +118,7 @@ function resize() {
     RESIZE_FINISHED = setTimeout(() => {
         const vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty("--vh", `${vh}px`);
+        fitTextForAllCards();
     }, 250);
 }
 resize();

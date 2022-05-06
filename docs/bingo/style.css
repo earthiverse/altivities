@@ -9,7 +9,7 @@ html,
 body {
     user-select: none;
     display: flex;
-    font-family: Schoolbell, "Comic Sans MS";
+    font-family: "JKHandwriting", Schoolbell, "Comic Sans MS";
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -120,20 +120,28 @@ body {
 }
 
 .item {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
     overflow: hidden;
 }
 
 .item_inside {
     width: 100%;
-    height: 100%;
+    max-height: 33.3%;
     color:#000;
     text-align: center;
     -webkit-text-fill-color:#000;
 	text-shadow:
-        -2px -2px 0 #fff,  
-        2px -2px 0 #fff,
-        -2px 2px 0 #fff,
-        2px 2px 0 #fff;
+        -2px -2px 0 #FFF,
+        0   -2px 0 #FFF,
+        2px -2px 0 #FFF,
+        2px  0   0 #FFF,
+        2px  2px 0 #FFF,
+        0    2px 0 #FFF,
+        -2px  2px 0 #FFF,
+        -2px  0   0 #FFF;
 }
 
 #menu {

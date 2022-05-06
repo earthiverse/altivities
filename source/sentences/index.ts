@@ -196,6 +196,14 @@ function showQR() {
     })
 }
 
+function fitTextForAllCards() {
+    const cards = document.getElementsByClassName("card-inside") as HTMLCollectionOf<HTMLDivElement>
+    for (let i = 0; i < cards.length; i++) {
+        const inside = cards.item(i)
+        textFit(inside, TEXT_FIT_OPTIONS)
+    }
+}
+
 // The following handles resizing the window.
 // It's a hack to fill in the screen on iPads.
 let RESIZE_FINISHED
@@ -205,11 +213,7 @@ function resize() {
         const vh = window.innerHeight * 0.01
         document.documentElement.style.setProperty("--vh", `${vh}px`)
 
-        const cards = document.getElementsByClassName("card-inside") as HTMLCollectionOf<HTMLDivElement>
-        for (let i = 0; i < cards.length; i++) {
-            const inside = cards.item(i)
-            textFit(inside, TEXT_FIT_OPTIONS)
-        }
+        fitTextForAllCards()
 
         if (QRCODE.style.display && QRCODE.style.display !== "none") {
             console.log(QRCODE.style.display)

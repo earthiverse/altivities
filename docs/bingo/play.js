@@ -32,15 +32,16 @@ function populateBingo(wordlist, words) {
             itemOutside.classList.add("item");
             itemInside.classList.add("item_inside");
             if (find.image) {
-                itemInside.style.backgroundImage = `url('${find.image}')`;
-                itemInside.style.backgroundRepeat = "no-repeat";
-                itemInside.style.backgroundPosition = "center";
-                itemInside.style.backgroundSize = "contain";
+                itemOutside.style.backgroundImage = `url('${find.image}')`;
+                itemOutside.style.backgroundRepeat = "no-repeat";
+                itemOutside.style.backgroundPosition = "center";
+                itemOutside.style.backgroundSize = "contain";
             }
             itemInside.innerText = word;
             itemOutside.appendChild(itemInside);
             const cell = document.getElementById(`cell${num}`);
             cell.appendChild(itemOutside);
+            textFit(itemInside, { alignHoriz: true });
             found = true;
             num += 1;
             break;
@@ -56,6 +57,13 @@ async function prepare() {
     populateBingo(combinedWordlist, words);
 }
 prepare();
+function fitTextForAllCards() {
+    const cards = document.getElementsByClassName("item_inside");
+    for (let i = 0; i < cards.length; i++) {
+        const inside = cards.item(i);
+        textFit(inside, { alignHoriz: true });
+    }
+}
 let RESIZE_FINISHED;
 function resize() {
     if (RESIZE_FINISHED)
@@ -63,6 +71,7 @@ function resize() {
     RESIZE_FINISHED = setTimeout(() => {
         const vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty("--vh", `${vh}px`);
+        fitTextForAllCards();
     }, 250);
 }
 resize();
