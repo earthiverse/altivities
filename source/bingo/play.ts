@@ -40,10 +40,8 @@ function onMouseDown(event: Event) {
 function populateBingo(wordlist: Wordlist, words: string[]) {
     let num = 0
     for (const word of words) {
-        console.debug(`Looking for ${word}...`)
         let found = false
         for (const find of wordlist) {
-            console.debug(`Looking in ${find.en}...`)
             if (Array.isArray(find.en)) {
                 if (!find.en.includes(word)) continue
             }
@@ -82,6 +80,15 @@ async function prepare() {
     const combinedWordlist = await prepareWordlist()
     const words = (PARAMETERS.words as string).split("🔥")
     populateBingo(combinedWordlist, words)
+
+    if (PARAMETERS.title) {
+        const playArea = document.getElementById("play_area")
+        const title = document.createElement("div")
+        title.classList.add("break")
+        title.style.fontSize = "3vh"
+        title.innerText = PARAMETERS.title
+        playArea.prepend(title)
+    }
 }
 prepare()
 
