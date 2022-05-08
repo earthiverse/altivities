@@ -55,6 +55,7 @@ function drawRandom() {
     shuffle(itemsArray)
     current.appendChild(itemsArray[0])
 
+    fitTextForAllCards()
     checkDraw()
 }
 
