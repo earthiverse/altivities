@@ -96,12 +96,13 @@ async function clearElement(data: HTMLElement) {
 const CHECK_BUTTON = document.getElementById("check") as HTMLDivElement
 const MENU = document.getElementById("menu") as HTMLDivElement
 const ORDER_AREA = document.getElementById("order_area") as HTMLDivElement
-const PLAY_AREA = document.getElementById("play_area") as HTMLDivElement
-const QR_BUTTON = document.getElementById("generate_qr") as HTMLDivElement
+// const PLAY_AREA = document.getElementById("play_area") as HTMLDivElement
+// const QR_BUTTON = document.getElementById("generate_qr") as HTMLDivElement
 
 /*******************************************************************************
 *** Game Code *****************************************************************/
-
+/** This is where we will store the answer to the ordering (if one is available) */
+const ORDER_ANSWERS: string[] = []
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function onDragStart(event: DragEvent) {
@@ -130,10 +131,6 @@ function onDrop(event: DragEvent) {
     const data: dragData = JSON.parse(event.dataTransfer.getData("application/json"))
     const item = document.getElementById(data.item) as HTMLDivElement
     const previous = document.getElementById(data.parent) as HTMLDivElement
-
-    console.debug(`Dropped On: ${droppedOn.id}`)
-    console.debug(`Item: ${item.id}`)
-    console.debug(`Previous: ${previous.id}`)
 
     if (droppedOn == previous) return // No change
 
@@ -184,16 +181,29 @@ function showQR() {
 function check() {
     if (!checkReady()) return // We're not actually ready
 
-    // TODO: check if the order is correct
+    const orderCells = document.getElementsByClassName("order_cell")
+    for (let i = 0; i < orderCells.length; i++) {
+        const cell = orderCells.item(i) as HTMLDivElement
+        const text = (cell.firstChild as HTMLDivElement).innerText
+        console.log(text)
+        if (ORDER_ANSWERS[i] !== text) {
+            // This answer was incorrect
+            ORDER_AREA.style.backgroundColor = "var(--color-red)"
+            alert("Sorry, that's not correct...")
+            return false
+        }
+    }
+
+    // Everything is correct!
+    ORDER_AREA.style.backgroundColor = "var(--color-green)"
+    alert("You are correct!")
+    return true
 }
 
 function checkReady() {
     const orderCells = document.getElementsByClassName("order_cell")
-    console.log(orderCells)
-    console.log(orderCells.length)
     for (let i = 0; i < orderCells.length; i++) {
         const cell = orderCells.item(i)
-        console.log(cell)
         if (!cell.firstChild) {
             CHECK_BUTTON.style.cursor = "not-allowed"
             CHECK_BUTTON.style.backgroundColor = "var(--ready-no-color)"
@@ -287,9 +297,30 @@ async function prepare() {
     let numBoxes = wordlist.length
     if (isPositiveInteger(order)) {
         numBoxes = Number.parseInt(order)
-    } else {
+    } else if (order) {
         // Make a box for each item in our order
-        numBoxes = (order?.match(/,/g) || []).length + 1
+        numBoxes = 0
+        const fixedItems = []
+        for (const item of order.split(",")) {
+            if (item == undefined) continue // Empty element
+            let fixedItem = item.trim()
+            if (fixedItem.startsWith("🔑")) {
+                // Convert from base64 to text
+                const noKey = fixedItem.substring(2, fixedItem.length)
+                const decode = window.atob(noKey)
+                ORDER_ANSWERS.push(decode)
+            } else {
+                ORDER_ANSWERS.push(fixedItem)
+                fixedItem = `🔑${window.btoa(fixedItem)}`
+            }
+            fixedItems.push(fixedItem)
+            numBoxes++
+        }
+
+        // Update the URL with key'd words
+        const url = new URL(window.location.toString())
+        url.searchParams.set("order", fixedItems.join(","))
+        history.pushState({}, null, url)
     }
     makeOrderBoxes(numBoxes)
 
@@ -310,7 +341,6 @@ function resize() {
 
         const qrHolder = document.getElementById("qrcode") as HTMLDivElement
         if (qrHolder.style.display && qrHolder.style.display !== "none") {
-            console.log(qrHolder.style.display)
             showQR()
         }
     }, 250)

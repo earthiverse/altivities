@@ -1,6 +1,8 @@
 :root {
+  --color-green: #a1ef7a;
+  --color-red: #fc7b7b;
   --vh: 1vh;
-  --ready-yes-color: lightgreen;
+  --ready-yes-color: var(--color-green);
   --ready-no-color: lightgray;
 }
 
@@ -86,6 +88,7 @@ body {
 }
 
 .order_cell {
+    background-color: #FFF;
     display: flex;
     align-content: center;
     align-items: flex-end;
@@ -119,6 +122,10 @@ body {
     background-color: var(--ready-no-color);
     height: calc(var(--vh, 1vh) * 5);
     padding: 1vh 1vw;
+}
+
+.button span {
+    margin: 0 5px;
 }
 
 .item {

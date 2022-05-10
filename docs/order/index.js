@@ -25,8 +25,7 @@ async function clearElement(data) {
 const CHECK_BUTTON = document.getElementById("check");
 const MENU = document.getElementById("menu");
 const ORDER_AREA = document.getElementById("order_area");
-const PLAY_AREA = document.getElementById("play_area");
-const QR_BUTTON = document.getElementById("generate_qr");
+const ORDER_ANSWERS = [];
 function onDragStart(event) {
     const item = event.currentTarget;
     const parent = item.parentElement;
@@ -46,9 +45,6 @@ function onDrop(event) {
     const data = JSON.parse(event.dataTransfer.getData("application/json"));
     const item = document.getElementById(data.item);
     const previous = document.getElementById(data.parent);
-    console.debug(`Dropped On: ${droppedOn.id}`);
-    console.debug(`Item: ${item.id}`);
-    console.debug(`Previous: ${previous.id}`);
     if (droppedOn == previous)
         return;
     if (droppedOn.classList.contains("order_cell")) {
@@ -85,14 +81,25 @@ function showQR() {
 function check() {
     if (!checkReady())
         return;
+    const orderCells = document.getElementsByClassName("order_cell");
+    for (let i = 0; i < orderCells.length; i++) {
+        const cell = orderCells.item(i);
+        const text = cell.firstChild.innerText;
+        console.log(text);
+        if (ORDER_ANSWERS[i] !== text) {
+            ORDER_AREA.style.backgroundColor = "var(--color-red)";
+            alert("Sorry, that's not correct...");
+            return false;
+        }
+    }
+    ORDER_AREA.style.backgroundColor = "var(--color-green)";
+    alert("You are correct!");
+    return true;
 }
 function checkReady() {
     const orderCells = document.getElementsByClassName("order_cell");
-    console.log(orderCells);
-    console.log(orderCells.length);
     for (let i = 0; i < orderCells.length; i++) {
         const cell = orderCells.item(i);
-        console.log(cell);
         if (!cell.firstChild) {
             CHECK_BUTTON.style.cursor = "not-allowed";
             CHECK_BUTTON.style.backgroundColor = "var(--ready-no-color)";
@@ -167,8 +174,28 @@ async function prepare() {
     if (isPositiveInteger(order)) {
         numBoxes = Number.parseInt(order);
     }
-    else {
-        numBoxes = (order?.match(/,/g) || []).length + 1;
+    else if (order) {
+        numBoxes = 0;
+        const fixedItems = [];
+        for (const item of order.split(",")) {
+            if (item == undefined)
+                continue;
+            let fixedItem = item.trim();
+            if (fixedItem.startsWith("🔑")) {
+                const noKey = fixedItem.substring(2, fixedItem.length);
+                const decode = window.atob(noKey);
+                ORDER_ANSWERS.push(decode);
+            }
+            else {
+                ORDER_ANSWERS.push(fixedItem);
+                fixedItem = `🔑${window.btoa(fixedItem)}`;
+            }
+            fixedItems.push(fixedItem);
+            numBoxes++;
+        }
+        const url = new URL(window.location.toString());
+        url.searchParams.set("order", fixedItems.join(","));
+        history.pushState({}, null, url);
     }
     makeOrderBoxes(numBoxes);
     fitTextForAllCards();
@@ -184,7 +211,6 @@ function resize() {
         fitTextForAllCards();
         const qrHolder = document.getElementById("qrcode");
         if (qrHolder.style.display && qrHolder.style.display !== "none") {
-            console.log(qrHolder.style.display);
             showQR();
         }
     }, 250);
