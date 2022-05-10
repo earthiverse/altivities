@@ -6,11 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="user-scalable=no" />
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Let's put things in order!">
-    <meta property="og:description" content="An online game to put things in order that you can use with tablets.">
-    <meta property="og:url" content="https://altivities.earthiverse.ca/order/" />
-    <meta property="og:image" content="https://altivities.earthiverse.ca/order/images/screenshot.png" />
-    <title>Let's put things in order!</title>
+    <meta property="og:title" content="Choose a card!">
+    <meta property="og:description" content="Choose a card to show your friend.">
+    <meta property="og:url" content="https://altivities.earthiverse.ca/cards/" />
+    <!-- <meta property="og:image" content="https://altivities.earthiverse.ca/cards/images/screenshot.png" /> -->
+    <title>Choose a card!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
@@ -27,15 +27,16 @@
 </head>
 
 <body>
+    <div id="settings_toggle" onclick="showQR()">
+        <span class="material-icons">
+            qr_code_2
+        </span>
+    </div>
     <div id="play_area">
-        <div id="order_area"></div>
+        <div id="card_area">
+            <div id="cell0" class="order_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        </div>
         <div id="menu" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
-        <div class="button" id="generate_qr" onclick="showQR()">
-            <span class="material-icons"> qr_code_2 </span> QR
-        </div>
-        <div class="button" id="check">
-            <span class="material-icons"> thumb_up </span> Check!
-        </div>
     </div>
     <div id="qrcode"></div>
 </body>

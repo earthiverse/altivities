@@ -1,0 +1,144 @@
+:root {
+  --color-green: #a1ef7a;
+  --color-red: #fc7b7b;
+  --vh: 1vh;
+  --ready-yes-color: var(--color-green);
+  --ready-no-color: lightgray;
+}
+
+html,
+body {
+    user-select: none;
+    display: flex;
+    font-family: "JKHandwriting", Schoolbell, "Comic Sans MS";
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#play_area {
+    display: flex;
+    gap: 0 1vw;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    margin: auto auto;
+}
+
+#card_area {
+    display: flex;
+    box-sizing: border-box;
+    gap: var(--vh, 1vh);
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 80%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+#menu {
+    background-color: lightgray;
+    border-bottom: 1px solid #000;
+    display: flex;
+    box-sizing: border-box;
+    gap: 1vh;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    padding: 0 2vw 0 2vw;
+    width: 100%;
+    height: 20%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+#menu .item {
+    border: 1px solid #000;
+    background-color: #FFF;
+    cursor: pointer;
+    width: calc(var(--vh, 1vh) * 15);
+    height: calc(var(--vh, 1vh) * 15);
+    flex-shrink: 0;
+}
+
+.order_cell {
+    background-color: #FFF;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: #000 dashed 2px;
+    box-sizing: border-box;
+    width: calc(var(--vh, 1vh) * 75);
+    height: calc(var(--vh, 1vh) * 75);
+    flex-shrink: 0;
+}
+
+.order_cell .item {
+    border: none;
+    background-color: #FFF;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.item_inside {
+    width: 100%;
+    height: 33.3%;
+    color:#000;
+    text-align: center;
+    -webkit-text-fill-color:#000;
+	text-shadow:
+        -2px -2px 0 #FFF,
+        0   -2px 0 #FFF,
+        2px -2px 0 #FFF,
+        2px  0   0 #FFF,
+        2px  2px 0 #FFF,
+        0    2px 0 #FFF,
+        -2px  2px 0 #FFF,
+        -2px  0   0 #FFF;
+}
+
+#settings_toggle {
+  cursor: pointer;
+  color: var(--color-red);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#settings_toggle span {
+  font-size: min(5vw, 5vh);
+}
+
+#qrcode  {
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}

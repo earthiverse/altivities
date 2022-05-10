@@ -1,8 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function randomIntFromInterval(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
 function isPositiveInteger(v) {
     let i;
     return v && (i = parseInt(v)) && i > 0 && (i === v || "" + i === v);
@@ -17,10 +14,6 @@ function shuffle(array) {
         ];
     }
     return array;
-}
-async function clearElement(data) {
-    while (data.firstChild)
-        data.removeChild(data.firstChild);
 }
 const CHECK_BUTTON = document.getElementById("check");
 const MENU = document.getElementById("menu");

@@ -55,44 +55,12 @@ type dragData = {
 }
 
 /*******************************************************************************
-*** Helpers *******************************************************************/
-function isPositiveInteger(v) {
-    let i
-    return v && (i = parseInt(v)) && i > 0 && (i === v || "" + i === v)
-}
-
-function shuffle(array) {
-    let currentIndex = array.length, randomIndex
-
-    // While there remain elements to shuffle...
-    while (currentIndex != 0) {
-
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex)
-        currentIndex--;
-
-        // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]]
-    }
-
-    return array
-}
-
-/*******************************************************************************
-*** Config ********************************************************************/
-
-
-/*******************************************************************************
 *** DOM Elements **************************************************************/
-const CHECK_BUTTON = document.getElementById("check") as HTMLDivElement
 const MENU = document.getElementById("menu") as HTMLDivElement
-const ORDER_AREA = document.getElementById("order_area") as HTMLDivElement
 
 /*******************************************************************************
 *** Game Code *****************************************************************/
 /** This is where we will store the answer to the ordering (if one is available) */
-const ORDER_ANSWERS: string[] = []
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function onDragStart(event: DragEvent) {
@@ -137,7 +105,6 @@ function onDrop(event: DragEvent) {
     }
 
     fitTextForAllCards()
-    checkReady()
 
     return false
 }
@@ -166,70 +133,6 @@ function showQR() {
     qrHolder.addEventListener("click", () => {
         qrHolder.style.display = "none"
     })
-}
-
-function check() {
-    if (!checkReady()) return // We're not actually ready
-
-    const orderCells = document.getElementsByClassName("order_cell")
-    for (let i = 0; i < orderCells.length; i++) {
-        const cell = orderCells.item(i) as HTMLDivElement
-        const text = (cell.firstChild as HTMLDivElement).innerText
-        console.log(text)
-        if (ORDER_ANSWERS[i] !== text) {
-            // This answer was incorrect
-            ORDER_AREA.style.backgroundColor = "var(--color-red)"
-            alert("Sorry, that's not correct...")
-            return false
-        }
-    }
-
-    // Everything is correct!
-    ORDER_AREA.style.backgroundColor = "var(--color-green)"
-    alert("You are correct!")
-    return true
-}
-
-function checkReady() {
-    const orderCells = document.getElementsByClassName("order_cell")
-    for (let i = 0; i < orderCells.length; i++) {
-        const cell = orderCells.item(i)
-        if (!cell.firstChild) {
-            CHECK_BUTTON.style.cursor = "not-allowed"
-            CHECK_BUTTON.style.backgroundColor = "var(--ready-no-color)"
-            CHECK_BUTTON.removeEventListener("click", check)
-            return false
-        }
-    }
-
-    CHECK_BUTTON.style.cursor = "pointer"
-    CHECK_BUTTON.style.backgroundColor = "var(--ready-yes-color)"
-    CHECK_BUTTON.addEventListener("click", check)
-    return true
-}
-
-/**
- * Puts order boxes in the order area
- * @param num The number of boxes to make
- */
-function makeOrderBoxes(num: number) {
-    for (let i = 0; i < num; i++) {
-        // Setup & style the cell
-        const cell = document.createElement("div")
-        cell.id = `cell${i}`
-        cell.classList.add("order_cell")
-        cell.style.backgroundImage = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='200' width='200'><text x='50%' y='5' dominant-baseline='hanging' text-anchor='middle' fill='lightgray' font-size='25' font-family='\\"JKHandwriting\\", Schoolbell, \\"Comic Sans MS\\"'>${i + 1}</text></svg>")`
-        cell.style.backgroundRepeat = "no-repeat"
-        cell.style.backgroundPosition = "top"
-        cell.style.backgroundSize = "contain"
-
-        // Setup drag & drop listeners
-        cell.addEventListener("dragover", onDragOver)
-        cell.addEventListener("drop", onDrop)
-
-        // Add the cell to the order area
-        ORDER_AREA.appendChild(cell)
-    }
 }
 
 function makeCards(wordlist: Wordlist) {
@@ -272,48 +175,7 @@ function fitTextForAllCards() {
 }
 
 async function prepare() {
-    // Prepare the order string if we have one
-    const order = PARAMETERS.order as string
-    while (order?.endsWith(",")) order.substring(0, order.length - 1) // Remove the trailing commas
-    if (!order || isPositiveInteger(order)) {
-        // Hide the check button if there's no order
-        CHECK_BUTTON.style.display = "none"
-    }
-
-    const wordlist = shuffle(await prepareWordlist())
-    makeCards(wordlist)
-
-    // You can specify the number of boxes with ?order=<number>
-    let numBoxes = wordlist.length
-    if (isPositiveInteger(order)) {
-        numBoxes = Number.parseInt(order)
-    } else if (order) {
-        // Make a box for each item in our order
-        numBoxes = 0
-        const fixedItems = []
-        for (const item of order.split(",")) {
-            if (item == undefined) continue // Empty element
-            let fixedItem = item.trim()
-            if (fixedItem.startsWith("🔑")) {
-                // Convert from base64 to text
-                const noKey = fixedItem.substring(2, fixedItem.length)
-                const decode = window.atob(noKey)
-                ORDER_ANSWERS.push(decode)
-            } else {
-                ORDER_ANSWERS.push(fixedItem)
-                fixedItem = `🔑${window.btoa(fixedItem).replace(/=*$/, "")}`
-            }
-            fixedItems.push(fixedItem)
-            numBoxes++
-        }
-
-        // Update the URL with key'd words
-        const url = new URL(window.location.toString())
-        url.searchParams.set("order", fixedItems.join(","))
-        history.pushState({}, null, url)
-    }
-    makeOrderBoxes(numBoxes)
-
+    makeCards(await prepareWordlist())
     fitTextForAllCards()
 }
 prepare()
