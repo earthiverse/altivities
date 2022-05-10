@@ -117,7 +117,7 @@ function makeOrderBoxes(num) {
         const cell = document.createElement("div");
         cell.id = `cell${i}`;
         cell.classList.add("order_cell");
-        cell.style.backgroundImage = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='200' width='200'><text x='50%' y='5' dominant-baseline='hanging' text-anchor='middle' fill='lightgray' font-size='25' font-family='\\"JKHandwriting\\", Schoolbell, \\"Comic Sans MS\\"'>${i}</text></svg>")`;
+        cell.style.backgroundImage = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='200' width='200'><text x='50%' y='5' dominant-baseline='hanging' text-anchor='middle' fill='lightgray' font-size='25' font-family='\\"JKHandwriting\\", Schoolbell, \\"Comic Sans MS\\"'>${i + 1}</text></svg>")`;
         cell.style.backgroundRepeat = "no-repeat";
         cell.style.backgroundPosition = "top";
         cell.style.backgroundSize = "contain";
@@ -188,7 +188,7 @@ async function prepare() {
             }
             else {
                 ORDER_ANSWERS.push(fixedItem);
-                fixedItem = `🔑${window.btoa(fixedItem)}`;
+                fixedItem = `🔑${window.btoa(fixedItem).replace(/=*$/, "")}`;
             }
             fixedItems.push(fixedItem);
             numBoxes++;
