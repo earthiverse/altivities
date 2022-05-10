@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Let's put things in order!">
+    <meta property="og:description" content="An online game to put things in order that you can use with tablets.">
+    <meta property="og:url" content="https://altivities.earthiverse.ca/order/" />
+    <meta property="og:image" content="https://altivities.earthiverse.ca/order/images/screenshot.png" />
+    <title>Let's put things in order!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/KeeeX/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="https://www.unpkg.com/textfit@2.4.0/textFit.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script>
+        var exports = {};
+    </script>
+    <script src="DragDropTouch.js" defer></script>
+    <script src="../wordlists/wordlists.js" defer></script>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div id="play_area">
+        <div id="order_area">
+            <!-- <div id="cell0" class="order_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);">1</div>
+            <div id="cell1" class="order_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);">2</div>
+            <div id="cell2" class="order_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);">3</div>
+            <div id="cell3" class="order_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);">4</div>
+            <div id="cell4" class="order_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);">5</div>
+            <div id="cell5" class="order_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);">6</div>
+            <div id="cell6" class="order_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);">7</div>
+            <div id="cell7" class="order_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);">8</div>
+            <div id="cell8" class="order_cell" ondragover="onDragOver(event);" ondrop="onDrop(event);">9</div> -->
+        </div>
+        <div id="menu" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        <div class="button" id="generate_qr" onclick="showQR()">
+            <span class="material-icons"> qr_code_2 </span> QR
+        </div>
+        <div class="button" id="check">
+            <img src="images/ready.svg">
+            <div>Check!</div>
+        </div>
+    </div>
+    <div id="qrcode"></div>
+</body>
+
+</html>
