@@ -1,0 +1,174 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/bat.png",
+        "en": [
+            "bat",
+            "bats"
+        ],
+        "ja": {
+            "hiragana": "ばっと",
+            "kanji": "バット"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/mat.png",
+        "en": [
+            "mat",
+            "mats"
+        ],
+        "ja": {
+            "hiragana": "まっと",
+            "kanji": "マット"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/cat.png",
+        "en": [
+            "cat",
+            "cats"
+        ],
+        "ja": {
+            "hiragana": "ねこ",
+            "kanji": "猫"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/pen.png",
+        "en": [
+            "pen",
+            "pens"
+        ],
+        "ja": {
+            "hiragana": "ぺん",
+            "kanji": "ペン"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/hen.png",
+        "en": [
+            "hen",
+            "hens"
+        ],
+        "ja": {
+            "hiragana": "めんどり",
+            "kanji": "めんどり"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/ten.png",
+        "en": "ten",
+        "ja": {
+            "hiragana": "じゅう",
+            "kanji": "十"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/fox.png",
+        "en": [
+            "fox",
+            "foxes"
+        ],
+        "ja": {
+            "hiragana": "きつね",
+            "kanji": "狐"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/box.png",
+        "en": [
+            "box",
+            "boxes"
+        ],
+        "ja": {
+            "hiragana": "はこ",
+            "kanji": "箱"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/map.png",
+        "en": [
+            "map",
+            "maps"
+        ],
+        "ja": {
+            "hiragana": "ちず",
+            "kanji": "地図"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/cap.png",
+        "en": [
+            "cap",
+            "caps"
+        ],
+        "ja": {
+            "hiragana": "（ふちのない）ぼうし",
+            "kanji": "（ふちのない）ぼうし"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/tap.png",
+        "en": [
+            "tap",
+            "to tap"
+        ],
+        "ja": {
+            "hiragana": "かるくたたく",
+            "kanji": "軽くたたく"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/fun.png",
+        "en": "fun",
+        "ja": {
+            "hiragana": "たのしい",
+            "kanji": "楽しい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/sun.png",
+        "en": [
+            "sun",
+            "suns"
+        ],
+        "ja": {
+            "hiragana": "たいよう",
+            "kanji": "太陽"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/run.png",
+        "en": [
+            "run",
+            "to run"
+        ],
+        "ja": {
+            "hiragana": "はしる",
+            "kanji": "走る"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/top.png",
+        "en": [
+            "top",
+            "tops",
+            "the top",
+            "the tops"
+        ],
+        "ja": {
+            "hiragana": "ちょうじょう",
+            "kanji": "頂上"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/phonics/hop.png",
+        "en": [
+            "hop",
+            "to hop"
+        ],
+        "ja": {
+            "hiragana": "びょんびょんとぶ",
+            "kanji": "びょんびょんとぶ"
+        }
+    }
+]

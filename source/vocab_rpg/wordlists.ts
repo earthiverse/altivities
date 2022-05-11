@@ -104,7 +104,7 @@ const categories: { [T in CategoryKey]: CategoryData } = {
             },
             js5_phonics: {
                 description: "Junior Sunshine 5 - Phonics",
-                file: "../wordlists/JuniorSunshine5/phonics.json"
+                file: "../wordlists/JuniorSunshine5/phonics_cards.json"
             }
         }
     },
@@ -118,7 +118,7 @@ const categories: { [T in CategoryKey]: CategoryData } = {
             },
             js5_phonics: {
                 description: "Junior Sunshine 6 - Phonics",
-                file: "../wordlists/JuniorSunshine5/phonics.json"
+                file: "../wordlists/JuniorSunshine5/phonics_cards.json"
             }
         }
     },
