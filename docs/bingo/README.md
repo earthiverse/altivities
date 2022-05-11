@@ -25,6 +25,7 @@ These wordlists have pictures (mostly from [Irasutoya](https://irasutoya.com)!) 
 * [Halloween](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/halloween.json)
 * [Months](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/months.json)
 * [Numbers (1-20)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/numbers.json)
+  * [Ordinals (1st-31st)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/ordinals.json)
 * [Occupations (Junior Sunshine 6 - Lesson 10)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine6/lesson10.json)
 * Shapes
   * [Let's Try 1 - Lesson 7](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry1/unit7_cards.json)

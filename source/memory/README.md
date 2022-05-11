@@ -31,6 +31,7 @@ These wordlists have pictures (mostly from [Irasutoya](https://irasutoya.com)!) 
 * [Halloween](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/halloween.json)
 * [Months](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/months.json)
 * [Numbers (1-20)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/numbers.json)
+  * [Ordinals (1st-31st)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/ordinals.json)
 * [Occupations (Junior Sunshine 6 - Lesson 10)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson10.json)
 * [Prefectures](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/Hepburn/prefectures.json)
 * Shapes

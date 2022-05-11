@@ -1,0 +1,250 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/1st.png",
+        "en": "first",
+        "ja": {
+            "kanji": "一番目",
+            "hiragana": "いちばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/2nd.png",
+        "en": "second",
+        "ja": {
+            "kanji": "二番目",
+            "hiragana": "にばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/3rd.png",
+        "en": "third",
+        "ja": {
+            "kanji": "三番目",
+            "hiragana": "さんばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/4th.png",
+        "en": "fourth",
+        "ja": {
+            "kanji": "四番目",
+            "hiragana": "よんばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/5th.png",
+        "en": "fifth",
+        "ja": {
+            "kanji": "五番目",
+            "hiragana": "ごばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/6th.png",
+        "en": "sixth",
+        "ja": {
+            "kanji": "六番目",
+            "hiragana": "ろくばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/7th.png",
+        "en": "seventh",
+        "ja": {
+            "kanji": "七番目",
+            "hiragana": "ななばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/8th.png",
+        "en": "eighth",
+        "ja": {
+            "kanji": "八番目",
+            "hiragana": "はちばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/9th.png",
+        "en": "ninth",
+        "ja": {
+            "kanji": "九番目",
+            "hiragana": "きゅうばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/10th.png",
+        "en": "tenth",
+        "ja": {
+            "kanji": "十番目",
+            "hiragana": "じゅうばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/11th.png",
+        "en": "eleventh",
+        "ja": {
+            "kanji": "十一番目",
+            "hiragana": "じゅういちばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/12th.png",
+        "en": "twelfth",
+        "ja": {
+            "kanji": "十二番目",
+            "hiragana": "じゅうにばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/13th.png",
+        "en": "thirteenth",
+        "ja": {
+            "kanji": "十三番目",
+            "hiragana": "じゅうさんばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/14th.png",
+        "en": "fourteenth",
+        "ja": {
+            "kanji": "十四番目",
+            "hiragana": "じゅうよんばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/15th.png",
+        "en": "fifteenth",
+        "ja": {
+            "kanji": "十五番目",
+            "hiragana": "じゅうごばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/16th.png",
+        "en": "sixteenth",
+        "ja": {
+            "kanji": "十六番目",
+            "hiragana": "じゅうろくばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/17th.png",
+        "en": "seventeenth",
+        "ja": {
+            "kanji": "十七番目",
+            "hiragana": "じゅうななばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/18th.png",
+        "en": "eighteenth",
+        "ja": {
+            "kanji": "十八番目",
+            "hiragana": "じゅうはちばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/19th.png",
+        "en": "nineteenth",
+        "ja": {
+            "kanji": "十九番目",
+            "hiragana": "じゅうきゅうばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/20th.png",
+        "en": "twentieth",
+        "ja": {
+            "kanji": "二十番目",
+            "hiragana": "にじゅうばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/21st.png",
+        "en": "twenty-first",
+        "ja": {
+            "kanji": "二十一番目",
+            "hiragana": "にじゅういちばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/22nd.png",
+        "en": "twenty-second",
+        "ja": {
+            "kanji": "二十二番目",
+            "hiragana": "にじゅうにばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/23rd.png",
+        "en": "twenty-third",
+        "ja": {
+            "kanji": "二十三番目",
+            "hiragana": "にじゅうさんばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/24th.png",
+        "en": "twenty-fourth",
+        "ja": {
+            "kanji": "二十四番目",
+            "hiragana": "にじゅうよんばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/25th.png",
+        "en": "twenty-fifth",
+        "ja": {
+            "kanji": "二十五番目",
+            "hiragana": "にじゅうごばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/26th.png",
+        "en": "twenty-sixth",
+        "ja": {
+            "kanji": "二十六番目",
+            "hiragana": "にじゅうろくばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/27th.png",
+        "en": "twenty-seventh",
+        "ja": {
+            "kanji": "二十七番目",
+            "hiragana": "にじゅうななばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/28th.png",
+        "en": "twenty-eighth",
+        "ja": {
+            "kanji": "二十八番目",
+            "hiragana": "にじゅうはちばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/29th.png",
+        "en": "twenty-ninth",
+        "ja": {
+            "kanji": "二十九番目",
+            "hiragana": "にじゅうきゅうばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/30th.png",
+        "en": "thirtieth",
+        "ja": {
+            "kanji": "三十番目",
+            "hiragana": "さんじゅうばんめ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/ordinals/31st.png",
+        "en": "thirty-first",
+        "ja": {
+            "kanji": "三十一番目",
+            "hiragana": "さんじゅういちばんめ"
+        }
+    }
+]
