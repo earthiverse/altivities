@@ -45,6 +45,7 @@ These wordlists have pictures (mostly from [Irasutoya](https://irasutoya.com)!) 
 These wordlists have pictures that match with the cards available in the back of the textbook.
 
 * [Alphabet (Uppercase)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine5/alphabet_cards.json)
+* [Phonics](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine5/phonics_cards.json)
 * Lesson 2
   * [Months](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine5/lesson2_cards.json)
 * Lesson 3
@@ -56,6 +57,8 @@ These wordlists have pictures that match with the cards available in the back of
 
 These wordlists have pictures that match with the cards available in the back of the textbook.
 
+* [Alphabet (Uppercase)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine5/alphabet_cards.json)
+* [Phonics](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine5/phonics_cards.json)
 * Lesson 2
   * [Actions](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson2_cards.json)
 * Lesson 3
