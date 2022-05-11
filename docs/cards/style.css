@@ -51,7 +51,6 @@ body {
     box-sizing: border-box;
     gap: 1vh;
     align-items: center;
-    flex-direction: row-reverse;
     justify-content: flex-start;
     flex-wrap: nowrap;
     padding: 0 2vw 0 2vw;
