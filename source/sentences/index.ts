@@ -61,6 +61,7 @@ function randomIntFromInterval(min, max) { // min and max included
 /*******************************************************************************
 *** Config ********************************************************************/
 const SUBSTITUTION_CHAR = "•"
+const CIRCLE_NUMBERS = ["①", "②", "③", "④", "⑤"]
 const TEXT_FIT_OPTIONS: textFitOptions = { alignHoriz: true, maxFontSize: 32 }
 
 /*******************************************************************************
@@ -136,7 +137,12 @@ function generateSentence() {
     let part = ""
     let i = 1
     for (const char of (PARAMETERS.sentence as string)) {
-        if (char == SUBSTITUTION_CHAR) {
+        if (CIRCLE_NUMBERS.includes(char)) {
+            const index = CIRCLE_NUMBERS.indexOf(char) + 1
+            addPart(part)
+            addCard(index, PARAMETERS.hide, PARAMETERS[`${i}_color`])
+            part = ""
+        } else if (char == SUBSTITUTION_CHAR) {
             // Substitution replacements
             addPart(part)
             addCard(i, PARAMETERS.hide, PARAMETERS[`${i}_color`])
@@ -162,8 +168,19 @@ async function prepare() {
         throw Error("No sentence found.")
     }
     if (!PARAMETERS.sentence.includes(SUBSTITUTION_CHAR)) {
-        // TODO: Visually throw an error on the screen
-        throw Error("No substitution character found.")
+        // Check if it has a circle number
+        let hasNumber = false
+        for (const number of CIRCLE_NUMBERS) {
+            if (PARAMETERS.sentence.includes(number)) {
+                hasNumber = true
+                break
+            }
+        }
+
+        if (!hasNumber) {
+            // TODO: Visually throw an error on the screen
+            throw Error("No substitution character found.")
+        }
     }
 
     let i = 1

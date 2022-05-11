@@ -4,6 +4,7 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 const SUBSTITUTION_CHAR = "•";
+const CIRCLE_NUMBERS = ["①", "②", "③", "④", "⑤"];
 const TEXT_FIT_OPTIONS = { alignHoriz: true, maxFontSize: 32 };
 const SENTENCE = document.getElementById("sentence");
 const NAVIGATION = document.getElementById("navigation");
@@ -66,7 +67,13 @@ function generateSentence() {
     let part = "";
     let i = 1;
     for (const char of PARAMETERS.sentence) {
-        if (char == SUBSTITUTION_CHAR) {
+        if (CIRCLE_NUMBERS.includes(char)) {
+            const index = CIRCLE_NUMBERS.indexOf(char) + 1;
+            addPart(part);
+            addCard(index, PARAMETERS.hide, PARAMETERS[`${i}_color`]);
+            part = "";
+        }
+        else if (char == SUBSTITUTION_CHAR) {
             addPart(part);
             addCard(i, PARAMETERS.hide, PARAMETERS[`${i}_color`]);
             part = "";
@@ -90,7 +97,16 @@ async function prepare() {
         throw Error("No sentence found.");
     }
     if (!PARAMETERS.sentence.includes(SUBSTITUTION_CHAR)) {
-        throw Error("No substitution character found.");
+        let hasNumber = false;
+        for (const number of CIRCLE_NUMBERS) {
+            if (PARAMETERS.sentence.includes(number)) {
+                hasNumber = true;
+                break;
+            }
+        }
+        if (!hasNumber) {
+            throw Error("No substitution character found.");
+        }
     }
     let i = 1;
     while (PARAMETERS[`${i}_wordlist`] || PARAMETERS[`${i}_wordlists`]) {
