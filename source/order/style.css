@@ -35,45 +35,29 @@ body {
     display: flex;
     box-sizing: border-box;
     gap: var(--vh, 1vh);
-    align-items: center;
+    align-items: flex-start;
     justify-content: left;
     flex-wrap: nowrap;
     padding: 0 2vw 0 2vw;
     width: 100%;
-    height: calc(var(--vh, 1vh) * 70);
+    height: calc(var(--vh, 1vh) * 71);
     overflow-x: scroll;
     overflow-y: hidden;
 }
-/* 
-#menu {
-    background-color: lightgray;
-    display: flex;
-    box-sizing: border-box;
-    gap: calc(var(--vh, 1vh) * 2);
-    align-items: center;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-    padding: 0 2vw 0 2vw;
-    width: 100%;
-    height: calc(var(--vh, 1vh) * 20);
-    overflow-x: scroll;
-    overflow-y: hidden;
-} */
 
 #menu {
     background-color: lightgray;
-    border-bottom: 1px solid #000;
     display: flex;
     box-sizing: border-box;
     gap: 1vh;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row-reverse;
     justify-content: flex-start;
     flex-wrap: nowrap;
-    padding: 0 2vw 0 2vw;
+    padding: 0.5vh 2vw 0 2vw;
     width: 100%;
     height: calc(var(--vh, 1vh) * 20);
+    padding: 0.5vh 0 0 0;
     overflow-x: scroll;
     overflow-y: hidden;
 }

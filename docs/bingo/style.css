@@ -148,9 +148,9 @@ body {
     box-sizing: border-box;
     display: flex;
     gap:1vw;
-    padding:1vw;
+    padding:0.5vw;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: lightgray;
     height: calc(var(--vh, 1vh) * 93);
     width: 25vw;
@@ -159,7 +159,7 @@ body {
 
 #menu .item {
     background-color: #FFF;
-    /* line-height: calc(26vw); */
+    border: 1px solid #000;
     height: 16vw;
     width: 16vw;
 }
