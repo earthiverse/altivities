@@ -20,7 +20,7 @@ These wordlists have pictures (mostly from [Irasutoya](https://irasutoya.com)!) 
 These wordlists have pictures that match with the cards available in the back of the textbook.
 
 * Lesson 1
-  [Let's Play 2-1 (Alphabet (Uppercase))](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine5/alphabet_cards.json&order=A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)
+  [Let's Play 2-1 (Alphabet (Uppercase))](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine5/alphabet_uppercase_cards.json&order=A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)
 * Lesson 2
   * [Let's Play 3 (Months)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine5/lesson2_cards.json&order=January,February,March,April,May,June,July,August,September,October,November,December)
 
@@ -28,7 +28,7 @@ These wordlists have pictures that match with the cards available in the back of
 
 These wordlists have pictures that match with the cards available in the back of the textbook.
 
-* [Alphabet (Uppercase)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine5/alphabet_cards.json)
+* [Alphabet (Uppercase)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine5/alphabet_uppercase_cards.json)
 * [Phonics](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine5/phonics_cards.json)
 
 ## Ordering

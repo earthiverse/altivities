@@ -1,0 +1,114 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/long.png",
+        "en": "long",
+        "ja": {
+            "hiragana": "ながい",
+            "kanji": "長い"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/short.png",
+        "en": "short",
+        "ja": {
+            "hiragana": "みじかい",
+            "kanji": "短い"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/big.png",
+        "en": "big",
+        "ja": {
+            "hiragana": "おおきい",
+            "kanji": "大きい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/small.png",
+        "en": "small",
+        "ja": {
+            "hiragana": "ちいさい",
+            "kanji": "小さい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/new.png",
+        "en": "new",
+        "ja": {
+            "hiragana": "あたらしい",
+            "kanji": "新しい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/old.png",
+        "en": "old",
+        "ja": {
+            "hiragana": "ふるい",
+            "kanji": "古い"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/hard.png",
+        "en": "hard",
+        "ja": {
+            "hiragana": "かたい",
+            "kanji": "固い"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/soft.png",
+        "en": "soft",
+        "ja": {
+            "hiragana": "やわらかい",
+            "kanji": "柔らかい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/light.png",
+        "en": "light",
+        "ja": {
+            "hiragana": "かるい",
+            "kanji": "軽い"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/heavy.png",
+        "en": "heavy",
+        "ja": {
+            "hiragana": "おもい",
+            "kanji": "重い"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/fast.png",
+        "en": "fast",
+        "ja": {
+            "hiragana": "はやい",
+            "kanji": "速い"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/slow.png",
+        "en": "slow",
+        "ja": {
+            "hiragana": "おそい",
+            "kanji": "遅い"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/hot.png",
+        "en": "hot",
+        "ja": {
+            "hiragana": "あつい",
+            "kanji": "暑い"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/opposites/cold.png",
+        "en": "cold",
+        "ja": {
+            "hiragana": "さむい",
+            "kanji": "寒い"
+        }
+    }
+]

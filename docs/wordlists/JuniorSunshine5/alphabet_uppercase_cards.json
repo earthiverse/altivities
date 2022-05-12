@@ -1,6 +1,6 @@
 [
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/A.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/A.svg",
         "en": "A",
         "ja": {
             "kanji": "エイ",
@@ -8,7 +8,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/B.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/B.svg",
         "en": "B",
         "ja": {
             "kanji": "ビー",
@@ -16,7 +16,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/C.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/C.svg",
         "en": "C",
         "ja": {
             "kanji": "シー",
@@ -24,7 +24,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/D.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/D.svg",
         "en": "D",
         "ja": {
             "kanji": "ディー",
@@ -32,7 +32,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/E.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/E.svg",
         "en": "E",
         "ja": {
             "kanji": "イー",
@@ -40,7 +40,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/F.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/F.svg",
         "en": "F",
         "ja": {
             "kanji": "エフ",
@@ -48,7 +48,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/G.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/G.svg",
         "en": "G",
         "ja": {
             "kanji": "ジー",
@@ -56,7 +56,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/H.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/H.svg",
         "en": "H",
         "ja": {
             "kanji": "エッチ",
@@ -64,7 +64,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/I.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/I.svg",
         "en": "I",
         "ja": {
             "kanji": "アイ",
@@ -72,7 +72,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/J.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/J.svg",
         "en": "J",
         "ja": {
             "kanji": "ジェー",
@@ -80,7 +80,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/K.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/K.svg",
         "en": "K",
         "ja": {
             "kanji": "ケイ",
@@ -88,7 +88,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/L.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/L.svg",
         "en": "L",
         "ja": {
             "kanji": "エル",
@@ -96,7 +96,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/M.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/M.svg",
         "en": "M",
         "ja": {
             "kanji": "エム",
@@ -104,7 +104,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/N.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/N.svg",
         "en": "N",
         "ja": {
             "kanji": "エヌ",
@@ -112,7 +112,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/O.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/O.svg",
         "en": "O",
         "ja": {
             "kanji": "オー",
@@ -120,7 +120,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/P.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/P.svg",
         "en": "P",
         "ja": {
             "kanji": "ピー",
@@ -128,7 +128,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/Q.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/Q.svg",
         "en": "Q",
         "ja": {
             "kanji": "キュー",
@@ -136,7 +136,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/R.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/R.svg",
         "en": "R",
         "ja": {
             "kanji": "アール",
@@ -144,7 +144,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/S.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/S.svg",
         "en": "S",
         "ja": {
             "kanji": "エス",
@@ -152,7 +152,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/T.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/T.svg",
         "en": "T",
         "ja": {
             "kanji": "ティー",
@@ -160,7 +160,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/U.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/U.svg",
         "en": "U",
         "ja": {
             "kanji": "ユー",
@@ -168,7 +168,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/V.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/V.svg",
         "en": "V",
         "ja": {
             "kanji": "ブィー",
@@ -176,7 +176,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/W.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/W.svg",
         "en": "W",
         "ja": {
             "kanji": "ダブリュー",
@@ -184,7 +184,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/X.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/X.svg",
         "en": "X",
         "ja": {
             "kanji": "エックス",
@@ -192,7 +192,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/Y.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/Y.svg",
         "en": "Y",
         "ja": {
             "kanji": "ワイ",
@@ -200,7 +200,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/Z.svg",
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet_uppercase/Z.svg",
         "en": "Z",
         "ja": {
             "kanji": "ゼット",
