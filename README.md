@@ -44,6 +44,14 @@ A multiplayer memory game for tablets.
 
 View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/memory).
 
+### Order
+
+<https://altivities.earthiverse.ca/order/?wordlist=../wordlists/General/alphabet.json&order=A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z>
+
+An ordering game for tablets.
+
+View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/order).
+
 ### Parfait
 
 <https://earthiverse.github.io/altivities/parfait/>
