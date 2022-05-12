@@ -18,6 +18,11 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 #play_area {
@@ -33,22 +38,28 @@ body {
 
 #order_area {
     display: flex;
+    background-color: #EEE;
+    border-top: 3px solid #AAA;
+    border-bottom: 3px solid #AAA;
     box-sizing: border-box;
     gap: var(--vh, 1vh);
     align-items: flex-start;
     justify-content: left;
     flex-wrap: nowrap;
-    padding: 0 2vw 0 2vw;
+    padding: 0.5vh 2vw 0 2vw;
     width: 100%;
     height: calc(var(--vh, 1vh) * 71);
     overflow-x: scroll;
     overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 #menu {
-    background-color: lightgray;
+    background-color: #EEE;
     display: flex;
     box-sizing: border-box;
+    border-top: 3px solid #AAA;
+    border-bottom: 3px solid #AAA;
     gap: 1vh;
     align-items: flex-start;
     flex-direction: row-reverse;
@@ -60,6 +71,7 @@ body {
     padding: 0.5vh 0 0 0;
     overflow-x: scroll;
     overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 #menu .item {
