@@ -136,6 +136,11 @@ const PEERJS_CONFIG: Peer.PeerJSOption = {
                 credential: "openrelayproject",
                 urls: "turn:openrelay.metered.ca:443?transport=tcp",
                 username: "openrelayproject"
+            },
+            {
+                urls: "turn:numb.viagenie.ca:3478",
+                username: "hyprkookeez@gmail.com",
+                credential: "BE8TdqMYuDp6P!h"
             }
         ]
     },
