@@ -172,12 +172,23 @@ function check() {
     if (!checkReady()) return // We're not actually ready
 
     const orderCells = document.getElementsByClassName("order_cell")
+
+    // Make sure the answers are in order
+    const answers: string[] = new Array(orderCells.length)
     for (let i = 0; i < orderCells.length; i++) {
         const cell = orderCells.item(i) as HTMLDivElement
+        const cellId = Number.parseInt(cell.id.substring(4))
         const text = (cell.firstChild as HTMLDivElement).innerText
-        console.log(text)
-        if (ORDER_ANSWERS[i] !== text) {
-            // This answer was incorrect
+
+        // Add the answer to the proper position
+        answers[cellId] = text
+    }
+
+    // Check the answers
+    for (let i = 0; i < answers.length; i++) {
+        const answer = answers[i]
+        if (ORDER_ANSWERS[i] !== answer) {
+        // This answer was incorrect
             ORDER_AREA.style.backgroundColor = "var(--color-red)"
             alert("Sorry, that's not correct...")
             return false
@@ -222,6 +233,7 @@ function makeOrderBoxes(num: number) {
         cell.style.backgroundRepeat = "no-repeat"
         cell.style.backgroundPosition = "top"
         cell.style.backgroundSize = "contain"
+        cell.style.order = i.toString()
 
         // Setup drag & drop listeners
         cell.addEventListener("dragover", onDragOver)

@@ -75,11 +75,16 @@ function check() {
     if (!checkReady())
         return;
     const orderCells = document.getElementsByClassName("order_cell");
+    const answers = new Array(orderCells.length);
     for (let i = 0; i < orderCells.length; i++) {
         const cell = orderCells.item(i);
+        const cellId = Number.parseInt(cell.id.substring(4));
         const text = cell.firstChild.innerText;
-        console.log(text);
-        if (ORDER_ANSWERS[i] !== text) {
+        answers[cellId] = text;
+    }
+    for (let i = 0; i < answers.length; i++) {
+        const answer = answers[i];
+        if (ORDER_ANSWERS[i] !== answer) {
             ORDER_AREA.style.backgroundColor = "var(--color-red)";
             alert("Sorry, that's not correct...");
             return false;
@@ -114,6 +119,7 @@ function makeOrderBoxes(num) {
         cell.style.backgroundRepeat = "no-repeat";
         cell.style.backgroundPosition = "top";
         cell.style.backgroundSize = "contain";
+        cell.style.order = i.toString();
         cell.addEventListener("dragover", onDragOver);
         cell.addEventListener("drop", onDrop);
         ORDER_AREA.appendChild(cell);
