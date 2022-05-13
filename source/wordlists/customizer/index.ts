@@ -1,7 +1,7 @@
 Survey.StylesManager.applyTheme("defaultV2")
 
 const wordlists = [
-    "https://altivities.earthiverse.ca/wordlists/General/alphabet.json",
+    "https://altivities.earthiverse.ca/wordlists/General/alphabet_words.json",
     "https://altivities.earthiverse.ca/wordlists/General/animals.json",
     "https://altivities.earthiverse.ca/wordlists/General/colors.json",
     "https://altivities.earthiverse.ca/wordlists/General/countries.json",

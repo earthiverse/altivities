@@ -1,0 +1,184 @@
+[
+  {
+    "en": "badminton",
+    "ja": {
+      "hiragana": "ばどみんとん",
+      "kanji": "バドミントン"
+    }
+  },
+  {
+    "en": "baseball",
+    "ja": {
+      "hiragana": "やきゅう",
+      "kanji": "野球"
+    }
+  },
+  {
+    "en": "basketball",
+    "ja": {
+      "hiragana": "ばすけっとぼーる",
+      "kanji": "バスケットボール"
+    }
+  },
+  {
+    "en": "do judo",
+    "ja": {
+      "hiragana": "じゅうどうをする",
+      "kanji": "柔道をする"
+    }
+  },
+  {
+    "en": "golf",
+    "ja": {
+      "hiragana": "こるふ",
+      "kanji": "コルフ"
+    }
+  },
+  {
+    "en": "golfer",
+    "ja": {
+      "hiragana": "こるふぁー",
+      "kanji": "コルファー"
+    }
+  },
+  {
+    "en": "judo",
+    "ja": {
+      "hiragana": "じゅうどう",
+      "kanji": "柔道"
+    }
+  },
+  {
+    "en": "judoka",
+    "ja": {
+      "hiragana": "じゅうどうか",
+      "kanji": "柔道家"
+    }
+  },
+  {
+    "en": "skate",
+    "ja": {
+      "hiragana": "すけーとをする",
+      "kanji": "スケートをする"
+    }
+  },
+  {
+    "en": "skater",
+    "ja": {
+      "hiragana": "すけーとせんしゅ",
+      "kanji": "スケート選手"
+    }
+  },
+  {
+    "en": "skating",
+    "ja": {
+      "hiragana": "すけーと",
+      "kanji": "スケート"
+    }
+  },
+  {
+    "en": "ski",
+    "ja": {
+      "hiragana": "すきーをする",
+      "kanji": "スキーをする"
+    }
+  },
+  {
+    "en": "skier",
+    "ja": {
+      "hiragana": "すきーせんしゅ",
+      "kanji": "スキー選手"
+    }
+  },
+  {
+    "en": "skiing",
+    "ja": {
+      "hiragana": "すきー",
+      "kanji": "スキー"
+    }
+  },
+  {
+    "en": "soccer",
+    "ja": {
+      "hiragana": "さっかー",
+      "kanji": "サッカー"
+    }
+  },
+  {
+    "en": "surf",
+    "ja": {
+      "hiragana": "さーふぃんをする",
+      "kanji": "サーフィンをする"
+    }
+  },
+  {
+    "en": "surfer",
+    "ja": {
+      "hiragana": "さーふぁー",
+      "kanji": "サーファー"
+    }
+  },
+  {
+    "en": "surfing",
+    "ja": {
+      "hiragana": "さーふぃん",
+      "kanji": "サーフィン"
+    }
+  },
+  {
+    "en": "swim",
+    "ja": {
+      "hiragana": "およぐ",
+      "kanji": "泳ぐ"
+    }
+  },
+  {
+    "en": "swimmer",
+    "ja": {
+      "hiragana": "すいえいせんしゅ",
+      "kanji": "水泳選手"
+    }
+  },
+  {
+    "en": "swimming",
+    "ja": {
+      "hiragana": "すいえい",
+      "kanji": "水泳"
+    }
+  },
+  {
+    "en": "table tennis",
+    "ja": {
+      "hiragana": "たっきゅう",
+      "kanji": "卓球"
+    }
+  },
+  {
+    "en": "tennis",
+    "ja": {
+      "hiragana": "てでてにす",
+      "kanji": "テデテニス"
+    }
+  },
+  {
+    "en": "volleyball",
+    "ja": {
+      "hiragana": "ばれーぼーる",
+      "kanji": "バレーボール"
+    }
+  },
+  {
+    "en": "wheelchair basketball",
+    "ja": {
+      "hiragana": "くるまいすばぱばすけっとぼーる",
+      "kanji": "車いすバパバスケットボール"
+    }
+  },
+  {
+    "en": "wheelchair tennis",
+    "ja": {
+      "hiragana": "くるまいすてにす",
+      "kanji": "車いすテニス"
+    }
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "en": "bed",
+    "ja": {
+      "hiragana": "べっど",
+      "kanji": "ベッド"
+    }
+  },
+  {
+    "en": "bug",
+    "ja": {
+      "hiragana": "こんちゅう",
+      "kanji": "昆虫"
+    }
+  },
+  {
+    "en": "bus",
+    "ja": {
+      "hiragana": "ばす",
+      "kanji": "バス"
+    }
+  },
+  {
+    "en": "cup",
+    "ja": {
+      "hiragana": "かっぷ",
+      "kanji": "カップ"
+    }
+  },
+  {
+    "en": "hat",
+    "ja": {
+      "hiragana": "(ふちのある)ぼぽうし",
+      "kanji": "(ふちのある)ぼぽうし"
+    }
+  },
+  {
+    "en": "jam",
+    "ja": {
+      "hiragana": "じゃむ",
+      "kanji": "ジャム"
+    }
+  },
+  {
+    "en": "jet",
+    "ja": {
+      "hiragana": "じぇっと(き)",
+      "kanji": "ジェット(機)"
+    }
+  },
+  {
+    "en": "lip",
+    "ja": {
+      "hiragana": "くちびる",
+      "kanji": "くちびる"
+    }
+  },
+  {
+    "en": "net",
+    "ja": {
+      "hiragana": "あみ",
+      "kanji": "あみ"
+    }
+  },
+  {
+    "en": "pan",
+    "ja": {
+      "hiragana": "ひらなべ",
+      "kanji": "平鍋"
+    }
+  },
+  {
+    "en": "pin",
+    "ja": {
+      "hiragana": "がびょう",
+      "kanji": "画びょう"
+    }
+  },
+  {
+    "en": "pop",
+    "ja": {
+      "hiragana": "ぽんとなる",
+      "kanji": "ポンと鳴る"
+    }
+  },
+  {
+    "en": "pot",
+    "ja": {
+      "hiragana": "なべ",
+      "kanji": "なべ"
+    }
+  },
+  {
+    "en": "rod",
+    "ja": {
+      "hiragana": "つりさお",
+      "kanji": "つりさお"
+    }
+  },
+  {
+    "en": "wig",
+    "ja": {
+      "hiragana": "かつら",
+      "kanji": "かつら"
+    }
+  }
+]

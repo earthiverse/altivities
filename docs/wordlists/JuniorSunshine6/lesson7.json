@@ -1,0 +1,37 @@
+[
+  {
+    "en": "Canada",
+    "ja": {
+      "hiragana": "かなだ",
+      "kanji": "カナダ"
+    }
+  },
+  {
+    "en": "Mongolia",
+    "ja": {
+      "hiragana": "もんこる",
+      "kanji": "モンコル"
+    }
+  },
+  {
+    "en": "Morocco",
+    "ja": {
+      "hiragana": "もろっこ",
+      "kanji": "モロッコ"
+    }
+  },
+  {
+    "en": "Peru",
+    "ja": {
+      "hiragana": "へるいち",
+      "kanji": "ヘル一"
+    }
+  },
+  {
+    "en": "Thailand",
+    "ja": {
+      "hiragana": "たい",
+      "kanji": "タイ"
+    }
+  }
+]

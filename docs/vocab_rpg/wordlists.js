@@ -33,8 +33,8 @@ const categories = {
         name: "Junior Sunshine 5",
         wordlists: {
             js5_alphabet: {
-                description: "Junior Sunshine 5 - Alphabet",
-                file: "../wordlists/JuniorSunshine5/alphabet.json"
+                description: "Junior Sunshine 5 - Alphabet Words",
+                file: "../wordlists/JuniorSunshine5/alphabet_words.json"
             },
             js5_l2: {
                 description: "Junior Sunshine 5 - Lesson 2",
@@ -75,8 +75,8 @@ const categories = {
         name: "Junior Sunshine 6",
         wordlists: {
             js5_alphabet: {
-                description: "Junior Sunshine 6 - Alphabet",
-                file: "../wordlists/JuniorSunshine5/alphabet.json"
+                description: "Junior Sunshine 6 - Alphabet Words",
+                file: "../wordlists/JuniorSunshine5/alphabet_words.json"
             },
             js5_phonics: {
                 description: "Junior Sunshine 6 - Phonics",

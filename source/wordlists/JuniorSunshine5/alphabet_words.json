@@ -1,0 +1,234 @@
+[
+    {
+        "en": [
+            "ant",
+            "ants"
+        ],
+        "ja": {
+            "hiragana": "あり",
+            "kanji": "アリ"
+        }
+    },
+    {
+        "en": [
+            "bear",
+            "bears"
+        ],
+        "ja": {
+            "hiragana": "くま",
+            "kanji": "熊"
+        }
+    },
+    {
+        "en": [
+            "cow",
+            "cows"
+        ],
+        "ja": {
+            "hiragana": "うし",
+            "kanji": "牛"
+        }
+    },
+    {
+        "en": [
+            "dog",
+            "dogs"
+        ],
+        "ja": {
+            "hiragana": "いぬ",
+            "kanji": "犬"
+        }
+    },
+    {
+        "en": [
+            "egg",
+            "eggs"
+        ],
+        "ja": {
+            "hiragana": "たまご",
+            "kanji": "卵"
+        }
+    },
+    {
+        "en": "fish",
+        "ja": {
+            "hiragana": "さかな",
+            "kanji": "魚"
+        }
+    },
+    {
+        "en": [
+            "goat",
+            "goats"
+        ],
+        "ja": {
+            "hiragana": "やぎ",
+            "kanji": "ヤギ"
+        }
+    },
+    {
+        "en": [
+            "hat",
+            "hats"
+        ],
+        "ja": {
+            "hiragana": "（ふちのある）ぼうし",
+            "kanji": "（ふちのある）ぼうし"
+        }
+    },
+    {
+        "en": "ink",
+        "ja": {
+            "hiragana": "いんく",
+            "kanji": "インク"
+        }
+    },
+    {
+        "en": "jam",
+        "ja": {
+            "hiragana": "じゃむ",
+            "kanji": "ジャム"
+        }
+    },
+    {
+        "en": [
+            "key",
+            "keys"
+        ],
+        "ja": {
+            "hiragana": "かぎ",
+            "kanji": "鍵"
+        }
+    },
+    {
+        "en": [
+            "lion",
+            "lions"
+        ],
+        "ja": {
+            "hiragana": "らいおん",
+            "kanji": "ライオン"
+        }
+    },
+    {
+        "en": [
+            "monkey",
+            "monkeys"
+        ],
+        "ja": {
+            "hiragana": "さる",
+            "kanji": "猿"
+        }
+    },
+    {
+        "en": "net",
+        "ja": {
+            "hiragana": "あみ",
+            "kanji": "あみ"
+        }
+    },
+    {
+        "en": "octopus",
+        "ja": {
+            "hiragana": "たこ",
+            "kanji": "タコ"
+        }
+    },
+    {
+        "en": [
+            "pig",
+            "pigs"
+        ],
+        "ja": {
+            "hiragana": "ぶた",
+            "kanji": "豚"
+        }
+    },
+    {
+        "en": "queen",
+        "ja": {
+            "hiragana": "じょおう",
+            "kanji": "女王"
+        }
+    },
+    {
+        "en": "red",
+        "ja": {
+            "hiragana": "あかいろ",
+            "kanji": "赤色"
+        }
+    },
+    {
+        "en": [
+            "sea",
+            "seas",
+            "ocean",
+            "oceans"
+        ],
+        "ja": {
+            "hiragana": "うみ",
+            "kanji": "海"
+        }
+    },
+    {
+        "en": "six",
+        "ja": {
+            "hiragana": "ろく",
+            "kanji": "六"
+        }
+    },
+    {
+        "en": [
+            "tiger",
+            "tigers"
+        ],
+        "ja": {
+            "hiragana": "とら",
+            "kanji": "虎"
+        }
+    },
+    {
+        "en": [
+            "umbrella",
+            "umbrellas"
+        ],
+        "ja": {
+            "hiragana": "かさ",
+            "kanji": "傘"
+        }
+    },
+    {
+        "en": [
+            "van",
+            "vans"
+        ],
+        "ja": {
+            "hiragana": "こがたとらっく",
+            "kanji": "小型トラック"
+        }
+    },
+    {
+        "en": "wood",
+        "ja": {
+            "hiragana": "もくざい",
+            "kanji": "木材"
+        }
+    },
+    {
+        "en": "yellow",
+        "ja": {
+            "hiragana": "きいろ",
+            "kanji": "黄色"
+        }
+    },
+    {
+        "en": [
+            "zebra",
+            "zebras"
+        ],
+        "ja": {
+            "hiragana": "しまうま",
+            "kanji": "シマウマ"
+        }
+    }
+]

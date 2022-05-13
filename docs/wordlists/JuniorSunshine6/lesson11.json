@@ -1,0 +1,261 @@
+[
+  {
+    "en": "badminton team",
+    "ja": {
+      "hiragana": "ばどみんとんぶ",
+      "kanji": "バドミントン部"
+    }
+  },
+  {
+    "en": "baseball team",
+    "ja": {
+      "hiragana": "やきゅうぶ",
+      "kanji": "野球部"
+    }
+  },
+  {
+    "en": "basketball team",
+    "ja": {
+      "hiragana": "ばすけっとぼーるぶ",
+      "kanji": "バスケットボール部"
+    }
+  },
+  {
+    "en": "brass band",
+    "ja": {
+      "hiragana": "すいそうがくぶ",
+      "kanji": "吹奏楽部"
+    }
+  },
+  {
+    "en": "calligraphy",
+    "ja": {
+      "hiragana": "しょしゃ",
+      "kanji": "書写"
+    }
+  },
+  {
+    "en": "calligraphy club",
+    "ja": {
+      "hiragana": "しょどうぶ",
+      "kanji": "書道部"
+    }
+  },
+  {
+    "en": "chorus",
+    "ja": {
+      "hiragana": "がっしょうぶ",
+      "kanji": "合唱部"
+    }
+  },
+  {
+    "en": "chorus contest",
+    "ja": {
+      "hiragana": "がっしょうこんてすと",
+      "kanji": "合唱コンテスト"
+    }
+  },
+  {
+    "en": "computer club",
+    "ja": {
+      "hiragana": "ぱそこんぶ",
+      "kanji": "パソコン部"
+    }
+  },
+  {
+    "en": "cultural festival",
+    "ja": {
+      "hiragana": "ぶんかさい",
+      "kanji": "文化祭"
+    }
+  },
+  {
+    "en": "dance team",
+    "ja": {
+      "hiragana": "たんすぶ",
+      "kanji": "タンス部"
+    }
+  },
+  {
+    "en": "English",
+    "ja": {
+      "hiragana": "えいご",
+      "kanji": "英語"
+    }
+  },
+  {
+    "en": "entrance ceremony",
+    "ja": {
+      "hiragana": "にゅうがくしき",
+      "kanji": "入学式"
+    }
+  },
+  {
+    "en": "field trip",
+    "ja": {
+      "hiragana": "えんそく",
+      "kanji": "遠足"
+    }
+  },
+  {
+    "en": "fine arts",
+    "ja": {
+      "hiragana": "びじゅつ",
+      "kanji": "美術"
+    }
+  },
+  {
+    "en": "general student meeting",
+    "ja": {
+      "hiragana": "せいとそうかい",
+      "kanji": "生徒総会"
+    }
+  },
+  {
+    "en": "graduation ceremony",
+    "ja": {
+      "hiragana": "そつぎょうしき",
+      "kanji": "卒業式"
+    }
+  },
+  {
+    "en": "industrial arts and home economics",
+    "ja": {
+      "hiragana": "ぎじゅつかてい",
+      "kanji": "技術家庭"
+    }
+  },
+  {
+    "en": "Japanese",
+    "ja": {
+      "hiragana": "こくご",
+      "kanji": "国語"
+    }
+  },
+  {
+    "en": "kendo team",
+    "ja": {
+      "hiragana": "けんどうぶ",
+      "kanji": "剣道部"
+    }
+  },
+  {
+    "en": "math",
+    "ja": {
+      "hiragana": "すうがく",
+      "kanji": "数学"
+    }
+  },
+  {
+    "en": "moral education",
+    "ja": {
+      "hiragana": "どうとく",
+      "kanji": "道徳"
+    }
+  },
+  {
+    "en": "music",
+    "ja": {
+      "hiragana": "おんがく",
+      "kanji": "音楽"
+    }
+  },
+  {
+    "en": "newspaper club",
+    "ja": {
+      "hiragana": "しんぶんぶ",
+      "kanji": "新聞部"
+    }
+  },
+  {
+    "en": "P.E.",
+    "ja": {
+      "hiragana": "たいいく",
+      "kanji": "体育"
+    }
+  },
+  {
+    "en": "period for integrated study",
+    "ja": {
+      "hiragana": "そうごうてきながくしゅうのじかん",
+      "kanji": "総合的な学習の時間"
+    }
+  },
+  {
+    "en": "school trip",
+    "ja": {
+      "hiragana": "しゅうがくりょこう",
+      "kanji": "修学旅行"
+    }
+  },
+  {
+    "en": "science",
+    "ja": {
+      "hiragana": "りか",
+      "kanji": "理科"
+    }
+  },
+  {
+    "en": "science club",
+    "ja": {
+      "hiragana": "かがくぶ",
+      "kanji": "科学部"
+    }
+  },
+  {
+    "en": "soccer team",
+    "ja": {
+      "hiragana": "さっかーぶ",
+      "kanji": "サッカー部"
+    }
+  },
+  {
+    "en": "social studies",
+    "ja": {
+      "hiragana": "しゃかいか",
+      "kanji": "社会科"
+    }
+  },
+  {
+    "en": "softball team",
+    "ja": {
+      "hiragana": "そふとぼーるぶ",
+      "kanji": "ソフトボール部"
+    }
+  },
+  {
+    "en": "speech contest",
+    "ja": {
+      "hiragana": "すびひびーちこんてすと",
+      "kanji": "スビヒビーチコンテスト"
+    }
+  },
+  {
+    "en": "sports day",
+    "ja": {
+      "hiragana": "うんどうかい",
+      "kanji": "運動会"
+    }
+  },
+  {
+    "en": "tennis team",
+    "ja": {
+      "hiragana": "てにすぶ",
+      "kanji": "テニス部"
+    }
+  },
+  {
+    "en": "track and field team",
+    "ja": {
+      "hiragana": "りくじょうぶ",
+      "kanji": "陸上部"
+    }
+  },
+  {
+    "en": "volleyball team",
+    "ja": {
+      "hiragana": "ばれーぼぽぼーるぶ",
+      "kanji": "バレーボポボール部"
+    }
+  }
+]

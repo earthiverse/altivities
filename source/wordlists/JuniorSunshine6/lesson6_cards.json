@@ -1,0 +1,230 @@
+[
+    {
+        "en": [
+            "I went to",
+            "I went to ~"
+        ],
+        "ja": {
+            "hiragana": "わたしは○○にいきました",
+            "kanji": "私は○○に行きました"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/places/zoo.png",
+        "en": [
+            "zoo",
+            "a zoo",
+            "the zoo"
+        ],
+        "ja": {
+            "hiragana": "どうぶつえん",
+            "kanji": "動物園"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/places/swimming_pool.png",
+        "en": [
+            "swimming pool",
+            "a swimming pool",
+            "the swimming pool"
+        ],
+        "ja": {
+            "hiragana": "ぶーる",
+            "kanji": "ブール"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/places/grandmothers_house.png",
+        "en": [
+            "grandmother's house",
+            "my grandmother's house"
+        ],
+        "ja": {
+            "hiragana": "おばあさんのいえ",
+            "kanji": "おばあさんの家"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/events/festival.png",
+        "en": [
+            "festival",
+            "a festival",
+            "the festival"
+        ],
+        "ja": {
+            "hiragana": "まつり",
+            "kanji": "祭り"
+        }
+    },
+    {
+        "en": [
+            "I saw",
+            "I saw ~"
+        ],
+        "ja": {
+            "hiragana": "わたしは○○をみました",
+            "kanji": "私は○○を見ました"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/animals/pandas.png",
+        "en": "pandas",
+        "ja": {
+            "hiragana": "ぱんだ",
+            "kanji": "パンダ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/animals/beetles.png",
+        "en": "beetles",
+        "ja": {
+            "hiragana": "かぶとむし",
+            "kanji": "カブトムシ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/animals/the_milky_way.png",
+        "en": "the Milky Way",
+        "ja": {
+            "hiragana": "あまのがわ",
+            "kanji": "天の川"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/animals/fireworks.png",
+        "en": "fireworks",
+        "ja": {
+            "hiragana": "はなび",
+            "kanji": "花火"
+        }
+    },
+    {
+        "en": [
+            "I ate",
+            "I ate ~"
+        ],
+        "ja": {
+            "hiragana": "わたしは○○にいきました",
+            "kanji": "私は○○に行きました"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/food/ice_cream.png",
+        "en": [
+            "ice cream",
+            "an ice cream"
+        ],
+        "ja": {
+            "hiragana": "あいすくりーむ",
+            "kanji": "アイスクリーム"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/food/sushi_2.png",
+        "en": "sushi",
+        "ja": {
+            "hiragana": "すし",
+            "kanji": "すし"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/food/watermelon.png",
+        "en": "watermelon",
+        "ja": {
+            "hiragana": "すいか",
+            "kanji": "スイカ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/food/somen.png",
+        "en": "somen",
+        "ja": {
+            "hiragana": "そうめん",
+            "kanji": "そうめん"
+        }
+    },
+    {
+        "en": [
+            "It was",
+            "It was ~"
+        ],
+        "ja": {
+            "hiragana": "それは○○でした",
+            "kanji": "それは○○でした"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/adjectives/nice.png",
+        "en": "nice",
+        "ja": {
+            "hiragana": "よい",
+            "kanji": "よい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/adjectives/beautiful.svg",
+        "en": "beautiful",
+        "ja": {
+            "hiragana": "うつくしい",
+            "kanji": "美しい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/adjectives/cute.png",
+        "en": "cute",
+        "ja": {
+            "hiragana": "がかわいい",
+            "kanji": "がかわいい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/adjectives/fun.png",
+        "en": "fun",
+        "ja": {
+            "hiragana": "たのしみ",
+            "kanji": "楽しみ"
+        }
+    },
+    {
+        "en": [
+            "I enjoyed",
+            "I enjoyed ~"
+        ],
+        "ja": {
+            "hiragana": "わたしは○○をたのしみました",
+            "kanji": "私は○○を楽しみました"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/activities/shopping.png",
+        "en": "shopping",
+        "ja": {
+            "hiragana": "かいもの",
+            "kanji": "買い物"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/activities/camping.png",
+        "en": "camping",
+        "ja": {
+            "hiragana": "きゃんぷ",
+            "kanji": "キャンプ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/activities/swimming.png",
+        "en": "swimming",
+        "ja": {
+            "hiragana": "すいえい",
+            "kanji": "水泳"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/activities/barbecuing.png",
+        "en": "barbecuing",
+        "ja": {
+            "hiragana": "ぱばーべきゅー",
+            "kanji": "パバーベキュー"
+        }
+    }
+]
