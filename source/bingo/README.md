@@ -15,7 +15,6 @@ Students can drag the tiles from the right on to the bingo grid, or click the 'R
 These wordlists have pictures (mostly from [Irasutoya](https://irasutoya.com)!) associated with them, which makes them nice to use with bingo:
 
 * [Alphabet (26)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/alphabet.json)
-  * [Let's Try 1 - Lesson 6 (Uppercase) (26)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry1/unit6_cards.json)
 * [Animals](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/animals.json)
 * [Christmas (winter)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/winter.json)
 * [Colors (11)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/colors.json)
@@ -27,13 +26,22 @@ These wordlists have pictures (mostly from [Irasutoya](https://irasutoya.com)!) 
 * [Numbers (1-20)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/numbers.json)
   * [Ordinals (1st-31st)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/ordinals.json)
 * [Occupations (Junior Sunshine 6 - Lesson 10)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine6/lesson10.json)
-* Shapes
-  * [Let's Try 1 - Lesson 7](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry1/unit7_cards.json)
 * [Prefectures](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/Hepburn/prefectures.json)
 * [Sports](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/sports.json)
 * [Stationery](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/stationery.json)
-  * [Let's Try 2 - Unit 5](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry2/unit5_cards.json)
 * [Valentine's Day](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/valentines.json)
+
+### Let's Try 1 Cards
+
+* Unit 6
+  * [Alphabet (Uppercase) (26)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry1/unit6_cards.json)
+* Unit 7
+  * [Colored Shapes (28)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry1/unit7_cards.json)
+
+### Let's Try 2 Cards
+
+* Unit 5
+  * [Stationery (12)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry2/unit5_cards.json)
 
 ### Junior Sunshine 5 Cards
 

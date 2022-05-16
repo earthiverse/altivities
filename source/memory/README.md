@@ -63,8 +63,16 @@ These wordlists have pictures that match with the cards available in the back of
 * Lesson 2
   * [Actions (8)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson2_cards.json)
 * Lesson 3
-  * [All (19)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine5/lesson3_cards.json)
-  * [Subjects (14)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine5/lesson3_cards.json&ignore=doctor,soccer%20player,police%20officer,florist,teacher)
+  * [All (8)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson3_cards.json)
+  * [Food (4)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine6/lesson3_cards.json&include=gyoza,cheeseburger,sushi,curry%20and%20naan)
+  * [Places (4)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine6/lesson3_cards.json&ignore=gyoza,cheeseburger,sushi,curry%20and%20naan)
+* Lesson 6
+  * [All (25)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json)
+  * [All Words (20)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&ignore=I%20saw,I%20enjoyed,I%20went%20to,I%20ate,It%20was)
+  * [All Sentence Starters (5)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&include=I%20saw,I%20enjoyed,I%20went%20to,I%20ate,It%20was)
+  * [I went to ~ Words (4)]()
+  * [I ate ~ Words (4)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&include=watermelon,somen,sushi,ice%20cream)
+  * [I saw ~ Words (4)]()
 
 ## Enable go-again rules
 
