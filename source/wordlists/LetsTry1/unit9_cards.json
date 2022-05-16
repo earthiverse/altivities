@@ -1,0 +1,308 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/mouse.png",
+        "en": [
+            "mouse",
+            "mice",
+            "a mouse"
+        ],
+        "ja": {
+            "kanji": "鼠",
+            "hiragana": "ねずみ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/cow.png",
+        "en": [
+            "cow",
+            "cows",
+            "a cow"
+        ],
+        "ja": {
+            "kanji": "牛",
+            "hiragana": "うし"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/tiger.png",
+        "en": [
+            "tiger",
+            "tigers",
+            "a tiger"
+        ],
+        "ja": {
+            "kanji": "虎",
+            "hiragana": "とら"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/rabbit.png",
+        "en": [
+            "rabbit",
+            "rabbits",
+            "a rabbit"
+        ],
+        "ja": {
+            "kanji": "兎",
+            "hiragana": "うさぎ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/dragon.png",
+        "en": [
+            "dragon",
+            "dragons",
+            "a dragon"
+        ],
+        "ja": {
+            "kanji": "竜",
+            "hiragana": "りゅう"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/snake.png",
+        "en": [
+            "snake",
+            "snakes",
+            "a snake"
+        ],
+        "ja": {
+            "kanji": "蛇",
+            "hiragana": "へび"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/horse.png",
+        "en": [
+            "horse",
+            "horses",
+            "a horse"
+        ],
+        "ja": {
+            "kanji": "馬",
+            "hiragana": "うま"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/sheep.png",
+        "en": [
+            "sheep",
+            "a sheep"
+        ],
+        "ja": {
+            "kanji": "羊",
+            "hiragana": "ひつじ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/monkey.png",
+        "en": [
+            "monkey",
+            "monkeys",
+            "a monkey"
+        ],
+        "ja": {
+            "kanji": "猿",
+            "hiragana": "さる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/chicken.png",
+        "en": [
+            "chicken",
+            "chickens",
+            "a chicken"
+        ],
+        "ja": {
+            "kanji": "鶏",
+            "hiragana": "にわとり"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/dog.png",
+        "en": [
+            "dog",
+            "dogs",
+            "a dog"
+        ],
+        "ja": {
+            "kanji": "犬",
+            "hiragana": "いぬ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/wild_boar.png",
+        "en": [
+            "wild boar",
+            "wild boars",
+            "a wild boar",
+            "boar",
+            "boars",
+            "a boar"
+        ],
+        "ja": {
+            "kanji": "猪",
+            "hiragana": "いのしし"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/body_parts/head.png",
+        "en": [
+            "head",
+            "heads",
+            "a head"
+        ],
+        "ja": {
+            "kanji": "頭",
+            "hiragana": "あたま"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/body_parts/shoulders.png",
+        "en": [
+            "shoulders",
+            "shoulder",
+            "a shoulder"
+        ],
+        "ja": {
+            "kanji": "肩",
+            "hiragana": "かた"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/body_parts/knees.png",
+        "en": [
+            "knees",
+            "knee",
+            "a knee"
+        ],
+        "ja": {
+            "kanji": "膝",
+            "hiragana": "ひざ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/body_parts/toes.png",
+        "en": [
+            "toes",
+            "toe",
+            "a toe"
+        ],
+        "ja": {
+            "kanji": "足の指",
+            "hiragana": "あしのゆび"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/body_parts/ears.png",
+        "en": [
+            "ears",
+            "ear",
+            "an ear"
+        ],
+        "ja": {
+            "kanji": "耳",
+            "hiragana": "みみ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/body_parts/eyes.png",
+        "en": [
+            "eyes",
+            "eye",
+            "an eye"
+        ],
+        "ja": {
+            "kanji": "目",
+            "hiragana": "め"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/body_parts/mouth.png",
+        "en": [
+            "mouth",
+            "mouths",
+            "a mouth"
+        ],
+        "ja": {
+            "kanji": "口",
+            "hiragana": "くち"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/body_parts/nose.png",
+        "en": [
+            "nose",
+            "noses",
+            "a nose"
+        ],
+        "ja": {
+            "kanji": "鼻",
+            "hiragana": "はな"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/long.png",
+        "en": "long",
+        "ja": {
+            "kanji": "長い",
+            "hiragana": "ながい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/short.png",
+        "en": "short",
+        "ja": {
+            "kanji": "短い",
+            "hiragana": "みじかい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/big.png",
+        "en": "big",
+        "ja": {
+            "kanji": "大きい",
+            "hiragana": "おおきい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/small.png",
+        "en": "small",
+        "ja": {
+            "kanji": "小さい",
+            "hiragana": "ちいさい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/scary.png",
+        "en": "scary",
+        "ja": {
+            "kanji": "怖い",
+            "hiragana": "こわい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/furry.png",
+        "en": "furry",
+        "ja": {
+            "kanji": "毛だらけの",
+            "hiragana": "けだらけの"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/round.png",
+        "en": "round",
+        "ja": {
+            "kanji": "丸い",
+            "hiragana": "まるい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/shiny.png",
+        "en": "shiny",
+        "ja": {
+            "kanji": "ピカピカな",
+            "hiragana": "ぴかぴかな"
+        }
+    }
+]

@@ -1,0 +1,74 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/cat.png",
+        "en": [
+            "cat",
+            "cats",
+            "a cat"
+        ],
+        "ja": {
+            "kanji": "猫",
+            "hiragana": "ねこ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/panda.png",
+        "en": [
+            "panda",
+            "pandas",
+            "a panda"
+        ],
+        "ja": {
+            "kanji": "パンダ",
+            "hiragana": "ぱんだ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/bear.png",
+        "en": [
+            "bear",
+            "bears",
+            "a bear"
+        ],
+        "ja": {
+            "kanji": "熊",
+            "hiragana": "くま"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/spider.png",
+        "en": [
+            "spider",
+            "spiders",
+            "a spider"
+        ],
+        "ja": {
+            "kanji": "蜘蛛",
+            "hiragana": "くも"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/plants/tree.png",
+        "en": [
+            "tree",
+            "trees",
+            "a tree"
+        ],
+        "ja": {
+            "kanji": "木",
+            "hiragana": "き"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/animals/elephant.png",
+        "en": [
+            "elephant",
+            "elephants",
+            "an elephant"
+        ],
+        "ja": {
+            "kanji": "象",
+            "hiragana": "ぞう"
+        }
+    }
+]
