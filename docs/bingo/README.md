@@ -14,11 +14,11 @@ Students can drag the tiles from the right on to the bingo grid, or click the 'R
 
 These wordlists have pictures (mostly from [Irasutoya](https://irasutoya.com)!) associated with them, which makes them nice to use with bingo:
 
-* [Alphabet](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/alphabet.json)
-  * [Let's Try 1 - Lesson 6 (Uppercase)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry1/unit6_cards.json)
+* [Alphabet (26)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/alphabet.json)
+  * [Let's Try 1 - Lesson 6 (Uppercase) (26)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry1/unit6_cards.json)
 * [Animals](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/animals.json)
 * [Christmas (winter)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/winter.json)
-* [Colors](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/colors.json)
+* [Colors (11)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/colors.json)
 * [Countries](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/countries.json)
   * [Junior Sunshine 6 - Lesson 3](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine6/lesson3.json)
   * [Junior Sunshine 6 - Lesson 3 + Canada](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/countries.json&include=the%20U.S.A.,Brazil,Japan,South%20Korea,China,India,the%20U.K.,France,Germany,Italy,Switzerland,Australia,Egypt,Kenya,Canada)
@@ -35,19 +35,19 @@ These wordlists have pictures (mostly from [Irasutoya](https://irasutoya.com)!) 
   * [Let's Try 2 - Unit 5](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/LetsTry2/unit5_cards.json)
 * [Valentine's Day](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/valentines.json)
 
-### Junior Sunshine 5
+### Junior Sunshine 5 Cards
 
 These wordlists have pictures that match with the cards available in the back of the textbook.
 
-* [Alphabet (Uppercase)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/alphabet_uppercase_cards.json)
-* [Phonics](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/phonics_cards.json)
+* [Alphabet (Uppercase) (26)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/alphabet_uppercase_cards.json)
+* [Phonics (16)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/phonics_cards.json)
 * Lesson 2
-  * [Months](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/lesson2_cards.json)
+  * [Months (12)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/lesson2_cards.json)
 * Lesson 3
-  * [All](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/lesson3_cards.json)
-  * [Subjects](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/lesson2_cards.json&ignore=doctor,soccer%20player,police%20officer,florist,teacher)
+  * [All (19)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/lesson3_cards.json)
+  * [Subjects (14)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/lesson3_cards.json&ignore=doctor,soccer%20player,police%20officer,florist,teacher)
 
-### Junior Sunshine 6
+### Junior Sunshine 6 Cards
 
 These wordlists have pictures that match with the cards available in the back of the textbook.
 
