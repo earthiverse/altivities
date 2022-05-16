@@ -69,7 +69,7 @@ body {
 
 .break {
   flex-basis: 100%;
-  height: 0;
+  height: 1vh;
 }
 
 .card {

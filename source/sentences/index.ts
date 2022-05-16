@@ -1,7 +1,7 @@
 /*******************************************************************************
 *** Types *********************************************************************/
 
-import { Wordlist } from "../wordlists/wordlists"
+import { Word, Wordlist } from "../wordlists/wordlists"
 
 // TODO: What do I change this to to make it work without the disable-next-line!?
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -61,7 +61,9 @@ function randomIntFromInterval(min, max) { // min and max included
 /*******************************************************************************
 *** Config ********************************************************************/
 const SUBSTITUTION_CHAR = "•"
-const CIRCLE_NUMBERS = ["①", "②", "③", "④", "⑤"]
+const CIRCLE_NUMBERS_1 = ["①", "②", "③", "④", "⑤"]
+const CIRCLE_NUMBERS_2 = ["❶", "❷", "❸", "❹", "❺"]
+const CIRCLE_NUMBERS_3 = ["⓵", "⓶", "⓷", "⓸", "⓹"]
 const TEXT_FIT_OPTIONS: textFitOptions = { alignHoriz: true, maxFontSize: 32 }
 
 /*******************************************************************************
@@ -95,13 +97,48 @@ function generateSentence() {
         SENTENCE.appendChild(toAdd)
     }
 
-    const addCard = (wordlist_num: number, hide = false, color?: string) => {
+    const substitutions = new Map<number, Map<number, Word>>()
+    /**
+     * Renders a card
+     * @param wordlist_num The wordlist index (e.g. 1_wordlist, 2_wordlist, ...)
+     * @param replace_num The word to replace (e.g. ① = 1, ❶ = 2, ⓵ = 3)
+     * @param hide Should we hide the text?
+     * @param color What color should we use to render the box?
+     * @returns
+     */
+    const addCard = (wordlist_num: number, replace_num: number, hide = false, color?: string) => {
         const wordlist = WORDLISTS[wordlist_num - 1]
         if (!wordlist) throw `We are missing '${wordlist_num}_wordlist'`
 
+        let previous = substitutions.get(wordlist_num)
+
         // Get a random word from the wordlist
-        const word = wordlist[randomIntFromInterval(0, wordlist.length - 1)]
-        const english = Array.isArray(word.en) ? word.en[0] : word.en
+        let word: Word
+        let english: string
+        if (previous && previous.has(replace_num)) {
+            // Use the previous word
+            word = previous.get(replace_num)
+            english = Array.isArray(word.en) ? word.en[0] : word.en
+        } else {
+            // Choose a word and save it
+            word = wordlist[randomIntFromInterval(0, wordlist.length - 1)]
+            if (!previous) {
+                previous = new Map()
+                substitutions.set(wordlist_num, previous)
+            } else {
+                if (previous.size < wordlist.length) {
+                    // Make sure it hasn't been chosen before
+                    for (const [, other_word] of previous) {
+                        if (other_word == word) {
+                            // Call this function again, try to get a different word.
+                            return addCard(wordlist_num, replace_num, hide, color)
+                        }
+                    }
+                }
+            }
+            previous.set(replace_num, word)
+            english = Array.isArray(word.en) ? word.en[0] : word.en
+        }
 
         // Create the card
         const card = document.createElement("div")
@@ -137,17 +174,27 @@ function generateSentence() {
     let part = ""
     let i = 1
     for (const char of (PARAMETERS.sentence as string)) {
-        if (CIRCLE_NUMBERS.includes(char)) {
-            const index = CIRCLE_NUMBERS.indexOf(char) + 1
-            addPart(part)
-            addCard(index, PARAMETERS.hide, PARAMETERS[`${i}_color`])
-            part = ""
-        } else if (char == SUBSTITUTION_CHAR) {
+        if (char == SUBSTITUTION_CHAR) {
             // Substitution replacements
             addPart(part)
-            addCard(i, PARAMETERS.hide, PARAMETERS[`${i}_color`])
+            addCard(i, 0, PARAMETERS.hide, PARAMETERS[`${i}_color`])
             part = ""
             i += 1
+        } else if (CIRCLE_NUMBERS_1.includes(char)) {
+            const index = CIRCLE_NUMBERS_1.indexOf(char) + 1
+            addPart(part)
+            addCard(index, 1, PARAMETERS.hide, PARAMETERS[`${index}_color`])
+            part = ""
+        } else if (CIRCLE_NUMBERS_2.includes(char)) {
+            const index = CIRCLE_NUMBERS_2.indexOf(char) + 1
+            addPart(part)
+            addCard(index, 2, PARAMETERS.hide, PARAMETERS[`${index}_color`])
+            part = ""
+        } else if (CIRCLE_NUMBERS_3.includes(char)) {
+            const index = CIRCLE_NUMBERS_3.indexOf(char) + 1
+            addPart(part)
+            addCard(index, 3, PARAMETERS.hide, PARAMETERS[`${index}_color`])
+            part = ""
         } else if ([".", "!", "?"].includes(char)) {
             // Break sentences
             addPart(part + char)
@@ -170,7 +217,7 @@ async function prepare() {
     if (!PARAMETERS.sentence.includes(SUBSTITUTION_CHAR)) {
         // Check if it has a circle number
         let hasNumber = false
-        for (const number of CIRCLE_NUMBERS) {
+        for (const number of CIRCLE_NUMBERS_1) {
             if (PARAMETERS.sentence.includes(number)) {
                 hasNumber = true
                 break

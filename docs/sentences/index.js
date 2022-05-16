@@ -4,7 +4,9 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 const SUBSTITUTION_CHAR = "•";
-const CIRCLE_NUMBERS = ["①", "②", "③", "④", "⑤"];
+const CIRCLE_NUMBERS_1 = ["①", "②", "③", "④", "⑤"];
+const CIRCLE_NUMBERS_2 = ["❶", "❷", "❸", "❹", "❺"];
+const CIRCLE_NUMBERS_3 = ["⓵", "⓶", "⓷", "⓸", "⓹"];
 const TEXT_FIT_OPTIONS = { alignHoriz: true, maxFontSize: 32 };
 const SENTENCE = document.getElementById("sentence");
 const NAVIGATION = document.getElementById("navigation");
@@ -29,12 +31,36 @@ function generateSentence() {
         toAdd.classList.add("break");
         SENTENCE.appendChild(toAdd);
     };
-    const addCard = (wordlist_num, hide = false, color) => {
+    const substitutions = new Map();
+    const addCard = (wordlist_num, replace_num, hide = false, color) => {
         const wordlist = WORDLISTS[wordlist_num - 1];
         if (!wordlist)
             throw `We are missing '${wordlist_num}_wordlist'`;
-        const word = wordlist[randomIntFromInterval(0, wordlist.length - 1)];
-        const english = Array.isArray(word.en) ? word.en[0] : word.en;
+        let previous = substitutions.get(wordlist_num);
+        let word;
+        let english;
+        if (previous && previous.has(replace_num)) {
+            word = previous.get(replace_num);
+            english = Array.isArray(word.en) ? word.en[0] : word.en;
+        }
+        else {
+            word = wordlist[randomIntFromInterval(0, wordlist.length - 1)];
+            if (!previous) {
+                previous = new Map();
+                substitutions.set(wordlist_num, previous);
+            }
+            else {
+                if (previous.size < wordlist.length) {
+                    for (const [, other_word] of previous) {
+                        if (other_word == word) {
+                            return addCard(wordlist_num, replace_num, hide, color);
+                        }
+                    }
+                }
+            }
+            previous.set(replace_num, word);
+            english = Array.isArray(word.en) ? word.en[0] : word.en;
+        }
         const card = document.createElement("div");
         card.classList.add("card");
         if (color) {
@@ -67,17 +93,29 @@ function generateSentence() {
     let part = "";
     let i = 1;
     for (const char of PARAMETERS.sentence) {
-        if (CIRCLE_NUMBERS.includes(char)) {
-            const index = CIRCLE_NUMBERS.indexOf(char) + 1;
+        if (char == SUBSTITUTION_CHAR) {
             addPart(part);
-            addCard(index, PARAMETERS.hide, PARAMETERS[`${i}_color`]);
-            part = "";
-        }
-        else if (char == SUBSTITUTION_CHAR) {
-            addPart(part);
-            addCard(i, PARAMETERS.hide, PARAMETERS[`${i}_color`]);
+            addCard(i, 0, PARAMETERS.hide, PARAMETERS[`${i}_color`]);
             part = "";
             i += 1;
+        }
+        else if (CIRCLE_NUMBERS_1.includes(char)) {
+            const index = CIRCLE_NUMBERS_1.indexOf(char) + 1;
+            addPart(part);
+            addCard(index, 1, PARAMETERS.hide, PARAMETERS[`${index}_color`]);
+            part = "";
+        }
+        else if (CIRCLE_NUMBERS_2.includes(char)) {
+            const index = CIRCLE_NUMBERS_2.indexOf(char) + 1;
+            addPart(part);
+            addCard(index, 2, PARAMETERS.hide, PARAMETERS[`${index}_color`]);
+            part = "";
+        }
+        else if (CIRCLE_NUMBERS_3.includes(char)) {
+            const index = CIRCLE_NUMBERS_3.indexOf(char) + 1;
+            addPart(part);
+            addCard(index, 3, PARAMETERS.hide, PARAMETERS[`${index}_color`]);
+            part = "";
         }
         else if ([".", "!", "?"].includes(char)) {
             addPart(part + char);
@@ -98,7 +136,7 @@ async function prepare() {
     }
     if (!PARAMETERS.sentence.includes(SUBSTITUTION_CHAR)) {
         let hasNumber = false;
-        for (const number of CIRCLE_NUMBERS) {
+        for (const number of CIRCLE_NUMBERS_1) {
             if (PARAMETERS.sentence.includes(number)) {
                 hasNumber = true;
                 break;
