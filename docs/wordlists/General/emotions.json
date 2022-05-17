@@ -73,5 +73,13 @@
             "kanji": "喉が渇いた",
             "hiragana": "のどがかわいた"
         }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-42EB7CfEAm8/VD3Sg3Xbg6I/AAAAAAAAoVo/JMYBdWuTxTE/s8192/tsukare_boy.png",
+        "en": "tired",
+        "ja": {
+            "kanji": "疲れた",
+            "hiragana": "つかれた"
+        }
     }
 ]

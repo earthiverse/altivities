@@ -55,7 +55,7 @@
         ]
     },
     {
-        "image": "https://1.bp.blogspot.com/-VdUdcR1nd3U/UxbLvdcXJOI/AAAAAAAAeDo/Gr4zx2j50SI/s8192/happy_man2.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/emotions/fine.svg",
         "en": [
             "good",
             "fine"
@@ -74,7 +74,7 @@
         }
     },
     {
-        "image": "https://3.bp.blogspot.com/-qzx9BMg9gxQ/UxbLz4cvIzI/AAAAAAAAeE4/QPfCtKS3UuI/s8192/happy_woman6.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/emotions/happy.svg",
         "en": "happy",
         "ja": {
             "kanji": "嬉しい",
@@ -82,7 +82,7 @@
         }
     },
     {
-        "image": "https://4.bp.blogspot.com/-ujxmj1sCSxw/XFe1SfS70_I/AAAAAAABRXA/fNMJ3jK7lCwMErO1ITH1ighsnTtHOuXQgCLcBGAs/s8192/kodomosyokudou_hungry_girl.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/emotions/hungry.svg",
         "en": "hungry",
         "ja": {
             "kanji": "お腹がすいた",
@@ -90,7 +90,7 @@
         }
     },
     {
-        "image": "https://3.bp.blogspot.com/-RHH0ACAffBY/Ugsrg1lSqPI/AAAAAAAAXEQ/00rSAOfVtF4/s8192/akubi_girl.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/emotions/sleepy.svg",
         "en": "sleepy",
         "ja": {
             "kanji": "眠い",
@@ -98,11 +98,19 @@
         }
     },
     {
-        "image": "https://1.bp.blogspot.com/-JvWLzDT99Bo/VZ-O2WKmgII/AAAAAAAAu90/uFNjFQlG7vw/s8192/boy04_cry.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/emotions/sad.svg",
         "en": "sad",
         "ja": {
             "kanji": "悲しい",
             "hiragana": "かなしい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/emotions/tired.svg",
+        "en": "tired",
+        "ja": {
+            "kanji": "疲れた",
+            "hiragana": "つかれた"
         }
     },
     {
