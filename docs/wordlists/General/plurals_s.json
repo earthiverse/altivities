@@ -1,0 +1,126 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/apples.png",
+        "en": "apples",
+        "ja": {
+            "kanji": "林檎（複数形）",
+            "hiragana": "りんご（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/carrots.png",
+        "en": "carrots",
+        "ja": {
+            "kanji": "人参（複数形）",
+            "hiragana": "にんじん（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https: //3.bp.blogspot.com/-nqViReTJpqk/U0pTY72cRnI/AAAAAAAAfJ4/kg1r7C_y48k/s8192/tamago_pack.png",
+        "en": "eggs",
+        "ja": {
+            "kanji": "卵（複数形）",
+            "hiragana": "たまご（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https: //4.bp.blogspot.com/--fuXwYEFtp4/VGX8gkt6sWI/AAAAAAAApH8/_9ItIAsUPOM/s8192/fruit_budou_kyohou.png",
+        "en": "grapes",
+        "ja": {
+            "kanji": "ブドウ（複数形）",
+            "hiragana": "ぶどう（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/green_peppers.png",
+        "en": "green peppers",
+        "ja": {
+            "kanji": "ピーマン（複数形）",
+            "hiragana": "ぴーまん（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/hamburgers.png",
+        "en": [
+            "hamburgers",
+            "cheeseburgers"
+        ],
+        "ja": {
+            "kanji": "ハンバーガー（複数形）",
+            "hiragana": "はんばーがー（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/peaches.png",
+        "en": [
+            "kiwi fruits",
+            "kiwis"
+        ],
+        "ja": {
+            "kanji": "キウイフルーツ（複数形）",
+            "hiragana": "きういふるーつ（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/onions.png",
+        "en": "onions",
+        "ja": {
+            "kanji": "玉ねぎ（複数形）",
+            "hiragana": "たまんぎ（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https: //3.bp.blogspot.com/-LgZiIfVhI6o/WK7e0Cz6vHI/AAAAAAABB-8/1TJfyzBMqnoac_yHNBsd4vcI-I_t1twqwCLcB/s8192/fruit_mikan_set.png",
+        "en": "oranges",
+        "ja": [
+            {
+                "kanji": "オレンジ（複数形）",
+                "hiragana": "おれんじ（ふくすうけい）"
+            },
+            {
+                "kanji": "みかん（複数形）",
+                "hiragana": "みかん（ふくすうけい）"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/peaches.png",
+        "en": "peaches",
+        "ja": {
+            "kanji": "桃（複数形）",
+            "hiragana": "もも（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/pineapples.png",
+        "en": "pineapples",
+        "ja": {
+            "kanji": "パインアップル（複数形）",
+            "hiragana": "ぱいんあっぷる（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/strawberries.png",
+        "en": "strawberries",
+        "ja": {
+            "kanji": "苺（複数形）",
+            "hiragana": "いちご（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/tomatoes.png",
+        "en": "tomatoes",
+        "ja": {
+            "kanji": "トマト（複数形）",
+            "hiragana": "とまと（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/watermelons.png",
+        "en": "watermelons",
+        "ja": {
+            "kanji": "西瓜（複数形）",
+            "hiragana": "すいか（ふくすうけい）"
+        }
+    }
+]
