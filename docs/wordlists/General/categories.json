@@ -1,0 +1,57 @@
+[
+    {
+        "image": "https://1.bp.blogspot.com/-qzVaKG2rbJY/U6QovoARMzI/AAAAAAAAhiI/HL98CaUhvfQ/s8192/iroenpitsu.png",
+        "en": [
+            "color",
+            "colors"
+        ],
+        "ja": {
+            "kanji": "色",
+            "hiragana": "いろ"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-musQAZ2j7Eo/WLEyW6pQ4-I/AAAAAAABCHY/RUM4xE1kEIw3x8N3g0_09mBSYWCTbi4uwCLcB/s8192/olympic_kindai_gosyumoku2.png",
+        "en": [
+            "sport",
+            "sports"
+        ],
+        "ja": {
+            "kanji": "スポーツ",
+            "hiragana": "すぽーつ"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-n1-71d0JCmg/WMfB_dW2OpI/AAAAAAABCj0/EmOvIE7TY8QkMrHhGgeJewV3fmXmdg62gCLcB/s8192/food_omoide.png",
+        "en": [
+            "food",
+            "foods"
+        ],
+        "ja": {
+            "kanji": "食べ物",
+            "hiragana": "たべもの"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/--Z0FQl8l9sU/UbVvQV3OinI/AAAAAAAAUtE/XpDlhdqZxaY/s8192/fruits_basket.png",
+        "en": [
+            "fruit",
+            "fruits"
+        ],
+        "ja": {
+            "kanji": "果物",
+            "hiragana": "くだもの"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-rUtbMKnJTms/VwIjRpp3vyI/AAAAAAAA5hg/xta4_N4BjDE3LHmu8gPGAZ6ypf4xb944A/s8192/tree_animals_group.png",
+        "en": [
+            "animal",
+            "animals"
+        ],
+        "ja": {
+            "kanji": "動物",
+            "hiragana": "どうぶつ"
+        }
+    }
+]

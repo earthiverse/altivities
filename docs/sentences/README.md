@@ -6,6 +6,16 @@ This is a tool that you can use to make custom sentences that you can then use w
 
 ## Examples
 
+### Let's Try 1
+
+* Unit 2
+  * Activity
+    * [How are you? I'm ***happy***.](https://altivities.earthiverse.ca/sentences/?sentence=How%20are%20you?%0AI%27m%20%E2%91%A0.&1_wordlist=../wordlists/General/emotions.json)
+    * [I'm ***hungry***.](https://altivities.earthiverse.ca/sentences/?sentence=I%27m%20%E2%91%A0.&1_wordlist=../wordlists/General/emotions.json)
+* Unit 5
+  * Activity
+    * [What ***fruit*** do you like?](http://localhost:8080/sentences/?sentence=What%20%E2%91%A0%20do%20you%20like?&1_wordlist=../wordlists/General/categories.json)
+
 ### Let's Try 2
 
 * Unit 1
@@ -16,7 +26,7 @@ This is a tool that you can use to make custom sentences that you can then use w
 
 * Lesson 2
   * Let's Listen 3
-    * [My birthday is ***January*** ***second***.](https://altivities.earthiverse.ca/sentences/?sentence=My%20birthday%20is%20%E2%91%A0%20%E2%91%A1.&1_wordlists=../wordlists/General/months.json&2_wordlist=../wordlists/General/ordinals.json)
+    * [My birthday is ***January*** ***second***.](https://altivities.earthiverse.ca/sentences/?sentence=My%20birthday%20is%20%E2%91%A0%20%E2%91%A1.&1_wordlists=../wordlists/General/months.json&2_wordlist=../wordlists/General/ordinals.json) (*Note:* May return impossible dates, e.g.: September 31st.)
 
 ### Junior Sunshine 6
 
