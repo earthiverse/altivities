@@ -27,6 +27,15 @@ const PARAMETERS: any = new Proxy(new URLSearchParams(window.location.search), {
     }
 })
 
+
+/*******************************************************************************
+*** Helpers *******************************************************************/
+function randomIntFromInterval(min, max) { // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+/*******************************************************************************
+*** Wordlist Functionality ****************************************************/
 async function prepareWordlist(options = {
     ignore: PARAMETERS.ignore as string,
     include: PARAMETERS.include as string,
@@ -100,4 +109,20 @@ async function prepareWordlist(options = {
     }
 
     return combinedWordlist
+}
+
+const TO_CHOOSE = new Map<Wordlist, number[]>()
+function chooseNewRandomWord(from: Wordlist): Word {
+    let toChoose = TO_CHOOSE.get(from)
+    if (!toChoose || toChoose.length == 0) {
+        // Repopulate the choices for this wordlist
+        toChoose = []
+        for (let i = 0; i < from.length; i++) toChoose.push(i)
+        TO_CHOOSE.set(from, toChoose)
+    }
+
+    // Choose an index that we haven't chose before, then remove it from future choices
+    // and return the word it corresponds with
+    const randomIndex = randomIntFromInterval(0, toChoose.length - 1)
+    return from[toChoose.splice(randomIndex, 1)[0]]
 }

@@ -52,7 +52,6 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-
 class PizzaGameLoadScene extends Phaser.Scene {
     static Key = "LOAD"
     static LOAD_BAR_COLOR = 0xAC7849

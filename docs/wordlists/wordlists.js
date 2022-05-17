@@ -7,6 +7,9 @@ const PARAMETERS = new Proxy(new URLSearchParams(window.location.search), {
             return parameter;
     }
 });
+function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 async function prepareWordlist(options = {
     ignore: PARAMETERS.ignore,
     include: PARAMETERS.include,
@@ -69,4 +72,16 @@ async function prepareWordlist(options = {
         }
     }
     return combinedWordlist;
+}
+const TO_CHOOSE = new Map();
+function chooseNewRandomWord(from) {
+    let toChoose = TO_CHOOSE.get(from);
+    if (!toChoose || toChoose.length == 0) {
+        toChoose = [];
+        for (let i = 0; i < from.length; i++)
+            toChoose.push(i);
+        TO_CHOOSE.set(from, toChoose);
+    }
+    const randomIndex = randomIntFromInterval(0, toChoose.length - 1);
+    return from[toChoose.splice(randomIndex, 1)[0]];
 }

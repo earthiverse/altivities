@@ -10,8 +10,10 @@ declare global {
     }
 }
 
+// NOTE: These get included because we import wordlist.js
 declare let PARAMETERS: any
 declare let prepareWordlist: () => Promise<Wordlist>
+declare let randomIntFromInterval: (min: number, max: number) => number
 
 // QR Code
 // TODO: What do I change this to to make it work without the disable-next-line!?
@@ -67,10 +69,6 @@ export type Data =
 
 /*******************************************************************************
 *** Helpers *******************************************************************/
-function randomIntFromInterval(min, max) { // min and max included
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
-
 function shuffle(array) {
     let currentIndex = array.length, randomIndex
 

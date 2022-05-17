@@ -1,8 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function randomIntFromInterval(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
 const SUBSTITUTION_CHAR = "•";
 const CIRCLE_NUMBERS_1 = ["①", "②", "③", "④", "⑤"];
 const CIRCLE_NUMBERS_2 = ["❶", "❷", "❸", "❹", "❺"];
@@ -44,7 +41,7 @@ function generateSentence() {
             english = Array.isArray(word.en) ? word.en[0] : word.en;
         }
         else {
-            word = wordlist[randomIntFromInterval(0, wordlist.length - 1)];
+            word = chooseNewRandomWord(wordlist);
             if (!previous) {
                 previous = new Map();
                 substitutions.set(wordlist_num, previous);

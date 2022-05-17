@@ -27,6 +27,7 @@ declare class QRCode {
     clear(): void;
 }
 
+// NOTE: These get included because we import wordlist.js
 declare let PARAMETERS: any
 declare let prepareWordlist: (options?: {
     ignore: string,
@@ -34,6 +35,7 @@ declare let prepareWordlist: (options?: {
     wordlist: string,
     wordlists: string
 }) => Promise<Wordlist>
+declare let chooseNewRandomWord: (from: Wordlist) => Word
 
 interface textFitOptions {
     alignVert?: boolean;
@@ -51,12 +53,6 @@ declare let textFit: (
     els: Element | Element[] | NodeListOf<Element> | HTMLCollection | null,
     options?: textFitOptions
 ) => void
-
-/*******************************************************************************
-*** Helpers *******************************************************************/
-function randomIntFromInterval(min, max) { // min and max included
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
 
 /*******************************************************************************
 *** Config ********************************************************************/
@@ -121,7 +117,7 @@ function generateSentence() {
             english = Array.isArray(word.en) ? word.en[0] : word.en
         } else {
             // Choose a word and save it
-            word = wordlist[randomIntFromInterval(0, wordlist.length - 1)]
+            word = chooseNewRandomWord(wordlist)
             if (!previous) {
                 previous = new Map()
                 substitutions.set(wordlist_num, previous)
