@@ -9,9 +9,9 @@ This is a tool that you can use to make custom sentences that you can then use w
 ### Let's Try 1
 
 * Unit 1
-  * [Hello, I'm ***Mark King***](https://altivities.earthiverse.ca/sentences/?sentence=Hello,%20I%27m%20%E2%91%A0.&1_wordlist=../wordlists/General/names.json)
+  * [Hello, I'm ***Sayo***](https://altivities.earthiverse.ca/sentences/?sentence=Hello,%20I%27m%20%E2%91%A0.&1_wordlist=../wordlists/LetsTry1/characters.json)
   * [I'm from ***Canada***](https://altivities.earthiverse.ca/sentences/?sentence=I%27m%20from%20%E2%91%A0.&1_wordlist=../wordlists/General/countries.json)
-  * [Hello, I'm ***Karen Long***. I'm from ***France***.](https://altivities.earthiverse.ca/sentences/?sentence=Hello,%20I%27m%20%E2%91%A0.%0AI%27m%20from%20%E2%91%A1.&1_wordlist=../wordlists/General/names.json&2_wordlist=../wordlists/General/countries.json&2_include=the%20U.S.A.,South%20Korea,China,Germany,India,Kenya)
+  * [Hello, I'm ***Robert***. I'm from ***France***.](https://altivities.earthiverse.ca/sentences/?sentence=Hello,%20I%27m%20%E2%91%A0.%0AI%27m%20from%20%E2%91%A1.&1_wordlist=../wordlists/LetsTry1/characters.json&2_wordlist=../wordlists/General/countries.json&2_include=the%20U.S.A.,South%20Korea,China,Germany,India,Kenya)
 * Unit 2
   * Activity
     * [How are you? I'm ***happy***.](https://altivities.earthiverse.ca/sentences/?sentence=How%20are%20you?%0AI%27m%20%E2%91%A0.&1_wordlist=../wordlists/General/emotions.json)
