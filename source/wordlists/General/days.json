@@ -1,0 +1,79 @@
+[
+    {
+        "image": "https://1.bp.blogspot.com/-DQ4A2mpLYiA/VJF_8EqPbCI/AAAAAAAAp8I/H4PlYhK3vTk/s8192/week1_sunday.png",
+        "en": [
+            "Sunday",
+            "Sundays"
+        ],
+        "ja": {
+            "hiragana": "にちようび",
+            "kanji": "日曜日"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-Pa0WFqAs2oo/VJF_8k5PIbI/AAAAAAAAp8M/NsMSODwIM14/s8192/week2_monday.png",
+        "en": [
+            "Monday",
+            "Mondays"
+        ],
+        "ja": {
+            "hiragana": "げつようび",
+            "kanji": "月曜日"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-pj8izjLAQ1E/VJF_9FpLEmI/AAAAAAAAp8c/4wnVetTYp_M/s8192/week3_tuesday.png",
+        "en": [
+            "Tuesday",
+            "Tuesdays"
+        ],
+        "ja": {
+            "hiragana": "かようび",
+            "kanji": "火曜日"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-xg5gQiAXa3g/VJF_9gJXLgI/AAAAAAAAp8k/Ur3jEkTL2qU/s8192/week4_wednesday.png",
+        "en": [
+            "Wednesday",
+            "Wednesdays"
+        ],
+        "ja": {
+            "hiragana": "すいようび",
+            "kanji": "水曜日"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-01lNuBxorbM/VJF_-ZOOBRI/AAAAAAAAp8s/r81rLy78ZsI/s8192/week5_thursday.png",
+        "en": [
+            "Thursday",
+            "Thursdays"
+        ],
+        "ja": {
+            "hiragana": "もくようび",
+            "kanji": "木曜日"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-snOdNUuwF60/VJF_-x5RvPI/AAAAAAAAp8w/8DzPKKcrCko/s8192/week6_friday.png",
+        "en": [
+            "Friday",
+            "Fridays"
+        ],
+        "ja": {
+            "hiragana": "きんようび",
+            "kanji": "金曜日"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-kAwMkjODz2k/VJF__3R-JHI/AAAAAAAAp84/3Om1LAYc0Wc/s8192/week7_saturday.png",
+        "en": [
+            "Saturday",
+            "Saturdays"
+        ],
+        "ja": {
+            "hiragana": "どようび",
+            "kanji": "土曜日"
+        }
+    }
+]

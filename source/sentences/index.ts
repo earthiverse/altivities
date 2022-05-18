@@ -57,9 +57,10 @@ declare let textFit: (
 /*******************************************************************************
 *** Config ********************************************************************/
 const SUBSTITUTION_CHAR = "•"
-const CIRCLE_NUMBERS_1 = ["①", "②", "③", "④", "⑤"]
-const CIRCLE_NUMBERS_2 = ["❶", "❷", "❸", "❹", "❺"]
-const CIRCLE_NUMBERS_3 = ["⓵", "⓶", "⓷", "⓸", "⓹"]
+const SUBSTITUTION_NUMBERS_1 = ["①", "②", "③", "④", "⑤"]
+const SUBSTITUTION_NUMBERS_2 = ["❶", "❷", "❸", "❹", "❺"]
+const SUBSTITUTION_NUMBERS_3 = ["⓵", "⓶", "⓷", "⓸", "⓹"]
+const SUBSTITUTION_NUMBERS_4 = ["⑴", "⑵", "⑶", "⑷", "⑸"]
 const TEXT_FIT_OPTIONS: textFitOptions = { alignHoriz: true, maxFontSize: 32 }
 
 /*******************************************************************************
@@ -149,6 +150,8 @@ function generateSentence() {
             card.classList.add("color_two")
         } else if (wordlist_num == 3) {
             card.classList.add("color_three")
+        } else if (wordlist_num == 4) {
+            card.classList.add("color_four")
         }
 
         const card_inside = document.createElement("div")
@@ -176,20 +179,25 @@ function generateSentence() {
             addCard(i, 0, PARAMETERS.hide, PARAMETERS[`${i}_color`])
             part = ""
             i += 1
-        } else if (CIRCLE_NUMBERS_1.includes(char)) {
-            const index = CIRCLE_NUMBERS_1.indexOf(char) + 1
+        } else if (SUBSTITUTION_NUMBERS_1.includes(char)) {
+            const index = SUBSTITUTION_NUMBERS_1.indexOf(char) + 1
             addPart(part)
             addCard(index, 1, PARAMETERS.hide, PARAMETERS[`${index}_color`])
             part = ""
-        } else if (CIRCLE_NUMBERS_2.includes(char)) {
-            const index = CIRCLE_NUMBERS_2.indexOf(char) + 1
+        } else if (SUBSTITUTION_NUMBERS_2.includes(char)) {
+            const index = SUBSTITUTION_NUMBERS_2.indexOf(char) + 1
             addPart(part)
             addCard(index, 2, PARAMETERS.hide, PARAMETERS[`${index}_color`])
             part = ""
-        } else if (CIRCLE_NUMBERS_3.includes(char)) {
-            const index = CIRCLE_NUMBERS_3.indexOf(char) + 1
+        } else if (SUBSTITUTION_NUMBERS_3.includes(char)) {
+            const index = SUBSTITUTION_NUMBERS_3.indexOf(char) + 1
             addPart(part)
             addCard(index, 3, PARAMETERS.hide, PARAMETERS[`${index}_color`])
+            part = ""
+        } else if (SUBSTITUTION_NUMBERS_4.includes(char)) {
+            const index = SUBSTITUTION_NUMBERS_4.indexOf(char) + 1
+            addPart(part)
+            addCard(index, 4, PARAMETERS.hide, PARAMETERS[`${index}_color`])
             part = ""
         } else if ([".", "!", "?"].includes(char)) {
             // Break sentences
@@ -197,7 +205,9 @@ function generateSentence() {
             part = ""
         } else if (char == "\n") {
             // New line break
+            addPart(part)
             addBreak()
+            part = ""
         } else {
             part = part + char
         }
@@ -213,7 +223,7 @@ async function prepare() {
     if (!PARAMETERS.sentence.includes(SUBSTITUTION_CHAR)) {
         // Check if it has a circle number
         let hasNumber = false
-        for (const number of CIRCLE_NUMBERS_1) {
+        for (const number of SUBSTITUTION_NUMBERS_1) {
             if (PARAMETERS.sentence.includes(number)) {
                 hasNumber = true
                 break

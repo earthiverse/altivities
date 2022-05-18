@@ -172,49 +172,77 @@
         }
     },
     {
-        "en": "Sunday",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Sunday.png",
+        "en": [
+            "Sunday",
+            "Sundays"
+        ],
         "ja": {
             "hiragana": "にちようび",
             "kanji": "日曜日"
         }
     },
     {
-        "en": "Monday",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Monday.png",
+        "en": [
+            "Monday",
+            "Mondays"
+        ],
         "ja": {
             "hiragana": "げつようび",
             "kanji": "月曜日"
         }
     },
     {
-        "en": "Tuesday",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Tuesday.png",
+        "en": [
+            "Tuesday",
+            "Tuesdays"
+        ],
         "ja": {
             "hiragana": "かようび",
             "kanji": "火曜日"
         }
     },
     {
-        "en": "Wednesday",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Wednesday.png",
+        "en": [
+            "Wednesday",
+            "Wednesdays"
+        ],
         "ja": {
             "hiragana": "すいようび",
             "kanji": "水曜日"
         }
     },
     {
-        "en": "Thursday",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Thursday.png",
+        "en": [
+            "Thursday",
+            "Thursdays"
+        ],
         "ja": {
             "hiragana": "もくようび",
             "kanji": "木曜日"
         }
     },
     {
-        "en": "Friday",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Friday.png",
+        "en": [
+            "Friday",
+            "Fridays"
+        ],
         "ja": {
             "hiragana": "きんようび",
             "kanji": "金曜日"
         }
     },
     {
-        "en": "Saturday",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/days/Saturday.png",
+        "en": [
+            "Saturday",
+            "Saturdays"
+        ],
         "ja": {
             "hiragana": "どようび",
             "kanji": "土曜日"

@@ -13,9 +13,8 @@ This is a tool that you can use to make custom sentences that you can then use w
   * [I'm from ***Canada***](https://altivities.earthiverse.ca/sentences/?sentence=I%27m%20from%20%E2%91%A0.&1_wordlist=../wordlists/General/countries.json)
   * [Hello, I'm ***Robert***. I'm from ***France***.](https://altivities.earthiverse.ca/sentences/?sentence=Hello,%20I%27m%20%E2%91%A0.%0AI%27m%20from%20%E2%91%A1.&1_wordlist=../wordlists/LetsTry1/characters.json&2_wordlist=../wordlists/General/countries.json&2_include=the%20U.S.A.,South%20Korea,China,Germany,India,Kenya)
 * Unit 2
-  * Activity
-    * [How are you? I'm ***happy***.](https://altivities.earthiverse.ca/sentences/?sentence=How%20are%20you?%0AI%27m%20%E2%91%A0.&1_wordlist=../wordlists/General/emotions.json)
-    * [I'm ***hungry***.](https://altivities.earthiverse.ca/sentences/?sentence=I%27m%20%E2%91%A0.&1_wordlist=../wordlists/General/emotions.json)
+  * [How are you? I'm ***happy***.](https://altivities.earthiverse.ca/sentences/?sentence=How%20are%20you?%0AI%27m%20%E2%91%A0.&1_wordlist=../wordlists/General/emotions.json)
+  * [I'm ***hungry***.](https://altivities.earthiverse.ca/sentences/?sentence=I%27m%20%E2%91%A0.&1_wordlist=../wordlists/General/emotions.json)
 * Unit 4
   * [I like ***blue***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20like%20%E2%91%A0.&1_wordlist=../wordlists/LetsTry1/unit4_cards.json&1_include=red,yellow,blue,green,purple,orange,pink,brown,white,black) (*Note*: Colors (10) only)
   * [I like ***baseball***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20like%20%E2%91%A0.&1_wordlist=../wordlists/LetsTry1/unit4_cards.json&1_include=baseball,dodgeball,soccer,basketball,swimming) (*Note*: Sports (5) only)
@@ -32,22 +31,26 @@ This is a tool that you can use to make custom sentences that you can then use w
 ### Junior Sunshine 5
 
 * Lesson 2
-  * Let's Listen 3
-    * [My birthday is ***January*** ***second***.](https://altivities.earthiverse.ca/sentences/?sentence=My%20birthday%20is%20%E2%91%A0%20%E2%91%A1.&1_wordlists=../wordlists/General/months.json&2_wordlist=../wordlists/General/ordinals.json) (*Note:* May return impossible dates, e.g.: September 31st.)
+  * [My birthday is ***January*** ***second***.](https://altivities.earthiverse.ca/sentences/?sentence=My%20birthday%20is%20%E2%91%A0%20%E2%91%A1.&1_wordlists=../wordlists/General/months.json&2_wordlist=../wordlists/General/ordinals.json) (*Note:* May return impossible dates, e.g.: September 31st.)
+  * [I like ***summer***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20like%20%E2%91%A0.&1_wordlists=../wordlists/JuniorSunshine5/lesson2.json&1_include=summer,spring,autumn,winter) (*Note*: Autumn is included, fall is not included.)
+  * [What season do you like? I like ***summer***.](https://altivities.earthiverse.ca/sentences/?sentence=What%20season%20do%20you%20like?%0AI%20like%20%E2%91%A0.&1_wordlists=../wordlists/JuniorSunshine5/lesson2.json&1_include=summer,spring,autumn,winter) (*Note*: **autumn** is included, fall is not included.)
+* Lesson 3
+  * [I like ***math***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20like%20%E2%91%A0.&1_wordlists=../wordlists/JuniorSunshine5/lesson3_cards.json&1_ignore=doctor,soccer%20player,police%20officer,florist,teacher)
+  * [What subject do you like? I like ***math***.](https://altivities.earthiverse.ca/sentences/?sentence=What%20subject%20do%20you%20like?%0AI%20like%20%E2%91%A0.&1_wordlists=../wordlists/JuniorSunshine5/lesson3_cards.json&1_ignore=doctor,soccer%20player,police%20officer,florist,teacher)
+  * [What do you have on ***Mondays***?](https://altivities.earthiverse.ca/sentences/?sentence=What%20do%20you%20have%20on%20%E2%91%A0?&1_wordlists=../wordlists/JuniorSunshine5/lesson3.json&1_include=Mondays,Tuesdays,Wednesdays,Thursdays,Fridays) (*Note*: Only weekdays are included)
+  * [I have ***Japanese***, ***math***, ***science***, and ***music***.](http://localhost:8080/sentences/?sentence=I%20have%20%E2%91%A0,%20%E2%9D%B6,%20%0A%E2%93%B5,%20and%20%E2%91%B4.&1_wordlists=../wordlists/JuniorSunshine5/lesson3_cards.json&1_ignore=doctor,soccer%20player,police%20officer,florist,teacher)
 
 ### Junior Sunshine 6
 
 * Lesson 2
-  * Let's Play 3
-    * [I ***play soccer*** at ***8 o'clock***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20%E2%80%A2%20at%20%E2%80%A2.&1_wordlists=../wordlists/General/verbs.json,../wordlists/General/verbs_sports.json&1_ignore=jump&2_wordlist=../wordlists/General/time.json)
-    * [What time do you ***run***?](https://altivities.earthiverse.ca/sentences/?sentence=What%20time%20do%20you%20%E2%91%A0?&1_wordlists=../wordlists/General/verbs.json,../wordlists/General/verbs_sports.json&1_ignore=jump)
-    * [What time do you ***sing***? I ***sing*** at ***7 o'clock***.](https://altivities.earthiverse.ca/sentences/?sentence=What%20time%20do%20you%20%E2%91%A0?%0AI%20%E2%91%A0%20at%20%E2%91%A1.&1_wordlists=../wordlists/General/verbs.json,../wordlists/General/verbs_sports.json&1_ignore=jump&2_wordlist=../wordlists/General/time.json)
+  * [I ***play soccer*** at ***8 o'clock***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20%E2%80%A2%20at%20%E2%80%A2.&1_wordlists=../wordlists/General/verbs.json,../wordlists/General/verbs_sports.json&1_ignore=jump&2_wordlist=../wordlists/General/time.json)
+  * [What time do you ***run***?](https://altivities.earthiverse.ca/sentences/?sentence=What%20time%20do%20you%20%E2%91%A0?&1_wordlists=../wordlists/General/verbs.json,../wordlists/General/verbs_sports.json&1_ignore=jump)
+  * [What time do you ***sing***? I ***sing*** at ***7 o'clock***.](https://altivities.earthiverse.ca/sentences/?sentence=What%20time%20do%20you%20%E2%91%A0?%0AI%20%E2%91%A0%20at%20%E2%91%A1.&1_wordlists=../wordlists/General/verbs.json,../wordlists/General/verbs_sports.json&1_ignore=jump&2_wordlist=../wordlists/General/time.json)
 * Lesson 3
-  * Let's Play 4
-    * [I want to go to ***China***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20want%20to%20go%20to%20%E2%91%A0.&1_wordlist=../wordlists/JuniorSunshine6/lesson3.json)
+  * [I want to go to ***China***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20want%20to%20go%20to%20%E2%91%A0.&1_wordlist=../wordlists/JuniorSunshine6/lesson3.json&1_ignore=Japan) (*Note*: **Japan** is not included)
+  * [Where do you want to go? I want to go to ***China***.](https://altivities.earthiverse.ca/sentences/?sentence=Where%20do%20you%20want%20to%20go?%0AI%20want%20to%20go%20to%20%E2%91%A0.&1_wordlist=../wordlists/JuniorSunshine6/lesson3.json&1_ignore=Japan) (*Note*: **Japan** is not included)
 
 ### Sunshine 1
 
 * Program 1
-  * Interact
-    * [Abracadabra. I'm ***a king***. You're ***a queen***.](https://altivities.earthiverse.ca/sentences/?sentence=Abracadabra.%20I%27m%20%E2%91%A0.%20You%27re%20%E2%9D%B6.&1_wordlist=../wordlists/Sunshine1/program1_interact1.json)
+  * [Abracadabra. I'm ***a king***. You're ***a queen***.](https://altivities.earthiverse.ca/sentences/?sentence=Abracadabra.%20I%27m%20%E2%91%A0.%20You%27re%20%E2%9D%B6.&1_wordlist=../wordlists/Sunshine1/program1_interact1.json)
