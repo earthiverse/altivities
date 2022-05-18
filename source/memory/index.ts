@@ -729,11 +729,13 @@ async function prepare() {
         const wordlist = await prepareWordlist()
 
         if (IS_HOST && wordlist.length == 0) {
-            showError("No wordlist detected. Please see documentation.")
+            showError("Redirecting to documentation...")
+            window.location.replace("https://github.com/earthiverse/altivities/tree/main/source/memory#wordlists=")
             return
         }
     } catch (e) {
-        showError("Error loading wordlist. Please see documentation.")
+        showError("Error loading wordlist. Redirecting to documentation...")
+        window.location.replace("https://github.com/earthiverse/altivities/tree/main/source/memory#wordlists=")
         return
     }
 

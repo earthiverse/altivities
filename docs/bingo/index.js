@@ -169,7 +169,12 @@ function chooseRandom() {
     checkReady();
 }
 async function prepare() {
-    generateMenuOptions(await prepareWordlist());
+    const wordlist = await prepareWordlist();
+    if (wordlist.length == 0) {
+        window.location.replace("https://github.com/earthiverse/altivities/tree/main/source/bingo#wordlists");
+        return;
+    }
+    generateMenuOptions(wordlist);
 }
 prepare();
 function fitTextForAllCards() {

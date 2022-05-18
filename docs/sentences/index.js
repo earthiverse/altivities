@@ -141,7 +141,8 @@ function generateSentence() {
 }
 async function prepare() {
     if (!PARAMETERS.sentence) {
-        throw Error("No sentence found.");
+        window.location.replace("https://github.com/earthiverse/altivities/tree/main/source/sentences/#Examples=");
+        return;
     }
     if (!PARAMETERS.sentence.includes(SUBSTITUTION_CHAR)) {
         let hasNumber = false;
@@ -168,7 +169,12 @@ async function prepare() {
     }
     if (WORDLISTS.length == 0) {
         const wordlist = await prepareWordlist();
-        WORDLISTS.push(wordlist);
+        if (wordlist.length > 0)
+            WORDLISTS.push(wordlist);
+    }
+    if (WORDLISTS.length == 0) {
+        window.location.replace("https://github.com/earthiverse/altivities/tree/main/source/sentences#examples=");
+        return;
     }
     generateSentence();
 }
