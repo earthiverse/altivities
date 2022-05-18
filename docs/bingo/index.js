@@ -2,8 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 let NUM_CELLS = 9;
 const MENU = document.getElementById("menu");
+const PLAY_AREA = document.getElementById("play_area");
 const AREA_3_BY_3 = document.getElementById("bingo_area_3");
 const AREA_4_BY_4 = document.getElementById("bingo_area_4");
+const AREA_5_BY_5 = document.getElementById("bingo_area_5");
 function onDragStart(event) {
     const item = event.currentTarget;
     const parent = item.parentElement;
@@ -80,6 +82,7 @@ function ready() {
     }
     const data = {
         "4x4": PARAMETERS["4x4"],
+        "5x5": PARAMETERS["5x5"],
         wordlist: PARAMETERS.wordlist,
         wordlists: PARAMETERS.wordlists,
         words: words.join("🔥")
@@ -172,14 +175,22 @@ function chooseRandom() {
     checkReady();
 }
 async function prepare() {
-    if (PARAMETERS["4x4"] !== undefined) {
+    if (PARAMETERS["4x4"]) {
         NUM_CELLS = 16;
-        AREA_3_BY_3.parentElement.removeChild(AREA_3_BY_3);
+        PLAY_AREA.removeChild(AREA_3_BY_3);
+        PLAY_AREA.removeChild(AREA_5_BY_5);
         AREA_4_BY_4.style.display = "flex";
+    }
+    else if (PARAMETERS["5x5"]) {
+        NUM_CELLS = 25;
+        PLAY_AREA.removeChild(AREA_3_BY_3);
+        PLAY_AREA.removeChild(AREA_4_BY_4);
+        AREA_5_BY_5.style.display = "flex";
     }
     else {
         NUM_CELLS = 9;
-        AREA_4_BY_4.parentElement.removeChild(AREA_4_BY_4);
+        PLAY_AREA.removeChild(AREA_4_BY_4);
+        PLAY_AREA.removeChild(AREA_5_BY_5);
         AREA_3_BY_3.style.display = "flex";
     }
     const wordlist = await prepareWordlist();
