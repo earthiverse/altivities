@@ -2,7 +2,7 @@
 
 ## Play
 
-You should be able to build your pizza at https://earthiverse.github.io/altivities/pizza/
+You should be able to build your pizza at <https://altivities.earthiverse.ca/pizza/>
 
 ## About
 

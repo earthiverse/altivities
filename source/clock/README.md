@@ -2,7 +2,7 @@
 
 ## Play
 
-You should be able to see the clock at <https://earthiverse.github.io/altivities/clock/>
+You should be able to see the clock at <https://altivities.earthiverse.ca/clock/>
 
 ## About
 

@@ -6,7 +6,7 @@ ALT Activities &amp; Games that can be accessed on the internet.
 
 ### ABC Race
 
-<https://earthiverse.github.io/altivities/abcrace/>
+<https://altivities.earthiverse.ca/abcrace/>
 
 A game where you race to click on the letters A to Z as fast as you can.
 
@@ -14,7 +14,7 @@ View the documentation [here](https://github.com/earthiverse/altivities/tree/mai
 
 ### Bingo
 
-<https://earthiverse.github.io/altivities/bingo/?wordlist=../wordlists/General/colors.json>
+<https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/colors.json>
 
 A 3x3 bingo card generator for tablets.
 
@@ -22,7 +22,7 @@ View the documentation [here](https://github.com/earthiverse/altivities/tree/mai
 
 ### Clock
 
-<https://earthiverse.github.io/altivities/clock/>
+<https://altivities.earthiverse.ca/clock/>
 
 A clock that gives a random time, and asks you to enter what time it is showing.
 
@@ -30,7 +30,7 @@ View the documentation [here](https://github.com/earthiverse/altivities/tree/mai
 
 ### Kana Race (かな　レース)
 
-<https://earthiverse.github.io/altivities/kanarace/>
+<https://altivities.earthiverse.ca/kanarace/>
 
 A kana version of ABC Race.
 
@@ -38,7 +38,7 @@ View the documentation [here](https://github.com/earthiverse/altivities/tree/mai
 
 ### Memory
 
-<https://earthiverse.github.io/altivities/memory/?wordlist=../wordlists/General/colors.json>
+<https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/colors.json>
 
 A multiplayer memory game for tablets.
 
@@ -54,7 +54,7 @@ View the documentation [here](https://github.com/earthiverse/altivities/tree/mai
 
 ### Parfait
 
-<https://earthiverse.github.io/altivities/parfait/>
+<https://altivities.earthiverse.ca/parfait/>
 
 A simple game where you can build a parfait. Works well for an activity for `Let's Try 2`'s `Unit 7`.
 
@@ -62,7 +62,7 @@ View the documentation [here](https://github.com/earthiverse/altivities/tree/mai
 
 ### Pizza
 
-<https://earthiverse.github.io/altivities/pizza/>
+<https://altivities.earthiverse.ca/pizza/>
 
 A simple game where you can build a pizza. Works well for an activity for `Let's Try 2`'s `Unit 7`.
 
@@ -72,7 +72,7 @@ View the documentation [here](https://github.com/earthiverse/altivities/tree/mai
 
 **NOTE: This game is a work in progress. There is no currently no documentation. The game may change a lot.**
 
-<https://earthiverse.github.io/altivities/vocab_rpg/>
+<https://altivities.earthiverse.ca/vocab_rpg/>
 
 An RPG-like game to practice spelling and vocabulary.
 

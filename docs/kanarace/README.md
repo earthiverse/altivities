@@ -2,7 +2,7 @@
 
 ## Play
 
-You should be able to play the game at <https://earthiverse.github.io/altivities/kanarace/>
+You should be able to play the game at <https://altivities.earthiverse.ca/kanarace/>
 
 ## About
 

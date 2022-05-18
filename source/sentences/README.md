@@ -39,9 +39,12 @@ This is a tool that you can use to make custom sentences that you can then use w
 
 * Lesson 2
   * Let's Play 3
-    * [I ***play soccer*** at ***8 o'clock***.](https://earthiverse.github.io/altivities/sentences/?sentence=I%20%E2%80%A2%20at%20%E2%80%A2.&1_wordlists=../wordlists/General/verbs.json,../wordlists/General/verbs_sports.json&1_ignore=jump&2_wordlist=../wordlists/General/time.json)
+    * [I ***play soccer*** at ***8 o'clock***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20%E2%80%A2%20at%20%E2%80%A2.&1_wordlists=../wordlists/General/verbs.json,../wordlists/General/verbs_sports.json&1_ignore=jump&2_wordlist=../wordlists/General/time.json)
     * [What time do you ***run***?](https://altivities.earthiverse.ca/sentences/?sentence=What%20time%20do%20you%20%E2%91%A0?&1_wordlists=../wordlists/General/verbs.json,../wordlists/General/verbs_sports.json&1_ignore=jump)
-    * [What time do you ***sing***? I ***sing*** at ***7 o'clock***.](https://earthiverse.github.io/altivities/sentences/?sentence=What%20time%20do%20you%20%E2%91%A0?%0AI%20%E2%91%A0%20at%20%E2%91%A1.&1_wordlists=../wordlists/General/verbs.json,../wordlists/General/verbs_sports.json&1_ignore=jump&2_wordlist=../wordlists/General/time.json)
+    * [What time do you ***sing***? I ***sing*** at ***7 o'clock***.](https://altivities.earthiverse.ca/sentences/?sentence=What%20time%20do%20you%20%E2%91%A0?%0AI%20%E2%91%A0%20at%20%E2%91%A1.&1_wordlists=../wordlists/General/verbs.json,../wordlists/General/verbs_sports.json&1_ignore=jump&2_wordlist=../wordlists/General/time.json)
+* Lesson 3
+  * Let's Play 4
+    * [I want to go to ***China***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20want%20to%20go%20to%20%E2%91%A0.&1_wordlist=../wordlists/JuniorSunshine6/lesson3.json)
 
 ### Sunshine 1
 

@@ -2,7 +2,7 @@
 
 ## Play
 
-You should be able to build your parfait at https://earthiverse.github.io/altivities/parfait/
+You should be able to build your parfait at <https://altivities.earthiverse.ca/parfait/>
 
 ## About
 

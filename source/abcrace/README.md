@@ -2,7 +2,7 @@
 
 ## Play
 
-You should be able to play the game at https://earthiverse.github.io/altivities/abcrace/
+You should be able to play the game at <https://altivities.earthiverse.ca/abcrace/>
 
 ## About
 
