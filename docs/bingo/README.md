@@ -62,6 +62,14 @@ These wordlists have pictures that match with the cards available in the back of
 * [Alphabet (Uppercase)](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/alphabet_uppercase_cards.json)
 * [Phonics](https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/JuniorSunshine5/phonics_cards.json)
 
+## 4x4 and 5x5 cards
+
+For 4x4 cards, add `&4x4=1` to the end of the URL, for example: `https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/alphabet.json&4x4=1`.
+
+For 5x5 cards, add `&5x5=1` to the end of the URL, for example: `https://altivities.earthiverse.ca/bingo/?wordlist=../wordlists/General/alphabet.json&5x5=1`.
+
+Note, that you won't be able to hit the `ready` button if you don't have enough cards to fill in the card. You *could* get creative and use the same wordlist twice, to allow duplicates, for example: `https://altivities.earthiverse.ca/bingo/?wordlists=../wordlists/General/numbers.json,../wordlists/General/numbers.json&5x5=1`. Note that the `numbers.json` is used twice.
+
 ## Custom Wordlists
 
 Please see the [wordlist documentation](../wordlists/) to see how to make your own wordlist.
