@@ -1,5 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+let NUM_CELLS = 9;
+const MENU = document.getElementById("menu");
+const AREA_3_BY_3 = document.getElementById("bingo_area_3");
+const AREA_4_BY_4 = document.getElementById("bingo_area_4");
 function onDragStart(event) {
     const item = event.currentTarget;
     const parent = item.parentElement;
@@ -38,7 +42,6 @@ function onDrop(event) {
     return false;
 }
 function generateMenuOptions(wordlist) {
-    const menu = document.getElementById("menu");
     let num = 0;
     for (const word of wordlist) {
         const itemOutside = document.createElement("div");
@@ -62,7 +65,7 @@ function generateMenuOptions(wordlist) {
             itemInside.innerText = word.en;
         }
         itemOutside.appendChild(itemInside);
-        menu.appendChild(itemOutside);
+        MENU.appendChild(itemOutside);
         textFit(itemInside, { alignHoriz: true });
         num += 1;
     }
@@ -71,11 +74,12 @@ function ready() {
     if (!checkReady())
         return;
     const words = [];
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < NUM_CELLS; i++) {
         const cell = document.getElementById(`cell${i}`);
         words.push(cell.firstChild.parentNode.textContent);
     }
     const data = {
+        "4x4": PARAMETERS["4x4"],
         wordlist: PARAMETERS.wordlist,
         wordlists: PARAMETERS.wordlists,
         words: words.join("🔥")
@@ -98,7 +102,7 @@ function shuffle(array) {
 }
 function checkReady() {
     const readyButton = document.getElementById("ready");
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < NUM_CELLS; i++) {
         const cell = document.getElementById(`cell${i}`);
         if (!cell.firstChild) {
             readyButton.style.cursor = "not-allowed";
@@ -143,12 +147,11 @@ function goToTeach() {
     window.location.href = `teach.html?${new URLSearchParams(data)}`;
 }
 function chooseRandom() {
-    const menu = document.getElementById("menu");
     const cells = document.getElementsByClassName("bingo_cell");
     for (let i = 0; i < cells.length; i++) {
         const cell = cells.item(i);
         if (cell.firstChild)
-            menu.appendChild(cell.firstChild);
+            MENU.appendChild(cell.firstChild);
     }
     const items = document.getElementsByClassName("item");
     const itemsArray = [];
@@ -158,7 +161,7 @@ function chooseRandom() {
             itemsArray.push(item);
     }
     shuffle(itemsArray);
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < NUM_CELLS; i++) {
         const cell = document.getElementById(`cell${i}`);
         const item = itemsArray[i];
         if (!item)
@@ -169,6 +172,16 @@ function chooseRandom() {
     checkReady();
 }
 async function prepare() {
+    if (PARAMETERS["4x4"] !== undefined) {
+        NUM_CELLS = 16;
+        AREA_3_BY_3.parentElement.removeChild(AREA_3_BY_3);
+        AREA_4_BY_4.style.display = "flex";
+    }
+    else {
+        NUM_CELLS = 9;
+        AREA_4_BY_4.parentElement.removeChild(AREA_4_BY_4);
+        AREA_3_BY_3.style.display = "flex";
+    }
     const wordlist = await prepareWordlist();
     if (wordlist.length == 0) {
         window.location.replace("https://github.com/earthiverse/altivities/tree/main/source/bingo#wordlists");

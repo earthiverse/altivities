@@ -49,6 +49,11 @@ type dragData = {
     parent: string
 }
 
+let NUM_CELLS = 9
+const MENU = document.getElementById("menu") as HTMLDivElement
+const AREA_3_BY_3 = document.getElementById("bingo_area_3")
+const AREA_4_BY_4 = document.getElementById("bingo_area_4")
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function onDragStart(event: DragEvent) {
     const item: HTMLDivElement = event.currentTarget as HTMLDivElement
@@ -102,8 +107,6 @@ function onDrop(event: DragEvent) {
 }
 
 function generateMenuOptions(wordlist: Wordlist) {
-    const menu = document.getElementById("menu") as HTMLDivElement
-
     // Add all items to the menu
     let num = 0
     for (const word of wordlist) {
@@ -129,7 +132,7 @@ function generateMenuOptions(wordlist: Wordlist) {
         }
 
         itemOutside.appendChild(itemInside)
-        menu.appendChild(itemOutside)
+        MENU.appendChild(itemOutside)
         textFit(itemInside, { alignHoriz: true })
         num += 1
     }
@@ -139,12 +142,13 @@ function ready() {
     if (!checkReady()) return // We're not actually ready
 
     const words: string[] = []
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < NUM_CELLS; i++) {
         const cell = document.getElementById(`cell${i}`)
         words.push(cell.firstChild.parentNode.textContent)
     }
 
     const data = {
+        "4x4": PARAMETERS["4x4"],
         wordlist: PARAMETERS.wordlist,
         wordlists: PARAMETERS.wordlists,
         words: words.join("🔥")
@@ -174,7 +178,7 @@ function shuffle(array) {
 function checkReady() {
     const readyButton = document.getElementById("ready") as HTMLDivElement
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < NUM_CELLS; i++) {
         const cell = document.getElementById(`cell${i}`)
         if (!cell.firstChild) {
             readyButton.style.cursor = "not-allowed"
@@ -230,16 +234,14 @@ function goToTeach() {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function chooseRandom() {
-    const menu = document.getElementById("menu") as HTMLDivElement
-
     // Return all elements to the menu
     const cells = document.getElementsByClassName("bingo_cell")
     for (let i = 0; i < cells.length; i++) {
         const cell = cells.item(i)
-        if (cell.firstChild) menu.appendChild(cell.firstChild)
+        if (cell.firstChild) MENU.appendChild(cell.firstChild)
     }
 
-    // Put the items in an array, shuffle, and fill 9 cells
+    // Put the items in an array, shuffle, and fill the cells cells
     const items = document.getElementsByClassName("item")
     const itemsArray = []
     for (let i = 0; i < items.length; i++) {
@@ -247,7 +249,7 @@ function chooseRandom() {
         if (item.firstChild) itemsArray.push(item)
     }
     shuffle(itemsArray)
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < NUM_CELLS; i++) {
         const cell = document.getElementById(`cell${i}`)
         const item = itemsArray[i]
         if (!item) break // We ran out of items!?
@@ -259,6 +261,17 @@ function chooseRandom() {
 }
 
 async function prepare() {
+    if (PARAMETERS["4x4"] !== undefined) {
+        NUM_CELLS = 16
+        // Delete the other area
+        AREA_3_BY_3.parentElement.removeChild(AREA_3_BY_3)
+        AREA_4_BY_4.style.display = "flex"
+    } else {
+        NUM_CELLS = 9
+        // Delete the other area
+        AREA_4_BY_4.parentElement.removeChild(AREA_4_BY_4)
+        AREA_3_BY_3.style.display = "flex"
+    }
     const wordlist = await prepareWordlist()
     if (wordlist.length == 0) {
         // Redirect to documentation

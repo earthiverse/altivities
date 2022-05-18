@@ -1,5 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+let NUM_CELLS = 9;
+const AREA_3_BY_3 = document.getElementById("bingo_area_3");
+const AREA_4_BY_4 = document.getElementById("bingo_area_4");
 function onMouseDown(event) {
     const target = event.currentTarget;
     if (target.classList.contains("marked")) {
@@ -50,6 +53,16 @@ function populateBingo(wordlist, words) {
     }
 }
 async function prepare() {
+    if (PARAMETERS["4x4"] !== undefined) {
+        NUM_CELLS = 16;
+        AREA_3_BY_3.parentElement.removeChild(AREA_3_BY_3);
+        AREA_4_BY_4.style.display = "flex";
+    }
+    else {
+        NUM_CELLS = 9;
+        AREA_4_BY_4.parentElement.removeChild(AREA_4_BY_4);
+        AREA_3_BY_3.style.display = "flex";
+    }
     const combinedWordlist = await prepareWordlist();
     const words = PARAMETERS.words.split("🔥");
     populateBingo(combinedWordlist, words);

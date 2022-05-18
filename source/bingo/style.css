@@ -35,8 +35,17 @@ body {
     margin: auto auto;
 }
 
-#bingo_area {
-    display: flex;
+#bingo_area_3 {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    height: min(calc(var(--vh, 1vh) * 93), 70vw);
+    width: min(calc(var(--vh, 1vh) * 93), 70vw);
+}
+
+#bingo_area_4 {
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
@@ -60,13 +69,22 @@ body {
     width: 52vw;
 }
 
-.bingo_cell {
+#bingo_area_3 .bingo_cell {
     position: relative;
     border-color: #000;
     border-style: solid;
     box-sizing: border-box;
     width: 33.3%;
     height: 33.3%;
+}
+
+#bingo_area_4 .bingo_cell {
+    position: relative;
+    border-color: #000;
+    border-style: solid;
+    box-sizing: border-box;
+    width: 25%;
+    height: 25%;
 }
 
 .bingo_cell img {
@@ -78,40 +96,78 @@ body {
     height: 100%;
 }
 
-.bingo_cell:nth-of-type(1) {
+/** 3x3 bingo grid borders **/
+#bingo_area_3 .bingo_cell:nth-of-type(1) {
     border-width: calc(var(--bingo-border-size) * 2) var(--bingo-border-size) var(--bingo-border-size) calc(var(--bingo-border-size) * 2);
 }
 
-.bingo_cell:nth-of-type(2) {
+#bingo_area_3 .bingo_cell:nth-of-type(2) {
     border-width: calc(var(--bingo-border-size) * 2) var(--bingo-border-size) var(--bingo-border-size) var(--bingo-border-size);
 }
 
-.bingo_cell:nth-of-type(3) {
+#bingo_area_3 .bingo_cell:nth-of-type(3) {
     border-width: calc(var(--bingo-border-size) * 2) calc(var(--bingo-border-size) * 2) var(--bingo-border-size) var(--bingo-border-size);
 }
 
-.bingo_cell:nth-of-type(4) {
+#bingo_area_3 .bingo_cell:nth-of-type(4) {
     border-width: var(--bingo-border-size) var(--bingo-border-size) var(--bingo-border-size) calc(var(--bingo-border-size) * 2);
 }
 
-.bingo_cell:nth-of-type(5) {
+#bingo_area_3 .bingo_cell:nth-of-type(5) {
     border-width: var(--bingo-border-size) var(--bingo-border-size) var(--bingo-border-size) var(--bingo-border-size);
 }
 
-.bingo_cell:nth-of-type(6) {
+#bingo_area_3 .bingo_cell:nth-of-type(6) {
     border-width: var(--bingo-border-size) calc(var(--bingo-border-size) * 2) var(--bingo-border-size) var(--bingo-border-size);
 }
 
-.bingo_cell:nth-of-type(7) {
+#bingo_area_3 .bingo_cell:nth-of-type(7) {
     border-width: var(--bingo-border-size) var(--bingo-border-size) calc(var(--bingo-border-size) * 2) calc(var(--bingo-border-size) * 2);
 }
 
-.bingo_cell:nth-of-type(8) {
+#bingo_area_3 .bingo_cell:nth-of-type(8) {
     border-width: var(--bingo-border-size) var(--bingo-border-size) calc(var(--bingo-border-size) * 2) var(--bingo-border-size);
 }
 
-.bingo_cell:nth-of-type(9) {
+#bingo_area_3 .bingo_cell:nth-of-type(9) {
     border-width: var(--bingo-border-size) calc(var(--bingo-border-size) * 2) calc(var(--bingo-border-size) * 2) var(--bingo-border-size);
+}
+
+/** 4x4 bingo grid borders **/
+#bingo_area_4 .bingo_cell:nth-of-type(1) {
+    border-width: var(--bingo-border-size) calc(var(--bingo-border-size) * 0.5) calc(var(--bingo-border-size) * 0.5) var(--bingo-border-size);
+}
+
+#bingo_area_4 .bingo_cell:nth-of-type(2), #bingo_area_4 .bingo_cell:nth-of-type(3) {
+    border-width: var(--bingo-border-size) calc(var(--bingo-border-size) * 0.5) calc(var(--bingo-border-size) * 0.5) calc(var(--bingo-border-size) * 0.5);
+}
+
+#bingo_area_4 .bingo_cell:nth-of-type(4) {
+    border-width: var(--bingo-border-size) var(--bingo-border-size) calc(var(--bingo-border-size) * 0.5) calc(var(--bingo-border-size) * 0.5);
+}
+
+#bingo_area_4 .bingo_cell:nth-of-type(5), #bingo_area_4 .bingo_cell:nth-of-type(9) {
+    border-width: calc(var(--bingo-border-size) * 0.5) calc(var(--bingo-border-size) * 0.5) calc(var(--bingo-border-size) * 0.5) var(--bingo-border-size);
+}
+
+#bingo_area_4 .bingo_cell:nth-of-type(6), #bingo_area_4 .bingo_cell:nth-of-type(7), #bingo_area_4 .bingo_cell:nth-of-type(10), #bingo_area_4 .bingo_cell:nth-of-type(11) {
+    border-width: calc(var(--bingo-border-size) * 0.5) calc(var(--bingo-border-size) * 0.5) calc(var(--bingo-border-size) * 0.5) calc(var(--bingo-border-size) * 0.5);
+}
+
+#bingo_area_4 .bingo_cell:nth-of-type(8), #bingo_area_4 .bingo_cell:nth-of-type(12) {
+    border-width: calc(var(--bingo-border-size) * 0.5) var(--bingo-border-size) calc(var(--bingo-border-size) * 0.5) calc(var(--bingo-border-size) * 0.5);
+}
+
+#bingo_area_4 .bingo_cell:nth-of-type(13) {
+    border-width: calc(var(--bingo-border-size) * 0.5) calc(var(--bingo-border-size) * 0.5) var(--bingo-border-size) var(--bingo-border-size);
+}
+
+#bingo_area_4 .bingo_cell:nth-of-type(14), #bingo_area_4 .bingo_cell:nth-of-type(15) {
+    border-width: calc(var(--bingo-border-size) * 0.5) calc(var(--bingo-border-size) * 0.5) var(--bingo-border-size) calc(var(--bingo-border-size) * 0.5);
+}
+
+#bingo_area_4 .bingo_cell:nth-of-type(16) {
+    border-width: calc(var(--bingo-border-size) * 0.5) var(--bingo-border-size) var(--bingo-border-size) calc(var(--bingo-border-size) * 0.5);
 }
 
 .bingo_cell .item {
@@ -120,7 +176,11 @@ body {
     height: 100%;
 }
 
-.bingo_cell .item .item_inside {
+#bingo_area_4 .bingo_cell .item .item_inside {
+    font-size: min(calc(var(--vh, 1vh) * 5), 4vw);
+}
+
+#bingo_area_3 .bingo_cell .item .item_inside {
     font-size: min(calc(var(--vh, 1vh) * 6.2), 4.65vw);
 }
 
