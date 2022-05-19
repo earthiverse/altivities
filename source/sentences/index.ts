@@ -224,11 +224,14 @@ async function prepare() {
     if (!PARAMETERS.sentence.includes(SUBSTITUTION_CHAR)) {
         // Check if it has a circle number
         let hasNumber = false
-        for (const number of SUBSTITUTION_NUMBERS_1) {
-            if (PARAMETERS.sentence.includes(number)) {
-                hasNumber = true
-                break
+        for (const substitutions of [SUBSTITUTION_NUMBERS_1, SUBSTITUTION_NUMBERS_2, SUBSTITUTION_NUMBERS_3, SUBSTITUTION_NUMBERS_4]) {
+            for (const number of substitutions) {
+                if (PARAMETERS.sentence.includes(number)) {
+                    hasNumber = true
+                    break
+                }
             }
+            if (hasNumber) break
         }
 
         if (!hasNumber) {

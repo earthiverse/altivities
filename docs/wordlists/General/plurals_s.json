@@ -8,6 +8,22 @@
         }
     },
     {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/balls.png",
+        "en": "balls",
+        "ja": {
+            "kanji": "ボール（複数形）",
+            "hiragana": "ぼーる（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/cabbages.png",
+        "en": "cabbages",
+        "ja": {
+            "kanji": "キャベツ（複数形）",
+            "hiragana": "きゃべつ（ふくすうけい）"
+        }
+    },
+    {
         "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/carrots.png",
         "en": "carrots",
         "ja": {
@@ -16,7 +32,15 @@
         }
     },
     {
-        "image": "https: //3.bp.blogspot.com/-nqViReTJpqk/U0pTY72cRnI/AAAAAAAAfJ4/kg1r7C_y48k/s8192/tamago_pack.png",
+        "image": "https://3.bp.blogspot.com/-FqlzO080pWs/UkJM7JdpkCI/AAAAAAAAYVo/3uMna_py6cI/s8192/kyuuri_cucumber.png",
+        "en": "cucumbers",
+        "ja": {
+            "kanji": "胡瓜（複数形）",
+            "hiragana": "きゅうり（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-nqViReTJpqk/U0pTY72cRnI/AAAAAAAAfJ4/kg1r7C_y48k/s8192/tamago_pack.png",
         "en": "eggs",
         "ja": {
             "kanji": "卵（複数形）",
@@ -24,7 +48,15 @@
         }
     },
     {
-        "image": "https: //4.bp.blogspot.com/--fuXwYEFtp4/VGX8gkt6sWI/AAAAAAAApH8/_9ItIAsUPOM/s8192/fruit_budou_kyohou.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/frogs.png",
+        "en": "frogs",
+        "ja": {
+            "kanji": "カエル（複数形）",
+            "hiragana": "かえる（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/--fuXwYEFtp4/VGX8gkt6sWI/AAAAAAAApH8/_9ItIAsUPOM/s8192/fruit_budou_kyohou.png",
         "en": "grapes",
         "ja": {
             "kanji": "ブドウ（複数形）",
@@ -51,7 +83,15 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/peaches.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/hearts.png",
+        "en": "hearts",
+        "ja": {
+            "kanji": "ハート（複数形）",
+            "hiragana": "はーと（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/kiwis.png",
         "en": [
             "kiwi fruits",
             "kiwis"
@@ -70,7 +110,7 @@
         }
     },
     {
-        "image": "https: //3.bp.blogspot.com/-LgZiIfVhI6o/WK7e0Cz6vHI/AAAAAAABB-8/1TJfyzBMqnoac_yHNBsd4vcI-I_t1twqwCLcB/s8192/fruit_mikan_set.png",
+        "image": "https://3.bp.blogspot.com/-LgZiIfVhI6o/WK7e0Cz6vHI/AAAAAAABB-8/1TJfyzBMqnoac_yHNBsd4vcI-I_t1twqwCLcB/s8192/fruit_mikan_set.png",
         "en": "oranges",
         "ja": [
             {
@@ -92,6 +132,14 @@
         }
     },
     {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/pencils.png",
+        "en": "pencils",
+        "ja": {
+            "kanji": "鉛筆（複数形）",
+            "hiragana": "えんぴつ（ふくすうけい）"
+        }
+    },
+    {
         "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/pineapples.png",
         "en": "pineapples",
         "ja": {
@@ -100,11 +148,27 @@
         }
     },
     {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/robots.png",
+        "en": "robots",
+        "ja": {
+            "kanji": "ロボット（複数形）",
+            "hiragana": "ろぼっと（ふくすうけい）"
+        }
+    },
+    {
         "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/strawberries.png",
         "en": "strawberries",
         "ja": {
             "kanji": "苺（複数形）",
             "hiragana": "いちご（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/a/a3/%E6%9C%AC-order.gif",
+        "en": "strokes",
+        "ja": {
+            "kanji": "画（複数形）",
+            "hiragana": "かく（ふくすうけい）"
         }
     },
     {

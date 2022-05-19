@@ -1,0 +1,66 @@
+[
+    {
+        "image": "https://4.bp.blogspot.com/-22AkJ4RfDx8/U9y_noGiRSI/AAAAAAAAjf4/SeSbXunubXQ/s8192/tenki_mark05_kumori.png",
+        "en": "cloudy",
+        "ja": {
+            "kanji": "曇っている",
+            "hiragana": "くもっている"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-LioNkZ3bsFc/WM9YOfPThxI/AAAAAAABCws/sROk-MrjIVkxwWHWHAgCTM_PpkV_fxfSgCLcB/s8192/sick_samuke.png",
+        "en": "cold",
+        "ja": {
+            "kanji": "寒い",
+            "hiragana": "さむい"
+        }
+    },
+    {
+        "image": "https://3.bp.blogspot.com/-cxYF1nh7jgQ/WOdEAeCvVEI/AAAAAAABDng/JSPTXndnhJEL5qh67Zq5N9Tz12X6svdMQCLcB/s8192/yama_kiri.png",
+        "en": "foggy",
+        "ja": {
+            "kanji": "霧がかっている",
+            "hiragana": "きりがかっている"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-E7a2JiOK770/UrEgC4QPotI/AAAAAAAAb2s/Ucoh7CD2y2k/s8192/nettaiya.png",
+        "en": "hot",
+        "ja": {
+            "kanji": "暑い",
+            "hiragana": "あつい"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-04yGTd8fSnA/U9y_m5vpsrI/AAAAAAAAjfw/nVqHQN_t9g4/s8192/tenki_mark03_gouu.png",
+        "en": "rainy",
+        "ja": {
+            "kanji": "雨が降っている",
+            "hiragana": "あめがふっている"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/snowy.png",
+        "en": "snowy",
+        "ja": {
+            "kanji": "雪が降っている",
+            "hiragana": "ゆきがふっている"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-kcV5lUNVWjk/U9y_l53j6tI/AAAAAAAAjfc/ksZGpirKWfM/s8192/tenki_mark01_hare.png",
+        "en": "sunny",
+        "ja": {
+            "kanji": "晴れている",
+            "hiragana": "はれている"
+        }
+    },
+    {
+        "image": "https://2.bp.blogspot.com/-bTldwfY-gSs/VbnRmhfSWpI/AAAAAAAAwOA/by5qHHwEyME/s8192/kyoufuu.png",
+        "en": "windy",
+        "ja": {
+            "kanji": "風が強い",
+            "hiragana": "かぜがつよい"
+        }
+    }
+]
