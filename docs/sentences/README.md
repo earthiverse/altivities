@@ -32,13 +32,17 @@ This is a tool that you can use to make custom sentences that you can then use w
   * [I don't like ***blue/baseball/apples***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20don%27t%20like%20%E2%91%A0.&1_wordlists=../wordlists/General/plurals_s.json,../wordlists/LetsTry1/unit4_cards.json&1_include=red,yellow,blue,green,purple,orange,pink,brown,white,black,baseball,dodgeball,soccer,basketball,swimming,strawberries,apples,tomatoes)
 * Unit 5
   * [What ***fruit*** do you like?](https://altivities.earthiverse.ca/sentences/?sentence=What%20%E2%91%A0%20do%20you%20like?&1_wordlist=../wordlists/General/categories.json)
+  <!-- TODO: Add more fruits -->
   * [What fruit do you like? I like ***apples***.](https://altivities.earthiverse.ca/sentences/?sentence=What%20%E2%91%A0%20do%20you%20like?%0AI%20like%20%E2%91%A1.&1_wordlist=../wordlists/General/categories.json&1_include=fruit&2_wordlist=../wordlists/General/plurals_s.json&2_include=strawberries,apples)
-    * TODO: Add more fruits
 
 ### Let's Try 2
 
 * Unit 1
   * [Hi, I'm ***Sato Ren***. I like ***red***. I don't like ***blue***.](https://altivities.earthiverse.ca/sentences/?sentence=Hi.%20I%27m%20%E2%91%A0.%0AI%20like%20%E2%91%A1.%20I%20don%27t%20like%20%E2%9D%B7.&1_wordlist=../wordlists/General/names.json&2_wordlist=../wordlists/General/colors.json)
+* Unit 2
+  * [It's ***cloudy***.](https://altivities.earthiverse.ca/sentences/?sentence=It%27s%20%E2%91%A0.&1_wordlist=../wordlists/General/weather.json&1_include=sunny,rainy,cloudy,snowy)
+  * [How's the weather? It's ***sunny***.](https://altivities.earthiverse.ca/sentences/?sentence=How%27s%20the%20weather?%0AIt%27s%20%E2%91%A0.&1_wordlist=../wordlists/General/weather.json&1_include=sunny,rainy,cloudy,snowy)
+  <!-- * [Let's play ***dodgeball***.]() -->
 
 ### Junior Sunshine 5
 
@@ -50,7 +54,7 @@ This is a tool that you can use to make custom sentences that you can then use w
   * [I like ***math***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20like%20%E2%91%A0.&1_wordlists=../wordlists/JuniorSunshine5/lesson3_cards.json&1_ignore=doctor,soccer%20player,police%20officer,florist,teacher)
   * [What subject do you like? I like ***math***.](https://altivities.earthiverse.ca/sentences/?sentence=What%20subject%20do%20you%20like?%0AI%20like%20%E2%91%A0.&1_wordlists=../wordlists/JuniorSunshine5/lesson3_cards.json&1_ignore=doctor,soccer%20player,police%20officer,florist,teacher)
   * [What do you have on ***Mondays***?](https://altivities.earthiverse.ca/sentences/?sentence=What%20do%20you%20have%20on%20%E2%91%A0?&1_wordlists=../wordlists/JuniorSunshine5/lesson3.json&1_include=Mondays,Tuesdays,Wednesdays,Thursdays,Fridays) (*Note*: Only weekdays are included)
-  * [I have ***Japanese***, ***math***, ***science***, and ***music***.](http://localhost:8080/sentences/?sentence=I%20have%20%E2%91%A0,%20%E2%9D%B6,%20%0A%E2%93%B5,%20and%20%E2%91%B4.&1_wordlists=../wordlists/JuniorSunshine5/lesson3_cards.json&1_ignore=doctor,soccer%20player,police%20officer,florist,teacher)
+  * [I have ***Japanese***, ***math***, ***science***, and ***music***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20have%20%E2%91%A0,%20%E2%9D%B6,%20%0A%E2%93%B5,%20and%20%E2%91%B4.&1_wordlists=../wordlists/JuniorSunshine5/lesson3_cards.json&1_ignore=doctor,soccer%20player,police%20officer,florist,teacher)
 
 ### Junior Sunshine 6
 
