@@ -16,7 +16,7 @@ async function prepareWordlist(options = {
     wordlist: PARAMETERS.wordlist,
     wordlists: PARAMETERS.wordlists
 }) {
-    const combinedWordlist = [];
+    let combinedWordlist = [];
     if (options.wordlist) {
         const response = await fetch(options.wordlist);
         const wordlist = await response.json();
@@ -45,13 +45,13 @@ async function prepareWordlist(options = {
     }
     if (options.include) {
         const toInclude = options.include.split(",");
-        for (let i = 0; i < combinedWordlist.length; i++) {
-            const word = combinedWordlist[i];
-            let remove = true;
-            for (const includeWord of toInclude) {
+        const newCombined = [];
+        while (toInclude.length > 0) {
+            const includeWord = toInclude.shift();
+            for (const word of combinedWordlist) {
                 if (word.en == includeWord
                     || (Array.isArray(word.en) && word.en[0] == includeWord)) {
-                    remove = false;
+                    newCombined.push(word);
                     break;
                 }
                 if (Array.isArray(word.en)) {
@@ -60,16 +60,13 @@ async function prepareWordlist(options = {
                         if (alternativeWord !== includeWord)
                             continue;
                         word.en = alternativeWord;
-                        remove = false;
+                        newCombined.push(word);
                         break;
                     }
                 }
             }
-            if (remove) {
-                combinedWordlist.splice(i, 1);
-                i -= 1;
-            }
         }
+        combinedWordlist = newCombined;
     }
     return combinedWordlist;
 }

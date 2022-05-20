@@ -42,7 +42,7 @@ async function prepareWordlist(options = {
     wordlist: PARAMETERS.wordlist as string,
     wordlists: PARAMETERS.wordlists as string
 }): Promise<Wordlist> {
-    const combinedWordlist: Wordlist = []
+    let combinedWordlist: Wordlist = []
 
     if (options.wordlist) {
         // Add the one wordlist to the menu
@@ -78,14 +78,17 @@ async function prepareWordlist(options = {
 
     if (options.include) {
         const toInclude: string[] = options.include.split(",")
-        for (let i = 0; i < combinedWordlist.length; i++) {
-            const word = combinedWordlist[i]
-            let remove = true
-            for (const includeWord of toInclude) {
+        const newCombined: Wordlist = []
+        while (toInclude.length > 0) {
+            // Get the word to include
+            const includeWord = toInclude.shift()
+
+            // Look for it in our wordlists
+            for (const word of combinedWordlist) {
                 if (word.en == includeWord
                     || (Array.isArray(word.en) && word.en[0] == includeWord)) {
-                    // Remove this word from the wordlist
-                    remove = false
+                    // Add this word
+                    newCombined.push(word)
                     break
                 }
 
@@ -96,16 +99,15 @@ async function prepareWordlist(options = {
                         if (alternativeWord !== includeWord) continue
                         // We found the word as an alternative, set it as the main word
                         word.en = alternativeWord
-                        remove = false
+                        newCombined.push(word)
                         break
                     }
                 }
             }
-            if (remove) {
-                combinedWordlist.splice(i, 1)
-                i -= 1
-            }
         }
+
+        // Use the include words only
+        combinedWordlist = newCombined
     }
 
     return combinedWordlist
