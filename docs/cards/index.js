@@ -39,6 +39,24 @@ function onDrop(event) {
     fitTextForAllCards();
     return false;
 }
+document.addEventListener("touchstart", (event) => {
+    if (event.touches.length == 2) {
+        const items = document.getElementsByClassName("item");
+        for (let i = 0; i < items.length; i++) {
+            const item = items.item(i);
+            item.draggable = false;
+        }
+    }
+});
+document.addEventListener("touchend", (event) => {
+    if (event.touches.length == 2) {
+        const items = document.getElementsByClassName("item");
+        for (let i = 0; i < items.length; i++) {
+            const item = items.item(i);
+            item.draggable = true;
+        }
+    }
+});
 function showQR() {
     const qrHolder = document.getElementById("qrcode");
     while (qrHolder.firstChild)

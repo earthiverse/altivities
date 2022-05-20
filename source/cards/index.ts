@@ -115,6 +115,28 @@ function onDrop(event: DragEvent) {
     return false
 }
 
+document.addEventListener("touchstart", (event: TouchEvent) => {
+    if (event.touches.length == 2) {
+        // Disable all drag when multiple fingers are on the screen
+        const items = document.getElementsByClassName("item")
+        for (let i = 0; i < items.length; i++) {
+            const item = items.item(i) as HTMLDivElement
+            item.draggable = false
+        }
+    }
+})
+
+document.addEventListener("touchend", (event: TouchEvent) => {
+    if (event.touches.length == 2) {
+        // Enable all drag when multiple fingers are on the screen
+        const items = document.getElementsByClassName("item")
+        for (let i = 0; i < items.length; i++) {
+            const item = items.item(i) as HTMLDivElement
+            item.draggable = true
+        }
+    }
+})
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function showQR() {
     const qrHolder = document.getElementById("qrcode") as HTMLDivElement
