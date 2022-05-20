@@ -1,0 +1,82 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/actions/wash_my_face.png",
+        "en": "wash my face",
+        "ja": {
+            "kanji": "自分の顔を洗う",
+            "hiragana": "じぶんのかおをあらう"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/actions/brush_my_teeth.png",
+        "en": "brush my teeth",
+        "ja": {
+            "kanji": "自分の歯を磨く",
+            "hiragana": "じぶんのはをみがく"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/actions/put_away_my_futon.png",
+        "en": "put away my futon",
+        "ja": {
+            "kanji": "自分の布団を片付ける",
+            "hiragana": "じぶんのふとんをかたづける"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/actions/check_my_school_bag.png",
+        "en": "check my school bag",
+        "ja": {
+            "kanji": "自分のランドセルを確認する",
+            "hiragana": "じぶんのらんどせるをかくにんする"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/actions/leave_my_house.png",
+        "en": "leave my house",
+        "ja": {
+            "kanji": "自分の家を出る",
+            "hiragana": "じぶんのいえをでる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/actions/take_out_the_garbage.png",
+        "en": "take out the garbage",
+        "ja": {
+            "kanji": "生ごみを出す",
+            "hiragana": "なまごみをだす"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/actions/go_to_school.png",
+        "en": "go to school",
+        "ja": {
+            "kanji": "学校に行く",
+            "hiragana": "がっこうにいく"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/actions/go_home.png",
+        "en": "go home",
+        "ja": {
+            "kanji": "帰る",
+            "hiragana": "かえる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/actions/do_my_homework.png",
+        "en": "do my homework",
+        "ja": {
+            "kanji": "自分の宿題をする",
+            "hiragana": "じぶんのしゅくだいをする"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/actions/finish_my_dinner.png",
+        "en": "finish my dinner",
+        "ja": {
+            "kanji": "自分の晩御飯を終える",
+            "hiragana": "じぶんのばんごはんをおえる"
+        }
+    }
+]
