@@ -20,6 +20,14 @@ A 3x3 bingo card generator for tablets.
 
 View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/bingo).
 
+### Cards
+
+<https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/General/colors.json>
+
+A card chooser for students to use in class. Using this, you can easily check that students are comprehending what word you are pronouncing.
+
+View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/cards).
+
 ### Clock
 
 <https://altivities.earthiverse.ca/clock/>
