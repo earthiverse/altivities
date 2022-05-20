@@ -64,15 +64,16 @@ These wordlists have pictures that match with the cards available in the back of
   * [Actions (8)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson2_cards.json)
 * Lesson 3
   * [All (8)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson3_cards.json)
-  * [Food (4)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine6/lesson3_cards.json&include=gyoza,cheeseburger,sushi,curry%20and%20naan)
-  * [Places (4)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine6/lesson3_cards.json&ignore=gyoza,cheeseburger,sushi,curry%20and%20naan)
+  * [Food (4)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson3_cards.json&include=gyoza,cheeseburger,sushi,curry%20and%20naan)
+  * [Places (4)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson3_cards.json&ignore=gyoza,cheeseburger,sushi,curry%20and%20naan)
 * Lesson 6
-  * [All (25)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json)
-  * [All Words (20)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&ignore=I%20saw,I%20enjoyed,I%20went%20to,I%20ate,It%20was)
-  * [All Sentence Starters (5)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&include=I%20saw,I%20enjoyed,I%20went%20to,I%20ate,It%20was)
-  * [I went to ~ Words (4)]()
-  * [I ate ~ Words (4)](https://altivities.earthiverse.ca/order/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&include=watermelon,somen,sushi,ice%20cream)
-  * [I saw ~ Words (4)]()
+  * [All (25)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json)
+  * [All Words (20)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&ignore=I%20saw,I%20enjoyed,I%20went%20to,I%20ate,It%20was)
+  * [All Sentence Starters (5)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&include=I%20saw,I%20enjoyed,I%20went%20to,I%20ate,It%20was)
+  * [I went to ~ Words (4)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&include=the%20zoo,the%20swimming%20pool,my%20grandmother%27s%20house,a%20festival)
+  * [I ate ~ Words (4)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&include=watermelon,somen,sushi,ice%20cream)
+  * [I saw ~ Words (4)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&include=pandas,beetles,the%20Milky%20Way,fireworks)
+  * [I enjoyed ~ Words (4)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&include=shopping,camping,swimming,barbecuing)
 
 ## Enable go-again rules
 

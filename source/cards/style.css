@@ -103,6 +103,7 @@ body {
     align-content: flex-end;
     justify-content: center;
     overflow: hidden;
+    -webkit-user-drag: element;
 }
 
 .item_inside {

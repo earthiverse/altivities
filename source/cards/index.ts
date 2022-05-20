@@ -72,6 +72,8 @@ function onDragStart(event: DragEvent) {
         "parent": parent.id
     }
 
+    event.stopPropagation()
+    event.dataTransfer.dropEffect = "move"
     event.dataTransfer.setData("application/json", JSON.stringify(data))
     return false
 }
@@ -79,11 +81,15 @@ function onDragStart(event: DragEvent) {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function onDragOver(event: DragEvent) {
     event.preventDefault()
+    event.stopPropagation()
     return false
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function onDrop(event: DragEvent) {
+    event.preventDefault()
+    event.stopPropagation()
+
     const droppedOn = event.currentTarget as HTMLDivElement
 
     const data: dragData = JSON.parse(event.dataTransfer.getData("application/json"))

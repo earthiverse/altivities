@@ -8,14 +8,19 @@ function onDragStart(event) {
         "item": item.id,
         "parent": parent.id
     };
+    event.stopPropagation();
+    event.dataTransfer.dropEffect = "move";
     event.dataTransfer.setData("application/json", JSON.stringify(data));
     return false;
 }
 function onDragOver(event) {
     event.preventDefault();
+    event.stopPropagation();
     return false;
 }
 function onDrop(event) {
+    event.preventDefault();
+    event.stopPropagation();
     const droppedOn = event.currentTarget;
     const data = JSON.parse(event.dataTransfer.getData("application/json"));
     const item = document.getElementById(data.item);
