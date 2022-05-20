@@ -4,7 +4,7 @@
 
 This is a tool that you can use to make custom sentences that you can then use with students. You can also share the QR code with students for various activities.
 
-## Examples
+## Sentences
 
 ### Let's Try 1
 
@@ -70,3 +70,49 @@ This is a tool that you can use to make custom sentences that you can then use w
 
 * Program 1
   * [Abracadabra. I'm ***a king***. You're ***a queen***.](https://altivities.earthiverse.ca/sentences/?sentence=Abracadabra.%20I%27m%20%E2%91%A0.%20You%27re%20%E2%9D%B6.&1_wordlist=../wordlists/Sunshine1/program1_interact1.json)
+
+## Custom Sentences
+
+### Wordlists
+
+You can add up to 5 wordlists. Add each wordlist to the URL with `&<wordlist number>_wordlist=<path to wordlist>`, for example: `&1_wordlist=../wordlists/General/colors.json` or `&2_wordlist=../wordlists/General/sports.json`.
+
+You can ignore and include words per wordlist, using `&<wordlist number>_ignore=<words>`, for example: `&1_ignore=black` and `&2_ignore=table tennis`.
+
+Please see the [wordlist documentation](../wordlists/) to see what wordlists are available, how to make your own wordlist, and for more information.
+
+### Substitutions
+
+You can include up to 4 words for each wordlist.
+
+|             | Word #1 | Word #2 | Word #3 | Word #4 |
+|-------------|---------|---------|---------|---------|
+| Wordlist #1 | ①       | ❶       | ⓵       | ⑴       |
+| Wordlist #2 | ②       | ❷       | ⓶       | ⑵       |
+| Wordlist #3 | ③       | ❸       | ⓷       | ⑶       |
+| Wordlist #4 | ④       | ❹       | ⓸       | ⑷       |
+| Wordlist #5 | ⑤       | ❺       | ⓹       | ⑸       |
+
+### Examples
+
+#### I like *blue*. Do you like *blue*?
+
+* Take the sentences URL: `https://altivities.earthiverse.ca/sentences/`
+* Add the sentence with the substitution characters: `?sentence=I like ①. Do you like ①?` (Note that we're using the same word)
+* Add the wordlist: `&1_wordlist=../wordlists/General/colors.json`
+* To make the URL: [`https://altivities.earthiverse.ca/sentences/?sentence=I like ①. Do you like ①?&1_wordlist=../wordlists/General/colors.json`](https://altivities.earthiverse.ca/sentences/?sentence=I%20like%20%E2%91%A0.%20Do%20you%20like%20%E2%91%A0?&1_wordlist=../wordlists/General/colors.json)
+
+#### I like *blue* and *red*
+
+* Take the sentences URL: `https://altivities.earthiverse.ca/sentences/`
+* Add the sentence with the substitution characters: `?sentence=I like ① and ❶.` (Note that we're using two different words)
+* Add the wordlist: `&1_wordlist=../wordlists/General/colors.json`
+* To make the URL: [`https://altivities.earthiverse.ca/sentences/?sentence=I like ① and ❶.&1_wordlist=../wordlists/General/colors.json`](https://altivities.earthiverse.ca/sentences/?sentence=I%20like%20%E2%91%A0%20and%20%E2%9D%B6.&1_wordlist=../wordlists/General/colors.json)
+
+#### I like *blue*, and I like *soccer*
+
+* Take the sentences URL: `https://altivities.earthiverse.ca/sentences/`
+* Add the sentence with the substitution characters: `?sentence=I like ①, and I like ②.` (Note that we're using words from two different wordlists)
+* Add the first wordlist: `&1_wordlist=../wordlists/General/colors.json`
+* Add the second wordlist: `&2_wordlist=../wordlists/General/sports.json`
+* To make the URL: [`https://altivities.earthiverse.ca/sentences/?sentence=I like ①, and I like ②.&1_wordlist=../wordlists/General/colors.json&2_wordlist=../wordlists/General/sports.json`](https://altivities.earthiverse.ca/sentences/?sentence=I%20like%20%E2%91%A0,%20and%20I%20like%20%E2%91%A1.&1_wordlist=../wordlists/General/colors.json&2_wordlist=../wordlists/General/sports.json)

@@ -68,6 +68,14 @@ A simple game where you can build a pizza. Works well for an activity for `Let's
 
 View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/pizza).
 
+### Sentences
+
+<https://altivities.earthiverse.ca/sentences/?sentence=I%20like%20%E2%91%A0.&1_wordlist=../wordlists/LetsTry1/unit4_cards.json&1_include=red,yellow,blue,green,purple,orange,pink,brown,white,black>
+
+A random sentence generator to practice vocabulary with your class
+
+View the documentation [here](https://github.com/earthiverse/altivities/tree/main/source/sentences).
+
 ### Vocab RPG
 
 **NOTE: This game is a work in progress. There is no currently no documentation. The game may change a lot.**
