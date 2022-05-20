@@ -1,6 +1,6 @@
 [
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/library.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/library.png",
         "en": "library",
         "ja": {
             "kanji": "図書室",
@@ -8,7 +8,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/teachers_office.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/teachers_office.png",
         "en": "teachers' office",
         "ja": {
             "kanji": "職員室",
@@ -16,7 +16,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/school_principals_office.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/school_principals_office.png",
         "en": "school principal's office",
         "ja": {
             "kanji": "校長室",
@@ -24,7 +24,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/school_office.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/school_office.png",
         "en": "school office",
         "ja": {
             "kanji": "事務所",
@@ -32,7 +32,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/classroom.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/classroom.png",
         "en": "classroom",
         "ja": {
             "kanji": "教室",
@@ -40,7 +40,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/library.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/school_nurses_office.png",
         "en": "school nurse's office",
         "ja": {
             "kanji": "保健室",
@@ -48,7 +48,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/computer_room.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/computer_room.png",
         "en": "computer room",
         "ja": {
             "kanji": "コンピューター室",
@@ -56,7 +56,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/arts_and_crafts_room.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/arts_and_crafts_room.png",
         "en": "arts and crafts room",
         "ja": {
             "kanji": "図工室",
@@ -64,7 +64,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/lunch_room.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/lunch_room.png",
         "en": "lunch room",
         "ja": {
             "kanji": "食堂",
@@ -72,7 +72,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/computer_room.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/science_room.png",
         "en": "science room",
         "ja": {
             "kanji": "理科室",
@@ -80,7 +80,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/cooking_room.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/cooking_room.png",
         "en": "cooking room",
         "ja": {
             "kanji": "調理室",
@@ -88,7 +88,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/music_room.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/music_room.png",
         "en": "music room",
         "ja": {
             "kanji": "音楽室",
@@ -96,7 +96,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/computer_room.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/gym.png",
         "en": "gym",
         "ja": {
             "kanji": "体育館",
@@ -104,7 +104,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/rooms/playground.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/rooms/playground.png",
         "en": "playground",
         "ja": {
             "kanji": "校庭",

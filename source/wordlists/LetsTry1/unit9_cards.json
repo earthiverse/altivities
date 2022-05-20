@@ -242,7 +242,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/long.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/long.svg",
         "en": "long",
         "ja": {
             "kanji": "長い",
@@ -250,7 +250,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/short.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/short.svg",
         "en": "short",
         "ja": {
             "kanji": "短い",
@@ -258,7 +258,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/big.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/big.svg",
         "en": "big",
         "ja": {
             "kanji": "大きい",
@@ -266,7 +266,7 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/small.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/adjectives/small.svg",
         "en": "small",
         "ja": {
             "kanji": "小さい",
