@@ -1,0 +1,210 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/vegetables/onion.png",
+        "en": [
+            "onion",
+            "onions"
+        ],
+        "ja": {
+            "kanji": "玉ねぎ",
+            "hiragana": "たまねぎ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/vegetables/mushroom.png",
+        "en": [
+            "mushroom",
+            "mushrooms"
+        ],
+        "ja": {
+            "kanji": "キノコ",
+            "hiragana": "きのこ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/vegetables/potato.png",
+        "en": [
+            "potato",
+            "potatoes"
+        ],
+        "ja": {
+            "kanji": "じゃが芋",
+            "hiragana": "じゃがいも"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/vegetables/tomato.png",
+        "en": [
+            "tomato",
+            "tomatoes"
+        ],
+        "ja": {
+            "kanji": "トマト",
+            "hiragana": "とまと"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/vegetables/cabbage.png",
+        "en": [
+            "cabbage",
+            "cabbages"
+        ],
+        "ja": {
+            "kanji": "キャベツ",
+            "hiragana": "きゃべつ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/vegetables/corn.png",
+        "en": "corn",
+        "ja": {
+            "kanji": "コーン",
+            "hiragana": "こーん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/vegetables/carrot.png",
+        "en": [
+            "carrot",
+            "carrots"
+        ],
+        "ja": {
+            "kanji": "人参",
+            "hiragana": "にんじん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/vegetables/cucumber.png",
+        "en": [
+            "cucumber",
+            "cucumbers"
+        ],
+        "ja": {
+            "kanji": "胡瓜",
+            "hiragana": "きゅうり"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/vegetables/green_pepper.png",
+        "en": [
+            "green pepper",
+            "green peppers"
+        ],
+        "ja": {
+            "kanji": "ピーマン",
+            "hiragana": "ぴーまん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/melon.png",
+        "en": [
+            "melon",
+            "melons"
+        ],
+        "ja": {
+            "kanji": "メロン",
+            "hiragana": "めろん"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/peach.png",
+        "en": [
+            "peach",
+            "peaches"
+        ],
+        "ja": {
+            "kanji": "桃",
+            "hiragana": "もも"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/banana.png",
+        "en": [
+            "banana",
+            "bananas"
+        ],
+        "ja": {
+            "kanji": "バナナ",
+            "hiragana": "ばなな"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/apple.png",
+        "en": [
+            "apple",
+            "apples"
+        ],
+        "ja": {
+            "kanji": "林檎",
+            "hiragana": "りんご"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/pineapple.png",
+        "en": [
+            "pineapple",
+            "pineapples"
+        ],
+        "ja": {
+            "kanji": "パインアップル",
+            "hiragana": "ぱいんあっぷる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/orange.png",
+        "en": [
+            "orange",
+            "oranges"
+        ],
+        "ja": {
+            "kanji": "オレンジ",
+            "hiragana": "おれんじ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/strawberry.png",
+        "en": [
+            "strawberry",
+            "strawberries"
+        ],
+        "ja": {
+            "kanji": "苺",
+            "hiragana": "いちご"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/fruits/cherry.png",
+        "en": [
+            "cherry",
+            "cherries"
+        ],
+        "ja": {
+            "kanji": "さくらんぼ",
+            "hiragana": "さくらんぼ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/fruits/kiwi_fruit.png",
+        "en": [
+            "kiwi fruit",
+            "kiwi fruits",
+            "kiwi",
+            "kiwis"
+        ],
+        "ja": {
+            "kanji": "キウイフルーツ",
+            "hiragana": "キウイ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/food/sausage.png",
+        "en": [
+            "sausage",
+            "sausages"
+        ],
+        "ja": {
+            "kanji": "ソーセージ",
+            "hiragana": "そーせーじ"
+        }
+    }
+]

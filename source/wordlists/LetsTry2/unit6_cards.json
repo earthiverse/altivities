@@ -1,0 +1,506 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/a.svg",
+        "en": "a",
+        "ja": {
+            "kanji": "エイ",
+            "hiragana": "えい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/b.svg",
+        "en": "b",
+        "ja": {
+            "kanji": "ビー",
+            "hiragana": "びー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/c.svg",
+        "en": "c",
+        "ja": {
+            "kanji": "シー",
+            "hiragana": "しー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/d.svg",
+        "en": "d",
+        "ja": {
+            "kanji": "ディー",
+            "hiragana": "でぃー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/e.svg",
+        "en": "e",
+        "ja": {
+            "kanji": "イー",
+            "hiragana": "いー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/f.svg",
+        "en": "f",
+        "ja": {
+            "kanji": "エフ",
+            "hiragana": "えふ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/g.svg",
+        "en": "g",
+        "ja": {
+            "kanji": "ジー",
+            "hiragana": "じー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/h.svg",
+        "en": "h",
+        "ja": {
+            "kanji": "エッチ",
+            "hiragana": "えっち"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/i.svg",
+        "en": "i",
+        "ja": {
+            "kanji": "アイ",
+            "hiragana": "あい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/j.svg",
+        "en": "j",
+        "ja": {
+            "kanji": "ジェー",
+            "hiragana": "じぇー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/k.svg",
+        "en": "k",
+        "ja": {
+            "kanji": "ケイ",
+            "hiragana": "けい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/l.svg",
+        "en": "l",
+        "ja": {
+            "kanji": "エル",
+            "hiragana": "える"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/m.svg",
+        "en": "m",
+        "ja": {
+            "kanji": "エム",
+            "hiragana": "えむ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/n.svg",
+        "en": "n",
+        "ja": {
+            "kanji": "エヌ",
+            "hiragana": "えぬ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/o.svg",
+        "en": "o",
+        "ja": {
+            "kanji": "オー",
+            "hiragana": "おー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/p.svg",
+        "en": "p",
+        "ja": {
+            "kanji": "ピー",
+            "hiragana": "ぴー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/q.svg",
+        "en": "q",
+        "ja": {
+            "kanji": "キュー",
+            "hiragana": "きゅー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/r.svg",
+        "en": "r",
+        "ja": {
+            "kanji": "アール",
+            "hiragana": "あーる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/s.svg",
+        "en": "s",
+        "ja": {
+            "kanji": "エス",
+            "hiragana": "えす"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/t.svg",
+        "en": "t",
+        "ja": {
+            "kanji": "ティー",
+            "hiragana": "てぃー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/u.svg",
+        "en": "u",
+        "ja": {
+            "kanji": "ユー",
+            "hiragana": "ゆー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/v.svg",
+        "en": "v",
+        "ja": {
+            "kanji": "ブィー",
+            "hiragana": "ぶぃー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/w.svg",
+        "en": "w",
+        "ja": {
+            "kanji": "ダブリュー",
+            "hiragana": "だぶりゅー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/x.svg",
+        "en": "x",
+        "ja": {
+            "kanji": "エックス",
+            "hiragana": "えっくす"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/y.svg",
+        "en": "y",
+        "ja": {
+            "kanji": "ワイ",
+            "hiragana": "わい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/lowercase/z.svg",
+        "en": "z",
+        "ja": {
+            "kanji": "ゼット",
+            "hiragana": "ぜっと"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/A.svg",
+        "en": "A",
+        "ja": {
+            "kanji": "エイ",
+            "hiragana": "えい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/B.svg",
+        "en": "B",
+        "ja": {
+            "kanji": "ビー",
+            "hiragana": "びー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/C.svg",
+        "en": "C",
+        "ja": {
+            "kanji": "シー",
+            "hiragana": "しー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/D.svg",
+        "en": "D",
+        "ja": {
+            "kanji": "ディー",
+            "hiragana": "でぃー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/E.svg",
+        "en": "E",
+        "ja": {
+            "kanji": "イー",
+            "hiragana": "いー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/F.svg",
+        "en": "F",
+        "ja": {
+            "kanji": "エフ",
+            "hiragana": "えふ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/G.svg",
+        "en": "G",
+        "ja": {
+            "kanji": "ジー",
+            "hiragana": "じー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/H.svg",
+        "en": "H",
+        "ja": {
+            "kanji": "エッチ",
+            "hiragana": "えっち"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/I.svg",
+        "en": "I",
+        "ja": {
+            "kanji": "アイ",
+            "hiragana": "あい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/J.svg",
+        "en": "J",
+        "ja": {
+            "kanji": "ジェー",
+            "hiragana": "じぇー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/K.svg",
+        "en": "K",
+        "ja": {
+            "kanji": "ケイ",
+            "hiragana": "けい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/L.svg",
+        "en": "L",
+        "ja": {
+            "kanji": "エル",
+            "hiragana": "える"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/M.svg",
+        "en": "M",
+        "ja": {
+            "kanji": "エム",
+            "hiragana": "えむ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/N.svg",
+        "en": "N",
+        "ja": {
+            "kanji": "エヌ",
+            "hiragana": "えぬ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/O.svg",
+        "en": "O",
+        "ja": {
+            "kanji": "オー",
+            "hiragana": "おー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/P.svg",
+        "en": "P",
+        "ja": {
+            "kanji": "ピー",
+            "hiragana": "ぴー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/Q.svg",
+        "en": "Q",
+        "ja": {
+            "kanji": "キュー",
+            "hiragana": "きゅー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/R.svg",
+        "en": "R",
+        "ja": {
+            "kanji": "アール",
+            "hiragana": "あーる"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/S.svg",
+        "en": "S",
+        "ja": {
+            "kanji": "エス",
+            "hiragana": "えす"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/T.svg",
+        "en": "T",
+        "ja": {
+            "kanji": "ティー",
+            "hiragana": "てぃー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/U.svg",
+        "en": "U",
+        "ja": {
+            "kanji": "ユー",
+            "hiragana": "ゆー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/V.svg",
+        "en": "V",
+        "ja": {
+            "kanji": "ブィー",
+            "hiragana": "ぶぃー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/W.svg",
+        "en": "W",
+        "ja": {
+            "kanji": "ダブリュー",
+            "hiragana": "だぶりゅー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/X.svg",
+        "en": "X",
+        "ja": {
+            "kanji": "エックス",
+            "hiragana": "えっくす"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/Y.svg",
+        "en": "Y",
+        "ja": {
+            "kanji": "ワイ",
+            "hiragana": "わい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry1/images/alphabet/upper/Z.svg",
+        "en": "Z",
+        "ja": {
+            "kanji": "ゼット",
+            "hiragana": "ぜっと"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/words/bus_stop.png",
+        "en": "bus stop",
+        "ja": {
+            "kanji": "バス停",
+            "hiragana": "ばすてい"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/words/up.png",
+        "en": "up",
+        "ja": {
+            "kanji": "上",
+            "hiragana": "うえ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/words/down.png",
+        "en": "down",
+        "ja": {
+            "kanji": "下",
+            "hiragana": "した"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/words/taxi.png",
+        "en": "taxi",
+        "ja": {
+            "kanji": "タクシー",
+            "hiragana": "たくしー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/words/telephone.png",
+        "en": "telephone",
+        "ja": {
+            "kanji": "電話",
+            "hiragana": "でんわ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/words/station.png",
+        "en": "station",
+        "ja": {
+            "kanji": "駅",
+            "hiragana": "えき"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/words/news.png",
+        "en": "news",
+        "ja": {
+            "kanji": "ニュース",
+            "hiragana": "にゅーす"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/words/juice.png",
+        "en": "juice",
+        "ja": {
+            "kanji": "ジュース",
+            "hiragana": "じゅーす"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/words/school.png",
+        "en": "school",
+        "ja": {
+            "kanji": "学校",
+            "hiragana": "がっこう"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/words/ice_cream.png",
+        "en": "ice cream",
+        "ja": {
+            "kanji": "アイスクリーム",
+            "hiragana": "あいすくりーむ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/LetsTry2/images/words/flowers.png",
+        "en": "flowers",
+        "ja": {
+            "kanji": "花",
+            "hiragana": "はな"
+        }
+    }
+]
