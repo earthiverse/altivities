@@ -10,13 +10,13 @@ This is a tool that you can use to make custom sentences that you can then use w
 
 * Unit 1
   * [Hello, I'm ***Sayo***](https://altivities.earthiverse.ca/sentences/?sentence=Hello,%20I%27m%20%E2%91%A0.&1_wordlist=../wordlists/LetsTry1/characters.json)
-  * [I'm from ***Canada***](https://altivities.earthiverse.ca/sentences/?sentence=I%27m%20from%20%E2%91%A0.&1_wordlist=../wordlists/General/countries.json)
-  * [Hello, I'm ***Robert***. I'm from ***France***.](https://altivities.earthiverse.ca/sentences/?sentence=Hello,%20I%27m%20%E2%91%A0.%0AI%27m%20from%20%E2%91%A1.&1_wordlist=../wordlists/LetsTry1/characters.json&2_wordlist=../wordlists/General/countries.json&2_include=the%20U.S.A.,South%20Korea,China,Germany,India,Kenya)
+  * [I'm from ***Canada***](https://altivities.earthiverse.ca/sentences/?sentence=I%27m%20from%20%E2%91%A0.&wordlist=../wordlists/General/countries.json&include=Finland,China,Germany,Japan,Kenya,India,Korea,America,Australia)
+  * [Hello, I'm ***Robert***. I'm from ***America***.](https://altivities.earthiverse.ca/sentences/?sentence=Hello,%20I%27m%20%E2%91%A0.%0AI%27m%20from%20%E2%91%A1.&1_wordlist=../wordlists/LetsTry1/characters.json&2_wordlist=../wordlists/General/countries.json&2_include=Finland,China,Germany,Japan,Kenya,India,Korea,America,Australia)
 * Unit 2
-  * [I'm ***hungry***.](https://altivities.earthiverse.ca/sentences/?sentence=I%27m%20%E2%91%A0.&1_wordlist=../wordlists/General/emotions.json)
-  * [How are you? I'm ***happy***.](https://altivities.earthiverse.ca/sentences/?sentence=How%20are%20you?%0AI%27m%20%E2%91%A0.&1_wordlist=../wordlists/General/emotions.json)
+  * [I'm ***hungry***.](https://altivities.earthiverse.ca/sentences/?sentence=I%27m%20%E2%91%A0.&wordlist=../wordlists/LetsTry1/unit2.json&include=happy,tired,hungry,sleepy,sad,good)
+  * [How are you? I'm ***happy***.](https://altivities.earthiverse.ca/sentences/?sentence=How%20are%20you?%0AI%27m%20%E2%91%A0.&wordlist=../wordlists/LetsTry1/unit2.json&include=happy,tired,hungry,sleepy,sad,good)
 * Unit 3
-  * [How many ***apples***?](https://altivities.earthiverse.ca/sentences/?sentence=How%20many%20%E2%91%A0?&1_wordlist=../wordlists/General/plurals_s.json&1_include=apples,balls,hearts,pencils,strawberries,strokes,tomatoes)
+  * [How many ***apples***?](https://altivities.earthiverse.ca/sentences/?sentence=How%20many%20%E2%91%A0?&wordlists=../wordlists/General/plurals_s.json,../wordlists/LetsTry1/unit3.json&include=counters,balls,pencils,erasers,rulers,crayons,apples,strawberries,tomatoes,circles,triangles,crosses,hearts,strokes)
 * Unit 4
   * [I like ***blue***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20like%20%E2%91%A0.&1_wordlist=../wordlists/LetsTry1/unit4_cards.json&1_include=red,yellow,blue,green,purple,orange,pink,brown,white,black) (*Note*: Colors (10) only)
   * [I like ***baseball***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20like%20%E2%91%A0.&1_wordlist=../wordlists/LetsTry1/unit4_cards.json&1_include=baseball,dodgeball,soccer,basketball,swimming) (*Note*: Sports (5) only)

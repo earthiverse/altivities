@@ -32,6 +32,25 @@
         }
     },
     {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/circles.png",
+        "en": "circles",
+        "ja": {
+            "kanji": "丸（複数形）",
+            "hiragana": "まる（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/crosses.png",
+        "en": [
+            "crosses",
+            "Xs"
+        ],
+        "ja": {
+            "kanji": "罰点（複数形）",
+            "hiragana": "ばつてん（ふくすうけい）"
+        }
+    },
+    {
         "image": "https://3.bp.blogspot.com/-FqlzO080pWs/UkJM7JdpkCI/AAAAAAAAYVo/3uMna_py6cI/s8192/kyuuri_cucumber.png",
         "en": "cucumbers",
         "ja": {
@@ -45,6 +64,14 @@
         "ja": {
             "kanji": "卵（複数形）",
             "hiragana": "たまご（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/erasers.png",
+        "en": "erasers",
+        "ja": {
+            "kanji": "消しゴム（複数形）",
+            "hiragana": "けしごむ（ふくすうけい）"
         }
     },
     {
@@ -156,6 +183,14 @@
         }
     },
     {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/rulers.png",
+        "en": "rulers",
+        "ja": {
+            "kanji": "定規（複数形）",
+            "hiragana": "じょうぎ（ふくすうけい）"
+        }
+    },
+    {
         "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/strawberries.png",
         "en": "strawberries",
         "ja": {
@@ -177,6 +212,14 @@
         "ja": {
             "kanji": "トマト（複数形）",
             "hiragana": "とまと（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/triangles.png",
+        "en": "triangles",
+        "ja": {
+            "kanji": "三角（複数形）",
+            "hiragana": "さんかく（ふくすうけい）"
         }
     },
     {
