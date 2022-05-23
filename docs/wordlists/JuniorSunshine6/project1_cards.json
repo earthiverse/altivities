@@ -1,0 +1,228 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/illustrator.png",
+        "en": "illustrator",
+        "ja": {
+            "hiragana": "いらすとれーたー",
+            "kanji": "イラストレーター"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/designer.png",
+        "en": "designer",
+        "ja": {
+            "hiragana": "でざいなー",
+            "kanji": "デザイナー"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/baseball_player.png",
+        "en": "baseball player",
+        "ja": {
+            "hiragana": "やきゅうせんしゅ",
+            "kanji": "野球選手"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/basketball_player.png",
+        "en": "basketball player",
+        "ja": {
+            "hiragana": "バスケットボールせんしゅ",
+            "kanji": "バスケットボール選手"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/teacher.png",
+        "en": "teacher",
+        "ja": [
+            {
+                "hiragana": "せんせい",
+                "kanji": "先生"
+            },
+            {
+                "hiragana": "きょうし",
+                "kanji": "教師"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/soccer_player.png",
+        "en": "soccer player",
+        "ja": {
+            "hiragana": "さっかーせんしゅ",
+            "kanji": "サッカー選手"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/doctor.png",
+        "en": "doctor",
+        "ja": [
+            {
+                "hiragana": "いし",
+                "kanji": "医師"
+            },
+            {
+                "hiragana": "いしゃ",
+                "kanji": "医者"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/police_officer.png",
+        "en": "police officer",
+        "ja": {
+            "hiragana": "けいさつかん",
+            "kanji": "警察官"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/florist.png",
+        "en": "florist",
+        "ja": {
+            "hiragana": "はなや(ひと)",
+            "kanji": "花屋(人)"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/game_creator.png",
+        "en": "game creator",
+        "ja": {
+            "hiragana": "げーむくりえいたー",
+            "kanji": "ゲームクリエイター"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/the_usa.svg",
+        "en": [
+            "the U.S.A.",
+            "the USA",
+            "the United States of America",
+            "U.S.A.",
+            "USA",
+            "U.S.",
+            "US",
+            "America"
+        ],
+        "ja": {
+            "hiragana": "あめりかがっしゅうこく",
+            "kanji": "アメリカ合衆国"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/brazil.svg",
+        "en": "Brazil",
+        "ja": {
+            "hiragana": "ぶらじる",
+            "kanji": "ブラジル"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/japan.svg",
+        "en": "Japan",
+        "ja": {
+            "hiragana": "にっぽん",
+            "kanji": "日本"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/korea.svg",
+        "en": [
+            "Korea",
+            "South Korea",
+            "the Republic of Korea",
+            "Republic of Korea"
+        ],
+        "ja": {
+            "hiragana": "だいかんみんこく",
+            "kanji": "大韓民国"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/china.svg",
+        "en": "China",
+        "ja": {
+            "hiragana": "ちゅうごく",
+            "kanji": "中国"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/india.svg",
+        "en": "India",
+        "ja": {
+            "hiragana": "いんど",
+            "kanji": "インド"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/the_uk.svg",
+        "en": [
+            "the U.K.",
+            "the UK",
+            "U.K.",
+            "UK",
+            "the United Kingdom",
+            "United Kingdom",
+            "Britain"
+        ],
+        "ja": {
+            "hiragana": "いぎりす",
+            "kanji": "イギリス"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/france.svg",
+        "en": "France",
+        "ja": {
+            "hiragana": "ふらんす",
+            "kanji": "フランス"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/germany.svg",
+        "en": "Germany",
+        "ja": {
+            "hiragana": "どいつ",
+            "kanji": "ドイツ"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/italy.svg",
+        "en": "Italy",
+        "ja": {
+            "hiragana": "いたりあ",
+            "kanji": "イタリア"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/switzerland.svg",
+        "en": "Switzerland",
+        "ja": {
+            "hiragana": "すいす",
+            "kanji": "スイス"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/australia.svg",
+        "en": "Australia",
+        "ja": {
+            "hiragana": "おーすとらりあ",
+            "kanji": "オーストラリア"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/egypt.svg",
+        "en": "Egypt",
+        "ja": {
+            "hiragana": "えじぷと",
+            "kanji": "エジプト"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/flags/kenya.svg",
+        "en": "Kenya",
+        "ja": {
+            "hiragana": "けにあ",
+            "kanji": "ケニア"
+        }
+    }
+]
