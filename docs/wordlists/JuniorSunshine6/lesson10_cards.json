@@ -1,0 +1,238 @@
+[
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/baseball_player.png",
+        "en": "baseball player",
+        "ja": {
+            "hiragana": "やきゅうせんしゅ",
+            "kanji": "野球選手"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/dentist.png",
+        "en": "dentist",
+        "ja": {
+            "hiragana": "はいしゃ",
+            "kanji": "歯医者"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/teacher.png",
+        "en": "teacher",
+        "ja": [
+            {
+                "hiragana": "せんせい",
+                "kanji": "先生"
+            },
+            {
+                "hiragana": "きょうし",
+                "kanji": "教師"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/doctor.png",
+        "en": "doctor",
+        "ja": [
+            {
+                "hiragana": "いし",
+                "kanji": "医師"
+            },
+            {
+                "hiragana": "いしゃ",
+                "kanji": "医者"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/cook.png",
+        "en": "cook",
+        "ja": [
+            {
+                "hiragana": "こっく",
+                "kanji": "コック"
+            },
+            {
+                "hiragana": "りょうりにん",
+                "kanji": "料理人"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/soccer_player.png",
+        "en": "soccer player",
+        "ja": {
+            "hiragana": "さっかーせんしゅ",
+            "kanji": "サッカー選手"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/nurse.png",
+        "en": "nurse",
+        "ja": {
+            "hiragana": "かんごし",
+            "kanji": "看護師"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/pilot.png",
+        "en": "pilot",
+        "ja": {
+            "hiragana": "ぱいろっと",
+            "kanji": "パイロット"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/flight_attendant.png",
+        "en": "flight attendant",
+        "ja": [
+            {
+                "hiragana": "きゃくしつじょうむいん",
+                "kanji": "客室乗務員"
+            },
+            {
+                "hiragana": "ふらいとあてんだんと",
+                "kanji": "フライトアテンダント"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/singer.png",
+        "en": "singer",
+        "ja": {
+            "hiragana": "かしゅ",
+            "kanji": "歌手"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/actor.png",
+        "en": "actor",
+        "ja": {
+            "hiragana": "はいゆう",
+            "kanji": "俳優"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/baker.png",
+        "en": "baker",
+        "ja": [
+            {
+                "hiragana": "ぱんや（ひと）",
+                "kanji": "パン屋（人）"
+            },
+            {
+                "hiragana": "ぱんやさん",
+                "kanji": "パン屋さん"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/vet.png",
+        "en": [
+            "vet",
+            "veterinarian"
+        ],
+        "ja": {
+            "hiragana": "じゅうい",
+            "kanji": "獣医"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/comedian.png",
+        "en": "comedian",
+        "ja": [
+            {
+                "hiragana": "おわらいげいにん",
+                "kanji": "お笑い芸人"
+            },
+            {
+                "hiragana": "こめでぃあん",
+                "kanji": "コメディアン"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/florist.png",
+        "en": "florist",
+        "ja": [
+            {
+                "hiragana": "はなや(ひと)",
+                "kanji": "花屋(人)"
+            },
+            {
+                "hiragana": "はなやさん",
+                "kanji": "花屋さん"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/police_officer.png",
+        "en": "police officer",
+        "ja": {
+            "hiragana": "けいさつかん",
+            "kanji": "警察官"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/carpenter.png",
+        "en": "carpenter",
+        "ja": {
+            "hiragana": "だいく",
+            "kanji": "大工"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/farmer.png",
+        "en": "farmer",
+        "ja": [
+            {
+                "hiragana": "のうぎょうじゅうじしゃ",
+                "kanji": "農業従事者"
+            },
+            {
+                "hiragana": "のうか",
+                "kanji": "農家"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/bus_driver.png",
+        "en": "bus driver",
+        "ja": {
+            "hiragana": "ばすのうんてんし",
+            "kanji": "バスの運転士"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/artist.png",
+        "en": "artist",
+        "ja": [
+            {
+                "hiragana": "びじゅつか",
+                "kanji": "美術家"
+            },
+            {
+                "hiragana": "がか",
+                "kanji": "画家"
+            }
+        ]
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/astronaut.png",
+        "en": "astronaut",
+        "ja": {
+            "hiragana": "うちゅうひこうし",
+            "kanji": "宇宙飛行士"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/images/occupations/firefighter.png",
+        "en": [
+            "firefighter",
+            "fire fighter"
+        ],
+        "ja": {
+            "hiragana": "しょうぼうし",
+            "kanji": "消防士"
+        }
+    }
+]
