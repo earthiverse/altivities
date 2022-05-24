@@ -16,6 +16,14 @@
         }
     },
     {
+        "image": "https://1.bp.blogspot.com/-JaRzIloEZw4/UgSMOL-UzYI/AAAAAAAAW_A/vOiX6Tz5oO4/s8192/fruit_banana.png",
+        "en": "bananas",
+        "ja": {
+            "kanji": "バナナ（複数形）",
+            "hiragana": "ばなな（ふくすうけい）"
+        }
+    },
+    {
         "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/cabbages.png",
         "en": "cabbages",
         "ja": {
@@ -126,6 +134,22 @@
         "ja": {
             "kanji": "キウイフルーツ（複数形）",
             "hiragana": "きういふるーつ（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/lemons.png",
+        "en": "lemons",
+        "ja": {
+            "kanji": "レモン（複数形）",
+            "hiragana": "れもん（ふくすうけい）"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/melons.png",
+        "en": "melons",
+        "ja": {
+            "kanji": "メロン（複数形）",
+            "hiragana": "めろん（ふくすうけい）"
         }
     },
     {

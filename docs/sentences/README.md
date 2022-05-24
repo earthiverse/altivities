@@ -31,9 +31,8 @@ This is a tool that you can use to make custom sentences that you can then use w
   * [I don't like ***apples***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20don%27t%20like%20%E2%91%A0.&1_wordlist=../wordlists/General/plurals_s.json&1_include=strawberries,apples,tomatoes) (*Note*: Fruits & Vegetables (3) only)
   * [I don't like ***blue/baseball/apples***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20don%27t%20like%20%E2%91%A0.&1_wordlists=../wordlists/General/plurals_s.json,../wordlists/LetsTry1/unit4_cards.json&1_include=red,yellow,blue,green,purple,orange,pink,brown,white,black,baseball,dodgeball,soccer,basketball,swimming,strawberries,apples,tomatoes)
 * Unit 5
-  * [What ***fruit*** do you like?](https://altivities.earthiverse.ca/sentences/?sentence=What%20%E2%91%A0%20do%20you%20like?&1_wordlist=../wordlists/General/categories.json)
-  <!-- TODO: Add more fruits -->
-  * [What fruit do you like? I like ***apples***.](https://altivities.earthiverse.ca/sentences/?sentence=What%20%E2%91%A0%20do%20you%20like?%0AI%20like%20%E2%91%A1.&1_wordlist=../wordlists/General/categories.json&1_include=fruit&2_wordlist=../wordlists/General/plurals_s.json&2_include=strawberries,apples)
+  * [What ***fruit*** do you like?](<https://altivities.earthiverse.ca/cards/?sentence=What%20%E2%91%A0%20do%20you%20like?&wordlist=../wordlists/General/categories.json&include=color,sport,food,fruit>
+  * [What fruit do you like? I like ***apples***.](https://altivities.earthiverse.ca/sentences/?sentence=What%20%E2%91%A0%20do%20you%20like?%0AI%20like%20%E2%91%A1.&1_wordlist=../wordlists/General/categories.json&1_include=fruit&2_wordlist=../wordlists/General/plurals_s.json&2_include=strawberries,apples,grapes,pineapples,peaches,melons,melons,bananas,kiwi%20fruits,lemons)
 
 ### Let's Try 2
 
