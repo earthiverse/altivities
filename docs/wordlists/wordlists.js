@@ -48,10 +48,12 @@ async function prepareWordlist(options = {
         const newCombined = [];
         while (toInclude.length > 0) {
             const includeWord = toInclude.shift();
+            let found = false;
             for (const word of combinedWordlist) {
                 if (word.en == includeWord
                     || (Array.isArray(word.en) && word.en[0] == includeWord)) {
                     newCombined.push(word);
+                    found = true;
                     break;
                 }
                 if (Array.isArray(word.en)) {
@@ -61,9 +63,19 @@ async function prepareWordlist(options = {
                             continue;
                         word.en = alternativeWord;
                         newCombined.push(word);
+                        found = true;
                         break;
                     }
                 }
+            }
+            if (!found) {
+                newCombined.push({
+                    en: includeWord,
+                    ja: {
+                        hiragana: "???",
+                        kanji: "???"
+                    }
+                });
             }
         }
         combinedWordlist = newCombined;

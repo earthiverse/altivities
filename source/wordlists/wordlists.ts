@@ -85,11 +85,13 @@ async function prepareWordlist(options = {
             const includeWord = toInclude.shift()
 
             // Look for it in our wordlists
+            let found = false
             for (const word of combinedWordlist) {
                 if (word.en == includeWord
                     || (Array.isArray(word.en) && word.en[0] == includeWord)) {
                     // Add this word
                     newCombined.push(word)
+                    found = true
                     break
                 }
 
@@ -101,9 +103,20 @@ async function prepareWordlist(options = {
                         // We found the word as an alternative, set it as the main word
                         word.en = alternativeWord
                         newCombined.push(word)
+                        found = true
                         break
                     }
                 }
+            }
+
+            if (!found) {
+                newCombined.push({
+                    en: includeWord,
+                    ja: {
+                        hiragana: "???",
+                        kanji: "???"
+                    }
+                })
             }
         }
 
