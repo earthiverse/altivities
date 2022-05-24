@@ -8,6 +8,7 @@ export type Languages =
 export type Word = {
     [T in Exclude<Languages, "ja">]: string | string[]
 } & {
+    audio?: string
     image?: string
     ja: {
         kanji: string

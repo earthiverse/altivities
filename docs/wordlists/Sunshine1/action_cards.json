@@ -4,7 +4,7 @@
         "en": "clean your room",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "部屋を掃除する"
         }
     },
     {
@@ -12,7 +12,7 @@
         "en": "close your book",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "本を閉じる"
         }
     },
     {
@@ -20,7 +20,7 @@
         "en": "drink some tea",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "お茶を飲む"
         }
     },
     {
@@ -28,7 +28,7 @@
         "en": "eat breakfast",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "朝食を食べる"
         }
     },
     {
@@ -36,7 +36,7 @@
         "en": "make sushi",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "すしを作る"
         }
     },
     {
@@ -44,7 +44,7 @@
         "en": "open your book",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "本を開ける"
         }
     },
     {
@@ -52,7 +52,7 @@
         "en": "play baseball",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "野球をする"
         }
     },
     {
@@ -60,7 +60,7 @@
         "en": "read a book",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "本を読む"
         }
     },
     {
@@ -68,7 +68,7 @@
         "en": "sing a song",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "歌を歌う"
         }
     },
     {
@@ -76,7 +76,7 @@
         "en": "speak English",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "英語を話す(しゃべる)"
         }
     },
     {
@@ -84,7 +84,7 @@
         "en": "study English",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "英語を勉強する"
         }
     },
     {
@@ -92,7 +92,7 @@
         "en": "take a bath",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "風呂に入る"
         }
     },
     {
@@ -100,7 +100,7 @@
         "en": "touch your desk",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "つくえに触れる(さわる)"
         }
     },
     {
@@ -108,7 +108,7 @@
         "en": "wash your face",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "顔を洗う"
         }
     },
     {
@@ -116,7 +116,7 @@
         "en": "write your name",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "名前を書く"
         }
     },
     {
@@ -124,7 +124,7 @@
         "en": "watch TV",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "テレビを見る"
         }
     },
     {
@@ -132,7 +132,7 @@
         "en": "cook dinner",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "夕食を作る(料理する)"
         }
     },
     {
@@ -140,7 +140,7 @@
         "en": "use a computer",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "コンピュータを使う"
         }
     },
     {
@@ -148,7 +148,7 @@
         "en": "bring your camera",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "カメラを持ってくる"
         }
     },
     {
@@ -156,7 +156,7 @@
         "en": "come to school",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "学校に来る"
         }
     },
     {
@@ -164,7 +164,7 @@
         "en": "do your homework",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "宿題をする"
         }
     },
     {
@@ -172,7 +172,7 @@
         "en": "enjoy your stay",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "滞在を楽しむ"
         }
     },
     {
@@ -180,7 +180,7 @@
         "en": "find your key",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "鍵を見つける"
         }
     },
     {
@@ -188,7 +188,7 @@
         "en": "go to school",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "学校に行く"
         }
     },
     {
@@ -196,7 +196,7 @@
         "en": "help your friend",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "友を助ける"
         }
     },
     {
@@ -204,15 +204,15 @@
         "en": "listen to music",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "音楽を聴く"
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/Sunshine1/images/action_cards/live_in_Hokkaido.png",
+        "image": "https://altivities.earthiverse.ca/wordlists/Sunshine1/images/action_cards/live_in_hokkaido.png",
         "en": "live in Hokkaido",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "北海道に住む"
         }
     },
     {
@@ -220,7 +220,7 @@
         "en": "look at me",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "私を見て"
         }
     },
     {
@@ -228,7 +228,7 @@
         "en": "meet you at the station",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "駅でお会う"
         }
     },
     {
@@ -236,7 +236,7 @@
         "en": "pick up your pencil",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "鉛筆を手に取る"
         }
     },
     {
@@ -244,7 +244,7 @@
         "en": "put down your pencil",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "鉛筆を置く"
         }
     },
     {
@@ -252,7 +252,7 @@
         "en": "say \"Good morning\"",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "「おはよう」と言う"
         }
     },
     {
@@ -260,7 +260,7 @@
         "en": "see a movie",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "映画を見る"
         }
     },
     {
@@ -268,7 +268,7 @@
         "en": "teach English",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "英語を教える"
         }
     },
     {
@@ -276,7 +276,7 @@
         "en": "visit Kyoto",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "京都を訪ねる"
         }
     },
     {
@@ -284,7 +284,7 @@
         "en": "want a new bike",
         "ja": {
             "hiragana": "",
-            "kanji": ""
+            "kanji": "新しい自転車を求める"
         }
     }
 ]
