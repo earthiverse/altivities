@@ -1,0 +1,23 @@
+{
+  "name": "altivities",
+  "version": "0.1.0",
+  "description": "Activities & games to use in ESL and EFL classes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/earthiverse/altivities.git"
+  },
+  "author": "Kent Rasmussen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/earthiverse/altivities/issues"
+  },
+  "homepage": "https://github.com/earthiverse/altivities#readme",
+  "devDependencies": {
+    "typescript": "^4.7.2",
+    "webpack": "^5.72.1"
+  }
+}
