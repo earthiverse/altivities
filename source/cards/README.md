@@ -37,7 +37,10 @@ These wordlists have pictures (mostly from [Irasutoya](https://irasutoya.com)!) 
 
 These wordlists have pictures that match with the cards available in the back of the textbook.
 
-* [Alphabet (Uppercase)](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/alphabet_uppercase_cards.json)
+* Alphabet
+  * [Uppercase](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/alphabet_uppercase_cards.json)
+  * [Lowercase](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/alphabet_lowercase_cards.json)
+  * [Words](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/alphabet_words.json) (i.e. **a**nt, **b**ear, **c**ow, ...)
 * [Phonics](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/phonics_cards.json)
 * Lesson 2
   * [Months](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/lesson2_cards.json)
@@ -49,8 +52,12 @@ These wordlists have pictures that match with the cards available in the back of
 
 These wordlists have pictures that match with the cards available in the back of the textbook.
 
-* [Alphabet (Uppercase)](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/alphabet_uppercase_cards.json)
+* Alphabet
+  * [Uppercase](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/alphabet_uppercase_cards.json)
+  * [Lowercase](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/alphabet_lowercase_cards.json)
+  * [Words](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/alphabet_words.json) (i.e. **a**nt, **b**ear, **c**ow, ...)
 * [Phonics](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/phonics_cards.json)
+* [Vowels](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine6/vowels_cards.json)
 
 ## Custom Wordlists
 
