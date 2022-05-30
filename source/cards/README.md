@@ -43,7 +43,7 @@ These wordlists have pictures that match with the cards available in the back of
   * [Months](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/lesson2_cards.json)
 * Lesson 3
   * [All](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/lesson3_cards.json)
-  * [Subjects](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/lesson2_cards.json&ignore=doctor,soccer%20player,police%20officer,florist,teacher)
+  * [Subjects](https://altivities.earthiverse.ca/cards/?wordlist=../wordlists/JuniorSunshine5/lesson3_cards.json&ignore=doctor,soccer%20player,police%20officer,florist,teacher)
 
 ### Junior Sunshine 6
 
