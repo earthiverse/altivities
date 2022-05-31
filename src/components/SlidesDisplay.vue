@@ -4,10 +4,22 @@ import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import { useWordListStore } from "@/stores/wordlist";
 import { ref } from "vue";
 
-type SlideData = {
-  html: string;
+type EnglishSlide = {
+  text: {
+    en: string;
+  };
   image?: string;
 };
+type JapaneseSlide = {
+  text: {
+    ja: {
+      kanji: string;
+      hiragana: string;
+    };
+  };
+  image?: string;
+};
+type SlideData = EnglishSlide | JapaneseSlide;
 
 const { addWordsFromURLSearchParams } = useWordListStore();
 const wordlist = await addWordsFromURLSearchParams();
@@ -20,27 +32,30 @@ for (const word of wordlist) {
   if (!type || type.includes("en")) {
     // Add English slide
     slides.value.push({
-      html: `<span class="en">${
-        Array.isArray(word.en) ? word.en[0] : word.en
-      }</span>`,
       image: word.image,
+      text: {
+        en: Array.isArray(word.en) ? word.en[0] : word.en,
+      },
     });
   }
   if (type?.includes("ja")) {
     // Add Japanese slide
     slides.value.push({
-      html: `<ruby class="ja">${
-        Array.isArray(word.ja) ? word.ja[0].kanji : word.ja.kanji
-      }<rt>${
-        Array.isArray(word.ja) ? word.ja[0].hiragana : word.ja.hiragana
-      }</rt></ruby>`,
       image: word.image,
+      text: {
+        ja: {
+          hiragana: Array.isArray(word.ja)
+            ? word.ja[0].hiragana
+            : word.ja.hiragana,
+          kanji: Array.isArray(word.ja) ? word.ja[0].kanji : word.ja.kanji,
+        },
+      },
     });
   }
 }
 
 // Add navigation by arrow keys
-let myCarousel = ref<any>(null);
+let myCarousel = ref<any>(null); // TODO: The Carousel we use doesn't have typings (yet?)...
 window.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "ArrowLeft":
@@ -62,8 +77,14 @@ window.addEventListener("keydown", (event) => {
           :style="{
             backgroundImage: `url(${slide.image})`,
           }"
-          v-html="slide.html"
-        />
+        >
+          <ruby v-if="(slide as EnglishSlide).text.en" class="en">
+            {{ (slide as EnglishSlide).text.en }}
+          </ruby>
+          <ruby v-else-if="(slide as JapaneseSlide).text.ja" class="ja">
+            {{ (slide as JapaneseSlide).text.ja.kanji }}<rt>{{ (slide as JapaneseSlide).text.ja.hiragana }}</rt>
+          </ruby>
+        </div>
       </Slide>
     </template>
     <template #addons>
