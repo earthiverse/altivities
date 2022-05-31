@@ -54,6 +54,7 @@ await wordlistStore.addWordsFromURLSearchParams();
   background-repeat: no-repeat;
   background-size: contain;
   border: 1px solid #000;
+  border-radius: 4pt;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

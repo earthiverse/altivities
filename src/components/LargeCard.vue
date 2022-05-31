@@ -11,7 +11,6 @@ type OnAddEvent = {
 };
 const onAdd = (data: OnAddEvent) => {
   // Move the current card back to the list
-  console.log(data);
   if (data.newIndex == 0 && wordlistStore.selected[0].length > 1) {
     // Swap the second one back
     const word = wordlistStore.selected[0].splice(1, 1)[0];
@@ -60,6 +59,7 @@ const onAdd = (data: OnAddEvent) => {
 .large-card {
   --size: min(calc(100vh - 100pt - 24px), 100vw);
   border: 2pt dashed #000;
+  border-radius: 44pt;
   box-sizing: border-box;
   height: var(--size);
   margin: auto;
@@ -78,7 +78,7 @@ const onAdd = (data: OnAddEvent) => {
   font-family: "Schoolbell", cursive;
   font-size: min(8vh, 8vw);
   height: 100%;
-  justify-content: space-between;
+  justify-content: flex-end;
   text-shadow: rgb(255, 255, 255) 6px 0px 0px,
     rgb(255, 255, 255) 5.91686px 0.995377px 0px,
     rgb(255, 255, 255) 5.66974px 1.96317px 0px,
@@ -121,12 +121,7 @@ const onAdd = (data: OnAddEvent) => {
 }
 
 .large-card div .handle {
-  color: #666;
-  display: flex;
-  font-size: 48pt;
-  height: 88pt;
-  justify-content: center;
-  width: 88pt;
+  display: none;
 }
 
 .large-card div .text {

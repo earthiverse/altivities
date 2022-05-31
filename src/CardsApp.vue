@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import CardsMenu from "@/components/CardsMenu.vue";
-import LargeCard from "./components/LargeCardWithHandle.vue";
+import LargeCard from "./components/LargeCard.vue";
+import QRToggle from "./components/QRToggle.vue";
 import { useWordListStore } from "@/stores/wordlist";
 const wordlistStore = useWordListStore();
 </script>
 
 <template>
+  <QRToggle />
   <LargeCard :word="wordlistStore.getSelectedWordByIndex(0)" />
   <Suspense>
     <CardsMenu />

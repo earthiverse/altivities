@@ -1,3 +1,21 @@
 body, html {
     user-select: none;
 }
+
+.top-button {
+    background-color: #fff;
+    border: 1px solid;
+    border-radius: 8pt;
+    font-size: 44pt;
+    position: absolute;
+    top: 4pt;
+    z-index: 100;
+}
+
+.top-button:nth-of-type(1) {
+    left: 4pt;
+}
+
+.top-button:nth-of-type(2) {
+    left: 48pt;
+}

@@ -21,6 +21,33 @@ export type Word = {
 
 export type WordList = Word[];
 
+const ALTIVITIES_WORD_LISTS = "https://altivities.earthiverse.ca/wordlists";
+const CURATED_WORD_LISTS: {
+  [T in string]: {
+    prefix: string;
+    lists: {
+      [T in string]: {
+        name: string;
+        wordList: string;
+      };
+    };
+  };
+} = {
+  General: {
+    prefix: `${ALTIVITIES_WORD_LISTS}/General/`,
+    lists: {
+      colors: {
+        name: "Colors",
+        wordList: `colors.json`,
+      },
+      sports: {
+        name: "Sports",
+        wordList: `sports.json`,
+      },
+    },
+  },
+};
+
 export const useWordListStore = defineStore({
   id: "word_list",
   state: () => ({
@@ -32,6 +59,9 @@ export const useWordListStore = defineStore({
   getters: {
     allWords: (state): WordList => {
       return state.wordLists.flat();
+    },
+    getCuratedWordLists: () => {
+      return CURATED_WORD_LISTS;
     },
     getSelectedWordByIndex: (state) => {
       return (index: number) => {

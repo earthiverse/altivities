@@ -12,8 +12,12 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@chenfengyuan/vue-qrcode": "^2.0.0",
     "pinia": "^2.0.14",
+    "qrcode": "^1.5.0",
     "vue": "^3.2.33",
+    "vue-final-modal": "^3.4.4",
+    "vue3-carousel": "^0.1.40",
     "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
