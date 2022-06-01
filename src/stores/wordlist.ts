@@ -215,6 +215,12 @@ export const useWordListStore = defineStore({
 
       return this.allWords;
     },
+    resetStore() {
+      this.selected.splice(0, this.selected.length);
+      this.unselected.splice(0, this.unselected.length);
+      this.wordLists.splice(0, this.wordLists.length);
+      this.numWords = 0;
+    },
     selectWord(id: number) {
       for (let i = 0; i < this.unselected.length; i++) {
         const wordList = this.unselected[i];
