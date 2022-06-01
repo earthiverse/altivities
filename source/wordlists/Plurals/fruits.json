@@ -1,0 +1,32 @@
+[
+    {
+        "singular": {
+            "en": "apple",
+            "image": "https://4.bp.blogspot.com/-uY6ko43-ABE/VD3RiIglszI/AAAAAAAAoEA/kI39usefO44/s8192/fruit_ringo.png"
+        },
+        "plural": {
+            "en": "apples",
+            "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/apples.png"
+        }
+    },
+    {
+        "singular": {
+            "en": "cherry",
+            "image": "https://2.bp.blogspot.com/-lPrZxv5VB6I/UvTd5SXTxlI/AAAAAAAAdgA/T0xoHcopZ8Q/s8192/fruit_sakuranbo.png"
+        },
+        "plural": {
+            "en": "cherries",
+            "image": "https://3.bp.blogspot.com/-ddTjHiYjIjI/UgSMOOCKHeI/AAAAAAAAW-4/QrU2gpketvQ/s8192/fruit_cherry.png"
+        }
+    },
+    {
+        "singular": {
+            "en": "orange",
+            "image": "https://4.bp.blogspot.com/-PYqNTVOP9hs/UgSMR6zIbdI/AAAAAAAAXAk/tDJMCfemfwk/s8192/fruit_orange.png"
+        },
+        "plural": {
+            "en": "oranges",
+            "image": "https://3.bp.blogspot.com/-LgZiIfVhI6o/WK7e0Cz6vHI/AAAAAAABB-8/1TJfyzBMqnoac_yHNBsd4vcI-I_t1twqwCLcB/s8192/fruit_mikan_set.png"
+        }
+    }
+]
