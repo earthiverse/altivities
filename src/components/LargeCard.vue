@@ -49,9 +49,6 @@ const onAdd = (data: OnAddEvent) => {
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Schoolbell&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
-
 .sortable-ghost {
   opacity: 0.5;
 }
@@ -60,7 +57,6 @@ const onAdd = (data: OnAddEvent) => {
   --size: min(calc(100vh - 100pt - 24px), 100vw);
   border: 2pt dashed #000;
   border-radius: 44pt;
-  box-sizing: border-box;
   height: var(--size);
   margin: auto;
   overflow: hidden;

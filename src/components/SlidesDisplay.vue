@@ -2,57 +2,20 @@
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import { useWordListStore } from "@/stores/wordlist";
-import { ref } from "vue";
-
-type EnglishSlide = {
-  text: {
-    en: string;
-  };
-  image?: string;
-};
-type JapaneseSlide = {
-  text: {
-    ja: {
-      kanji: string;
-      hiragana: string;
-    };
-  };
-  image?: string;
-};
-type SlideData = EnglishSlide | JapaneseSlide;
+import {
+  useSlidesStore,
+  type EnglishSlide,
+  type JapaneseSlide,
+} from "@/stores/slides";
+import { ref, watch, watchEffect } from "vue";
 
 const { addWordsFromURLSearchParams } = useWordListStore();
+const slidesStore = useSlidesStore();
 const wordlist = await addWordsFromURLSearchParams();
 
 // Make the slides
-const slides = ref<SlideData[]>([]);
-const params = new URLSearchParams(window.location.search);
-const type = params.get("type") as "en" | "en+ja" | "ja" | null;
-for (const word of wordlist) {
-  if (!type || type.includes("en")) {
-    // Add English slide
-    slides.value.push({
-      image: word.image,
-      text: {
-        en: Array.isArray(word.en) ? word.en[0] : word.en,
-      },
-    });
-  }
-  if (type?.includes("ja")) {
-    // Add Japanese slide
-    slides.value.push({
-      image: word.image,
-      text: {
-        ja: {
-          hiragana: Array.isArray(word.ja)
-            ? word.ja[0].hiragana
-            : word.ja.hiragana,
-          kanji: Array.isArray(word.ja) ? word.ja[0].kanji : word.ja.kanji,
-        },
-      },
-    });
-  }
-}
+slidesStore.setOptionsFromURLSearchParams();
+slidesStore.addSlidesFromWordList(wordlist);
 
 // Add navigation by arrow keys
 let myCarousel = ref<any>(null); // TODO: The Carousel we use doesn't have typings (yet?)...
@@ -66,23 +29,93 @@ window.addEventListener("keydown", (event) => {
       break;
   }
 });
+
+watch(slidesStore.slides, () => {
+  myCarousel.value.slideTo(0);
+});
 </script>
 
 <template>
   <Carousel :items-to-show="1.1" :wrap-around="true" ref="myCarousel">
     <template #slides>
-      <Slide v-for="(slide, index) in slides" :key="index">
+      <Slide v-for="(slide, index) in slidesStore.slides" :key="index">
         <div
           class="carousel__item"
           :style="{
             backgroundImage: `url(${slide.image})`,
           }"
         >
-          <ruby v-if="(slide as EnglishSlide).text.en" class="en">
+          <ruby v-if="(slide as EnglishSlide).text.en !== undefined" class="en">
             {{ (slide as EnglishSlide).text.en }}
           </ruby>
           <ruby v-else-if="(slide as JapaneseSlide).text.ja" class="ja">
-            {{ (slide as JapaneseSlide).text.ja.kanji }}<rt>{{ (slide as JapaneseSlide).text.ja.hiragana }}</rt>
+            {{ (slide as JapaneseSlide).text.ja.kanji
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }}<rt>{{ (slide as JapaneseSlide).text.ja.hiragana }}</rt>
           </ruby>
         </div>
       </Slide>
@@ -95,8 +128,6 @@ window.addEventListener("keydown", (event) => {
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Schoolbell&display=swap");
-
 body,
 html {
   overflow-x: hidden;
@@ -179,7 +210,6 @@ html {
 .carousel__prev,
 .carousel__next {
   background-color: #fff;
-  box-sizing: content-box;
   border: 5px solid #000;
 }
 

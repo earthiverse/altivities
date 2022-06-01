@@ -57,10 +57,7 @@ export const useWordListStore = defineStore({
     numWords: 0,
   }),
   getters: {
-    allWords: (state): WordList => {
-      return state.wordLists.flat();
-    },
-    getCuratedWordLists: () => {
+    curatedWordLists: () => {
       return CURATED_WORD_LISTS;
     },
     getSelectedWordByIndex: (state) => {
@@ -84,6 +81,9 @@ export const useWordListStore = defineStore({
           }
         }
       };
+    },
+    words: (state): WordList => {
+      return state.wordLists.flat();
     },
   },
   actions: {
@@ -213,7 +213,7 @@ export const useWordListStore = defineStore({
         numberedWordLists = `${i}_wordlists`;
       }
 
-      return this.allWords;
+      return this.words;
     },
     resetStore() {
       this.selected.splice(0, this.selected.length);

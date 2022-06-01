@@ -16,13 +16,11 @@ onMounted(() => {
 });
 </script>
 
-<script lang="ts"></script>
-
 <template>
-  <VueFinalModal
+  <vue-final-modal
     v-model="show"
     classes="modal-container"
-    content-class="modal-content"
+    content-class="modal-content-qr"
   >
     <vue-qrcode
       :value="getURL()"
@@ -31,8 +29,8 @@ onMounted(() => {
       :esc-to-close="true"
       tag="svg"
       :options="{ errorCorrectionLevel: 'L', width: qrWidth, margin: 1 }"
-    ></vue-qrcode>
-  </VueFinalModal>
+    />
+  </vue-final-modal>
   <span
     class="material-symbols-outlined top-button qr-code-button"
     @click="show = true"
@@ -41,20 +39,12 @@ onMounted(() => {
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
-
 .qr-code-button {
   border-color: red;
   color: red;
 }
 
-.modal-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
+.modal-content-qr {
   display: inline-block;
   padding: 1rem;
   border: 4pt solid red;

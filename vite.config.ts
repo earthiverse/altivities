@@ -16,6 +16,7 @@ export default defineConfig({
         index: fileURLToPath(new URL("./index.html", import.meta.url)),
         bingo: fileURLToPath(new URL("./bingo.html", import.meta.url)),
         cards: fileURLToPath(new URL("./cards.html", import.meta.url)),
+        howMany: fileURLToPath(new URL("./how_many.html", import.meta.url)),
         slides: fileURLToPath(new URL("./slides.html", import.meta.url)),
       },
     },

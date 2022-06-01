@@ -32,21 +32,6 @@ await wordlistStore.addWordsFromURLSearchParams();
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Schoolbell&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
-
-.bottom-menu {
-  box-sizing: border-box;
-  display: flex;
-  bottom: 0;
-  gap: 8px;
-  justify-content: start;
-  overflow-x: scroll;
-  padding: 8px;
-  position: absolute;
-  width: calc(100% - 16px);
-}
-
 .bottom-menu div {
   align-content: center;
   align-items: center;
@@ -55,7 +40,6 @@ await wordlistStore.addWordsFromURLSearchParams();
   background-size: contain;
   border: 1px solid #000;
   border-radius: 4pt;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

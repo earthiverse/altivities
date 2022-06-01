@@ -1,5 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Schoolbell&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,1,0");
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body, html {
+    font-family: Arial, Helvetica, sans-serif;
     user-select: none;
+}
+
+.bottom-menu {
+  display: flex;
+  bottom: 0;
+  gap: 8px;
+  justify-content: start;
+  overflow-x: scroll;
+  padding: 8px;
+  position: absolute;
+  width: calc(100% - 16px);
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top {
+  display: flex;
+  height: calc(100vh - 100pt - 24px);
+  width: 100%;
 }
 
 .top-button {
@@ -17,5 +50,5 @@ body, html {
 }
 
 .top-button:nth-of-type(2) {
-    left: 48pt;
+    left: 56pt;
 }
