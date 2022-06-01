@@ -45,77 +45,11 @@ watch(slidesStore.slides, () => {
             backgroundImage: `url(${slide.image})`,
           }"
         >
-          <ruby v-if="(slide as EnglishSlide).text.en !== undefined" class="en">
-            {{ (slide as EnglishSlide).text.en }}
+          <ruby v-if="slide.type == 'en'" class="en">
+            {{ slide.text.en }}
           </ruby>
-          <ruby v-else-if="(slide as JapaneseSlide).text.ja" class="ja">
-            {{ (slide as JapaneseSlide).text.ja.kanji
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            }}<rt>{{ (slide as JapaneseSlide).text.ja.hiragana }}</rt>
+          <ruby v-else-if="slide.type == 'ja'" class="ja">
+            {{ slide.text.ja.kanji }}<rt>{{ slide.text.ja.hiragana }}</rt>
           </ruby>
         </div>
       </Slide>

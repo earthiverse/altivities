@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import draggable from "vuedraggable";
-import { useWordListStore } from "@/stores/wordlist";
+import { useWordListStore, type Word } from "@/stores/wordlist";
 
 const wordlistStore = useWordListStore();
 
@@ -11,15 +11,16 @@ type OnAddEvent = {
 };
 const onAdd = (data: OnAddEvent) => {
   // Move the current card back to the list
+  let word: Word;
   if (data.newIndex == 0 && wordlistStore.selected[0].length > 1) {
     // Swap the second one back
-    const word = wordlistStore.selected[0].splice(1, 1)[0];
-    wordlistStore.unselected[0].splice(data.oldIndex, 0, word);
+    word = wordlistStore.selected[0].splice(1, 1)[0];
   } else if (data.newIndex == 1 && wordlistStore.selected[0].length > 1) {
-    // Swap the first one back
-    const word = wordlistStore.selected[0].splice(0, 1)[0];
-    wordlistStore.unselected[0].splice(data.oldIndex, 0, word);
+    word = wordlistStore.selected[0].splice(0, 1)[0];
+  } else {
+    throw `How did this happen!?`;
   }
+  wordlistStore.unselected[0].push(word);
 };
 </script>
 

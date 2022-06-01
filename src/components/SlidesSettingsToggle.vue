@@ -10,8 +10,6 @@ const wordlistStore = useWordListStore();
 
 function updateSettings() {
   // Get the new settings
-  console.log(`before`);
-  console.log(slidesStore.setOptionsFromURLSearchParams());
   const type = (
     document.querySelector('input[name="type"]:checked') as HTMLInputElement
   ).value;
@@ -21,8 +19,6 @@ function updateSettings() {
 
   // Remake slides
   slidesStore.removeAllSlides();
-  console.log(`after`);
-  console.log(slidesStore.setOptionsFromURLSearchParams());
   slidesStore.addSlidesFromWordList(wordlistStore.words);
 
   // Hide the modal
@@ -38,35 +34,27 @@ function updateSettings() {
   >
     <form @submit.prevent="updateSettings" name="type">
       <label>
-        <input
-          type="radio"
-          id="en"
-          name="type"
-          value="en"
-          :checked="slidesStore.options.en && !slidesStore.options.ja"
-        />
+        <input type="radio" id="en" name="type" value="img" />
+        Picture
+      </label>
+      <br />
+      <label>
+        <input type="radio" id="en" name="type" value="img,en" />
+        Picture → English
+      </label>
+      <br />
+      <label>
+        <input type="radio" id="en" name="type" value="en" />
         English
       </label>
       <br />
       <label>
-        <input
-          type="radio"
-          id="enja"
-          name="type"
-          value="en,ja"
-          :checked="slidesStore.options.en && slidesStore.options.ja"
-        />
-        English + Japanese
+        <input type="radio" id="enja" name="type" value="en,ja" />
+        English → Japanese
       </label>
       <br />
       <label>
-        <input
-          type="radio"
-          id="ja"
-          name="type"
-          value="ja"
-          :checked="!slidesStore.options.en && slidesStore.options.ja"
-        />
+        <input type="radio" id="ja" name="type" value="ja" />
         Japanese
       </label>
       <br />
