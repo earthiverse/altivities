@@ -18,6 +18,7 @@ function updateSettings() {
   updateURLParameter("type", type);
 
   // Remake slides
+  slidesStore.setOptionsFromURLSearchParams();
   slidesStore.removeAllSlides();
   slidesStore.addSlidesFromWordList(wordlistStore.words);
 
@@ -34,12 +35,12 @@ function updateSettings() {
   >
     <form @submit.prevent="updateSettings" name="type">
       <label>
-        <input type="radio" id="en" name="type" value="img" />
+        <input type="radio" id="img" name="type" value="img" />
         Picture
       </label>
       <br />
       <label>
-        <input type="radio" id="en" name="type" value="img,en" />
+        <input type="radio" id="img_en" name="type" value="img,en" />
         Picture → English
       </label>
       <br />
@@ -49,7 +50,7 @@ function updateSettings() {
       </label>
       <br />
       <label>
-        <input type="radio" id="enja" name="type" value="en,ja" />
+        <input type="radio" id="en_ja" name="type" value="en,ja" />
         English → Japanese
       </label>
       <br />
