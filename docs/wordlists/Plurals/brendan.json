@@ -1,0 +1,32 @@
+[
+    {
+        "singular": {
+            "en": "Brendan",
+            "image": "https://altivities.earthiverse.ca/wordlists/Plurals/images/brendan.png"
+        },
+        "plural": {
+            "en": "Brendans",
+            "image": "https://altivities.earthiverse.ca/wordlists/Plurals/images/brendans.png"
+        }
+    },
+    {
+        "singular": {
+            "en": "goose",
+            "image": "https://altivities.earthiverse.ca/wordlists/Plurals/images/goose.png"
+        },
+        "plural": {
+            "en": "geese",
+            "image": "https://altivities.earthiverse.ca/wordlists/Plurals/images/geese.png"
+        }
+    },
+    {
+        "singular": {
+            "en": "moose",
+            "image": "https://altivities.earthiverse.ca/wordlists/Plurals/images/moose.png"
+        },
+        "plural": {
+            "en": "moose",
+            "image": "https://altivities.earthiverse.ca/wordlists/Plurals/images/2_moose.png"
+        }
+    }
+]
