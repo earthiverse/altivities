@@ -190,14 +190,6 @@
         }
     },
     {
-        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/six.png",
-        "en": "six",
-        "ja": {
-            "hiragana": "ろく",
-            "kanji": "六"
-        }
-    },
-    {
         "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/tiger.png",
         "en": [
             "tiger",
@@ -236,6 +228,14 @@
         "ja": {
             "hiragana": "もくざい",
             "kanji": "木材"
+        }
+    },
+    {
+        "image": "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/images/alphabet/six.png",
+        "en": "six",
+        "ja": {
+            "hiragana": "ろく",
+            "kanji": "六"
         }
     },
     {
