@@ -1,0 +1,1 @@
+import{o as t,c as s,a as p,b as _}from"./pinia.esm-browser.b39ed190.js";var i=(e,r)=>{const a=e.__vccOpts||e;for(const[n,o]of r)a[n]=o;return a};const l={};function f(e,r){return t(),s("main",null,"Hello. This is a work in progress.")}var m=i(l,[["render",f]]);const c=p(m);c.use(_());c.mount("#app");
