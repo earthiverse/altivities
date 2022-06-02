@@ -4,9 +4,7 @@ import {
   usePluralWordListStore,
   type PluralWord,
 } from "@/stores/pluralWordlists";
-import { useHowManyStore } from "@/stores/howMany";
-import { randomFloatFromInterval, randomIntFromInterval } from "./random";
-import type { StyleValue } from "vue";
+import { useHowManyStore, type HowManyCellData } from "@/stores/howMany";
 const pluralWordlistStore = usePluralWordListStore();
 const howManyStore = useHowManyStore();
 
@@ -17,43 +15,60 @@ pluralWordlistStore.addWordsFromURLSearchParams().then(() => {
   howManyStore.randomize(pluralWordlistStore.words);
 });
 
-function getWord(cell: number): PluralWord | undefined {
-  return pluralWordlistStore.getWordByIndex(cell);
-}
+const numberSounds: { [T in number]: string } = {
+  1: "/assets/audio/numbers/1.mp3",
+  2: "/assets/audio/numbers/2.mp3",
+  3: "/assets/audio/numbers/3.mp3",
+  4: "/assets/audio/numbers/4.mp3",
+  5: "/assets/audio/numbers/5.mp3",
+  6: "/assets/audio/numbers/6.mp3",
+  7: "/assets/audio/numbers/7.mp3",
+  8: "/assets/audio/numbers/8.mp3",
+  9: "/assets/audio/numbers/9.mp3",
+  10: "/assets/audio/numbers/10.mp3",
+  11: "/assets/audio/numbers/11.mp3",
+  12: "/assets/audio/numbers/12.mp3",
+  13: "/assets/audio/numbers/13.mp3",
+  14: "/assets/audio/numbers/14.mp3",
+  15: "/assets/audio/numbers/15.mp3",
+  16: "/assets/audio/numbers/16.mp3",
+  17: "/assets/audio/numbers/17.mp3",
+  18: "/assets/audio/numbers/18.mp3",
+  19: "/assets/audio/numbers/19.mp3",
+  20: "/assets/audio/numbers/20.mp3",
+};
 
 function getQuestion(): PluralWord | undefined {
   return pluralWordlistStore.getWordByIndex(howManyStore.howManyQuestion);
 }
 
-function getRandomStyle(): StyleValue {
-  const rotation = randomIntFromInterval(0, 2 * Math.PI);
-  const scale = randomFloatFromInterval(0.5, 1);
-  const offsetX = randomIntFromInterval(
-    Math.cos(rotation) * 25,
-    Math.sin(rotation) * 25
-  );
-  const offsetY = randomIntFromInterval(
-    Math.cos(rotation) * 25,
-    Math.sin(rotation) * 25
-  );
-  return {
-    transform:
-      `rotate(${rotation}rad) ` +
-      `scale(${scale}) ` +
-      `translate(${offsetX}%, ${offsetY}%)`,
-    WebkitFilter: `drop-shadow(0 0 10px rgba(255, 255, 255, 5))`,
-    filter: `drop-shadow(0 0 10px rgba(255, 255, 255, 5))`,
-  };
+let numClickedOK = 0;
+function checkClick(cell: HowManyCellData) {
+  if (cell.selected) return; // They've already clicked it before
+  const qIndex = howManyStore.howManyQuestion;
+  if (cell.index == qIndex) {
+    // They clicked on the correct cell
+    cell.selected = true;
+    new Audio("/assets/audio/sfx/correct.mp3").play();
+    numClickedOK += 1;
+    if (numberSounds[numClickedOK])
+      new Audio(numberSounds[numClickedOK]).play();
+  } else {
+    new Audio("/assets/audio/sfx/incorrect.mp3").play();
+  }
 }
 
 function checkAnswer() {
   // Get the guess
-  const guess = Number.parseInt(
-    (document.querySelector('input[type="number"]') as HTMLInputElement).value
-  );
-  if (howManyStore.checkAnswer(guess)) {
+  const input = document.querySelector(
+    'input[type="number"]'
+  ) as HTMLInputElement;
+  const answer = Number.parseInt(input.value);
+  if (howManyStore.checkAnswer(answer)) {
     // Do stuff
     alert("That's correct!");
+    input.value = "";
+    numClickedOK = 0;
     howManyStore.randomize(pluralWordlistStore.words);
   } else {
     // Do other stuff
@@ -72,13 +87,14 @@ function checkAnswer() {
       :key="index"
       :style="{
         height: `calc((100% / ${howManyStore.rows}))`,
+        opacity: cell.selected ? 0.5 : 1,
         width: `calc((100% / ${howManyStore.cols}))`,
       }"
     >
       <img
-        v-if="getWord(cell)"
-        :src="getWord(cell)?.singular.image"
-        :style="getRandomStyle()"
+        :src="cell.word.singular.image"
+        :style="cell.style"
+        @click="checkClick(cell)"
       />
     </div>
   </div>
@@ -117,20 +133,14 @@ function checkAnswer() {
 }
 
 .card {
-  align-content: center;
   align-items: center;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  border: 1px solid #000;
-  border-radius: 4pt;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   font-family: "Schoolbell", cursive;
-  font-size: 14pt;
   height: 88pt;
-  justify-content: flex-end;
+  justify-content: center;
   min-height: 88pt;
   min-width: 88pt;
   text-align: center;
@@ -147,23 +157,18 @@ function checkAnswer() {
     rgb(255, 255, 255) 0.567324px -1.91785px 0px,
     rgb(255, 255, 255) 1.41734px -1.41108px 0px,
     rgb(255, 255, 255) 1.92034px -0.558831px 0px;
-  width: 88pt;
-}
-
-.card .text {
-  margin-bottom: 2pt;
-  max-height: 36pt;
 }
 
 .cell {
   align-items: center;
   display: flex;
   justify-content: center;
+  transition: opacity 1s;
 }
 .cell img {
   height: 100%;
-  width: 100%;
   object-fit: contain;
+  width: 100%;
 }
 
 .form {

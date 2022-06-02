@@ -49,6 +49,7 @@ await wordlistStore.addWordsFromURLSearchParams();
   justify-content: space-between;
   min-height: 88pt;
   min-width: 88pt;
+  overflow: hidden;
   text-align: center;
   text-shadow: rgb(255, 255, 255) 2px 0px 0px,
     rgb(255, 255, 255) 1.75517px 0.958851px 0px,

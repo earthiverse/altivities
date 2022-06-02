@@ -1,20 +1,28 @@
-import { randomIntFromInterval } from "@/random";
+import { randomIntFromInterval, randomTransformStyle } from "@/random";
 import { defineStore } from "pinia";
-import type { PluralWordList } from "./pluralWordlists";
+import type { StyleValue } from "vue";
+import type { PluralWord, PluralWordList } from "./pluralWordlists";
+
+export type HowManyCellData = {
+  index: number;
+  selected: boolean;
+  style: StyleValue;
+  word: PluralWord;
+};
 
 export const useHowManyStore = defineStore({
   id: "how_many",
   state: () => ({
     cols: 5,
     rows: 5,
-    cells: new Array<number>(),
+    cells: new Array<HowManyCellData>(),
     howManyQuestion: 0,
   }),
   actions: {
     checkAnswer(guess: number) {
       let actual = 0;
       for (const cell of this.cells) {
-        if (this.howManyQuestion == cell) actual += 1;
+        if (this.howManyQuestion == cell.index) actual += 1;
       }
       return actual == guess;
     },
@@ -26,7 +34,13 @@ export const useHowManyStore = defineStore({
 
       // Set every cell to a random word
       for (let i = 0; i < this.cols * this.rows; i++) {
-        this.cells.push(randomIntFromInterval(0, numWords - 1));
+        const randomIndex = randomIntFromInterval(0, numWords - 1);
+        this.cells.push({
+          index: randomIndex,
+          selected: false,
+          style: randomTransformStyle(),
+          word: words[randomIndex],
+        });
       }
 
       // Set the question
