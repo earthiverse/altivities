@@ -14,7 +14,8 @@ export type PluralWord = {
 
 export type PluralWordList = PluralWord[];
 
-const ALTIVITIES_PLURAL_WORD_LISTS = "WE DON'T HAVE ANY YET";
+const ALTIVITIES_PLURAL_WORD_LISTS =
+  "https://altivities.earthiverse.ca/wordlists/Plurals";
 const CURATED_WORD_LISTS: {
   [T in string]: {
     prefix: string;
@@ -25,9 +26,19 @@ const CURATED_WORD_LISTS: {
       };
     };
   };
-} = {};
+} = {
+  General: {
+    prefix: `${ALTIVITIES_PLURAL_WORD_LISTS}/`,
+    lists: {
+      fruits: {
+        name: "Fruits",
+        wordList: `fruits.json`,
+      },
+    },
+  },
+};
 
-export const useWordListStore = defineStore({
+export const usePluralWordListStore = defineStore({
   id: "word_list",
   state: () => ({
     wordLists: new Array<PluralWordList>(),
@@ -36,6 +47,17 @@ export const useWordListStore = defineStore({
   getters: {
     curatedWordLists: () => {
       return CURATED_WORD_LISTS;
+    },
+    getWordByIndex: (state) => {
+      return (index: number) => {
+        let i = 0;
+        for (const wordList of state.wordLists) {
+          for (const word of wordList) {
+            if (i == index) return word;
+            i++;
+          }
+        }
+      };
     },
     words: (state): PluralWordList => {
       return state.wordLists.flat();

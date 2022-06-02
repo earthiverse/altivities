@@ -16,7 +16,8 @@ body, html {
   display: flex;
   bottom: 0;
   gap: 8px;
-  justify-content: start;
+  justify-content: flex-start;
+  min-height: 100pt;
   overflow-x: scroll;
   padding: 8px;
   position: absolute;

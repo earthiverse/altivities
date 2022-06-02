@@ -82,6 +82,17 @@ export const useWordListStore = defineStore({
         }
       };
     },
+    getWordByIndex: (state) => {
+      return (index: number) => {
+        let i = 0;
+        for (const wordList of state.wordLists) {
+          for (const word of wordList) {
+            if (i == index) return word;
+            i++;
+          }
+        }
+      };
+    },
     words: (state): WordList => {
       return state.wordLists.flat();
     },
