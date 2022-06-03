@@ -1,26 +1,32 @@
 <script setup lang="ts">
-import { useSlidesStore } from "@/stores/slides";
-import { useWordListStore } from "@/stores/wordlist";
+import { useHowManyStore } from "@/stores/howMany";
+import { usePluralWordListStore } from "@/stores/pluralWordList";
 import { updateURLParameter } from "@/url";
 import { ref } from "vue";
 let show = ref(false);
 
-const slidesStore = useSlidesStore();
-const wordlistStore = useWordListStore();
+const howManyStore = useHowManyStore();
+const pluralWordListStore = usePluralWordListStore();
 
 function updateSettings() {
   // Get the new settings
-  const type = (
-    document.querySelector('input[name="type"]:checked') as HTMLInputElement
-  ).value;
+  const rows = Number.parseInt(
+    (document.querySelector('input[name="rows"]') as HTMLInputElement).value
+  );
+  const cols = Number.parseInt(
+    (document.querySelector('input[name="cols"]') as HTMLInputElement).value
+  );
 
-  // Update 'type'
-  updateURLParameter("type", type);
+  // Update Store
+  howManyStore.rows = rows;
+  howManyStore.cols = cols;
 
-  // Remake slides
-  slidesStore.setOptionsFromURLSearchParams();
-  slidesStore.removeAllSlides();
-  slidesStore.addSlidesFromWordList(wordlistStore.words);
+  // Update URL
+  updateURLParameter("rows", rows.toString());
+  updateURLParameter("cols", cols.toString());
+
+  // Re-randomize
+  howManyStore.randomize(pluralWordListStore.words);
 
   // Hide the modal
   show.value = false;
@@ -33,32 +39,16 @@ function updateSettings() {
     classes="modal-container"
     content-class="modal-content"
   >
-    <form @submit.prevent="updateSettings" name="type">
-      <label>
-        <input type="radio" id="img" name="type" value="img" />
-        Picture
-      </label>
-      <br />
-      <label>
-        <input type="radio" id="img_en" name="type" value="img,en" />
-        Picture → English
-      </label>
-      <br />
-      <label>
-        <input type="radio" id="en" name="type" value="en" />
-        English
-      </label>
-      <br />
-      <label>
-        <input type="radio" id="en_ja" name="type" value="en,ja" />
-        English → Japanese
-      </label>
-      <br />
-      <label>
-        <input type="radio" id="ja" name="type" value="ja" />
-        Japanese
-      </label>
-      <br />
+    <form
+      class="how-many-settings-form"
+      @submit.prevent="updateSettings"
+      name="type"
+    >
+      # Rows
+      <input type="number" id="rows" name="rows" :value="howManyStore.rows" />
+
+      # Columns
+      <input type="number" id="cols" name="cols" :value="howManyStore.cols" />
       <input type="submit" value="Set" />
     </form>
   </vue-final-modal>
@@ -70,6 +60,10 @@ function updateSettings() {
 </template>
 
 <style>
+.how-many-settings-form input {
+  margin-bottom: 10pt;
+}
+
 .settings-button {
   border-color: blue;
   color: blue;

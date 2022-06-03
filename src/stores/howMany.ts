@@ -1,7 +1,7 @@
 import { randomIntFromInterval, randomTransformStyle } from "@/random";
 import { defineStore } from "pinia";
 import type { StyleValue } from "vue";
-import type { PluralWord, PluralWordList } from "./pluralWordlists";
+import type { PluralWord, PluralWordList } from "./pluralWordList";
 
 export type HowManyCellData = {
   index: number;
@@ -45,6 +45,15 @@ export const useHowManyStore = defineStore({
 
       // Set the question
       this.howManyQuestion = randomIntFromInterval(0, numWords - 1);
+    },
+    setSettingsFromURLSearchParams() {
+      const params = new URLSearchParams(window.location.search);
+
+      const rows = params.get("rows");
+      if (rows) this.rows = Number.parseInt(rows);
+
+      const cols = params.get("cols");
+      if (cols) this.cols = Number.parseInt(cols);
     },
   },
 });

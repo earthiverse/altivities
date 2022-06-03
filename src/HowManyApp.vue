@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import QRToggle from "./components/QRToggle.vue";
+import HowManySettingsToggle from "./components/HowManySettingsToggle.vue";
 import {
   usePluralWordListStore,
   type PluralWord,
-} from "@/stores/pluralWordlists";
+} from "@/stores/pluralWordList";
 import { useHowManyStore, type HowManyCellData } from "@/stores/howMany";
 const pluralWordlistStore = usePluralWordListStore();
 const howManyStore = useHowManyStore();
 
 // Assign a word to each cell
 pluralWordlistStore.addWordsFromURLSearchParams().then(() => {
-  howManyStore.cols = 5;
-  howManyStore.rows = 5;
+  howManyStore.setSettingsFromURLSearchParams();
   howManyStore.randomize(pluralWordlistStore.words);
 });
 
@@ -60,14 +60,15 @@ function checkClick(cell: HowManyCellData) {
 
 function checkAnswer() {
   // Get the guess
-  const input = document.querySelector(
-    'input[type="number"]'
+  const answerInput = document.querySelector(
+    'input[name="answer"]'
   ) as HTMLInputElement;
-  const answer = Number.parseInt(input.value);
+  const answer = Number.parseInt(answerInput.value);
+
   if (howManyStore.checkAnswer(answer)) {
     // Do stuff
     alert("That's correct!");
-    input.value = "";
+    answerInput.value = "";
     numClickedOK = 0;
     howManyStore.randomize(pluralWordlistStore.words);
   } else {
@@ -79,6 +80,7 @@ function checkAnswer() {
 
 <template>
   <QRToggle />
+  <HowManySettingsToggle />
 
   <div class="top" :style="{ flexWrap: 'wrap' }">
     <div
@@ -90,12 +92,9 @@ function checkAnswer() {
         opacity: cell.selected ? 0.5 : 1,
         width: `calc((100% / ${howManyStore.cols}))`,
       }"
+      @click="checkClick(cell)"
     >
-      <img
-        :src="cell.word.singular.image"
-        :style="cell.style"
-        @click="checkClick(cell)"
-      />
+      <img :src="cell.word.singular.image" :style="cell.style" />
     </div>
   </div>
 
@@ -113,6 +112,7 @@ function checkAnswer() {
     <form class="form" @submit.prevent="checkAnswer">
       <input
         type="number"
+        name="answer"
         placeholder="__"
         min="0"
         :max="howManyStore.cells.length"
@@ -175,11 +175,12 @@ function checkAnswer() {
   margin-left: 44pt;
 }
 
-.form input {
+form,
+form input {
   font-size: 44pt;
 }
 
-.form input[type="number"] {
+form input[type="number"] {
   margin-right: 11pt;
   text-align: center;
   width: 88pt;
