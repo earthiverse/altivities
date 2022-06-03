@@ -1,0 +1,1 @@
+import{o as r,c as a,a as o,b as c}from"./pinia.esm-browser.b39ed190.js";import{_ as n}from"./plugin-vue_export-helper.21dcd24c.js";const s={};function p(i,_){return r(),a("main",null,"Hello. This is a work in progress.")}var t=n(s,[["render",p]]);const e=o(t);e.use(c());e.mount("#app");
