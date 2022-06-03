@@ -1,1 +1,6 @@
 * text eol=lf
+*.jpg binary
+*.mp3 binary
+*.m4a binary
+*.ogg binary
+*.png binary

@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import QRToggle from "./components/QRToggle.vue";
 import HowManySettingsToggle from "./components/HowManySettingsToggle.vue";
+import MaruBatsuDisplay, {
+  showRandomCorrect,
+  showRandomIncorrect,
+} from "./components/MaruBatsuDisplay.vue";
 import {
   usePluralWordListStore,
   type PluralWord,
@@ -36,6 +40,13 @@ const numberSounds: { [T in number]: string } = {
   18: "/assets/audio/numbers/18.mp3",
   19: "/assets/audio/numbers/19.mp3",
   20: "/assets/audio/numbers/20.mp3",
+  30: "/assets/audio/numbers/30.mp3",
+  40: "/assets/audio/numbers/40.mp3",
+  50: "/assets/audio/numbers/50.mp3",
+  60: "/assets/audio/numbers/60.mp3",
+  70: "/assets/audio/numbers/70.mp3",
+  80: "/assets/audio/numbers/80.mp3",
+  90: "/assets/audio/numbers/90.mp3",
 };
 
 function getQuestion(): PluralWord | undefined {
@@ -67,13 +78,17 @@ function checkAnswer() {
 
   if (howManyStore.checkAnswer(answer)) {
     // Do stuff
-    alert("That's correct!");
-    answerInput.value = "";
-    numClickedOK = 0;
-    howManyStore.randomize(pluralWordlistStore.words);
+    new Audio("/assets/audio/sfx/complete.mp3").play();
+    showRandomCorrect();
+    setTimeout(() => {
+      answerInput.value = "";
+      numClickedOK = 0;
+      howManyStore.randomize(pluralWordlistStore.words);
+    }, 2000);
   } else {
     // Do other stuff
-    alert("Sorry, that's wrong.");
+    new Audio("/assets/audio/sfx/incorrect.mp3").play();
+    showRandomIncorrect();
   }
 }
 </script>
@@ -81,6 +96,8 @@ function checkAnswer() {
 <template>
   <QRToggle />
   <HowManySettingsToggle />
+
+  <MaruBatsuDisplay />
 
   <div class="top" :style="{ flexWrap: 'wrap' }">
     <div
@@ -112,9 +129,10 @@ function checkAnswer() {
     <form class="form" @submit.prevent="checkAnswer">
       <input
         type="number"
+        min="0"
         name="answer"
         placeholder="__"
-        min="0"
+        required
         :max="howManyStore.cells.length"
       />
       <input type="submit" value="Check!" />
@@ -127,9 +145,11 @@ function checkAnswer() {
 
 .bottom-menu {
   align-items: center;
+  background-color: #fff;
   font-family: "Schoolbell", cursive;
   font-size: 44pt;
   justify-content: center;
+  z-index: 10;
 }
 
 .card {
@@ -164,11 +184,13 @@ function checkAnswer() {
   display: flex;
   justify-content: center;
   transition: opacity 1s;
+  overflow: hidden;
 }
 .cell img {
   height: 100%;
   object-fit: contain;
   width: 100%;
+  z-index: -1000;
 }
 
 .form {
