@@ -226,13 +226,26 @@ export const useWordListStore = defineStore({
 
       return this.words;
     },
-    resetStore() {
-      this.selected.splice(0, this.selected.length);
-      this.unselected.splice(0, this.unselected.length);
-      this.wordLists.splice(0, this.wordLists.length);
-      this.numWords = 0;
+    resetStore(resetWordLists = false) {
+      if (resetWordLists) {
+        // Remove all words and word lists
+        this.wordLists.splice(0, this.wordLists.length);
+        this.selected.splice(0, this.selected.length);
+        this.unselected.splice(0, this.unselected.length);
+        this.numWords = 0;
+      } else {
+        for (let i = 0; i < this.wordLists.length; i++) {
+          // Reset selected and unselected word lists based on our current words
+          const wordList = this.wordLists[i];
+          this.selected[i].splice(0, this.selected[i].length);
+          this.unselected[i].splice(0, this.unselected[i].length);
+          for (const word of wordList) {
+            this.unselected[i].push(word);
+          }
+        }
+      }
     },
-    selectWord(id: number) {
+    selectWord(id: number): Word | undefined {
       for (let i = 0; i < this.unselected.length; i++) {
         const wordList = this.unselected[i];
         for (let j = 0; j < wordList.length; j++) {
@@ -246,7 +259,7 @@ export const useWordListStore = defineStore({
         }
       }
     },
-    unselectWord(id: number) {
+    unselectWord(id: number): Word | undefined {
       for (let i = 0; i < this.selected.length; i++) {
         const wordlist = this.selected[i];
         for (let j = 0; j < wordlist.length; j++) {

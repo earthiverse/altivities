@@ -11,16 +11,10 @@ type OnAddEvent = {
 };
 const onAdd = (data: OnAddEvent) => {
   // Move the current card back to the list
-  let word: Word;
-  if (data.newIndex == 0 && wordlistStore.selected[0].length > 1) {
-    // Swap the second one back
-    word = wordlistStore.selected[0].splice(1, 1)[0];
-  } else if (data.newIndex == 1 && wordlistStore.selected[0].length > 1) {
-    word = wordlistStore.selected[0].splice(0, 1)[0];
-  } else {
-    throw `How did this happen!?`;
+  if (wordlistStore.selected[0].length > 1) {
+    const word = wordlistStore.selected[0].splice(data.newIndex ? 0 : 1, 1)[0];
+    wordlistStore.unselected[0].push(word);
   }
-  wordlistStore.unselected[0].push(word);
 };
 </script>
 
