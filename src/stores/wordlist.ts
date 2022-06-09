@@ -161,7 +161,7 @@ export const useWordListStore = defineStore({
               (Array.isArray(word.en) && word.en[0] == includeWord)
             ) {
               // Add this word
-              newCombined.push(word);
+              newCombined.push({ ...word });
               found = true;
               break;
             }
@@ -173,7 +173,7 @@ export const useWordListStore = defineStore({
                 if (alternativeWord !== includeWord) continue;
                 // We found the word as an alternative, set it as the main word
                 word.en = alternativeWord;
-                newCombined.push(word);
+                newCombined.push({ ...word });
                 found = true;
                 break;
               }
@@ -200,6 +200,7 @@ export const useWordListStore = defineStore({
       for (const word of combined) {
         word.id = this.numWords;
         this.numWords++;
+        console.log(this.numWords);
       }
       // Add the word list to our master list
       this.wordLists.push(combined);
