@@ -246,8 +246,8 @@ onMounted(() => {
           :id="`cell_${index}`"
           :style="{
             borderWidth: getBorderWidths(
-              Math.floor(index / 3) + 1,
-              (index % 3) + 1,
+              Math.floor(index / bingoStore.cols) + 1,
+              (index % bingoStore.cols) + 1,
               2
             ),
             height: bingoStore.cellSize + 'px',
