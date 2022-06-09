@@ -36,26 +36,41 @@ body, html {
   width: 100%;
 }
 
-.top-button {
+.button {
     background-color: #fff;
     border: 1px solid;
     border-radius: 8pt;
     font-size: 44pt;
     opacity: 0.25;
     position: absolute;
-    top: 4pt;
-    transition: 0.5s;
+    transition: color 0.5s, opacity 0.5s;
     z-index: 100;
 }
 
-.top-button:nth-of-type(1) {
-    left: 4pt;
+.button-bottom {
+    bottom: 102pt;
 }
 
-.top-button:nth-of-type(2) {
-    left: 56pt;
+.button-left-1 {
+    left: 12pt;
 }
 
-.top-button:hover {
+.button-left-2 {
+    left: 64pt;
+}
+
+.button-left-3 {
+  left: 116pt;
+}
+
+.button-right-1 {
+  right: 12pt;
+}
+
+.button-top {
+    top: 8pt;
+}
+
+.button:hover {
   opacity: 1;
 }

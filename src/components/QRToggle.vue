@@ -32,7 +32,7 @@ onMounted(() => {
     />
   </vue-final-modal>
   <span
-    class="material-symbols-outlined top-button qr-code-button"
+    class="material-symbols-outlined button button-top button-left-1 qr-code-button"
     @click="show = true"
     >qr_code</span
   >

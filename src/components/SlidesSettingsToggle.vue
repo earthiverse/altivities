@@ -63,7 +63,7 @@ function updateSettings() {
     </form>
   </vue-final-modal>
   <span
-    class="material-symbols-outlined top-button settings-button"
+    class="material-symbols-outlined button button-top button-left-2 settings-button"
     @click="show = true"
     >settings</span
   >
