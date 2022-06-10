@@ -31,7 +31,7 @@ This is a tool that you can use to make custom sentences that you can then use w
   * [I don't like ***apples***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20don%27t%20like%20%E2%91%A0.&1_wordlist=../wordlists/General/plurals_s.json&1_include=strawberries,apples,tomatoes) (*Note*: Fruits & Vegetables (3) only)
   * [I don't like ***blue/baseball/apples***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20don%27t%20like%20%E2%91%A0.&1_wordlists=../wordlists/General/plurals_s.json,../wordlists/LetsTry1/unit4_cards.json&1_include=red,yellow,blue,green,purple,orange,pink,brown,white,black,baseball,dodgeball,soccer,basketball,swimming,strawberries,apples,tomatoes)
 * Unit 5
-  * [What ***fruit*** do you like?](<https://altivities.earthiverse.ca/cards/?sentence=What%20%E2%91%A0%20do%20you%20like?&wordlist=../wordlists/General/categories.json&include=color,sport,food,fruit>
+  * [What ***fruit*** do you like?](https://altivities.earthiverse.ca/cards/?sentence=What%20%E2%91%A0%20do%20you%20like?&wordlist=../wordlists/General/categories.json&include=color,sport,food,fruit)
   * [What fruit do you like? I like ***apples***.](https://altivities.earthiverse.ca/sentences/?sentence=What%20%E2%91%A0%20do%20you%20like?%0AI%20like%20%E2%91%A1.&1_wordlist=../wordlists/General/categories.json&1_include=fruit&2_wordlist=../wordlists/General/plurals_s.json&2_include=strawberries,apples,grapes,pineapples,peaches,melons,melons,bananas,kiwi%20fruits,lemons)
 
 ### Let's Try 2
@@ -53,6 +53,9 @@ This is a tool that you can use to make custom sentences that you can then use w
   * [I like ***math***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20like%20%E2%91%A0.&1_wordlists=../wordlists/JuniorSunshine5/lesson3_cards.json&1_ignore=doctor,soccer%20player,police%20officer,florist,teacher)
   * [What subject do you like? I like ***math***.](https://altivities.earthiverse.ca/sentences/?sentence=What%20subject%20do%20you%20like?%0AI%20like%20%E2%91%A0.&1_wordlists=../wordlists/JuniorSunshine5/lesson3_cards.json&1_ignore=doctor,soccer%20player,police%20officer,florist,teacher)
   * [What do you have on ***Mondays***?](https://altivities.earthiverse.ca/sentences/?sentence=What%20do%20you%20have%20on%20%E2%91%A0?&1_wordlists=../wordlists/JuniorSunshine5/lesson3.json&1_include=Mondays,Tuesdays,Wednesdays,Thursdays,Fridays) (*Note*: Only weekdays are included)
+  * [I have ***Japanese***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20have%20%E2%91%A0.&1_wordlists=../wordlists/JuniorSunshine5/lesson3_cards.json&1_ignore=doctor,soccer%20player,police%20officer,florist,teacher)
+  * [I have ***Japanese*** and ***math***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20have%20%E2%91%A0%20and%20%E2%9D%B6.&1_wordlists=../wordlists/JuniorSunshine5/lesson3_cards.json&1_ignore=doctor,soccer%20player,police%20officer,florist,teacher)
+  * [I have ***Japanese***, ***math***, and ***science***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20have%20%E2%91%A0,%20%E2%9D%B6,%20%0Aand%20%E2%93%B5.&1_wordlists=../wordlists/JuniorSunshine5/lesson3_cards.json&1_ignore=doctor,soccer%20player,police%20officer,florist,teacher)
   * [I have ***Japanese***, ***math***, ***science***, and ***music***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20have%20%E2%91%A0,%20%E2%9D%B6,%20%0A%E2%93%B5,%20and%20%E2%91%B4.&1_wordlists=../wordlists/JuniorSunshine5/lesson3_cards.json&1_ignore=doctor,soccer%20player,police%20officer,florist,teacher)
 
 ### Junior Sunshine 6
@@ -64,6 +67,8 @@ This is a tool that you can use to make custom sentences that you can then use w
 * Lesson 3
   * [I want to go to ***China***.](https://altivities.earthiverse.ca/sentences/?sentence=I%20want%20to%20go%20to%20%E2%91%A0.&1_wordlist=../wordlists/JuniorSunshine6/lesson3.json&1_ignore=Japan) (*Note*: **Japan** is not included)
   * [Where do you want to go? I want to go to ***China***.](https://altivities.earthiverse.ca/sentences/?sentence=Where%20do%20you%20want%20to%20go?%0AI%20want%20to%20go%20to%20%E2%91%A0.&1_wordlist=../wordlists/JuniorSunshine6/lesson3.json&1_ignore=Japan) (*Note*: **Japan** is not included)
+* Lesson 4
+  * [We have ***a castle*** in ***Osaka***.](https://altivities.earthiverse.ca/sentences/?sentence=We%20have%20%E2%91%A0%20in%20%E2%91%A1.&1_wordlists=../wordlists/JuniorSunshine6/lesson4.json&1_include=an%20autumn%20festival,a%20beach,a%20bon%20festival,a%20castle,fireworks,a%20garden,gassho%20style%20houses,hanami,hot%20springs,islands,Japanese%20sweets,mountains,natto,nature,a%20peace%20park,sashimi,a%20shrine,snow,a%20snow%20festival,a%20star%20festival,sushi,a%20temple,tempura,udon&2_wordlist=../wordlists/Hepburn/prefectures.json) (*Note:* May return strange results, e.g.: We have a snow festival in Okinawa.)
 
 ### Sunshine 1
 

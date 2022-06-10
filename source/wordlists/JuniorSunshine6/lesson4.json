@@ -1,33 +1,53 @@
 [
   {
-    "en": "autumn festival",
+    "en": [
+      "autumn festival",
+      "an autumn festival",
+      "autumn festivals"
+    ],
     "ja": {
       "hiragana": "あきまつり",
       "kanji": "秋祭り"
     }
   },
   {
-    "en": "beach",
+    "image": "https://1.bp.blogspot.com/-HRbVXj1A8YQ/VpjBp0jXYxI/AAAAAAAA250/IBWfam8ZRss/s8192/bg_natural_umi.jpg",
+    "en": [
+      "beach",
+      "a beach",
+      "beaches"
+    ],
     "ja": {
       "hiragana": "はまべ",
       "kanji": "浜辺"
     }
   },
   {
-    "en": "bon festival",
+    "image": "https://1.bp.blogspot.com/-9O3txb7OtvQ/UbVu8wEe3DI/AAAAAAAAUkA/DOA2jrDfVH8/s8192/bonodori.png",
+    "en": [
+      "bon festival",
+      "a bon festival",
+      "bon festivals"
+    ],
     "ja": {
       "hiragana": "ぼんおどり",
       "kanji": "ぼんおどり"
     }
   },
   {
-    "en": "castle",
+    "image": "https://2.bp.blogspot.com/-qosONaPlxVE/UnyHZwO4cdI/AAAAAAAAajQ/R5QbslOdDXk/s8192/nagoyajou.png",
+    "en": [
+      "castle",
+      "a castle",
+      "castles"
+    ],
     "ja": {
       "hiragana": "しろ",
       "kanji": "城"
     }
   },
   {
+    "image": "https://2.bp.blogspot.com/--XyGmSuFJtk/XOPXPWcaKTI/AAAAAAABS6s/9zxLQUKTqzUs9NW4mJWhUvdaG8P_Ab66ACLcBGAs/s8192/hanabi_sky.png",
     "en": "fireworks",
     "ja": {
       "hiragana": "はなび",
@@ -35,20 +55,31 @@
     }
   },
   {
-    "en": "garden",
+    "image": "https://2.bp.blogspot.com/-KMAVXJ5o_L8/U7O79gCNqUI/AAAAAAAAiXI/-GKRmLFc2ks/s8192/bara_garden_baraen.png",
+    "en": [
+      "garden",
+      "a garden",
+      "gardens"
+    ],
     "ja": {
       "hiragana": "ていえん",
       "kanji": "庭園"
     }
   },
   {
-    "en": "gassho style house",
+    "image": "https://1.bp.blogspot.com/-Y2WCNS2K-HM/XVjgI3zZh2I/AAAAAAABUMk/tM-BaqaPHpYV2Nofl9wRpjlgLoZ9bJISgCLcBGAs/s8192/japan_gassyoudukuri_syuuraku.png",
+    "en": [
+      "gassho style house",
+      "a gassho style house",
+      "gassho style houses"
+    ],
     "ja": {
       "hiragana": "がっしょうづくりのいえ",
       "kanji": "合掌造りの家"
     }
   },
   {
+    "image": "https://3.bp.blogspot.com/-RVVbi6lau1c/UZRWB-QTU5I/AAAAAAAASt0/79xWqQuYBdY/s8192/hanami_family.png",
     "en": "hanami",
     "ja": {
       "hiragana": "はなみ",
@@ -56,20 +87,31 @@
     }
   },
   {
-    "en": "hot springs",
+    "image": "https://1.bp.blogspot.com/-meiKw5q5Iew/UZmCUVnWnHI/AAAAAAAATgg/w7QXlET1QhY/s8192/onsen_animal.png",
+    "en": [
+      "hot springs",
+      "hot spring",
+      "a hot spring"
+    ],
     "ja": {
       "hiragana": "おんせん",
       "kanji": "温泉"
     }
   },
   {
-    "en": "island",
+    "image": "https://1.bp.blogspot.com/-4Ng1gNmOhAM/V2ucIdYoIAI/AAAAAAAA7vs/trvOgTP7V30aBo8mAV-d5xlcTyaQHCq3gCLcB/s8192/mujintou_kojima.png",
+    "en": [
+      "island",
+      "an island",
+      "islands"
+    ],
     "ja": {
       "hiragana": "しま",
       "kanji": "島"
     }
   },
   {
+    "image": "https://1.bp.blogspot.com/-BSXduOfcnV8/VCkbuElXgyI/AAAAAAAAnL4/Vlv0QK137Bo/s8192/wagashi_nerigashi_sweets.png",
     "en": "Japanese sweets",
     "ja": {
       "hiragana": "わがし",
@@ -77,13 +119,19 @@
     }
   },
   {
-    "en": "mountain",
+    "image": "https://2.bp.blogspot.com/-YMmR0FsG2hI/UMaeVYdwVII/AAAAAAAAHzc/XZXDfZCAT4c/s8192/fujisan.png",
+    "en": [
+      "mountain",
+      "a mountain",
+      "mountains"
+    ],
     "ja": {
       "hiragana": "やま",
       "kanji": "山"
     }
   },
   {
+    "image": "https://3.bp.blogspot.com/-hqb7RYnN5ak/VRE4v48UZWI/AAAAAAAAsXc/H02esssP-ng/s8192/food_nattou_pack.png",
     "en": "natto",
     "ja": {
       "hiragana": "なっとう",
@@ -91,6 +139,7 @@
     }
   },
   {
+    "image": "https://2.bp.blogspot.com/-y7uMKdeTrXs/UpGGZ9AM7NI/AAAAAAAAa4o/l9sYwDXOFVM/s8192/mizuumi.png",
     "en": "nature",
     "ja": {
       "hiragana": "しぜん",
@@ -98,13 +147,19 @@
     }
   },
   {
-    "en": "peace park",
+    "image": "https://3.bp.blogspot.com/-SPjgejZt1Y8/VkxNtK2mehI/AAAAAAAA0y4/IEdML5OjDkM/s8192/nagasaki_heiwakinenzou_war.png",
+    "en": [
+      "peace park",
+      "a peace park",
+      "peace parks"
+    ],
     "ja": {
       "hiragana": "へいわおおやけくに",
       "kanji": "平和公國"
     }
   },
   {
+    "image": "https://4.bp.blogspot.com/-3lqA7mnkk6k/UgSMH4OXEGI/AAAAAAAAW8k/sroh6PRN10I/s8192/food_sashimi.png",
     "en": "sashimi",
     "ja": {
       "hiragana": "さしみ",
@@ -112,13 +167,19 @@
     }
   },
   {
-    "en": "shrine",
+    "image": "https://1.bp.blogspot.com/-Vqx_GBZEyIE/VIhPDsx6eQI/AAAAAAAAplo/3rbNVK3TVAI/s8192/landmark_itsukushima_torii.png",
+    "en": [
+      "shrine",
+      "a shrine",
+      "shrines"
+    ],
     "ja": {
       "hiragana": "じんじゃ",
       "kanji": "神社"
     }
   },
   {
+    "image": "https://2.bp.blogspot.com/-3tqOSBlyens/UsZtKFlgtRI/AAAAAAAAcyY/GtGKv2OEDIU/s8192/kids_hashirimawaru_snow.png",
     "en": "snow",
     "ja": {
       "hiragana": "ゆき",
@@ -126,20 +187,31 @@
     }
   },
   {
-    "en": "snow festival",
+    "image": "https://1.bp.blogspot.com/-j42PwnMLg_c/XWS56GuxkkI/AAAAAAABUYw/lIREren15DkYpMZquyjJw5CQFiCJc71NQCLcBGAs/s8192/yukimatsuri_setsuzou.png",
+    "en": [
+      "snow festival",
+      "a snow festival",
+      "snow festivals"
+    ],
     "ja": {
       "hiragana": "ゆきまつり",
       "kanji": "雪祭り"
     }
   },
   {
-    "en": "star festival",
+    "image": "https://4.bp.blogspot.com/-42SjFwH51M8/WZ-NX65W9KI/AAAAAAABGJY/anw3iDW4KDMJhMKsMy4CUk5XVzfslQiqgCLcBGAs/s8192/orihime_hikoboshi_bg.png",
+    "en": [
+      "star festival",
+      "a star festival",
+      "star festivals"
+    ],
     "ja": {
       "hiragana": "たなばたまつり",
       "kanji": "七夕祭り"
     }
   },
   {
+    "image": "https://2.bp.blogspot.com/-RB1mDuQvGkI/USyJ0W9QfKI/AAAAAAAAObc/Idip0N8CFUw/s8192/nigirizushi_moriawase.png",
     "en": "sushi",
     "ja": {
       "hiragana": "すし",
@@ -147,13 +219,19 @@
     }
   },
   {
-    "en": "temple",
+    "image": "https://3.bp.blogspot.com/-Iq4Df8KLWd4/UdYhLQ144GI/AAAAAAAAV58/NlO9GtB0N78/s8192/tatemono_otera.png",
+    "en": [
+      "temple",
+      "a temple",
+      "temples"
+    ],
     "ja": {
       "hiragana": "てら",
       "kanji": "寺"
     }
   },
   {
+    "image": "https://2.bp.blogspot.com/-qoxECGunNzE/UvTeJLrLZ3I/AAAAAAAAdkU/Bdwv6FR0Mi8/s8192/food_tenpura.png",
     "en": "tempura",
     "ja": {
       "hiragana": "てんぷら",
@@ -161,6 +239,7 @@
     }
   },
   {
+    "image": "https://4.bp.blogspot.com/-s9haeFPrRc0/U5hUac1x-SI/AAAAAAAAhI4/Ob9UAm8_sMk/s8192/bukkake_udon.png",
     "en": "udon",
     "ja": {
       "hiragana": "うどん",
