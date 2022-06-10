@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import draggable from "vuedraggable";
-import { useWordListStore, type Word } from "@/stores/wordlist";
+import { useWordListStore } from "@/stores/wordlist";
 
 const wordlistStore = useWordListStore();
 

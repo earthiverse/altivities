@@ -2,12 +2,16 @@ import { updateURLParameter } from "@/url";
 import { defineStore } from "pinia";
 import type { WordList } from "./wordlist";
 
+export type BingoMode = "play" | "set" | "teach";
+
 export const useBingoStore = defineStore({
   id: "bingo",
   state: () => ({
     cellSize: 0,
     cols: 3,
     rows: 3,
+    mode: "set" as BingoMode,
+    ready: false,
     selected: new Array<WordList>(),
     marked: new Array<boolean>(),
   }),
@@ -19,6 +23,25 @@ export const useBingoStore = defineStore({
       this.cellSize = Math.min(width / this.cols, height / this.rows);
 
       return this.cellSize;
+    },
+    checkReady(): boolean {
+      // Update the URL to match the words selected
+      const bingo = [];
+      let r = true;
+      let any = false;
+      for (let i = 0; i < this.cols * this.rows; i++) {
+        const id = this.selected[i][0]?.id;
+        if (id === undefined) r = false;
+        else any = true;
+        bingo.push(id ?? "");
+      }
+      if (any) {
+        updateURLParameter("bingo", bingo.join(","));
+      } else {
+        updateURLParameter("bingo", undefined);
+      }
+      this.ready = r;
+      return r;
     },
     countBingos(): number {
       let count = 0;
@@ -99,14 +122,17 @@ export const useBingoStore = defineStore({
       updateURLParameter("bingo", undefined);
 
       this.marked.splice(0, this.marked.length);
+      this.selected.splice(0, this.selected.length);
       for (let i = 0; i < this.rows * this.cols; i++) {
         // Clear all selected cells
-        const arr = this.selected[i];
-        arr.splice(0, arr.length);
+        this.selected.push([]);
 
         // Mark all cells false
         this.marked[i] = false;
       }
+
+      this.calculateCellSize();
+      this.checkReady();
     },
     setSettingsFromURLSearchParams() {
       const params = new URLSearchParams(window.location.search);

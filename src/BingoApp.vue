@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import draggable from "vuedraggable";
 import CardsMenu from "@/components/CardsMenu.vue";
+import BingoSettingsToggle from "./components/BingoSettingsToggle.vue";
 import QRToggle from "@/components/QRToggle.vue";
 import { useBingoStore } from "@/stores/bingo";
 import { useWordListStore } from "@/stores/wordlist";
-import { onMounted, ref, watch, type Ref } from "vue";
-import { updateURLParameter } from "./url";
+import { onMounted, watch } from "vue";
 import { randomIntFromInterval } from "./random";
 
 const wordlistStore = useWordListStore();
@@ -27,7 +27,7 @@ watch(wordlistStore.wordLists, () => {
       arr.push(word);
     }
   }
-  checkReady();
+  bingoStore.checkReady();
 });
 
 bingoStore.setSettingsFromURLSearchParams();
@@ -55,9 +55,8 @@ function getBorderWidths(row: number, col: number, size = 2) {
 }
 
 function resetBingo() {
-  bingoStore.resetStore();
   wordlistStore.resetStore();
-  checkReady();
+  bingoStore.resetStore();
 }
 
 function shuffleBingo() {
@@ -74,42 +73,45 @@ function shuffleBingo() {
     bingoStore.selected[i].push(word);
   }
 
-  checkReady();
+  bingoStore.checkReady();
 }
 
-const ready = ref(false);
-function checkReady() {
-  // Update the URL to match the words selected
-  const bingo = [];
-  let r = true;
-  let any = false;
-  for (let i = 0; i < bingoStore.cols * bingoStore.rows; i++) {
-    const id = bingoStore.selected[i][0]?.id;
-    if (id === undefined) r = false;
-    else any = true;
-    bingo.push(id ?? "");
-  }
-  if (any) {
-    updateURLParameter("bingo", bingo.join(","));
-  } else {
-    updateURLParameter("bingo", undefined);
-  }
-  ready.value = r;
-  return r;
-}
-
-const mode: Ref<"play" | "set" | "teach"> = ref("set");
 function playBingo() {
   bingoStore.resetMarked();
-  if (checkReady()) mode.value = "play";
-}
-
-function setupBingo() {
-  mode.value = "set";
+  if (bingoStore.checkReady()) bingoStore.mode = "play";
 }
 
 function toggleMark(index: number) {
   bingoStore.marked[index] = !bingoStore.marked[index];
+}
+
+function setupBingo(reset = false) {
+  bingoStore.mode = "set";
+  if (reset) resetBingo();
+}
+
+function teachBingo() {
+  wordlistStore.resetStore();
+  bingoStore.resetStore();
+  bingoStore.mode = "teach";
+}
+
+function drawRandom() {
+  if (wordlistStore.unselected[0].length == 0) throw "No more words to draw";
+
+  // Select a new word
+  const randomIndex = randomIntFromInterval(
+    0,
+    wordlistStore.unselected[0].length - 1
+  );
+  const word = wordlistStore.unselected[0].splice(randomIndex, 1)[0];
+  wordlistStore.selected[0].push(word);
+}
+
+function undoDraw() {
+  const word = wordlistStore.selected[0].pop();
+  if (!word) return;
+  wordlistStore.unselected[0].push(word);
 }
 
 // Logic to swap the current card (if one exists)
@@ -138,7 +140,7 @@ const onAdd = (data: OnAddEvent) => {
     }
   }
 
-  checkReady();
+  bingoStore.checkReady();
 };
 
 onMounted(() => {
@@ -149,8 +151,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <template v-if="mode == 'set'">
+  <template v-if="bingoStore.mode == 'set'">
     <QRToggle />
+    <BingoSettingsToggle />
+    <span
+      @click="teachBingo"
+      class="material-symbols-outlined button button-top button-left-3 teach-button"
+    >
+      school
+    </span>
 
     <div
       class="top"
@@ -162,7 +171,7 @@ onMounted(() => {
         <template v-for="row in bingoStore.rows">
           <draggable
             @add="onAdd"
-            @remove="checkReady"
+            @remove="bingoStore.checkReady"
             animation="200"
             class="bingo-cell"
             easing="cubic-bezier(0.34, 1.56, 0.64, 1)"
@@ -219,9 +228,9 @@ onMounted(() => {
       @click="playBingo"
       class="button button-bottom button-right-1 ready-button material-symbols-outlined"
       :style="{
-        color: ready ? 'green' : 'black',
-        cursor: ready ? 'pointer' : 'not-allowed',
-        opacity: ready ? 1 : undefined,
+        color: bingoStore.ready ? 'green' : 'black',
+        cursor: bingoStore.ready ? 'pointer' : 'not-allowed',
+        opacity: bingoStore.ready ? 1 : undefined,
       }"
     >
       thumb_up
@@ -230,7 +239,7 @@ onMounted(() => {
       <CardsMenu />
     </Suspense>
   </template>
-  <template v-else-if="mode == 'play'">
+  <template v-else-if="bingoStore.mode == 'play'">
     <div
       class="top"
       :style="{
@@ -280,13 +289,65 @@ onMounted(() => {
       </div>
     </div>
     <span
-      @click="setupBingo"
+      @click="setupBingo(false)"
       class="button button-bottom button-left-1 restart-button material-symbols-outlined"
     >
       arrow_back
     </span>
   </template>
-  <template v-else-if="mode == 'teach'">Let's teach!</template>
+  <template v-else-if="bingoStore.mode == 'teach'">
+    <QRToggle />
+    <BingoSettingsToggle />
+
+    <div animation="200" class="large-card">
+      <div
+        :style="{
+          backgroundImage: `url(${
+            wordlistStore.selected[0][wordlistStore.selected[0].length - 1]
+              .image
+          })`,
+        }"
+        v-if="wordlistStore.selected[0].length"
+      >
+        <span class="material-symbols-outlined handle">drag_handle</span>
+        <span class="text">{{
+          Array.isArray(
+            wordlistStore.selected[0][wordlistStore.selected[0].length - 1].en
+          )
+            ? wordlistStore.selected[0][wordlistStore.selected[0].length - 1]
+                .en[0]
+            : wordlistStore.selected[0][wordlistStore.selected[0].length - 1].en
+        }}</span>
+      </div>
+    </div>
+    <span
+      @click="setupBingo(true)"
+      class="button button-bottom button-left-1 back-button material-symbols-outlined"
+    >
+      arrow_back
+    </span>
+    <span
+      @click="resetBingo"
+      class="button button-bottom button-left-2 restart-button material-symbols-outlined"
+    >
+      restart_alt
+    </span>
+    <span
+      @click="undoDraw"
+      class="button button-bottom button-right-2 undo-button material-symbols-outlined"
+    >
+      undo
+    </span>
+    <span
+      @click="drawRandom"
+      class="button button-bottom button-right-1 random-button material-symbols-outlined"
+    >
+      casino
+    </span>
+    <Suspense>
+      <CardsMenu />
+    </Suspense>
+  </template>
 </template>
 
 <style>
@@ -366,5 +427,79 @@ onMounted(() => {
 
 .top {
   margin: auto;
+}
+
+.teach-button {
+  color: orange;
+}
+.large-card {
+  --size: min(calc(100vh - 100pt - 24px), 100vw);
+  border: 2pt dashed #000;
+  border-radius: 44pt;
+  height: var(--size);
+  margin: auto;
+  overflow: hidden;
+  width: var(--size);
+}
+
+.large-card div {
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: "Schoolbell", cursive;
+  font-size: min(8vh, 8vw);
+  height: 100%;
+  justify-content: flex-end;
+  text-shadow: rgb(255, 255, 255) 6px 0px 0px,
+    rgb(255, 255, 255) 5.91686px 0.995377px 0px,
+    rgb(255, 255, 255) 5.66974px 1.96317px 0px,
+    rgb(255, 255, 255) 5.2655px 2.87655px 0px,
+    rgb(255, 255, 255) 4.71532px 3.71022px 0px,
+    rgb(255, 255, 255) 4.03447px 4.44106px 0px,
+    rgb(255, 255, 255) 3.24181px 5.04883px 0px,
+    rgb(255, 255, 255) 2.35931px 5.51667px 0px,
+    rgb(255, 255, 255) 1.41143px 5.83163px 0px,
+    rgb(255, 255, 255) 0.424423px 5.98497px 0px,
+    rgb(255, 255, 255) -0.574341px 5.97245px 0px,
+    rgb(255, 255, 255) -1.55719px 5.79441px 0px,
+    rgb(255, 255, 255) -2.49688px 5.45579px 0px,
+    rgb(255, 255, 255) -3.36738px 4.96596px 0px,
+    rgb(255, 255, 255) -4.14455px 4.33852px 0px,
+    rgb(255, 255, 255) -4.80686px 3.59083px 0px,
+    rgb(255, 255, 255) -5.33596px 2.74364px 0px,
+    rgb(255, 255, 255) -5.71718px 1.8204px 0px,
+    rgb(255, 255, 255) -5.93995px 0.84672px 0px,
+    rgb(255, 255, 255) -5.99811px -0.150428px 0px,
+    rgb(255, 255, 255) -5.89004px -1.14341px 0px,
+    rgb(255, 255, 255) -5.61874px -2.1047px 0px,
+    rgb(255, 255, 255) -5.19172px -3.00766px 0px,
+    rgb(255, 255, 255) -4.62082px -3.82727px 0px,
+    rgb(255, 255, 255) -3.92186px -4.54082px 0px,
+    rgb(255, 255, 255) -3.11421px -5.12852px 0px,
+    rgb(255, 255, 255) -2.22026px -5.57409px 0px,
+    rgb(255, 255, 255) -1.26477px -5.86518px 0px,
+    rgb(255, 255, 255) -0.274238px -5.99373px 0px,
+    rgb(255, 255, 255) 0.723898px -5.95617px 0px,
+    rgb(255, 255, 255) 1.70197px -5.75355px 0px,
+    rgb(255, 255, 255) 2.63288px -5.39147px 0px,
+    rgb(255, 255, 255) 3.49082px -4.87998px 0px,
+    rgb(255, 255, 255) 4.25202px -4.23324px 0px,
+    rgb(255, 255, 255) 4.89538px -3.46919px 0px,
+    rgb(255, 255, 255) 5.40307px -2.60899px 0px,
+    rgb(255, 255, 255) 5.76102px -1.67649px 0px,
+    rgb(255, 255, 255) 5.95932px -0.697531px 0px;
+  width: 100%;
+}
+
+.large-card div .handle {
+  display: none;
+}
+
+.large-card div .text {
+  margin-bottom: 4pt;
 }
 </style>
