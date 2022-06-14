@@ -9,6 +9,8 @@
 
 body, html {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 2pt;
+    padding: 0;
     user-select: none;
 }
 
@@ -32,7 +34,8 @@ body, html {
 
 .top {
   display: flex;
-  height: calc(100vh - 100pt - 24px);
+  height: calc(100vh - 104pt);
+  margin: auto;
   width: 100%;
 }
 

@@ -49,13 +49,12 @@ const onAdd = (data: OnAddEvent) => {
 }
 
 .large-card {
-  --size: min(calc(100vh - 100pt - 24px), 100vw);
+  aspect-ratio: 1 / 1;
   border: 2pt dashed #000;
   border-radius: 44pt;
-  height: var(--size);
+  height: min(100%, 100vw);
   margin: auto;
   overflow: hidden;
-  width: var(--size);
 }
 
 .large-card div {
