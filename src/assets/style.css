@@ -34,9 +34,12 @@ body, html {
 
 .top {
   display: flex;
-  height: calc(100vh - 104pt);
+  height: calc(100% - 104pt);
+  left: 4pt;
   margin: auto;
-  width: 100%;
+  position: fixed;
+  top: 4pt;
+  width: calc(100% - 8pt);
 }
 
 .button {

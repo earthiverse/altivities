@@ -35,7 +35,6 @@ export function showRandomCorrect() {
   el.addEventListener(
     "animationend",
     () => {
-      console.log("removing class");
       el.classList.remove("fadeInAndOut");
       currentIncorrectImage.value = randomIntFromInterval(
         0,
@@ -53,7 +52,6 @@ export function showRandomIncorrect() {
   el.addEventListener(
     "animationend",
     () => {
-      console.log("removing class");
       el.classList.remove("fadeInAndOut");
       currentIncorrectImage.value = randomIntFromInterval(
         0,
@@ -68,10 +66,16 @@ export function showRandomIncorrect() {
 
 <template>
   <div id="maru_batsu_correct" class="correct">
-    <img id="maru_batsu_correct_img" :src="CORRECT_IMAGES[currentCorrectImage]" />
+    <img
+      id="maru_batsu_correct_img"
+      :src="CORRECT_IMAGES[currentCorrectImage]"
+    />
   </div>
   <div id="maru_batsu_incorrect" class="incorrect">
-    <img id="maru_batsu_incorrect_img" :src="INCORRECT_IMAGES[currentIncorrectImage]" />
+    <img
+      id="maru_batsu_incorrect_img"
+      :src="INCORRECT_IMAGES[currentIncorrectImage]"
+    />
   </div>
 </template>
 
@@ -116,7 +120,6 @@ export function showRandomIncorrect() {
 }
 
 @keyframes fade {
-
   0%,
   100% {
     opacity: 0;

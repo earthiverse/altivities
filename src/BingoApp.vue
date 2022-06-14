@@ -161,13 +161,13 @@ onMounted(() => {
       school
     </span>
 
-    <div
-      class="top"
-      :style="{
-        width: `${bingoStore.cellSize * bingoStore.cols}px`,
-      }"
-    >
-      <div class="bingo">
+    <div class="top">
+      <div
+        class="bingo"
+        :style="{
+          width: `${bingoStore.cellSize * bingoStore.cols}px`,
+        }"
+      >
         <template v-for="row in bingoStore.rows">
           <draggable
             @add="onAdd"
@@ -361,12 +361,15 @@ onMounted(() => {
   display: none;
 }
 
-.bingo {
+.top {
   align-items: center;
+  justify-content: center;
+}
+
+.bingo {
   align-content: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .bingo-cell {
@@ -423,10 +426,6 @@ onMounted(() => {
 
 .bingo-cell .handle {
   display: none;
-}
-
-.top {
-  margin: auto;
 }
 
 .teach-button {

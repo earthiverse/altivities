@@ -200,7 +200,6 @@ export const useWordListStore = defineStore({
       for (const word of combined) {
         word.id = this.numWords;
         this.numWords++;
-        console.log(this.numWords);
       }
       // Add the word list to our master list
       this.wordLists.push(combined);
