@@ -693,8 +693,8 @@ class KanaRaceResultsScene extends Phaser.Scene {
 }
 
 class KanaRace {
-    static KatakanaLetters = [..."アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン"]
-    static HiraganaLetters = [..."あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわん"]
+    static KatakanaLetters = [..."アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン"]
+    static HiraganaLetters = [..."あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん"]
     static WIDTH = 800
     static HEIGHT = 600
 

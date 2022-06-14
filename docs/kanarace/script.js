@@ -555,8 +555,8 @@ class KanaRace {
         });
     }
 }
-KanaRace.KatakanaLetters = [..."アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン"];
-KanaRace.HiraganaLetters = [..."あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわん"];
+KanaRace.KatakanaLetters = [..."アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン"];
+KanaRace.HiraganaLetters = [..."あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん"];
 KanaRace.WIDTH = 800;
 KanaRace.HEIGHT = 600;
 window.onload = () => {
