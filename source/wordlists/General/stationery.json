@@ -60,6 +60,22 @@
         ]
     },
     {
+        "image": "https://1.bp.blogspot.com/-z-Fj7jStrFA/X9w89_xgmhI/AAAAAAABc_8/AuabFNLnpLQsrsnptghJHI2NwRANjsR1gCNcBGAsYHQ/s8192/document_paper_mekure.png",
+        "en": "paper",
+        "ja": {
+            "kanji": "紙",
+            "hiragana": "かみ"
+        }
+    },
+    {
+        "image": "https://1.bp.blogspot.com/-s_IqLPMQ-Yg/UOFJt_4-PyI/AAAAAAAAKBQ/WQK0vTet2ZA/s8192/bunbougu_clip2.png",
+        "en": "paper clip",
+        "ja": {
+            "kanji": "クリップ",
+            "hiragana": "くりっぷ"
+        }
+    },
+    {
         "image": "https://4.bp.blogspot.com/-RwlMqLQKy5w/W9RcJO7QpAI/AAAAAAABPog/51Aezmj8hTA1gaCqvBtpvhKCQXiEQVzYwCLcBGAs/s8192/bunbougu_ballpen.png",
         "en": "pen",
         "ja": {
@@ -108,19 +124,19 @@
         }
     },
     {
-        "image": "https://1.bp.blogspot.com/-z-Fj7jStrFA/X9w89_xgmhI/AAAAAAABc_8/AuabFNLnpLQsrsnptghJHI2NwRANjsR1gCNcBGAsYHQ/s8192/document_paper_mekure.png",
-        "en": "paper",
-        "ja": {
-            "kanji": "紙",
-            "hiragana": "かみ"
-        }
-    },
-    {
         "image": "https://4.bp.blogspot.com/-1okSffy4dYs/UOFJ-F5D3BI/AAAAAAAAKDM/zPTnBzoMr6w/s8192/bunbougu_hasami.png",
         "en": "scissors",
         "ja": {
             "kanji": "鋏",
             "hiragana": "はさみ"
+        }
+    },
+    {
+        "image": "https://4.bp.blogspot.com/-FDp-zdTumqo/UOFKQa3CjgI/AAAAAAAAKFM/_35KaQW_esk/s8192/bunbougu_serote-pu.png",
+        "en": "tape",
+        "ja": {
+            "kanji": "テープ",
+            "hiragana": "てーぷ"
         }
     }
 ]

@@ -16,30 +16,69 @@ Players can tap on the cards to flip them over. If they match, they get one poin
 
 ## Wordlists
 
-### General
+### Let's Try 1 Cards
 
-These wordlists have pictures (mostly from [Irasutoya](https://irasutoya.com)!) associated with them, which makes them nice to use with memory:
+* Unit 3
+  * [Numbers 1-20 (20)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit3_cards.json&ignore=strawberry,apple,tomato)
+  * [Fruits + 'tomato' (3)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit3_cards.json&include=strawberry,apple,tomato)
+  * [All (23)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit3_cards.json)
+* Unit 4
+  * [Colors (10)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit4_cards.json&include=red,yellow,blue,green,purple,orange,pink,brown,white,black)
+  * [Sports (5)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit4_cards.json&include=baseball,dodgeball,soccer,basketball,swimming)
+  * [Foods & Drinks (8)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit4_cards.json&include=ice%20cream,pudding,milk,orange%20juice,onion,green%20pepper,cucumber,carrot)
+  * [All (23)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit4_cards.json)
+* Unit 5
+  * [Food (11)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit5_cards.json&include=hamburger,pizza,spaghetti,sushi,steak,salad,cake,egg,jam,noodle,rice%20ball)
+    * [Unit 5 Food & Unit 4 Food (13)](https://altivities.earthiverse.ca/memory/?wordlists=../wordlists/LetsTry1/unit4_cards.json,../wordlists/LetsTry1/unit5_cards.json&include=ice%20cream,pudding,hamburger,pizza,spaghetti,sushi,steak,salad,cake,egg,jam,noodle,rice%20ball)
+  * [Fruits (8)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit5_cards.json&include=grapes,orange,pineapple,peach,melon,banana,kiwi%20fruit,lemon)
+    * [Unit 5 Fruits & Unit 3 Fruits (10)](https://altivities.earthiverse.ca/memory/?wordlists=../wordlists/LetsTry1/unit3_cards.json,../wordlists/LetsTry1/unit5_cards.json&include=strawberry,apple,grapes,orange,pineapple,peach,melon,banana,kiwi%20fruit,lemon)
+  * [Sports (2)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit5_cards.json&include=table%20tennis,volleyball)
+    * [Unit 5 & Unit 4 Sports (7)](https://altivities.earthiverse.ca/memory/?wordlists=../wordlists/LetsTry1/unit4_cards.json,../wordlists/LetsTry1/unit5_cards.json&include=baseball,dodgeball,soccer,basketball,swimming,table%20tennis,volleyball)
+  * [All (21)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit5_cards.json)
+* Unit 6
+  * [Uppercase Alphabet (26)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit6_cards.json)
+* Unit 7
+  * [Colored Shapes (28)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit7_cards.json)
+* Unit 8
+  * [Animals + 'tree' (6)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit8_cards.json)
+* Unit 9
+  * [Animals (12)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit9_cards.json&include=mouse,cow,tiger,rabbit,dragon,snake,horse,sheep,monkey,chicken,dog,wild%20boar)
+    * [Unit 9 Animals & Unit 8 Animals (17)](https://altivities.earthiverse.ca/memory/?wordlists=../wordlists/LetsTry1/unit8_cards.json,../wordlists/LetsTry1/unit9_cards.json&include=cat,panda,bear,spider,elephant,mouse,cow,tiger,rabbit,dragon,snake,horse,sheep,monkey,chicken,dog,wild%20boar)
+  * [Body Parts (8)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit9_cards.json&include=head,shoulders,knees,toes,ears,eyes,mouth,nose)
+  * [Adjectives (8)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit9_cards.json&include=long,short,big,small,scary,furry,round,shiny)
+  * [All (28)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit9_cards.json)
 
-* [Alphabet](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/alphabet.json)
-  * [Let's Try 1 - Lesson 6 (Uppercase)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit6_cards.json)
-* [Animals](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/animals.json)
-* [Christmas (winter)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/winter.json)
-* [Colors (11)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/colors.json)
-* [Countries](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/countries.json)
-  * [Junior Sunshine 6 - Lesson 3](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson3.json)
-  * [Junior Sunshine 6 - Lesson 3 + Canada](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/countries.json&include=the%20U.S.A.,Brazil,Japan,South%20Korea,China,India,the%20U.K.,France,Germany,Italy,Switzerland,Australia,Egypt,Kenya,Canada)
-* [Halloween](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/halloween.json)
-* [Months](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/months.json)
-* [Numbers (1-20)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/numbers.json)
-  * [Ordinals (1st-31st)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/ordinals.json)
-* [Occupations (Junior Sunshine 6 - Lesson 10)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson10.json)
-* [Prefectures](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/Hepburn/prefectures.json)
-* Shapes
-  * [Let's Try 1 - Lesson 7](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit7_cards.json)
-* [Sports](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/sports.json)
-* [Stationery](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/stationery.json)
-  * [Let's Try 2 - Unit 5](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit5_cards.json)
-* [Valentine's Day](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/valentines.json)
+### Let's Try 2 Cards
+
+* Unit 2
+  * [Weather (6)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit2_cards.json&include=sunny,cloudy,rainy,snowy,hot,cold)
+  * [Clothing (6)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit2_cards.json&include=shorts,shirt,pants,jacket,boots,cap)
+  * [Activities (4)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit2_cards.json&include=play%20tag,play%20cards,play%20dodgeball,make%20a%20snowman)
+  * [All (16)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit2_cards.json)
+* Unit 3
+  * [Weekdays (7)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit3_cards.json)
+* Unit 4
+  * [~ Time (10)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit4_cards.json&ignore=6%20o%27clock,12%20o%27clock,3%20o%27clock,8%20o%27clock,10%20o%27clock)
+  * [~ o'clock (5)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit4_cards.json&include=6%20o%27clock,12%20o%27clock,3%20o%27clock,8%20o%27clock,10%20o%27clock)
+  * [All (15)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit4_cards.json)
+* Unit 5
+  * [Stationery (12)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit5_cards.json)
+* Unit 6
+  * [Lowercase Alphabet (26)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit6_cards.json&include=a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z)
+  * [Uppercase Alphabet (26)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit6_cards.json)
+    * [Lowercase & Uppercase Alphabet (52)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit6_cards.json&include=a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z)
+  * [Words (11)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit6_cards.json&include=bus%20stop,up,down,taxi,telephone,station,news,juice,school,ice%20cream,flowers)
+  * [All (63)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit6_cards.json)
+* Unit 7
+  * [Vegetables (9)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit7_cards.json&include=onion,mushroom,potato,tomato,cabbage,corn,carrot,cucumber,green%20pepper)
+    * [Vegetables + 'sausage' (10)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit7_cards.json&include=onion,mushroom,potato,tomato,cabbage,corn,carrot,cucumber,green%20pepper,sausage)
+  * [Fruits (9)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit7_cards.json&include=melon,peach,banana,apple,pineapple,orange,strawberry,cherry,kiwi%20fruit)
+    * [Unit 7 Fruits + Let's Try 1 Fruits (11)](https://altivities.earthiverse.ca/memory/?wordlists=../wordlists/LetsTry1/unit5_cards.json,../wordlists/LetsTry2/unit7_cards.json&include=grapes,lemon,melon,peach,banana,apple,pineapple,orange,strawberry,cherry,kiwi%20fruit)
+  * [All (19)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit7_cards.json)
+* Unit 8
+  * [School Rooms & Places (14)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit8_cards.json)
+* Unit 9
+  * [Daily Routine (10)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit9_cards.json)
 
 ### Junior Sunshine 5 Cards
 
@@ -74,6 +113,30 @@ These wordlists have pictures that match with the cards available in the back of
   * [I ate ~ Words (4)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&include=watermelon,somen,sushi,ice%20cream)
   * [I saw ~ Words (4)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&include=pandas,beetles,the%20Milky%20Way,fireworks)
   * [I enjoyed ~ Words (4)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson6_cards.json&include=shopping,camping,swimming,barbecuing)
+
+### General
+
+These wordlists have pictures (mostly from [Irasutoya](https://irasutoya.com)!) associated with them, which makes them nice to use with memory.
+
+* [Alphabet](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/alphabet.json)
+* [Animals](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/animals.json)
+* [Christmas (winter)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/winter.json)
+* [Colors](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/colors.json)
+* [Countries](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/countries.json)
+  * [Junior Sunshine 6 - Lesson 3](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson3.json)
+  * [Junior Sunshine 6 - Lesson 3 + Canada](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/countries.json&include=the%20U.S.A.,Brazil,Japan,South%20Korea,China,India,the%20U.K.,France,Germany,Italy,Switzerland,Australia,Egypt,Kenya,Canada)
+* [Halloween](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/halloween.json)
+* [Months](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/months.json)
+* [Numbers (1-20)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/numbers.json)
+  * [Ordinals (1st-31st)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/ordinals.json)
+* [Occupations (Junior Sunshine 6 - Lesson 10)](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/JuniorSunshine6/lesson10.json)
+* [Prefectures](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/Hepburn/prefectures.json)
+* Shapes
+  * [Let's Try 1 - Lesson 7](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry1/unit7_cards.json)
+* [Sports](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/sports.json)
+* [Stationery](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/stationery.json)
+  * [Let's Try 2 - Unit 5](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/LetsTry2/unit5_cards.json)
+* [Valentine's Day](https://altivities.earthiverse.ca/memory/?wordlist=../wordlists/General/valentines.json)
 
 ## Enable go-again rules
 
