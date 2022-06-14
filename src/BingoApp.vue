@@ -240,13 +240,13 @@ onMounted(() => {
     </Suspense>
   </template>
   <template v-else-if="bingoStore.mode == 'play'">
-    <div
-      class="top"
-      :style="{
-        width: `${bingoStore.cellSize * bingoStore.cols}px`,
-      }"
-    >
-      <div class="bingo">
+    <div class="top">
+      <div
+        class="bingo"
+        :style="{
+          width: `${bingoStore.cellSize * bingoStore.cols}px`,
+        }"
+      >
         <div
           @click="toggleMark(index)"
           class="bingo-cell"
@@ -299,25 +299,28 @@ onMounted(() => {
     <QRToggle />
     <BingoSettingsToggle />
 
-    <div animation="200" class="large-card">
-      <div
-        :style="{
-          backgroundImage: `url(${
-            wordlistStore.selected[0][wordlistStore.selected[0].length - 1]
-              .image
-          })`,
-        }"
-        v-if="wordlistStore.selected[0].length"
-      >
-        <span class="material-symbols-outlined handle">drag_handle</span>
-        <span class="text">{{
-          Array.isArray(
-            wordlistStore.selected[0][wordlistStore.selected[0].length - 1].en
-          )
-            ? wordlistStore.selected[0][wordlistStore.selected[0].length - 1]
-                .en[0]
-            : wordlistStore.selected[0][wordlistStore.selected[0].length - 1].en
-        }}</span>
+    <div class="top">
+      <div class="large-card">
+        <div
+          :style="{
+            backgroundImage: `url(${
+              wordlistStore.selected[0][wordlistStore.selected[0].length - 1]
+                .image
+            })`,
+          }"
+          v-if="wordlistStore.selected[0].length"
+        >
+          <span class="material-symbols-outlined handle">drag_handle</span>
+          <span class="text">{{
+            Array.isArray(
+              wordlistStore.selected[0][wordlistStore.selected[0].length - 1].en
+            )
+              ? wordlistStore.selected[0][wordlistStore.selected[0].length - 1]
+                  .en[0]
+              : wordlistStore.selected[0][wordlistStore.selected[0].length - 1]
+                  .en
+          }}</span>
+        </div>
       </div>
     </div>
     <span
@@ -431,6 +434,7 @@ onMounted(() => {
 .teach-button {
   color: orange;
 }
+
 .large-card {
   aspect-ratio: 1 / 1;
   border: 2pt dashed #000;
