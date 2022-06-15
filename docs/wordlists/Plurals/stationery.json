@@ -1,0 +1,32 @@
+[
+    {
+        "singular": {
+            "en": "pen",
+            "image": "https://4.bp.blogspot.com/-uY6ko43-ABE/VD3RiIglszI/AAAAAAAAoEA/kI39usefO44/s8192/fruit_ringo.png"
+        },
+        "plural": {
+            "en": "pens",
+            "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/pens.png"
+        }
+    },
+    {
+        "singular": {
+            "en": "pencil",
+            "image": "https://3.bp.blogspot.com/-XEIlEOPNPjc/Ws2vrr7fYfI/AAAAAAABLXU/YRWpD_Ce5osHxEpQbAg51alYYi03PkSmACLcBGAs/s8192/pen_enpitsu_mark.png"
+        },
+        "plural": {
+            "en": "pencils",
+            "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/pencils.png"
+        }
+    },
+    {
+        "singular": {
+            "en": "eraser",
+            "image": "https://2.bp.blogspot.com/-e77cr6l0sR4/UOFKBMw2R4I/AAAAAAAAKDg/6eTaQgsBGZQ/s8192/bunbougu_keshigomu.png"
+        },
+        "plural": {
+            "en": "erasers",
+            "image": "https://altivities.earthiverse.ca/wordlists/General/images/custom_irasutoya/erasers.png"
+        }
+    }
+]
