@@ -19,8 +19,7 @@ body, html {
   bottom: 0;
   gap: 8px;
   justify-content: flex-start;
-  min-height: 100pt;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 8px;
   position: absolute;
   width: calc(100% - 16px);
@@ -34,7 +33,7 @@ body, html {
 
 .top {
   display: flex;
-  height: calc(100% - 104pt);
+  height: calc(100% - 114pt - 4pt); /** TODO: Move to css variable */
   left: 4pt;
   margin: auto;
   position: fixed;
@@ -54,7 +53,7 @@ body, html {
 }
 
 .button-bottom {
-    bottom: 102pt;
+    bottom: calc(114pt + 2pt);  /** TODO: Move to css variable */
 }
 
 .button-left-1 {
