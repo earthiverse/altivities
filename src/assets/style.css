@@ -31,7 +31,7 @@ body, html {
   align-items: center;
 }
 
-.top {
+#top {
   display: flex;
   height: calc(100% - 114pt - 4pt); /** TODO: Move to css variable */
   left: 4pt;

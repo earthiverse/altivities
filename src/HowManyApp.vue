@@ -55,6 +55,7 @@ function getQuestion(): PluralWord | undefined {
 
 let numClickedOK = 0;
 function checkClick(cell: HowManyCellData) {
+  if (howManyStore.hidden) return; // We're hidden, don't do anything
   if (cell.selected) return; // They've already clicked it before
   const qIndex = howManyStore.howManyQuestion;
   if (cell.index == qIndex) {
@@ -69,6 +70,10 @@ function checkClick(cell: HowManyCellData) {
   }
 }
 
+function toggleHide() {
+  howManyStore.hidden = !howManyStore.hidden;
+}
+
 function checkAnswer() {
   // Get the guess
   const answerInput = document.querySelector(
@@ -80,6 +85,7 @@ function checkAnswer() {
     // Do stuff
     new Audio("/assets/audio/sfx/complete.mp3").play();
     showRandomCorrect();
+    howManyStore.hidden = true;
     setTimeout(() => {
       answerInput.value = "";
       numClickedOK = 0;
@@ -96,17 +102,31 @@ function checkAnswer() {
 <template>
   <QRToggle />
   <HowManySettingsToggle />
+  <span
+    v-if="howManyStore.hidden"
+    @click="toggleHide"
+    class="material-symbols-outlined button button-top button-right-1"
+  >
+    image
+  </span>
+  <span
+    v-else
+    @click="toggleHide"
+    class="material-symbols-outlined button button-top button-right-1"
+  >
+    hide_image
+  </span>
 
   <MaruBatsuDisplay />
 
-  <div class="top" :style="{ flexWrap: 'wrap' }">
+  <div id="top" :style="{ flexWrap: 'wrap' }">
     <div
       class="cell"
       v-for="(cell, index) in howManyStore.cells"
       :key="index"
       :style="{
         height: `calc((100% / ${howManyStore.rows}))`,
-        opacity: cell.selected ? 0.5 : 1,
+        opacity: howManyStore.hidden ? 0 : cell.selected ? 0.5 : 1,
         width: `calc((100% / ${howManyStore.cols}))`,
       }"
       @click="checkClick(cell)"
@@ -209,7 +229,7 @@ form input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.top {
+#top {
   border-bottom: 2pt solid #333;
   overflow: hidden;
 }

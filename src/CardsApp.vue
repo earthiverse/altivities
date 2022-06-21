@@ -8,7 +8,7 @@ const wordlistStore = useWordListStore();
 
 <template>
   <QRToggle />
-  <div class="top">
+  <div id="top">
     <LargeCard :word="wordlistStore.getSelectedWordByIndex(0)" />
   </div>
   <Suspense>

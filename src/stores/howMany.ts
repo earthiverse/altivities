@@ -16,6 +16,7 @@ export const useHowManyStore = defineStore({
     cols: 5,
     rows: 5,
     cells: new Array<HowManyCellData>(),
+    hidden: false,
     howManyQuestion: 0,
   }),
   actions: {
@@ -42,6 +43,9 @@ export const useHowManyStore = defineStore({
           word: words[randomIndex],
         });
       }
+
+      // Unhide
+      this.hidden = false;
 
       // Set the question
       this.howManyQuestion = randomIntFromInterval(0, numWords - 1);

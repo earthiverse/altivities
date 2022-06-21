@@ -161,7 +161,7 @@ onMounted(() => {
       school
     </span>
 
-    <div class="top">
+    <div id="top">
       <div
         class="bingo"
         :style="{
@@ -240,7 +240,7 @@ onMounted(() => {
     </Suspense>
   </template>
   <template v-else-if="bingoStore.mode == 'play'">
-    <div class="top">
+    <div id="top">
       <div
         class="bingo"
         :style="{
@@ -299,7 +299,7 @@ onMounted(() => {
     <QRToggle />
     <BingoSettingsToggle />
 
-    <div class="top">
+    <div id="top">
       <div class="large-card">
         <div
           :style="{
@@ -364,7 +364,7 @@ onMounted(() => {
   display: none;
 }
 
-.top {
+#top {
   align-items: center;
   justify-content: center;
 }
