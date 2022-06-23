@@ -480,6 +480,11 @@ class FightScene extends Phaser.Scene {
         const answerField = document.getElementById("answerField") as HTMLInputElement
         const checkAnswer = () => {
             const input: string = answerField.value.trim()
+                // The following replaces are fixes for iOS devices with 'Smart Punctuation' enabled
+                .replace(/[\u2014]/g, "--") // em dash
+                .replace(/[\u2022]/g, "*") // bullet
+                .replace(/[\u2018\u2019]/g, "'") // smart single quotes
+                .replace(/[\u201C\u201D]/g, "\"") // smart double quotes
             if (!input) return
 
             // Check the answer

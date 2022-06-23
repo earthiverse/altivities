@@ -334,7 +334,11 @@ class FightScene extends Phaser.Scene {
         const answer = this.add.dom(x, VocabRPGGame.HEIGHT - 30).createFromCache("answer_input");
         const answerField = document.getElementById("answerField");
         const checkAnswer = () => {
-            const input = answerField.value.trim();
+            const input = answerField.value.trim()
+                .replace(/[\u2014]/g, "--")
+                .replace(/[\u2022]/g, "*")
+                .replace(/[\u2018\u2019]/g, "'")
+                .replace(/[\u201C\u201D]/g, "\"");
             if (!input)
                 return;
             let correct = false;

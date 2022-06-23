@@ -19,8 +19,9 @@ async function run() {
                         wordlists: wordlist.wordlists?.join(",")
                     });
                     console.log(`  Fetched! ${prepared.length} words!`);
-                    if (wordlist.include && wordlist.include.length !== prepared.length)
+                    if (wordlist.include && wordlist.include.length !== prepared.length) {
                         throw "The number of words in `include` does not equal the length of the wordlist!";
+                    }
                     WORDLIST_WITH_COUNTS[categoryName][subcategoryName].push({
                         ignore: wordlist.ignore,
                         include: wordlist.include,
