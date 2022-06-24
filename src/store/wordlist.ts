@@ -39,8 +39,7 @@ export type CuratedWordLists = {
 
 export const useWordListStore = defineStore("wordlist", {
   state: () => ({
-    slots: new Map<string, WordList>(),
-    unselected: [] as WordList,
+    slots: new Map<string, { list: WordList }>(),
   }),
   getters: {
     getSlotByName: (state) => {
@@ -49,7 +48,7 @@ export const useWordListStore = defineStore("wordlist", {
 
         // Create the slot if we don't have it
         if (slot == undefined) {
-          slot = [] as WordList;
+          slot = { list: [] as WordList };
           state.slots.set(name, slot);
         }
 
@@ -58,10 +57,6 @@ export const useWordListStore = defineStore("wordlist", {
     },
   },
   actions: {
-    addWord(word: Word) {
-      if (!word) return; // No word given
-      this.unselected.push(word);
-    },
     async addWordLists(options: {
       wordLists: string[];
       ignore?: string[];
@@ -111,7 +106,13 @@ export const useWordListStore = defineStore("wordlist", {
         });
       }
 
-      this.unselected.push(...newWords);
+      // Add the words to the unselected list
+      const unselected = this.slots.get("unselected");
+      if (!unselected) {
+        this.slots.set("unselected", { list: newWords });
+      } else {
+        unselected.list.push(...newWords);
+      }
     },
     // /**
     //  * Moves the card from `unselected` to
