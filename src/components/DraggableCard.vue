@@ -38,13 +38,14 @@ export default defineComponent({
 }
 
 .handle {
+  cursor: pointer;
   user-select: none;
 }
 
 .text {
-  background-color: rgba(255, 255, 255, 0.5);
   padding: 2px;
   text-align: center;
+  user-select: contain;
   width: 100%;
 }
 </style>

@@ -54,7 +54,7 @@ export default defineComponent({
     Draggable,
     DraggableCard,
   },
-  name: "HelloWorld",
+  name: "CardSlot",
   methods: {
     swapItems: swapCards,
   },
