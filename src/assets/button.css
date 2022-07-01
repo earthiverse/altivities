@@ -1,0 +1,41 @@
+.top-button-1 {
+  position: absolute;
+  top: 5px;
+  z-index: 2;
+}
+
+.top-button-2 {
+  position: absolute;
+  top: calc(44pt + 10px);
+  z-index: 2;
+}
+
+.bottom-button-1 {
+  position: absolute;
+  bottom: calc(88pt + 25px + 5px);
+  z-index: 2;
+}
+
+.left-button-1 {
+  position: absolute;
+  left: 5px;
+  z-index: 2;
+}
+
+.left-button-2 {
+  position: absolute;
+  left: calc(44pt + 10px);
+  z-index: 2;
+}
+
+.right-button-1 {
+  position: absolute;
+  right: 5px;
+  z-index: 2;
+}
+
+.right-button-2 {
+  position: absolute;
+  right: calc(44pt + 10px);
+  z-index: 2;
+}

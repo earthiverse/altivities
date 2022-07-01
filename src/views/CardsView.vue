@@ -41,11 +41,7 @@ import CardSlot from "@/components/CardSlot.vue";
 import DraggableCard from "@/components/DraggableCard.vue";
 
 const wordListStore = useWordListStore();
-
-async function getWordLists() {
-  await wordListStore.addWordListsFromURL();
-}
-if (wordListStore.getSlotByName("unselected").list.length == 0) getWordLists();
+wordListStore.addWordListsFromURL().catch((e) => console.error(e));
 
 export default defineComponent({
   name: "HomeView",
@@ -69,6 +65,7 @@ export default defineComponent({
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,1,0");
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400&display=swap");
+@import url("@/assets/card.css");
 
 body,
 html,
@@ -121,14 +118,6 @@ html,
 #large-card .card,
 #large-card .card .handle {
   font-size: min(10vw, 10vh);
-}
-
-#unselected {
-  display: flex;
-  gap: 5px;
-  height: calc(88pt + 15px);
-  justify-content: flex-start;
-  overflow-x: scroll;
 }
 
 #large-card {

@@ -31,7 +31,7 @@ import DraggableCard from "./DraggableCard.vue";
 
 const wordListStore = useWordListStore();
 
-function swapCards(a: {
+function swapItems(a: {
   from: HTMLDivElement;
   to: HTMLDivElement;
   newIndex: number;
@@ -56,7 +56,7 @@ export default defineComponent({
   },
   name: "CardSlot",
   methods: {
-    swapItems: swapCards,
+    swapItems: swapItems,
   },
   props: {
     animation: String,

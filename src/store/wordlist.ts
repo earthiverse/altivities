@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import { v4 } from "uuid";
 
 export type Languages = "en" | "ja";
 
@@ -7,7 +6,7 @@ export type Word = {
   [T in Exclude<Languages, "ja">]: string | string[];
 } & {
   audio?: string;
-  id?: string;
+  id?: number;
   image?: string;
   ja:
     | {
@@ -753,6 +752,7 @@ export const CURATED_WORD_LISTS: CuratedWordLists = {
 export const useWordListStore = defineStore("wordlist", {
   state: () => ({
     slots: new Map<string, { list: WordList }>(),
+    numCards: 0,
   }),
   getters: {
     getSlotByName: (state) => {
@@ -784,7 +784,10 @@ export const useWordListStore = defineStore("wordlist", {
         const words = (await response.json()) as WordList;
 
         // Give each word a unique ID
-        for (const word of words) word.id = v4();
+        for (const word of words) {
+          word.id = this.numCards / 1;
+          this.numCards += 1;
+        }
         newWords.push(...words);
       }
 
@@ -852,35 +855,28 @@ export const useWordListStore = defineStore("wordlist", {
         if (get) include.push(...get);
       }
 
-      console.log("yes?");
-      console.log(wordLists);
-      console.log(ignore);
-      console.log(include);
-
       return this.addWordLists({
         wordLists: wordLists,
         ignore: ignore,
         include: include,
       });
     },
-    // /**
-    //  * Moves the card from `unselected` to
-    //  * @param index The index of the card in `unselected`.
-    //  */
-    // moveCardToSlot(index: number, slotName: string, slotIndex = 0) {
-    //   // Get the card
-    //   const card = this.unselected[index];
-    //   if (!card) throw `We don't have a card in index ${index}`;
-
-    //   // Get the slot
-    //   const slot = this.getSlotByName(slotName);
-
-    //   // TODO: Move card to slot index
-    //   // TODO: Move all cards after slot.numWords back to the end of unselected
-    // },
     reset() {
-      // TODO: Move all cards from the slots back to unselected
-      // TODO: Delete all slots
+      const unselected = this.getSlotByName("unselected");
+
+      // Move all cards from slots to undefined
+      for (const [slotName, list] of this.slots) {
+        if (slotName == "unselected") continue;
+        if (list.list.length == 0) continue; // No cards
+        const cards = list.list.splice(0, list.list.length);
+        unselected.list.push(...cards);
+      }
+
+      // Return to original order
+      unselected.list.sort((a, b) => {
+        if (a.id === undefined || b.id === undefined) return 0;
+        return a.id - b.id;
+      });
     },
   },
 });
