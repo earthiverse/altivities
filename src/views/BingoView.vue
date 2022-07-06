@@ -42,7 +42,7 @@
     <BottomArea>
       <Draggable
         animation="200"
-        v-model="unselected"
+        v-model="unselected.list"
         easing="cubic-bezier(0.33, 1, 0.68, 1)"
         handle=".handle"
         group="cards"
@@ -102,8 +102,8 @@
       :class="['bottom-button-1', 'right-button-2']"
       @click="undraw"
       :style="{
-        cursor: drawn.length ? 'pointer' : 'not-allowed',
-        opacity: drawn.length ? 1 : 0.3,
+        cursor: drawn.list.length ? 'pointer' : 'not-allowed',
+        opacity: drawn.list.length ? 1 : 0.3,
       }"
     >
       undo
@@ -112,8 +112,8 @@
       :class="['bottom-button-1', 'right-button-1']"
       @click="draw"
       :style="{
-        cursor: unselected.length ? 'pointer' : 'not-allowed',
-        opacity: unselected.length ? 1 : 0.3,
+        cursor: unselected.list.length ? 'pointer' : 'not-allowed',
+        opacity: unselected.list.length ? 1 : 0.3,
       }"
     >
       casino
@@ -124,7 +124,7 @@
     <BottomArea>
       <Draggable
         animation="200"
-        v-model="unselected"
+        v-model="unselected.list"
         easing="cubic-bezier(0.33, 1, 0.68, 1)"
         handle=".handle"
         group="cards"
@@ -306,13 +306,13 @@ export default defineComponent({
     return {
       mode: mode,
       cellSize: cellSize,
-      drawn: wordListStore.getSlotByName("drawn").list,
+      drawn: wordListStore.getSlotByName("drawn"),
       marked: marked,
       ready: ready,
       rows: rows,
       cols: cols,
       store: wordListStore,
-      unselected: wordListStore.getSlotByName("unselected").list,
+      unselected: wordListStore.getSlotByName("unselected"),
     };
   },
   setup() {

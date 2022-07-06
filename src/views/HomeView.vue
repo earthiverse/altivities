@@ -112,7 +112,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { CURATED_WORD_LISTS } from "@/store/wordlist";
+import { CURATED_WORD_LISTS } from "@/data/curated_wordlists";
 
 function generateURL(
   type: "bingo" | "cards" | "memory" | "slides",
