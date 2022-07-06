@@ -1,5 +1,11 @@
 <template>
   <QRButton :class="['top-button-1', 'left-button-1']" />
+  <IconButton :class="['bottom-button-1', 'left-button-1']" @click="reset">
+    restart_alt
+  </IconButton>
+  <IconButton :class="['bottom-button-1', 'left-button-2']" @click="draw">
+    shuffle
+  </IconButton>
   <TopArea>
     <CardSlot
       animation="200"
@@ -40,9 +46,25 @@ import TopArea from "@/components/TopArea.vue";
 import QRButton from "@/components/QRButton.vue";
 import CardSlot from "@/components/CardSlot.vue";
 import DraggableCard from "@/components/DraggableCard.vue";
+import { randomIntFromInterval } from "@/random";
+import IconButton from "@/components/IconButton.vue";
 
 const wordListStore = useWordListStore();
 wordListStore.addWordListsFromURL().catch((e) => console.error(e));
+
+function draw() {
+  const unselected = wordListStore.getSlotByName("unselected").list;
+  const selected = wordListStore.getSlotByName("large-card").list;
+
+  const random = randomIntFromInterval(0, unselected.length - 1);
+  const word = unselected.splice(random, 1)[0];
+  unselected.push(...selected.splice(0, selected.length));
+  selected.push(word);
+}
+
+function reset() {
+  wordListStore.reset();
+}
 
 export default defineComponent({
   name: "HomeView",
@@ -53,6 +75,11 @@ export default defineComponent({
     Draggable,
     DraggableCard,
     CardSlot,
+    IconButton,
+  },
+  methods: {
+    draw: draw,
+    reset: reset,
   },
   data() {
     return {
@@ -66,6 +93,7 @@ export default defineComponent({
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,1,0");
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400&display=swap");
+@import url("@/assets/button.css");
 @import url("@/assets/card.css");
 
 body,
@@ -144,17 +172,5 @@ html,
 
 ::-webkit-scrollbar-thumb:hover {
   background: #666;
-}
-
-.top-button-1 {
-  position: absolute;
-  top: 5px;
-  z-index: 100;
-}
-
-.left-button-1 {
-  position: absolute;
-  left: 5px;
-  z-index: 100;
 }
 </style>
