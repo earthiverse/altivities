@@ -28,7 +28,7 @@
             easing="cubic-bezier(0.33, 1, 0.68, 1)"
             class="bingo-cell"
             :handle="true"
-            :name="`bingo_${(row - 1) * rows + (col - 1)}`"
+            :name="`bingo_${(row - 1) * cols + (col - 1)}`"
             :style="{
               borderWidth: getBorderWidths(row, col, 2),
               height: cellSize + 'px',
