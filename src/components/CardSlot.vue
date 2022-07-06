@@ -1,25 +1,41 @@
 <template>
-  <Draggable
-    :animation="animation"
-    v-model="slot.list"
-    class="slot"
-    :id="name"
-    :easing="easing"
-    handle=".handle"
-    group="cards"
-    item-key="id"
-    @add="swapItems"
-  >
-    <template #item="{ element }">
-      <DraggableCard
+  <template v-if="handle">
+    <Draggable
+      :animation="animation"
+      v-model="slot.list"
+      class="slot"
+      :id="name"
+      :easing="easing"
+      :handle="handle ? '.handle' : undefined"
+      group="cards"
+      item-key="id"
+      @add="swapItems"
+    >
+      <template #item="{ element }">
+        <DraggableCard
+          :style="{
+            backgroundImage:
+              element.image == undefined ? '' : `url(${element.image})`,
+          }"
+          :text="Array.isArray(element.en) ? element.en[0] : element.en"
+        />
+      </template>
+    </Draggable>
+  </template>
+  <template v-else>
+    <div class="slot" :id="name">
+      <StaticCard
+        v-if="slot.list[0]"
         :style="{
           backgroundImage:
-            element.image == undefined ? '' : `url(${element.image})`,
+            slot.list[0].image == undefined ? '' : `url(${slot.list[0].image})`,
         }"
-        :text="Array.isArray(element.en) ? element.en[0] : element.en"
+        :text="
+          Array.isArray(slot.list[0].en) ? slot.list[0].en[0] : slot.list[0].en
+        "
       />
-    </template>
-  </Draggable>
+    </div>
+  </template>
 </template>
 
 <script lang="ts">
@@ -28,6 +44,7 @@ import { v4 } from "uuid";
 import { defineComponent } from "vue";
 import Draggable from "vuedraggable";
 import DraggableCard from "./DraggableCard.vue";
+import StaticCard from "./StaticCard.vue";
 
 const wordListStore = useWordListStore();
 
@@ -53,6 +70,7 @@ export default defineComponent({
   components: {
     Draggable,
     DraggableCard,
+    StaticCard,
   },
   name: "CardSlot",
   methods: {
@@ -61,6 +79,7 @@ export default defineComponent({
   props: {
     animation: String,
     easing: String,
+    handle: Boolean,
     name: String,
   },
   data() {

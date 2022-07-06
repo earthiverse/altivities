@@ -4,6 +4,7 @@
     <CardSlot
       animation="200"
       easing="cubic-bezier(0.33, 1, 0.68, 1)"
+      :handle="true"
       name="large-card"
     ></CardSlot>
   </TopArea>

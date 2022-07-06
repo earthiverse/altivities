@@ -34,7 +34,6 @@
   font-family: "Lexend", sans-serif;
   font-size: min(4vh, 4vw);
   height: 100%;
-  justify-content: space-between;
   text-shadow: rgb(255, 255, 255) 3px 0px 0px,
     rgb(255, 255, 255) 2.83487px 0.981584px 0px,
     rgb(255, 255, 255) 2.35766px 1.85511px 0px,

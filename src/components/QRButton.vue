@@ -5,7 +5,7 @@
       classes="modal-container"
       content-class="modal-content-qr"
       overlay-class="modal-overlay"
-      attach="#app"
+      attach="body"
     >
       <VueQRCode
         :value="window.location.href"
