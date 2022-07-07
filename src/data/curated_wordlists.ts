@@ -756,6 +756,15 @@ export const CURATED_WORD_LISTS: CuratedWordLists = {
         ],
       },
     ],
+    Phonics: [
+      {
+        name: "Phonics Words",
+        num_cards: 16,
+        wordlists: [
+          "https://altivities.earthiverse.ca/wordlists/JuniorSunshine5/phonics_cards.json",
+        ],
+      },
+    ],
     "Lesson 2": [
       {
         name: "Months",
@@ -854,6 +863,15 @@ export const CURATED_WORD_LISTS: CuratedWordLists = {
     ],
   },
   "Junior Sunshine 6": {
+    Phonics: [
+      {
+        name: "Vowel Words",
+        num_cards: 15,
+        wordlists: [
+          "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/vowels_cards.json",
+        ],
+      },
+    ],
     "Lesson 2": [
       {
         name: "Actions",
@@ -956,6 +974,17 @@ export const CURATED_WORD_LISTS: CuratedWordLists = {
           "https://altivities.earthiverse.ca/wordlists/JuniorSunshine6/lesson6_cards.json",
         ],
         include: ["nice", "beautiful", "cute", "fun"],
+      },
+    ],
+  },
+  "Sunshine 1": {
+    "Action Cards": [
+      {
+        name: "Action Cards",
+        num_cards: 36,
+        wordlists: [
+          "https://altivities.earthiverse.ca/wordlists/Sunshine1/action_cards.json",
+        ],
       },
     ],
   },

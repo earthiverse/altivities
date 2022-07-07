@@ -31,6 +31,7 @@
             :name="`bingo_${(row - 1) * cols + (col - 1)}`"
             :style="{
               borderWidth: getBorderWidths(row, col, 2),
+              fontSize: `calc(${cellSize}px / 7)`,
               height: cellSize + 'px',
               width: cellSize + 'px',
             }"
@@ -79,6 +80,7 @@
             :name="`bingo_${(row - 1) * cols + (col - 1)}`"
             :style="{
               borderWidth: getBorderWidths(row, col, 2),
+              fontSize: `calc(${cellSize}px / 7)`,
               height: cellSize + 'px',
               width: cellSize + 'px',
             }"
