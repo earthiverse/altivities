@@ -1,0 +1,64 @@
+[
+  {
+    "image": "https://3.bp.blogspot.com/-7A9qrVipedQ/VyNdIMyg-fI/AAAAAAAA6LI/kGw0Eqa17-UxwtCiulVzHTwfHI_9lBzKwCLcB/s800/coffee01_blend.png",
+    "en": "coffee",
+    "ja": {
+      "kanji": "コーヒー",
+      "hiragana": ""
+    }
+  },
+  {
+    "image": "https://2.bp.blogspot.com/-wb9TZweJUNE/VbnRtfTS1YI/AAAAAAAAwPk/Usv0AudzxGM/s800/tea_straight.png",
+    "en": "tea",
+    "ja": {
+      "kanji": "茶",
+      "hiragana": "ちゃ"
+    }
+  },
+   {
+    "image": "https://2.bp.blogspot.com/-dIlvb29GiL8/USyJxef_M9I/AAAAAAAAOaw/dwqdGh1DH_U/s1600/agari_yunomi.png",
+    "en": "green tea",
+    "ja": {
+      "kanji": "緑茶",
+      "hiragana": "りょくちゃ"
+    }
+  },
+  {
+    "image": "https://1.bp.blogspot.com/-TXu15ALhc2E/UWgWfSkMjOI/AAAAAAAAQEc/hftbbQjbXzk/s1600/juice_orange.png",
+    "en": "juice",
+    "ja": {
+      "kanji": "ジュース",
+      "hiragana": ""
+    }
+  },  {
+    "image": "https://3.bp.blogspot.com/-n2NKzuq869Y/UgSL-JjkbGI/AAAAAAAAW44/DaoEDvLrKgA/s800/drink_melonsoda.png",
+    "en": "soda",
+    "ja": {
+      "kanji": "ソーダ",
+      "hiragana": ""
+    }
+  },
+  {
+    "image": "https://1.bp.blogspot.com/-3viahpXXwv8/VSufRsKh5MI/AAAAAAAAs5A/obTh3yGNO-g/s800/milk_gyunyu_pack.png",
+    "en": "milk",
+    "ja": {
+      "kanji": "牛乳",
+      "hiragana": "ぎゅうにゅう"
+    }
+  },  {
+    "image": "https://4.bp.blogspot.com/-OLN2lBQewaE/WASJESdGJNI/AAAAAAAA-8s/5hicZPC9Cu0UEGqo3zcQsRPDc6UEuZpKQCLcB/s800/amount_water_glass3.png",
+    "en": "water",
+    "ja": {
+      "kanji": "水",
+      "hiragana": "みず"
+    }
+  },
+  {
+    "image": "https://2.bp.blogspot.com/-sq7JgJF8z74/VJF-cgx9MHI/AAAAAAAAprQ/O5RHXm_J4NM/s800/bottle_water.png",
+    "en": "mineral water",
+    "ja": {
+      "kanji": "ミネラルウォーター",
+      "hiragana": ""
+    }
+  }
+]
