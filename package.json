@@ -24,7 +24,7 @@
     "express": "^4.17.3",
     "kuroshiro": "^1.2.0",
     "kuroshiro-analyzer-kuromoji": "^1.1.0",
-    "phaser": "^3.55.2",
+    "phaser": "^3.86.0",
     "phaser-ui-tools": "^2.0.0-beta",
     "pluralize": "^8.0.0"
   },
